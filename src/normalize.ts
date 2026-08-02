@@ -1,16 +1,11 @@
-import { analyzeAI } from './ai.js';
-import type { Job, RawJob, WorkMode } from './types.js';
-
+import { analyzeAI } from './ai.js'; import type { Job, RawJob, WorkMode } from './types.js';
 const strip = (s = '') => s.replace(/<[^>]*>/g, ' ').replace(/&nbsp;|&#39;|&amp;/g, ' ').replace(/\s+/g, ' ').trim();
+const countryAliases: Array<[RegExp, string]> = [[/\b(?:United States|USA|US)\b/i, 'United States'], [/\b(?:United Kingdom|UK|GB)\b/i, 'United Kingdom'], [/\bCanada|CA\b/i, 'Canada'], [/\bAustralia|AU\b/i, 'Australia'], [/\bNew Zealand|NZ\b/i, 'New Zealand'], [/\bSingapore|SG\b/i, 'Singapore'], [/\bSouth Korea|Korea|KR\b/i, 'South Korea'], [/\bJapan|JP\b/i, 'Japan'], [/\bIsrael|IL\b/i, 'Israel'], [/\bIndia|IN\b/i, 'India'], [/\bFrance|FR\b/i, 'France'], [/\bGermany|DE\b/i, 'Germany'], [/\bAustria|AT\b/i, 'Austria'], [/\bBelgium|BE\b/i, 'Belgium'], [/\bDenmark|DK\b/i, 'Denmark'], [/\bFinland|FI\b/i, 'Finland'], [/\bIreland|IE\b/i, 'Ireland'], [/\bItaly|IT\b/i, 'Italy'], [/\bNetherlands|NL\b/i, 'Netherlands'], [/\bNorway|NO\b/i, 'Norway'], [/\bPoland|PL\b/i, 'Poland'], [/\bPortugal|PT\b/i, 'Portugal'], [/\bSpain|ES\b/i, 'Spain'], [/\bSweden|SE\b/i, 'Sweden'], [/\bSwitzerland|CH\b/i, 'Switzerland']];
+const usStates = /\b(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\b/;
+function inferCountry(location: string): string { for (const [pattern, country] of countryAliases) if (pattern.test(location)) return country; if (usStates.test(location)) return 'United States'; const tail = location.split(',').at(-1)?.trim(); return !tail || /remote|worldwide|not specified/i.test(tail) ? 'Unknown' : tail; }
 export function normalize(raw: RawJob): Job {
-  const description = strip(raw.description), location = strip(raw.location) || 'Not specified';
-  const text = `${location} ${raw.workplaceType ?? ''} ${description.slice(0, 1000)}`;
-  let workMode: WorkMode = /remote/i.test(text) ? 'remote' : /hybrid/i.test(text) ? 'hybrid' : /on.?site|office/i.test(text) ? 'onsite' : 'unknown';
-  const country = location.split(',').at(-1)?.trim() || 'Unknown';
-  const ai = analyzeAI({ title: raw.title, description });
+  const description = strip(raw.description), location = strip(raw.location) || 'Not specified'; const declaredMode = `${raw.workplaceType ?? ''} ${location}`;
+  const workMode: WorkMode = /remote/i.test(declaredMode) ? 'remote' : /hybrid/i.test(declaredMode) ? 'hybrid' : /on.?site|office/i.test(declaredMode) ? 'onsite' : 'unknown'; const country = inferCountry(location); const ai = analyzeAI({ title: raw.title, description });
   const salaryMatch = description.match(/(?:[$€£]\s?[\d,.]+(?:\s*[-–]\s*[$€£]?\s?[\d,.]+)?(?:\s*(?:k|K|per year|\/year|p\.a\.))?)/);
-  return { ...raw, title: strip(raw.title), company: strip(raw.company), location, country, workMode, description,
-    postedAt: raw.postedAt && !Number.isNaN(Date.parse(raw.postedAt)) ? new Date(raw.postedAt).toISOString() : null,
-    salary: raw.salary || salaryMatch?.[0] || null, skills: ai.skills, aiRelevance: ai.relevance,
-    visaSponsored: /visa sponsor|sponsorship available|sponsor.*visa/i.test(description) && !/no visa sponsor|unable to sponsor/i.test(description), score: 0 };
+  return { ...raw, title: strip(raw.title), company: strip(raw.company), location, country, workMode, description, postedAt: raw.postedAt && !Number.isNaN(Date.parse(raw.postedAt)) ? new Date(raw.postedAt).toISOString() : null, salary: raw.salary || salaryMatch?.[0] || null, skills: ai.skills, aiRelevance: ai.relevance, visaSponsored: /visa sponsor|sponsorship available|sponsor.*visa/i.test(description) && !/no visa sponsor|unable to sponsor/i.test(description), score: 0 };
 }

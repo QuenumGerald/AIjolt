@@ -11,6 +11,8 @@
     "score": "tsx src/cli.ts score",
     "publish": "tsx src/cli.ts publish",
     "cleanup": "tsx src/cli.ts cleanup",
+    "outbox": "tsx src/cli.ts outbox",
+    "doctor": "tsx src/cli.ts doctor",
     "start": "tsx src/cli.ts start"
   },
   "dependencies": {
