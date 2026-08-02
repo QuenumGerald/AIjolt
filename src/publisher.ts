@@ -1,10 +1,9 @@
-import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { linkedinPost, xPost } from './posts.js'; import { logger } from './logger.js';
+import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { linkedinPost, xPost } from './posts.js'; import { logger } from './logger.js'; import { bufferCreatePostPayload } from './buffer.js';
 type Network = 'x'|'linkedin';
 const BUFFER_API = 'https://api.buffer.com';
-const createPostMutation = `mutation CreatePost($text: String!, $channelId: ChannelId!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: addToQueue }) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }`;
 async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
   if (!config.buffer.token) throw new Error('BUFFER_ACCESS_TOKEN is missing');
-  const response = await fetch(BUFFER_API, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${config.buffer.token}` }, body: JSON.stringify({ query: createPostMutation, variables: { text, channelId } }), signal: AbortSignal.timeout(20_000) });
+  const response = await fetch(BUFFER_API, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${config.buffer.token}` }, body: JSON.stringify(bufferCreatePostPayload(text, channelId)), signal: AbortSignal.timeout(20_000) });
   if (!response.ok) throw new Error(`Buffer API ${response.status} ${response.statusText}`);
   const payload = await response.json() as { errors?: Array<{ message?: string }>; data?: { createPost?: { post?: { id: string; dueAt?: string }; message?: string } } };
   const error = payload.errors?.map(item => item.message).filter(Boolean).join('; ') || payload.data?.createPost?.message;

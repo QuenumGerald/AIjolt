@@ -1,0 +1,2 @@
+export const createPostMutation = `mutation CreatePost($text: String!, $channelId: ChannelId!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: addToQueue }) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }`;
+export function bufferCreatePostPayload(text: string, channelId: string) { return { query: createPostMutation, variables: { text, channelId } }; }
