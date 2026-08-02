@@ -1,0 +1,32 @@
+{
+  "name": "aijolt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": { "aijolt": "dist/cli.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && cp src/schema.sql dist/schema.sql",
+    "test": "vitest run",
+    "collect": "tsx src/cli.ts collect",
+    "score": "tsx src/cli.ts score",
+    "publish": "tsx src/cli.ts publish",
+    "cleanup": "tsx src/cli.ts cleanup",
+    "start": "tsx src/cli.ts start"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "commander": "^14.0.0",
+    "dotenv": "^17.2.1",
+    "p-limit": "^7.1.1",
+    "p-retry": "^7.0.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.1.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "engines": { "node": ">=20" }
+}
