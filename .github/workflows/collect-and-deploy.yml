@@ -1,0 +1,62 @@
+name: Collect jobs and deploy site
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run collect
+        env:
+          DATABASE_PATH: ./data/aijolt.db
+          FOORILLA_ENABLED: ${{ vars.FOORILLA_ENABLED || 'true' }}
+          GREENHOUSE_BOARDS: ${{ vars.GREENHOUSE_BOARDS }}
+          LEVER_SITES: ${{ vars.LEVER_SITES }}
+          ASHBY_BOARDS: ${{ vars.ASHBY_BOARDS }}
+      - run: npm run score && npm run cleanup && npm run export-json
+      - name: Commit data feed
+        run: |
+          git config user.name 'aijolt-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/jobs.json
+          git diff --cached --quiet || git commit -m 'chore: update jobs feed'
+          git push
+
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --prefix site
+      - run: npm run build --prefix site
+      - uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: aijolt
+          directory: site/dist

@@ -12,6 +12,9 @@
     "publish": "tsx src/cli.ts publish",
     "cleanup": "tsx src/cli.ts cleanup",
     "outbox": "tsx src/cli.ts outbox",
+    "export-json": "tsx src/cli.ts export-json",
+    "site:dev": "npm run dev --prefix site",
+    "site:build": "npm run build --prefix site",
     "doctor": "tsx src/cli.ts doctor",
     "start": "tsx src/cli.ts start"
   },

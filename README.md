@@ -1,6 +1,13 @@
 # AIJolt
 
-AIJolt est un service **sans site web** en Node.js/TypeScript qui collecte des offres IA depuis les API publiques Greenhouse, Lever et Ashby, les classe dans SQLite et prépare des publications X/LinkedIn. Tout se pilote en CLI.
+AIJolt collecte des offres IA depuis les API publiques Greenhouse, Lever et Ashby, les classe, exporte un flux JSON versionné et génère un site Astro statique. Tout se pilote en CLI et se déploie gratuitement via GitHub Actions + Cloudflare Pages.
+
+## Architecture de lancement
+
+* **Collecte** : GitHub Actions toutes les 3 heures ; SQLite reste le stockage de travail du job, puis `data/jobs.json` devient la source publique versionnée.
+* **Site** : Astro dans `site/`, construit vers `site/dist` et déployé sur Cloudflare Pages (`<projet>.pages.dev`).
+* **Réseaux** : Buffer Free reste optionnel ; les textes utilisent un fallback déterministe et DeepSeek si `DEEPSEEK_API_KEY` est configurée.
+* **Coût cible** : 0 € hors éventuels dépassements/quotas des fournisseurs.
 
 ## État de la recherche API (2 août 2026)
 
@@ -59,6 +66,9 @@ npm run publish -- --dry-run    # affiche les posts uniquement
 npm run publish                 # respecte DRY_RUN ; sinon programme automatiquement via Buffer
 npm run cleanup                 # expire les offres anciennes/non revues
 npm run doctor                  # vérifie boards, SQLite, dry-run et channels
+npm run export-json             # écrit le flux public dans data/jobs.json
+npm run site:dev                # lance Astro en local
+npm run site:build              # construit le site statique
 npm run doctor                  # vérifie les sources, SQLite, dry-run et channels Buffer
 npm run start                   # collecte puis planificateur longue durée
 npm test

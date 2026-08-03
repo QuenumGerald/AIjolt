@@ -1,4 +1,4 @@
-import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { linkedinPost, xPost } from './posts.js'; import { logger } from './logger.js'; import { bufferCreatePostPayload } from './buffer.js';
+import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { generatePost } from './posts.js'; import { logger } from './logger.js'; import { bufferCreatePostPayload } from './buffer.js';
 type Network = 'x'|'linkedin';
 const BUFFER_API = 'https://api.buffer.com';
 async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
@@ -17,7 +17,7 @@ export async function publish(dryRunFlag = false) {
   const queuedCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, (db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status='queued'`).get(network) as any).n])) as Record<Network, number>;
   for (const row of rows) for (const network of ['x','linkedin'] as Network[]) {
     const max = config.daily[network]; const usableQueue = Math.max(0, config.queueCapacity - config.reserve); if (dailyCount[network] + emitted[network] >= max || queuedCount[network] + emitted[network] >= usableQueue) continue;
-    const job = rowToJob(row), text = network === 'x' ? xPost(job) : linkedinPost(job); emitted[network]++;
+    const job = rowToJob(row), text = await generatePost(job, network); emitted[network]++;
     if (dry) { logger.info(`[DRY RUN] ${network}:\n${text}`); continue; }
     const channelId = config.buffer[network]; if (!channelId) { logger.error(`Skipping ${network}: BUFFER_${network === 'x' ? 'X' : 'LINKEDIN'}_CHANNEL_ID is missing`); continue; }
     try { const post = await createBufferPost(text, channelId); db.prepare(`INSERT INTO publications(job_id,network,status,text,provider_id,created_at) VALUES(?,?,'queued',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, network, text, post.id, new Date().toISOString()); logger.info(`Buffer scheduled ${network} job ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`); } catch (error) { const message = error instanceof Error ? error.message : String(error); db.prepare(`INSERT INTO publications(job_id,network,status,text,error,created_at) VALUES(?,?,'failed',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='failed',error=excluded.error,created_at=excluded.created_at`).run(row.id, network, text, message, new Date().toISOString()); logger.error(`Buffer failed ${network} job ${row.id}: ${message}`); }

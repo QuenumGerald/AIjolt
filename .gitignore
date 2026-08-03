@@ -1,6 +1,8 @@
 node_modules/
 dist/
 data/
+!data/
+!data/jobs.json
 *.db
 *.db-shm
 *.db-wal

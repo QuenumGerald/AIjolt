@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generatedAt, jobs } from '../data';
+
+const formatDate = (date: string | null) => date ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(date)) : 'Date non précisée';
+const excerpt = (text: string) => text.replace(/\s+/g, ' ').trim().slice(0, 180);
+---
+<Layout>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">AIJOLT / OPPORTUNITÉS IA</p>
+      <h1>Le prochain job qui change tout.</h1>
+      <p class="intro">Une sélection fraîche d’offres en intelligence artificielle, collectées et classées automatiquement.</p>
+      <div class="stats"><span>{jobs.length} offres actives</span><span>Mis à jour {generatedAt ? formatDate(generatedAt) : 'bientôt'}</span></div>
+    </header>
+    <section class="toolbar"><h2>Dernières opportunités</h2><span>{jobs.length ? 'Classées par pertinence' : 'Le flux sera bientôt alimenté'}</span></section>
+    <section class="grid" aria-label="Offres d'emploi IA">
+      {jobs.map((job) => <article class="card">
+        <div class="card-top"><span class="badge">{job.workMode === 'unknown' ? 'IA' : job.workMode}</span><span class="score">{Math.round(job.score)}/100</span></div>
+        <h3>{job.title}</h3><p class="company">{job.company}</p>
+        <p class="meta">{job.location} · {formatDate(job.postedAt)}</p>
+        <p class="description">{excerpt(job.description)}{job.description.length > 180 ? '…' : ''}</p>
+        <div class="skills">{job.skills.slice(0, 4).map((skill) => <span>{skill}</span>)}</div>
+        <a class="apply" href={job.url} target="_blank" rel="noreferrer">Voir l’offre <span>↗</span></a>
+      </article>)}
+    </section>
+    {jobs.length === 0 && <div class="empty"><strong>La veille démarre.</strong><br />Les premières offres apparaîtront après la prochaine collecte.</div>}
+  </main>
+</Layout>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(body) { margin: 0; background: #f3f1eb; color: #171717; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+  .shell { max-width: 1180px; margin: auto; padding: 28px 24px 80px; }
+  .hero { padding: 70px 0 54px; max-width: 760px; }
+  .eyebrow { color: #e6502f; font: 700 12px/1 monospace; letter-spacing: .16em; }
+  h1 { font: 700 clamp(44px, 8vw, 92px)/.95 Georgia, serif; letter-spacing: -.055em; margin: 24px 0; }
+  .intro { color: #5b5a55; font-size: 20px; line-height: 1.5; max-width: 560px; }
+  .stats, .toolbar, .card-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+  .stats { margin-top: 34px; color: #77746b; font-size: 13px; }
+  .toolbar { border-top: 1px solid #d7d3c8; padding: 22px 0; } h2 { margin: 0; font: 700 27px Georgia, serif; } .toolbar span { color: #77746b; font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .card { display: flex; flex-direction: column; min-height: 330px; background: #fffdf8; border: 1px solid #e0ddd4; border-radius: 3px; padding: 24px; transition: transform .2s, box-shadow .2s; } .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px #25201812; }
+  .badge, .skills span { border-radius: 99px; background: #e9eee6; color: #426044; font-size: 11px; padding: 6px 9px; text-transform: uppercase; letter-spacing: .06em; } .score { color: #e6502f; font: 700 12px monospace; }
+  h3 { font: 700 26px/1.05 Georgia, serif; margin: 26px 0 7px; } .company { font-weight: 700; margin: 0; } .meta { color: #77746b; font-size: 13px; margin: 7px 0 22px; } .description { color: #5b5a55; line-height: 1.55; font-size: 14px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 20px; } .skills span { background: #f1eee7; color: #5b5a55; text-transform: none; }
+  .apply { color: #171717; border-top: 1px solid #e0ddd4; padding-top: 15px; text-decoration: none; font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; } .apply:hover { color: #e6502f; }
+  .empty { margin-top: 20px; padding: 34px; border: 1px dashed #c7c2b7; color: #77746b; line-height: 1.7; }
+  @media (max-width: 600px) { .shell { padding-inline: 18px; } .hero { padding-top: 40px; } .stats { align-items: flex-start; flex-direction: column; } .toolbar { align-items: flex-start; flex-direction: column; } }
+</style>
