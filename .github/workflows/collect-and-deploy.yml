@@ -45,27 +45,3 @@ jobs:
             git push
             echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi
-
-  deploy:
-    needs: collect
-    if: needs.collect.outputs.data_changed == 'true'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 1
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci --prefix site
-      - run: npm run build --prefix site
-      - uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: aijolt
-          directory: site/dist
