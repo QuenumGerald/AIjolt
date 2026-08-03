@@ -1,13 +1,15 @@
 ---
-const { title = 'AIJolt — Jobs IA' } = Astro.props;
+const { title = 'AIJolt — AI Careers', description = "Jobs, hiring trends and practical intelligence for AI careers.", canonical = Astro.url.pathname, image = '/images/article-placeholder.png', type = 'website' } = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site);
 ---
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Les meilleures opportunités de carrière dans l'intelligence artificielle." />
+    <meta name="description" content={description} /><link rel="canonical" href={canonicalUrl} /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content={type} /><meta property="og:url" content={canonicalUrl} /><meta property="og:image" content={new URL(image, Astro.site)} /><link rel="alternate" type="application/rss+xml" title="AIJolt Insights" href="/rss.xml" />
     <title>{title}</title>
   </head>
-  <body><slot /></body>
+  <body><nav><a href="/">AIJOLT</a><span><a href="/#jobs">Jobs</a><a href="/articles">Insights</a></span></nav><slot /></body>
 </html>
+<style is:global>nav{max-width:1180px;margin:auto;padding:24px;display:flex;justify-content:space-between;font:700 13px system-ui;letter-spacing:.1em}nav a{color:inherit;text-decoration:none}nav span{display:flex;gap:24px}</style>
