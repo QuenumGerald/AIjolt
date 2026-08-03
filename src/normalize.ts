@@ -1,8 +1,37 @@
 import { analyzeAI } from './ai.js'; import type { Job, RawJob, WorkMode } from './types.js';
 const strip = (s = '') => s.replace(/<[^>]*>/g, ' ').replace(/&nbsp;|&#39;|&amp;/g, ' ').replace(/\s+/g, ' ').trim();
-const countryAliases: Array<[RegExp, string]> = [[/\b(?:United States|USA|US)\b/i, 'United States'], [/\b(?:United Kingdom|UK|GB)\b/i, 'United Kingdom'], [/\bCanada|CA\b/i, 'Canada'], [/\bAustralia|AU\b/i, 'Australia'], [/\bNew Zealand|NZ\b/i, 'New Zealand'], [/\bSingapore|SG\b/i, 'Singapore'], [/\bSouth Korea|Korea|KR\b/i, 'South Korea'], [/\bJapan|JP\b/i, 'Japan'], [/\bIsrael|IL\b/i, 'Israel'], [/\bIndia|IN\b/i, 'India'], [/\bFrance|FR\b/i, 'France'], [/\bGermany|DE\b/i, 'Germany'], [/\bAustria|AT\b/i, 'Austria'], [/\bBelgium|BE\b/i, 'Belgium'], [/\bDenmark|DK\b/i, 'Denmark'], [/\bFinland|FI\b/i, 'Finland'], [/\bIreland|IE\b/i, 'Ireland'], [/\bItaly|IT\b/i, 'Italy'], [/\bNetherlands|NL\b/i, 'Netherlands'], [/\bNorway|NO\b/i, 'Norway'], [/\bPoland|PL\b/i, 'Poland'], [/\bPortugal|PT\b/i, 'Portugal'], [/\bSpain|ES\b/i, 'Spain'], [/\bSweden|SE\b/i, 'Sweden'], [/\bSwitzerland|CH\b/i, 'Switzerland']];
-const usStates = /\b(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\b/;
-function inferCountry(location: string): string { for (const [pattern, country] of countryAliases) if (pattern.test(location)) return country; if (usStates.test(location)) return 'United States'; const tail = location.split(',').at(-1)?.trim(); return !tail || /remote|worldwide|not specified/i.test(tail) ? 'Unknown' : tail; }
+const countryAliases = new Map<string, string>([
+  ['united states','United States'], ['usa','United States'], ['us','United States'],
+  ['united kingdom','United Kingdom'], ['uk','United Kingdom'], ['gb','United Kingdom'],
+  ['austria','Austria'], ['at','Austria'], ['belgium','Belgium'], ['be','Belgium'],
+  ['croatia','Croatia'], ['hr','Croatia'], ['cyprus','Cyprus'], ['cy','Cyprus'],
+  ['czech republic','Czech Republic'], ['czechia','Czech Republic'], ['cz','Czech Republic'],
+  ['denmark','Denmark'], ['dk','Denmark'], ['estonia','Estonia'], ['ee','Estonia'],
+  ['finland','Finland'], ['fi','Finland'], ['france','France'], ['fr','France'],
+  ['germany','Germany'], ['de','Germany'], ['greece','Greece'], ['gr','Greece'],
+  ['hungary','Hungary'], ['hu','Hungary'], ['iceland','Iceland'], ['is','Iceland'],
+  ['ireland','Ireland'], ['ie','Ireland'], ['italy','Italy'], ['it','Italy'],
+  ['latvia','Latvia'], ['lv','Latvia'], ['liechtenstein','Liechtenstein'], ['li','Liechtenstein'],
+  ['lithuania','Lithuania'], ['lt','Lithuania'], ['luxembourg','Luxembourg'], ['lu','Luxembourg'],
+  ['malta','Malta'], ['mt','Malta'], ['netherlands','Netherlands'], ['nl','Netherlands'],
+  ['norway','Norway'], ['no','Norway'], ['poland','Poland'], ['pl','Poland'],
+  ['portugal','Portugal'], ['pt','Portugal'], ['romania','Romania'], ['ro','Romania'],
+  ['slovakia','Slovakia'], ['sk','Slovakia'], ['slovenia','Slovenia'], ['si','Slovenia'],
+  ['spain','Spain'], ['es','Spain'], ['sweden','Sweden'], ['se','Sweden'],
+  ['switzerland','Switzerland'], ['ch','Switzerland'],
+]);
+const usStateNames = new Set(['alabama','alaska','arizona','arkansas','california','colorado','connecticut','delaware','florida','georgia','hawaii','idaho','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','new hampshire','new jersey','new mexico','new york','north carolina','north dakota','ohio','oklahoma','oregon','pennsylvania','rhode island','south carolina','south dakota','tennessee','texas','utah','vermont','virginia','washington','west virginia','wisconsin','wyoming']);
+const usStateCodes = new Set(['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']);
+export function inferCountry(location: string): string {
+  const parts = location.split(',').map(part => part.trim()).filter(Boolean);
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const normalized = parts[i].toLowerCase().replace(/\./g, '');
+    const country = countryAliases.get(normalized);
+    if (country) return country;
+  }
+  if (parts.some(part => usStateNames.has(part.toLowerCase()) || usStateCodes.has(part.toUpperCase()))) return 'United States';
+  return 'Unknown';
+}
 export function normalize(raw: RawJob): Job {
   const description = strip(raw.description), location = strip(raw.location) || 'Not specified'; const declaredMode = `${raw.workplaceType ?? ''} ${location}`;
   const workMode: WorkMode = /remote/i.test(declaredMode) ? 'remote' : /hybrid/i.test(declaredMode) ? 'hybrid' : /on.?site|office/i.test(declaredMode) ? 'onsite' : 'unknown'; const country = inferCountry(location); const ai = analyzeAI({ title: raw.title, description });

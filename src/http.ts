@@ -26,3 +26,11 @@ export function getText(url: string, headers: Record<string, string> = {}): Prom
     return response.text();
   }, { retries: 3, minTimeout: 500, factor: 2 }));
 }
+
+export function getFinalUrl(url: string, headers: Record<string, string> = {}): Promise<string> {
+  return limit(() => pRetry(async () => {
+    const response = await request(url, 'text/html', headers);
+    await response.body?.cancel();
+    return response.url;
+  }, { retries: 3, minTimeout: 500, factor: 2 }));
+}
