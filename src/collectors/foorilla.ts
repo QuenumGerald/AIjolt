@@ -26,7 +26,7 @@ export async function foorilla(pages: number, baseUrl: string): Promise<RawJob[]
       const parsed = parseDetail(detail, link.path, link.title, baseUrl);
       if (!parsed.applyUrl) continue;
       try {
-        const finalUrl = await getFinalUrl(parsed.applyUrl, { 'X-Screen': 'D', Referer: `${baseUrl}${link.path}` });
+        const finalUrl = await getFinalUrl(parsed.applyUrl, { Referer: `${baseUrl}${link.path}` });
         if (new URL(finalUrl).hostname === new URL(baseUrl).hostname) continue;
         parsed.url = finalUrl;
       } catch { continue; }

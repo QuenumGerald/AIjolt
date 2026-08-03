@@ -29,8 +29,33 @@ export function getText(url: string, headers: Record<string, string> = {}): Prom
 
 export function getFinalUrl(url: string, headers: Record<string, string> = {}): Promise<string> {
   return limit(() => pRetry(async () => {
-    const response = await request(url, 'text/html', headers);
+    const browserHeaders: Record<string, string> = {
+      accept: 'text/html',
+      'user-agent': 'Mozilla/5.0 (compatible; AIJolt/0.1)',
+      ...headers,
+    };
+    const referer = headers.Referer ?? headers.referer;
+    if (referer) {
+      const detailResponse = await fetch(referer, {
+        headers: browserHeaders,
+        signal: AbortSignal.timeout(20_000),
+      });
+      const setCookie = detailResponse.headers.get('set-cookie');
+      await detailResponse.body?.cancel();
+      if (setCookie) browserHeaders.Cookie = setCookie.split(';', 1)[0];
+    }
+    const response = await fetch(url, {
+      redirect: 'manual',
+      headers: browserHeaders,
+      signal: AbortSignal.timeout(20_000),
+    });
     await response.body?.cancel();
+    if (response.status >= 300 && response.status < 400) {
+      const location = response.headers.get('location');
+      if (!location) throw new Error(`Redirect without Location: ${url}`);
+      return new URL(location, url).toString();
+    }
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${url}`);
     return response.url;
   }, { retries: 3, minTimeout: 500, factor: 2 }));
 }
