@@ -8,7 +8,7 @@ export function linkedinPost(j: Job) { return `New AI opportunity ⚡\n\n${j.com
 export async function generatePost(j: Job, network: 'x' | 'linkedin') {
   const fallback = network === 'x' ? xPost(j) : linkedinPost(j);
   if (!config.deepseek.apiKey) return fallback;
-  const prompt = `Write one concise ${network === 'x' ? 'X post under 280 characters' : 'LinkedIn post under 700 characters'} in English for this AI job. Include the COMPLETE job title exactly as provided, without truncating or rewriting it. Keep the direct application URL exactly. Prefer fewer hashtags if needed to preserve the full title and URL. Return only the post.\nTitle: ${j.title}\nCompany: ${j.company}\nLocation: ${j.location}\nWork mode: ${j.workMode}\nSkills: ${skills(j)}\nSalary: ${salary(j)}\nURL: ${j.url}`;
+  const prompt = `Write one concise ${network === 'x' ? 'X post under 280 characters' : 'LinkedIn post under 700 characters'} in English for this AI job. Include the COMPLETE job title and COMPLETE company name exactly as provided, without truncating or rewriting either one. Keep the direct application URL exactly. Prefer fewer hashtags if needed to preserve the full title and URL. Return only the post.\nTitle: ${j.title}\nCompany: ${j.company}\nLocation: ${j.location}\nWork mode: ${j.workMode}\nSkills: ${skills(j)}\nSalary: ${salary(j)}\nURL: ${j.url}`;
   try {
     const response = await fetch('https://api.deepseek.com/chat/completions', { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${config.deepseek.apiKey}` }, body: JSON.stringify({ model: config.deepseek.model, temperature: 0.7, messages: [{ role: 'user', content: prompt }] }), signal: AbortSignal.timeout(20_000) });
     if (!response.ok) return fallback;

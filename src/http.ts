@@ -59,3 +59,31 @@ export function getFinalUrl(url: string, headers: Record<string, string> = {}): 
     return response.url;
   }, { retries: 3, minTimeout: 500, factor: 2 }));
 }
+
+export async function getEmployerName(url: string): Promise<string | null> {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === 'jobs.smartrecruiters.com') {
+      const company = parsed.pathname.split('/').filter(Boolean)[0];
+      if (company) return decodeURIComponent(company);
+    }
+    const response = await fetch(url, {
+      headers: { accept: 'text/html', 'user-agent': 'Mozilla/5.0 (compatible; AIJolt/0.1)' },
+      signal: AbortSignal.timeout(20_000),
+    });
+    if (!response.ok) return null;
+    const html = await response.text();
+    const candidates = [
+      html.match(/<meta[^>]+property=["']og:site_name["'][^>]+content=["']([^"']+)/i)?.[1],
+      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:site_name["']/i)?.[1],
+      html.match(/"hiringOrganization"\s*:\s*\{[\s\S]{0,500}?"name"\s*:\s*"([^"]+)"/i)?.[1],
+      html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.split('|').at(-1)?.trim(),
+    ].filter((value): value is string => Boolean(value));
+    for (const value of candidates) {
+      const cleaned = value.replace(/&amp;/g, '&').replace(/\s+/g, ' ').replace(/\s+Career Site$/i, '').trim();
+      if (cleaned && !/^(careers?|jobs?|smartrecruiters)$/i.test(cleaned)) return cleaned;
+    }
+    const jobsSubdomain = parsed.hostname.match(/^jobs\.([^.]+)\./i)?.[1];
+    return jobsSubdomain ? jobsSubdomain.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : null;
+  } catch { return null; }
+}

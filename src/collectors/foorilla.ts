@@ -1,4 +1,4 @@
-import { getText, getFinalUrl } from '../http.js';
+import { getText, getFinalUrl, getEmployerName } from '../http.js';
 import type { RawJob } from '../types.js';
 const decode = (value: string) => value.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const text = (html: string) => decode(html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
@@ -29,6 +29,7 @@ export async function foorilla(pages: number, baseUrl: string): Promise<RawJob[]
         const finalUrl = await getFinalUrl(parsed.applyUrl, { Referer: `${baseUrl}${link.path}` });
         if (new URL(finalUrl).hostname === new URL(baseUrl).hostname) continue;
         parsed.url = finalUrl;
+        if (/^[A-Z]\.\.\.$/i.test(parsed.company)) parsed.company = (await getEmployerName(finalUrl)) ?? parsed.company;
       } catch { continue; }
       const { applyUrl: _applyUrl, ...job } = parsed; jobs.push(job);
     }
