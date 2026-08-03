@@ -11,6 +11,8 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
+    outputs:
+      data_changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,15 +33,22 @@ jobs:
           ASHBY_BOARDS: ${{ vars.ASHBY_BOARDS }}
       - run: npm run score && npm run cleanup && npm run export-json
       - name: Commit data feed
+        id: commit
         run: |
           git config user.name 'aijolt-bot'
           git config user.email 'actions@users.noreply.github.com'
           git add data/jobs.json
-          git diff --cached --quiet || git commit -m 'chore: update jobs feed'
-          git push
+          if git diff --cached --quiet; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            git commit -m 'chore: update jobs feed'
+            git push
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
 
   deploy:
     needs: collect
+    if: needs.collect.outputs.data_changed == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
