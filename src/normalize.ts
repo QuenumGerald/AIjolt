@@ -24,11 +24,19 @@ const usStateNames = new Set(['alabama','alaska','arizona','arkansas','californi
 const usStateCodes = new Set(['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']);
 export function inferCountry(location: string): string {
   const parts = location.split(',').map(part => part.trim()).filter(Boolean);
-  for (let i = parts.length - 1; i >= 0; i--) {
-    const normalized = parts[i].toLowerCase().replace(/\./g, '');
-    const country = countryAliases.get(normalized);
-    if (country) return country;
+  if (!parts.length) return 'Unknown';
+  const last = parts.at(-1)!;
+  const lastNormalized = last.toLowerCase().replace(/\./g, '');
+  const direct = countryAliases.get(lastNormalized);
+  if (direct) return direct;
+  // Postal codes may trail a country code (for example: Nordborg, DK, 6430).
+  if (/^\d[\d\s-]*$/.test(last) && parts.length > 1) {
+    const previous = parts.at(-2)!.toLowerCase().replace(/\./g, '');
+    const previousCountry = countryAliases.get(previous);
+    if (previousCountry) return previousCountry;
   }
+  // Do not treat a regional code before an explicit but unsupported country as a country.
+  if (/[A-Za-z]/.test(last)) return 'Unknown';
   if (parts.some(part => usStateNames.has(part.toLowerCase()) || usStateCodes.has(part.toUpperCase()))) return 'United States';
   return 'Unknown';
 }
