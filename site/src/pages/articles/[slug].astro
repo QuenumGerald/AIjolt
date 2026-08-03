@@ -1,0 +1,7 @@
+---
+import Layout from '../../layouts/Layout.astro'; import { articles } from '../../data';
+export function getStaticPaths(){return articles.map(article=>({params:{slug:article.slug},props:{article}}));}
+const {article}=Astro.props; const schema={"@context":"https://schema.org","@type":"Article",headline:article.title,description:article.seoDescription,datePublished:article.publishedAt,url:new URL(`/articles/${article.slug}`,Astro.site)};
+---
+<Layout title={article.seoTitle} description={article.seoDescription} canonical={`/articles/${article.slug}`} image={article.image} type="article"><main><header><p>{article.type.replaceAll('_',' ')}</p><h1>{article.title}</h1><div>{article.excerpt}</div><small>{article.publishedAt&&new Date(article.publishedAt).toLocaleDateString('en',{dateStyle:'long'})}</small></header><article set:html={article.html}/></main><script type="application/ld+json" set:html={JSON.stringify(schema)}/></Layout>
+<style>main{max-width:760px;margin:auto;padding:50px 24px 110px;color:#1d1d1b}header{padding:55px 0;border-bottom:1px solid #ddd}header p{color:#e6502f;font:700 12px monospace}h1{font:700 clamp(44px,7vw,72px)/1.03 Georgia;margin:20px 0}header div{font:20px/1.6 Georgia;color:#555;margin-bottom:20px}small{color:#777}:global(article p){font:19px/1.8 Georgia;margin:30px 0}</style>

@@ -1,5 +1,6 @@
 import { config } from './config.js'; import { greenhouse } from './collectors/greenhouse.js'; import { lever } from './collectors/lever.js'; import { ashby } from './collectors/ashby.js'; import { foorilla } from './collectors/foorilla.js';
 import { normalize } from './normalize.js'; import { analyzeAI } from './ai.js'; import { upsert, db, rowToJob } from './db.js'; import { score } from './scoring.js'; import { logger } from './logger.js'; import { publish } from './publisher.js';
+import { ContentService, choosePublicationKind } from './content-service.js';
 type Task = { board: { source: string; id: string; company: string }; load: () => Promise<import('./types.js').RawJob[]> };
 export async function collect() {
   const run = db.prepare(`INSERT INTO runs(kind,status,started_at) VALUES('collect','running',?)`).run(new Date().toISOString()); let accepted = 0, errors = 0;
@@ -22,6 +23,6 @@ export function cleanup() { const info = db.prepare(`UPDATE jobs SET status='exp
 export async function start() {
   let collecting = false, publishing = false;
   const collectCycle = async () => { if (collecting) return logger.warn('Skipping overlapping collection cycle'); collecting = true; try { await collect(); rescore(); cleanup(); } catch (error) { logger.error(`Collection cycle failed: ${error instanceof Error ? error.message : String(error)}`); } finally { collecting = false; } };
-  const publishCycle = async () => { if (publishing) return logger.warn('Skipping overlapping publication cycle'); publishing = true; try { await publish(); } catch (error) { logger.error(`Publication cycle failed: ${error instanceof Error ? error.message : String(error)}`); } finally { publishing = false; } };
+  const publishCycle = async () => { if (publishing) return logger.warn('Skipping overlapping publication cycle'); publishing = true; try { if (config.content.enabled && choosePublicationKind(config.content.ratio) === 'CONTENT') { const content=new ContentService(); const draft=await content.generate(); await content.publish(draft.id); } else await publish(); } catch (error) { logger.error(`Publication cycle failed: ${error instanceof Error ? error.message : String(error)}`); } finally { publishing = false; } };
   await collectCycle(); await publishCycle(); setInterval(() => void collectCycle(), config.collectInterval * 60_000); setInterval(() => void publishCycle(), config.publishInterval * 60_000); logger.info('AIJolt scheduler started');
 }

@@ -3,12 +3,18 @@ import { Command } from 'commander'; import { cleanup, collect, rescore, start }
 import { acknowledgeOutbox, failOutbox, listOutbox } from './outbox.js';
 import { doctor } from './doctor.js';
 import { exportJobsJson } from './export-json.js';
+import { ContentService } from './content-service.js';
+import { exportArticlesJson } from './export-articles.js';
 const cli = new Command().name('aijolt').description('AI job collector and Buffer outbox');
 cli.command('collect').action(collect); cli.command('score').action(rescore);
 cli.command('publish').option('--dry-run', 'print without queueing').action((o: {dryRun?: boolean}) => publish(Boolean(o.dryRun)));
 cli.command('cleanup').action(cleanup); cli.command('start').action(start);
 cli.command('doctor').description('validate runtime configuration and SQLite').action(doctor);
 cli.command('export-json').description('export active jobs to the public JSON feed').action(() => exportJobsJson());
+cli.command('campaign:list').description('list content campaigns').action(() => console.table(new ContentService().listCampaigns()));
+cli.command('campaign:generate').option('--type <type>').description('generate an article and social post').action(async (options:{type?:string}) => { const content=await new ContentService().generate(options.type as any); exportArticlesJson(); console.log(`${content.id}\t${content.title}`); });
+cli.command('campaign:publish').argument('[id]').option('--dry-run').description('publish a generated social post').action(async (id:string|undefined,options:{dryRun?:boolean}) => { const content=await new ContentService().publish(id?Number(id):undefined,Boolean(options.dryRun)); exportArticlesJson(); console.log(`${content.id}\t${content.status}\t${content.text}`); });
+cli.command('campaign:stats').description('show reusable live hiring statistics').action(() => console.log(JSON.stringify(new ContentService().statistics(),null,2)));
 const outbox = cli.command('outbox').description('manage posts handed to the Buffer fallback');
 outbox.command('list').action(listOutbox);
 outbox.command('ack <job-id> <network> [provider-id]').action((jobId: string, network: 'x'|'linkedin', providerId?: string) => acknowledgeOutbox(Number(jobId), network, providerId));
