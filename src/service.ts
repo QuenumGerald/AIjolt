@@ -8,11 +8,11 @@ export async function collect() {
     ...config.boards.lever.map(board => ({ board, load: () => lever(board.id, board.company) })),
     ...config.boards.ashby.map(board => ({ board, load: () => ashby(board.id, board.company) })),
   ];
-  if (config.discovery.foorilla) tasks.push({ board: { source: 'foorilla', id: 'foorilla', company: 'Foorilla' }, load: () => foorilla(config.discovery.pages, config.discovery.baseUrl) });
+  if (config.discovery.foorilla) tasks.push({ board: { source: 'foorilla', id: 'foorilla', company: 'Foorilla' }, load: () => foorilla(config.discovery.pages, config.discovery.baseUrl, config.discovery.topics) });
   const results = await Promise.allSettled(tasks.map(task => task.load()));
   results.forEach((result, index) => {
     const { board } = tasks[index]; if (result.status === 'rejected') { errors++; logger.error(`${board.source}/${board.id}: ${result.reason instanceof Error ? result.reason.message : String(result.reason)}`); return; }
-    let boardAccepted = 0; for (const raw of result.value) { const ai = analyzeAI(raw); if (!ai.relevant) continue; const job = normalize(raw); if (!config.allowedCountries.has(job.country)) continue; upsert(job); accepted++; boardAccepted++; }
+    let boardAccepted = 0; for (const raw of result.value) { if (board.source !== 'foorilla' && !analyzeAI(raw).relevant) continue; const job = normalize(raw); if (!config.allowedCountries.has(job.country)) continue; upsert(job); accepted++; boardAccepted++; }
     logger.info(`${board.source}/${board.id}: ${result.value.length} received, ${boardAccepted} AI jobs accepted`);
   });
   db.prepare(`UPDATE runs SET status=?,details=?,finished_at=? WHERE id=?`).run(errors ? 'partial' : 'success', JSON.stringify({ accepted, errors }), new Date().toISOString(), run.lastInsertRowid); logger.info(`Collection complete: ${accepted} AI jobs, ${errors} errors`);
