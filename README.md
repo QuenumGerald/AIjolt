@@ -36,12 +36,14 @@ Node.js 20+ est requis. La découverte Foorilla est activée par défaut et réc
 
 ### Découverte automatique Foorilla
 
-AIJolt sélectionne d'abord nativement les régions `Europe` et `North America` dans Foorilla, puis parcourt `FOORILLA_PAGES` pages (8 par défaut, soit environ 160 candidates réparties entre les deux régions), ouvre chaque fiche et laisse le filtre IA décider si l'annonce est pertinente. Le filtrage local conserve les pays européens et nord-américains reconnus ; les autres régions et les localisations inconnues sont exclues par défaut.
+AIJolt sélectionne d'abord nativement le topic Foorilla `Data, AI, and Machine Learning`, puis les régions `Europe` et `North America`, avant de parcourir `FOORILLA_PAGES` pages (8 par défaut, soit environ 160 candidates réparties entre les deux régions). Les offres Foorilla déjà ciblées par ces filtres natifs ne passent plus par une recherche de mots-clés IA ou un second filtrage local de pays ; elles sont normalisées et dédoublonnées. Les autres sources ATS conservent leur filtre de pertinence et leur allowlist locale.
 
 ```env
 FOORILLA_ENABLED=true
 FOORILLA_PAGES=8
 FOORILLA_BASE_URL=https://foorilla.com
+# Topic natif Foorilla "Data, AI, and Machine Learning".
+FOORILLA_TOPICS=101
 # Les régions Europe et North America sont sélectionnées nativement avant la recherche.
 # Laisser vide pour la liste de pays Europe/Amérique du Nord par défaut, ou fournir sa propre liste.
 ALLOWED_COUNTRIES=

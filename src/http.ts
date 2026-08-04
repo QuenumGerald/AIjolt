@@ -16,20 +16,24 @@ async function request(url: string, accept: string, extraHeaders: Record<string,
   return response;
 }
 
-export type HttpSession = { cookie?: string };
+export type HttpSession = { cookies: Record<string, string> };
 
 const updateSessionCookie = (session: HttpSession, response: Response) => {
   const setCookie = response.headers.get('set-cookie');
-  if (setCookie) session.cookie = setCookie.split(';', 1)[0];
+  if (setCookie) {
+    const [nameValue] = setCookie.split(';', 1);
+    const separator = nameValue.indexOf('=');
+    if (separator > 0) session.cookies[nameValue.slice(0, separator)] = nameValue.slice(separator + 1);
+  }
 };
 
 export function createHttpSession(): HttpSession {
-  return {};
+  return { cookies: {} };
 }
 
 export function sessionGetText(session: HttpSession, url: string, headers: Record<string, string> = {}): Promise<string> {
   return limit(() => pRetry(async () => {
-    const response = await request(url, 'text/html', { ...headers, ...(session.cookie ? { Cookie: session.cookie } : {}) });
+    const response = await request(url, 'text/html', { ...headers, Cookie: Object.entries(session.cookies).map(([name, value]) => `${name}=${value}`).join('; ') });
     updateSessionCookie(session, response);
     return response.text();
   }, { retries: 3, minTimeout: 500, factor: 2 }));
@@ -37,7 +41,7 @@ export function sessionGetText(session: HttpSession, url: string, headers: Recor
 
 export function sessionGetJson<T>(session: HttpSession, url: string, headers: Record<string, string> = {}): Promise<T> {
   return limit(() => pRetry(async () => {
-    const response = await request(url, 'application/json', { ...headers, ...(session.cookie ? { Cookie: session.cookie } : {}) });
+    const response = await request(url, 'application/json', { ...headers, Cookie: Object.entries(session.cookies).map(([name, value]) => `${name}=${value}`).join('; ') });
     updateSessionCookie(session, response);
     return response.json() as Promise<T>;
   }, { retries: 3, minTimeout: 500, factor: 2 }));
@@ -48,7 +52,8 @@ export function sessionPostForm(session: HttpSession, url: string, body: URLSear
     const response = await request(url, 'text/html', {
       ...headers,
       'content-type': 'application/x-www-form-urlencoded',
-      ...(session.cookie ? { Cookie: session.cookie, 'x-csrftoken': session.cookie.split('=', 2)[1] } : {}),
+      Cookie: Object.entries(session.cookies).map(([name, value]) => `${name}=${value}`).join('; '),
+      ...(session.cookies.csrftoken ? { 'x-csrftoken': session.cookies.csrftoken } : {}),
     }, { method: 'POST', body });
     updateSessionCookie(session, response);
     return response;

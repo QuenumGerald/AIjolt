@@ -7,6 +7,7 @@ type RegionResponse = { results: Array<{ pk: number; name: string }> };
 const regionNames = ['Europe', 'North America'];
 export const parseCsrfToken = (html: string) => html.match(/name="csrfmiddlewaretoken"\s+value="([^"]+)"/i)?.[1] ?? '';
 export const parseRegionIds = (data: RegionResponse, names = regionNames) => names.map(name => data.results.find(region => region.name.toLowerCase() === name.toLowerCase())?.pk).filter((pk): pk is number => pk !== undefined);
+export const topicFormBody = (topics: string[]) => new URLSearchParams(topics.map(topic => ['topic', topic]));
 export function parseListingLinks(html: string) { const result: Array<{ path: string; title: string }> = []; const pattern = /<a class="stretched-link"[\s\S]*?hx-get="(\/hiring\/jobs\/[^"?]+)"[\s\S]*?>([\s\S]*?)<\/a>/g; for (const match of html.matchAll(pattern)) result.push({ path: match[1], title: text(match[2]) }); return result; }
 export function parseDetail(detail: string, path: string, fallbackTitle: string, baseUrl: string): RawJob & { applyUrl?: string } {
   const title = first(detail, /<h1[^>]*>([\s\S]*?)<\/h1>/i) || fallbackTitle;
@@ -34,10 +35,17 @@ async function applyRegions(session: HttpSession, baseUrl: string) {
   const response = await sessionPostForm(session, `${baseUrl}/regions/hiring/`, body, { 'HX-Request': 'true', 'X-Screen': 'D', Referer: `${baseUrl}/hiring/`, Origin: baseUrl });
   await response.body?.cancel();
 }
-export async function foorilla(pages: number, baseUrl: string): Promise<RawJob[]> {
+async function applyTopics(session: HttpSession, baseUrl: string, topics: string[]) {
+  for (const topic of topics) {
+    const response = await sessionPostForm(session, `${baseUrl}/topics/hiring/`, topicFormBody([topic]), { 'HX-Request': 'true', 'X-Screen': 'D', Referer: `${baseUrl}/hiring/`, Origin: baseUrl });
+    await response.body?.cancel();
+  }
+}
+export async function foorilla(pages: number, baseUrl: string, topics = ['101']): Promise<RawJob[]> {
   const jobs: RawJob[] = []; const seen = new Set<string>();
   const session = createHttpSession();
   await applyRegions(session, baseUrl);
+  await applyTopics(session, baseUrl, topics);
   for (let page = 1; page <= pages; page++) {
     const query = page === 1 ? '' : `?page=${page}`;
     const html = await sessionGetText(session, `${baseUrl}/hiring/jobs/${query}`, { 'HX-Request': 'true', 'X-Screen': 'D' }); const links = parseListingLinks(html); if (!links.length) break;
