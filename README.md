@@ -36,13 +36,14 @@ Node.js 20+ est requis. La découverte Foorilla est activée par défaut et réc
 
 ### Découverte automatique Foorilla
 
-AIJolt interroge les pages de recrutement Foorilla sans imposer de mot-clé, parcourt `FOORILLA_PAGES` pages, ouvre chaque fiche et laisse le filtre IA décider si l'annonce est pertinente. Les annonces sont ensuite limitées à l'Europe, aux États-Unis, au Canada, à l'Australie, à la Nouvelle-Zélande et à quelques marchés technologiques comparables ; la Chine et les localisations inconnues sont exclues par défaut.
+AIJolt sélectionne d'abord nativement les régions `Europe` et `North America` dans Foorilla, puis parcourt `FOORILLA_PAGES` pages (8 par défaut, soit environ 160 candidates réparties entre les deux régions), ouvre chaque fiche et laisse le filtre IA décider si l'annonce est pertinente. Le filtrage local conserve les pays européens et nord-américains reconnus ; les autres régions et les localisations inconnues sont exclues par défaut.
 
 ```env
 FOORILLA_ENABLED=true
-FOORILLA_PAGES=3
+FOORILLA_PAGES=8
 FOORILLA_BASE_URL=https://foorilla.com
-# Laisser vide pour la liste par défaut, ou fournir sa propre liste séparée par des virgules.
+# Les régions Europe et North America sont sélectionnées nativement avant la recherche.
+# Laisser vide pour la liste de pays Europe/Amérique du Nord par défaut, ou fournir sa propre liste.
 ALLOWED_COUNTRIES=
 ```
 

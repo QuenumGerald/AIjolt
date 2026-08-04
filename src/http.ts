@@ -5,15 +5,54 @@ import { config } from './config.js';
 const limit = pLimit(config.concurrency);
 let nextAllowedAt = 0;
 
-async function request(url: string, accept: string, extraHeaders: Record<string, string> = {}): Promise<Response> {
+async function request(url: string, accept: string, extraHeaders: Record<string, string> = {}, init: RequestInit = {}): Promise<Response> {
   const now = Date.now();
   const slot = Math.max(now, nextAllowedAt);
   nextAllowedAt = slot + 1000 / Math.max(1, config.rps);
   const wait = slot - now;
   if (wait) await new Promise(resolve => setTimeout(resolve, wait));
-  const response = await fetch(url, { headers: { accept, 'user-agent': 'AIJolt/0.1 (+job-aggregation)', ...extraHeaders }, signal: AbortSignal.timeout(20_000) });
+  const response = await fetch(url, { ...init, headers: { accept, 'user-agent': 'AIJolt/0.1 (+job-aggregation)', ...extraHeaders }, signal: AbortSignal.timeout(20_000) });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${url}`);
   return response;
+}
+
+export type HttpSession = { cookie?: string };
+
+const updateSessionCookie = (session: HttpSession, response: Response) => {
+  const setCookie = response.headers.get('set-cookie');
+  if (setCookie) session.cookie = setCookie.split(';', 1)[0];
+};
+
+export function createHttpSession(): HttpSession {
+  return {};
+}
+
+export function sessionGetText(session: HttpSession, url: string, headers: Record<string, string> = {}): Promise<string> {
+  return limit(() => pRetry(async () => {
+    const response = await request(url, 'text/html', { ...headers, ...(session.cookie ? { Cookie: session.cookie } : {}) });
+    updateSessionCookie(session, response);
+    return response.text();
+  }, { retries: 3, minTimeout: 500, factor: 2 }));
+}
+
+export function sessionGetJson<T>(session: HttpSession, url: string, headers: Record<string, string> = {}): Promise<T> {
+  return limit(() => pRetry(async () => {
+    const response = await request(url, 'application/json', { ...headers, ...(session.cookie ? { Cookie: session.cookie } : {}) });
+    updateSessionCookie(session, response);
+    return response.json() as Promise<T>;
+  }, { retries: 3, minTimeout: 500, factor: 2 }));
+}
+
+export function sessionPostForm(session: HttpSession, url: string, body: URLSearchParams, headers: Record<string, string> = {}): Promise<Response> {
+  return limit(() => pRetry(async () => {
+    const response = await request(url, 'text/html', {
+      ...headers,
+      'content-type': 'application/x-www-form-urlencoded',
+      ...(session.cookie ? { Cookie: session.cookie, 'x-csrftoken': session.cookie.split('=', 2)[1] } : {}),
+    }, { method: 'POST', body });
+    updateSessionCookie(session, response);
+    return response;
+  }, { retries: 3, minTimeout: 500, factor: 2 }));
 }
 
 export function getJson<T>(url: string): Promise<T> {
