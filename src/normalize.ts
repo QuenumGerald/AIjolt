@@ -1,10 +1,12 @@
 import { analyzeAI } from './ai.js'; import type { Job, RawJob, WorkMode } from './types.js';
 const strip = (s = '') => s.replace(/<[^>]*>/g, ' ').replace(/&nbsp;|&#39;|&amp;/g, ' ').replace(/\s+/g, ' ').trim();
 const countryAliases = new Map<string, string>([
-  ['united states','United States'], ['usa','United States'], ['us','United States'],
+  ['united states','United States'], ['united states of america','United States'], ['usa','United States'], ['us','United States'],
   ['united kingdom','United Kingdom'], ['uk','United Kingdom'], ['gb','United Kingdom'],
+  ['albania','Albania'], ['al','Albania'], ['andorra','Andorra'], ['ad','Andorra'],
   ['austria','Austria'], ['at','Austria'], ['belgium','Belgium'], ['be','Belgium'],
-  ['croatia','Croatia'], ['hr','Croatia'], ['cyprus','Cyprus'], ['cy','Cyprus'],
+  ['belarus','Belarus'], ['by','Belarus'], ['bosnia and herzegovina','Bosnia and Herzegovina'], ['ba','Bosnia and Herzegovina'],
+  ['bulgaria','Bulgaria'], ['bg','Bulgaria'], ['croatia','Croatia'], ['hr','Croatia'], ['cyprus','Cyprus'], ['cy','Cyprus'],
   ['czech republic','Czech Republic'], ['czechia','Czech Republic'], ['cz','Czech Republic'],
   ['denmark','Denmark'], ['dk','Denmark'], ['estonia','Estonia'], ['ee','Estonia'],
   ['finland','Finland'], ['fi','Finland'], ['france','France'], ['fr','France'],
@@ -14,11 +16,14 @@ const countryAliases = new Map<string, string>([
   ['latvia','Latvia'], ['lv','Latvia'], ['liechtenstein','Liechtenstein'], ['li','Liechtenstein'],
   ['lithuania','Lithuania'], ['lt','Lithuania'], ['luxembourg','Luxembourg'], ['lu','Luxembourg'],
   ['malta','Malta'], ['mt','Malta'], ['netherlands','Netherlands'], ['nl','Netherlands'],
-  ['norway','Norway'], ['no','Norway'], ['poland','Poland'], ['pl','Poland'],
+  ['moldova','Moldova'], ['md','Moldova'], ['monaco','Monaco'], ['mc','Monaco'], ['montenegro','Montenegro'], ['me','Montenegro'],
+  ['north macedonia','North Macedonia'], ['mk','North Macedonia'], ['norway','Norway'], ['no','Norway'], ['poland','Poland'], ['pl','Poland'],
   ['portugal','Portugal'], ['pt','Portugal'], ['romania','Romania'], ['ro','Romania'],
+  ['russia','Russia'], ['ru','Russia'], ['san marino','San Marino'], ['sm','San Marino'], ['serbia','Serbia'], ['rs','Serbia'],
   ['slovakia','Slovakia'], ['sk','Slovakia'], ['slovenia','Slovenia'], ['si','Slovenia'],
   ['spain','Spain'], ['es','Spain'], ['sweden','Sweden'], ['se','Sweden'],
-  ['switzerland','Switzerland'], ['ch','Switzerland'],
+  ['switzerland','Switzerland'], ['ch','Switzerland'], ['turkey','Turkey'], ['tr','Turkey'], ['ukraine','Ukraine'], ['ua','Ukraine'],
+  ['canada','Canada'], ['ca','Canada'], ['mexico','Mexico'], ['mx','Mexico'],
 ]);
 const usStateNames = new Set(['alabama','alaska','arizona','arkansas','california','colorado','connecticut','delaware','florida','georgia','hawaii','idaho','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','new hampshire','new jersey','new mexico','new york','north carolina','north dakota','ohio','oklahoma','oregon','pennsylvania','rhode island','south carolina','south dakota','tennessee','texas','utah','vermont','virginia','washington','west virginia','wisconsin','wyoming']);
 const usStateCodes = new Set(['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']);

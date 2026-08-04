@@ -7,7 +7,7 @@ const integer = (name: string, fallback: number) => {
   return value;
 };
 const list = (name: string): string[] => (process.env[name] ?? '').split(',').map((x: string) => x.trim()).filter(Boolean);
-const defaultCountries = ['Austria','Australia','Belgium','Canada','Croatia','Cyprus','Czech Republic','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','India','Ireland','Israel','Italy','Japan','Latvia','Liechtenstein','Lithuania','Luxembourg','Malta','Netherlands','New Zealand','Norway','Poland','Portugal','Romania','Singapore','Slovakia','Slovenia','South Korea','Spain','Sweden','Switzerland','United Kingdom','United States'];
+const defaultCountries = ['Albania','Andorra','Austria','Belarus','Belgium','Bosnia and Herzegovina','Bulgaria','Canada','Croatia','Cyprus','Czech Republic','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','Ireland','Italy','Kosovo','Latvia','Liechtenstein','Lithuania','Luxembourg','Malta','Moldova','Monaco','Montenegro','Mexico','Netherlands','North Macedonia','Norway','Poland','Portugal','Romania','Russia','San Marino','Serbia','Slovakia','Slovenia','Spain','Sweden','Switzerland','Turkey','Ukraine','United Kingdom','United States'];
 const boards = (name: string, source: Source): BoardConfig[] => list(name).map(entry => {
   const [id, company = id] = entry.split('|').map(value => value.trim());
   if (!id) throw new Error(`${name} contains an empty board identifier`);
@@ -27,7 +27,7 @@ export const config = {
     lever: boards('LEVER_SITES', 'lever'),
     ashby: boards('ASHBY_BOARDS', 'ashby'),
   },
-  discovery: { foorilla: (process.env.FOORILLA_ENABLED ?? 'true').toLowerCase() !== 'false', pages: integer('FOORILLA_PAGES', 3), baseUrl: process.env.FOORILLA_BASE_URL ?? 'https://foorilla.com' },
+  discovery: { foorilla: (process.env.FOORILLA_ENABLED ?? 'true').toLowerCase() !== 'false', pages: integer('FOORILLA_PAGES', 8), baseUrl: process.env.FOORILLA_BASE_URL ?? 'https://foorilla.com' },
   allowedCountries: new Set(list('ALLOWED_COUNTRIES').length ? list('ALLOWED_COUNTRIES') : defaultCountries),
   buffer: { token: process.env.BUFFER_ACCESS_TOKEN, x: process.env.BUFFER_X_CHANNEL_ID, linkedin: process.env.BUFFER_LINKEDIN_CHANNEL_ID },
   deepseek: { apiKey: process.env.DEEPSEEK_API_KEY, model: process.env.DEEPSEEK_MODEL ?? 'deepseek-chat' },
