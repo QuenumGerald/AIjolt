@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T22:22:39.071Z",
+  "generatedAt": "2026-08-04T03:43:46.858Z",
   "jobs": [
     {
       "externalId": "ai-rotation-associate-na-united-states-3334617",
@@ -21,7 +21,30 @@
       ],
       "aiRelevance": 0.84,
       "visaSponsored": false,
-      "score": 51.82
+      "score": 51.59
+    },
+    {
+      "externalId": "junior-software-engineer-new-york-ny-united-states-3336738",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Socotec/744000141326319-junior-software-engineer-",
+      "title": "Junior Software Engineer",
+      "company": "Socotec",
+      "location": "New York, NY, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Design and build features end-to-end * Implement AI powered features prompt engineering agent workflows RAG pipelines and LLM integrations * Improve developer practices with CI CD testing documentation and operational excellence * Own components and small services from spec through deployment * Participate in code reviews * Translate requirements into shipped software * Write clean, tested, maintainable code Perks/Benefits: + Four days per week in office + Hybrid work Skills/Tech stack required: [Agent workflows][Airbyte][Anthropic API][AWS][Azure][CI/CD][Code review][Databricks][Django][Docker][Documentation][FastAPI][GitHub Actions][Langchain][Langgraph][Language Models][Large Language Models][N8n][OpenAI API][Pinecone][Prompt engineering][Python][RAG][React][Relational databases][REST APIs][Snowflake][Temporal][Testing][Vector Databases][Weaviate][Zapier] Educational requirements: N/A Role(s): [Engineer][Software Engineer]",
+      "postedAt": "2026-08-03T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "AWS",
+        "LangChain"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 41.77
     }
   ]
 }
