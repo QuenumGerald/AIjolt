@@ -1,111 +1,120 @@
 {
-  "generatedAt": "2026-08-05T14:38:30.343Z",
+  "generatedAt": "2026-08-05T16:57:17.946Z",
   "jobs": [
     {
-      "externalId": "senior-ai-engineer-w-ml-lisboa-lisboa-3351488",
+      "externalId": "applied-ai-engineer-london-uk-madrid-spain-3359496",
       "source": "foorilla",
-      "url": "https://askblue.catsone.com/careers/30769/jobs/16788891-Senior-AI-Engineer-w-ML",
-      "title": "Senior AI Engineer w/ ML",
-      "company": "Senior AI Engineer w/ ML",
-      "location": "Lisboa, Lisboa",
-      "country": "Unknown",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/87721613625041606-applied-ai-engineer",
+      "title": "Applied AI Engineer",
+      "company": "Applied AI Engineer — Google Careers",
+      "location": "London, UK; Madrid, Spain",
+      "country": "Spain",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build content applications * Communicate technical concepts to stakeholders * Create REST APIs * Develop and maintain machine learning applications * Develop LLM solutions * Develop microservices * Evaluate model performance * Identify datasets for machine learning * Iteratively retrain models * Lead data annotation process * Perform statistical analysis * Prototype machine learning solutions * Stay current with AI technologies Perks/Benefits: + Health insurance + Paid time off + Udemy access Skills/Tech stack required: [Amazon Web Services][Artificial Intelligence][Asynchronous APIs][Azure][Cloud platform][Data Annotation][Deep learning][Docker][Elasticsearch][Google Cloud][Google Cloud Platform][Language Processing][Linux][LLM][Machine Learning][Microsservices][Natural Language][Natural Language Processing][Play Framework][Postgres][PostgreSQL][Python][REST API][RESTful Services][Scala][Scala Play][Scala Play Framework][Statistical Analysis][Web Services] Educational requirements: N/A Role(s): [AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Senior AI Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Architect agentic workloads * Build AI evaluation pipelines * Configure regional failover * Deliver customer conversational journeys * Develop observability frameworks * Drive product feedback loops * Ensure agentic system accuracy safety latency * Implement error handling * Implement rate limiting * Optimize reasoning loops * Optimize tool selection * Reduce latency * Set up monitoring and alerting dashboards * Troubleshoot live high traffic systems Perks/Benefits: N/A Skills/Tech stack required: [Agent systems][Agent/tool use][Agent workflows][Alerting][Chain-of-Thought][Cloud Architecture][Debugging][Error Handling][Failover][GCP][GenAI][Language Models][Language Processing][Large Language Models][Machine Learning][Monitoring][Multi-Agent][Multi-Agent Systems][Multi-agent workflows][Natural Language][Natural Language Processing][Natural Language Processing Models][Python][RAG][Rate Limiting][React][Retrieval-Augmented Generation][Tool use] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI Engineer][Applied AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG",
+        "NLP"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.98
+    },
+    {
+      "externalId": "software-engineer-iii-genai-llm-infrastructure-cloud-ai-warsaw-poland-3359950",
+      "source": "foorilla",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/128578194402878150-software-engineer-iii-genai-llm-infrastructure-cloud-ai",
+      "title": "Software Engineer III, GenAI, LLM Infrastructure, Cloud AI",
+      "company": "Software Engineer III, GenAI, LLM Infrastructure, Cloud AI — Google Careers",
+      "location": "Warsaw, Poland",
+      "country": "Poland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Create automation for deployment and testing pipeline * Design implement deploy reliable performant robust AI serving stack * Engineer deploy AI ML platform capabilities * Extend gcloud cli and UI for GDC * Extend model management and deployment API Perks/Benefits: + Bonus + Equity compensation + Health insurance + Learning opportunities + Paid time off + Retirement plan Skills/Tech stack required: [API Design][C++][Cloud Computing][Data Processing][Debugging][GCloud CLI][Google Cloud][Java][Language Processing][Machine Learning][Machine Learning Infrastructure][Model Deployment][Model Evaluation][Natural Language][Natural Language Processing][Optimization][Python][Reinforcement Learning][Speech Recognition][Vertex AI] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
         "LLM",
-        "NLP"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.93
-    },
-    {
-      "externalId": "machine-learning-engineer-huntington-beach-ca-3354758",
-      "source": "foorilla",
-      "url": "https://jobs.lever.co/layup/024d2772-e251-4cdf-9b12-0cd919390b8e",
-      "title": "Machine Learning Engineer",
-      "company": "Layup Parts",
-      "location": "Huntington Beach, CA",
-      "country": "Canada",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data pipelines for training datasets * Estimate manufacturing cost * Evaluate modeling approaches for geometric data * Extract structured data from engineering documents * Generate new designs from historical data * Identify opportunities to apply custom models * Improve model performance end to end * Predict design complexity * Source clean and label internal datasets * Train custom machine learning models * Train evaluate and deploy model into internal tools Perks/Benefits: N/A Skills/Tech stack required: [Computer Vision][Data cleaning][Data extraction][Data labeling][Data pipeline][Dataset Management][Deep learning][Geometric modeling][Language Processing][Machine Learning][Model Deployment][Model Evaluation][Model Training][Natural Language][Natural Language Processing][Object Detection][Python][Spatial data][Structured data][Structured data extraction] Educational requirements: N/A Role(s): [Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python",
         "NLP",
-        "MLOps",
-        "Computer Vision"
+        "MLOps"
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.29
+      "score": 54.76
     },
     {
-      "externalId": "natural-language-processing-nlp-specialist-annapolis-junction-md-annapolis-junction-md-aurora-co-chantilly-va-honolulu-hi-reston-va-3349217",
+      "externalId": "ai-engineer-malaga-edificio-hidalgo-spain-3359500",
       "source": "foorilla",
-      "url": "https://cymertek.catsone.com/careers/42454/jobs/16613880-Natural-Language-Processing-NLP-Specialist",
-      "title": "Natural Language Processing (NLP) Specialist",
-      "company": "Natural Language Processing (NLP) Specialist",
-      "location": "Annapolis Junction, MD; Annapolis Junction, MD; Aurora, CO; Chantilly, VA; Honolulu, HI; Reston, VA",
-      "country": "Unknown",
+      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Malaga-Edificio-Hidalgo/AI-Engineer--Junior-Middle-_R00347456",
+      "title": "AI Engineer",
+      "company": "6000 Accenture S.L. Company",
+      "location": "Malaga, Edificio Hidalgo, Spain",
+      "country": "Spain",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze and preprocess text data * Collaborate with cross-functional teams * Design and implement NLP algorithms * Develop language models * Extract insights from unstructured data * Test and optimize NLP solutions Perks/Benefits: + Birthday day off + Comprehensive health coverage + Flexible work schedule + HSA/FSA + Life insurance + Long-term disability + Paid leave + Paid training + Referral bonus program + Short-term disability Skills/Tech stack required: [Data Visualization][Deep learning][Information Retrieval][Language Processing][Machine Learning][Natural Language][Natural Language Processing][Python][R][Semantic Search][Sentiment Analysis][Speech Processing][Speech Recognition][Statistical Analysis][Text preprocessing][Transformer Models] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Engineer][Natural Language Processing Specialist][NLP Engineer][Processing Specialist][Specialist]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Apply prompt engineering for development tasks * Build and integrate application APIs and interfaces to agentic backends * Connect full stack data flows to agent architecture * Define and track AI workflow KPIs * Deliver end to end in Agile sprints * Generate tests and debug using AI tools * Integrate LLM APIs into production applications * Manage token limits latency and cost for LLM calls * Perform AI assisted code review * Use AI coding assistants for delivery * Validate reliability of AI generated outputs Perks/Benefits: N/A Skills/Tech stack required: [Agile][AWS][Azure][CI/CD][CSS][Docker][Docker Compose][GCP][HTML][Java][JavaScript][Langchain][Langgraph][LLM APIs][NoSQL][Prompt engineering][Python][RAG][SQL][SQLAlchemy][TypeScript] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Software Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
-        "NLP"
+        "LLM",
+        "RAG",
+        "AWS",
+        "LangChain"
       ],
-      "aiRelevance": 0.97,
+      "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.49
+      "score": 54.72
     },
     {
-      "externalId": "ai-machine-learning-skill-2-ffpp-8904-hanover-md-3353310",
+      "externalId": "data-scientist-london-england-united-kingdom-3361228",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16828062-AI-Machine-Learning-Skill-2-FFPP-8904",
-      "title": "AI Machine Learning Skill 2-FFPP-8904",
-      "company": "AI Machine Learning Skill 2-FFPP-8904",
-      "location": "Hanover, MD",
-      "country": "Moldova",
+      "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/18288",
+      "title": "Data Scientist",
+      "company": "EXL Talent Acquisition Team",
+      "location": "London, England, United Kingdom",
+      "country": "United Kingdom",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Deploy monitor and improve models * Design AI/ML algorithms * Evaluate model performance * Oversee system integration for AI ML solutions * Perform statistical analysis * Run machine learning algorithms * Select data sets and features * Train and retrain machine learning models * Transform prototypes into scalable solutions * Verify data and model output quality Perks/Benefits: + 401k matching + Employee referral programs + Flexible spending accounts + Medical/Dental/Vision insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Wellness programs Skills/Tech stack required: [C#][Data Modeling][Data pipeline][Data Quality][Deep learning][Java][Machine Learning][Model Deployment][Model Monitoring][Python][PyTorch][R][Statistical Analysis][TensorFlow] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [AI][AI/ML Engineer][Engineer][ML Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Build RAG pipelines * Deploy AI applications via APIs * Design generative AI solutions * Develop prompt workflows * Evaluate model performance * Fine-tune foundation models * Implement embedding and vector search * Mitigate bias and optimize accuracy latency cost Perks/Benefits: + Cash back cards + Critical illness cover + Cycle scheme + Discounts and promotions + Income protection insurance + Life assurance + Pension + Private healthcare + Professional development opportunities Skills/Tech stack required: [Amazon Bedrock][AWS][Azure][ChromaDB][Embeddings][Faiss][FastAPI][Flask][GCP][Generative AI][Hugging Face][Langchain][Language Models][Language Processing][Large Language Models][Machine Learning][MLOps][Natural Language][Natural Language Processing][Pinecone][Prompt engineering][Python][PyTorch][Retrieval-Augmented Generation][Streamlit][TensorFlow][Transformers][Vector Search][Vertex AI] Educational requirements: N/A Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
         "PyTorch",
         "TensorFlow",
-        "MLOps"
+        "RAG",
+        "NLP",
+        "MLOps",
+        "AWS",
+        "LangChain"
       ],
-      "aiRelevance": 0.91,
+      "aiRelevance": 0.84,
       "visaSponsored": false,
-      "score": 52.57
+      "score": 51.84
     },
     {
-      "externalId": "senior-software-developer-machine-learning-platform-montreal-province-of-quebec-canada-3356388",
+      "externalId": "ai-rpa-developer-lisbon-lisbon-portugal-3360779",
       "source": "foorilla",
-      "url": "https://www.coveo.com/en/company/careers/open-positions?gh_jid=8565029002",
-      "title": "Senior Software Developer – Machine Learning Platform",
-      "company": "C...",
-      "location": "Montreal (Province of Quebec, Canada)",
-      "country": "Unknown",
+      "url": "https://jobs.smartrecruiters.com/Inetum2/744000141673465-ai-rpa-developer",
+      "title": "AI / RPA Developer",
+      "company": "Inetum2",
+      "location": "Lisbon, Lisbon, Portugal",
+      "country": "Portugal",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build backend services for machine learning platform * Collaborate with data scientists and engineers * Deploy services to Production * Develop and test backend code * Improve development processes using AI coding tools * Improve observability and reliability * Integrate agentic applications into production * Maintain high scale services for LLM requests Perks/Benefits: N/A Skills/Tech stack required: [Application design][AWS][Debugging][Distributed Systems][Java][LLM Inference][Observability][OpenSearch][Python][Realtime systems][Scalable application design][Spring Boot][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Backend][Backend Developer][Developer][Machine Learning Platform Backend Developer][Senior Software Developer][Software Developer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Analyze business requirements * Deploy RPA solutions * Design RPA solutions * Develop generative AI solutions * Develop RPA solutions * Ensure software quality * Gather requirements with stakeholders * Integrate AI capabilities into RPA workflows * Integrate third-party applications * Monitor automation solutions * Optimize automation reliability scalability performance * Participate in solution design and technical reviews * Produce functional documentation * Test RPA solutions * Translate requirements into technical solutions Perks/Benefits: N/A Skills/Tech stack required: [Agile][Angular][Automation Anywhere][Blue Prism][C#][CI/CD][Generative AI][Git][Java][Kubernetes][Language Processing][Machine Learning][Natural Language][Natural Language Processing][.NET][NoSQL][Process Automation][Python][Retrieval-Augmented Generation][Robotic Process][Robotic Process Automation][UiPath] Educational requirements: N/A Role(s): [AI][AI RPA Developer][Automation Developer][Developer][Process Automation Developer][Robotic Process Automation Developer][RPA Developer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
-        "AWS"
+        "RAG",
+        "NLP",
+        "Kubernetes",
+        "Robotics"
       ],
-      "aiRelevance": 0.88,
+      "aiRelevance": 0.75,
       "visaSponsored": false,
-      "score": 50.8
+      "score": 50.44
     },
     {
       "externalId": "senior-machine-learning-research-engineer-research-engineering-msr-cambridge-united-kingdom-cambridgeshire-cambridge-3358585",
@@ -125,29 +134,52 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 49.43
+      "score": 49.33
     },
     {
-      "externalId": "devops-engineer-senior-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-3351646",
+      "externalId": "junior-ai-native-engineer-london-30-fenchurch-street-united-kingdom-3360649",
       "source": "foorilla",
-      "url": "https://askblue.catsone.com/careers/30769/jobs/16832259-DevOps-Engineer-Senior",
-      "title": "DevOps Engineer Senior",
-      "company": "DevOps Engineer Senior",
-      "location": "Lisboa, Lisboa; Lisboa, Lisboa; Lisboa, Lisboa",
-      "country": "Unknown",
+      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/London/Junior-AI-Native-Engineer_R00339263",
+      "title": "Junior AI Native Engineer",
+      "company": "3003 Accenture (UK) Limited Company",
+      "location": "London, 30 Fenchurch Street, United Kingdom",
+      "country": "United Kingdom",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Create technical documentation and training * Define adoption and productivity metrics * Define LLM agent architectures * Develop and evolve AI agents for SDLC * Develop model evaluation and assessment * Integrate AI solutions with DevOps tools * Integrate APIs with cloud platforms * Optimize token usage and control GenAI costs * Promote GenAI best practices * Support AI platform and framework technology upgrades Perks/Benefits: + Health insurance + Paid time off + Unlimited Udemy access Skills/Tech stack required: [Agent systems][AI Governance][API Integration][Autogen][CI/CD][Cloud Computing][Cloud platform][Compliance][Cost Optimization][CrewAI][DevSecOps][Fine Tuning][Google Cloud][Google Cloud Platform][Information security][JavaScript][Langchain][Langgraph][Language Models][Large Language Models][Model Evaluation][Multi-Agent][Multi-Agent Systems][Prompt engineering][Python][Retrieval-Augmented Generation][Semantic Kernel][Token optimization][TypeScript] Educational requirements: N/A Role(s): [DevOps][DevOps Engineer][DevOps Engineer Senior][Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Apply prompt engineering for development tasks * Build abstraction layers for AI providers * Connect full stack systems to agentic backends * Contribute reusable components and internal AI standards * Create AI generated tests * Define KPIs for AI workflow effectiveness * Deliver end to end in Agile sprints * Design and build production software * Improve code quality with AI assisted code review * Integrate LLM APIs into applications * Manage token limits latency and cost * Perform AI assisted debugging * Present AI productivity and quality metrics * Validate reliability and failure modes Perks/Benefits: N/A Skills/Tech stack required: [AWS][Azure][CI/CD][CSS][Docker][GCP][HTML][Java][JavaScript][Langchain][Langgraph][NoSQL][Python][RAG][SQL][TypeScript] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Software Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
         "LLM",
         "RAG",
+        "AWS",
         "LangChain"
+      ],
+      "aiRelevance": 0.63,
+      "visaSponsored": false,
+      "score": 47.13
+    },
+    {
+      "externalId": "aiml-computational-scientist-dublin-1-grand-canal-square-ireland-3359695",
+      "source": "foorilla",
+      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Dublin/AI-ML-Computational-Scientist_R00346855",
+      "title": "AI/ML Computational Scientist",
+      "company": "3100 Accenture Limited Company",
+      "location": "Dublin, 1 Grand Canal Square, Ireland",
+      "country": "Ireland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines for model training and production * Build distributed computing systems * Customize deep learning and generative AI models * Deploy AI ML software to cloud * Develop machine learning algorithms and models * Formulate AI and machine learning solutions * Implement data storage and retrieval for models * Monitor deployed models * Preprocess large-scale datasets Perks/Benefits: N/A Skills/Tech stack required: [Big Data][C++][Cloud Computing][Computer Architecture][Deep learning][Distributed Computing][Generative AI][High Performance][High-Performance Computing][Java][Language Models][Large Language Models][Machine Learning][MLOps][Performance Computing][Python][PyTorch][R][SQL][System Engineering][TensorFlow] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [AI][AI ML Computational Scientist][Computational Scientist][Engineer][Learning Engineer][Machine Learning Engineer][Scientist]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "MLOps"
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 46.4
+      "score": 46.66
     },
     {
       "externalId": "machine-learning-trainer-mclean-va-3351719",
@@ -166,30 +198,27 @@
       ],
       "aiRelevance": 0.7000000000000001,
       "visaSponsored": false,
-      "score": 45.44
+      "score": 45.34
     },
     {
-      "externalId": "cloud-software-engineer-iii-laurel-md-annapolis-junction-md-linthicum-maryland-fort-meade-md-annapolis-junction-md-ann-3349708",
+      "externalId": "team-leader-artificial-intelligence-sciences-complexe-desjardins-montreal-canada-3361038",
       "source": "foorilla",
-      "url": "https://reflexiveconcepts.catsone.com/careers/74775/jobs/16839698-Cloud-Software-Engineer-III",
-      "title": "Cloud Software Engineer III",
-      "company": "Cloud Software Engineer III",
-      "location": "Laurel, MD; Annapolis Junction, MD; Linthicum, Maryland; Fort Meade, MD; Annapolis Junction, MD; Annapolis Junction, MD",
-      "country": "Moldova",
+      "url": "https://desjardins.wd10.myworkdayjobs.com/en-US/Desjardins/job/Montral/Chef-ou-cheffe-d-quipe--Sciences-d-intelligence-artificielle_R2609835-1",
+      "title": "Team Leader, Artificial Intelligence Sciences",
+      "company": "Federation Caisses Desjardins",
+      "location": "Complexe Desjardins Montréal, Canada",
+      "country": "Canada",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze behavioral geo temporal social and content data * Build operational prototypes using machine learning * Design and develop multi tenant cloud applications * Develop data processing pipelines for batch and stream processing * Fine tune and deploy machine learning models with MLOps * Integrate distributed file and object storage systems * Operationalize small machine learning models * Research machine learning and statistics for mission problems Perks/Benefits: + Telework up to 2 days per week Skills/Tech stack required: [Amazon S3][Amazon Web Services][Angular][Apache Beam][Apache Flink][Apache Spark][AWS][Azure Data][Azure Data Lake][Azure Data Lake Storage][Bash][Cloud Storage][Data Lake Storage][Docker][Fine Tuning][Google Cloud][Google Cloud Storage][Hadoop][HDFS][Java][JavaScript][Kubernetes][Linux][LLM][Machine Learning][MLOps][MongoDB][Neo4j][OpenAI][Postgres][Python][Ray][React][SQL][Web Services] Educational requirements: [Associate Degree][Bachelor of Engineering][Bachelor of Science] Role(s): [Cloud)][Cloud Software Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Collaborate with business partners to prioritize AI use cases * Conduct applied research and experimentation * Ensure reproducibility and performance monitoring * Establish data science and AI methods * Evaluate new algorithms models and methodologies * Lead model design training and evaluation * Mobilize and support data science team * Oversee AI model development * Share knowledge and promote AI expertise * Transition models to robust scalable solutions * Translate findings into recommendations Perks/Benefits: + Flexible vacation + Group insurance + Health and wellness reimbursement + Pension plan + Telemedicine + Telework equipment Skills/Tech stack required: [Data Modeling][Data Processing][Experimentation][Generative AI][Language Models][Large Language Models][Machine Learning][Model Evaluation][Model Training][Model Validation][Performance Monitoring][Python][PyTorch][Reproducibility][SAS][Scikit-learn] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Artificial Intelligence][Artificial Intelligence Team Lead][Data Scientist][Intelligence Team Lead][Lead][Lead Data Scientist][Scientist][Team Lead][Team Lead Data][Team Lead - Data Scientist]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
-        "MLOps",
-        "Kubernetes",
-        "AWS"
+        "PyTorch"
       ],
-      "aiRelevance": 0.51,
+      "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 44.81
+      "score": 41.63
     },
     {
       "externalId": "senior-data-engineer-new-york-us-3356149",
@@ -209,101 +238,144 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 39.72
+      "score": 39.62
     },
     {
-      "externalId": "data-engineerarchitects-databricks-lisboa-lisboa-lisboa-lisboa-3349954",
+      "externalId": "agenticai-workflow-engineer-onsite-united-states-3361553",
       "source": "foorilla",
-      "url": "https://askblue.catsone.com/careers/30769/jobs/16831746-Data-EngineerArchitects-Databricks",
-      "title": "Data Engineer/Architects - Databricks",
-      "company": "Data Engineer/Architects - Databricks",
-      "location": "Lisboa, Lisboa; Lisboa, Lisboa",
-      "country": "Unknown",
+      "url": "https://fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/26620",
+      "title": "AgenticAI Workflow Engineer | Onsite",
+      "company": "Photon",
+      "location": "United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build data pipelines for analytics and AI * Collaborate with cross functional product and business teams * Contribute to AI governance frameworks * Create AI driven forecasting and cost prediction solutions * Design scalable data platforms * Develop lakehouse solutions with Databricks and Delta Lake * Enable agentic AI use cases with well governed data * Enable machine learning and generative AI workflows with data foundations * Implement data quality, governance, and security best practices * Migrate on premises enterprise data warehouse to cloud * Optimize ETL/ELT pipelines * Support customer 360 capabilities Perks/Benefits: + Health insurance + Paid time off + Remote work + Unlimited Udemy access Skills/Tech stack required: [Agile][Azure][Azure Data][Azure Data Factory][CI/CD][Databricks][Data Factory][Data Governance][Data Quality][Delta Lake][DevOps][ELT][ETL][Lakehouse][SQL] Educational requirements: N/A Role(s): [Architect][Data Architect][Data Engineer][Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0.24,
-      "visaSponsored": false,
-      "score": 38.4
-    },
-    {
-      "externalId": "data-architect-data-engineer-picatinny-arsenal-nj-3351580",
-      "source": "foorilla",
-      "url": "https://thelockwoodgroup.catsone.com/careers/31005/jobs/16798347-Data-Architect-Data-Engineer",
-      "title": "Data Architect / Data Engineer",
-      "company": "Data Architect / Data Engineer",
-      "location": "Picatinny Arsenal, NJ",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data extraction scripts * Build Power BI dashboards * Clean and transform raw data * Configure on-premises data gateway * Create and maintain data models for analytics * Design enterprise data infrastructure * Document datasets workflows scripts and dashboards * Generate PDF Word HTML deliverables * Implement AI/ML pipelines * Maintain data engineering workflows * Prompt engineer LLM prompts * Run locally hosted LLMs Perks/Benefits: + 401k + Dental insurance + Health insurance + Life insurance + Long-term disability + Paid Holidays + Paid time off + Short-term disability + Vision insurance Skills/Tech stack required: [CSV][Data cleaning][Data Gateway][Data Modeling][Data Transformation][ETL][Excel][HTML][JSON][LLM][LM Studio][Ollama][On-Premises][On Premises Data][On-premises Data Gateway][PDF Processing][Power BI][Prompt engineering][Python][Word Processing] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Architect][Data Architect][Data Engineer][Engineer]",
+      "description": "Tasks: * Build personalization engines * Build recommendation systems * Deploy scalable AI services * Design predictive analytics solutions * Develop machine learning models * Optimize model performance * Process structured data * Process unstructured data Perks/Benefits: + 401k retirement plan + Dental benefits + Medical benefits + Paid Holidays + Paid time off + Vision benefits Skills/Tech stack required: [Agentic AI][Cloud Computing][Data Engineering][Language Models][Large Language Models][Model Deployment][Predictive Analytics][Prompt engineering][Python][PyTorch][Scikit-learn][TensorFlow] Educational requirements: N/A Role(s): [AI][AI Engineer][AI/ML Engineer][Engineer][Learning Engineer][Machine Learning Engineer][ML Engineer]",
       "postedAt": "2026-08-04T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM"
+        "PyTorch",
+        "TensorFlow",
+        "MLOps"
+      ],
+      "aiRelevance": 0.36,
+      "visaSponsored": false,
+      "score": 39.57
+    },
+    {
+      "externalId": "data-scientist-2034-springfield-va-united-states-3359846",
+      "source": "foorilla",
+      "url": "https://leidos.wd5.myworkdayjobs.com/en-US/External/job/Springfield-VA/Data-Scientist_R-00186287",
+      "title": "Data Scientist",
+      "company": "00100 LEIDOS, INC.",
+      "location": "2034 Springfield VA, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Advise leadership on data science strategy and analytic methodology * Apply data governance security compliance and responsible AI practices * Architect end to end analytic workflows * Design and implement statistical models and predictive analytics * Develop and validate machine learning models * Evaluate model performance quantify uncertainty and ensure validity * Extract transform integrate and analyze structured and unstructured data * Lead development of data science machine learning and artificial intelligence solutions * Perform quantitative analysis for actionable insights * Prepare technical documentation reports and briefings Perks/Benefits: N/A Skills/Tech stack required: [Anomaly Detection][Artificial Intelligence][Bias Assessment][Classification][Clustering][Data integration][Data Mining][Data Transformation][Data Visualization][Data Wrangling][Feature Engineering][Forecasting][Machine Learning][Model Deployment][Model Explainability][Model Monitoring][Model Validation][Predictive Analytics][Python][R][Regression][Series analysis][SQL][Statistical modeling][Time Series][Time Series Analysis] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "MLOps"
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.36
+      "score": 39.38
     },
     {
-      "externalId": "software-engineer-level-3-ffpp-8852-hanover-md-3353511",
+      "externalId": "data-labeling-analyst-speech-voice-ai-ca-client-field-office-san-fran-bay-area-united-states-3361047",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16808841-Software-Engineer-Level-3-FFPP-8852",
-      "title": "Software Engineer Level 3-FFPP-8852",
-      "company": "Software Engineer Level 3-FFPP-8852",
-      "location": "Hanover, MD",
-      "country": "Moldova",
+      "url": "https://welocalize.wd1.myworkdayjobs.com/en-US/Welocalize/job/CA-Client-Field-Office-San-Fran-Bay-Area/Data-Labeling-Analyst---Speach---Voice-AI_R0007652",
+      "title": "Data Labeling Analyst - Speech & Voice AI",
+      "company": "LE024 Welo Data, LLC",
+      "location": "CA Client Field Office (San Fran Bay Area), United States",
+      "country": "United States",
+      "workMode": "onsite",
+      "salary": null,
+      "description": "Tasks: * Annotate data accurately * Apply natural language processing techniques * Conduct basic quality control * Create quality reports * Design training and test datasets * Ensure linguistic accuracy * Evaluate trained model performance * Identify error patterns and report anomalies * Initiate model training using internal tools * Perform manual quality analysis * Refine data annotation guidelines * Update training and test model datasets Perks/Benefits: N/A Skills/Tech stack required: [Command Line][Command-line Interface][Data Analysis][Data Annotation][Dataset design][Language Processing][Machine Learning][Natural Language][Natural Language Processing][Natural Language Processing Linguistics][Quality Assurance] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Labeling Analyst][Labeling Analyst]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "NLP"
+      ],
+      "aiRelevance": 0.27,
+      "visaSponsored": false,
+      "score": 39.26
+    },
+    {
+      "externalId": "data-science-manager-marketing-london-uk-3359836",
+      "source": "foorilla",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/109748645460353734-data-science-manager-marketing",
+      "title": "Data Science Manager, Marketing",
+      "company": "Data Science Manager, Marketing — Google Careers",
+      "location": "London, UK",
+      "country": "United Kingdom",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze user requirements * Confer with system and hardware engineers * Coordinate software installation * Debug software defects * Delegate programming responsibilities * Delegate testing responsibilities * Derive software design requirements * Design and code software * Design database interfaces and queries * Design software systems with mathematical models * Develop and implement algorithms * Develop data queries * Develop test procedures * Ensure software quality control * Execute test procedures * Integrate software into systems * Modify existing software * Monitor equipment functioning * Oversee software development teams * Recommend documentation improvements * Recommend new technologies * Select software development process * Write or review software documentation Perks/Benefits: + 401k match + Dental insurance + Diverse and inclusive workplace culture + Employee referral program + Flexible spending accounts + Flexible work arrangements + Medical insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Vision insurance + Wellness programs Skills/Tech stack required: [Accumulo][Algorithm Design][Apache Pig][Bigtable][BSON][Database interface][Database interface design][Data Querying][Distributed Systems][Hadoop][Hadoop Hive][HBase][HDFS][Interface Design][JSON][MapReduce][NoSQL][Performance Analysis][Software testing][System Performance][System performance analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Development Lead][Engineer][Lead][Software Development][Software Development Lead][Software Engineer][Technical Lead]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
+      "description": "Tasks: * Build audience segmentation models * Develop metrics and build models * Guide team to implement data science solutions * Implement digital marketing data pipelines * Lead data science projects in marketing * Lead team roadmapping and prioritization * Partner on experimentation and measurement * Perform marketing mix modeling * Provide coaching and performance management * Translate business problems into investigative solutions Perks/Benefits: N/A Skills/Tech stack required: [Audience Segmentation][Bayesian Modeling][Cause analysis][Classification][Data Modeling][Data Pipelines][Experimental Design][Geo-experiments][Machine Learning][Marketing Analytics][Marketing Mix][Marketing Mix Modeling][Meta-Analysis][Mix Modeling][Propensity Modeling][Python][R][Regression][Root cause][Root Cause Analysis][SQL][Supervised Learning][Unsupervised Learning] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Engineering][Master of Science] Role(s): [Data Science][Data Science Manager][Manager]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.9
+      "score": 37.62
     },
     {
-      "externalId": "technical-project-manager-ai-solutions-remotely-anywhere-usa-usa-3350901",
+      "externalId": "lead-data-scientist-london-united-kingdom-3359827",
       "source": "foorilla",
-      "url": "https://sphereinc.catsone.com/careers/90438/jobs/16837081-Technical-Project-Manager-AI-Solutions",
-      "title": "Technical Project Manager (AI Solutions)",
-      "company": "Technical Project Manager (AI Solutions)",
-      "location": "Not specified",
+      "url": "https://fulcrumdigital.zohorecruit.com/jobs/Careers/613047000057634378",
+      "title": "Lead Data Scientist",
+      "company": "Fulcrum Digital",
+      "location": "London, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Design and develop machine learning models * Develop operational tooling * Document models processes and methodologies * Drive CI/CD automation * Ensure service resilience and performance * Optimize models with feature engineering * Perform hyperparameter tuning and validation * Provide technical mentorship and guidance * Provision infrastructure * Support model deployment scaling and operationalization Perks/Benefits: N/A Skills/Tech stack required: [Automation][CI/CD][Feature Engineering][Hyperparameter Tuning][Infrastructure provisioning][Machine Learning][Model Validation][Reliability Engineering][Site Reliability][Site Reliability Engineering][Statistical modeling] Educational requirements: N/A Role(s): [Data Scientist][Engineer][Lead][Lead Data][Lead Data Scientist][Reliability Engineer][Scientist][Senior Site Reliability Engineer][Site Reliability Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "MLOps"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 36.87
+    },
+    {
+      "externalId": "associate-data-science-analyst-cv-eau-claire-wi-united-states-3361009",
+      "source": "foorilla",
+      "url": "https://fa-euwp-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/387067",
+      "title": "Associate Data Science Analyst - CV",
+      "company": "Mayo Career Site US",
+      "location": "Eau Claire, WI, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assist customers with data understanding and training * Build forecasting models * Conduct data mining * Create data visualizations * Develop descriptive analytics * Generate reports * Interpret analytical results * Manage and extract data * Perform data analysis * Present findings to business stakeholders * Write analytical reports * Write data query scripts Perks/Benefits: + Continuing education + Dental insurance + FSA + HSA + Medical insurance + Retirement plan + Vision insurance Skills/Tech stack required: [Data Analysis][Data Management][Data Mining][Data Querying][Data Visualization][Forecasting][Machine Learning][Predictive Modeling][Python][Reporting][SQL][Statistical modeling] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Data Science][Data Science Analyst]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 36.67
+    },
+    {
+      "externalId": "senior-software-engineer-distributed-databases-vitessmysqlmyrocks-london-3360299",
+      "source": "foorilla",
+      "url": "https://bloomberg.avature.net/careers/JobDetail/Senior-Software-Engineer-Distributed-Databases-Vitess-MySQL-MyRocks/21208",
+      "title": "Senior Software Engineer, Distributed Databases (Vitess/MySQL/MyRocks)",
+      "company": "Bloomberg",
+      "location": "London",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Coordinate engineering teams and remove blockers * Drive requirements discovery and backlog refinement * Facilitate technical discussions and architecture workshops * Identify technical risks and dependencies * Lead end-to-end delivery of AI solutions * Maintain technical documentation * Review APIs and system integrations * Review user stories and acceptance criteria * Support release planning UAT and production rollouts * Translate business objectives into technical requirements Perks/Benefits: N/A Skills/Tech stack required: [Agile][APIs][Backlog Refinement][Cloud Computing][Databases][Distributed Systems][Generative AI][Langchain][Language Models][Large Language Models][Llamaindex][LLMOps][OpenAI][Requirements Gathering][SDLC][Software Architecture][Sprint Planning][System Integration][Technical documentation][Vector Databases] Educational requirements: N/A Role(s): [Manager][Project Manager][Technical Project Manager]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Build operational intelligence tooling * Contribute upstream to open source projects * Design distributed database capabilities * Diagnose production issues across stack * Handle compaction and capacity management * Implement automated failover and online schema changes * Improve query serving and replication * Lead technical designs and incident investigations * Manage backup restore and major version upgrades * Mentor engineers * Operate vitess mysql myrocks fleet * Participate in on-call rotation Perks/Benefits: + Mentorship + On-call rotation + Open Source contribution Skills/Tech stack required: [Backup and Recovery][C++][Capacity Management][Compaction][Debugging][Failover][Fault containment][Go][InnoDB][LSM][Major Version Upgrade][MyRocks][MySQL][Observability][Online Schema Change][Profiling][Python][Query routing][Replication][Resharding][RocksDB][Rollback][Schema Change][Staged rollout][Testing][Topology management][Tracing][Version upgrade][Vitess][VReplication][Workload isolation] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
-        "LLM",
-        "LangChain"
+        "Python"
       ],
-      "aiRelevance": 0.18,
+      "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.89
-    },
-    {
-      "externalId": "software-engineer-level-2-ffpp-8902-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-3353526",
-      "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16825684-Software-Engineer-Level-2-FFPP-8902",
-      "title": "Software Engineer Level 2 -FFPP-8902",
-      "company": "Software Engineer Level 2 -FFPP-8902",
-      "location": "Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze user requirements for software design and performance * Coordinate software system installation and monitor operations * Debug and correct software defects * Design and code software or modify existing software * Design and implement database interfaces and queries * Develop and execute test procedures * Develop data queries for databases * Implement algorithms to meet system performance standards * Implement algorithms with timing and resource constraints * Integrate software into new or modified systems * Lead software development teams * Write and review software and system documentation Perks/Benefits: + 401k plan company match + Dental insurance + Diverse inclusive supportive workplace culture + Employee referral programs + Flexible spending accounts + Health insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Vision insurance + Wellness programs Skills/Tech stack required: [Accumulo][Amazon DynamoDB][AWS Glue][AWS Lambda][Bigtable][Hadoop][HBase][HDFS][Hive][JSON][MapReduce][NoSQL][Pig][PySpark][Python] Educational requirements: [Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 35.8
+      "score": 35.81
     },
     {
       "externalId": "data-integration-engineer-sofia-bulgaria-3356994",
@@ -322,26 +394,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.74
-    },
-    {
-      "externalId": "software-engineer-3-tg-hanover-md-3353528",
-      "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16835542-Software-Engineer-3-TG",
-      "title": "Software Engineer 3-TG",
-      "company": "Software Engineer 3-TG",
-      "location": "Hanover, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze user requirements * Code new software * Coordinate software installation * Debug software defects * Delegate programming responsibilities * Design software * Develop algorithms * Develop data queries * Develop software solutions * Execute test procedures * Improve documentation * Integrate software into systems * Modify existing software * Monitor equipment functioning * Oversee software development teams * Perform quality control * Recommend new technologies * Review system documentation * Select software development process * Serve as team lead * Write software documentation Perks/Benefits: + 401k plan with company match + Dental insurance + Employee referral programs + Flexible spending accounts + Flexible work arrangements + Health insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Supportive workplace culture + Technology allowance + Tuition reimbursement + Vision insurance + Wellness programs Skills/Tech stack required: [Accumulo][Bigtable][BSON][Cloudbase][Database interface][Distributed File System][File System][Hadoop][Hadoop Distributed File System][HBase][HDFS][Hive][Java][JSON][MapReduce][NoSQL][Pig][Python][Serialization][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 35.73
+      "score": 35.65
     },
     {
       "externalId": "data-uk-warrington-united-kingdom-3358860",
@@ -361,26 +414,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.63
+      "score": 35.53
     },
     {
-      "externalId": "data-scientist-fort-meade-md-3351604",
+      "externalId": "data-management-lead-united-states-3360665",
       "source": "foorilla",
-      "url": "https://srctech.catsone.com/careers/96671/jobs/15370494-Data-Scientist",
-      "title": "Data Scientist",
-      "company": "Data Scientist",
-      "location": "Fort Meade, MD",
-      "country": "Moldova",
+      "url": "https://fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/26615",
+      "title": "Data Management Lead",
+      "company": "Photon",
+      "location": "United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build statistical and graph based models * Create reports and data visualizations * Design experiments * Develop machine learning algorithms * Generate data for training when datasets are unavailable * Implement prototype algorithms in production frameworks * Perform data mining * Prototype and evaluate candidate models * Select final model using performance metrics * Translate manual analysis into automated analytics Perks/Benefits: N/A Skills/Tech stack required: [Data Mining][Data Visualization][Graph Algorithms][Machine Learning][MATLAB][Predictive Analytics][Prescriptive Analytics][Python][R][SAS][Software development][Statistical Analysis] Educational requirements: [Bachelor of Science] Role(s): [Data Scientist][Scientist]",
+      "description": "Tasks: * Conduct data profiling and cleansing * Define data quality standards * Develop data management strategy * Drive continuous improvement in data management * Enable data-driven decision-making * Ensure data compliance * Establish KPIs and dashboards * Implement data governance initiatives * Maintain metadata management * Manage data catalog initiatives * Mentor data analysts and data stewards * Oversee data lifecycle processes * Oversee master data management Perks/Benefits: + 401k retirement plan + Dental insurance + Medical insurance + Paid Holidays + Paid time off + Vision insurance Skills/Tech stack required: [Agile][Alation][Ataccama][AWS][Azure][CCPA][Cloud Platforms][Collibra][Data Catalog][Data Governance][Data Lineage][Data Management][Data Privacy][Data Quality][Data Quality Management][Data Warehousing][DevOps][ELT][ETL][GDPR][Google Cloud][HIPAA][Informatica][Master Data][Master Data Management][Metadata Management][Microsoft Purview][Quality management][Relational databases][SAP MDG][SQL][Talend] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Governance][Data Governance Manager][Data Management][Data Management Lead][Governance Manager][Lead][Manager]",
       "postedAt": "2026-08-04T00:00:00.000Z",
       "skills": [
-        "Python"
+        "AWS"
       ],
-      "aiRelevance": 0.15,
+      "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.27
+      "score": 35.17
     },
     {
       "externalId": "data-scientist-md-tx-md-dc-md-tx-md-ga-tx-md-ga-tx-3353102",
@@ -399,138 +452,126 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.17
+      "score": 35.07
     },
     {
-      "externalId": "software-engineer-level-2-ffss-8838-hanover-md-3353509",
+      "externalId": "software-development-engineer-data-platform-ireland-dublin-3359818",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16808823-Software-Engineer-Level-2-FFSS-8838",
-      "title": "Software Engineer Level 2-FFSS-8838",
-      "company": "Software Engineer Level 2-FFSS-8838",
-      "location": "Hanover, MD",
-      "country": "Moldova",
+      "url": "https://workday.wd5.myworkdayjobs.com/en-US/Workday/job/Ireland-Dublin/Software-Development-Engineer---Data-Platform_JR-0108934",
+      "title": "Software Development Engineer - Data Platform",
+      "company": "Workday Limited",
+      "location": "Ireland, Dublin",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Coordinate software installation and operational monitoring * Debug and correct software defects * Design software to meet performance requirements * Develop analytic solutions for large data volumes * Develop and execute test procedures * Develop or modify software features * Implement algorithms for performance and functionality * Implement data repository interfaces * Integrate software into new systems * Maintain high performance analytics * Provide technical leadership for software teams * Recommend improvements to documentation and processes * Write data queries * Write or review software and system documentation Perks/Benefits: + 401k plan with company match + Diversity and inclusion + Employee referral programs + Flexible spending accounts + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Wellness programs Skills/Tech stack required: [Accumulo][Apache Spark][Bigtable][BSON][Distributed Computing][Distributed File System][File System][Hadoop][Hadoop Distributed File System][HBase][HDFS][Hive][JSON][MapReduce][NoSQL][NumPy][Pandas][Pig][SciPy][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analytics Developer][Cloud)][Cloud Analytics Developer][Developer][Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 35.15
-    },
-    {
-      "externalId": "software-engineer-level-2-ffpp-8881-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-3353531",
-      "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16837594-Software-Engineer-Level-2-FFPP-8881",
-      "title": "Software Engineer Level 2 -FFPP-8881",
-      "company": "Software Engineer Level 2 -FFPP-8881",
-      "location": "Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze user requirements * Coordinate software installation * Debug defects * Design software * Develop data queries * Develop software features * Develop test procedures * Implement algorithms * Implement process improvements * Integrate software systems * Lead development team * Monitor equipment functioning * Recommend documentation improvements * Write and review documentation Perks/Benefits: + 401k match + Bonus opportunities + Employee referral programs + Flexible spending accounts + Flexible work arrangements + Life AD D insurance + Long-term disability + Medical/Dental/Vision insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Pet insurance + Remote work options + Short-term disability + Technology allowance + Tuition reimbursement + Wellness programs Skills/Tech stack required: [Accumulo][AWS][BSON][Cloud Storage][Data Modeling][Hadoop][HBase][HDFS][Hive][Java][JSON][MapReduce][NoSQL][Pig][Python][Serialization][Terraform] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Build caching modules * Build messaging and streaming platforms * Deploy and operate production systems * Design distributed services * Evaluate and adopt open source tools * Implement observability modules and alerts * Manage distributed clusters * Optimize distributed services performance * Participate in on-call rotation Perks/Benefits: + Company benefits + Flexible work schedule + On-call support + Remote work option Skills/Tech stack required: [Agile][ArgoCD][AWS][Bare Metal][Cassandra][Chef][CI/CD][Configuration Management][Docker N/A][Encryption][GCP][Golang][Helm][IAM][Java][Kafka][Kubernetes][Linux][N A][NoSQL][OpenStack][RabbitMQ][RBAC][Redis][Scala][Secrets management][TLS][Zookeeper] Educational requirements: N/A Role(s): [Development Engineer][Engineer][Software Development][Software Development Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
-        "Python",
+        "Kubernetes",
         "AWS"
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.15
+      "score": 34.74
     },
     {
-      "externalId": "software-engineer-level-3-ffll-8843-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-3353507",
+      "externalId": "senior-full-stack-engineer-warsaw-poland-pl-3361476",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16808819-Software-Engineer-Level-3-FFLL-8843",
-      "title": "Software Engineer Level 3 -FFLL-8843",
-      "company": "Software Engineer Level 3 -FFLL-8843",
-      "location": "Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD; Hanover, MD",
-      "country": "Moldova",
+      "url": "https://www.comeet.com/jobs/comm-it/76.008/senior-full-stack-engineer/6B.F64",
+      "title": "Senior Full-Stack Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Warsaw, Poland, PL",
+      "country": "Poland",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze user requirements * Build and maintain NiFi workflows * Coordinate with DevOps to scale processing cluster * Create NiFi custom processors * Debug and fix defects * Design and code software * Develop and execute test procedures * Develop containerized services with Docker * Develop data queries * Develop microservices * Integrate software into systems * Lead DevOps team * Lead software engineering team * Manage source code with Git * Monitor systems with Grafana and Prometheus * Orchestrate containers with Kubernetes * Oversee software development teams * Serve as technical lead * Write and review software documentation Perks/Benefits: + 401k match + Diverse inclusive supportive workplace culture + Employee referral programs + Flexible spending accounts + Flexible work arrangements + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Wellness programs Skills/Tech stack required: [Apache NiFi][Containerd][Docker][Git][Grafana][Java][Kubernetes][Linux][Microservices][Prometheus][Spring] Educational requirements: [Bachelor of Science] Role(s): [DevOps][DevOps Engineer][Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Build high scale backend pipelines * Deploy and operate services in AWS and Kubernetes * Design backend ingestion and processing systems * Develop event driven Kafka producers and consumers * Implement caching with Redis * Make architecture decisions based on data volumes * Monitor production systems using logs metrics and tracing * Optimize PostgreSQL schemas and queries Perks/Benefits: N/A Skills/Tech stack required: [Autoscaling][AWS][Batch Processing][Event Driven][Event-driven architecture][High Availability][Kafka][Kubernetes][NestJS][Node.js][Observability][Performance Engineering][PostgreSQL][Producers and Consumers][Redis][Resilience Engineering][SQL][TypeScript] Educational requirements: N/A Role(s): [Engineer][Full Stack Engineer][Senior Full Stack Engineer][Stack Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 35.11
-    },
-    {
-      "externalId": "software-engineer-23-by-sig-02-hanover-md-3353523",
-      "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16825469-Software-Engineer-23-BY-SIG-02",
-      "title": "Software Engineer 2/3-BY-SIG-02",
-      "company": "Software Engineer 2/3-BY-SIG-02",
-      "location": "Hanover, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze user requirements * Assist with test procedures * Code software features * Coordinate software installation * Debug software defects * Design software components * Develop algorithms for performance * Develop data queries * Integrate software into systems * Lead software development team * Oversee quality control * Recommend documentation improvements * Write or review documentation Perks/Benefits: + 401k match + Company culture inclusive supportive + Critical illness insurance + Dental insurance + Employee referral program + Flexible spending accounts + Flexible work arrangements + Health insurance + Long-term disability + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Short-term disability + Technology allowance + Tuition reimbursement + Vision insurance + Wellness programs Skills/Tech stack required: [Accumulo][Bigtable][BSON][Docker][Hadoop][HBase][HDFS][Helm][Hive][JSON][Kubernetes][MapReduce][Pig][Python] Educational requirements: [Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes"
+        "Kubernetes",
+        "AWS"
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.03
+      "score": 34.57
     },
     {
-      "externalId": "software-engineer-3-by-xks-02-hanover-md-3353522",
+      "externalId": "senior-data-engineer-consultant-antwerp-belgium-3359780",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16818850-Software-Engineer-3-BY-XKS-02",
-      "title": "Software Engineer 3-BY-XKS-02",
-      "company": "Software Engineer 3-BY-XKS-02",
-      "location": "Hanover, MD",
-      "country": "Moldova",
+      "url": "https://jobs.smartrecruiters.com/Sia/744000141662329-senior-data-engineer-consultant-",
+      "title": "Senior Data Engineer Consultant",
+      "company": "Sia",
+      "location": "Antwerp, Belgium",
+      "country": "Belgium",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze user requirements * Coordinate software system installation * Debug and correct defects * Delegate programming and testing * Design and code software features * Design database interfaces * Develop data queries * Develop ingest processing components * Develop test procedures * Implement algorithms for performance * Integrate software into new systems * Lead software development activities * Optimize software performance * Oversee software development teams * Perform quality control * Write and review software documentation Perks/Benefits: + 401k match + Dental insurance + Employee referral programs + Flexible spending accounts + Flexible work arrangements + Health insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Vision insurance + Wellness programs Skills/Tech stack required: [Accumulo][Algorithm Design][Bigtable][BSON][C++][Cloudbase][Database Design][Data Modeling][Debugging][Hadoop][HBase][HDFS][Hive][JSON][MapReduce][NoSQL][Performance optimization][Pig][Software performance][Software performance optimization][Software testing][Technical documentation] Educational requirements: [Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
+      "description": "Tasks: * Apply DataOps practices * Build data models and optimize databases * Co-design data engineering solutions * Design data architectures and pipelines * Develop data engineering offerings * Enable CI CD for data services * Implement batch and streaming integration * Implement cloud data solutions * Lead data engineering client engagements * Manage stakeholders * Mentor junior consultants Perks/Benefits: + Flexible mobility options + Flexible working arrangements + International project exposure + Knowledge sharing + Training and development Skills/Tech stack required: [Apache Kafka][Apache Spark][AWS][Azure][CI/CD][Data Architecture][Databricks][Data integration][Data Modeling][DataOps][Data pipeline][GCP][NoSQL][Snowflake][SQL][Streaming] Educational requirements: [Master of Engineering][Master of Science] Role(s): [Consultant][Data Engineer Consultant][Senior Data Engineer][Senior Data Engineer Consultant]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.79
+      "score": 34.56
     },
     {
-      "externalId": "software-engineer-23-inca-81-hanover-md-3353517",
+      "externalId": "full-stack-python-developer-nj-united-states-3360010",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16811244-Software-Engineer-23-INCA-81",
-      "title": "Software Engineer 2/3-INCA-81",
-      "company": "Software Engineer 2/3-INCA-81",
-      "location": "Hanover, MD",
-      "country": "Moldova",
+      "url": "https://fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/26625",
+      "title": "Full Stack Python Developer - NJ",
+      "company": "Photon",
+      "location": "United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze user requirements * Code software * Confer with system engineers * Coordinate software installation * Debug software defects * Design software * Develop algorithms * Develop data queries * Execute test procedures * Integrate software * Modify software * Monitor equipment functioning * Oversee software development teams * Perform quality control * Recommend documentation improvements * Write software documentation Perks/Benefits: + 401k plan with company match + Employee referral programs + Flexible spending accounts + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Wellness programs Skills/Tech stack required: [Accumulo][Algorithms][Big Data][Bigtable][BSON][Cloud Computing][Database Design][Data Modeling][Hadoop][HBase][HDFS][Hive][JSON][MapReduce][NoSQL][Performance Engineering][Pig][Python][Software Documentation][System Performance][System performance engineering][Test procedures] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Engineer][Software Engineer]",
+      "description": "Tasks: * Build scalable distributed data processing * Design data federation architecture * Design data models * Develop ETL/ELT pipelines * Implement access control and data masking * Implement data lakehouse tables * Implement federated query layer * Monitor and manage compute costs * Optimize Spark jobs * Tune SQL queries Perks/Benefits: + 401k + Dental insurance + Health insurance + Paid Holidays + Paid time off + Vision insurance Skills/Tech stack required: [Amazon S3][Apache Iceberg][Apache Spark][“as-code”][AWS EMR][AWS Glue][Azure Data][Azure Databricks][Azure Data Lake][Azure Data Lake Storage][Data Lake Storage][Data mesh][DBT][Delta Lake][Hudi][Infrastructure as Code][Kubernetes][Presto][Pulumi][PySpark][Python][SQL][Starburst][Terraform][Trino] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
       "postedAt": "2026-08-04T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.09,
+      "visaSponsored": false,
+      "score": 34.45
+    },
+    {
+      "externalId": "senior-full-stack-engineer-portugal-3361472",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/comm-it/76.008/senior-full-stack-engineer/6B.F6A",
+      "title": "Senior Full-Stack Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Portugal",
+      "country": "Portugal",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build high scale backend pipelines * Deploy and operate services in Kubernetes and AWS * Design backend ingestion and processing systems * Implement event driven streaming with Kafka * Implement reliable autoscaling and failure handling * Model PostgreSQL schemas and optimize queries * Monitor production systems with logs metrics tracing Perks/Benefits: N/A Skills/Tech stack required: [Autoscaling][AWS][Distributed tracing][Event Driven][Event-driven architecture][High Availability][Kafka][Kubernetes][Logging][Metrics][NestJS][Node.js][Observability][Performance Engineering][PostgreSQL][Redis][Resilience Engineering][SQL][TypeScript] Educational requirements: N/A Role(s): [Engineer][Full Stack Engineer][Senior Full Stack Engineer][Stack Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 34.38
+    },
+    {
+      "externalId": "data-engineer-iii-baltimore-maryland-united-states-3359773",
+      "source": "foorilla",
+      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Data-Engineer-III/361630",
+      "title": "Data Engineer III",
+      "company": "Deloitte US",
+      "location": "Baltimore, Maryland, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build streaming data pipelines * Design batch data pipelines * Develop data models * Develop transformation logic * Document data flows * Document technical designs * Improve data quality * Maintain data pipelines * Monitor data workflows * Optimize data integration processes * Troubleshoot data workflows Perks/Benefits: + Ability to work independently + Mentorship + Professional development + Travel opportunities Skills/Tech stack required: [Apache Spark][Databricks][Data integration][Data Modeling][Data Quality][Dimensional Modeling][ETL][Python][Relational databases][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Science in Computer Science][Bachelor of Science in Information Systems][Master of Science] Role(s): [Data Engineer][Data Engineer III][Engineer][Engineer III]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python"
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.62
-    },
-    {
-      "externalId": "staff-principal-software-engineer-toronto-ontario-canada-3354874",
-      "source": "foorilla",
-      "url": "https://jobs.hightechgenesis.com/o/staff-principal-software-engineer",
-      "title": "Staff / Principal Software Engineer",
-      "company": "High Tech Genesis",
-      "location": "Toronto, Ontario, Canada",
-      "country": "Canada",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect cloud-native solutions on AWS * Build data processing pipelines for AI ML * Collaborate with cross functional teams to deliver AI enabled platforms * Define third party API integrations * Design and build scalable distributed systems * Design edge computing and CDN solutions * Develop backend services and APIs * Establish system architecture best practices * Implement authentication service integrations * Lead technical design discussions * Mentor engineers through hands on development Perks/Benefits: N/A Skills/Tech stack required: [AI/ML][AI/ML data][AI/ML data pipelines][AI/ML inference][APIs][AWS][CDN][Data Pipelines][Distributed Systems][Edge Computing][Event Driven][Event-driven architecture][GitHub Copilot][Java][JSON Web Token][JSON Web Token (JWT)][Microservices][ML data pipelines][ML inference][OAuth 2.0][Observability][Public key][Public Key Infrastructure][Public Key Infrastructure (PKI)][Reliability][Scalability][Spring Boot][System design] Educational requirements: N/A Role(s): [Engineer][Principal][Principal Software Engineer][Software Engineer][Staff Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "AWS"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 34.62
+      "score": 34.1
     },
     {
       "externalId": "senior-data-engineer-data-foundation-engineering-all-genders-hamburg-or-berlin-germany-3356146",
@@ -550,7 +591,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.17
+      "score": 34.07
     },
     {
       "externalId": "senior-data-engineer-data-foundation-engineering-all-genders-hamburg-oder-berlin-germany-3356145",
@@ -570,26 +611,46 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.15
+      "score": 34.06
     },
     {
-      "externalId": "software-engineer-1-inca-70-hanover-md-3353516",
+      "externalId": "senior-full-stack-engineer-kyiv-kyiv-city-ua-3361473",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16811242-Software-Engineer-1-INCA-70",
-      "title": "Software Engineer 1-INCA-70",
-      "company": "Software Engineer 1-INCA-70",
-      "location": "Hanover, MD",
-      "country": "Moldova",
+      "url": "https://www.comeet.com/jobs/comm-it/76.008/senior-full-stack-engineer/6B.F69",
+      "title": "Senior Full-Stack Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Kyiv, Kyiv city, UA",
+      "country": "Ukraine",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze user requirements * Code software features * Debug software defects * Design software * Develop algorithms for performance * Develop data queries * Develop test procedures * Implement database interfaces * Integrate software into systems * Modify existing software * Recommend process improvements * Write software documentation Perks/Benefits: + 401k plan + Company match + Dental insurance + Disability insurance + Employee referral programs + Flexible spending accounts + Flexible work arrangements + Health insurance + Life insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Pet insurance + Remote work options + Technology allowance + Tuition reimbursement + Vision insurance + Wellness programs Skills/Tech stack required: [Accumulo][Algorithms][Bigtable][BSON][Cloudbase][Data queries][Hadoop][HBase][HDFS][Hive][JSON][MapReduce][NoSQL][Pig][Python] Educational requirements: [Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Deploy and operate services on AWS and Kubernetes * Design backend ingestion and processing systems * Develop Kafka producers and consumers * Implement caching with Redis * Implement event-driven pipelines * Monitor production using logs metrics tracing * Optimize PostgreSQL schemas and queries Perks/Benefits: N/A Skills/Tech stack required: [Autoscaling][AWS][Event Driven][Event-driven architecture][High Availability][Kafka][Kubernetes][Microservices][NestJS][Node.js][Observability][Performance Engineering][PostgreSQL][Redis][Resilience Engineering][SQL][TypeScript] Educational requirements: N/A Role(s): [Engineer][Full Stack Engineer][Senior Full Stack Engineer][Stack Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 34.04
+    },
+    {
+      "externalId": "customer-success-physicist-denmark-ballerup-copenhagen-dk-3361874",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/quantummachines/D6.000/customer-success-physicist--denmark/5E.E53",
+      "title": "Customer Success Physicist- Denmark",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Ballerup, Copenhagen, DK",
+      "country": "Denmark",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with partners on calibration workflows * Contribute to customer education and training materials * Design automated calibration frameworks * Implement automated calibration solutions * Integrate quantum control solutions * Lead technical implementation for customers * Manage technical relationships with customer accounts * Provide guidance on quantum control best practices * Translate customer requirements into solutions Perks/Benefits: + Customer-facing role + Technical education and training creation + Travel opportunities Skills/Tech stack required: [Python][Quantum Computing][Quantum Physics][Software development][Superconducting qubits] Educational requirements: [Master of Science][PhD] Role(s): [Computing Engineer][Engineer][Experimental Physicist][Physicist][Quantum Computing Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python"
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.99
+      "score": 34.04
     },
     {
       "externalId": "data-engineer-sme-ck22-mclean-virginia-3351589",
@@ -609,58 +670,67 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.93
+      "score": 33.84
     },
     {
-      "externalId": "software-engineer-2-inca-68-hanover-md-3353515",
+      "externalId": "data-scientist-insights-and-analytics-austin-3359526",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16811239-Software-Engineer-2-INCA-68",
-      "title": "Software Engineer 2-INCA-68",
-      "company": "Software Engineer 2-INCA-68",
-      "location": "Hanover, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze user requirements for software design * Assist with software testing * Confer with system and hardware engineers * Coordinate software installation and monitoring * Debug and correct software defects * Design and code software features * Design and develop database interfaces * Develop simple data queries * Develop software solutions from system analysis * Implement algorithms for performance * Integrate software into systems * Lead software development team * Modify software for errors and performance * Write and review software documentation Perks/Benefits: + 401k match + Dental insurance + Flexible work arrangements + Health insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Tuition reimbursement + Vision insurance + Wellness programs Skills/Tech stack required: [Accumulo][Algorithms][Bigtable][BSON][Database interface][Hadoop][HBase][HDFS][Hive][Java][JSON][MapReduce][NoSQL][Pig] Educational requirements: [Bachelor of Science] Role(s): [Developer][Engineer][Java][Java Developer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.83
-    },
-    {
-      "externalId": "software-engineer-level-2-ffpp-8863-hanover-md-3353514",
-      "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16810189-Software-Engineer-Level-2-FFPP-8863",
-      "title": "Software Engineer Level 2-FFPP-8863",
-      "company": "Software Engineer Level 2-FFPP-8863",
-      "location": "Hanover, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze user requirements * Confer with engineers for requirements * Coordinate software installation and monitoring * Debug and correct defects * Derive software design requirements * Design and code software features * Develop database interfaces and queries * Develop data queries * Develop software solutions from performance analysis * Develop test procedures * Implement algorithms for performance standards * Integrate software into new systems * Lead software teams * Modify existing software * Oversee quality control * Write and review software documentation Perks/Benefits: + 401k plan with company match + Dental insurance + Employee referral programs + Flexible spending accounts + Health insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Vision insurance Skills/Tech stack required: [Accumulo][Bigtable][BSON][Hadoop][HBase][HDFS][Hive][Java][JSON][MapReduce][NoSQL][Pig] Educational requirements: [Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.81
-    },
-    {
-      "externalId": "electric-mind-ai-enablement-senior-engineer-downtown-toronto-3354968",
-      "source": "foorilla",
-      "url": "https://jobs.lever.co/electricmind/e13cb159-33b1-4d08-8511-48ff42f71f4d",
-      "title": "Electric Mind – AI Enablement Senior Engineer",
-      "company": "Electric Mind",
-      "location": "Downtown Toronto",
+      "url": "https://jobs.apple.com/en-us/details/200675897-0157/data-scientist-insights-and-analytics?team=HRDWR",
+      "title": "Data Scientist - Insights and Analytics",
+      "company": "Data Scientist - Insights and Analytics - Jobs - Careers at Apple",
+      "location": "Austin",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Capture and report AI skill improvement requirements * Coach AI adoption across client teams * Diagnose environment friction and AI friction * Escalate tooling access capacity blockers * Guide human in the loop review of AI generated artifacts * Integrate enterprise tools with AI workflows * Mentor technical staff on AI enabled software delivery * Set up AI enabled project environments * Support AI knowledge base creation and reverse engineering * Validate AI generated plans and code against story outcomes * Validate AI output against engineering constraints Perks/Benefits: N/A Skills/Tech stack required: [Agentic IDE][Agentic IDE Workflows][AI-assisted coding][Artificial Intelligence][Assisted coding][Code review][Human-in-the-loop][IDE workflows][Prompt engineering][Quality Engineering][Scripting][Spec Driven][Spec Driven Development][Test generation][The Loop] Educational requirements: N/A Role(s): [AI][AI Enablement][AI Enablement Engineer][Enablement Engineer][Engineer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
+      "description": "Tasks: * Build data pipelines * Conduct statistical analysis * Create analytics insights for stakeholders * Develop data transformations * Explore data and identify trends * Forecast business metrics * Model data for analytics * Perform business analytics * Present findings to business customers Perks/Benefits: N/A Skills/Tech stack required: [Airflow][Apache Spark][AWS][D3.js][Data Modeling][Data Transformation][Data Visualization][Data Warehousing][DBT][JavaScript][NumPy][Pandas][Python][Scikit-learn][Snowflake] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.6
+      "score": 33.79
+    },
+    {
+      "externalId": "senior-data-engineer-guadalajara-jalisco-mexico-3359771",
+      "source": "foorilla",
+      "url": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/515214",
+      "title": "Senior Data Engineer",
+      "company": "Siemens",
+      "location": "Guadalajara - Jalisco - Mexico Zapopan - Jalisco - Mexico",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain dbt models * Collaborate on data architecture and engineering best practices * Design, build, and maintain data pipelines * Develop and optimize SQL transformations * Own end to end solution development and testing * Support deployment and production data products * Translate business requirements into data solutions Perks/Benefits: + Hybrid work model + Remote/office flexibility Skills/Tech stack required: [AWS][Azure][Data Governance][Data mesh][Data Products][DBT][GCP][GitHub Copilot][Python][Snowflake][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.71
+    },
+    {
+      "externalId": "senior-full-stack-engineer-spain-3361475",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/comm-it/76.008/senior-full-stack-engineer/6B.F66",
+      "title": "Senior Full-Stack Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Spain",
+      "country": "Spain",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build scalable resilient backend services * Deploy and operate services on AWS and Kubernetes * Design backend ingestion pipelines * Develop Kafka producers and consumers * Implement event driven streaming systems * Implement Redis caching and data storage * Monitor production using logs metrics and tracing * Optimize PostgreSQL schemas and queries Perks/Benefits: N/A Skills/Tech stack required: [AWS][Kafka][Kubernetes][NestJS][Node.js][PostgreSQL][Redis][SQL][TypeScript] Educational requirements: N/A Role(s): [Engineer][Full Stack Engineer][Senior Full Stack Engineer][Stack Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.55
     },
     {
       "externalId": "data-engineer-suitland-md-annapolis-junction-maryland-crystal-city-md-suitland-md-dahlgren-va-pearl-harb-3350159",
@@ -679,24 +749,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.52
-    },
-    {
-      "externalId": "supercomputing-data-processing-engineer-annapolis-junction-md-3349790",
-      "source": "foorilla",
-      "url": "https://cymertek.catsone.com/careers/42454/jobs/16614148-Supercomputing-Data-Processing-Engineer",
-      "title": "Supercomputing Data Processing Engineer",
-      "company": "Supercomputing Data Processing Engineer",
-      "location": "Annapolis Junction, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze and troubleshoot data bottlenecks * Collaborate with scientific teams * Develop data processing workflows * Ensure data transfer reliability * Optimize supercomputing algorithms * Process massive datasets Perks/Benefits: + 401k matching + Birthday day off + Flexible work schedule + HSA/FSA + Paid leave + Paid training + Referral bonus + Work-life balance Skills/Tech stack required: [Accelerated computing][Automation tools][Cloud Computing][Data Formats][Data Transformation][Data Visualization][Debugging][Distributed file systems][File systems][GPU accelerated computing][High Throughput][High-throughput computing][Hybrid Cloud][Hybrid Cloud Computing][MPI][OpenMP][Parallel Programming][Scientific Data][Scientific data formats][Workflow automation][Workflow automation tools] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Data Processing Engineer][Engineer][HPC Data Engineer][Processing Engineer][Supercomputing Data Processing Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.46
+      "score": 33.42
     },
     {
       "externalId": "senior-powerbi-dev-cluj-napoca-cj-romania-3357557",
@@ -715,85 +768,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.45
+      "score": 33.36
     },
     {
-      "externalId": "enterprise-data-engineer-chantilly-va-aurora-co-tampaorlando-fl-chantilly-va-annapolis-junction-md-riverwoods-il-3353077",
+      "externalId": "data-engineering-project-intern-ads-targeting-2027-start-san-jose-california-united-states-3359775",
       "source": "foorilla",
-      "url": "https://newgentechnologies.catsone.com/careers/52695/jobs/16828201-Enterprise-Data-Engineer",
-      "title": "Enterprise Data Engineer",
-      "company": "Enterprise Data Engineer",
-      "location": "Chantilly, VA; Aurora, CO; Tampa/Orlando, FL; Chantilly, VA; Annapolis Junction, MD; Riverwoods, IL",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate data processing tasks * Implement data quality checks validation and monitoring * Implement data transformations enrichment and modeling * Integrate data from APIs databases and flat files * Maintain data quality consistency and accuracy * Optimize data structures for performance and scalability * Provide guidance on Palantir tools * Write Python and SQL scripts Perks/Benefits: N/A Skills/Tech stack required: [Apache Airflow][Apache Spark][API Integration][AWS][Azure][Data Modeling][Data Monitoring][Data orchestration][Data Quality][Data Validation][ETL][Google Cloud][Hadoop][Palantir][Python][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 33.3
-    },
-    {
-      "externalId": "mdm-etl-specialist-developer-springfield-il-us-3359079",
-      "source": "foorilla",
-      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4389304",
-      "title": "MDM ETL Specialist / Developer",
-      "company": "CSpring",
-      "location": "Springfield, IL, US",
+      "url": "https://lifeattiktok.com/search/7668533140146817333",
+      "title": "Data Engineering Project Intern (Ads Targeting) - 2027 Start",
+      "company": "Data Engineering Project Intern (Ads Targeting) - 2027 Start",
+      "location": "San Jose, California, United States",
       "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Automate ETL staging scripts * Collaborate on technical documentation and requirements * Develop Informatica MDM transformations * Develop SQL queries for data marts * Implement MDM mappings mapplets sessions workflows * Perform ETL transformations * Schedule and monitor Informatica jobs * Support QA defect resolution and testing * Troubleshoot production MDM issues Perks/Benefits: N/A Skills/Tech stack required: [Data Governance][Data Matching][Data Quality][Data Reconciliation][Data Standardization][Data Transformation][ELT][ETL][Informatica MDM][Informatica PowerCenter][Job monitoring][Mappings][Mapplets][Python][Scheduling][Sessions][SQL][Teradata][Workflows] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Developer][ETL Specialist][MDM Developer][MDM ETL Specialist][Specialist]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Build targeting data and platform capabilities * Develop batch and streaming data jobs * Implement user profile targeting pipelines * Improve data quality and monitoring * Parse targeting rules for ads systems * Provide stable data services for ads delivery Perks/Benefits: + Fast-paced work environment + Hands-on project experience + Mentorship Skills/Tech stack required: [Apache Airflow][Apache Flink][Apache Hive][Apache Kafka][Apache Spark][Data Modeling][Java][Python][Scala][SQL] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineering][Data Engineering Intern][Engineering Intern][Intern]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python"
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.29
-    },
-    {
-      "externalId": "database-engineer-ii-linthicum-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-jun-3348744",
-      "source": "foorilla",
-      "url": "https://reflexiveconcepts.catsone.com/careers/74775/jobs/16155953-Database-Engineer-II",
-      "title": "Database Engineer II",
-      "company": "Database Engineer II",
-      "location": "Linthicum, MD; Annapolis Junction, MD; Annapolis Junction, MD; Annapolis Junction, MD; Annapolis Junction, MD; Hanover, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build database parser software * Build microservices * Collaborate in Agile sprints * Debug database optimization issues * Design database schemas * Develop database workflows * Develop Python REST API endpoints * Implement database loading software * Maintain database structure * Manage data models * Scale database deployments * Serialize and send data in JSON * Use Jira for project tracking Perks/Benefits: N/A Skills/Tech stack required: [Agile][AWS][Confluence][Django][Docker][Flask][Git][Jira][JSON][MariaDB][Microservices][MongoDB][PostgreSQL][Python][REST][Swagger][XML] Educational requirements: N/A Role(s): [Database Developer][Database Engineer][Developer][Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 33.1
-    },
-    {
-      "externalId": "software-engineer-iii-fort-meade-md-fort-meade-md-fort-meade-md-annapolis-junction-md-fort-meade-md-laurel-md-3349674",
-      "source": "foorilla",
-      "url": "https://reflexiveconcepts.catsone.com/careers/74775/jobs/16791545-Software-Engineer-III",
-      "title": "Software Engineer III",
-      "company": "Software Engineer III",
-      "location": "Fort Meade, MD; Fort Meade, MD; Fort Meade, MD; Annapolis Junction, MD; Fort Meade, MD; Laurel, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate manual processes with scripts * Build distributed data-processing pipelines * Design data ingress egress pathways * Develop Apache Airflow DAGs * Implement data transport mechanisms * Orchestrate workflow scheduling and monitoring * Perform data wrangling and preprocessing * Query join and aggregate large datasets * Use GIT for source control * Validate data and detect anomalies Perks/Benefits: + FS Polygraph + TS/SCI clearance Skills/Tech stack required: [Apache Airflow][Apache Spark][Bash][Confluence][CSV][Git][Java][Jira][JSON][Jupyter Notebook][Linux][MariaDB][MySQL][NumPy][Pandas][Parquet][PostgreSQL][Python][Slurm][SQL][XML] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Engineer][Engineer III][Software Engineer][Software Engineer III]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.01
+      "score": 33.14
     },
     {
       "externalId": "data-manager-chantilly-va-mclean-virginia-mclean-virginia-mclean-virginia-herndon-va-mclean-virginia-3352134",
@@ -810,43 +804,58 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.94
+      "score": 32.84
     },
     {
-      "externalId": "software-engineer-level-2-ffpp-8850-hanover-md-3353510",
+      "externalId": "senior-software-engineer-vancouver-bc-3360294",
       "source": "foorilla",
-      "url": "https://onyxpointinc.catsone.com/careers/46015/jobs/16808836-Software-Engineer-Level-2-FFPP-8850",
-      "title": "Software Engineer Level 2-FFPP-8850",
-      "company": "Software Engineer Level 2-FFPP-8850",
-      "location": "Hanover, MD",
-      "country": "Moldova",
+      "url": "https://www.comeet.com/jobs/vastdata/43.001/senior-software-engineer/69.B3C-EA.506",
+      "title": "Senior Software Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Vancouver, BC",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze user requirements * Coordinate software installation * Debug software defects * Design software * Develop algorithms * Develop data queries * Develop software features * Execute test procedures * Integrate software systems * Monitor equipment functioning * Oversee software development teams * Recommend documentation improvements * Review software documentation * Write software documentation Perks/Benefits: + 401k match + Dental insurance + Employee referral program + Flexible spending accounts + Health insurance + Mental health support + Paid Holidays + Paid time off + Parental leave + Remote work options + Technology allowance + Tuition reimbursement + Vision insurance Skills/Tech stack required: [BSON][Cloud][Hadoop][HBase][HDFS][Hive][Java][JavaScript][JSON][MapReduce][NoSQL][Pig] Educational requirements: [Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Build query execution engine * Build storage engine * Design database components * Ensure data consistency * Ensure data durability * Ensure data recovery * Execute user queries * Implement concurrency control * Implement transaction manager * Optimize performance * Optimize query planning Perks/Benefits: N/A Skills/Tech stack required: [Algorithms][B-Trees][C#][C++][Concurrency Control][Database Internals][Data Structures][LSM trees][MVCC][Operating Systems][Query Optimization][Query Planning][Storage Engine][Transaction Processing] Educational requirements: N/A Role(s): [Database Software Engineer][Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.88
+      "score": 32.65
     },
     {
-      "externalId": "senior-software-engineer-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-anna-3351895",
+      "externalId": "gcp-engineer-houston-texas-united-states-3359940",
       "source": "foorilla",
-      "url": "https://2hb.catsone.com/careers/64727/jobs/16796098-Senior-Software-Engineer",
-      "title": "Senior Software Engineer",
-      "company": "2...",
-      "location": "Annapolis Junction, MD; Annapolis Junction, MD; Annapolis Junction, MD; Annapolis Junction, MD; Annapolis Junction, MD; Annapolis Junction, MD",
-      "country": "Moldova",
+      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/GCP-Engineer/361514",
+      "title": "GCP Engineer",
+      "company": "Deloitte US",
+      "location": "Houston, Texas, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Design dataflow architectures * Develop and maintain automated data pipelines * Implement data egress pathways * Implement data ingress pathways * Optimize distributed data processing * Orchestrate workflow scheduling and monitoring Perks/Benefits: + Government contractor worksite + TS/SCI/Full Scope Polygraph Clearance required Skills/Tech stack required: [Anomaly Detection][Apache Airflow][Apache Spark][Bash][Confluence][CSV][Data Validation][Git][Java][Jira][JSON][Jupyter Notebook][Linux][MariaDB][MySQL][NumPy][Pandas][Parquet][PostgreSQL][Python][Slurm][SQL][XML] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
+      "description": "Tasks: * Build GCP data lake environments * Configure GCP data platforms * Deploy platform components * Support cloud data pipelines * Support performance stability and operations * Translate technical designs into implementation tasks * Troubleshoot platform issues Perks/Benefits: + Remote work option Skills/Tech stack required: [Cloud Data][Cloud Data Pipelines][Cloud platform][Cloud Platform Integration][Data Engineering][Data Lake][Data Pipelines][Google Cloud][Google Cloud Platform][Platform integration] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Technology] Role(s): [Engineer][GCP Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.59
+      "score": 32.52
+    },
+    {
+      "externalId": "senior-software-engineer-toronto-ca-3360295",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/vastdata/43.001/senior-software-engineer/69.B3C-5B.103",
+      "title": "Senior Software Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Toronto, CA",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build query execution engine * Design database components * Develop query planner and executor * Ensure data recovery consistency durability * Implement concurrency control * Implement transaction manager * Optimize database performance Perks/Benefits: N/A Skills/Tech stack required: [Algorithms][B-Trees][C#][C++][Concurrency Control][Database Internals][Data Structures][Execution Engine][LSM trees][MVCC][Operating Systems][Query Execution][Query Execution Engine][Query Optimization][Storage Engine][Transaction Processing] Educational requirements: N/A Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 32.45
     },
     {
       "externalId": "senior-powerbi-dev-iasi-is-romania-3357556",
@@ -865,62 +874,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.52
-    },
-    {
-      "externalId": "software-engineer-iii-annapolis-junction-md-fort-meade-md-fort-meade-md-fort-meade-md-fort-meade-md-laurel-md-3349701",
-      "source": "foorilla",
-      "url": "https://reflexiveconcepts.catsone.com/careers/74775/jobs/16832852-Software-Engineer-III",
-      "title": "Software Engineer III",
-      "company": "Software Engineer III",
-      "location": "Annapolis Junction, MD; Fort Meade, MD; Fort Meade, MD; Fort Meade, MD; Fort Meade, MD; Laurel, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply infrastructure as code to provision and manage environments * Automate manual processes with Bash scripts * Design distributed metrics and monitoring solutions for HPC systems * Develop and maintain metrics and monitoring infrastructure * Implement message broker based data pipelines * Interface with log management tools * Set up CI CD workflows with GitLab CI Perks/Benefits: N/A Skills/Tech stack required: [Ansible][Bash][CI/CD][Confluence][Elasticsearch][Git][GitLab CI][Jira][Kafka][Linux][Python][Rsyslog][Rust][Splunk][Syslog-ng] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [DevOps][DevOps Engineer][Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 32.44
-    },
-    {
-      "externalId": "software-engineer-ii-fort-meade-md-laurel-maryland-annapolis-junction-maryland-annapolis-junction-maryland-annapo-3349690",
-      "source": "foorilla",
-      "url": "https://reflexiveconcepts.catsone.com/careers/74775/jobs/16820916-Software-Engineer-II",
-      "title": "Software Engineer II",
-      "company": "Software Engineer II",
-      "location": "Fort Meade, MD; Laurel, Maryland; Annapolis Junction, Maryland; Annapolis Junction, Maryland; Annapolis Junction, MD; Annapolis Junction, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate administrative workflows * Create and maintain configuration and procedure documentation * Design software tools and services * Develop and maintain containerized services * Develop and maintain product integrations * Implement CI/CD pipelines * Manage source code with Git * Use Infrastructure as Code for automation Perks/Benefits: N/A Skills/Tech stack required: [Ansible][Atlassian Plugin SDK][Bash][CI/CD][Command Line][Docker][Git][GitLab CI][Java][Linux][Linux Command][Linux Command Line][PHP][Python] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Engineer][Engineer II][Software Engineer][Software Engineer II]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 32.36
-    },
-    {
-      "externalId": "database-engineer-fort-meade-md-3351626",
-      "source": "foorilla",
-      "url": "https://srctech.catsone.com/careers/96671/jobs/15370482-Database-Engineer",
-      "title": "Database Engineer",
-      "company": "Database Engineer",
-      "location": "Fort Meade, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build ad hoc queries * Create and update database queries * Design relational databases * Develop database loading software * Develop database parser software * Develop object oriented databases * Implement database integration using Open Database Connectivity * Perform information storage and retrieval * Support database development through system acceptance testing * Support system acceptance and Initial Operational Capability * Write scripts and macros Perks/Benefits: N/A Skills/Tech stack required: [Database Administration][Database Connectivity][Database Design][Database security][Data loading][Data Modeling][Data Retrieval][Open Database][Open database connectivity][SQL] Educational requirements: N/A Role(s): [Database Engineer][Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.2
+      "score": 32.42
     },
     {
       "externalId": "software-engineer-linthicum-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-jun-3351296",
@@ -939,43 +893,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.94
-    },
-    {
-      "externalId": "software-engineer-ii-annapolis-junction-md-laurel-maryland-annapolis-junction-maryland-annapolis-junction-maryland-3349670",
-      "source": "foorilla",
-      "url": "https://reflexiveconcepts.catsone.com/careers/74775/jobs/16772351-Software-Engineer-II",
-      "title": "Software Engineer II",
-      "company": "Software Engineer II",
-      "location": "Annapolis Junction, MD; Laurel, Maryland; Annapolis Junction, Maryland; Annapolis Junction, Maryland; Annapolis Junction, MD; Annapolis Junction, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build automation pipelines * Collaborate with data engineers and stakeholders * Design data workflows * Develop Apache Airflow DAGs * Implement workflow reliability and observability * Schedule and monitor workflows Perks/Benefits: N/A Skills/Tech stack required: [Apache Airflow][Apache Spark][Bash][Containerd][Docker][Git][Java][Linux][Podman][Python] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 31.36
-    },
-    {
-      "externalId": "database-administrator-fort-meade-md-fort-meade-md-3351616",
-      "source": "foorilla",
-      "url": "https://srctech.catsone.com/careers/96671/jobs/15370485-Database-Administrator",
-      "title": "Database Administrator",
-      "company": "Database Administrator",
-      "location": "Fort Meade, MD; Fort Meade, MD",
-      "country": "Moldova",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Administer database platforms * Conduct performance tuning * Implement database security policies * Maintain database availability * Maintain database indexes * Maintain database security * Monitor database data * Organize and format data * Perform disaster recovery Perks/Benefits: + Active security clearance Skills/Tech stack required: [Database Administration][Database security][Data Monitoring][Disaster Recovery][Index Management][Oracle][Performance Tuning][SQL Server][Sybase] Educational requirements: N/A Role(s): [Administrator][Database Administrator]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 31.25
+      "score": 31.85
     }
   ]
 }
