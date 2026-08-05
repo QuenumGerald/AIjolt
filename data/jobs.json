@@ -1,30 +1,6 @@
 {
-  "generatedAt": "2026-08-05T09:11:01.670Z",
+  "generatedAt": "2026-08-05T11:33:51.457Z",
   "jobs": [
-    {
-      "externalId": "senior-data-scientist-lisboa-lisboa-3346476",
-      "source": "foorilla",
-      "url": "https://mootiva.catsone.com/careers/113611/jobs/16831428-Senior-Data-Scientist",
-      "title": "Senior Data Scientist",
-      "company": "Senior Data Scientist",
-      "location": "Lisboa, Lisboa",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Collaborate with business and technical teams to define innovative solutions * Continuously track advances in generative AI and machine learning technologies * Define architectures for large language model based applications RAG and AI agents * Define prompt engineering model evaluation and fine tuning strategies * Develop end to end artificial intelligence applications * Develop scalable training deployment and model monitoring pipelines * Ensure development best practices safety AI governance and responsible AI * Lead design and development of generative artificial intelligence and machine learning solutions * Lead technology innovation initiatives and continuous improvement * Mentor junior and mid-level data scientists Perks/Benefits: + Hybrid work Skills/Tech stack required: [Agent Framework][AI Agents][APIs][AWS][Azure][CI/CD][Cloud platform][Containers][Data Engineering][Deep learning][Embeddings][Fine Tuning][Generative AI][Git][Google Cloud][Google Cloud Platform][Langchain][Langgraph][Language Models][Language Processing][Large Language Models][Machine Learning][Microsoft Agent][Microsoft Agent Framework][MLOps][Model Evaluation][Natural Language][Natural Language Processing][Prompt engineering][Python][Retrieval-Augmented Generation][SQL][Vector Databases] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "RAG",
-        "NLP",
-        "MLOps",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 56.85
-    },
     {
       "externalId": "senior-ai-engineer-w-ml-lisboa-lisboa-3351488",
       "source": "foorilla",
@@ -44,7 +20,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.16
+      "score": 55.06
     },
     {
       "externalId": "machine-learning-engineer-huntington-beach-ca-3354758",
@@ -66,7 +42,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.52
+      "score": 54.42
     },
     {
       "externalId": "natural-language-processing-nlp-specialist-annapolis-junction-md-annapolis-junction-md-aurora-co-chantilly-va-honolulu-hi-reston-va-3349217",
@@ -86,7 +62,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.72
+      "score": 53.62
     },
     {
       "externalId": "ai-machine-learning-skill-2-ffpp-8904-hanover-md-3353310",
@@ -108,55 +84,28 @@
       ],
       "aiRelevance": 0.91,
       "visaSponsored": false,
-      "score": 52.8
+      "score": 52.7
     },
     {
-      "externalId": "ai-engineering-manager-guadalajara-jal-mexico-3355936",
+      "externalId": "senior-software-developer-machine-learning-platform-montreal-province-of-quebec-canada-3356388",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Blend360/744000141548896-ai-engineering-manager",
-      "title": "AI Engineering Manager",
-      "company": "Blend360",
-      "location": "Guadalajara, Jal., Mexico",
-      "country": "Mexico",
+      "url": "https://www.coveo.com/en/company/careers/open-positions?gh_jid=8565029002",
+      "title": "Senior Software Developer – Machine Learning Platform",
+      "company": "C...",
+      "location": "Montreal (Province of Quebec, Canada)",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Automate MLOps and LLMOps lifecycle * Build and mentor AI engineering team * Build inference infrastructure and CI CD pipelines * Conduct technical reviews and architecture assessments * Define AI system scope and limitations * Deploy and monitor AI models * Design and deliver RAG systems * Design APIs microservices and orchestration layers * Design evaluation frameworks for LLM systems * Identify and categorize model failures * Lead AI project delivery end to end * Lead prompt engineering techniques * Lead retraining workflows * Perform feasibility assessments for AI approaches * Run structured experiments and create metrics Perks/Benefits: + Company-provided equipment + English lessons + Flexible working options + Learning opportunities + Mentorship programs + Paid leaves + Remote work bonus + Study plans and courses + Travel opportunities + Udemy Business Skills/Tech stack required: [APIs][“as-code”][Automation][AWS][Azure][CI/CD][Databricks][Docker][Embeddings][Evaluation][Event Driven][Event-driven architecture][Few-shot][Few-Shot Learning][Fine Tuning][GCP][Git][Inference Optimization][Infrastructure as Code][Kubernetes][Language Models][Large Language Models][LLMOps][Microservices][MLflow][MLOps][Model Monitoring][Model versioning][Orchestration][Precision at K][Prompt engineering][Python][RAG][Recall at K][Reranking][Retrieval][Snowflake][Structured outputs][Weights and Biases] Educational requirements: N/A Role(s): [AI][AI Engineering][AI Engineering Manager][Engineering][Engineering Manager][Manager]",
+      "description": "Tasks: * Build backend services for machine learning platform * Collaborate with data scientists and engineers * Deploy services to Production * Develop and test backend code * Improve development processes using AI coding tools * Improve observability and reliability * Integrate agentic applications into production * Maintain high scale services for LLM requests Perks/Benefits: N/A Skills/Tech stack required: [Application design][AWS][Debugging][Distributed Systems][Java][LLM Inference][Observability][OpenSearch][Python][Realtime systems][Scalable application design][Spring Boot][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Backend][Backend Developer][Developer][Machine Learning Platform Backend Developer][Senior Software Developer][Software Developer]",
       "postedAt": "2026-08-04T00:00:00.000Z",
       "skills": [
         "Python",
         "LLM",
-        "RAG",
-        "MLOps",
-        "Kubernetes",
         "AWS"
       ],
-      "aiRelevance": 0.54,
+      "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 47.68
-    },
-    {
-      "externalId": "ai-engineering-lead-guadalajara-jal-mexico-3355931",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Blend360/744000141550085-ai-engineering-lead",
-      "title": "AI Engineering Lead",
-      "company": "Blend360",
-      "location": "Guadalajara, Jal., Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze model failure modes * Apply prompt engineering techniques * Automate MLOps and LLMOps lifecycle * Build CI CD pipelines for AI models * Build inference infrastructure * Conduct feasibility assessments * Create evaluation frameworks * Define AI system scope and communicate risks * Design and build agentic LLM solutions * Design and build RAG systems * Design APIs and microservices * Implement orchestration layers for latency cost reliability * Lead end-to-end AI project delivery * Mentor junior engineers * Run structured experiments Perks/Benefits: + Company-provided equipment + English lessons + Flexible working options + Learning opportunities + Mentorship programs + Paid leave + Remote work bonus + Travel opportunities + Udemy Business Skills/Tech stack required: [“as-code”][Automation][AWS][Azure][CI/CD][Dataset curation][Deployment][Docker][Embeddings][Evaluation][Event Driven][Event-driven architecture][Experimentation][Few-shot][Few-Shot Learning][Fine Tuning][GCP][Git][Infrastructure as Code][Kubernetes][LLMOps][Microservices][MLflow][MLOps][Monitoring][Precision at K][Prompt engineering][Python][RAG][Recall at K][Reranking][REST APIs][Retrieval][Structured outputs][Tracking][Versioning][Weights and Biases] Educational requirements: N/A Role(s): [AI][AI Engineering][AI Engineering Lead][Engineering Lead][Lead]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "MLOps",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.54,
-      "visaSponsored": false,
-      "score": 46.73
+      "score": 50.93
     },
     {
       "externalId": "devops-engineer-senior-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-3351646",
@@ -178,7 +127,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 46.63
+      "score": 46.53
     },
     {
       "externalId": "machine-learning-trainer-mclean-va-3351719",
@@ -197,7 +146,7 @@
       ],
       "aiRelevance": 0.7000000000000001,
       "visaSponsored": false,
-      "score": 45.67
+      "score": 45.57
     },
     {
       "externalId": "cloud-software-engineer-iii-laurel-md-annapolis-junction-md-linthicum-maryland-fort-meade-md-annapolis-junction-md-ann-3349708",
@@ -220,28 +169,27 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 45.04
+      "score": 44.94
     },
     {
-      "externalId": "mid-ai-ml-engineer-lisboa-lisboa-3346691",
+      "externalId": "senior-data-engineer-new-york-us-3356149",
       "source": "foorilla",
-      "url": "https://mootiva.catsone.com/careers/113611/jobs/16831067-Mid-AI-and-ML-Engineer",
-      "title": "Mid AI & ML Engineer",
-      "company": "Mid AI & ML Engineer",
-      "location": "Lisboa, Lisboa",
-      "country": "Unknown",
+      "url": "https://jobs.alterdomus.com/job/New-York-Senior-Data-Engineer/1423202833/",
+      "title": "Senior Data Engineer",
+      "company": "Alter Domus",
+      "location": "New York, US",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build agentic AI systems * Build machine learning pipelines * Create LLM-based solutions * Develop machine learning models * Ensure code quality, scalability, and maintainability * Evaluate and detect model drift * Implement AI solutions in Azure * Implement forecasting models * Integrate ML components into microservices * Monitor model performance * Orchestrate ML workflows with Apache Airflow * Use Docker and Kubernetes Perks/Benefits: N/A Skills/Tech stack required: [Agentic AI][Apache Airflow][Azure][CI/CD][Databricks][DevOps][Docker][Drift Detection][Forecasting][Kubernetes][Language Models][Large Language Models][Machine Learning][Microservices][Model Drift][Model Drift Detection][Model Monitoring][Object-Oriented][Object-oriented programming][Prompt engineering][Python][Time Series] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
+      "description": "Tasks: * Build and maintain Genie spaces for natural language data access * Build dbt transformations with testing and modular design * Deliver curated datasets to clients via Snowflake and Databricks * Design and operate end to end data pipelines * Implement data quality reconciliation and validation checks * Implement governance with Unity Catalog entitlements and lineage * Implement medallion architecture data transformations * Ingest data from JDBC file drops SaaS APIs and change data capture * Monitor pipelines and resolve production incidents * Operate MCP services for governed data access to AI agents * Orchestrate workflows with Airflow and Databricks * Provide technical leadership, mentorship, and code reviews * Tune Spark and SQL for performance and cost Perks/Benefits: + Learning and development resources Skills/Tech stack required: [Amazon CloudWatch][Amazon DynamoDB][Amazon MWAA][Apache Airflow][Apache Iceberg][Athena][Auto Loader][AWS Glue][AWS Lambda][AWS S3][AWS Secrets][AWS Secrets Manager][CI/CD][Databricks][DBT][Delta Lake][Docker][Git][GitHub Actions][IAM][JDBC][MCP][PySpark][Python][Secrets Manager][Snowflake][Spark][SQL][Terraform][Unity Catalog] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
-        "Kubernetes"
+        "AWS"
       ],
-      "aiRelevance": 0.44999999999999996,
+      "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 42.99
+      "score": 39.85
     },
     {
       "externalId": "data-engineerarchitects-databricks-lisboa-lisboa-lisboa-lisboa-3349954",
@@ -258,27 +206,7 @@
       "skills": [],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.63
-    },
-    {
-      "externalId": "ai-developer-lisboa-lisboa-portugal-portugal-3346689",
-      "source": "foorilla",
-      "url": "https://mootiva.catsone.com/careers/113611/jobs/16823995-AI-Developer",
-      "title": "AI Developer",
-      "company": "AI Developer",
-      "location": "Lisboa, Lisboa; Portugal, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build secure scalable solutions * Define technical solutions * Develop AI-powered features * Evaluate and apply AI technologies * Improve product quality * Integrate AI capabilities into applications * Monitor AI technology evolution Perks/Benefits: + Hybrid work model Skills/Tech stack required: [AI Agents][API Integration][CI/CD][Docker][DynamoDB][JWT][Kubernetes][Language Models][Large Language Models][OAuth][PostgreSQL][Redis][Retrieval-Augmented Generation][SAML] Educational requirements: N/A Role(s): [AI][AI Developer][Developer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "RAG",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 37.67
+      "score": 38.53
     },
     {
       "externalId": "data-architect-data-engineer-picatinny-arsenal-nj-3351580",
@@ -298,7 +226,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.59
+      "score": 37.49
     },
     {
       "externalId": "software-engineer-level-3-ffpp-8852-hanover-md-3353511",
@@ -315,7 +243,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 37.13
+      "score": 37.03
     },
     {
       "externalId": "technical-project-manager-ai-solutions-remotely-anywhere-usa-usa-3350901",
@@ -335,7 +263,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.12
+      "score": 37.02
     },
     {
       "externalId": "software-engineer-level-2-ffpp-8902-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-3353526",
@@ -355,7 +283,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.03
+      "score": 35.93
+    },
+    {
+      "externalId": "data-integration-engineer-sofia-bulgaria-3356994",
+      "source": "foorilla",
+      "url": "https://careers-axway.icims.com/jobs/8872/senior-systems-program-developer-ii/job?in_iframe=1",
+      "title": "Data Integration Engineer",
+      "company": "Axway",
+      "location": "Sofia, Bulgaria",
+      "country": "Bulgaria",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build schedule and monitor data workflows * Collaborate with business teams for BI data * Connect enterprise applications * Design and implement data models * Develop ELT/ETL pipelines * Document data models pipelines and architecture * Implement API and data integration flows * Import data into Snowflake * Provide level 2 support * Resolve bugs in implementations * Support data governance security and data quality * Troubleshoot integration issues * Write integration technical specifications Perks/Benefits: + Career development + Competitive pay + Flexible work + Global culture perks + Health coverage + Paid time off + Retirement plans Skills/Tech stack required: [Agile][Airflow][Apache Spark][API][API Integration][API Management][Data Governance][Data Processing][Data Quality][Data Vault][DBT][Dimensional Modeling][ELT][ETL][Java][JavaScript][Kanban][Power BI][Python][Real Time][Real-time Data][Real-time Data Processing][Salesforce][Scrum][Snowflake][SQL][Talend][Workday][Workday Studio] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Data Integration Engineer][Engineer][Integration Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 35.87
     },
     {
       "externalId": "software-engineer-3-tg-hanover-md-3353528",
@@ -374,7 +321,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.96
+      "score": 35.86
     },
     {
       "externalId": "data-scientist-fort-meade-md-3351604",
@@ -393,7 +340,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.5
+      "score": 35.4
     },
     {
       "externalId": "data-scientist-md-tx-md-dc-md-tx-md-ga-tx-md-ga-tx-3353102",
@@ -412,7 +359,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.4
+      "score": 35.3
     },
     {
       "externalId": "software-engineer-level-2-ffss-8838-hanover-md-3353509",
@@ -429,7 +376,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.38
+      "score": 35.28
     },
     {
       "externalId": "software-engineer-level-2-ffpp-8881-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-3353531",
@@ -449,7 +396,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.38
+      "score": 35.28
     },
     {
       "externalId": "software-engineer-level-3-ffll-8843-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-hanover-md-3353507",
@@ -468,7 +415,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.34
+      "score": 35.24
     },
     {
       "externalId": "software-engineer-23-by-sig-02-hanover-md-3353523",
@@ -488,7 +435,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.26
+      "score": 35.16
     },
     {
       "externalId": "software-engineer-3-by-xks-02-hanover-md-3353522",
@@ -505,7 +452,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.02
+      "score": 34.92
     },
     {
       "externalId": "software-engineer-23-inca-81-hanover-md-3353517",
@@ -524,7 +471,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.85
+      "score": 34.75
     },
     {
       "externalId": "staff-principal-software-engineer-toronto-ontario-canada-3354874",
@@ -543,7 +490,47 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.85
+      "score": 34.75
+    },
+    {
+      "externalId": "senior-data-engineer-data-foundation-engineering-all-genders-hamburg-or-berlin-germany-3356146",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000141653939-senior-data-engineer-data-foundation-engineering-all-genders-",
+      "title": "Senior Data Engineer - Data Foundation & Engineering (all genders)",
+      "company": "ABOUTYOUGmbH",
+      "location": "Hamburg or Berlin, Germany",
+      "country": "Germany",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain data platform * Build connectors and cataloging * Deliver critical executive reports * Develop custom data tooling * Implement data checks and testing * Maintain CI CD for data pipelines * Migrate data from MySQL in AWS to BigQuery * Monitor data pipelines * Optimize core ELT pipelines * Schedule nightly data sync * Set up cost controlling * Transition data platform Perks/Benefits: N/A Skills/Tech stack required: [Amazon ECS][AWS][CI/CD][CloudFormation][Cloud platform][Dagster][DBT][Docker][Google BigQuery][Google Cloud][Google Cloud Platform][MySQL][Python][SQL][Terraform][Testing] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 34.3
+    },
+    {
+      "externalId": "senior-data-engineer-data-foundation-engineering-all-genders-hamburg-oder-berlin-germany-3356145",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000141654029-senior-data-engineer-data-foundation-engineering-all-genders-",
+      "title": "Senior Data Engineer - Data Foundation & Engineering (all genders)",
+      "company": "ABOUTYOUGmbH",
+      "location": "Hamburg oder Berlin, Germany",
+      "country": "Germany",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain data platform * Deliver critical reports * Develop monitoring and data checks * Ensure source system performance * Implement cost control and testing * Manage data connectors and cataloging * Migrate data workloads to target platform * Move large scale data from MySQL to BigQuery * Own and optimize ELT pipelines * Set up CI/CD pipelines Perks/Benefits: + After work drinks + Company events + Team lunches Skills/Tech stack required: [Amazon ECS][AWS CloudFormation][CI/CD][Dagster][Data Catalog][Data Quality][DBT][Docker][Google BigQuery][Monitoring][Python][SQL][Terraform][Testing] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 34.28
     },
     {
       "externalId": "software-engineer-1-inca-70-hanover-md-3353516",
@@ -562,7 +549,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.22
+      "score": 34.12
     },
     {
       "externalId": "data-engineer-sme-ck22-mclean-virginia-3351589",
@@ -582,7 +569,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.16
+      "score": 34.06
     },
     {
       "externalId": "software-engineer-2-inca-68-hanover-md-3353515",
@@ -599,7 +586,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.06
+      "score": 33.96
     },
     {
       "externalId": "software-engineer-level-2-ffpp-8863-hanover-md-3353514",
@@ -616,7 +603,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.04
+      "score": 33.94
     },
     {
       "externalId": "electric-mind-ai-enablement-senior-engineer-downtown-toronto-3354968",
@@ -633,7 +620,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.83
+      "score": 33.73
     },
     {
       "externalId": "data-engineer-suitland-md-annapolis-junction-maryland-crystal-city-md-suitland-md-dahlgren-va-pearl-harb-3350159",
@@ -652,7 +639,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.75
+      "score": 33.65
     },
     {
       "externalId": "supercomputing-data-processing-engineer-annapolis-junction-md-3349790",
@@ -669,7 +656,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.69
+      "score": 33.59
+    },
+    {
+      "externalId": "senior-powerbi-dev-cluj-napoca-cj-romania-3357557",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Endava/744000141652226-senior-power-bi-dev",
+      "title": "Senior (Power)BI Dev",
+      "company": "Endava",
+      "location": "Cluj-Napoca, CJ, Romania",
+      "country": "Romania",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with cross-functional teams * Create additional reporting and visualizations * Develop ETL processes * Develop Power BI reports * Maintain data quality * Translate business requirements into technical solutions Perks/Benefits: N/A Skills/Tech stack required: [Amazon Athena][Amazon Aurora][Amazon Redshift][Amazon Web Services][Apache Spark][Azure][Azure Data][Azure Data Factory][Databricks][Data Factory][Data Warehousing][ETL][NoSQL][Power BI][Python][Qlik][Relational databases][Reporting][SAP BI][Scala][Snowflake][SQL][Tableau][T-SQL][Web Services] Educational requirements: N/A Role(s): [BI Developer][Developer][Power BI Developer][Senior Power BI Developer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.58
     },
     {
       "externalId": "enterprise-data-engineer-chantilly-va-aurora-co-tampaorlando-fl-chantilly-va-annapolis-junction-md-riverwoods-il-3353077",
@@ -689,43 +695,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.53
-    },
-    {
-      "externalId": "senior-data-engineer-remote-united-states-3346984",
-      "source": "foorilla",
-      "url": "https://myjobs.adp.com/healthpointchc/cx/job-details?reqId=5001214105706",
-      "title": "Senior Data Engineer (Remote)",
-      "company": "H...",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Benchmark new data technologies * Compute analytics and predictive analytics * Create dashboards and reports * Design and maintain data warehouses * Design scalable data models * Develop maintainable code and test suites * Document analysis and development results * Extract, transform and load data * Gather requirements and deliver data driven insights * Monitor and improve data quality and performance * Perform peer code-review * Tune data structures for near real time refresh Perks/Benefits: + Remote work Skills/Tech stack required: [Data Architecture][Data Lake][Data Modeling][Data Quality][Data Visualization][Data Warehousing][ETL][Microsoft Fabric][OBIEE][Oracle Database][Power BI][Python][Snowflake][SQL Server][Tableau] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.49
-    },
-    {
-      "externalId": "etl-manager-nyc-ny-nyc-ny-nyc-ny-nyc-ny-stafford-va-stafford-va-3346966",
-      "source": "foorilla",
-      "url": "https://arielpartners.catsone.com/careers/12667/jobs/16829839-ETL-Manager",
-      "title": "ETL Manager",
-      "company": "ETL Manager",
-      "location": "NYC, NY; NYC, NY; NYC, NY; NYC, NY; Stafford, VA; Stafford, VA",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze business requirements for data integration * Apply SDLC methodologies * Collaborate with data architects and reporting teams * Design scalable ETL solutions * Develop ETL workflows * Ensure data governance and security compliance * Lead enterprise ETL development * Maintain data mapping specifications * Mentor technical staff on ETL and data management * Optimize ETL performance and data quality * Support business intelligence reporting and dashboards * Troubleshoot data integration issues Perks/Benefits: N/A Skills/Tech stack required: [Agile][Business Intelligence][Dashboards][Database optimization][Data integration][Data Marts][Data Quality][Data Transformation][Data Warehousing][ETL][Microsoft Visio][Reporting][SDLC][SQL][SQL Server][Stored Procedures][Waterfall] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineering][Data Engineering Manager][Engineering Manager][ETL Manager][Manager]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.44
+      "score": 33.43
     },
     {
       "externalId": "database-engineer-ii-linthicum-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-jun-3348744",
@@ -745,7 +715,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.33
+      "score": 33.23
     },
     {
       "externalId": "software-engineer-iii-fort-meade-md-fort-meade-md-fort-meade-md-annapolis-junction-md-fort-meade-md-laurel-md-3349674",
@@ -764,24 +734,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.24
-    },
-    {
-      "externalId": "data-analyst-rockmart-ga-united-states-3345390",
-      "source": "foorilla",
-      "url": "https://myjobs.adp.com/petiqcorpext/cx/job-details?reqId=5001196865706",
-      "title": "Data Analyst",
-      "company": "G...",
-      "location": "Rockmart, GA, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Align stakeholder priorities * Build dashboards * Collaborate with cross-functional teams * Conduct data audits * Create reports * Detect anomalies * Develop data visualizations * Document data definitions * Document data workflows * Enforce data standards * Find improvement opportunities * Gather data requirements * Identify trends * Maintain data integrity * Monitor data quality * Perform data analysis * Provide ad-hoc analysis * Provide user support * Support data governance * Support data integration * Support data migration * Support data transformation * Troubleshoot data issues * Validate data accuracy Perks/Benefits: N/A Skills/Tech stack required: [Data Analysis][Data Governance][Data integration][Data Integrity][Data Migration][Data Quality][Data Transformation][Data Visualization][Data Warehousing][Power BI][SQL][Tableau] Educational requirements: N/A Role(s): [Analyst][Data Analyst]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.2
+      "score": 33.14
     },
     {
       "externalId": "data-manager-chantilly-va-mclean-virginia-mclean-virginia-mclean-virginia-herndon-va-mclean-virginia-3352134",
@@ -798,7 +751,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.17
+      "score": 33.07
     },
     {
       "externalId": "software-engineer-level-2-ffpp-8850-hanover-md-3353510",
@@ -815,7 +768,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.11
+      "score": 33.01
     },
     {
       "externalId": "senior-software-engineer-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-anna-3351895",
@@ -834,7 +787,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.82
+      "score": 32.72
+    },
+    {
+      "externalId": "senior-powerbi-dev-iasi-is-romania-3357556",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Endava/744000141652286-senior-power-bi-dev",
+      "title": "Senior (Power)BI Dev",
+      "company": "Endava",
+      "location": "Iași, IS, Romania",
+      "country": "Romania",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build Power BI reports and dashboards * Collaborate with stakeholders * Develop ETL processes * Maintain data quality and consistency * Translate business requirements into technical solutions Perks/Benefits: N/A Skills/Tech stack required: [AWS][Azure][Data Modeling][Data Warehousing][ETL][Power BI][Qlik][Relational databases][SQL][Tableau][T-SQL] Educational requirements: N/A Role(s): [BI Developer][Business Intelligence][Business Intelligence Developer][Developer][Power BI Developer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 32.65
     },
     {
       "externalId": "software-engineer-iii-annapolis-junction-md-fort-meade-md-fort-meade-md-fort-meade-md-fort-meade-md-laurel-md-3349701",
@@ -853,7 +825,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.67
+      "score": 32.57
     },
     {
       "externalId": "software-engineer-ii-fort-meade-md-laurel-maryland-annapolis-junction-maryland-annapolis-junction-maryland-annapo-3349690",
@@ -872,7 +844,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.59
+      "score": 32.49
     },
     {
       "externalId": "database-engineer-fort-meade-md-3351626",
@@ -889,26 +861,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.43
-    },
-    {
-      "externalId": "data-analystdata-engineer-lisboa-lisbon-lisboa-lisbon-lisboa-lisbon-lisboa-lisbon-lisboa-lisbon-oporto-3345391",
-      "source": "foorilla",
-      "url": "https://axianspt.catsone.com/careers/69209/jobs/16277943-Data-AnalystData-Engineer",
-      "title": "Data Analyst/Data Engineer",
-      "company": "Data Analyst/Data Engineer",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze data * Build data reports and dashboards * Conduct hypothesis testing * Create Power BI reports * Perform descriptive statistics * Use Python for data analysis * Work with big data technologies * Write SQL queries Perks/Benefits: + Career Training + Free psychology consultations + Health insurance Skills/Tech stack required: [Airflow][Bitbucket][CI/CD][DAX][Jenkins][Jira][Pandas][Power BI][Power Query][Presto][PySpark][Python][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Analyst][Data Analyst][Data Engineer][Engineer]",
-      "postedAt": "2026-08-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 32.3
+      "score": 32.33
     },
     {
       "externalId": "software-engineer-linthicum-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-jun-3351296",
@@ -927,7 +880,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.17
+      "score": 32.07
     },
     {
       "externalId": "database-engineer-l1-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-anna-3348749",
@@ -944,7 +897,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.05
+      "score": 31.95
     },
     {
       "externalId": "database-engineer-l0-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-annapolis-junction-md-fort-3348748",
@@ -961,7 +914,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.94
+      "score": 31.84
     },
     {
       "externalId": "software-engineer-ii-annapolis-junction-md-laurel-maryland-annapolis-junction-maryland-annapolis-junction-maryland-3349670",
@@ -980,7 +933,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.59
+      "score": 31.49
     },
     {
       "externalId": "database-administrator-fort-meade-md-fort-meade-md-3351616",
@@ -997,7 +950,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.48
+      "score": 31.38
     }
   ]
 }
