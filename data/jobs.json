@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T03:45:12.150Z",
+  "generatedAt": "2026-08-06T09:11:12.470Z",
   "jobs": [
     {
       "externalId": "senior-data-scientist-with-ai-product-mindset-budapest-hungary-3364289",
@@ -24,7 +24,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.89
+      "score": 55.66
     },
     {
       "externalId": "applied-ai-engineer-london-uk-madrid-spain-3359496",
@@ -45,32 +45,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.53
-    },
-    {
-      "externalId": "senior-ai-engineer-homeworker-uk-united-kingdom-3362078",
-      "source": "foorilla",
-      "url": "https://kainos.wd3.myworkdayjobs.com/en-US/Kainos/job/Birmingham/Senior-AI-Engineer_JR_17647-1",
-      "title": "Senior AI Engineer",
-      "company": "Kainos Software Limited",
-      "location": "Homeworker - UK, United Kingdom",
-      "country": "United Kingdom",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Adopt modern AI frameworks * Build scalable cloud native architectures * Collaborate with customers * Deliver advanced AI solutions * Deploy AI and machine learning models to production * Ensure responsible AI practices * Implement AIOps best practices * Mentor technical team members * Monitor models using metrics * Translate business challenges into trustworthy AI solutions Perks/Benefits: N/A Skills/Tech stack required: [Agentic AI][AI Security][AWS][Azure][CI/CD][Code review][Compliance][Data Engineering][Deep learning][Docker][Drift Detection][Ethics][Fine Tuning][Generative AI][Knowledge graphs][Kubernetes][LLM Fine-tuning][Machine Learning][Model Evaluation][Model Interpretability][Model Monitoring][Multimodal Data][NDCG][Precisión][Privacy][Prompt engineering][Python][PyTorch][Recall][Responsible AI][Retrieval-Augmented Generation][Semantic Search][TensorFlow][Testing][Unstructured Data][Vector Databases] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI Engineer][Engineer][Senior AI Engineer]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "PyTorch",
-        "TensorFlow",
-        "LLM",
-        "RAG",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.14
+      "score": 55.31
     },
     {
       "externalId": "ai-engineer-europe-budapest-hungary-3364221",
@@ -92,7 +67,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.86
+      "score": 54.63
     },
     {
       "externalId": "software-engineer-iii-genai-llm-infrastructure-cloud-ai-warsaw-poland-3359950",
@@ -114,30 +89,31 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.31
+      "score": 54.09
     },
     {
-      "externalId": "ai-engineer-malaga-edificio-hidalgo-spain-3359500",
+      "externalId": "mlops-engineer-warsaw-3365450",
       "source": "foorilla",
-      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Malaga-Edificio-Hidalgo/AI-Engineer--Junior-Middle-_R00347456",
-      "title": "AI Engineer",
-      "company": "6000 Accenture S.L. Company",
-      "location": "Malaga, Edificio Hidalgo, Spain",
-      "country": "Spain",
+      "url": "https://www.cognism.com/jobs?gh_jid=4945679101",
+      "title": "MLOps Engineer",
+      "company": "See Our Open Positions",
+      "location": "Warsaw",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply prompt engineering for development tasks * Build and integrate application APIs and interfaces to agentic backends * Connect full stack data flows to agent architecture * Define and track AI workflow KPIs * Deliver end to end in Agile sprints * Generate tests and debug using AI tools * Integrate LLM APIs into production applications * Manage token limits latency and cost for LLM calls * Perform AI assisted code review * Use AI coding assistants for delivery * Validate reliability of AI generated outputs Perks/Benefits: N/A Skills/Tech stack required: [Agile][AWS][Azure][CI/CD][CSS][Docker][Docker Compose][GCP][HTML][Java][JavaScript][Langchain][Langgraph][LLM APIs][NoSQL][Prompt engineering][Python][RAG][SQL][SQLAlchemy][TypeScript] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Software Engineer]",
+      "description": "Tasks: * Bridge AI engineering and DevSecOps for ML deployment * Build and manage automation pipelines for ML platform * Create tooling for model integration * Design model training and deployment infrastructure * Enforce MLOps best practices * Implement secure reliable scalable AWS architectures * Monitor and maintain production ML services Perks/Benefits: N/A Skills/Tech stack required: [Amazon ECS][Amazon SageMaker][“as-code”][AWS][AWS CDK][AWS Networking][AWS Security][CI/CD][CircleCI][Containerization][Databricks][Docker][GitHub Actions][Infrastructure as Code][Keras][Kubernetes][Machine Learning][MLOps][Python][PyTorch][Scikit-learn][SQL][TensorFlow][Terraform][Vertex AI] Educational requirements: N/A Role(s): [Engineer][MLOps Engineer]",
       "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
+        "PyTorch",
+        "TensorFlow",
+        "MLOps",
+        "Kubernetes",
+        "AWS"
       ],
-      "aiRelevance": 1,
+      "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.27
+      "score": 52.75
     },
     {
       "externalId": "data-scientist-london-england-united-kingdom-3361228",
@@ -163,7 +139,7 @@
       ],
       "aiRelevance": 0.84,
       "visaSponsored": false,
-      "score": 51.39
+      "score": 51.16
     },
     {
       "externalId": "ai-rpa-developer-lisbon-lisbon-portugal-3360779",
@@ -186,7 +162,7 @@
       ],
       "aiRelevance": 0.75,
       "visaSponsored": false,
-      "score": 49.99
+      "score": 49.76
     },
     {
       "externalId": "senior-machine-learning-research-engineer-research-engineering-msr-cambridge-united-kingdom-cambridgeshire-cambridge-3358585",
@@ -206,196 +182,67 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 48.88
+      "score": 48.66
     },
     {
-      "externalId": "junior-ai-native-engineer-london-30-fenchurch-street-united-kingdom-3360649",
+      "externalId": "robotics-data-operator-intern-el-segundo-california-united-states-3364828",
       "source": "foorilla",
-      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/London/Junior-AI-Native-Engineer_R00339263",
-      "title": "Junior AI Native Engineer",
-      "company": "3003 Accenture (UK) Limited Company",
-      "location": "London, 30 Fenchurch Street, United Kingdom",
-      "country": "United Kingdom",
+      "url": "https://job-boards.greenhouse.io/faradayfuture/jobs/7828531003",
+      "title": "Robotics Data Operator Intern",
+      "company": "Job Application for Robotics Data Operator Intern at Faraday Future",
+      "location": "El Segundo, California, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply prompt engineering for development tasks * Build abstraction layers for AI providers * Connect full stack systems to agentic backends * Contribute reusable components and internal AI standards * Create AI generated tests * Define KPIs for AI workflow effectiveness * Deliver end to end in Agile sprints * Design and build production software * Improve code quality with AI assisted code review * Integrate LLM APIs into applications * Manage token limits latency and cost * Perform AI assisted debugging * Present AI productivity and quality metrics * Validate reliability and failure modes Perks/Benefits: N/A Skills/Tech stack required: [AWS][Azure][CI/CD][CSS][Docker][GCP][HTML][Java][JavaScript][Langchain][Langgraph][NoSQL][Python][RAG][SQL][TypeScript] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Software Engineer]",
+      "description": "Tasks: * Collect egocentric robot teleoperation data * Ensure recording standards compliance * Extract camera intrinsic parameters * Operate robotic systems using VR interfaces * Perform data quality inspections * Preprocess and validate multimodal data formats * Synchronize sensor timestamps * Upload data according to protocol Perks/Benefits: N/A Skills/Tech stack required: [Camera Calibration][Data labeling][Data Preprocessing][Data synchronization][Linux][Python][Robotics][ROS2][Sensor data][Sensor data synchronization][Video recording][VR teleoperation] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Analyst Intern][Data Analyst Intern][Intern][Robotics Data Analyst Intern][Robotics Data Operator Intern]",
       "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
+        "Robotics"
+      ],
+      "aiRelevance": 0.73,
+      "visaSponsored": false,
+      "score": 47.68
+    },
+    {
+      "externalId": "ai-solutions-engineer-reports-into-rochester-ny-3364504",
+      "source": "foorilla",
+      "url": "https://jobs.lever.co/innovativesol-2/108e6245-b482-404d-8025-25dd758e1833",
+      "title": "AI Solutions Engineer",
+      "company": "Innovative Solutions",
+      "location": "Reports into Rochester, NY",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply prompt engineering few shot learning and fine tuning * Assess data readiness quality and accessibility * Build and optimize RAG pipelines * Conduct technical discovery workshops * Create conversational AI interfaces * Design and build proof of concept applications * Develop AI agents and multi agent orchestration * Document architecture decisions code and deployment suggestions * Implement production ready generative AI solutions * Lead client AI initiatives * Provide AI ML best practice guidance * Translate business requirements into implementation plans * Translate discovery findings into technical specifications Perks/Benefits: + Remote work + Travel 2 weeks per quarter Skills/Tech stack required: [Agent Orchestration][AI Agents][Amazon Bedrock][Angular][AWS][Batching][Caching][Cloud deployment][Context Management][Data Engineering][Data isolation][Embeddings][Few-shot][Few-Shot Learning][Fine Tuning][Generative AI][Intent detection][Langchain][Language Models][Language Understanding][Large Language Models][Llamaindex][Multi-Agent][Multi-agent orchestration][Multi-tenant][Multi-tenant architecture][Natural Language][Natural Language Understanding][OpenSearch][Open Source][Pinecone][Prompt engineering][RAG][React][Retrieval-Augmented Generation][SaaS][Tenant architecture][Vector Databases][Vector Search][Weaviate] Educational requirements: N/A Role(s): [AI][AI Solutions][AI Solutions Engineer][Engineer][Solutions Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
         "RAG",
         "AWS",
         "LangChain"
       ],
-      "aiRelevance": 0.63,
+      "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 46.68
+      "score": 45.38
     },
     {
-      "externalId": "aiml-computational-scientist-dublin-1-grand-canal-square-ireland-3359695",
+      "externalId": "ai-quality-automation-engineer-dtg-prague-czech-republic-3365874",
       "source": "foorilla",
-      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Dublin/AI-ML-Computational-Scientist_R00346855",
-      "title": "AI/ML Computational Scientist",
-      "company": "3100 Accenture Limited Company",
-      "location": "Dublin, 1 Grand Canal Square, Ireland",
-      "country": "Ireland",
+      "url": "https://job-boards.greenhouse.io/purestorage/jobs/8018746",
+      "title": "AI Quality Automation Engineer , DTG",
+      "company": "Job Application for AI Quality Automation Engineer , DTG at Everpure",
+      "location": "Prague, Czech Republic",
+      "country": "Czech Republic",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build data pipelines for model training and production * Build distributed computing systems * Customize deep learning and generative AI models * Deploy AI ML software to cloud * Develop machine learning algorithms and models * Formulate AI and machine learning solutions * Implement data storage and retrieval for models * Monitor deployed models * Preprocess large-scale datasets Perks/Benefits: N/A Skills/Tech stack required: [Big Data][C++][Cloud Computing][Computer Architecture][Deep learning][Distributed Computing][Generative AI][High Performance][High-Performance Computing][Java][Language Models][Large Language Models][Machine Learning][MLOps][Performance Computing][Python][PyTorch][R][SQL][System Engineering][TensorFlow] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [AI][AI ML Computational Scientist][Computational Scientist][Engineer][Learning Engineer][Machine Learning Engineer][Scientist]",
+      "description": "Tasks: * Architect AI test frameworks * Build automated test suites * Build CI CD deployment workflows * Create automated quality gates * Define data precision metrics * Detect data anomalies * Engineer quality subsystems * Implement automated monitoring * Integrate generative AI testing * Integrate telemetry and observability * Perform root cause analysis * Scale end to end testing platform * Validate data pipeline logic Perks/Benefits: + Company-sponsored team events + Flexible time off + Wellness resources Skills/Tech stack required: [AI Evaluation][Anomaly Detection][API Automation][Cause analysis][CI/CD][Data Anomaly][Data Anomaly Detection][Data Governance][Data Quality][GitHub Actions][Language Models][Large Language Models][Prompt engineering][Python][Regression testing][Root cause][Root Cause Analysis][Telemetry][Test automation] Educational requirements: N/A Role(s): [AI][AI Quality Automation Engineer][Automation Engineer][Engineer][Quality Automation Engineer][Software Test Automation Engineer][Test Automation Engineer]",
       "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
-        "Python",
-        "PyTorch",
-        "TensorFlow",
-        "MLOps"
+        "Python"
       ],
-      "aiRelevance": 0.6,
+      "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 46.21
-    },
-    {
-      "externalId": "ai-ml-engineer-lincoln-nelnet-center-united-states-3362076",
-      "source": "foorilla",
-      "url": "https://nelnet.wd1.myworkdayjobs.com/en-US/MyNelnet/job/Remote/AI---ML-Engineer_R22925",
-      "title": "AI / ML Engineer",
-      "company": "Nelnet Diversified Solutions, LLC",
-      "location": "Lincoln - Nelnet Center, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and maintain evaluation suites for agent systems * Build and maintain tools APIs and connectors for agents * Design build and deploy LLM powered agents to solve business problems * Design scalable AI pipelines and services on AWS * Implement responsible AI guardrails and audit trails * Implement retrieval augmented generation and context strategies * Instrument agents for observability and monitoring * Maintain documentation for agent architectures prompts and evaluations * Monitor and maintain production agent health * Prototype and expand agentic adoption across the organization * Provide mentorship on agent design and evaluation practices Perks/Benefits: + 401k + Earned time-off + Employee stock purchase program + FSA + Health, dental, vision insurance + HSA + Life insurance + Tuition reimbursement + Wellness program Skills/Tech stack required: [Amazon ECS][Amazon S3][AWS Bedrock][AWS Lambda][AWS Step Functions][CI/CD][Docker][Evaluation][Kubernetes][Language Models][Large Language Models][LLM-as-judge][Machine Learning][Model Monitoring][Observability][OpenSearch][Prompt engineering][Python][Retrieval-Augmented Generation][Step Functions][Terraform][Token Accounting] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [AI][AI/ML Engineer][Engineer][ML Engineer]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.51,
-      "visaSponsored": false,
-      "score": 46.17
-    },
-    {
-      "externalId": "aiml-engineer-hybrid-onsite-in-eden-prairie-mn-primary-location-eden-prairie-minnesota-3362688",
-      "source": "foorilla",
-      "url": "https://careers.unitedhealthgroup.com/en/job/eden-prairie/ai-ml-engineer-hybrid-onsite-in-eden-prairie-mn/34088/98803640688",
-      "title": "AI/ML Engineer - Hybrid Onsite In Eden Prairie, MN",
-      "company": "UnitedHealth Group",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply retrieval augmented generation RAG * Develop classification models with XGBoost * Develop machine learning solutions for LLMs * Implement LLM-based applications * Implement unsupervised learning with K means * Perform fine tuning for ML models * Perform testing and documentation for production quality code * Use Docker for development and deployment * Use LangChain for model orchestration * Write maintainable PEP8 compliant Python code Perks/Benefits: + 401k contribution + Comprehensive benefits package + Equity stock purchase + Incentive and recognition programs Skills/Tech stack required: [Docker][Fine Tuning][Git][K-Means][Langchain][Language Models][Large Language Models][Machine Learning][PEP8][Python][Retrieval-Augmented Generation][Terminal][XGBoost] Educational requirements: N/A Role(s): [AI][AI/ML Engineer][Engineer][Learning Engineer][Machine Learning Engineer][ML Engineer]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 0.48,
-      "visaSponsored": false,
-      "score": 43.48
-    },
-    {
-      "externalId": "team-leader-artificial-intelligence-sciences-complexe-desjardins-montreal-canada-3361038",
-      "source": "foorilla",
-      "url": "https://desjardins.wd10.myworkdayjobs.com/en-US/Desjardins/job/Montral/Chef-ou-cheffe-d-quipe--Sciences-d-intelligence-artificielle_R2609835-1",
-      "title": "Team Leader, Artificial Intelligence Sciences",
-      "company": "Federation Caisses Desjardins",
-      "location": "Complexe Desjardins Montréal, Canada",
-      "country": "Canada",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Collaborate with business partners to prioritize AI use cases * Conduct applied research and experimentation * Ensure reproducibility and performance monitoring * Establish data science and AI methods * Evaluate new algorithms models and methodologies * Lead model design training and evaluation * Mobilize and support data science team * Oversee AI model development * Share knowledge and promote AI expertise * Transition models to robust scalable solutions * Translate findings into recommendations Perks/Benefits: + Flexible vacation + Group insurance + Health and wellness reimbursement + Pension plan + Telemedicine + Telework equipment Skills/Tech stack required: [Data Modeling][Data Processing][Experimentation][Generative AI][Language Models][Large Language Models][Machine Learning][Model Evaluation][Model Training][Model Validation][Performance Monitoring][Python][PyTorch][Reproducibility][SAS][Scikit-learn] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Artificial Intelligence][Artificial Intelligence Team Lead][Data Scientist][Intelligence Team Lead][Lead][Lead Data Scientist][Scientist][Team Lead][Team Lead Data][Team Lead - Data Scientist]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "PyTorch"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 41.18
-    },
-    {
-      "externalId": "data-engineer-ii-zelle-scottsdale-united-states-3362168",
-      "source": "foorilla",
-      "url": "https://earlywarning.wd5.myworkdayjobs.com/en-US/earlywarningcareers/job/Scottsdale/Data-Engineer-II---Zelle_REQ2026747-1",
-      "title": "Data Engineer II - Zelle",
-      "company": "Early Warning Services, LLC",
-      "location": "Scottsdale, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build business process dashboards * Build datamarts * Collaborate on data science platform architecture * Conduct data analysis and cause and effect analysis * Create Tableau dashboards * Define data dependencies * Define report and dashboard requirements * Design data ETL pipelines * Develop backend data solutions for new sources * Develop data infrastructure analytics tools for data science * Guide data scientists on software engineering best practices * Identify data gaps * Improve ETL and cluster computing * Mentor and train interns * Monitor data quality * Provide support and training for business teams * Recommend BI standards and policies * Research data platform best practices Perks/Benefits: + 401k matching + Dental insurance + Flexible work schedule + Health insurance + Paid Holidays + Paid parental leave + Paid time off + Vision insurance Skills/Tech stack required: [AWS S3][Data Analysis][Data Ingestion][Data Modeling][Data Quality][Data Storage][ETL][Hadoop][Hive][Impala][Indexing][Linux][Machine Learning][Partitioning][Problem Solving][PySpark][Python][Query Tuning][Relational databases][Scala][Spark][SQL][Tableau][Tableau Server][Testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Data Engineer II][Engineer][Engineer II]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.18,
-      "visaSponsored": false,
-      "score": 39.22
-    },
-    {
-      "externalId": "senior-data-engineer-new-york-us-3356149",
-      "source": "foorilla",
-      "url": "https://jobs.alterdomus.com/job/New-York-Senior-Data-Engineer/1423202833/",
-      "title": "Senior Data Engineer",
-      "company": "Alter Domus",
-      "location": "New York, US",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and maintain Genie spaces for natural language data access * Build dbt transformations with testing and modular design * Deliver curated datasets to clients via Snowflake and Databricks * Design and operate end to end data pipelines * Implement data quality reconciliation and validation checks * Implement governance with Unity Catalog entitlements and lineage * Implement medallion architecture data transformations * Ingest data from JDBC file drops SaaS APIs and change data capture * Monitor pipelines and resolve production incidents * Operate MCP services for governed data access to AI agents * Orchestrate workflows with Airflow and Databricks * Provide technical leadership, mentorship, and code reviews * Tune Spark and SQL for performance and cost Perks/Benefits: + Learning and development resources Skills/Tech stack required: [Amazon CloudWatch][Amazon DynamoDB][Amazon MWAA][Apache Airflow][Apache Iceberg][Athena][Auto Loader][AWS Glue][AWS Lambda][AWS S3][AWS Secrets][AWS Secrets Manager][CI/CD][Databricks][DBT][Delta Lake][Docker][Git][GitHub Actions][IAM][JDBC][MCP][PySpark][Python][Secrets Manager][Snowflake][Spark][SQL][Terraform][Unity Catalog] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.18,
-      "visaSponsored": false,
-      "score": 39.17
-    },
-    {
-      "externalId": "data-scientist-2034-springfield-va-united-states-3359846",
-      "source": "foorilla",
-      "url": "https://leidos.wd5.myworkdayjobs.com/en-US/External/job/Springfield-VA/Data-Scientist_R-00186287",
-      "title": "Data Scientist",
-      "company": "00100 LEIDOS, INC.",
-      "location": "2034 Springfield VA, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Advise leadership on data science strategy and analytic methodology * Apply data governance security compliance and responsible AI practices * Architect end to end analytic workflows * Design and implement statistical models and predictive analytics * Develop and validate machine learning models * Evaluate model performance quantify uncertainty and ensure validity * Extract transform integrate and analyze structured and unstructured data * Lead development of data science machine learning and artificial intelligence solutions * Perform quantitative analysis for actionable insights * Prepare technical documentation reports and briefings Perks/Benefits: N/A Skills/Tech stack required: [Anomaly Detection][Artificial Intelligence][Bias Assessment][Classification][Clustering][Data integration][Data Mining][Data Transformation][Data Visualization][Data Wrangling][Feature Engineering][Forecasting][Machine Learning][Model Deployment][Model Explainability][Model Monitoring][Model Validation][Predictive Analytics][Python][R][Regression][Series analysis][SQL][Statistical modeling][Time Series][Time Series Analysis] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "MLOps"
-      ],
-      "aiRelevance": 0.18,
-      "visaSponsored": false,
-      "score": 38.93
-    },
-    {
-      "externalId": "data-labeling-analyst-speech-voice-ai-ca-client-field-office-san-fran-bay-area-united-states-3361047",
-      "source": "foorilla",
-      "url": "https://welocalize.wd1.myworkdayjobs.com/en-US/Welocalize/job/CA-Client-Field-Office-San-Fran-Bay-Area/Data-Labeling-Analyst---Speach---Voice-AI_R0007652",
-      "title": "Data Labeling Analyst - Speech & Voice AI",
-      "company": "LE024 Welo Data, LLC",
-      "location": "CA Client Field Office (San Fran Bay Area), United States",
-      "country": "United States",
-      "workMode": "onsite",
-      "salary": null,
-      "description": "Tasks: * Annotate data accurately * Apply natural language processing techniques * Conduct basic quality control * Create quality reports * Design training and test datasets * Ensure linguistic accuracy * Evaluate trained model performance * Identify error patterns and report anomalies * Initiate model training using internal tools * Perform manual quality analysis * Refine data annotation guidelines * Update training and test model datasets Perks/Benefits: N/A Skills/Tech stack required: [Command Line][Command-line Interface][Data Analysis][Data Annotation][Dataset design][Language Processing][Machine Learning][Natural Language][Natural Language Processing][Natural Language Processing Linguistics][Quality Assurance] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Labeling Analyst][Labeling Analyst]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "NLP"
-      ],
-      "aiRelevance": 0.27,
-      "visaSponsored": false,
-      "score": 38.81
+      "score": 37
     },
     {
       "externalId": "data-science-manager-marketing-london-uk-3359836",
@@ -414,7 +261,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.17
+      "score": 36.94
     },
     {
       "externalId": "lead-data-scientist-london-united-kingdom-3359827",
@@ -433,7 +280,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.42
+      "score": 36.19
     },
     {
       "externalId": "customer-experience-ai-chatbot-specialist-tel-aviv-yafo-tel-aviv-district-il-3362142",
@@ -452,26 +299,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.28
-    },
-    {
-      "externalId": "associate-data-science-analyst-cv-eau-claire-wi-united-states-3361009",
-      "source": "foorilla",
-      "url": "https://fa-euwp-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/387067",
-      "title": "Associate Data Science Analyst - CV",
-      "company": "Mayo Career Site US",
-      "location": "Eau Claire, WI, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Assist customers with data understanding and training * Build forecasting models * Conduct data mining * Create data visualizations * Develop descriptive analytics * Generate reports * Interpret analytical results * Manage and extract data * Perform data analysis * Present findings to business stakeholders * Write analytical reports * Write data query scripts Perks/Benefits: + Continuing education + Dental insurance + FSA + HSA + Medical insurance + Retirement plan + Vision insurance Skills/Tech stack required: [Data Analysis][Data Management][Data Mining][Data Querying][Data Visualization][Forecasting][Machine Learning][Predictive Modeling][Python][Reporting][SQL][Statistical modeling] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Data Science][Data Science Analyst]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.15,
-      "visaSponsored": false,
-      "score": 36.22
+      "score": 36.06
     },
     {
       "externalId": "senior-software-engineer-distributed-databases-vitessmysqlmyrocks-london-3360299",
@@ -490,26 +318,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.36
-    },
-    {
-      "externalId": "data-integration-engineer-sofia-bulgaria-3356994",
-      "source": "foorilla",
-      "url": "https://careers-axway.icims.com/jobs/8872/senior-systems-program-developer-ii/job?in_iframe=1",
-      "title": "Data Integration Engineer",
-      "company": "Axway",
-      "location": "Sofia, Bulgaria",
-      "country": "Bulgaria",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build schedule and monitor data workflows * Collaborate with business teams for BI data * Connect enterprise applications * Design and implement data models * Develop ELT/ETL pipelines * Document data models pipelines and architecture * Implement API and data integration flows * Import data into Snowflake * Provide level 2 support * Resolve bugs in implementations * Support data governance security and data quality * Troubleshoot integration issues * Write integration technical specifications Perks/Benefits: + Career development + Competitive pay + Flexible work + Global culture perks + Health coverage + Paid time off + Retirement plans Skills/Tech stack required: [Agile][Airflow][Apache Spark][API][API Integration][API Management][Data Governance][Data Processing][Data Quality][Data Vault][DBT][Dimensional Modeling][ELT][ETL][Java][JavaScript][Kanban][Power BI][Python][Real Time][Real-time Data][Real-time Data Processing][Salesforce][Scrum][Snowflake][SQL][Talend][Workday][Workday Studio] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Data Integration Engineer][Engineer][Integration Engineer]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 35.2
+      "score": 35.14
     },
     {
       "externalId": "data-uk-warrington-united-kingdom-3358860",
@@ -529,7 +338,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.08
+      "score": 34.86
     },
     {
       "externalId": "database-infrastructure-engineer-it-da-db-2026-174-ld-geneva-geneva-switzerland-3364441",
@@ -548,7 +357,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.97
+      "score": 34.74
     },
     {
       "externalId": "data-engineer-healthcare-usa-remote-usa-remote-usa-remote-3362167",
@@ -569,27 +378,27 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.63
+      "score": 34.41
     },
     {
-      "externalId": "software-development-engineer-data-platform-ireland-dublin-3359818",
+      "externalId": "senior-data-engineer-germany-spain-romania-remote-3365757",
       "source": "foorilla",
-      "url": "https://workday.wd5.myworkdayjobs.com/en-US/Workday/job/Ireland-Dublin/Software-Development-Engineer---Data-Platform_JR-0108934",
-      "title": "Software Development Engineer - Data Platform",
-      "company": "Workday Limited",
-      "location": "Ireland, Dublin",
+      "url": "https://jobs.lever.co/trustyou/3a8b741b-679d-43da-830a-b15a7609ab84",
+      "title": "Senior Data Engineer",
+      "company": "T...",
+      "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build caching modules * Build messaging and streaming platforms * Deploy and operate production systems * Design distributed services * Evaluate and adopt open source tools * Implement observability modules and alerts * Manage distributed clusters * Optimize distributed services performance * Participate in on-call rotation Perks/Benefits: + Company benefits + Flexible work schedule + On-call support + Remote work option Skills/Tech stack required: [Agile][ArgoCD][AWS][Bare Metal][Cassandra][Chef][CI/CD][Configuration Management][Docker N/A][Encryption][GCP][Golang][Helm][IAM][Java][Kafka][Kubernetes][Linux][N A][NoSQL][OpenStack][RabbitMQ][RBAC][Redis][Scala][Secrets management][TLS][Zookeeper] Educational requirements: N/A Role(s): [Development Engineer][Engineer][Software Development][Software Development Engineer]",
+      "description": "Tasks: * Design real-time streaming pipelines * Develop data system architecture * Execute automated testing for data integrity * Implement spec driven development * Lead distributed systems improvements * Mentor junior engineers * Monitor mission critical data systems * Optimize production data pipelines * Orchestrate agentic AI workflows Perks/Benefits: + Career development + Coaching + Flexible working hours + Learning and development training + Location Based Social Benefits + Remote-first work environment + Six dedicated learning days + Team events Skills/Tech stack required: [Apache Kafka][CI/CD][Claude Code][ClickHouse][Data Engineering][Docker][Elasticsearch][GitHub Spec Kit][Kubernetes][Model Context Protocol][OLAP][Openspec][Python][Redis][Spec-Kit][SQL][Streaming Data] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
       "postedAt": "2026-08-05T00:00:00.000Z",
       "skills": [
-        "Kubernetes",
-        "AWS"
+        "Python",
+        "Kubernetes"
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.29
+      "score": 34.26
     },
     {
       "externalId": "senior-full-stack-engineer-warsaw-poland-pl-3361476",
@@ -609,7 +418,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.12
+      "score": 33.9
     },
     {
       "externalId": "senior-data-engineer-consultant-antwerp-belgium-3359780",
@@ -628,26 +437,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.11
+      "score": 33.88
     },
     {
-      "externalId": "data-engineer-microsoft-fabric-united-states-remote-3362169",
+      "externalId": "business-intelligence-engineer-mexico-3365556",
       "source": "foorilla",
-      "url": "https://rethink.applytojob.com/apply/C5cCPAOxET/Data-Engineer-Microsoft-Fabric",
-      "title": "Data Engineer (Microsoft Fabric)",
-      "company": "RethinkFirst",
-      "location": "Not specified",
-      "country": "Unknown",
+      "url": "https://job-boards.greenhouse.io/encora10/jobs/5205286007",
+      "title": "Business Intelligence Engineer",
+      "company": "Job Application for Business Intelligence Engineer at Encora",
+      "location": "Mexico",
+      "country": "Mexico",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build data warehouse solutions * Collaborate with stakeholders in Agile/Scrum * Design lakehouse solutions * Develop dimensional semantic models * Develop ETL/ELT pipelines * Implement data quality validation transformation * Integrate source systems * Perform code reviews * Set up data monitoring and alerting * Troubleshoot production data incidents * Tune SQL Spark job performance Perks/Benefits: + 11 paid company holidays + 401k matching + Flexible paid time off + Health, dental, vision benefits + Parental leave + Remote work Skills/Tech stack required: [Agile Scrum][Alerting][Azure Databricks][Azure Synapse][C#][Data Governance][Data pipeline][Data Pipeline Monitoring][Data Quality][Data Transformation][Data Validation][Dimensional Modeling][ELT][ETL][Microsoft Fabric][Pipeline monitoring][Python][Spark][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
+      "description": "Tasks: * Build dimensional and semantic models * Collaborate on analytical datasets and business logic * Create certified dashboards * Define business metadata and data governance * Design metrics and KPIs * Extend curated and aggregated data layers * Implement reporting standards and dashboard certification * Migrate legacy dashboards and reports * Modernize enterprise reporting platform * Optimize report performance and scalability * Support AI ready semantic models Perks/Benefits: + Remote work Skills/Tech stack required: [Data Engineering][Data Governance][Data Modeling][Dimensional Model][Dimensional Modeling][KPI][Metrics][Power BI][Semantic layer][Semantic Modeling][SQL][Tableau] Educational requirements: N/A Role(s): [Business Intelligence][Business Intelligence Engineer][Engineer][Intelligence Engineer]",
+      "postedAt": "2026-08-06T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.96
+      "score": 33.73
     },
     {
       "externalId": "senior-full-stack-engineer-portugal-3361472",
@@ -667,7 +474,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.93
+      "score": 33.7
     },
     {
       "externalId": "data-engineer-iii-baltimore-maryland-united-states-3359773",
@@ -686,7 +493,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.65
+      "score": 33.42
     },
     {
       "externalId": "senior-data-engineer-data-foundation-engineering-all-genders-hamburg-or-berlin-germany-3356146",
@@ -706,7 +513,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.62
+      "score": 33.4
     },
     {
       "externalId": "senior-data-engineer-data-foundation-engineering-all-genders-hamburg-oder-berlin-germany-3356145",
@@ -726,7 +533,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.61
+      "score": 33.38
+    },
+    {
+      "externalId": "customer-success-physicist-denmark-ballerup-copenhagen-dk-3361874",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/quantummachines/D6.000/customer-success-physicist--denmark/5E.E53",
+      "title": "Customer Success Physicist- Denmark",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Ballerup, Copenhagen, DK",
+      "country": "Denmark",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with partners on calibration workflows * Contribute to customer education and training materials * Design automated calibration frameworks * Implement automated calibration solutions * Integrate quantum control solutions * Lead technical implementation for customers * Manage technical relationships with customer accounts * Provide guidance on quantum control best practices * Translate customer requirements into solutions Perks/Benefits: + Customer-facing role + Technical education and training creation + Travel opportunities Skills/Tech stack required: [Python][Quantum Computing][Quantum Physics][Software development][Superconducting qubits] Educational requirements: [Master of Science][PhD] Role(s): [Computing Engineer][Engineer][Experimental Physicist][Physicist][Quantum Computing Engineer]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.37
     },
     {
       "externalId": "fullstack-data-engineer-lisbon-lisbon-portugal-3364279",
@@ -746,7 +572,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.59
+      "score": 33.36
     },
     {
       "externalId": "senior-full-stack-engineer-kyiv-kyiv-city-ua-3361473",
@@ -766,26 +592,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.59
-    },
-    {
-      "externalId": "customer-success-physicist-denmark-ballerup-copenhagen-dk-3361874",
-      "source": "foorilla",
-      "url": "https://www.comeet.com/jobs/quantummachines/D6.000/customer-success-physicist--denmark/5E.E53",
-      "title": "Customer Success Physicist- Denmark",
-      "company": "Spark Hire Recruit - Collaborative Recruiting",
-      "location": "Ballerup, Copenhagen, DK",
-      "country": "Denmark",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Collaborate with partners on calibration workflows * Contribute to customer education and training materials * Design automated calibration frameworks * Implement automated calibration solutions * Integrate quantum control solutions * Lead technical implementation for customers * Manage technical relationships with customer accounts * Provide guidance on quantum control best practices * Translate customer requirements into solutions Perks/Benefits: + Customer-facing role + Technical education and training creation + Travel opportunities Skills/Tech stack required: [Python][Quantum Computing][Quantum Physics][Software development][Superconducting qubits] Educational requirements: [Master of Science][PhD] Role(s): [Computing Engineer][Engineer][Experimental Physicist][Physicist][Quantum Computing Engineer]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.59
+      "score": 33.36
     },
     {
       "externalId": "data-engineer-databricks-hf-saint-ouen-france-3364276",
@@ -802,27 +609,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.4
-    },
-    {
-      "externalId": "data-scientist-insights-and-analytics-austin-3359526",
-      "source": "foorilla",
-      "url": "https://jobs.apple.com/en-us/details/200675897-0157/data-scientist-insights-and-analytics?team=HRDWR",
-      "title": "Data Scientist - Insights and Analytics",
-      "company": "Data Scientist - Insights and Analytics - Jobs - Careers at Apple",
-      "location": "Austin",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data pipelines * Conduct statistical analysis * Create analytics insights for stakeholders * Develop data transformations * Explore data and identify trends * Forecast business metrics * Model data for analytics * Perform business analytics * Present findings to business customers Perks/Benefits: N/A Skills/Tech stack required: [Airflow][Apache Spark][AWS][D3.js][Data Modeling][Data Transformation][Data Visualization][Data Warehousing][DBT][JavaScript][NumPy][Pandas][Python][Scikit-learn][Snowflake] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Data Scientist][Scientist]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 33.34
+      "score": 33.18
     },
     {
       "externalId": "senior-data-engineer-guadalajara-jal-mexico-3364278",
@@ -839,7 +626,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.29
+      "score": 33.07
     },
     {
       "externalId": "senior-data-engineer-guadalajara-jalisco-mexico-3359771",
@@ -859,7 +646,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.26
+      "score": 33.03
     },
     {
       "externalId": "senior-full-stack-engineer-spain-3361475",
@@ -879,7 +666,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.1
+      "score": 32.88
     },
     {
       "externalId": "senior-powerbi-dev-cluj-napoca-cj-romania-3357557",
@@ -898,7 +685,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.91
+      "score": 32.68
     },
     {
       "externalId": "data-engineering-project-intern-ads-targeting-2027-start-san-jose-california-united-states-3359775",
@@ -917,7 +704,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.69
+      "score": 32.47
     },
     {
       "externalId": "senior-software-engineer-vancouver-bc-3360294",
@@ -934,7 +721,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.2
+      "score": 31.97
+    },
+    {
+      "externalId": "solutions-architect-portuguese-speaking-madrid-spain-madrid-3365671",
+      "source": "foorilla",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8675568002",
+      "title": "Solutions Architect (Portuguese Speaking) Madrid Spain",
+      "company": "Solutions Architect (Portuguese Speaking) Madrid Spain - Databricks",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Author reference architectures and how tos * Conduct workshops and seminars * Deliver big data analytics architecture designs * Develop customer relationships with account executives * Lead proofs-of-concept * Provide technical sales support to clients Perks/Benefits: + Hybrid work + Travel opportunities Skills/Tech stack required: [Apache Spark][Big Data][Cloud Computing][Data Architecture][Java][Proof of Concept][Python][Scala][Solution architecture] Educational requirements: N/A Role(s): [Architect][Solutions Architect]",
+      "postedAt": "2026-08-05T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 31.93
     },
     {
       "externalId": "gcp-engineer-houston-texas-united-states-3359940",
@@ -951,7 +757,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.07
+      "score": 31.84
     },
     {
       "externalId": "senior-software-engineer-toronto-ca-3360295",
@@ -968,7 +774,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32
+      "score": 31.78
     },
     {
       "externalId": "senior-powerbi-dev-iasi-is-romania-3357556",
@@ -987,7 +793,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.97
+      "score": 31.75
     },
     {
       "externalId": "data-analyst-salt-lake-city-ut-united-states-3362157",
@@ -1004,7 +810,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.82
+      "score": 31.59
     }
   ]
 }
