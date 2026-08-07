@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T00:20:34.611Z",
+  "generatedAt": "2026-08-07T05:07:38.263Z",
   "jobs": [
     {
       "externalId": "ai-engineer-wrocaw-poland-3371652",
@@ -20,7 +20,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.61
+      "score": 56.41
     },
     {
       "externalId": "ai-engineer-glasgow-campus-united-kingdom-3371238",
@@ -42,7 +42,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.35
+      "score": 56.15
     },
     {
       "externalId": "senior-manager-ai-agent-ml-engineering-nashville-tn-united-states-3372282",
@@ -65,14 +65,14 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.29
+      "score": 56.09
     },
     {
       "externalId": "llm-post-training-engineer-intern-research-product-2027-summer-san-jose-california-united-states-3371358",
       "source": "foorilla",
       "url": "https://lifeattiktok.com/search/7670285031018432773",
       "title": "LLM Post-training Engineer Intern (Research & Product) - 2027 Summer",
-      "company": "LLM Post-training Engineer Intern (Research & Product) - 2027 Summer",
+      "company": "T...",
       "location": "San Jose, California, United States",
       "country": "United States",
       "workMode": "unknown",
@@ -86,7 +86,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.18
+      "score": 55.98
     },
     {
       "externalId": "senior-ai-engineer-ireland-dublin-3372697",
@@ -108,7 +108,31 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.08
+      "score": 55.88
+    },
+    {
+      "externalId": "senior-ai-software-engineer-ai-agents-python-f2f-interview-in-nj-jersey-city-nj-united-states-3374962",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/TMSLLC/744000141966234-senior-ai-software-engineer-ai-agents-python-f2f-interview-in-nj",
+      "title": "Senior AI Software Engineer | AI Agents | Python | F2F Interview in NJ",
+      "company": "TMSLLC",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build AI agents for planning reasoning and tool use * Collaborate to deliver scalable AI platforms * Deploy and operate LLMOps monitoring evaluation and observability * Design and develop agentic AI solutions * Develop RAG pipelines and agent frameworks * Implement secure AI services with guardrails and approval workflows * Optimize performance and reliability for production LLM applications Perks/Benefits: N/A Skills/Tech stack required: [Agent memory][Agent systems][AI Search][AI Security][Anthropic Claude][Autogen][AWS][AWS Bedrock][Azure][Azure AI][Azure AI Search][Azure OpenAI][ChromaDB][CI/CD][CrewAI][Docker][Embeddings][Faiss][FastAPI][Function Calling][GCP][Google Vertex][Google Vertex AI][Injection Protection][Kubernetes][Langchain][Langgraph][LLMOps][Monitoring and observability][Multi-Agent][Multi-Agent Systems][OpenAI API][PII handling][Pinecone][Prompt engineering][Prompt injection][Prompt-injection protection][Python][RBAC][Responsible AI][Retrieval-Augmented Generation][Tool-Calling][Vector Databases][Vertex AI][Weaviate] Educational requirements: N/A Role(s): [AI Software Engineer][Engineer][Senior AI Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-06T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "Kubernetes",
+        "AWS",
+        "LangChain"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.69
     },
     {
       "externalId": "applied-ai-software-engineer-iii-dallas-texas-united-states-hermitage-tennessee-united-states-morristown-new-jersey-united-st-3371781",
@@ -133,7 +157,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.28
+      "score": 55.08
     },
     {
       "externalId": "senior-machine-learning-engineer-london-england-united-kingdom-3371730",
@@ -155,7 +179,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.81
+      "score": 54.61
     },
     {
       "externalId": "ai-engineer-for-marketing-tel-aviv-yafo-tel-aviv-district-il-3372918",
@@ -176,7 +200,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.11
+      "score": 53.91
     },
     {
       "externalId": "ia-data-engineer-luxembourg-luxembourg-luxembourg-3366901",
@@ -200,7 +224,7 @@
       ],
       "aiRelevance": 0.8999999999999999,
       "visaSponsored": false,
-      "score": 52.52
+      "score": 52.32
     },
     {
       "externalId": "junior-machine-learning-engineer-warsaw-poland-3372983",
@@ -220,7 +244,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 51.07
+      "score": 50.87
     },
     {
       "externalId": "applied-machine-learning-production-engineer-intern-aml-production-engineer-2027-summer-san-jose-california-united-states-3372271",
@@ -239,7 +263,7 @@
       ],
       "aiRelevance": 0.7000000000000001,
       "visaSponsored": false,
-      "score": 47.7
+      "score": 47.5
     },
     {
       "externalId": "ai-engineering-workflow-developer-t-cloud-public-ref5739f-budapest-szeged-pecs-debrecen-hungary-3368286",
@@ -262,7 +286,7 @@
       ],
       "aiRelevance": 0.63,
       "visaSponsored": false,
-      "score": 46.67
+      "score": 46.47
     },
     {
       "externalId": "ai-tech-lead-mf-zagreb-croatia-hybrid-3373624",
@@ -287,7 +311,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 45.89
+      "score": 45.69
     },
     {
       "externalId": "bioinformaticiandata-scientist-ai-enabled-bead-design-proteomics-norway-oslo-ullernchausseen-64-3371918",
@@ -307,7 +331,28 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 43.47
+      "score": 43.27
+    },
+    {
+      "externalId": "support-engineer-ii-developer-portal-heredia-heredia-costa-rica-3375016",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Experian/744000141994229-support-engineer-ii-developer-portal",
+      "title": "Support Engineer II – Developer Portal",
+      "company": "Experian",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assess user experience metrics * Collaborate with development teams * Collaborate with DevX teams * Create knowledge base articles * Create support trend reports * Diagnose platform access issues * Escalate complex issues with documentation * Handle service requests * Maintain support documentation * Manage incident handling * Monitor system alerts * Provide level 1 technical support * Support automation programs * Track performance metrics * Troubleshoot API issues * Troubleshoot integration issues Perks/Benefits: + Bereavement leave + Dental insurance + Education reimbursement + Family bonding leave + Flexible work hours + International share save plan + Life insurance + Medical insurance + Paid time off + Referral program + Work from home Skills/Tech stack required: [AI Agents][API][Automation Anywhere][Excel][Integration][LLM][Power Automate][Power BI][Prompt engineering][Python][RAG][RPA][SQL][UiPath] Educational requirements: N/A Role(s): [Engineer][Support Engineer]",
+      "postedAt": "2026-08-06T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG"
+      ],
+      "aiRelevance": 0.44999999999999996,
+      "visaSponsored": false,
+      "score": 43.22
     },
     {
       "externalId": "head-of-data-berlin-berlin-germany-3371736",
@@ -327,7 +372,26 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.68
+      "score": 40.48
+    },
+    {
+      "externalId": "data-scientist-ann-arbor-mi-united-states-3374990",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Dominos/744000141928505-data-scientist",
+      "title": "Data Scientist",
+      "company": "Dominos",
+      "location": "Ann Arbor, MI, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build internal and external data source knowledge * Build statistical and machine learning models * Clean and preprocess datasets for analysis * Collaborate with cross-functional teams * Conduct code reviews * Consult on data collection and tracking * Create test and measurement plans * Develop machine learning and artificial intelligence components * Document methodologies, processes, and results * Execute test and measurement plans * Extract transform data from multiple sources * Generate reports and visualizations * Improve methodologies and products * Maintain data pipelines and analytical tools * Mine and synthesize data across sources * Monitor model performance * Perform analyses for ad hoc requests * Refine data collection processes * Transform geospatial datasets into actionable insights * Troubleshoot data quality issues * Validate predictive models Perks/Benefits: + 401k matching + Adoption Assistance + Childcare tuition discounts + Company bonus + Fertility benefits + Fitness and wellness programs + Medical, dental, and vision insurance + Mental health support + Paid Holidays + Paid vacation + Stock purchase discount Skills/Tech stack required: [ArcGIS][Artificial Intelligence][Data Analysis][Data Preprocessing][Exploratory Data Analysis][Geopandas][Geospatial Data][Geospatial Data Analysis][Geospatial SQL][Git][Jupyter][Machine Learning][Matplotlib][Pandas][Power BI][Predictive Modeling][Python][Seaborn][SQL][Statistical modeling][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-06T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 40.01
     },
     {
       "externalId": "research-software-engineer-hybrid-montreal-old-montreal-canada-3372413",
@@ -347,24 +411,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.13
-    },
-    {
-      "externalId": "data-insights-manager-marlow-uk-3373505",
-      "source": "foorilla",
-      "url": "https://careers-kyowa-kirin.icims.com/jobs/3232/data-%26-insights-manager/job?in_iframe=1",
-      "title": "Data & Insights Manager",
-      "company": "External",
-      "location": "Marlow, UK",
-      "country": "United Kingdom",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Coordinate with stakeholders to understand requirements and priorities * Define enforce standards for modeling reporting and insight generation * Design scalable secure and performant analytics solutions * Ensure solutions meet business needs and regulatory expectations * Lead day to day delivery of data reporting analytics and insights agents * Manage and lead Data AI team * Operate in agile and DevOps delivery models * Operate reporting solutions and key datasets * Set up data quality integrity and consistency processes * Translate requirements into delivered outcomes Perks/Benefits: N/A Skills/Tech stack required: [Agile][AI machine learning][Analytics engineering][Azure][Business Intelligence][Copilot Studio][Data Engineering][Data Governance][Data Modeling][Data Quality][DevOps][GenAI][Machine Learning][Microsoft Copilot][Microsoft Copilot Studio][Microsoft Fabric][Power BI][Regulatory Compliance][Reporting][Semantic Modeling] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analytics Manager][Data Analytics][Data Analytics Manager][Data and Insights Manager][Insights Manager][Manager]",
-      "postedAt": "2026-08-05T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0.24,
-      "visaSponsored": false,
-      "score": 38.78
+      "score": 39.93
     },
     {
       "externalId": "data-analytics-engineer-puerto-rico-us-pr-santa-isabel-b1-felicia-industrial-park-st-b1-bldg-1-united-states-3373883",
@@ -383,7 +430,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.45
+      "score": 38.25
     },
     {
       "externalId": "wms-business-analystdata-scientist-mopar-parts-service-north-america-auburn-hills-mi-united-states-3374004",
@@ -402,7 +449,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.41
+      "score": 38.21
     },
     {
       "externalId": "solution-engineer-data-ai-united-kingdom-london-london-3370896",
@@ -421,7 +468,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.19
+      "score": 37.99
     },
     {
       "externalId": "business-intelligence-developer-i-google-cloud-mexico-city-cdmx-mexico-3370391",
@@ -440,7 +487,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.72
+      "score": 35.52
     },
     {
       "externalId": "data-engineer-core-engineering-edinburgh-gb-3366896",
@@ -459,7 +506,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.61
+      "score": 35.41
     },
     {
       "externalId": "senior-data-engineer-data-science-platform-london-england-united-kingdom-3367441",
@@ -478,7 +525,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.22
+      "score": 35.02
     },
     {
       "externalId": "data-platform-engineer-stoke-on-trent-england-united-kingdom-3372029",
@@ -497,7 +544,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.2
+      "score": 35
     },
     {
       "externalId": "digital-application-maintenance-engineer-ozzano-dellemilia-bo-it-40064-3366746",
@@ -516,7 +563,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.19
+      "score": 34.99
     },
     {
       "externalId": "analytics-engineer-edinburgh-united-kingdom-3371390",
@@ -536,7 +583,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.97
+      "score": 34.77
     },
     {
       "externalId": "data-management-engineer-onprem-etl-sr-monterrey-3368813",
@@ -553,7 +600,27 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.72
+      "score": 34.52
+    },
+    {
+      "externalId": "senior-data-engineer-mwd-brussels-brussels-belgium-3374979",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/EVERIENCE/744000141967699--senior-data-engineer-m-w-d-",
+      "title": "Senior Data Engineer (m/w/d)",
+      "company": "EVERIENCE",
+      "location": "Brussels, Brussels, Belgium",
+      "country": "Belgium",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build ETL workflows * Deduplicate datasets * Define data policies * Design data models * Ensure data quality * Implement data governance * Implement ETL pipelines * Integrate structured data * Integrate unstructured data * Maintain data lake quality * Manage data lifecycle * Manage Spark clusters * Optimize SQL queries * Orchestrate ETL with Airflow * Oversee data processing systems * Perform data validation Perks/Benefits: + Symbiotic Academy + Training opportunities Skills/Tech stack required: [Airflow][Apache Spark][AWS][C#][Databricks][Data Governance][Data Lake][Data lifecycle][Data Lifecycle Management][Data Quality][Data Warehousing][ETL][Git][Lifecycle Management][.NET][PySpark][Python][Semantic Modeling][SQL] Educational requirements: [Master of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-06T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 34.24
     },
     {
       "externalId": "senior-data-engineer-engineer-mwd-brussels-brussels-belgium-3371998",
@@ -573,7 +640,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.44
+      "score": 34.24
     },
     {
       "externalId": "sr-data-engineer-finance-technology-platform-pyspark-hadoop-cloud-7000-target-pkwy-nncd-0375-brooklyn-parkmn-55445-united-states-3369916",
@@ -592,7 +659,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.42
+      "score": 34.22
     },
     {
       "externalId": "sr-data-engineer-remote-little-rock-arkansas-united-states-remote-3374377",
@@ -609,7 +676,27 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.39
+      "score": 34.19
+    },
+    {
+      "externalId": "data-analyst-spark-tableau-hf-cdi-boulogne-billancourt-idf-france-3374977",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ALTEN/744000141943369-data-analyst-spark-tableau-h-f-cdi-",
+      "title": "Data analyst Spark- Tableau - (H/F) - CDI",
+      "company": "ALTEN",
+      "location": "Boulogne-Billancourt, IDF, France",
+      "country": "France",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze data for trends anomalies opportunities * Automate data pipelines * Automate report generation * Build interactive Tableau dashboards * Clean and transform data * Collaborate with data science and IT teams * Develop Python ETL and calculations * Document analyses and data processes * Optimize SQL queries * Perform code reviews * Present insights to stakeholders * Process data with Spark batch or streaming Perks/Benefits: N/A Skills/Tech stack required: [Athena][AWS][Azure][BigQuery][CI/CD][Databricks][Data Factory][GCP][Git][GitHub][GitLab][Glue][Hadoop][NumPy][Pandas][Power BI][PySpark][Python][Snowflake][Spark][SQL][Synapse][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Analyst][Data Analyst]",
+      "postedAt": "2026-08-06T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.97
     },
     {
       "externalId": "data-analytics-visualization-ciudad-de-mexico-mx-11000-3367241",
@@ -629,7 +716,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.17
+      "score": 33.97
     },
     {
       "externalId": "python-application-engineer-ciudad-de-mexico-cdmx-mx-3372733",
@@ -649,7 +736,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.11
+      "score": 33.91
     },
     {
       "externalId": "ai-enablement-and-intelligent-automation-specialist-deerfield-beach-united-states-3371836",
@@ -666,7 +753,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.03
+      "score": 33.83
     },
     {
       "externalId": "sr-data-engineer-consultant-remote-minnetonka-minnesota-united-states-remote-3374376",
@@ -685,7 +772,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.86
+      "score": 33.66
     },
     {
       "externalId": "senior-ai-platform-engineer-romania-3371331",
@@ -705,7 +792,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.64
+      "score": 33.44
     },
     {
       "externalId": "data-engineer-ror-warsaw-masovian-voivodeship-poland-3367442",
@@ -724,7 +811,27 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.56
+      "score": 33.36
+    },
+    {
+      "externalId": "senior-data-engineer-data-foundations-all-genders-hamburg-or-berlin-germany-3374980",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000141949749-senior-data-engineer-data-foundations-all-genders-",
+      "title": "Senior Data Engineer - Data Foundations (all genders)",
+      "company": "ABOUTYOUGmbH",
+      "location": "Hamburg or Berlin, Germany",
+      "country": "Germany",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain data platform * Build and maintain ELT pipelines * Develop custom data tooling * Drive transition to new data platform * Implement data monitoring and data checks * Manage core reports delivery * Move data from MySQL to Google BigQuery * Optimize nightly data syncs Perks/Benefits: + Afterwork drinks + Career growth + Company events + Team lunches Skills/Tech stack required: [Amazon ECS][AWS CloudFormation][CI/CD][Dagster][Data Catalog][Data Quality][DBT][Docker][ELT][Google BigQuery][Monitoring][Python][SQL][Terraform][Testing] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-06T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.29
     },
     {
       "externalId": "data-engineer-i-usa-ca-2450-broadway-united-states-3373755",
@@ -743,7 +850,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.46
+      "score": 33.26
     },
     {
       "externalId": "it-intern-ai-data-analytics-microsoft-fabric-blue-bell-pa-united-states-3373871",
@@ -762,14 +869,14 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.24
+      "score": 33.04
     },
     {
       "externalId": "business-intelligence-engineer-mexico-3365556",
       "source": "foorilla",
       "url": "https://job-boards.greenhouse.io/encora10/jobs/5205286007",
       "title": "Business Intelligence Engineer",
-      "company": "Job Application for Business Intelligence Engineer at Encora",
+      "company": "Jobs at Encora",
       "location": "Mexico",
       "country": "Mexico",
       "workMode": "unknown",
@@ -779,7 +886,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.1
+      "score": 32.9
     },
     {
       "externalId": "data-management-engineer-cloud-etl-sr-jersey-city-nj-3374295",
@@ -799,7 +906,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.09
+      "score": 32.89
     },
     {
       "externalId": "data-analyst-city-of-london-england-united-kingdom-3369380",
@@ -818,7 +925,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.98
+      "score": 32.78
     },
     {
       "externalId": "senior-data-engineer-brno-jihomoravsky-kraj-cz-3373647",
@@ -837,7 +944,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.86
+      "score": 32.66
     },
     {
       "externalId": "associate-manager-data-science-it306-dxc-paolo-di-dono-it306-italy-3372050",
@@ -854,7 +961,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.84
+      "score": 32.64
     },
     {
       "externalId": "data-center-technician-ii-third-party-data-centers-efs-atlanta-ga-usa-3371341",
@@ -871,7 +978,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.72
+      "score": 32.52
     },
     {
       "externalId": "data-analyst-junior-ciudad-de-mexico-3373975",
@@ -890,7 +997,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.68
+      "score": 32.48
     }
   ]
 }
