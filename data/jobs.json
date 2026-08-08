@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T15:50:24.516Z",
+  "generatedAt": "2026-08-08T19:03:19.468Z",
   "jobs": [
     {
       "externalId": "ai-engineer-manager-guadalajara-jal-mexico-3388826",
@@ -22,29 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.92
-    },
-    {
-      "externalId": "senior-ai-engineer-data-ai-organisation-all-genders-mollet-del-valles-barcelona-es-08100-3387977",
-      "source": "foorilla",
-      "url": "https://jobs.vibrantm.com/merck/job/Mollet-del-Valles-%28Senior%29-AI-Engineer-Data-&-AI-Organisation-%28all-genders%29-Barc-08100/1424422733/",
-      "title": "(Senior) AI Engineer - Data & AI Organisation (all genders)",
-      "company": "SUSONITY",
-      "location": "Mollet del Valles, Barcelona, ES, 08100",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build enterprise AI workflows * Collaborate in agile product delivery teams * Design analytics pipelines * Develop multi-agent systems * Develop predictive models * Ensure model reliability and reproducibility * Implement explainability and transparency * Integrate AI outputs via APIs and dashboards * Integrate LLMs into applications * Monitor and evaluate model performance * Share knowledge and mentor peers * Transform data for analytics Perks/Benefits: N/A Skills/Tech stack required: [Agentic Engineering][Apache Spark][AWS][CI/CD][Claude][DBT][Docker][Information Retrieval][Langfuse][Langsmith][Language Models][Language Processing][Large Language Models][LLM Observability][Machine Learning][MLflow][Natural Language][Natural Language Processing][OpenAI Codex][Palantir Foundry][Predictive Modeling][Python][Reranking][Snowflake][SQL][Statistics][Vector Databases] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Engineer][Data Scientist][Engineer][Scientist]",
-      "postedAt": "2026-08-08T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "NLP",
-        "AWS"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.54
+      "score": 55.79
     },
     {
       "externalId": "senior-ai-software-engineer-ai-agents-python-f2f-interview-in-nj-w2-role-jersey-city-nj-united-states-3385238",
@@ -68,7 +46,29 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.54
+      "score": 55.41
+    },
+    {
+      "externalId": "senior-ai-engineer-data-ai-organisation-all-genders-mollet-del-valles-barcelona-es-08100-3387977",
+      "source": "foorilla",
+      "url": "https://jobs.vibrantm.com/merck/job/Mollet-del-Valles-%28Senior%29-AI-Engineer-Data-&-AI-Organisation-%28all-genders%29-Barc-08100/1424422733/",
+      "title": "(Senior) AI Engineer - Data & AI Organisation (all genders)",
+      "company": "SUSONITY",
+      "location": "Mollet del Valles, Barcelona, ES, 08100",
+      "country": "Spain",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build enterprise AI workflows * Collaborate in agile product delivery teams * Design analytics pipelines * Develop multi-agent systems * Develop predictive models * Ensure model reliability and reproducibility * Implement explainability and transparency * Integrate AI outputs via APIs and dashboards * Integrate LLMs into applications * Monitor and evaluate model performance * Share knowledge and mentor peers * Transform data for analytics Perks/Benefits: N/A Skills/Tech stack required: [Agentic Engineering][Apache Spark][AWS][CI/CD][Claude][DBT][Docker][Information Retrieval][Langfuse][Langsmith][Language Models][Language Processing][Large Language Models][LLM Observability][Machine Learning][MLflow][Natural Language][Natural Language Processing][OpenAI Codex][Palantir Foundry][Predictive Modeling][Python][Reranking][Snowflake][SQL][Statistics][Vector Databases] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Engineer][Data Scientist][Engineer][Scientist]",
+      "postedAt": "2026-08-08T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "NLP",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.4
     },
     {
       "externalId": "forward-deployed-engineer-iii-generative-ai-google-cloud-stockholm-sweden-3390349",
@@ -89,7 +89,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.21
+      "score": 55.08
     },
     {
       "externalId": "lead-ai-engineer-guadalajara-jal-mexico-3388823",
@@ -110,7 +110,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.96
+      "score": 54.83
     },
     {
       "externalId": "ai-engineer-human-to-robot-learning-mensch-metzingen-riederich-3388829",
@@ -130,7 +130,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.1
+      "score": 53.97
     },
     {
       "externalId": "performance-analytics-genai-manager-insurgentes-mexico-3390055",
@@ -149,7 +149,28 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 53.68
+      "score": 53.54
+    },
+    {
+      "externalId": "ai-engineer-data-analytics-warszawa-wojewodztwo-mazowieckie-pl-3392177",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/tango/B7.007/ai-engineer---data--analytics/AC.F64",
+      "title": "AI Engineer - Data & Analytics",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Warszawa, Województwo mazowieckie, PL",
+      "country": "Poland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and deploy LLM based AI agents * Develop data modeling and semantic layers * Develop reusable AI skills * Evaluate RAG pipelines * Implement data quality validation checks * Investigate vector databases * Monitor agent reliability and accuracy * Own AI agent tooling * Track evaluations and incidents * Troubleshoot MCP integrations Perks/Benefits: + Hybrid work flexibility + Lunch budget + Medical insurance + Multisport card + Parking + Stock options Skills/Tech stack required: [Agent systems][Airflow][CI/CD][Cloud Data][Cloud Data Warehouse][Data Modeling][Data Quality][Data Warehouse][Evaluation][LLM][Machine Learning][MCP][Multi-Agent][Multi-Agent Systems][Python][RAG][Semantic layer][SQL][Vector Databases] Educational requirements: N/A Role(s): [AI][AI Engineer][Data Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
+      "postedAt": "2026-08-07T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 53.51
     },
     {
       "externalId": "ai-engineer-human-to-robot-learning-human-metzingen-riederich-3388830",
@@ -168,7 +189,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.53
+      "score": 53.4
     },
     {
       "externalId": "software-engineer-systems-machine-learning-frameworks-sunnyvale-ca-bellevue-wa-3390449",
@@ -188,7 +209,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 51.07
+      "score": 50.93
     },
     {
       "externalId": "artificial-intelligence-researcher-3383972",
@@ -209,7 +230,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 45.03
+      "score": 44.89
     },
     {
       "externalId": "predictive-analytics-consultant-us-remote-3388006",
@@ -230,7 +251,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 41.41
+      "score": 41.28
     },
     {
       "externalId": "product-specialist-software-ai-burlington-massachusetts-us-01803-3390861",
@@ -249,7 +270,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.69
+      "score": 40.56
     },
     {
       "externalId": "ai-automation-engineer-on-site-grand-rapids-michigan-3388080",
@@ -269,27 +290,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.09
-    },
-    {
-      "externalId": "data-engineer-usa-va-falls-church-3150-fairview-park-dr-vas095-united-states-3387351",
-      "source": "foorilla",
-      "url": "https://gdit.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/USA-VA-Falls-Church/Data-Engineer_RQ225443-1",
-      "title": "Data Engineer",
-      "company": "GD Information Technology, Inc.",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Collaborate with cross-functional teams to deliver production solutions * Deliver governed data services for AI agents * Design build and operate scalable data pipelines * Implement data quality observability and governance * Integrate structured, semi-structured, and unstructured data * Optimize storage compute and orchestration performance and cost Perks/Benefits: + 401k match + Full-flex work week + Health and wellness benefits + Hybrid work schedule + Life insurance + Paid Holidays + Paid parental leave + Paid time off Skills/Tech stack required: [APIs][AWS][Azure][Cloud Data][Cloud Data Platforms][Data Governance][Data integration][Data Observability][Data pipeline][Data platforms][Data Quality][Data Streaming][Embeddings][Hybrid search][Indexing][Java][Lakehouse][Metadata][NoSQL][OCI][Python][Real Time][Real-time Streaming][Retrieval][SQL][Vector Search] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-08T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.18,
-      "visaSponsored": false,
-      "score": 38.07
+      "score": 39.95
     },
     {
       "externalId": "senior-databricks-data-engineer-budapest-hungary-3390236",
@@ -309,7 +310,27 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 38.06
+      "score": 37.93
+    },
+    {
+      "externalId": "data-engineer-usa-va-falls-church-3150-fairview-park-dr-vas095-united-states-3387351",
+      "source": "foorilla",
+      "url": "https://gdit.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/USA-VA-Falls-Church/Data-Engineer_RQ225443-1",
+      "title": "Data Engineer",
+      "company": "GD Information Technology, Inc.",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with cross-functional teams to deliver production solutions * Deliver governed data services for AI agents * Design build and operate scalable data pipelines * Implement data quality observability and governance * Integrate structured, semi-structured, and unstructured data * Optimize storage compute and orchestration performance and cost Perks/Benefits: + 401k match + Full-flex work week + Health and wellness benefits + Hybrid work schedule + Life insurance + Paid Holidays + Paid parental leave + Paid time off Skills/Tech stack required: [APIs][AWS][Azure][Cloud Data][Cloud Data Platforms][Data Governance][Data integration][Data Observability][Data pipeline][Data platforms][Data Quality][Data Streaming][Embeddings][Hybrid search][Indexing][Java][Lakehouse][Metadata][NoSQL][OCI][Python][Real Time][Real-time Streaming][Retrieval][SQL][Vector Search] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-08T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 37.93
     },
     {
       "externalId": "me00654-data-scientist-2-fort-meade-md-3390278",
@@ -328,7 +349,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.41
+      "score": 37.27
     },
     {
       "externalId": "software-engineer-leadership-product-london-uk-3390569",
@@ -347,7 +368,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.25
+      "score": 37.11
     },
     {
       "externalId": "data-scientist-role-washington-district-of-columbia-united-states-3389098",
@@ -366,7 +387,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.68
+      "score": 36.55
     },
     {
       "externalId": "software-engineer-ii-model-platform-remote-canada-3389680",
@@ -387,7 +408,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 36.33
+      "score": 36.19
     },
     {
       "externalId": "senior-data-engineer-krakow-pl-3387350",
@@ -407,7 +428,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.32
+      "score": 36.18
     },
     {
       "externalId": "data-engineer-gtech-users-and-products-engineering-boulder-co-usa-3390235",
@@ -426,7 +447,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.22
+      "score": 36.09
     },
     {
       "externalId": "data-analyst-junior-ciudad-de-mexico-3382423",
@@ -445,7 +466,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.17
+      "score": 36.04
     },
     {
       "externalId": "data-scientist-rockville-maryland-us-20850-3301-3388224",
@@ -464,7 +485,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.03
+      "score": 35.9
     },
     {
       "externalId": "me00652-data-scientist-2-fort-meade-md-3390279",
@@ -483,7 +504,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.31
+      "score": 35.17
     },
     {
       "externalId": "senior-software-engineer-all-genders-mollet-del-valles-barcelona-es-08100-3388527",
@@ -503,27 +524,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.85
-    },
-    {
-      "externalId": "cloud-data-analytics-engineer-mexico-city-ciudad-de-mexico-mexico-3388012",
-      "source": "foorilla",
-      "url": "https://www.dotmatics.com/jobs/apply?gh_jid=4721318005",
-      "title": "Cloud Data Analytics Engineer",
-      "company": "Open Positions Dotmatics",
-      "location": "Mexico City, Ciudad de México, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and maintain cloud cost dashboards * Collaborate on infrastructure and cost roadmap decisions * Conduct ad-hoc data exploration * Define cloud governance policies * Develop cloud cost intelligence models * Improve data quality performance and observability * Maintain runbooks and documentation * Optimize compute storage and networking spend * Partner with stakeholders for self service analytics * Perform cloud cost anomaly analysis * Review architecture decisions for cost impact * Translate technical findings into business recommendations Perks/Benefits: + Career growth opportunities + Collaborative global team + Remote-friendly environment Skills/Tech stack required: [AWS][BI][CI/CD][CloudWatch][Containerization][Databricks][Datadog][Data Modeling][Data Quality][DBT][Distributed Systems][FinOps][Git][Looker][Managed databases][Mode][Monitoring][Observability][Python][Serverless][SQL][Tableau] Educational requirements: N/A Role(s): [Analytics Engineer][Data Analytics][Data Analytics Engineer][Data Engineer][Engineer]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.84
+      "score": 34.72
     },
     {
       "externalId": "data-analytics-hub-manager-heredia-heredia-costa-rica-3385514",
@@ -543,7 +544,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.7
+      "score": 34.57
     },
     {
       "externalId": "analyst-ai-transformation-office-st-louis-mo-united-states-3386545",
@@ -560,7 +561,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.68
+      "score": 34.55
     },
     {
       "externalId": "business-intelligence-engineer-jersey-city-nj-united-states-3390395",
@@ -577,7 +578,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.61
+      "score": 34.48
     },
     {
       "externalId": "data-governance-specialist-role-washington-district-of-columbia-united-states-3389088",
@@ -594,7 +595,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.6
+      "score": 34.46
     },
     {
       "externalId": "data-engineer-role-washington-district-of-columbia-united-states-3389057",
@@ -613,7 +614,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.36
+      "score": 34.22
     },
     {
       "externalId": "database-developer-role-washington-district-of-columbia-united-states-3389131",
@@ -630,7 +631,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.99
+      "score": 33.86
     },
     {
       "externalId": "senior-software-engineer-united-states-3390603",
@@ -647,7 +648,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.7
+      "score": 33.57
     },
     {
       "externalId": "data-analyst-role-washington-district-of-columbia-united-states-3389016",
@@ -666,7 +667,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.64
+      "score": 33.5
     },
     {
       "externalId": "ingeniero-de-datos-junior-ciudad-de-mexico-cdmx-mexico-3383029",
@@ -686,7 +687,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.63
+      "score": 33.49
     },
     {
       "externalId": "enterprise-platform-engineer-remote-usa-3389923",
@@ -703,27 +704,24 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.36
+      "score": 33.23
     },
     {
-      "externalId": "data-engineer-ecommerce-customer-experience-remote-united-states-3389062",
+      "externalId": "business-intelligence-health-data-analyst-133-2012-tulsa-ok-us-3392283",
       "source": "foorilla",
-      "url": "https://recruiting.ultipro.com/WUR1001WGNA/JobBoard/f6bec259-4fef-4b51-a096-36fdcb7ca359/OpportunityDetail?opportunityId=fac0cee4-c5a2-4e12-889e-fb8837a6448c",
-      "title": "Data Engineer eCommerce Customer Experience",
-      "company": "N...",
-      "location": "Not specified",
-      "country": "Unknown",
+      "url": "https://jobs.dayforcehcm.com/en-US/ccok/CCOK/jobs/5933",
+      "title": "Business Intelligence - Health Data Analyst 133-2012",
+      "company": "Dayforce Jobs",
+      "location": "Tulsa, OK, US",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build batch data pipelines * Build real-time data pipelines * Create analytics-ready datasets * Develop data integrations * Improve data quality initiatives * Integrate ERP CRM PIM OMS WMS systems * Maintain data pipelines * Participate in data modeling * Perform API integrations * Support data products development * Test data transformation code * Write data transformation code * Write SQL queries Perks/Benefits: N/A Skills/Tech stack required: [AWS][Azure][Data integration][Data Modeling][Data Transformation][Data Warehousing][ELT][ETL][Git][Google Cloud][Python][Relational databases][SQL] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
+      "description": "Tasks: * Automate reporting and schedule delivery * Create and execute reports * Maintain departmental data warehouse and documentation * Perform ad-hoc analyses * Perform statistical analysis and data modeling * Present report results with findings and trends * Pull and integrate data from databases * Write test validate analyze and distribute reports Perks/Benefits: N/A Skills/Tech stack required: [Data Modeling][Data Warehousing][Mathematical Modeling][Microsoft Excel][Power BI][SAS][SQL][Statistical Analysis][Tableau] Educational requirements: [Bachelor of Science] Role(s): [Analyst][Business Intelligence][Business Intelligence Analyst][Data Analyst][Health Data Analyst][Intelligence Analyst]",
+      "postedAt": "2026-08-08T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.05
+      "score": 32.73
     },
     {
       "externalId": "junior-database-developer-reston-va-us-3390303",
@@ -742,7 +740,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.82
+      "score": 32.68
     },
     {
       "externalId": "ai-developer-austin-texas-united-states-philadelphia-pennsylvania-united-states-3390027",
@@ -759,7 +757,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.52
+      "score": 32.39
     },
     {
       "externalId": "data-engineer-sql-focused-guadalajara-jal-mexico-3389060",
@@ -776,7 +774,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.35
+      "score": 32.21
     },
     {
       "externalId": "data-analyst-blue-bell-pa-united-states-3381601",
@@ -793,7 +791,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.14
+      "score": 31
     }
   ]
 }
