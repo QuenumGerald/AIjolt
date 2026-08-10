@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T16:14:21.798Z",
+  "generatedAt": "2026-08-10T19:21:38.853Z",
   "jobs": [
     {
       "externalId": "ai-product-manager-london-3396173",
@@ -19,7 +19,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.27
+      "score": 55.14
     },
     {
       "externalId": "ai-engineer-little-rock-ar-us-3396444",
@@ -40,7 +40,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.72
+      "score": 54.59
     },
     {
       "externalId": "senior-machine-learning-engineer-warsaw-poland-3395112",
@@ -63,7 +63,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.77
+      "score": 53.64
     },
     {
       "externalId": "senior-ai-engineer-data-ai-organisation-all-genders-mollet-del-valles-barcelona-es-08100-3387977",
@@ -85,7 +85,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.52
+      "score": 53.39
     },
     {
       "externalId": "forward-deployed-engineer-iii-generative-ai-google-cloud-stockholm-sweden-3390349",
@@ -106,7 +106,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.19
+      "score": 53.06
     },
     {
       "externalId": "performance-analytics-genai-manager-insurgentes-mexico-3390055",
@@ -125,7 +125,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 51.66
+      "score": 51.53
     },
     {
       "externalId": "software-engineer-systems-machine-learning-frameworks-sunnyvale-ca-bellevue-wa-3390449",
@@ -145,7 +145,48 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 49.05
+      "score": 48.92
+    },
+    {
+      "externalId": "data-engineer-remote-spain-3397482",
+      "source": "foorilla",
+      "url": "https://careers.sdggroup.com/jobs/4523884-data-engineer",
+      "title": "Data Engineer",
+      "company": "SDG Group",
+      "location": "Remote, Spain",
+      "country": "Spain",
+      "workMode": "remote",
+      "salary": null,
+      "description": "Tasks: * Build ETL pipelines * Create data visualizations * Define technical requirements * Deliver client requirements meetings * Deploy data solutions * Design cloud architectures * Develop and execute data projects * Ingest and transform data from APIs and files * Integrate streaming data * Model data * Provide internal and external training Perks/Benefits: + Flexible compensation + Hybrid work model + Private medical insurance + Remote work option + Support for telework + Training and development Skills/Tech stack required: [APIs][AWS][Cloud Computing][Data integration][Data Modeling][Data Warehouse][ETL][Google Cloud][Microsoft Azure][Power BI][SQL][Streaming][Tableau] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-09T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 44.56
+    },
+    {
+      "externalId": "data-analyst-santa-catarina-nuevo-leon-mexico-3397454",
+      "source": "foorilla",
+      "url": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/516857",
+      "title": "Data Analyst",
+      "company": "Siemens",
+      "location": "Santa Catarina - Nuevo Leon - Mexico",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with cross-functional teams * Collect clean process data * Conduct exploratory data analysis * Create predictive models * Design/maintain data pipelines * Develop maintain dashboards and reports * Document data processes and guidelines * Validate data and troubleshoot issues Perks/Benefits: + Digital workspaces + Flex hours + Learning platforms + Mentorship programs + Telecommuting Skills/Tech stack required: [AWS][Azure][Chatbots][Classification][Clustering][Computer Vision][Data pipeline][Data Quality][Data Validation][Data Visualization][Language Processing][Machine Learning][Natural Language][Natural Language Processing][Power BI][Python][Regression][SAP][Series analysis][Snowflake][SQL][Tableau][Time Series][Time Series Analysis][Troubleshooting] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Science in Computer Science] Role(s): [Analyst][Data Analyst]",
+      "postedAt": "2026-08-10T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "NLP",
+        "AWS",
+        "Computer Vision"
+      ],
+      "aiRelevance": 0.48,
+      "visaSponsored": false,
+      "score": 43.92
     },
     {
       "externalId": "artificial-intelligence-researcher-3383972",
@@ -166,7 +207,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 43.01
+      "score": 42.88
     },
     {
       "externalId": "operations-manager-ai-services-ref5747u-budapestdebrecenpecsszeged-hungary-3395755",
@@ -185,7 +226,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.89
+      "score": 40.76
     },
     {
       "externalId": "predictive-analytics-consultant-us-remote-3388006",
@@ -206,7 +247,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 39.39
+      "score": 39.26
     },
     {
       "externalId": "product-specialist-software-ai-burlington-massachusetts-us-01803-3390861",
@@ -225,27 +266,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.67
-    },
-    {
-      "externalId": "ai-automation-engineer-on-site-grand-rapids-michigan-3388080",
-      "source": "foorilla",
-      "url": "https://jobs.lever.co/kgroupcompanies/f5fbd3d3-c9c4-49b7-b78e-ae60cd42ef0b",
-      "title": "AI Automation Engineer - On Site",
-      "company": "K Group Companies",
-      "location": "Grand Rapids, Michigan",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build AI classification pipelines * Build reusable delivery frameworks templates and documentation * Create notification driven monitoring tools * Create training materials and playbooks * Design AI powered automation workflows * Develop API integrations * Implement compliance and billing review automation * Integrate LLM providers and fallback logic * Lead AI automation client delivery execution * Present delivery results to stakeholders * Support responsible AI governance and usage guidelines * Track and report AI adoption metrics * Translate business requirements into production systems Perks/Benefits: + Onsite work + Team collaboration Skills/Tech stack required: [API Development][Automated Billing][Automated compliance][Connectwise][Fallback Logic][LLM integration][Machine Learning][Machine Learning Pipelines][Microsoft 365][Monitoring][N8n][Ollama][OpenAI][Python][SharePoint][Workflow Orchestration] Educational requirements: N/A Role(s): [AI][AI Automation][AI & Automation Engineer][Automation Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 38.07
+      "score": 38.54
     },
     {
       "externalId": "computational-materials-scientist-walnut-creek-california-united-states-3396493",
@@ -265,7 +286,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.37
+      "score": 37.24
     },
     {
       "externalId": "aiml-applied-ml-engineer-responsible-ai-barcelona-3396692",
@@ -286,7 +307,27 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 36.97
+      "score": 36.84
+    },
+    {
+      "externalId": "data-analytics-ai-intern-analyst-castle-park-investments-new-york-new-york-united-states-3397383",
+      "source": "foorilla",
+      "url": "https://apply.workable.com/j/206A1EF7CE/apply",
+      "title": "Data Analytics & AI Intern / Analyst - Castle Park Investments",
+      "company": "Data Analytics & AI Intern / Analyst - Castle Park Investments - Castle Park Investments, LLC",
+      "location": "New York, New York, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate workflows using AI tools * Build data collection pipelines * Build machine learning pipelines * Build SQL based Excel reporting * Create KPI tracking * Deploy dashboards * Develop business intelligence reports * Integrate AI tools across departments * Summarize data and surface trends * Support decision-making with data insights * Translate insights for business stakeholders Perks/Benefits: + Collaborative environment + Flexible schedule + Full-time conversion opportunity Skills/Tech stack required: [API Integration][AWS][Excel][JavaScript][Looker][Machine Learning][Node.js][NumPy][Pandas][Power BI][Python][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Analyst][Data Analyst][Data Science][Data Science Intern][Engineer Intern][Intern][Machine Learning Engineer][Machine Learning Engineer Intern][Science Intern]",
+      "postedAt": "2026-08-09T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 36.51
     },
     {
       "externalId": "consulting-data-architect-denver-co-united-states-3393612",
@@ -307,14 +348,14 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.14
+      "score": 36.01
     },
     {
       "externalId": "data-engineer-usa-va-falls-church-3150-fairview-park-dr-vas095-united-states-3387351",
       "source": "foorilla",
       "url": "https://gdit.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/USA-VA-Falls-Church/Data-Engineer_RQ225443-1",
       "title": "Data Engineer",
-      "company": "GD Information Technology, Inc.",
+      "company": "G...",
       "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
@@ -327,7 +368,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.05
+      "score": 35.92
     },
     {
       "externalId": "senior-databricks-data-engineer-budapest-hungary-3390236",
@@ -347,7 +388,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.04
+      "score": 35.91
     },
     {
       "externalId": "software-engineer-leadership-product-london-uk-3390569",
@@ -366,7 +407,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.23
+      "score": 35.1
     },
     {
       "externalId": "devops-team-lead-full-remote-x959vw9r-bucharest-romania-3396529",
@@ -387,7 +428,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.91
+      "score": 34.78
     },
     {
       "externalId": "data-scientist-role-washington-district-of-columbia-united-states-3389098",
@@ -406,28 +447,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.66
-    },
-    {
-      "externalId": "software-engineer-ii-model-platform-remote-canada-3389680",
-      "source": "foorilla",
-      "url": "https://abnormal.ai/careers/jobs/7836516003?gh_jid=7836516003",
-      "title": "Software Engineer II, Model Platform",
-      "company": "Abnormal AI",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect model serving infrastructure * Build real time and near real time streaming pipelines * Collaborate with machine learning engineers and data science teams * Design build deploy and maintain model serving infrastructure * Develop online feature serving services * Distill feedback into execution plans * Scale model serving and data processing services Perks/Benefits: N/A Skills/Tech stack required: [AWS][Azure][Data Pipelines][Data Structures][Distributed Systems][Django][GCP][Golang][Kubernetes][Performance optimization][PostgreSQL][Python][Real Time][Real-time Data][Real-time data pipelines][Streaming] Educational requirements: [Bachelor of Science] Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.21,
-      "visaSponsored": false,
-      "score": 34.31
+      "score": 34.53
     },
     {
       "externalId": "senior-data-engineer-krakow-pl-3387350",
@@ -447,7 +467,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.3
+      "score": 34.17
     },
     {
       "externalId": "data-engineer-gtech-users-and-products-engineering-boulder-co-usa-3390235",
@@ -466,7 +486,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.2
+      "score": 34.07
     },
     {
       "externalId": "technical-program-manager-data-engineering-arlington-va-1801-s-bell-indg-united-states-3393615",
@@ -483,7 +503,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.12
+      "score": 33.99
     },
     {
       "externalId": "data-scientist-rockville-maryland-us-20850-3301-3388224",
@@ -502,7 +522,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.01
+      "score": 33.88
     },
     {
       "externalId": "software-engineer-iv-annapolis-junction-md-3395203",
@@ -521,7 +541,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.77
+      "score": 33.64
     },
     {
       "externalId": "data-architect-banja-luka-bosnia-and-herzegovina-3396510",
@@ -538,7 +558,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.65
+      "score": 33.52
     },
     {
       "externalId": "data-solutions-analyst-regional-reporting-team-buffalo-ny-united-states-3396009",
@@ -557,7 +577,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.24
+      "score": 33.11
     },
     {
       "externalId": "senior-data-engineer-germany-spain-romania-remote-3395442",
@@ -577,7 +597,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.18
+      "score": 33.05
     },
     {
       "externalId": "data-engineer-london-uk-3395444",
@@ -597,7 +617,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.01
+      "score": 32.88
+    },
+    {
+      "externalId": "data-analyst-milton-keynes-united-kingdom-3397463",
+      "source": "foorilla",
+      "url": "https://careers.sdggroup.com/jobs/3790517-data-analyst",
+      "title": "Data Analyst",
+      "company": "SDG Group",
+      "location": "Milton Keynes, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze data structures * Analyze data using statistical techniques * Convert business requirements to functional and technical design * Design data models * Develop data transformation processes * Develop front-end user interfaces * Gather data from primary and secondary sources * Identify analyze and interpret data trends * Implement and maintain databases * Implement metrics and visualizations * Map business requirements to functional technical design Perks/Benefits: N/A Skills/Tech stack required: [Business Intelligence][Database Management][Data Modeling][Data Transformation][Data Visualization][Python][SQL][Statistical Analysis] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst]",
+      "postedAt": "2026-08-09T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 32.7
     },
     {
       "externalId": "senior-software-engineer-all-genders-mollet-del-valles-barcelona-es-08100-3388527",
@@ -617,7 +656,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 32.83
+      "score": 32.7
     },
     {
       "externalId": "data-engineer-azure-lisbon-3395386",
@@ -636,7 +675,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.81
+      "score": 32.68
     },
     {
       "externalId": "data-analytics-hub-manager-heredia-heredia-costa-rica-3385514",
@@ -656,7 +695,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 32.68
+      "score": 32.55
     },
     {
       "externalId": "data-governance-specialist-role-washington-district-of-columbia-united-states-3389088",
@@ -673,7 +712,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.58
+      "score": 32.45
     },
     {
       "externalId": "data-engineer-role-washington-district-of-columbia-united-states-3389057",
@@ -692,7 +731,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.34
+      "score": 32.21
     },
     {
       "externalId": "data-engineer-namur-belgium-3396516",
@@ -709,7 +748,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.06
+      "score": 31.93
     },
     {
       "externalId": "database-developer-role-washington-district-of-columbia-united-states-3389131",
@@ -726,7 +765,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.97
+      "score": 31.84
     },
     {
       "externalId": "senior-software-engineer-united-states-3390603",
@@ -743,7 +782,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.68
+      "score": 31.55
     },
     {
       "externalId": "data-analyst-role-washington-district-of-columbia-united-states-3389016",
@@ -762,7 +801,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.62
+      "score": 31.49
     },
     {
       "externalId": "data-governance-proficient-ciudad-de-mexico-3393622",
@@ -779,7 +818,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.37
+      "score": 31.24
     },
     {
       "externalId": "enterprise-platform-engineer-remote-usa-3389923",
@@ -796,7 +835,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.34
+      "score": 31.21
     },
     {
       "externalId": "data-engineer-mountain-view-ca-3395141",
@@ -815,7 +854,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.86
+      "score": 30.73
     },
     {
       "externalId": "business-intelligence-health-data-analyst-133-2012-tulsa-ok-us-3392283",
@@ -832,7 +871,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.85
+      "score": 30.72
     },
     {
       "externalId": "junior-database-developer-reston-va-us-3390303",
@@ -851,7 +890,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.8
+      "score": 30.67
     },
     {
       "externalId": "ai-developer-austin-texas-united-states-philadelphia-pennsylvania-united-states-3390027",
@@ -868,7 +907,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.5
+      "score": 30.37
     },
     {
       "externalId": "data-engineer-sql-focused-guadalajara-jal-mexico-3389060",
@@ -885,7 +924,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.33
+      "score": 30.2
     }
   ]
 }
