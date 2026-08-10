@@ -2,7 +2,7 @@ import { config } from './config.js'; import { db, rowToJob } from './db.js'; im
 type Network = 'x'|'linkedin';
 const BUFFER_API = 'https://api.buffer.com';
 
-async function bufferRequest(body: object): Promise<unknown> {
+export async function bufferRequest(body: object): Promise<unknown> {
   if (!config.buffer.token) throw new Error('BUFFER_ACCESS_TOKEN is missing');
   const response = await fetch(BUFFER_API, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${config.buffer.token}` }, body: JSON.stringify(body), signal: AbortSignal.timeout(20_000) });
   if (!response.ok) throw new Error(`Buffer API ${response.status} ${response.statusText}`);
@@ -10,12 +10,13 @@ async function bufferRequest(body: object): Promise<unknown> {
 }
 
 export async function syncBufferPublications(): Promise<{ published: number; queued: number; failed: number }> {
-  const rows = db.prepare(`SELECT id,provider_id FROM publications WHERE status='queued' AND provider_id IS NOT NULL`).all() as Array<{ id: number; provider_id: string }>;
-  const updatePublished = db.prepare(`UPDATE publications SET status='published',error=NULL WHERE id=? AND status='queued'`);
-  const updateMissing = db.prepare(`UPDATE publications SET status='published',error=? WHERE id=? AND status='queued'`);
-  const updateFailed = db.prepare(`UPDATE publications SET status='failed',error=? WHERE id=? AND status='queued'`);
+  const rows = db.prepare(`SELECT 'jobs' kind,id,provider_id FROM publications WHERE status='queued' AND provider_id IS NOT NULL UNION ALL SELECT 'news' kind,id,provider_id FROM news_publications WHERE status='queued' AND provider_id IS NOT NULL`).all() as Array<{ kind: 'jobs' | 'news'; id: number; provider_id: string }>;
   const summary = { published: 0, queued: 0, failed: 0 };
   for (const row of rows) {
+    const table = row.kind === 'jobs' ? 'publications' : 'news_publications';
+    const updatePublished = db.prepare(`UPDATE ${table} SET status='published',error=NULL WHERE id=? AND status='queued'`);
+    const updateMissing = db.prepare(`UPDATE ${table} SET status='published',error=? WHERE id=? AND status='queued'`);
+    const updateFailed = db.prepare(`UPDATE ${table} SET status='failed',error=? WHERE id=? AND status='queued'`);
     try {
       const state = classifyBufferPostResponse(await bufferRequest(bufferGetPostPayload(row.provider_id)));
       if (state.kind === 'published') { updatePublished.run(row.id); summary.published++; }
@@ -31,18 +32,22 @@ export async function syncBufferPublications(): Promise<{ published: number; que
   return summary;
 }
 
-async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
+export async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
   const payload = await bufferRequest(bufferCreatePostPayload(text, channelId)) as { errors?: Array<{ message?: string }>; data?: { createPost?: { post?: { id: string; dueAt?: string }; message?: string } } };
   const error = payload.errors?.map(item => item.message).filter(Boolean).join('; ') || payload.data?.createPost?.message;
   const post = payload.data?.createPost?.post;
   if (error || !post?.id) throw new Error(error || 'Buffer API returned no post ID');
   return post;
 }
+export function sharedQueuedCount(network: Network): number {
+  const row = db.prepare(`SELECT (SELECT count(*) FROM publications WHERE network=? AND status='queued') + (SELECT count(*) FROM news_publications WHERE network=? AND status='queued') n`).get(network, network) as { n: number };
+  return row.n;
+}
 export async function publish(dryRunFlag = false) {
   if (!dryRunFlag && !config.dryRun) await syncBufferPublications();
   const dry = dryRunFlag || config.dryRun; const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT 20`).all() as any[]; const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, (db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get(network) as any).n])) as Record<Network, number>;
-  const queuedCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, (db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status='queued'`).get(network) as any).n])) as Record<Network, number>;
+  const queuedCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, sharedQueuedCount(network)])) as Record<Network, number>;
   for (const row of rows) for (const network of ['x','linkedin'] as Network[]) {
     const max = config.daily[network]; const usableQueue = Math.max(0, config.queueCapacity - config.reserve); if (dailyCount[network] + emitted[network] >= max || queuedCount[network] + emitted[network] >= usableQueue) continue;
     const job = rowToJob(row), text = await generatePost(job, network); emitted[network]++;

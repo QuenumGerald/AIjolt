@@ -1,5 +1,5 @@
 import Database from 'better-sqlite3'; import { mkdirSync, readFileSync } from 'node:fs'; import { dirname } from 'node:path';
-import { config } from './config.js'; import { dedupeKey } from './dedupe.js'; import type { Job } from './types.js';
+import { config } from './config.js'; import { dedupeKey } from './dedupe.js'; import type { Job, NewsItem } from './types.js';
 mkdirSync(dirname(config.databasePath), { recursive: true });
 export const db = new Database(config.databasePath); db.pragma('busy_timeout = 5000'); db.exec(readFileSync(new URL('./schema.sql', import.meta.url), 'utf8'));
 export function upsert(job: Job) {
@@ -11,3 +11,25 @@ export function upsert(job: Job) {
   ON CONFLICT(source,external_id) DO UPDATE SET url=excluded.url,dedupe_key=excluded.dedupe_key,title=excluded.title,location=excluded.location,country=excluded.country,work_mode=excluded.work_mode,salary=excluded.salary,description=excluded.description,posted_at=excluded.posted_at,last_seen_at=excluded.last_seen_at,skills_json=excluded.skills_json,ai_relevance=excluded.ai_relevance,visa_sponsored=excluded.visa_sponsored,status='active'`).run({ ...job, key, skills: JSON.stringify(job.skills), visa: Number(job.visaSponsored), now });
 }
 export function rowToJob(row: any): Job { return { externalId: row.external_id, source: row.source, url: row.url, title: row.title, company: row.company, location: row.location, country: row.country, workMode: row.work_mode, salary: row.salary, description: row.description, postedAt: row.posted_at, skills: JSON.parse(row.skills_json), aiRelevance: row.ai_relevance, visaSponsored: Boolean(row.visa_sponsored), score: row.score }; }
+
+export function newsDedupeKey(title: string): string {
+  return title.toLowerCase().replace(/\b(the|a|an|to|of|for|and|in|on|with|from|its|it)\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim().split(/\s+/).sort().join(' ');
+}
+
+export function upsertNews(item: NewsItem): void {
+  const now = new Date().toISOString();
+  const key = newsDedupeKey(item.title);
+  const duplicate = db.prepare(`SELECT id FROM news_items WHERE (dedupe_key=? OR url=?) AND NOT (source=? AND external_id=?)`).get(key, item.url, item.source, item.externalId) as { id: number } | undefined;
+  if (duplicate) {
+    db.prepare(`UPDATE news_items SET last_seen_at=?, buzz_score=max(buzz_score, ?), status='active' WHERE id=?`).run(now, item.buzzScore, duplicate.id);
+    return;
+  }
+  db.prepare(`INSERT INTO news_items(source,external_id,url,dedupe_key,title,summary,publisher,published_at,first_seen_at,last_seen_at,buzz_score)
+    VALUES(@source,@externalId,@url,@key,@title,@summary,@publisher,@publishedAt,@now,@now,@buzzScore)
+    ON CONFLICT(source,external_id) DO UPDATE SET url=excluded.url,title=excluded.title,summary=excluded.summary,publisher=excluded.publisher,published_at=excluded.published_at,last_seen_at=excluded.last_seen_at,buzz_score=max(news_items.buzz_score,excluded.buzz_score),status='active'`)
+    .run({ ...item, key, now });
+}
+
+export function rowToNews(row: any): NewsItem {
+  return { externalId: row.external_id, source: row.source, url: row.url, title: row.title, summary: row.summary, publisher: row.publisher, publishedAt: row.published_at, buzzScore: row.buzz_score };
+}

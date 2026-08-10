@@ -10,6 +10,7 @@
     "collect": "tsx src/cli.ts collect",
     "score": "tsx src/cli.ts score",
     "publish": "tsx src/cli.ts publish",
+    "news": "tsx src/cli.ts news",
     "cleanup": "tsx src/cli.ts cleanup",
     "outbox": "tsx src/cli.ts outbox",
     "export-json": "tsx src/cli.ts export-json",

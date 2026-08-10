@@ -2,6 +2,8 @@
 
 AIJolt collecte des offres IA depuis les API publiques Greenhouse, Lever et Ashby, les classe, exporte un flux JSON versionné et génère un site Astro statique. Tout se pilote en CLI et se déploie gratuitement via GitHub Actions + Cloudflare Pages.
 
+Il possède aussi un pipeline X séparé et désactivé par défaut pour commenter l'actualité IA : découverte gratuite via Google News RSS et Hacker News, allowlist de sources, fenêtre de fraîcheur, score de buzz, dédoublonnage, génération sarcastique par DeepSeek et publication Buffer. Les quotas et l'historique de ce pipeline ne sont pas mélangés avec ceux des offres.
+
 ## Architecture de lancement
 
 * **Collecte** : GitHub Actions toutes les 3 heures ; SQLite reste le stockage de travail du job, puis `data/jobs.json` devient la source publique versionnée.
@@ -67,6 +69,9 @@ npm run collect                 # collecte, normalise, filtre et déduplique
 npm run score                   # recalcule les scores
 npm run publish -- --dry-run    # affiche les posts uniquement
 npm run publish                 # respecte DRY_RUN ; sinon programme automatiquement via Buffer
+npm run news -- collect         # collecte l'actualité IA récente depuis les sources autorisées
+npm run news -- publish --dry-run # génère les posts sarcastiques sans les publier
+npm run news -- publish         # programme les posts d'actualité via Buffer
 npm run cleanup                 # expire les offres anciennes/non revues
 npm run doctor                  # vérifie boards, SQLite, dry-run et channels
 npm run export-json             # écrit le flux public dans data/jobs.json
@@ -101,6 +106,19 @@ npm run publish
 ```
 
 La limite quotidienne compte les états `queued` et `published`. Une publication programmée dans Buffer reste donc bloquante, ce qui privilégie l'absence de doublon à la quantité.
+
+### Ligne éditoriale AIJolt
+
+Activez d'abord `AI_NEWS_ENABLED=true` tout en gardant `DRY_RUN=true`. Le moteur ne publie que des sujets de moins de `AI_NEWS_MAX_AGE_HOURS`, provenant d'un média ou domaine autorisé, et dont le score atteint `AI_NEWS_MIN_BUZZ_SCORE`. Hacker News sert de signal de vélocité ; une URL issue de Hacker News n'est éligible que si son domaine est dans l'allowlist.
+
+La génération impose une structure simple : fait sérieux sourcé, cible claire, puis chute qui attaque la compétence, la hype ou l'hypocrisie. Elle refuse les hashtags, emojis, attaques contre des personnes privées et toute sortie de plus de 280 caractères. Aucun fallback générique n'est publié si DeepSeek échoue. La source reste enregistrée en base et apparaît dans les logs de dry-run ; `AI_NEWS_INCLUDE_SOURCE_URL=true` permet de l'ajouter au post.
+
+Pour injecter manuellement un sujet repéré sur X, une URL source est obligatoire :
+
+```bash
+npm run news -- add --title "Confirmed headline" --url "https://source.example/story" --publisher "Publisher" --summary "Verified facts only"
+npm run news -- publish --dry-run
+```
 
 ## Cron (alternative à `start`)
 
