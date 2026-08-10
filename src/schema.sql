@@ -15,4 +15,18 @@ CREATE TABLE IF NOT EXISTS publications (
   text TEXT NOT NULL, provider_id TEXT, error TEXT, created_at TEXT NOT NULL,
   FOREIGN KEY(job_id) REFERENCES jobs(id), UNIQUE(job_id, network)
 );
+CREATE TABLE IF NOT EXISTS news_items (
+  id INTEGER PRIMARY KEY, source TEXT NOT NULL, external_id TEXT NOT NULL, url TEXT NOT NULL UNIQUE,
+  dedupe_key TEXT NOT NULL, title TEXT NOT NULL, summary TEXT NOT NULL, publisher TEXT NOT NULL,
+  published_at TEXT NOT NULL, first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL,
+  buzz_score REAL NOT NULL DEFAULT 0, status TEXT NOT NULL DEFAULT 'active',
+  UNIQUE(source, external_id)
+);
+CREATE INDEX IF NOT EXISTS news_selection ON news_items(status, buzz_score DESC, published_at DESC);
+CREATE INDEX IF NOT EXISTS news_dedupe ON news_items(dedupe_key);
+CREATE TABLE IF NOT EXISTS news_publications (
+  id INTEGER PRIMARY KEY, news_id INTEGER NOT NULL, network TEXT NOT NULL DEFAULT 'x', status TEXT NOT NULL,
+  text TEXT NOT NULL, provider_id TEXT, error TEXT, created_at TEXT NOT NULL,
+  FOREIGN KEY(news_id) REFERENCES news_items(id), UNIQUE(news_id, network)
+);
 CREATE TABLE IF NOT EXISTS runs (id INTEGER PRIMARY KEY, kind TEXT NOT NULL, status TEXT NOT NULL, details TEXT, started_at TEXT NOT NULL, finished_at TEXT);

@@ -10,6 +10,7 @@ export function doctor(): void {
   checks.push({ name: 'sources', ok: sources > 0, detail: `${boardCount} ATS boards, Foorilla ${config.discovery.foorilla ? 'enabled' : 'disabled'}` });
   checks.push({ name: 'dry-run', ok: config.dryRun, detail: config.dryRun ? 'enabled (safe)' : 'DISABLED (automatic Buffer publishing enabled)' });
   checks.push({ name: 'queue', ok: config.queueCapacity > config.reserve, detail: `capacity ${config.queueCapacity}, reserve ${config.reserve}` });
+  checks.push({ name: 'ai-news', ok: !config.news.enabled || Boolean(config.deepseek.apiKey), detail: config.news.enabled ? `${config.news.queries.length} queries, ${config.news.maxPostsPerDay}/day, DeepSeek ${config.deepseek.apiKey ? 'configured' : 'MISSING'}` : 'disabled' });
   try {
     mkdirSync(dirname(config.databasePath), { recursive: true });
     accessSync(dirname(config.databasePath), constants.W_OK);

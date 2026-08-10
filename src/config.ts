@@ -31,4 +31,18 @@ export const config = {
   allowedCountries: new Set(list('ALLOWED_COUNTRIES').length ? list('ALLOWED_COUNTRIES') : defaultCountries),
   buffer: { token: process.env.BUFFER_ACCESS_TOKEN, x: process.env.BUFFER_X_CHANNEL_ID, linkedin: process.env.BUFFER_LINKEDIN_CHANNEL_ID },
   deepseek: { apiKey: process.env.DEEPSEEK_API_KEY, model: process.env.DEEPSEEK_MODEL ?? 'deepseek-chat' },
+  news: {
+    enabled: (process.env.AI_NEWS_ENABLED ?? 'false').toLowerCase() === 'true',
+    googleEnabled: (process.env.AI_NEWS_GOOGLE_ENABLED ?? 'true').toLowerCase() !== 'false',
+    hackerNewsEnabled: (process.env.AI_NEWS_HN_ENABLED ?? 'true').toLowerCase() !== 'false',
+    queries: list('AI_NEWS_QUERIES').length ? list('AI_NEWS_QUERIES') : ['OpenAI OR ChatGPT', 'Anthropic OR Claude', 'Google Gemini AI', 'AI model safety', 'AI model escaped sandbox'],
+    allowedPublishers: new Set((list('AI_NEWS_ALLOWED_PUBLISHERS').length ? list('AI_NEWS_ALLOWED_PUBLISHERS') : ['Reuters','Associated Press','AP News','BBC','Bloomberg','Financial Times','TechCrunch','The Verge','Ars Technica','WIRED','MIT Technology Review']).map(value => value.toLowerCase())),
+    allowedDomains: new Set((list('AI_NEWS_ALLOWED_DOMAINS').length ? list('AI_NEWS_ALLOWED_DOMAINS') : ['openai.com','anthropic.com','deepmind.google','blog.google','mistral.ai','ai.meta.com','x.ai','reuters.com','apnews.com','bbc.com','bloomberg.com','ft.com','techcrunch.com','theverge.com','arstechnica.com','wired.com','technologyreview.com']).map(value => value.toLowerCase())),
+    maxAgeHours: integer('AI_NEWS_MAX_AGE_HOURS', 36),
+    minBuzzScore: integer('AI_NEWS_MIN_BUZZ_SCORE', 35),
+    maxPostsPerDay: integer('MAX_AI_NEWS_POSTS_PER_DAY_X', 4),
+    collectInterval: integer('AI_NEWS_COLLECT_INTERVAL_MINUTES', 30),
+    publishInterval: integer('AI_NEWS_PUBLISH_INTERVAL_MINUTES', 120),
+    includeSourceUrl: (process.env.AI_NEWS_INCLUDE_SOURCE_URL ?? 'false').toLowerCase() === 'true',
+  },
 };
