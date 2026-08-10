@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T19:21:38.853Z",
+  "generatedAt": "2026-08-10T22:03:15.340Z",
   "jobs": [
     {
       "externalId": "ai-product-manager-london-3396173",
@@ -19,7 +19,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.14
+      "score": 55.03
     },
     {
       "externalId": "ai-engineer-little-rock-ar-us-3396444",
@@ -40,7 +40,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.59
+      "score": 54.48
     },
     {
       "externalId": "senior-machine-learning-engineer-warsaw-poland-3395112",
@@ -63,7 +63,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.64
+      "score": 53.53
     },
     {
       "externalId": "senior-ai-engineer-data-ai-organisation-all-genders-mollet-del-valles-barcelona-es-08100-3387977",
@@ -85,7 +85,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.39
+      "score": 53.28
     },
     {
       "externalId": "forward-deployed-engineer-iii-generative-ai-google-cloud-stockholm-sweden-3390349",
@@ -106,7 +106,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.06
+      "score": 52.95
     },
     {
       "externalId": "performance-analytics-genai-manager-insurgentes-mexico-3390055",
@@ -125,7 +125,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 51.53
+      "score": 51.42
     },
     {
       "externalId": "software-engineer-systems-machine-learning-frameworks-sunnyvale-ca-bellevue-wa-3390449",
@@ -145,7 +145,50 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 48.92
+      "score": 48.81
+    },
+    {
+      "externalId": "intelligent-systems-engineer-ii-west-chester-oh-united-states-3398271",
+      "source": "foorilla",
+      "url": "https://myjobs.adp.com/knowles/cx/job-details?reqId=5001212626106",
+      "title": "Intelligent Systems Engineer II",
+      "company": "K...",
+      "location": "West Chester, OH, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines for collecting cleaning transforming organizing data * Build machine learning and large language model solutions * Design develop test maintain AI enabled software components * Develop backend services APIs integration components * Develop cloud supported applications and services * Document data flows integration logic assumptions limitations * Ensure data quality traceability security maintainability * Escalate risks blockers tradeoffs unclear requirements to technical manager * Evaluate model performance conduct error analysis * Participate in design reviews technical planning implementation discussions * Participate in version control code reviews testing deployment release support * Prepare process structured semi structured unstructured data * Provide technical status updates documentation and findings * Support CI CD pipelines containerization monitoring Perks/Benefits: + 401k match + Community service day + Dental insurance + Flexible spending accounts + Life insurance + Medical insurance + Paid time off + Professional Certification Reimbursement Program + Tuition reimbursement + Vision insurance Skills/Tech stack required: [Amazon Web Services][APIs][Artificial Intelligence][Automated testing][AWS Lambda][AWS S3][Backend Development][CI/CD][Cloud services][Code Reviews][Data Engineering][Data Pipelines][Data Quality][Data Security][Docker][GitHub][Kubernetes][Language Models][Large Language Models][Machine Learning][Monitoring][OCR][Python][Retrieval-Augmented Generation][SQL][Vector Databases][Web Services] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Intelligent Systems Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer][Systems Engineer]",
+      "postedAt": "2026-08-10T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.36,
+      "visaSponsored": false,
+      "score": 45.65
+    },
+    {
+      "externalId": "intelligent-systems-engineer-ii-west-chester-oh-united-states-3398272",
+      "source": "foorilla",
+      "url": "https://myjobs.adp.com/clarkdietrichcareers/cx/job-details?reqId=5001212626106",
+      "title": "Intelligent Systems Engineer II",
+      "company": "C...",
+      "location": "West Chester, OH, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build machine learning models and large language model solutions * Conduct code reviews and version control * Design develop test maintain AI software components * Develop data pipelines for data collection cleaning transforming * Document data flows integration logic and technical assumptions * Evaluate and improve machine learning performance accuracy and error analysis * Implement backend services and APIs * Implement CI CD pipelines testing and deployment * Improve reliability scalability performance and maintainability * Integrate intelligent systems with internal applications * Prepare structured semi structured and unstructured data * Provide technical documentation status updates and risk escalation * Support cloud supported applications and services * Support containerization monitoring and release support Perks/Benefits: + 401k match + Community service day + Flexible spending accounts + Life insurance + Medical/Dental/Vision insurance + Paid time off + Professional Certification Reimbursement Program + Tuition reimbursement Skills/Tech stack required: [API Gateway][APIs][Artificial Intelligence][Automated testing][AWS][Backend Development][Bedrock][CI/CD][Cloud services][Containers][Databases][Data Engineering][Data Pipelines][Data Processing][Data Quality][DynamoDB][ECR][ECS][GitHub][Integration][Lambda][Language Models][Large Language Models][Machine Learning][Monitoring][OCR][Python][RDS][Retrieval-Augmented Generation][S3][SageMaker][Textract][Vector Databases][Vector Search] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Intelligent Systems Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer][Systems Engineer]",
+      "postedAt": "2026-08-10T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG",
+        "AWS"
+      ],
+      "aiRelevance": 0.32999999999999996,
+      "visaSponsored": false,
+      "score": 44.78
     },
     {
       "externalId": "data-engineer-remote-spain-3397482",
@@ -164,7 +207,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 44.56
+      "score": 44.45
     },
     {
       "externalId": "data-analyst-santa-catarina-nuevo-leon-mexico-3397454",
@@ -186,28 +229,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 43.92
-    },
-    {
-      "externalId": "artificial-intelligence-researcher-3383972",
-      "source": "foorilla",
-      "url": "https://li.jobs.feishu.cn/index/position/7628185416290453766/detail",
-      "title": "Artificial Intelligence Researcher",
-      "company": "Artificial Intelligence Researcher - 加入理想汽车",
-      "location": "圣何塞",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Collaborate with R and D and product teams * Conduct exploratory research on world models * Conduct research on multimodal large models * Develop planning framework research * Draft and submit papers to AI conferences * Lead physical AI trend analysis * Monitor and benchmark emerging technologies * Produce technical and strategic insight reports Perks/Benefits: N/A Skills/Tech stack required: [3D Scene][3D Scene Generation][Artificial Intelligence][Autonomous Driving][Computer Vision][Decision Making][Decision-making frameworks][Embodied AI][Language Models][Large Language Models][LLM VLM Integration][Machine Learning][Multimodal Learning][Nerf][Planning][Robotics][Scene Generation][Simulation][Vision-language][Vision Language Models][VLM integration][World Models] Educational requirements: [Master of Science][PhD] Role(s): [Artificial Intelligence][Artificial Intelligence Researcher][Intelligence Researcher][Researcher]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "Computer Vision",
-        "Robotics"
-      ],
-      "aiRelevance": 0.57,
-      "visaSponsored": false,
-      "score": 42.88
+      "score": 43.81
     },
     {
       "externalId": "operations-manager-ai-services-ref5747u-budapestdebrecenpecsszeged-hungary-3395755",
@@ -226,7 +248,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.76
+      "score": 40.65
     },
     {
       "externalId": "predictive-analytics-consultant-us-remote-3388006",
@@ -247,7 +269,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 39.26
+      "score": 39.15
     },
     {
       "externalId": "product-specialist-software-ai-burlington-massachusetts-us-01803-3390861",
@@ -266,7 +288,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.54
+      "score": 38.43
     },
     {
       "externalId": "computational-materials-scientist-walnut-creek-california-united-states-3396493",
@@ -286,7 +308,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.24
+      "score": 37.13
     },
     {
       "externalId": "aiml-applied-ml-engineer-responsible-ai-barcelona-3396692",
@@ -307,7 +329,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 36.84
+      "score": 36.73
     },
     {
       "externalId": "data-analytics-ai-intern-analyst-castle-park-investments-new-york-new-york-united-states-3397383",
@@ -327,7 +349,27 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.51
+      "score": 36.4
+    },
+    {
+      "externalId": "data-engineer-lead-glasgow-campus-united-kingdom-3397971",
+      "source": "foorilla",
+      "url": "https://barclays.wd3.myworkdayjobs.com/en-US/External_Career_Site_Barclays/job/Glasgow-Campus/Data-Engineer-Lead_JR-0000116143",
+      "title": "Data Engineer Lead",
+      "company": "3761 Barclays - BX - UK",
+      "location": "Glasgow Campus, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Advise stakeholders on data platform impact * Build data pipelines * Collaborate with data scientists to deploy machine learning models * Design data warehouse and data lake * Develop data processing algorithms * Lead and coach data engineering team * Maintain data architectures * Manage and mitigate data risks * Set data engineering strategy Perks/Benefits: N/A Skills/Tech stack required: [AWS][Databricks][Data Engineering][Java][Machine Learning][PySpark][Python] Educational requirements: N/A Role(s): [Data Engineer][Data Engineering][Data Engineering Lead][Engineer][Engineering Lead][Lead]",
+      "postedAt": "2026-08-10T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.9
     },
     {
       "externalId": "consulting-data-architect-denver-co-united-states-3393612",
@@ -348,7 +390,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.01
+      "score": 35.9
     },
     {
       "externalId": "data-engineer-usa-va-falls-church-3150-fairview-park-dr-vas095-united-states-3387351",
@@ -368,7 +410,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.92
+      "score": 35.81
     },
     {
       "externalId": "senior-databricks-data-engineer-budapest-hungary-3390236",
@@ -388,7 +430,27 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.91
+      "score": 35.8
+    },
+    {
+      "externalId": "software-engineer-ii-data-products-poland-3398154",
+      "source": "foorilla",
+      "url": "https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/3589",
+      "title": "Software Engineer II (Data Products)",
+      "company": "Akamai",
+      "location": "Poland",
+      "country": "Poland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate services * Build observability solutions * Collaborate with development teams * Collaborate with product owners * Collaborate with test teams * Contribute to best practices * Create feedback improvement cycles * Design services * Develop services * Diagnose system performance * Diagnose system reliability * Improve services * Leverage Kafka for data processing * Leverage Kubernetes for scalable services * Monitor code performance * Operate services * Profile code performance * Share internal research methodologies * Test code performance Perks/Benefits: + Financial benefits + Health benefits + Remote work flexibility + Well-being benefits Skills/Tech stack required: [AWS][Cloud deployment][DevOps][Distributed Systems][GNU/Linux][Java][Kafka][Kubernetes][Observability][Performance Monitoring][Reliability Engineering][Site Reliability][Site Reliability Engineering][Spring][SQL][Unix] Educational requirements: N/A Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-10T00:00:00.000Z",
+      "skills": [
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 35.38
     },
     {
       "externalId": "software-engineer-leadership-product-london-uk-3390569",
@@ -407,7 +469,26 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.1
+      "score": 34.99
+    },
+    {
+      "externalId": "senior-business-intelligence-and-data-engineer-maryville-tn-united-states-3398295",
+      "source": "foorilla",
+      "url": "https://myjobs.adp.com/stfcareers/cx/job-details?reqId=5001160060006",
+      "title": "Senior Business Intelligence and Data Engineer",
+      "company": "S...",
+      "location": "Maryville, TN, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build ETL/ELT pipelines * Collaborate with analysts and stakeholders * Create data transformations with notebooks * Design data ingestion pipelines * Design semantic layer ready data models * Establish standards for naming versioning deployment * Implement data quality checks * Implement dimensional modeling facts and dimensions * Maintain data pipelines orchestration * Model data warehouse schemas * Optimize query performance * Perform code reviews and documentation Perks/Benefits: N/A Skills/Tech stack required: [Azure Data][Azure Data Factory][CI/CD][Common table expressions][Data Cataloging][Data Factory][Data Governance][Data Lineage][Data Modeling][Data Warehouse][Data Warehousing][Dimensional Modeling][ELT][ETL][Git][Indexing][Lakehouse][Microsoft Fabric][Notebooks][Pandas][Partitioning][Power BI][Python][Query Optimization][SCD][Snowflake Schema][Spark][SQL Server][Star Schema][TSQL][Version control][Window Functions] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Business Intelligence Engineer][Data Engineer][Data Warehouse Engineer][Engineer][Intelligence Engineer][Senior Business Intelligence Engineer][Senior Data Engineer][Senior Data Warehouse Engineer][Warehouse Engineer]",
+      "postedAt": "2026-08-09T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.96
     },
     {
       "externalId": "devops-team-lead-full-remote-x959vw9r-bucharest-romania-3396529",
@@ -428,7 +509,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.78
+      "score": 34.67
     },
     {
       "externalId": "data-scientist-role-washington-district-of-columbia-united-states-3389098",
@@ -447,7 +528,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.53
+      "score": 34.42
     },
     {
       "externalId": "senior-data-engineer-krakow-pl-3387350",
@@ -467,7 +548,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.17
+      "score": 34.06
     },
     {
       "externalId": "data-engineer-gtech-users-and-products-engineering-boulder-co-usa-3390235",
@@ -486,7 +567,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.07
+      "score": 33.96
     },
     {
       "externalId": "technical-program-manager-data-engineering-arlington-va-1801-s-bell-indg-united-states-3393615",
@@ -503,7 +584,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.99
+      "score": 33.88
     },
     {
       "externalId": "data-scientist-rockville-maryland-us-20850-3301-3388224",
@@ -522,7 +603,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 33.88
+      "score": 33.77
     },
     {
       "externalId": "software-engineer-iv-annapolis-junction-md-3395203",
@@ -541,7 +622,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.64
+      "score": 33.53
     },
     {
       "externalId": "data-architect-banja-luka-bosnia-and-herzegovina-3396510",
@@ -558,7 +639,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.52
+      "score": 33.41
     },
     {
       "externalId": "data-solutions-analyst-regional-reporting-team-buffalo-ny-united-states-3396009",
@@ -577,7 +658,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.11
+      "score": 33
     },
     {
       "externalId": "senior-data-engineer-germany-spain-romania-remote-3395442",
@@ -597,7 +678,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.05
+      "score": 32.94
     },
     {
       "externalId": "data-engineer-london-uk-3395444",
@@ -617,7 +698,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 32.88
+      "score": 32.77
     },
     {
       "externalId": "data-analyst-milton-keynes-united-kingdom-3397463",
@@ -636,7 +717,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.7
+      "score": 32.59
     },
     {
       "externalId": "senior-software-engineer-all-genders-mollet-del-valles-barcelona-es-08100-3388527",
@@ -656,7 +737,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 32.7
+      "score": 32.59
     },
     {
       "externalId": "data-engineer-azure-lisbon-3395386",
@@ -675,7 +756,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.68
+      "score": 32.57
     },
     {
       "externalId": "data-analytics-hub-manager-heredia-heredia-costa-rica-3385514",
@@ -695,7 +776,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 32.55
+      "score": 32.44
     },
     {
       "externalId": "data-governance-specialist-role-washington-district-of-columbia-united-states-3389088",
@@ -712,7 +793,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.45
+      "score": 32.34
     },
     {
       "externalId": "data-engineer-role-washington-district-of-columbia-united-states-3389057",
@@ -731,7 +812,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.21
+      "score": 32.1
+    },
+    {
+      "externalId": "python-expert-developer-poland-3398121",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/vastdata/43.001/python-expert-developer/6D.F64",
+      "title": "Python Expert developer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Poland",
+      "country": "Poland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data engines * Design distributed systems * Develop high availability mechanisms * Implement advanced APIs * Manage enterprise data platforms * Optimize backend infrastructure Perks/Benefits: N/A Skills/Tech stack required: [API Development][Databases][Distributed Systems][High Availability][Linux][Multi-processing][Multi-threading][Networking][Python][Testing] Educational requirements: N/A Role(s): [Engineer][Software Engineer]",
+      "postedAt": "2026-08-10T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 31.95
     },
     {
       "externalId": "data-engineer-namur-belgium-3396516",
@@ -748,7 +848,24 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.93
+      "score": 31.82
+    },
+    {
+      "externalId": "senior-software-engineer-poland-3398212",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/vastdata/43.001/senior-software-engineer/FC.F6D",
+      "title": "Senior Software Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Poland",
+      "country": "Poland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build distributed services * Design distributed systems * Design high availability architectures * Develop storage engines * Implement data consistency replication and fault tolerance * Manage memory and I O subsystems * Optimize performance hot paths * Own features from design to rollout and observability * Troubleshoot production issues Perks/Benefits: N/A Skills/Tech stack required: [C#][C++][Data Consistency][Distributed Systems][Fault Tolerance][High Availability][I/O][I/O performance][Linux][Memory Management][Networking][Operating System][Operating system kernels][Replication][TCP/IP] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-09T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 31.78
     },
     {
       "externalId": "database-developer-role-washington-district-of-columbia-united-states-3389131",
@@ -765,24 +882,24 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.84
+      "score": 31.73
     },
     {
-      "externalId": "senior-software-engineer-united-states-3390603",
+      "externalId": "business-intelligence-data-analyst-2-cavendish-square-united-kingdom-3397962",
       "source": "foorilla",
-      "url": "https://apply.careers.microsoft.com/careers/apply?pid=/careers/job/1970393556955804",
-      "title": "Senior Software Engineer",
-      "company": "Careers at Microsoft",
-      "location": "United States",
-      "country": "United States",
+      "url": "https://hcahealthcare.wd3.myworkdayjobs.com/en-US/hcacareers/job/Corporate/Business-Intelligence-Data-Analyst_0052371-1",
+      "title": "Business Intelligence Data Analyst",
+      "company": "HCA Healthcare UK",
+      "location": "2 Cavendish Square, United Kingdom",
+      "country": "United Kingdom",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply AI assisted software development practices * Automate code generation and test creation * Define architecture and technical roadmap * Deliver scalable management plane services * Design Azure Storage control plane services * Drive distributed systems innovation * Enhance debugging and operational troubleshooting * Implement intelligent automation and resource orchestration * Own system health reliability performance and incident response Perks/Benefits: N/A Skills/Tech stack required: [Automated testing][Availability][Azure][Azure Blob][Azure Blob Storage][Azure Data][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure Disks][Azure Files][Azure Storage][Blob Storage][C#][C++][Cloud infrastructure][Data Lake Storage Gen2][Debugging][Distributed Systems][Elastic SAN][Incident Response][Intelligent Automation][Java][Reliability][Resource orchestration][Scalability] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
+      "description": "Tasks: * Automate reporting and analysis * Interpret data and provide insights * Perform business area analysis * Prepare materials to improve operational effectiveness using informatics * Support revenue cycle services with analytics Perks/Benefits: N/A Skills/Tech stack required: [Business Intelligence][Data Analysis][Data Visualization][Reporting][SQL] Educational requirements: N/A Role(s): [Analyst][Business Intelligence][Business Intelligence Analyst][Intelligence Analyst]",
+      "postedAt": "2026-08-10T00:00:00.000Z",
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.55
+      "score": 31.49
     },
     {
       "externalId": "data-analyst-role-washington-district-of-columbia-united-states-3389016",
@@ -801,7 +918,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.49
+      "score": 31.38
     },
     {
       "externalId": "data-governance-proficient-ciudad-de-mexico-3393622",
@@ -818,24 +935,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.24
-    },
-    {
-      "externalId": "enterprise-platform-engineer-remote-usa-3389923",
-      "source": "foorilla",
-      "url": "https://abnormal.ai/careers/jobs/7833508003?gh_jid=7833508003",
-      "title": "Enterprise Platform Engineer",
-      "company": "Abnormal AI",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Add telemetry logging dashboards and evaluation * Build automations for joiner mover leaver flows * Create self service experiences runbooks and enablement content * Operate zero touch device provisioning and management * Participate in tier 2 3 incidents perform root cause analysis * Perform follow through into automations runbooks and standards * Support identity and access capabilities Perks/Benefits: N/A Skills/Tech stack required: [Application packaging][Cause analysis][Change Management][Compliance reporting][Configuration baselines][Dashboards][Device trust][Directory Services][Group Management][Incident Management][Least Privilege][Logging][MacOS][Monitoring][Multi-Factor][Multi-Factor Authentication][Patch Management][Provisioning][REST APIs][Root cause][Root Cause Analysis][SaaS administration][Scripting][Single Sign-On][Telemetry][Webhooks][Windows][Workflow Orchestration] Educational requirements: N/A Role(s): [Engineer][Enterprise Platform Engineer][Platform Engineer]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 31.21
+      "score": 31.13
     },
     {
       "externalId": "data-engineer-mountain-view-ca-3395141",
@@ -854,7 +954,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.73
+      "score": 30.62
     },
     {
       "externalId": "business-intelligence-health-data-analyst-133-2012-tulsa-ok-us-3392283",
@@ -871,7 +971,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.72
+      "score": 30.61
     },
     {
       "externalId": "junior-database-developer-reston-va-us-3390303",
@@ -890,7 +990,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.67
+      "score": 30.56
     },
     {
       "externalId": "ai-developer-austin-texas-united-states-philadelphia-pennsylvania-united-states-3390027",
@@ -907,24 +1007,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.37
-    },
-    {
-      "externalId": "data-engineer-sql-focused-guadalajara-jal-mexico-3389060",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Blend360/744000142201849-data-engineer-sql-focused-",
-      "title": "Data Engineer (SQL-focused)",
-      "company": "Blend360",
-      "location": "Guadalajara, Jal., Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze existing SQL code * Collaborate with stakeholders on technical findings * Document current data flows and transformations * Review ETL jobs and data transformations * Support technical documentation * Trace data through pipelines * Validate business rules in existing implementation * Validate existing data processes Perks/Benefits: + Company-provided equipment + English lessons + Flexible working options + Learning opportunities + Mentorship program + Travel opportunities + Udemy business access Skills/Tech stack required: [Common table expressions][CTE][Data Flow][Data Modeling][Data Transformation][ETL][IBM DataStage][Joins][Relational databases][SQL][Stored Procedures][Table relationships][Window Functions] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-07T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 30.2
+      "score": 30.26
     }
   ]
 }
