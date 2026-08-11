@@ -39,15 +39,20 @@ export async function createBufferPost(text: string, channelId: string): Promise
   if (error || !post?.id) throw new Error(error || 'Buffer API returned no post ID');
   return post;
 }
-export function sharedQueuedCount(network: Network): number {
-  const row = db.prepare(`SELECT (SELECT count(*) FROM publications WHERE network=? AND status='queued') + (SELECT count(*) FROM news_publications WHERE network=? AND status='queued') n`).get(network, network) as { n: number };
+export function jobQueuedCount(network: Network): number {
+  const row = db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status='queued'`).get(network) as { n: number };
+  return row.n;
+}
+
+export function newsQueuedCount(network: Network): number {
+  const row = db.prepare(`SELECT count(*) n FROM news_publications WHERE network=? AND status='queued'`).get(network) as { n: number };
   return row.n;
 }
 export async function publish(dryRunFlag = false) {
   if (!dryRunFlag && !config.dryRun) await syncBufferPublications();
   const dry = dryRunFlag || config.dryRun; const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT 20`).all() as any[]; const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, (db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get(network) as any).n])) as Record<Network, number>;
-  const queuedCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, sharedQueuedCount(network)])) as Record<Network, number>;
+  const queuedCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, jobQueuedCount(network)])) as Record<Network, number>;
   for (const row of rows) for (const network of ['x','linkedin'] as Network[]) {
     const max = config.daily[network]; const usableQueue = Math.max(0, config.queueCapacity - config.reserve); if (dailyCount[network] + emitted[network] >= max || queuedCount[network] + emitted[network] >= usableQueue) continue;
     const job = rowToJob(row), text = await generatePost(job, network); emitted[network]++;

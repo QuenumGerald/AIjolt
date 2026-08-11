@@ -41,6 +41,7 @@ export const config = {
     maxAgeHours: integer('AI_NEWS_MAX_AGE_HOURS', 36),
     minBuzzScore: integer('AI_NEWS_MIN_BUZZ_SCORE', 35),
     maxPostsPerDay: integer('MAX_AI_NEWS_POSTS_PER_DAY_X', 8),
+    queueCapacity: integer('AI_NEWS_BUFFER_QUEUE_CAPACITY', 50),
     maxLength: integer('AI_NEWS_MAX_LENGTH', 180),
     collectInterval: integer('AI_NEWS_COLLECT_INTERVAL_MINUTES', 30),
     publishInterval: integer('AI_NEWS_PUBLISH_INTERVAL_MINUTES', 120),

@@ -2,7 +2,7 @@ import { config } from './config.js';
 import { db, rowToNews } from './db.js';
 import { logger } from './logger.js';
 import { generateNewsPost } from './news-posts.js';
-import { createBufferPost, sharedQueuedCount, syncBufferPublications } from './publisher.js';
+import { createBufferPost, newsQueuedCount, syncBufferPublications } from './publisher.js';
 
 export async function publishNews(dryRunFlag = false): Promise<void> {
   if (!config.news.enabled) {
@@ -15,11 +15,10 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
 
   const dailyCount = (db.prepare(`SELECT count(*) n FROM news_publications WHERE network='x' AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get() as { n: number }).n;
   const roomToday = Math.max(0, config.news.maxPostsPerDay - dailyCount);
-  const usableQueue = Math.max(0, config.queueCapacity - config.reserve);
-  const roomInQueue = Math.max(0, usableQueue - sharedQueuedCount('x'));
+  const roomInQueue = Math.max(0, config.news.queueCapacity - newsQueuedCount('x'));
   const limit = Math.min(roomToday, roomInQueue, 10);
   if (!limit) {
-    logger.info('No AI news post slot available today or in the Buffer queue');
+    logger.info('No AI news post slot available today or in the dedicated AI news queue');
     return;
   }
   const rows = db.prepare(`SELECT * FROM news_items n WHERE status='active' AND buzz_score >= ? AND published_at >= datetime('now', ?) AND NOT EXISTS (SELECT 1 FROM news_publications p WHERE p.news_id=n.id AND p.status IN ('published','queued')) ORDER BY buzz_score DESC,published_at DESC LIMIT ?`).all(config.news.minBuzzScore, `-${config.news.maxAgeHours} hours`, limit) as any[];
