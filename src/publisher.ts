@@ -1,6 +1,7 @@
 import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { generatePost } from './posts.js'; import { logger } from './logger.js'; import { bufferCreatePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from './buffer.js';
 type Network = 'x'|'linkedin';
 const BUFFER_API = 'https://api.buffer.com';
+let lastBufferSyncAt = 0;
 
 export async function bufferRequest(body: object): Promise<unknown> {
   if (!config.buffer.token) throw new Error('BUFFER_ACCESS_TOKEN is missing');
@@ -9,8 +10,15 @@ export async function bufferRequest(body: object): Promise<unknown> {
   return response.json();
 }
 
-export async function syncBufferPublications(): Promise<{ published: number; queued: number; failed: number }> {
-  const rows = db.prepare(`SELECT 'jobs' kind,id,provider_id FROM publications WHERE status='queued' AND provider_id IS NOT NULL UNION ALL SELECT 'news' kind,id,provider_id FROM news_publications WHERE status='queued' AND provider_id IS NOT NULL`).all() as Array<{ kind: 'jobs' | 'news'; id: number; provider_id: string }>;
+export async function syncBufferPublications(force = false): Promise<{ published: number; queued: number; failed: number }> {
+  const now = Date.now();
+  const minIntervalMs = config.bufferSyncMinIntervalMinutes * 60_000;
+  if (!force && lastBufferSyncAt && now - lastBufferSyncAt < minIntervalMs) {
+    logger.info(`Buffer sync skipped: last sync was less than ${config.bufferSyncMinIntervalMinutes} minutes ago`);
+    return { published: 0, queued: jobQueuedCount('x') + jobQueuedCount('linkedin') + newsQueuedCount('x'), failed: 0 };
+  }
+  lastBufferSyncAt = now;
+  const rows = db.prepare(`SELECT kind,id,provider_id FROM (SELECT 'jobs' kind,id,provider_id,created_at FROM publications WHERE status='queued' AND provider_id IS NOT NULL UNION ALL SELECT 'news' kind,id,provider_id,created_at FROM news_publications WHERE status='queued' AND provider_id IS NOT NULL) ORDER BY created_at ASC LIMIT ?`).all(config.bufferSyncMaxPosts) as Array<{ kind: 'jobs' | 'news'; id: number; provider_id: string }>;
   const summary = { published: 0, queued: 0, failed: 0 };
   for (const row of rows) {
     const table = row.kind === 'jobs' ? 'publications' : 'news_publications';
@@ -28,7 +36,7 @@ export async function syncBufferPublications(): Promise<{ published: number; que
       summary.queued++;
     }
   }
-  if (rows.length) logger.info(`Buffer sync: ${summary.published} published, ${summary.queued} queued, ${summary.failed} failed`);
+  if (rows.length) logger.info(`Buffer sync: ${summary.published} published, ${summary.queued} queued, ${summary.failed} failed (${rows.length}/${config.bufferSyncMaxPosts} checked)`);
   return summary;
 }
 

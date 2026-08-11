@@ -22,6 +22,8 @@ export const config = {
   daily: { x: integer('MAX_POSTS_PER_DAY_X', 2), linkedin: integer('MAX_POSTS_PER_DAY_LINKEDIN', 2) },
   reserve: integer('BUFFER_QUEUE_RESERVE', 2),
   queueCapacity: integer('BUFFER_QUEUE_CAPACITY', 10),
+  bufferSyncMaxPosts: integer('BUFFER_SYNC_MAX_POSTS', 20),
+  bufferSyncMinIntervalMinutes: integer('BUFFER_SYNC_MIN_INTERVAL_MINUTES', 15),
   boards: {
     greenhouse: boards('GREENHOUSE_BOARDS', 'greenhouse'),
     lever: boards('LEVER_SITES', 'lever'),
