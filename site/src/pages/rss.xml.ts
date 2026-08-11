@@ -1,2 +1,0 @@
-import { articles } from '../data';
-export const GET=({site}:{site:URL})=>new Response(`<?xml version="1.0"?><rss version="2.0"><channel><title>AIJolt Insights</title><link>${site}</link><description>AI careers intelligence</description>${articles.map(a=>`<item><title><![CDATA[${a.title}]]></title><link>${new URL(`/articles/${a.slug}`,site)}</link><description><![CDATA[${a.excerpt}]]></description><pubDate>${a.publishedAt?new Date(a.publishedAt).toUTCString():''}</pubDate></item>`).join('')}</channel></rss>`,{headers:{'content-type':'application/rss+xml'}});

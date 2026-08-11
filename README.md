@@ -109,16 +109,3 @@ La limite quotidienne compte les états `queued` et `published`. Une publication
 ```
 
 Créez `logs/` et protégez `.env` (`chmod 600 .env`). Ne faites pas tourner cron et `npm run start` simultanément.
-
-## Content campaigns
-
-AIJolt's content engine stores long-form, SEO-ready articles and their short social versions together. DeepSeek is required for generation; the engine deliberately has no generic fallback copy.
-
-```bash
-npx tsx src/cli.ts campaign:list
-npx tsx src/cli.ts campaign:stats
-npx tsx src/cli.ts campaign:generate --type INSIGHT
-npx tsx src/cli.ts campaign:publish [id] [--dry-run]
-```
-
-Set `CONTENT_ENABLED`, `CONTENT_RATIO` (default `0.3`), and `DEFAULT_CAMPAIGN_WEIGHTS` to control the scheduler. `exportArticlesJson()` produces the static website feed. The site exposes readable `/articles` pages plus `/insights`, `/stats`, `/rss.xml`, and `/sitemap.xml` machine-readable endpoints.

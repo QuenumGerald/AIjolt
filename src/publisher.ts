@@ -1,7 +1,7 @@
 import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { generatePost } from './posts.js'; import { logger } from './logger.js'; import { bufferCreatePostPayload } from './buffer.js';
 type Network = 'x'|'linkedin';
 const BUFFER_API = 'https://api.buffer.com';
-export async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
+async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
   if (!config.buffer.token) throw new Error('BUFFER_ACCESS_TOKEN is missing');
   const response = await fetch(BUFFER_API, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${config.buffer.token}` }, body: JSON.stringify(bufferCreatePostPayload(text, channelId)), signal: AbortSignal.timeout(20_000) });
   if (!response.ok) throw new Error(`Buffer API ${response.status} ${response.statusText}`);

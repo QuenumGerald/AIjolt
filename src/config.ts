@@ -7,7 +7,6 @@ const integer = (name: string, fallback: number) => {
   return value;
 };
 const list = (name: string): string[] => (process.env[name] ?? '').split(',').map((x: string) => x.trim()).filter(Boolean);
-const ratio = (name: string, fallback: number) => { const value = Number(process.env[name] ?? fallback); if (!Number.isFinite(value) || value < 0 || value > 1) throw new Error(`${name} must be between 0 and 1`); return value; };
 const defaultCountries = ['Austria','Australia','Belgium','Canada','Croatia','Cyprus','Czech Republic','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','India','Ireland','Israel','Italy','Japan','Latvia','Liechtenstein','Lithuania','Luxembourg','Malta','Netherlands','New Zealand','Norway','Poland','Portugal','Romania','Singapore','Slovakia','Slovenia','South Korea','Spain','Sweden','Switzerland','United Kingdom','United States'];
 const boards = (name: string, source: Source): BoardConfig[] => list(name).map(entry => {
   const [id, company = id] = entry.split('|').map(value => value.trim());
@@ -32,9 +31,4 @@ export const config = {
   allowedCountries: new Set(list('ALLOWED_COUNTRIES').length ? list('ALLOWED_COUNTRIES') : defaultCountries),
   buffer: { token: process.env.BUFFER_ACCESS_TOKEN, x: process.env.BUFFER_X_CHANNEL_ID, linkedin: process.env.BUFFER_LINKEDIN_CHANNEL_ID },
   deepseek: { apiKey: process.env.DEEPSEEK_API_KEY, model: process.env.DEEPSEEK_MODEL ?? 'deepseek-chat' },
-  content: {
-    enabled: (process.env.CONTENT_ENABLED ?? 'true').toLowerCase() !== 'false',
-    ratio: ratio('CONTENT_RATIO', .3),
-    defaultWeights: process.env.DEFAULT_CAMPAIGN_WEIGHTS ?? 'BRAND:1,INSIGHT:3,COMPANY_SPOTLIGHT:2,CAREER_TIP:2,WEEKLY_DIGEST:2,PRODUCT_UPDATE:1',
-  },
 };

@@ -1,5 +1,4 @@
 import feed from '../../data/jobs.json';
-import contentFeed from '../../data/articles.json';
 
 export type Job = {
   externalId: string;
@@ -19,5 +18,3 @@ export type Job = {
 
 export const jobs = (feed.jobs as Job[]).filter((job) => job.url && job.title);
 export const generatedAt = feed.generatedAt;
-export type Article = { id:number; type:string; title:string; slug:string; excerpt:string; markdown:string; html:string; seoTitle:string; seoDescription:string; image:string|null; publishedAt:string|null };
-export const articles = contentFeed.articles as Article[];

@@ -16,17 +16,3 @@ CREATE TABLE IF NOT EXISTS publications (
   FOREIGN KEY(job_id) REFERENCES jobs(id), UNIQUE(job_id, network)
 );
 CREATE TABLE IF NOT EXISTS runs (id INTEGER PRIMARY KEY, kind TEXT NOT NULL, status TEXT NOT NULL, details TEXT, started_at TEXT NOT NULL, finished_at TEXT);
-CREATE TABLE IF NOT EXISTS content_campaigns (
-  id INTEGER PRIMARY KEY, type TEXT NOT NULL, name TEXT NOT NULL, prompt TEXT NOT NULL,
-  enabled INTEGER NOT NULL DEFAULT 1, weight REAL NOT NULL DEFAULT 1, cooldown_days INTEGER NOT NULL DEFAULT 1,
-  created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(type, name)
-);
-CREATE TABLE IF NOT EXISTS generated_content (
-  id INTEGER PRIMARY KEY, campaign_id INTEGER NOT NULL, title TEXT NOT NULL, slug TEXT NOT NULL UNIQUE,
-  excerpt TEXT NOT NULL, text TEXT NOT NULL, markdown TEXT NOT NULL, html TEXT NOT NULL,
-  seo_title TEXT NOT NULL, seo_description TEXT NOT NULL, image TEXT,
-  status TEXT NOT NULL CHECK(status IN ('draft','published','failed')), provider_id TEXT,
-  published_at TEXT, created_at TEXT NOT NULL, error TEXT,
-  FOREIGN KEY(campaign_id) REFERENCES content_campaigns(id)
-);
-CREATE INDEX IF NOT EXISTS generated_content_status ON generated_content(status, published_at DESC);

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { articles, generatedAt, jobs } from '../data';
+import { generatedAt, jobs } from '../data';
 
 const formatDate = (date: string | null) => date ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(date)) : 'Date non précisée';
 const excerpt = (text: string) => text.replace(/\s+/g, ' ').trim().slice(0, 180);
@@ -8,14 +8,12 @@ const excerpt = (text: string) => text.replace(/\s+/g, ' ').trim().slice(0, 180)
 <Layout>
   <main class="shell">
     <header class="hero">
-      <p class="eyebrow">AIJOLT / AI CAREERS INTELLIGENCE</p>
-      <h1>Understand where AI careers are going.</h1>
-      <p class="intro">Verified AI jobs, live hiring signals, and practical career intelligence—together in one independent publication.</p>
+      <p class="eyebrow">AIJOLT / OPPORTUNITÉS IA</p>
+      <h1>Le prochain job qui change tout.</h1>
+      <p class="intro">Une sélection fraîche d’offres en intelligence artificielle, collectées et classées automatiquement.</p>
       <div class="stats"><span>{jobs.length} offres actives</span><span>Mis à jour {generatedAt ? formatDate(generatedAt) : 'bientôt'}</span></div>
     </header>
-    <section class="toolbar"><h2>Latest AI Insights</h2><a href="/articles">View all →</a></section>
-    <section class="insights">{articles.slice(0,3).map(article=><a href={`/articles/${article.slug}`}><small>{article.type.replaceAll('_',' ')}</small><h3>{article.title}</h3><p>{article.excerpt}</p></a>)}</section>
-    <section class="toolbar" id="jobs"><h2>Latest AI jobs</h2><span>{jobs.length ? 'Ranked by relevance' : 'The feed is being prepared'}</span></section>
+    <section class="toolbar"><h2>Dernières opportunités</h2><span>{jobs.length ? 'Classées par pertinence' : 'Le flux sera bientôt alimenté'}</span></section>
     <section class="grid" aria-label="Offres d'emploi IA">
       {jobs.map((job) => <article class="card">
         <div class="card-top"><span class="badge">{job.workMode === 'unknown' ? 'IA' : job.workMode}</span><span class="score">{Math.round(job.score)}/100</span></div>
@@ -27,8 +25,6 @@ const excerpt = (text: string) => text.replace(/\s+/g, ' ').trim().slice(0, 180)
       </article>)}
     </section>
     {jobs.length === 0 && <div class="empty"><strong>La veille démarre.</strong><br />Les premières offres apparaîtront après la prochaine collecte.</div>}
-    <section class="platform"><div><small>FEATURED COMPANIES</small><h2>{[...new Set(jobs.map(j=>j.company))].slice(0,5).join(' · ')||'Coming soon'}</h2></div><div><small>HIRING TRENDS</small><h2>{jobs.filter(j=>j.workMode==='remote').length} active remote roles</h2></div></section>
-    <section class="newsletter"><h2>Build your AI career with evidence.</h2><p>Weekly hiring intelligence newsletter coming soon.</p></section>
   </main>
 </Layout>
 
@@ -44,7 +40,6 @@ const excerpt = (text: string) => text.replace(/\s+/g, ' ').trim().slice(0, 180)
   .stats { margin-top: 34px; color: #77746b; font-size: 13px; }
   .toolbar { border-top: 1px solid #d7d3c8; padding: 22px 0; } h2 { margin: 0; font: 700 27px Georgia, serif; } .toolbar span { color: #77746b; font-size: 13px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  .insights,.platform{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:54px}.insights a,.platform>div{color:inherit;text-decoration:none;background:#fffdf8;border:1px solid #e0ddd4;padding:24px}.insights small,.platform small{color:#e6502f;font:700 11px monospace}.insights h3{margin:14px 0}.insights p{color:#5b5a55;line-height:1.5}.platform{margin-top:60px}.newsletter{text-align:center;padding:70px 20px;margin-top:40px;background:#171717;color:#fff}.newsletter p{color:#aaa}
   .card { display: flex; flex-direction: column; min-height: 330px; background: #fffdf8; border: 1px solid #e0ddd4; border-radius: 3px; padding: 24px; transition: transform .2s, box-shadow .2s; } .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px #25201812; }
   .badge, .skills span { border-radius: 99px; background: #e9eee6; color: #426044; font-size: 11px; padding: 6px 9px; text-transform: uppercase; letter-spacing: .06em; } .score { color: #e6502f; font: 700 12px monospace; }
   h3 { font: 700 26px/1.05 Georgia, serif; margin: 26px 0 7px; } .company { font-weight: 700; margin: 0; } .meta { color: #77746b; font-size: 13px; margin: 7px 0 22px; } .description { color: #5b5a55; line-height: 1.55; font-size: 14px; }
