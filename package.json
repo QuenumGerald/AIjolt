@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "bin": { "aijolt": "dist/cli.js" },
+  "bin": {
+    "aijolt": "dist/cli.js"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json && cp src/schema.sql dist/schema.sql",
     "test": "vitest run",
@@ -20,7 +22,7 @@
     "start": "tsx src/cli.ts start"
   },
   "dependencies": {
-    "better-sqlite3": "^12.2.0",
+    "better-sqlite3": "^12.11.1",
     "commander": "^14.0.0",
     "dotenv": "^17.2.1",
     "p-limit": "^7.1.1",
@@ -34,5 +36,7 @@
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
