@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T16:13:57.124Z",
+  "generatedAt": "2026-08-12T19:31:47.303Z",
   "jobs": [
     {
       "externalId": "machine-learning-engineer-amsterdam-nh-netherlands-3419698",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.33
+      "score": 55.19
     },
     {
       "externalId": "ai-engineering-manager-guadalajara-jal-mexico-3416992",
@@ -43,24 +43,24 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 48.09
+      "score": 47.95
     },
     {
-      "externalId": "artificial-intelligence-ai-adjunct-faculty-aiu-online-remote-remote-united-states-3411494",
+      "externalId": "ai-engineer-spec-driven-development-cambourne-united-kingdom-of-great-britain-and-northern-ireland-3420838",
       "source": "foorilla",
-      "url": "https://myjobs.adp.com/petiqcorpext/cx/job-details?reqId=5001185893206",
-      "title": "Artificial Intelligence (AI) - Adjunct Faculty - AIU Online (Remote)",
-      "company": "G...",
-      "location": "Remote, United States",
-      "country": "United States",
-      "workMode": "remote",
+      "url": "https://remotestar-team.freshteam.com/jobs/Y-vlOgHmUT5O/ai-engineer-spec-driven-development",
+      "title": "AI Engineer – Spec-Driven Development",
+      "company": "RemoteStar",
+      "location": "Cambourne, United Kingdom of Great Britain and Northern Ireland",
+      "country": "Unknown",
+      "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Assess student learning * Complete professional development * Create topical outlines * Deliver course learning outcomes * Design assignments * Identify at-risk students * Maintain grading records * Maintain lab safety * Maintain schedules * Prepare course materials * Respond to student questions * Support retention activities * Teach assigned courses Perks/Benefits: + Remote work Skills/Tech stack required: [Artificial Intelligence][Assessment and grading][Curriculum Development][Live coding][Machine Learning][Student Support] Educational requirements: [Master of Science] Role(s): [Adjunct Faculty][Faculty]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
+      "description": "Tasks: * Collaborate with product and engineering teams * Deliver production-ready solutions * Drive spec driven development * Evaluate emerging AI development workflows * Leverage AI-powered development tools * Translate requirements into specifications Perks/Benefits: N/A Skills/Tech stack required: [Artificial Intelligence][Debugging][React Native][Software testing][Spec Driven][Spec Driven Development] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
       "skills": [],
-      "aiRelevance": 0.12,
+      "aiRelevance": 0.67,
       "visaSponsored": false,
-      "score": 45.96
+      "score": 45.64
     },
     {
       "externalId": "software-engineer-iii-aiml-threat-intelligence-malaga-spain-3418129",
@@ -82,7 +82,47 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 43.46
+      "score": 43.32
+    },
+    {
+      "externalId": "data-science-analyst-rochester-mn-united-states-3420977",
+      "source": "foorilla",
+      "url": "https://fa-euwp-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/389034",
+      "title": "Data Science Analyst",
+      "company": "Mayo Career Site US",
+      "location": "Rochester, MN, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Create or modify scripts and software for data management and extraction * Develop predictive models * Execute analytical procedures for project requests * Explore and extract insights from structured and unstructured data * Interpret analysis results and write reports * Perform data analysis to discover patterns and insights * Present findings for business and clinical practice * Train nontechnical users on datasets and improvements Perks/Benefits: + Comprehensive benefits + Continuing education opportunities + Dental insurance + FSA + Health insurance + HSA + Retirement package + Vision insurance Skills/Tech stack required: [Artificial Intelligence][Clustering][Data Exploration][Data extraction][Data Management][Data Mining][Data Modeling][Data Science][Decision Trees][Deep learning][Language Processing][Machine Learning][Natural Language][Natural Language Processing][Neural Networks][Pattern Recognition][Predictive Modeling][Probability theory][Regression Analysis][Statistical Analysis] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Analyst][Data Science][Data Science Analyst]",
+      "postedAt": "2026-08-11T00:00:00.000Z",
+      "skills": [
+        "NLP"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 42.08
+    },
+    {
+      "externalId": "data-scientist-iii-senior-easton-ops-cols-c-oh-united-states-3421619",
+      "source": "foorilla",
+      "url": "https://huntington.wd12.myworkdayjobs.com/en-US/HNBcareers/job/Columbus-OH/Data-Scientist--III--Senior-_R0074623",
+      "title": "Data Scientist: III (Senior)",
+      "company": "0101 The Huntington National Bank",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data infrastructure * Conduct large-scale experimentation * Create machine learning web scraping pipelines * Define requirements for deep learning models * Deploy production scoring * Develop machine learning models * Develop predictive models * Evangelize analytics best practices * Own end-to-end model development * Perform advanced analytics * Perform statistical analysis * Present data-based recommendations * Research machine learning/deep learning techniques Perks/Benefits: + Flexible work arrangement + Work from home Skills/Tech stack required: [Artificial Intelligence][AWS SageMaker][Bayesian Networks][Caret][Data Pipelines][Deep learning][Experimentation][Hierarchical models][Linear Regression][Machine Learning][Mixed-effects][Mixed-effects models][Nonlinear regression][NoSQL][Predictive Modeling][Python][R][SAS][Scikit-learn][SQL][Statistical Analysis][TensorFlow][Web Scraping] Educational requirements: [Master of Science] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "TensorFlow",
+        "AWS"
+      ],
+      "aiRelevance": 0.32999999999999996,
+      "visaSponsored": false,
+      "score": 41.21
     },
     {
       "externalId": "sr-forward-deployed-engineer-architect-full-stack-london-united-kingdom-3417364",
@@ -103,7 +143,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 40
+      "score": 39.87
     },
     {
       "externalId": "software-developer-aipython-schenectady-new-york-united-states-3417507",
@@ -124,7 +164,26 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 39.73
+      "score": 39.6
+    },
+    {
+      "externalId": "senior-data-modeller-london-england-united-kingdom-3421191",
+      "source": "foorilla",
+      "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/18583",
+      "title": "Senior Data Modeller",
+      "company": "EXL Talent Acquisition Team",
+      "location": "London, England, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect cloud data platform models * Architect operational and transactional database models * Conduct data architecture reviews and technical leadership * Create conceptual logical physical data models * Define data catalog requirements * Define data standards naming conventions modelling best practices * Design enterprise data models * Design master data reference data canonical models * Design partitioning indexing data retention strategies * Develop dimensional models star schema snowflake schema * Implement data governance policies * Implement data quality frameworks * Manage metadata and data lineage * Mentor data modelers and engineering teams * Optimize database structures for performance scalability * Resolve data integrity consistency duplication issues * Support lakehouse and data warehouse architectures * Translate business requirements into scalable data solutions Perks/Benefits: N/A Skills/Tech stack required: [AWS Redshift][Azure Data][Azure Data Lake][Azure SQL][Azure SQL Database][Azure Synapse][Azure Synapse Analytics][Cloud platform][Data Architecture][Databricks][Data Catalog][Data Governance][Data Lake][Data Lineage][Data Management][Data Modeler][Data Modeling][Data Quality][Data Vault][Data Vault 2.0][Data Warehouse][Denormalization][Dimensional Modelling][ER Modeling][ER/Studio][Erwin Data Modeler][Google BigQuery][Google Cloud][Google Cloud Platform][Lakehouse][Master Data][Master Data Management][Metadata Management][Normalization][Oracle][PostgreSQL][PowerDesigner][Snowflake][Snowflake Schema][SQL][SQL Database][SQL Server][Star Schema][Synapse Analytics][Visio] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Architect][Data Architect][Data Modeller][Data Modelling Architect][Lead][Lead Data][Lead Data Modeller][Modeller]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 39.03
     },
     {
       "externalId": "big-data-engineer-graduate-tiktok-recommendation-architecture-2027-start-san-jose-california-united-states-3419492",
@@ -143,7 +202,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 39.1
+      "score": 38.96
     },
     {
       "externalId": "deployment-strategist-canada-canada-3416813",
@@ -163,7 +222,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 38.3
+      "score": 38.16
     },
     {
       "externalId": "software-engineer-education-analytics-mexico-city-cdmx-mexico-3418102",
@@ -183,7 +242,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.43
+      "score": 37.29
     },
     {
       "externalId": "senior-data-developer-vancouver-british-columbia-ca-3417904",
@@ -202,7 +261,44 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 37.15
+      "score": 37.02
+    },
+    {
+      "externalId": "computational-scientist-university-3420914",
+      "source": "foorilla",
+      "url": "https://uab.taleo.net/careersection/ext/jobdetail.ftl?job=T238345",
+      "title": "Computational Scientist",
+      "company": "UAB Careers Search",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assist manuscript preparation * Build analysis pipelines * Conduct analysis reviews * Conduct code reviews * Create research visualizations * Develop computational methods * Optimize algorithms * Perform data processing * Perform statistical analysis * Prepare figures for publication * Present research results * Scale computing infrastructure * Select computational methods * Write summary reports Perks/Benefits: + Remote Hybrid eligible Skills/Tech stack required: [Algorithm Optimization][Backend Development][Computational modeling][Computer Vision][Data Analysis][Frontend Development][Python][Statistical Analysis][Web development] Educational requirements: [Doctorate Degree][Master of Science][PhD] Role(s): [Computational Scientist][Engineer][Scientist][Software Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Computer Vision"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 36.93
+    },
+    {
+      "externalId": "senior-data-analyst-deerfield-beach-united-states-3420935",
+      "source": "foorilla",
+      "url": "https://3coresystems.zohorecruit.com/jobs/Careers/171710000034951163",
+      "title": "Senior Data Analyst",
+      "company": "3...",
+      "location": "Deerfield Beach, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze business data * Apply dimensional modeling and semantic data modeling * Apply project management principles * Collaborate with stakeholders to gather requirements * Create and maintain data documentation * Create and maintain source-to-target mappings * Develop and optimize SQL queries * Execute data governance and information security practices * Perform root cause analysis for data issues * Present findings and recommendations * Support continuous improvement and AI enabled analytics initiatives * Test validate and profile data solutions * Translate business needs into reporting and data requirements * Validate SQL transformations and business logic Perks/Benefits: + Hybrid work schedule Skills/Tech stack required: [Cause analysis][Cloud Data][Cloud data platform][Data dictionaries][Data Governance][Data Lineage][Data models][Data platform][Data profiling][Data Quality][Data Visualization][Data Warehousing][Dimensional Modeling][ELT][Entity relationship][Entity Relationship Diagrams][ETL][KPI Development][Metadata Management][Power BI][Relationship Diagrams][Root cause][Root Cause Analysis][Semantic data][Semantic data models][Source to Target][Source-to-Target Mapping][SQL][Star Schema][Target Mapping][Trend analysis] Educational requirements: [Bachelor of Science] Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 35.98
     },
     {
       "externalId": "senior-data-engineer-id82548-monterrey-mexico-3420300",
@@ -222,7 +318,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.92
+      "score": 35.78
     },
     {
       "externalId": "full-stack-software-engineer-it-ca-ir-2026-198-grae-geneva-geneva-switzerland-3419614",
@@ -242,7 +338,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.71
+      "score": 35.57
     },
     {
       "externalId": "data-engineer-ii-smyrna-georgia-united-states-3416093",
@@ -259,7 +355,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.7
+      "score": 35.57
     },
     {
       "externalId": "data-engineer-ii-us-rhode-island-providence-3419900",
@@ -279,7 +375,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.53
+      "score": 35.4
     },
     {
       "externalId": "senior-data-engineer-id82548-guadalajara-mexico-3420298",
@@ -298,7 +394,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.28
+      "score": 35.14
     },
     {
       "externalId": "manager-data-science-and-analytics-richmond-va-united-states-3420583",
@@ -315,7 +411,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.28
+      "score": 35.14
     },
     {
       "externalId": "senior-data-engineer-id82548-leon-de-los-aldama-mexico-3420299",
@@ -335,7 +431,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.06
+      "score": 34.93
     },
     {
       "externalId": "senior-data-engineer-id82548-zapopan-mexico-3420312",
@@ -355,7 +451,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.86
+      "score": 34.73
     },
     {
       "externalId": "senior-data-engineer-id82548-queretaro-mexico-3420302",
@@ -374,7 +470,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.76
+      "score": 34.62
     },
     {
       "externalId": "senior-data-engineer-id82548-playas-de-rosarito-mexico-3420326",
@@ -394,7 +490,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.58
+      "score": 34.44
     },
     {
       "externalId": "senior-data-engineer-id82548-puebla-heroica-puebla-mexico-3420301",
@@ -413,7 +509,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.54
+      "score": 34.41
     },
     {
       "externalId": "full-stack-data-engineer-troy-mi-united-states-3420737",
@@ -434,7 +530,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.12
+      "score": 33.99
     },
     {
       "externalId": "senior-data-engineer-id82554-puebla-heroica-puebla-mexico-3420689",
@@ -453,7 +549,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.02
+      "score": 33.89
     },
     {
       "externalId": "senior-data-engineer-id82554-quetzaltenango-guatemala-3420683",
@@ -472,7 +568,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.87
+      "score": 33.74
     },
     {
       "externalId": "senior-data-engineer-id82554-zapopan-mexico-3420684",
@@ -491,7 +587,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.87
+      "score": 33.74
     },
     {
       "externalId": "senior-data-engineer-id82554-guadalajara-mexico-3420690",
@@ -510,7 +606,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.83
+      "score": 33.69
     },
     {
       "externalId": "senior-data-engineer-id82554-zona-1-guatemala-3420682",
@@ -529,7 +625,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.67
+      "score": 33.54
     },
     {
       "externalId": "senior-data-engineer-id82554-monterrey-mexico-3420685",
@@ -548,7 +644,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.61
+      "score": 33.48
     },
     {
       "externalId": "senior-data-engineer-id82554-ciudad-de-mexico-mexico-3420687",
@@ -567,7 +663,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.61
+      "score": 33.48
     },
     {
       "externalId": "senior-data-engineer-id82554-leon-de-los-aldama-mexico-3420688",
@@ -586,7 +682,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.35
+      "score": 33.21
     },
     {
       "externalId": "senior-data-engineer-id82554-playas-de-rosarito-mexico-3420691",
@@ -605,7 +701,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.35
+      "score": 33.21
     },
     {
       "externalId": "senior-data-engineer-id82554-queretaro-mexico-3420686",
@@ -624,7 +720,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.18
+      "score": 33.04
     },
     {
       "externalId": "etl-data-engineer-w2-hiring-columbus-oh-united-states-3413358",
@@ -641,7 +737,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.03
+      "score": 32.9
     },
     {
       "externalId": "analytic-product-operation-analyst-data-platform-san-jose-california-united-states-3419548",
@@ -658,7 +754,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.57
+      "score": 32.44
     },
     {
       "externalId": "senior-software-engineer-united-states-3419826",
@@ -677,7 +773,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.42
+      "score": 32.29
     }
   ]
 }
