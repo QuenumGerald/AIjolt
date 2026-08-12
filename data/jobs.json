@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T10:31:21.742Z",
+  "generatedAt": "2026-08-12T13:53:06.367Z",
   "jobs": [
     {
       "externalId": "generative-ai-engineer-center-center-district-il-3410246",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.35
+      "score": 55.21
     },
     {
       "externalId": "ai-engineer-sofia-bulgaria-3413254",
@@ -44,7 +44,28 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.42
+      "score": 54.28
+    },
+    {
+      "externalId": "ai-engineering-manager-guadalajara-jal-mexico-3416992",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Blend360/744000142956435-ai-engineering-manager",
+      "title": "AI Engineering Manager",
+      "company": "Blend360",
+      "location": "Guadalajara, Jal., Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Communicate AI architecture and tradeoffs to stakeholders * Define AI evaluation strategies for quality accuracy relevance reliability safety performance * Define scalable patterns for agentic workflows * Define technical strategy for generative AI and agentic AI solutions * Design RAG and knowledge based AI architectures * Establish technical standards for building testing evaluating deploying AI applications * Lead AI evaluation and model quality processes * Lead architecture and delivery on Azure AI Foundry and Microsoft Fabric * Manage technical risks dependencies scalability and delivery * Partner with product data engineering and business leadership to prioritize AI opportunities * Review technical designs and provide hands on guidance * Select models retrieval strategies and agent architectures * Transition AI solutions from proof of concept to production Perks/Benefits: + Company-provided equipment + Conference access + Flexible working options + Learning opportunities + Mentorship programs + Travel opportunities + Udemy Business Skills/Tech stack required: [Agentic AI][Agent Orchestration][AI Evaluation][AI Foundry][Azure AI][Azure AI Foundry][Azure DevOps][Chunking][CI/CD][Cloud Architecture][Embeddings][Generative AI][Graph Databases][Grounding][Knowledge graphs][LLM Evaluation][Machine Learning][Microsoft Azure][Microsoft Fabric][Python][RAG][Retrieval-Augmented Generation][Vector Search] Educational requirements: N/A Role(s): [AI][AI Engineering][AI Engineering Manager][Engineering][Engineering Manager][Manager]",
+      "postedAt": "2026-08-11T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG"
+      ],
+      "aiRelevance": 0.57,
+      "visaSponsored": false,
+      "score": 48.19
     },
     {
       "externalId": "artificial-intelligence-ai-adjunct-faculty-aiu-online-remote-remote-united-states-3411494",
@@ -61,27 +82,29 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 46.2
+      "score": 46.06
     },
     {
-      "externalId": "cloud-and-ai-solutions-architect-automotive-enterprise-partnership-solution-munich-bavaria-germany-3407684",
+      "externalId": "software-engineer-iii-aiml-threat-intelligence-malaga-spain-3418129",
       "source": "foorilla",
-      "url": "https://joinbytedance.com/search/7667945836046862597",
-      "title": "Cloud and AI Solutions Architect (Automotive) - Enterprise Partnership & Solution",
-      "company": "Cloud and AI Solutions Architect (Automotive) - Enterprise Partnership & Solution",
-      "location": "Munich, Bavaria, Germany",
-      "country": "Germany",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/92917366022644422-software-engineer-iii-aiml-threat-intelligence",
+      "title": "Software Engineer III, AI/ML, Threat Intelligence",
+      "company": "Software Engineer III, AI/ML, Threat Intelligence — Google Careers",
+      "location": "Málaga, Spain",
+      "country": "Spain",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Advise technical and non-technical stakeholders * Build AI proofs of concept * Collaborate with product engineering and partners * Conduct customer discovery * Create reference architectures and solution templates * Define observability and monitoring * Design cloud and AI solutions * Design secure scalable architectures * Evaluate model quality and reliability * Lead pre sales workshops and demos * Plan data security and privacy * Prototype AI use cases * Provide technical recommendations for production Perks/Benefits: N/A Skills/Tech stack required: [Access Management][Agentic Workflows][Artificial Intelligence][Cloud Architecture][Cost Optimization][Data integration][Embeddings][Identity and access][Identity and Access Management][LLM APIs][Machine Learning][Model Governance][Multimodal Models][Observability][Privacy controls][Proof of Concept][Retrieval-Augmented Generation][Security Architecture][Tool-Calling][Vector Databases] Educational requirements: N/A Role(s): [AI][AI Solutions][AI Solutions Architect][Architect][Cloud)][Cloud Solutions Architect][Solutions Architect]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
+      "description": "Tasks: * Architect and deploy AI agents * Design and implement complex features * Own AI feature lifecycle * Provide technical guidance to junior engineers * Research and implement AI solutions with large language models Perks/Benefits: N/A Skills/Tech stack required: [Algorithms][Cybersecurity][Data Processing][Data Structures][Debugging][Distributed Computing][Go][Incident Response][Information Retrieval][Language Models][Language Processing][Large Language Models][Machine Learning][Malware analysis][ML Infrastructure][Model Deployment][Model Evaluation][Natural Language][Natural Language Processing][Python][Reinforcement Learning][Speech Recognition][TensorFlow][Threat hunting][Vertex AI] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Software Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
       "skills": [
-        "LLM",
-        "RAG"
+        "Python",
+        "TensorFlow",
+        "NLP",
+        "MLOps"
       ],
-      "aiRelevance": 0.42,
+      "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 42.9
+      "score": 43.56
     },
     {
       "externalId": "ai-backend-developer-mf-zagreb-croatia-hybrid-3409757",
@@ -105,7 +128,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 41.79
+      "score": 41.65
     },
     {
       "externalId": "ai-data-analyst-edmonton-alberta-3409788",
@@ -126,7 +149,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 40.95
+      "score": 40.81
     },
     {
       "externalId": "ai-ops-engineer-tel-aviv-yafo-tel-aviv-district-il-3408729",
@@ -147,7 +170,49 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 40.43
+      "score": 40.29
+    },
+    {
+      "externalId": "sr-forward-deployed-engineer-architect-full-stack-london-united-kingdom-3417364",
+      "source": "foorilla",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8656207002",
+      "title": "Sr. Forward Deployed Engineer - Architect - Full Stack",
+      "company": "Sr. Forward Deployed Engineer - Architect - Full Stack - Databricks",
+      "location": "London, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Bootstrap and deploy customer projects * Collaborate with customer teams and stakeholders * Create accelerators frameworks and best practices * Deliver production customer technical projects * Design and build reference architectures * Develop data ingestion pipelines * Ensure solutions are secure and scalable * Guide architecture and design decisions * Implement end-to-end data architectures * Integrate ML and AI models Perks/Benefits: + Customer-facing role + Travel 20 percent time Skills/Tech stack required: [Apache Spark][AWS][Azure][CI/CD][Cloud Architecture][Databricks][Data Engineering][Data Pipelines][Distributed Computing][GCP][JavaScript][Machine Learning][ML APIs][MLOps][Python][REST APIs][Scala][Software Architecture][TypeScript] Educational requirements: N/A Role(s): [Architect][Deployed Engineer][Developer][Engineer][Forward Deployed Engineer][Full Stack][Full Stack Developer][Solutions Architect][Stack Developer]",
+      "postedAt": "2026-08-11T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "MLOps",
+        "AWS"
+      ],
+      "aiRelevance": 0.32999999999999996,
+      "visaSponsored": false,
+      "score": 40.1
+    },
+    {
+      "externalId": "software-developer-aipython-schenectady-new-york-united-states-3417507",
+      "source": "foorilla",
+      "url": "https://www.jahnelgroup.com/careers.html?gh_jid=5209206007#ghCol",
+      "title": "Software Developer (AI/Python)",
+      "company": "Jahnel Group - Careers",
+      "location": "Schenectady, New York, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build AI monitoring solutions * Build and support AWS cloud solutions * Deploy applications to cloud infrastructure * Design and build AI-powered applications * Develop AI agents and AI assistants * Develop enterprise applications with Python * Document solutions and architecture * Evaluate AI tools and frameworks * Implement automation for IT engineering and research workflows * Ingest and process HPC data * Integrate AI with enterprise applications and data sources * Monitor application and AI system performance * Support DevOps and CI/CD pipelines * Troubleshoot application integration and deployment issues Perks/Benefits: + Background check required + Onsite work + Standard benefits Skills/Tech stack required: [Automation][AWS][CI/CD][Data Processing][DevOps][HPC Data Processing][LLM][Python][REST APIs] Educational requirements: N/A Role(s): [Engineer][Software Engineer]",
+      "postedAt": "2026-08-11T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "AWS"
+      ],
+      "aiRelevance": 0.32999999999999996,
+      "visaSponsored": false,
+      "score": 39.83
     },
     {
       "externalId": "deployment-strategist-canada-canada-3416813",
@@ -167,102 +232,46 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 38.54
+      "score": 38.4
     },
     {
-      "externalId": "senior-data-engineer-id81743-guadalajara-mexico-3407890",
+      "externalId": "software-engineer-education-analytics-mexico-city-cdmx-mexico-3418102",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258436525",
-      "title": "Senior Data Engineer ID81743",
-      "company": "AgileEngine",
-      "location": "Guadalajara, Mexico",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/124786092078441158-software-engineer-education-analytics",
+      "title": "Software Engineer, Education Analytics",
+      "company": "Software Engineer, Education Analytics — Google Careers",
+      "location": "Mexico City, CDMX, Mexico",
       "country": "Mexico",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply agile delivery practices and collaborate with stakeholders * Architect data platform on Snowflake and Azure * Build and operate observability and data lineage * Build scalable data pipelines to Snowflake * Configure private connectivity and network security * Develop Bronze Silver Gold analytics data models * Develop Python utilities for ingestion and data quality * Diagnose and resolve production platform issues * Enforce data governance security and access control * Establish document and scale data engineering standards * Implement CI CD pipelines for multi environment releases * Provision and manage infrastructure with Infrastructure as Code Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Support programs + Well-being programs Skills/Tech stack required: [Azure][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure Event][Azure Event Hub][Azure Functions][Azure Private Endpoint][Azure Private Link][Azure VNet][CI/CD][Datadog][Data Factory][Data Lake Storage Gen2][Data Lineage][DBT][Dimensional Modeling][Event Hub][GitHub][GitHub Actions][HIPAA][Kimball methodology][Managed Identities][Network Security][Network Security Groups][Private DNS][Private Endpoint][Private Link][Python][RBAC][Row Level Security][SCD][Security groups][Slowly Changing Dimensions][Snowflake][SQL][SQLMesh][Terraform] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
+      "description": "Tasks: * Collaborate with cross-functional partners * Design and build software systems * Improve team culture and operations * Ingest analyze and surface education data * Review code and provide feedback Perks/Benefits: N/A Skills/Tech stack required: [Application development][C++][CSS][Data Processing][Data Processing Pipelines][Data Storage][Data Structures][Data structures algorithms][Distributed Computing][Full Stack][Full-Stack Development][Golang][HTML][Java][JavaScript][Language Processing][Large-scale][Large-scale system][Large-Scale System Design][Natural Language][Natural Language Processing][Networking][Processing pipelines][Python][Security][Stack development][System design][TypeScript][Web Application][Web Application Development] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Software Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "NLP"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 37.53
+    },
+    {
+      "externalId": "senior-data-developer-vancouver-british-columbia-ca-3417904",
+      "source": "foorilla",
+      "url": "https://jobs.teck.com/job/Vancouver-Senior-Data-Developer-Brit/1418419000/",
+      "title": "Senior Data Developer",
+      "company": "Teck",
+      "location": "Vancouver, British Columbia, CA",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build optimize and support ETL and ELT processes * Collaborate with stakeholders to gather requirements * Create curated datasets for reporting and analytics * Deploy CI CD pipelines for data applications * Develop data models and database schemas * Develop data processing solutions * Develop production ready datasets and feature engineering pipelines * Develop test deploy and support data services APIs and libraries * Implement data quality validation monitoring observability and alerting * Ingest transform validate and publish data products * Maintain technical documentation and operational procedures * Optimize query performance storage partitioning and indexing * Participate in code reviews and deliver secure reliable solutions * Troubleshoot issues across databases and data pipelines Perks/Benefits: + Hybrid work environment Skills/Tech stack required: [Apache Kafka][Apache Spark][API Development][Azure Event][Azure Event Hubs][CI/CD][Databricks][Data Modeling][Data Monitoring][Data Pipelines][Data Quality][Data Validation][Distributed Computing][ELT][ETL][Event Hubs][Feature Engineering][Grafana][Microsoft SQL][Microsoft SQL Server][Observability][PostgreSQL][Prometheus][Python][SQL][SQL Server] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Science in Computer Science][Bachelor of Science in Data Science] Role(s): [Data Developer][Developer][Senior Data Developer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
       "skills": [
         "Python"
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.71
-    },
-    {
-      "externalId": "senior-data-engineer-id81743-puebla-heroica-puebla-mexico-3407888",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258439288",
-      "title": "Senior Data Engineer ID81743",
-      "company": "AgileEngine",
-      "location": "Puebla (Heroica Puebla), Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply agile delivery practices and collaborate with stakeholders * Architect and build enterprise data platform * Build analytics ready data models * Build and operate observability and data lineage * Configure cloud networking and private connectivity * Develop and maintain scalable data pipelines * Diagnose and resolve production issues * Enforce data governance security and access control * Implement CI/CD pipelines * Provision and manage platform infrastructure * Write Python ingestion utilities and data quality frameworks Perks/Benefits: + Flexible hours + Learning budget + Local support programs + Mentorship + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Anomaly Detection][Azure][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure Event][Azure Event Hub][Azure Functions][Azure Private Endpoint][Azure VNet][CI/CD][Column Masking][Datadog][Data Factory][Data Lake Storage Gen2][Data Modeling][DBT][Dimensional Design][Event Hub][GitHub Actions][HIPAA][Kimball][Managed Identities][Network Peering][Network Security][Network Security Groups][Private DNS][Private Endpoint][Private Link][Python][RBAC][REST APIs][Row Level Security][Security groups][Slowly Changing Dimensions][Snowflake][SQL][SQLMesh][SQL Server][Terraform][Virtual Network][Virtual Network Peering] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 36.57
-    },
-    {
-      "externalId": "senior-data-engineer-id81743-leon-de-los-aldama-mexico-3407886",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258443003",
-      "title": "Senior Data Engineer ID81743",
-      "company": "AgileEngine",
-      "location": "León de los Aldama, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply agile delivery practices * Apply data quality frameworks and reconciliation checks * Architect enterprise data platform * Build analytics ready data models * Build and operate data platform observability * Configure cloud networking and private connectivity * Develop and maintain data pipelines * Diagnose and resolve production issues * Enforce data governance security and access control * Implement CI/CD pipelines and automated testing * Provision infrastructure with Infrastructure-as-Code * Write production Python ingestion utilities Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + People focused support + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [Anomaly Detection][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure Event][Azure Event Hubs][Azure Functions][Azure Private Endpoint][Azure Virtual][Azure Virtual Network][Column Masking][Datadog][Datadog Anomaly Detection][Data Factory][Data Lake Storage Gen2][DBT][Dimensional Modeling][Event Hubs][GitHub Actions][HIPAA][Kimball methodology][Managed Identities][Network Security][Network Security Groups][Private DNS][Private Endpoint][Private Link][Python][Row Level Security][Security groups][Slowly Changing Dimensions][Snowflake][Snowflake RBAC][SQL][SQLMesh][Terraform][Virtual Network] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 36.55
-    },
-    {
-      "externalId": "senior-data-engineer-id81743-zapopan-mexico-3407891",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258433747",
-      "title": "Senior Data Engineer ID81743",
-      "company": "AgileEngine",
-      "location": "Zapopan, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply Agile delivery practices and coordinate with stakeholders * Architect enterprise data platform * Build and operate data observability and alerting * Build data pipelines to ingest data into Snowflake * Configure cloud networking and private connectivity * Create bronze silver gold analytics ready data models * Develop Python ingestion utilities and data quality frameworks * Diagnose and resolve production issues * Enforce data governance, security, and access controls * Implement CI CD pipelines with automated testing and releases * Provision platform infrastructure using infrastructure as code Perks/Benefits: + Annual learning budget + Flexible hours + Local support programs + Mentorship + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Anomaly Detection][Azure][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure DevOps][Azure Event][Azure Event Hubs][Azure Functions][Azure Private Endpoints][CI/CD][Column Masking][Datadog][Data Factory][Data Governance][Data Lake Storage Gen2][Data Lineage][Dimensional Modeling][Event Hubs][GitHub Actions][HIPAA][Kimball][Private DNS][Private Endpoints][Private Link][Python][REST APIs][Row Level Security][Slowly Changing Dimensions][Snowflake][Snowflake RBAC][SQL][SQLMesh][SQL Server][Terraform] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 36.51
-    },
-    {
-      "externalId": "senior-data-engineer-id81743-monterrey-mexico-3407887",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258440157",
-      "title": "Senior Data Engineer ID81743",
-      "company": "AgileEngine",
-      "location": "Monterrey, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply data quality and reconciliation checks * Architect enterprise data platform * Build analytics ready data models * Build and operate observability and alerting * Collaborate using agile delivery practices * Configure cloud networking and private connectivity * Develop and maintain scalable data pipelines * Diagnose and resolve production issues * Enforce data governance and security standards * Establish and document data engineering standards * Implement CI/CD pipelines * Provision and manage infrastructure as code * Write production grade Python utilities Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Azure][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure Event][Azure Event Hub][Azure Functions][Azure Private Endpoint][Azure VNet][Column Masking][Datadog][Data Factory][Data Lake Storage Gen2][DBT][Dimensional Modeling][DNS Zones][Event Hub][Git][GitHub Actions][HIPAA][Kimball methodology][Managed Identities][Network Security][Network Security Groups][Private DNS][Private DNS zones][Private Endpoint][Private Link][Python][Row Level Security][Security groups][Slowly Changing Dimensions][Snowflake][Snowflake RBAC][SQL][SQLMesh][Terraform] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 36.39
+      "score": 37.25
     },
     {
       "externalId": "data-stewarddatabase-developer-annapolis-junction-md-3409837",
@@ -279,26 +288,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 36.14
+      "score": 36
     },
     {
-      "externalId": "senior-data-engineer-id81743-queretaro-mexico-3407889",
+      "externalId": "senior-aiml-engineer-parma-italy-3419158",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258438261",
-      "title": "Senior Data Engineer ID81743",
-      "company": "AgileEngine",
-      "location": "Querétaro, Mexico",
-      "country": "Mexico",
+      "url": "https://ats.rippling.com/camlin-careers/jobs/64769950-92cb-4797-a22f-ae51f94e2b09",
+      "title": "Senior AI/ML Engineer",
+      "company": "Rippling Recruiting",
+      "location": "Not specified",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply agile delivery practices * Architect enterprise data platform * Build bronze silver gold data models * Configure private cloud connectivity * Develop scalable data pipelines to Snowflake * Diagnose and resolve production issues * Enforce data governance and security standards * Implement CI/CD pipelines with automated testing * Implement observability and monitoring * Provision platform resources with infrastructure as code * Write Python for ingestion and data quality Perks/Benefits: + Annual learning budget + Flexible hours + Local support programs + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Azure][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure DevOps][Azure Event][Azure Event Hubs][Azure Functions][Azure Private Endpoints][CI/CD][Column Masking][Datadog][Data Factory][Data Lake Storage Gen2][Data Modeling][DBT][Dimensional Modeling][Event Hubs][GitHub Actions][HIPAA][Kimball Method][Managed Identities][Network Security][Network Security Groups][Private DNS][Private Endpoints][Private Link][Python][RBAC][REST APIs][Row Level Security][SCD Type-2][Security groups][Slowly Changing Dimensions][Snowflake][SQL][SQLMesh][SQL Server][Terraform][Type 2)] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "description": "Tasks: * Break down initiatives into technical components and dependencies * Guide trade offs across data models and systems * Improve AI ML engineering quality reliability and scalability * Provide technical leadership for AI and data initiatives * Resolve complex technical challenges with engineers and stakeholders * Turn ambiguous AI ML problems into practical solutions Perks/Benefits: + Employee recognition program + Food vouchers + Gym membership discount + Hybrid work schedule + Training support + Wellness programs Skills/Tech stack required: [Anomaly Detection][Apache Spark][Databricks][Data Engineering][Data Modeling][Machine Learning][MLflow][Predictive Maintenance][Python][Reliability][Scalability][System design][Time Series] Educational requirements: N/A Role(s): [AI][AI/ML Engineer][Engineer][ML Engineer][Senior AI/ML Engineer]",
       "postedAt": "2026-08-11T00:00:00.000Z",
       "skills": [
         "Python"
       ],
-      "aiRelevance": 0.03,
+      "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.02
+      "score": 35.83
     },
     {
       "externalId": "data-engineer-ii-smyrna-georgia-united-states-3416093",
@@ -315,26 +324,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.94
-    },
-    {
-      "externalId": "senior-data-engineer-id81743-playas-de-rosarito-mexico-3407892",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258433744",
-      "title": "Senior Data Engineer ID81743",
-      "company": "AgileEngine",
-      "location": "Playas de Rosarito, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply agile delivery practices * Architect data platform * Build analytics ready data models * Configure private connectivity * Develop data pipelines * Enforce data governance and security * Implement CI/CD pipelines * Implement data quality and reconciliation checks * Provision infrastructure with Infrastructure-as-Code * Set up observability and alerting * Troubleshoot production issues * Write Python ingestion utilities Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure DevOps][Azure Event][Azure Event Hubs][Azure Functions][Azure Private Endpoint][Azure Virtual][Azure Virtual Network][Column Masking][Datadog][Data Factory][Data Lake Storage Gen2][DBT][Dimensional Modeling][DNS Zones][Event Hubs][GitHub Actions][HIPAA][Kimball Method][Managed Identities][Network Security][Network Security Groups][Private DNS][Private DNS zones][Private Endpoint][Private Link][Python][RBAC][REST APIs][Row Level Security][Security groups][Slowly Changing Dimensions][Snowflake][SQL][SQLMesh][Terraform][Virtual Network] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 35.74
+      "score": 35.8
     },
     {
       "externalId": "data-engineer-senior-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-lisboa-3409802",
@@ -354,46 +344,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.25
-    },
-    {
-      "externalId": "senior-data-engineer-koerich-capellen-luxembourg-3413362",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Devoteam/744000142874187-senior-data-engineer-",
-      "title": "Senior Data Engineer",
-      "company": "Devoteam",
-      "location": "Koerich, Capellen, Luxembourg",
-      "country": "Luxembourg",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build ETL/ELT pipelines * Collaborate with data science and BI teams * Deploy data lakehouse solutions * Design data architectures * Document and share technical knowledge * Ensure data security and governance * Evaluate emerging data technologies * Implement medallion architecture * Integrate structured and unstructured data sources * Monitor performance and reliability of distributed systems * Optimize batch and streaming data processing Perks/Benefits: + Certification support + Equal opportunity workplace + Flexible work culture + Mentoring + Training programs Skills/Tech stack required: [Amazon S3][Amazon Web Services][Apache Airflow][Apache Iceberg][Apache Kafka][Apache Spark][Cassandra][Cloud platform][Databricks][Data Lakehouse][Debezium][Delta Lake][Flink][GitOps][Google Cloud][Google Cloud Platform][Hadoop][Kubernetes][Minio][MongoDB][Parquet][PostgreSQL][Python][Snowflake][SQL][Web Services] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.87
-    },
-    {
-      "externalId": "data-engineer-intern-monetization-data-2027-summer-san-jose-california-united-states-3407965",
-      "source": "foorilla",
-      "url": "https://lifeattiktok.com/search/7671232204182276405",
-      "title": "Data Engineer Intern (Monetization Data) - 2027 Summer",
-      "company": "Data Engineer Intern (Monetization Data) - 2027 Summer",
-      "location": "San Jose, California, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build visualization for analytical reporting * Design and implement data models for analytics * Design, build, and optimize data pipelines * Document data assets and support data governance * Evaluate implement and maintain data infrastructure tools * Implement data quality checks validation and monitoring * Ingest process and transform large volumes of data * Optimize pipelines queries and processes * Provide SLA oncall support * Understand data requirements with stakeholders Perks/Benefits: N/A Skills/Tech stack required: [Apache Flink][Apache Hadoop][Apache Kafka][Apache Spark][Cloud Data][Cloud data warehousing][Databricks][Data Governance][Data integration][Data Modeling][Data Monitoring][Data pipeline][Data Privacy][Data Quality][Data Warehousing][ELT][ETL][Go][Google BigQuery][Java][Non-relational][Non-relational Databases][Performance optimization][Python][Relational databases][Snowflake][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Engineer][Data Engineer Intern][Engineer Intern][Intern]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 34.63
+      "score": 35.11
     },
     {
       "externalId": "software-developer-etl-senior-toronto-canada-3408629",
@@ -412,7 +363,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.48
+      "score": 34.34
     },
     {
       "externalId": "consultant-data-engineer-belfast-northern-ireland-united-kingdom-3413360",
@@ -433,7 +384,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.45
+      "score": 34.31
     },
     {
       "externalId": "data-scientist-remote-oak-brook-il-united-states-3410875",
@@ -452,64 +403,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.32
-    },
-    {
-      "externalId": "senior-data-engineer-id82269-quetzaltenango-guatemala-3407921",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258441200",
-      "title": "Senior Data Engineer ID82269",
-      "company": "AgileEngine",
-      "location": "QUETZALTENANGO, Guatemala",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build cost analytics tooling * Build data models * Design data pipelines * Develop ingestion frameworks * Develop orchestration workflows * Implement data validation and auditability * Integrate REST APIs * Optimize data systems performance reliability cost Perks/Benefits: + Autonomy + Collaborative culture + Flexible hours + Internal tech talks + Learning budget + Mentorship + Modern projects + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Amazon Athena][Amazon Aurora][Apache Airflow][“as-code”][AWS][AWS Glue][CI/CD][Compute Optimization][Dagster][Data Modeling][Data Quality][Data Validation][DBT][ELT][ETL][Infrastructure as Code][Python][Query Tuning][REST APIs][Snowflake][SQL][Storage Optimization][Terraform][Version control] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.2
-    },
-    {
-      "externalId": "senior-data-engineer-id82269-zona-1-guatemala-3407956",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258436556",
-      "title": "Senior Data Engineer ID82269",
-      "company": "AgileEngine",
-      "location": "ZONA 1, Guatemala",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build ELT/ETL workflows * Design data pipelines and automation systems * Develop data models and ingestion frameworks * Implement data quality validation and auditability * Integrate orchestration and version control * Optimize pipelines for performance and cost * Support cloud cost visibility attribution and performance insights Perks/Benefits: + Annual learning budget + Flexible hours + Learning budget + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Airflow][Amazon Athena][Amazon Aurora][AWS Glue][CI/CD][Compute Optimization][Dagster][Data Auditing][Data Modeling][Data Validation][DBT][ELT][ETL][Python][Query Tuning][REST API][Snowflake][SQL][Storage Optimization][Terraform][Version control] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.09
-    },
-    {
-      "externalId": "postdoctoral-researcher-ai-and-systems-co-design-team-menlo-park-ca-remote-us-3408873",
-      "source": "foorilla",
-      "url": "https://www.metacareers.com/profile/job_details/952809451162824",
-      "title": "Postdoctoral Researcher, AI and Systems Co-design Team",
-      "company": "Meta",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Advance AI infrastructure research * Analyze AI compute fleet scalability bottlenecks * Build research program * Collaborate with cross-functional partners * Conduct reproducible research * Open source research code * Produce high-quality publications Perks/Benefits: N/A Skills/Tech stack required: [AI accelerator][AI infrastructure][Compilers][Computer Architecture][Distributed Systems][Machine Learning][Research][Scalability] Educational requirements: [Bachelor of Engineering][Bachelor of Science][PhD] Role(s): [Postdoctoral Researcher][Researcher]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0.12,
-      "visaSponsored": false,
-      "score": 33.91
+      "score": 34.18
     },
     {
       "externalId": "data-scientist-lisboa-lisboa-3409822",
@@ -530,7 +424,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 33.69
+      "score": 33.55
     },
     {
       "externalId": "data-engineer-azure-mexico-3414562",
@@ -549,26 +443,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.55
-    },
-    {
-      "externalId": "azure-data-engineer-uxbridge-united-kingdom-3407773",
-      "source": "foorilla",
-      "url": "https://careers.jato.com/jobs/8205270-azure-data-engineer",
-      "title": "Azure Data Engineer",
-      "company": "JATO Dynamics",
-      "location": "Uxbridge, United Kingdom",
-      "country": "United Kingdom",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze data issues and support design challenges * Build data products from data assets * Collaborate to release platform increments * Contribute to solution architecture design * Improve Azure Data Factory and Synapse pipelines * Ingest data at scale * Migrate data from legacy systems to Azure lake and warehouse * Provision data products to customers * Release changes from development to production using DevOps * Warehouse and store data in Azure Perks/Benefits: N/A Skills/Tech stack required: [Agile][Azure][Azure Data][Azure Data Factory][Azure DevOps][Azure Synapse][Azure Synapse Analytics][CI/CD][Data Factory][Data Mapping][Data Quality][Data Warehousing][ELT][ETL][MySQL][NoSQL][PySpark][Python][SQL Server][Stored Procedures][Synapse Analytics] Educational requirements: N/A Role(s): [Azure Data Engineer][Data Engineer][Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.46
+      "score": 33.41
     },
     {
       "externalId": "etl-data-engineer-w2-hiring-columbus-oh-united-states-3413358",
@@ -585,24 +460,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.27
-    },
-    {
-      "externalId": "marketing-operations-manager-remote-us-3410544",
-      "source": "foorilla",
-      "url": "https://www.comeet.com/jobs/ox_security/F8.006/marketing-operations-manager/41.F6B-62.508",
-      "title": "Marketing Operations Manager",
-      "company": "Spark Hire Recruit - Collaborative Recruiting",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build lead scoring routing and lifecycle processes * Design execute and measure campaigns * Develop dashboards and reporting frameworks * Drive conversion optimization across funnel stages * Ensure data quality and governance * Own and optimize marketing technology stack * Streamline campaign operations workflows and templates * Track budget and measure marketing ROI Perks/Benefits: + Cross-functional collaboration + Fast-paced startup environment + Operational excellence focus Skills/Tech stack required: [ABM platforms][Attribution Modeling][Database hygiene][Data Governance][Funnel analytics][HubSpot][Landing Page][Landing page optimization][Lead routing][Lead Scoring][Looker][Marketing Automation][Nurture campaigns][Page optimization][PowerBI][Project Management][Salesforce][Tableau] Educational requirements: N/A Role(s): [Manager][Marketing Operations][Marketing Operations Manager][Operations Manager]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.2
+      "score": 33.13
     },
     {
       "externalId": "senior-fullstack-developer-node-react-mexico-3415590",
@@ -621,7 +479,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33
+      "score": 32.86
     },
     {
       "externalId": "backend-data-developer-net-core-cloud-center-center-district-il-3410269",
@@ -640,26 +498,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.98
-    },
-    {
-      "externalId": "senior-data-analytics-engineer-remote-united-kingdom-3415319",
-      "source": "foorilla",
-      "url": "https://www.dotmatics.com/jobs/apply?gh_jid=4691559005",
-      "title": "Senior Data Analytics Engineer",
-      "company": "Open Positions Dotmatics",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate reporting for lead generation * Develop analytics engineering best practice standards * Develop reporting and analytics * Improve data quality performance and observability * Partner with stakeholders to define and use business metrics * Perform ad hoc data exploration and analysis Perks/Benefits: + Collaborative global team + Remote-friendly environment Skills/Tech stack required: [CI/CD][Data Dictionary][Data Modeling][Data Quality][Data Testing][DBT][Git][Looker][Python][Shell Scripting][Snowflake][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][PhD] Role(s): [Analytics Engineer][Data Analytics Engineer][Engineer][Senior Data Analytics][Senior Data Analytics Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 32.83
+      "score": 32.84
     }
   ]
 }
