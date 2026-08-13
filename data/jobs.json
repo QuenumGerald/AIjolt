@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T22:08:03.950Z",
+  "generatedAt": "2026-08-13T02:52:35.145Z",
   "jobs": [
     {
       "externalId": "applied-ai-engineer-all-genders-vienna-borsegebaude-austria-3421683",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.16
+      "score": 55.97
     },
     {
       "externalId": "senior-machine-learning-engineermachine-learning-engineer-iii-canada-bc-vancouver-3422006",
@@ -46,7 +46,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.75
+      "score": 55.55
     },
     {
       "externalId": "machine-learning-engineer-amsterdam-nh-netherlands-3419698",
@@ -69,7 +69,28 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.08
+      "score": 54.89
+    },
+    {
+      "externalId": "automation-solution-lead-can-ontario-toronto-canada-3423165",
+      "source": "foorilla",
+      "url": "https://equifax.wd5.myworkdayjobs.com/en-US/External/job/CAN---Ontario---Toronto/Automation-Solution-Lead_J00177877",
+      "title": "Automation Solution Lead",
+      "company": "0005 Equifax Canada Co.",
+      "location": "CAN - Ontario - Toronto, Canada",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect secure GenAI and agentic AI solutions * Conduct code reviews and enforce development best practices * Design dataflow diagrams and technical architecture * Develop multi-agent frameworks * Integrate AI agents into enterprise infrastructure * Lead and mentor cross functional delivery team * Lead hands on development of GenAI applications * Maintain standardized global code repository * Optimize AI and RPA workflows * Prototype AI solutions * Translate AI concepts risks to business stakeholders * Troubleshoot workflow bottlenecks Perks/Benefits: N/A Skills/Tech stack required: [Agentic AI][Artificial Intelligence][Cloud Architecture][Cloud platform][Code review][Data Governance][Generative AI][Google Cloud][Google Cloud Platform][Langgraph][Language Models][Language Processing][Large Language Models][Machine Learning][Natural Language][Natural Language Processing][Process Automation][RAG][Robotic Process][Robotic Process Automation][Security Compliance][System Integration][UiPath][Version control][Vertex AI] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Solutions][AI Solutions Architect][Architect][Automation Solutions Lead][Engineer][Lead][Learning Engineer][Machine Learning Engineer][Solutions Architect][Solutions Lead]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "RAG",
+        "NLP",
+        "Robotics"
+      ],
+      "aiRelevance": 0.8099999999999999,
+      "visaSponsored": false,
+      "score": 52.5
     },
     {
       "externalId": "lead-machine-learning-engineer-sun-life-ireland-3422005",
@@ -89,28 +110,31 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 48.69
+      "score": 48.5
     },
     {
-      "externalId": "ai-engineering-manager-guadalajara-jal-mexico-3416992",
+      "externalId": "engineer-ii-aiml-engineering-600-hidden-ridge-irving-tx-tx0326-united-states-3423834",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Blend360/744000142956435-ai-engineering-manager",
-      "title": "AI Engineering Manager",
-      "company": "Blend360",
-      "location": "Guadalajara, Jal., Mexico",
-      "country": "Mexico",
+      "url": "https://verizon.wd12.myworkdayjobs.com/en-US/verizon-careers/job/Irving-Texas/Engineer-II---AI-ML-Engineering_R-1099534-1",
+      "title": "Engineer II - AI/ML Engineering",
+      "company": "9108 Verizon Data Services LLC",
+      "location": "Not specified",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Communicate AI architecture and tradeoffs to stakeholders * Define AI evaluation strategies for quality accuracy relevance reliability safety performance * Define scalable patterns for agentic workflows * Define technical strategy for generative AI and agentic AI solutions * Design RAG and knowledge based AI architectures * Establish technical standards for building testing evaluating deploying AI applications * Lead AI evaluation and model quality processes * Lead architecture and delivery on Azure AI Foundry and Microsoft Fabric * Manage technical risks dependencies scalability and delivery * Partner with product data engineering and business leadership to prioritize AI opportunities * Review technical designs and provide hands on guidance * Select models retrieval strategies and agent architectures * Transition AI solutions from proof of concept to production Perks/Benefits: + Company-provided equipment + Conference access + Flexible working options + Learning opportunities + Mentorship programs + Travel opportunities + Udemy Business Skills/Tech stack required: [Agentic AI][Agent Orchestration][AI Evaluation][AI Foundry][Azure AI][Azure AI Foundry][Azure DevOps][Chunking][CI/CD][Cloud Architecture][Embeddings][Generative AI][Graph Databases][Grounding][Knowledge graphs][LLM Evaluation][Machine Learning][Microsoft Azure][Microsoft Fabric][Python][RAG][Retrieval-Augmented Generation][Vector Search] Educational requirements: N/A Role(s): [AI][AI Engineering][AI Engineering Manager][Engineering][Engineering Manager][Manager]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
+      "description": "Tasks: * Build automated evaluation and governance pipelines * Collaborate with enterprise architecture data science and data engineering teams * Deploy and govern scalable machine learning and generative AI systems * Design end to end generative AI and machine learning solutions * Implement production observability and monitoring * Optimize cloud and model performance Perks/Benefits: + Adoption Assistance + Health insurance + Hybrid work flexibility + Identity theft protection + Matched 401k + Paid parental leave + Tuition assistance Skills/Tech stack required: [AWS][Bedrock][Cloud compute][Cloud Compute Cost Optimization][Cloud platform][Compute Cost Optimization][Cost Optimization][Docker][FastAPI][Generative AI][GitLab CI][Google Cloud][Google Cloud Platform][Jenkins][Kafka][Kubernetes][Linux][LLMOps][Machine Learning][MLOps][Model Monitoring][Pulsar][PySpark][Python][RAG][Retrieval-Augmented Generation][SQL][Vector Databases][Vertex AI] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI/ML Engineer][Engineer][ML Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
       "skills": [
         "Python",
         "LLM",
-        "RAG"
+        "RAG",
+        "MLOps",
+        "Kubernetes",
+        "AWS"
       ],
-      "aiRelevance": 0.57,
+      "aiRelevance": 0.6599999999999999,
       "visaSponsored": false,
-      "score": 47.84
+      "score": 48.15
     },
     {
       "externalId": "ai-engineer-spec-driven-development-cambourne-united-kingdom-of-great-britain-and-northern-ireland-3420838",
@@ -127,7 +151,28 @@
       "skills": [],
       "aiRelevance": 0.67,
       "visaSponsored": false,
-      "score": 45.53
+      "score": 45.33
+    },
+    {
+      "externalId": "agentic-ai-developer-can-ontario-toronto-canada-3423105",
+      "source": "foorilla",
+      "url": "https://equifax.wd5.myworkdayjobs.com/en-US/External/job/CAN---Ontario---Toronto/Agentic-AI-Developer_J00178386",
+      "title": "Agentic AI Developer",
+      "company": "0005 Equifax Canada Co.",
+      "location": "CAN - Ontario - Toronto, Canada",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Add operational guardrails to prevent hallucinations * Build multi-agent architectures * Conduct code reviews and enforce code governance * Create auditable decision logs * Deploy and scale AI agents on cloud * Design regulated secure agent workflows * Design structured outputs with JSON schema * Develop agentic graph workflows * Implement function calling for tools * Implement human in the loop overrides * Implement retrieval-augmented generation pipelines * Implement semantic search with vector databases * Implement state and memory management * Integrate agentic decisioning with UiPath * Integrate LLMs with databases and microservices * Integrate LLMs with internal APIs * Optimize model execution latency and token usage * Write modular reusable Python code * Write modular reusable TypeScript code Perks/Benefits: N/A Skills/Tech stack required: [Agentic Workflows][Agent systems][API Design][Asynchronous programming][Cloud deployment][Containerization][Function Calling][Google ADK][Guardrails][Human-in-the-loop][JSON Schema][Langgraph][LLM orchestration][Memory systems][Microservices][Multi-Agent][Multi-Agent Systems][Python][RAG][Semantic Search][State management][Structured outputs][The Loop][TypeScript][UiPath][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Developer][AI Developer][Developer][Engineer][Software Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG"
+      ],
+      "aiRelevance": 0.44999999999999996,
+      "visaSponsored": false,
+      "score": 45.22
     },
     {
       "externalId": "ai-software-engineer-spain-madrid-torre-chamartin-spain-3421694",
@@ -149,7 +194,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 45.14
+      "score": 44.94
     },
     {
       "externalId": "software-engineer-iii-aiml-threat-intelligence-malaga-spain-3418129",
@@ -171,7 +216,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 43.21
+      "score": 43.02
     },
     {
       "externalId": "data-analyst-2683-huntsville-al-united-states-3421832",
@@ -191,7 +236,49 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 42.39
+      "score": 42.2
+    },
+    {
+      "externalId": "agentic-ai-optimization-developer-can-ontario-toronto-canada-3423997",
+      "source": "foorilla",
+      "url": "https://equifax.wd5.myworkdayjobs.com/en-US/External/job/CAN---Ontario---Toronto/Agentic-AI-Optimization-Developer_J00178408",
+      "title": "Agentic AI Optimization Developer",
+      "company": "0005 Equifax Canada Co.",
+      "location": "CAN - Ontario - Toronto, Canada",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Audit agent trajectories and reasoning * Build automated evaluation pipelines * Curate golden dataset for agent testing * Debug asynchronous nondeterministic system errors using tracing observability * Design JSON schemas for tool calling * Implement guardrail frameworks for autonomous agents * Measure agent accuracy latency token spend fallback reliability * Monitor deployed agents for drift and hallucinations * Optimize RAG pipelines and knowledge bases * Optimize tool use and function calling * Refine system prompts context windows few shot examples * Test agentic workflows in production * Tune interactions with external APIs and databases * Write automated test scripts Perks/Benefits: + Full-time role + Production experimentation experience Skills/Tech stack required: [API Design][Async Programming][Data Generation][Function Calling][Gemini][JSON Schema][Langgraph][LLM orchestration][Microservices][Observability][Python][RAG][Synthetic data][Synthetic Data Generation][Test automation][Tool-Calling][Tracing][TypeScript][UiPath][UiPath RPA][Vertex AI] Educational requirements: N/A Role(s): [Agentic AI Evaluation Engineer][AI][AI Evaluation Engineer][AI Reliability Engineer][Engineer][Evaluation Engineer][LLMOps Engineer][Reliability Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG"
+      ],
+      "aiRelevance": 0.32999999999999996,
+      "visaSponsored": false,
+      "score": 42.18
+    },
+    {
+      "externalId": "data-scientist-data-valorization-complexe-desjardins-montreal-canada-3423267",
+      "source": "foorilla",
+      "url": "https://desjardins.wd10.myworkdayjobs.com/en-US/Desjardins/job/Montral/Scientifique-de-donnes--Risque-de-crdit_R2610093-1",
+      "title": "Data Scientist, Data valorization",
+      "company": "Federation Caisses Desjardins",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze client and partner needs * Create data visualizations * Develop and maintain AI models * Develop and maintain machine learning models * Develop and maintain model segmentations * Evaluate and operationalize models * Feature engineer data * Maintain documentation for data and calculation rules * Mine and evaluate data * Prepare and mine data with programming * Present analysis to stakeholders * Recommend enhancements for data management tools * Select predictors for predictive modeling * Specify model performance requirements Perks/Benefits: + Defined benefit pension + Flexible vacation + Group insurance + Health and wellness expense reimbursement + Telemedicine + Telework equipment reimbursement Skills/Tech stack required: [Artificial Intelligence][Data Modeling][Data Visualization][Data Warehousing][Feature Engineering][Language Processing][Machine Learning][Model Deployment][Model Monitoring][Natural Language][Natural Language Processing][Predictive Analytics][Python][SQL][Statistical Analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "NLP",
+        "MLOps"
+      ],
+      "aiRelevance": 0.32999999999999996,
+      "visaSponsored": false,
+      "score": 41.5
     },
     {
       "externalId": "data-scientist-iii-senior-easton-ops-cols-c-oh-united-states-3421619",
@@ -212,28 +299,26 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 41.1
+      "score": 40.91
     },
     {
-      "externalId": "software-developer-aipython-schenectady-new-york-united-states-3417507",
+      "externalId": "edw-developer-senior-100-remote-broadmoor-campus-united-states-3423730",
       "source": "foorilla",
-      "url": "https://www.jahnelgroup.com/careers.html?gh_jid=5209206007#ghCol",
-      "title": "Software Developer (AI/Python)",
-      "company": "Jahnel Group - Careers",
-      "location": "Schenectady, New York, United States",
-      "country": "United States",
+      "url": "https://kansashealthsystem.wd1.myworkdayjobs.com/en-US/careers/job/Shawnee-Mission-KS/EDW-Developer-Senior--100--Remote-_R-56719-1",
+      "title": "EDW Developer Senior (100% Remote)",
+      "company": "UKH University of Kansas Hospital Authority",
+      "location": "Not specified",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build AI monitoring solutions * Build and support AWS cloud solutions * Deploy applications to cloud infrastructure * Design and build AI-powered applications * Develop AI agents and AI assistants * Develop enterprise applications with Python * Document solutions and architecture * Evaluate AI tools and frameworks * Implement automation for IT engineering and research workflows * Ingest and process HPC data * Integrate AI with enterprise applications and data sources * Monitor application and AI system performance * Support DevOps and CI/CD pipelines * Troubleshoot application integration and deployment issues Perks/Benefits: + Background check required + Onsite work + Standard benefits Skills/Tech stack required: [Automation][AWS][CI/CD][Data Processing][DevOps][HPC Data Processing][LLM][Python][REST APIs] Educational requirements: N/A Role(s): [Engineer][Software Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
+      "description": "Tasks: * Assess platform changes and impact * Create integrated data views across source systems * Design data models for analytics and reporting * Design implement and maintain data ingestion pipelines * Design implement and maintain data transformation workflows * Develop Copilot Studio Agents * Develop Power Apps solutions * Develop Power Automate workflows * Develop Power BI solutions * Enrich and organize data for reuse by BI * Ensure scalability, reliability, and performance * Govern Power Platform solutions * Implement application lifecycle management ALM practices * Integrate AI into engineering workflows * Integrate solutions with Azure and Microsoft Fabric * Lead incident resolution and root cause analysis * Manage source control and deployment pipelines * Optimize data pipelines and workflows * Orchestrate data pipelines * Own data domain delivery and outcomes * Partner with BI developers data integrity and data science * Support advanced analytics datasets * Translate analytics requirements into production data solutions Perks/Benefits: + 100 percent remote work + Full-time employment Skills/Tech stack required: [AI Engineering][Azure][Cause analysis][Copilot Studio][Data Governance][Data Modeling][Data pipeline][Data pipeline orchestration][Data Quality][Git][Machine Learning][Microsoft Fabric][Pipeline Orchestration][Power Apps][Power Automate][Power BI][Python][Root cause][Root Cause Analysis][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
       "skills": [
-        "Python",
-        "LLM",
-        "AWS"
+        "Python"
       ],
-      "aiRelevance": 0.32999999999999996,
+      "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.49
+      "score": 39.98
     },
     {
       "externalId": "senior-data-modeller-london-england-united-kingdom-3421191",
@@ -252,7 +337,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 38.92
+      "score": 38.73
     },
     {
       "externalId": "big-data-engineer-graduate-tiktok-recommendation-architecture-2027-start-san-jose-california-united-states-3419492",
@@ -271,7 +356,45 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.85
+      "score": 38.66
+    },
+    {
+      "externalId": "senior-data-engineer-eden-prairie-minnesota-united-states-remote-3423240",
+      "source": "foorilla",
+      "url": "https://careers.unitedhealthgroup.com/en/job/eden-prairie/senior-data-engineer/34088/94526318496",
+      "title": "Senior Data Engineer",
+      "company": "UnitedHealth Group",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect data models and database schemas * Automate provisioning with Infrastructure-as-Code * Build batch and streaming data pipelines * Build CI/CD pipelines * Define enterprise data architecture * Design lake house and warehouse environments * Design responsible AI solutions * Develop reference architectures and data standards * Document architectures and data flows * Enforce data security and compliance controls * Establish monitoring and reliability practices * Implement metadata and lineage governance * Lead incident triage and root cause analysis * Optimize SQL and ETL workloads * Partner with cross-functional teams on data strategy * Support Docker and Kubernetes workloads Perks/Benefits: + 401k contribution + Career development opportunities + Comprehensive benefits package + Diversity and inclusion culture + Equity stock purchase + Incentive and recognition programs + Telecommute within United States Skills/Tech stack required: [AKS][Alerting][“as-code”][Azure][Azure Data][Azure Databricks][Azure Data Factory][Azure SQL][Azure Synapse][Azure Synapse Analytics][Cause analysis][CI/CD][Compliance][Data Architecture][Database Design][Data Catalog][Data Factory][Data Governance][Data Lineage][Data masking][Data Modeling][Data Quality][Data Warehouse][Delta Lake][Docker][ELT][Encryption][ETL][GitHub Actions][Incident Management][Indexing][Infrastructure as Code][Kubernetes][Lake House][Metadata Management][MongoDB][Monitoring][Observability][Partitioning][Performance Tuning][PostgreSQL][RBAC][Root cause][Root Cause Analysis][SQL MI][SQL Performance][SQL Performance Tuning][SQL Server][Synapse Analytics][Terraform] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 38.32
+    },
+    {
+      "externalId": "senior-data-engineer-primary-location-eden-prairie-minnesota-3423233",
+      "source": "foorilla",
+      "url": "https://careers.unitedhealthgroup.com/en/job/eden-prairie/senior-data-engineer/34088/99098516992",
+      "title": "Senior Data Engineer",
+      "company": "UnitedHealth Group",
+      "location": "Primary location: Eden Prairie, Minnesota",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assess data availability quality and access constraints * Build data pipelines and transformations * Create data quality checks monitoring and lineage documentation * Create retrieval indexes and semantic layers * Identify data sources and systems of record * Implement RAG embeddings vector stores and grounding strategies * Prepare data assets for steady state ownership * Prepare synthetic masked de identified and test datasets * Support control group testing and value measurement Perks/Benefits: + 401k contribution + Career development opportunities + Comprehensive benefits package + Equity stock purchase + Hybrid work schedule + Incentive and recognition programs Skills/Tech stack required: [Access Control][APIs][Batch Processing][Cloud Data][Cloud Data Platforms][Compliance][Data Governance][Data Lineage][Data masking][Data Modeling][Data Pipelines][Data platforms][Data Privacy][Data Quality][Data Security][Data Transformation][Deidentification][Document chunking][Embeddings][Feature Engineering][Metadata Management][Semantic Retrieval][SQL][Stream processing][Vector Databases] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 38.09
     },
     {
       "externalId": "data-engineer-mid-gh-office-tysons-corner-va-headquarters-united-states-3421854",
@@ -291,7 +414,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 38.28
+      "score": 38.08
     },
     {
       "externalId": "deployment-strategist-canada-canada-3416813",
@@ -311,7 +434,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 38.05
+      "score": 37.86
     },
     {
       "externalId": "devops-engineer-zagreb-croatia-3421900",
@@ -331,7 +454,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 37.84
+      "score": 37.65
     },
     {
       "externalId": "software-engineer-education-analytics-mexico-city-cdmx-mexico-3418102",
@@ -351,7 +474,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.18
+      "score": 36.99
     },
     {
       "externalId": "senior-data-developer-vancouver-british-columbia-ca-3417904",
@@ -370,7 +493,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.91
+      "score": 36.71
+    },
+    {
+      "externalId": "dbadata-analyst-i-police-communications-midland-tx-3424008",
+      "source": "foorilla",
+      "url": "https://www.governmentjobs.com/careers/midlandtx/jobs/5238941",
+      "title": "DBA/Data Analyst I",
+      "company": "City of Midland",
+      "location": "Police & Communications, Midland, TX",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assist design database implementations * Collaborate with teams on database integrations * Develop database documentation and monitoring standards * Implement database backups and restores * Implement database security and access controls * Maintain database performance monitoring * Participate on call rotation * Perform database maintenance patches upgrades * Provide data extraction and custom reporting * Troubleshoot database issues Perks/Benefits: + On-call rotation + Valid driver's license Skills/Tech stack required: [Access Control][Artificial Intelligence][Auditing][Backup and Recovery][Capacity Management][Database Administration][Database Backup][Database backup and recovery][Database tuning][Data Modeling][Data Pipelines][Data Security][Data Warehousing][Health Monitoring][Machine Learning][Performance Monitoring][SQL][System Health][System health monitoring] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Administrator][Analyst][Data Analyst][Database Administrator]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0.12,
+      "visaSponsored": false,
+      "score": 36.67
     },
     {
       "externalId": "computational-scientist-university-3420914",
@@ -390,7 +530,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.82
+      "score": 36.62
     },
     {
       "externalId": "data-engineering-tech-lead-work-at-home-ohio-united-states-3421851",
@@ -409,7 +549,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.9
+      "score": 35.71
     },
     {
       "externalId": "senior-data-analyst-deerfield-beach-united-states-3420935",
@@ -426,7 +566,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.87
+      "score": 35.68
     },
     {
       "externalId": "senior-data-engineer-id82548-monterrey-mexico-3420300",
@@ -446,7 +586,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.67
+      "score": 35.48
     },
     {
       "externalId": "database-applications-lead-arlington-va-united-states-3422873",
@@ -463,7 +603,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.52
+      "score": 35.32
     },
     {
       "externalId": "full-stack-software-engineer-it-ca-ir-2026-198-grae-geneva-geneva-switzerland-3419614",
@@ -483,24 +623,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.46
-    },
-    {
-      "externalId": "data-engineer-ii-smyrna-georgia-united-states-3416093",
-      "source": "foorilla",
-      "url": "https://recruiting.ultipro.com/CUR1004CURH/JobBoard/e919c533-d7d8-40ef-bd67-d27e1ad3fb55/OpportunityDetail?opportunityId=cb721f96-249e-40a5-bbd5-e7e3ab1ec9bc",
-      "title": "Data Engineer II",
-      "company": "C...",
-      "location": "Smyrna, Georgia, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply AI to automate testing documentation and optimization * Coordinate SharePoint administration and troubleshooting * Design and maintain data integrations * Design ETL/ELT pipelines * Develop Azure DevOps CI/CD pipelines * Develop cloud data pipelines in Azure * Develop data processing frameworks * Develop stored procedures and data transformations * Implement AI-assisted development workflows * Implement data validation and quality controls * Maintain technical documentation for data systems * Monitor and improve pipeline performance and reliability * Monitor data pipelines and troubleshoot failures * Participate in code reviews and production deployments * Support Azure Data Factory Azure SQL Azure Databricks * Support Azure Synapse Analytics and Azure Functions * Support data warehouses and dimensional models * Translate business requirements into technical specifications * Use Azure Key Vault for secure access * Write and optimize SQL queries Perks/Benefits: N/A Skills/Tech stack required: [Azure Data][Azure Databricks][Azure Data Factory][Azure DevOps][Azure Functions][Azure Key Vault][Azure SQL][Azure Synapse][Azure Synapse Analytics][C#][CI/CD][Data Factory][Data Quality][Data Validation][Data Warehousing][Dimensional Modeling][ELT][ETL][Key Vault][Relational databases][SharePoint][Snowflake][Spark][SQL][SSIS][Stored Procedures][Synapse Analytics] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 35.46
+      "score": 35.27
     },
     {
       "externalId": "data-engineer-ii-us-rhode-island-providence-3419900",
@@ -520,7 +643,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.29
+      "score": 35.09
     },
     {
       "externalId": "senior-data-engineer-id82548-guadalajara-mexico-3420298",
@@ -539,7 +662,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.03
+      "score": 34.84
     },
     {
       "externalId": "manager-data-science-and-analytics-richmond-va-united-states-3420583",
@@ -556,7 +679,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.03
+      "score": 34.84
     },
     {
       "externalId": "senior-data-engineer-id82548-leon-de-los-aldama-mexico-3420299",
@@ -576,7 +699,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.82
+      "score": 34.62
     },
     {
       "externalId": "senior-data-engineer-id82548-zapopan-mexico-3420312",
@@ -596,7 +719,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.62
+      "score": 34.42
     },
     {
       "externalId": "senior-software-engineer-huntsville-al-usa-3422123",
@@ -615,7 +738,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.55
+      "score": 34.36
     },
     {
       "externalId": "senior-data-engineer-id82548-queretaro-mexico-3420302",
@@ -634,7 +757,43 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.51
+      "score": 34.32
+    },
+    {
+      "externalId": "data-analytics-bi-manager-remote-poland-3423130",
+      "source": "foorilla",
+      "url": "https://abb.wd3.myworkdayjobs.com/en-US/external_career_page/job/Remote-Poland/Data-Analytics---BI-Manager_JR00041718",
+      "title": "Data Analytics & BI Manager",
+      "company": "PLREC ABB Business Services Sp. z o.o.",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Define metrics for technology effectiveness and efficiency * Define technology roadmaps * Enable continuous improvement for customer experiences * Establish analytics methods and capabilities * Establish cross functional global teams * Execute maintenance of services and applications * Implement risk identification and management processes * Lead data and analytics solutions development * Manage analytics service capabilities * Manage service operations and reporting solutions * Manage vendor partnerships * Support data-driven decision making Perks/Benefits: + Hybrid work + Remote work options Skills/Tech stack required: [Analytics Platforms][Business Intelligence][Continuous Improvement][Data analytics][Data Governance][Data Management][People leadership][Reporting][Risk Management][Service Operations][Stakeholder management][Vendor management] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Analytics Manager][Business Intelligence][Business Intelligence Manager][Data Analytics][Data Analytics Manager][Intelligence Manager][Manager]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 34.32
+    },
+    {
+      "externalId": "manager-business-intelligence-akron-oh-3423626",
+      "source": "foorilla",
+      "url": "https://careers.akronchildrens.org/en/job/akron/manager-business-intelligence/54/94486416400",
+      "title": "Manager Business Intelligence",
+      "company": "Akron Children's",
+      "location": "Akron, OH",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate on analytics solutions * Conduct staff hiring and evaluations * Conduct staff meetings * Curate AI ready data * Implement data governance standards * Manage data visualization tools * Manage enterprise data warehouse * Manage time and attendance * Oversee BI planning and development * Promote self-service analytics * Provide ongoing BI support * Supervise analytics team * Supervise ETL administrators Perks/Benefits: + Hybrid work + Paid time off + Professional development support Skills/Tech stack required: [Agile][AWS][Azure DevOps][Business Intelligence][Databricks][Data Governance][Data Visualization][Data Warehouse][Enterprise Data][Enterprise data warehouse][ETL][Microsoft Fabric][Power BI][Tableau] Educational requirements: [Bachelor of Science] Role(s): [Analytics Manager][Business Intelligence][Business Intelligence Manager][Data Analytics][Data Analytics Manager][Intelligence Manager][Manager]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.19
     },
     {
       "externalId": "senior-data-engineer-id82548-playas-de-rosarito-mexico-3420326",
@@ -654,7 +813,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.33
+      "score": 34.14
     },
     {
       "externalId": "senior-data-engineer-id82548-puebla-heroica-puebla-mexico-3420301",
@@ -673,7 +832,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.3
+      "score": 34.1
+    },
+    {
+      "externalId": "ai-art-director-palo-alto-california-usa-3423846",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006218112ENUS",
+      "title": "AI Art Director",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assess model outputs for quality and style fidelity * Collaborate with ML engineers on training data requirements * Curate image and video training datasets * Define and document visual style elements * Evaluate and refine model outputs using prompt engineering * Evaluate reference material for stylistic accuracy quality and diversity * Write and iterate prompts to test model outputs Perks/Benefits: + 401k retirement plan + Employee assistance program + Health savings account + Life insurance + Long-term disability + Medical, dental, and vision + Paid time off + Short-term disability + Transportation benefits Skills/Tech stack required: [AI image generation][AI video][AI Video Generation][Art direction][Dataset curation][Design][Illustration][Image Generation][Photography][Prompt engineering][Video Generation][Visual style][Visual style analysis] Educational requirements: N/A Role(s): [AI][AI Prompt Engineer][Art Director][Director][Engineer][Prompt Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 33.79
     },
     {
       "externalId": "senior-data-engineer-id82554-puebla-heroica-puebla-mexico-3420689",
@@ -692,7 +868,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.78
+      "score": 33.58
     },
     {
       "externalId": "senior-data-engineer-id82554-quetzaltenango-guatemala-3420683",
@@ -711,7 +887,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.63
+      "score": 33.43
     },
     {
       "externalId": "senior-data-engineer-id82554-zapopan-mexico-3420684",
@@ -730,7 +906,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.63
+      "score": 33.43
     },
     {
       "externalId": "senior-data-engineer-id82554-guadalajara-mexico-3420690",
@@ -749,7 +925,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.58
+      "score": 33.39
     },
     {
       "externalId": "senior-data-engineer-id82554-zona-1-guatemala-3420682",
@@ -768,7 +944,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.43
+      "score": 33.23
     },
     {
       "externalId": "senior-data-engineer-id82554-monterrey-mexico-3420685",
@@ -787,7 +963,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.37
+      "score": 33.17
     },
     {
       "externalId": "senior-data-engineer-id82554-ciudad-de-mexico-mexico-3420687",
@@ -806,7 +982,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.37
+      "score": 33.17
+    },
+    {
+      "externalId": "data-engineer-chattanooga-tn-united-states-3423241",
+      "source": "foorilla",
+      "url": "https://bcbst.wd1.myworkdayjobs.com/en-US/External/job/USA-TN-Chattanooga-Remote/Data-Engineer_R-50971",
+      "title": "Data Engineer",
+      "company": "BCBST BlueCross BlueShield of Tennessee, Inc.",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and support cloud data and AI solutions * Design, develop, modify, and integrate information systems * Develop test debug and document scripts and programs * Enhance transparency in coverage processes * Maintain engineering skills across platforms and networks * Optimize application systems for capacity and response time * Provide guidance and training to analysts and programmers * Respond to system failures and performance issues Perks/Benefits: + Onsite final interviews at Chattanooga TN + Remote work from home Skills/Tech stack required: [Agile][Application development][“as-code”][CI/CD][Cloud platform][Database systems][DevOps][Google Cloud][Google Cloud Platform][Information Technology][Infrastructure as Code][Scrum] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 33.03
     },
     {
       "externalId": "senior-data-engineer-id82554-leon-de-los-aldama-mexico-3420688",
@@ -825,7 +1018,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.1
+      "score": 32.91
     },
     {
       "externalId": "senior-data-engineer-id82554-playas-de-rosarito-mexico-3420691",
@@ -844,7 +1037,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.1
+      "score": 32.91
     },
     {
       "externalId": "senior-data-engineer-id82554-queretaro-mexico-3420686",
@@ -863,7 +1056,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.93
+      "score": 32.74
     },
     {
       "externalId": "data-analyst-salt-lake-city-ut-united-states-3421824",
@@ -880,7 +1073,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.79
+      "score": 32.59
     },
     {
       "externalId": "etl-data-engineer-w2-hiring-columbus-oh-united-states-3413358",
@@ -897,7 +1090,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.79
+      "score": 32.59
     },
     {
       "externalId": "analytic-product-operation-analyst-data-platform-san-jose-california-united-states-3419548",
@@ -914,7 +1107,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.33
+      "score": 32.13
     },
     {
       "externalId": "senior-software-engineer-united-states-3419826",
@@ -933,26 +1126,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.18
-    },
-    {
-      "externalId": "data-engineer-spain-3423018",
-      "source": "foorilla",
-      "url": "https://telekom.eightfold.ai/careers/job/563465354149566",
-      "title": "Data Engineer",
-      "company": "Careers at Deutsche Telekom",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and maintain big data architectures * Develop data pipelines * Develop software for complex products and services * Explore data * Implement data quality and compliance evidence * Model data * Operate and troubleshoot data pipelines * Perform data structure analysis * Transform data Perks/Benefits: + Continuous training + Flexible schedule + Hybrid work model + Life and accident insurance Skills/Tech stack required: [Apache Spark][Big Data][Data Analysis][Data Architecture][Data Modeling][Data pipeline][Data Processing][Data Transformation][Exploratory Data Analysis][Git][PySpark][Python][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 32.11
+      "score": 31.98
     }
   ]
 }
