@@ -1,6 +1,29 @@
 {
-  "generatedAt": "2026-08-13T02:52:35.145Z",
+  "generatedAt": "2026-08-13T05:11:41.845Z",
   "jobs": [
+    {
+      "externalId": "machine-learning-engineer-mulheim-karlich-rp-germany-3424592",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Tomra/744000143106219-machine-learning-engineer-",
+      "title": "Machine Learning Engineer*",
+      "company": "Tomra",
+      "location": "Mülheim-Kärlich, RP, Germany",
+      "country": "Germany",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply version control code reviews and documentation * Build CI/CD pipelines * Build end to end ML training pipelines * Build secure data platforms * Collaborate with internal users * Containerize components * Deploy and package models for inference * Design REST APIs for ML services * Develop internal tools and web UIs for ML workflows * Ensure data security, privacy, and compliance * Implement unit integration and performance tests * Integrate data platforms * Maintain and troubleshoot ML tooling in production * Optimize models for inference * Serve models in cloud * Serve models on edge Perks/Benefits: + Flexible international working environment + Hybrid working + Laptop + Long-term development opportunities + Mobile phone + Modern office and testing facilities Skills/Tech stack required: [ARM][CI/CD][Cloud Computing][Computer Vision][CUDA][CUDNN][Data Modeling][Data Privacy][Data Security][Deep learning][Docker][Edge Deployment][Feature Stores][Integration Testing][Jetson][Machine Learning][MLOps][NoSQL][Object storage][ONNX][Performance Testing][Python][PyTorch][React][REST APIs][SQL][TensorFlow][TensorRT][TypeScript][Unit Testing][Vue.js] Educational requirements: N/A Role(s): [Engineer][Learning Engineer][Machine Learning Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "MLOps",
+        "Computer Vision"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 56.12
+    },
     {
       "externalId": "applied-ai-engineer-all-genders-vienna-borsegebaude-austria-3421683",
       "source": "foorilla",
@@ -22,7 +45,31 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.97
+      "score": 55.87
+    },
+    {
+      "externalId": "mid-level-data-ai-engineer-mf-luxembourg-luxembourg-luxembourg-3424227",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ARHS/744000143094747-mid-level-data-ai-engineer-m-f-",
+      "title": "Mid-level Data & AI Engineer (m/f)",
+      "company": "ARHS",
+      "location": "Luxembourg, Luxembourg, Luxembourg",
+      "country": "Luxembourg",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build infrastructure automation and reproducible ML environments * Build LLM based solutions using open source models * Build vector search systems * Deploy AI solutions to cloud and edge * Deploy AI workloads to Azure and AWS * Design AI ML pipelines for data ingestion and feature engineering * Develop AI services and APIs * Develop NLP pipelines for information extraction classification semantic search document understanding * Implement MLOps practices and CI CD processes * Implement OCR pipelines * Implement RAG architectures and prompt tuning * Improve observability for AI solutions * Integrate AI into event driven and serverless systems * Monitor deployed models * Train machine learning models Perks/Benefits: N/A Skills/Tech stack required: [Agile][Ansible][AWS][Azure][Azure Functions][CI/CD][DevOps][Docker][Event Driven][Event-driven architecture][Event Grid][FastAPI][GitHub Actions][Language Models][Large Language Models][OCR][Ollama][ONNX][Prompt engineering][Python][RAG][REST APIs][Serverless architecture][Terraform][Transformers][Vector Search] Educational requirements: N/A Role(s): [AI][AI Engineer][Data Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "NLP",
+        "MLOps",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.82
     },
     {
       "externalId": "senior-machine-learning-engineermachine-learning-engineer-iii-canada-bc-vancouver-3422006",
@@ -46,7 +93,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.55
+      "score": 55.45
     },
     {
       "externalId": "machine-learning-engineer-amsterdam-nh-netherlands-3419698",
@@ -69,7 +116,29 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.89
+      "score": 54.79
+    },
+    {
+      "externalId": "machine-learning-engineer-maastricht-netherlands-3424591",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Sia/744000143126719-machine-learning-engineer",
+      "title": "Machine learning Engineer",
+      "company": "Sia",
+      "location": "Maastricht, Netherlands",
+      "country": "Netherlands",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build production-level machine learning solutions * Develop machine learning pipelines * Lead internal AI product development * Make cloud architecture and design decisions * Optimize tune and test machine learning models * Participate in client workshops and meetings * Present at conferences and publish technical content * Scale models to production * Train and mentor engineers * Wrap models for production deployment Perks/Benefits: + Hospital insurance + Mobility budget + Performance-related bonus + Training opportunities Skills/Tech stack required: [AWS][Azure][C++][Databricks][Data Pipelines][Deep learning][Docker][GCP][Git][Hadoop][Java][Kubernetes][Machine Learning][Model Deployment][Model Optimization][PostgreSQL][Python][Scala][Spark][SQL][Unix] Educational requirements: [Master of Science] Role(s): [Engineer][Learning Engineer][Machine Learning Engineer]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "MLOps",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.2
     },
     {
       "externalId": "automation-solution-lead-can-ontario-toronto-canada-3423165",
@@ -90,7 +159,7 @@
       ],
       "aiRelevance": 0.8099999999999999,
       "visaSponsored": false,
-      "score": 52.5
+      "score": 52.4
     },
     {
       "externalId": "lead-machine-learning-engineer-sun-life-ireland-3422005",
@@ -110,7 +179,7 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 48.5
+      "score": 48.4
     },
     {
       "externalId": "engineer-ii-aiml-engineering-600-hidden-ridge-irving-tx-tx0326-united-states-3423834",
@@ -134,7 +203,7 @@
       ],
       "aiRelevance": 0.6599999999999999,
       "visaSponsored": false,
-      "score": 48.15
+      "score": 48.05
     },
     {
       "externalId": "ai-engineer-spec-driven-development-cambourne-united-kingdom-of-great-britain-and-northern-ireland-3420838",
@@ -151,7 +220,7 @@
       "skills": [],
       "aiRelevance": 0.67,
       "visaSponsored": false,
-      "score": 45.33
+      "score": 45.23
     },
     {
       "externalId": "agentic-ai-developer-can-ontario-toronto-canada-3423105",
@@ -172,7 +241,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 45.22
+      "score": 45.12
     },
     {
       "externalId": "ai-software-engineer-spain-madrid-torre-chamartin-spain-3421694",
@@ -194,7 +263,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 44.94
+      "score": 44.84
     },
     {
       "externalId": "software-engineer-iii-aiml-threat-intelligence-malaga-spain-3418129",
@@ -216,7 +285,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 43.02
+      "score": 42.92
     },
     {
       "externalId": "data-analyst-2683-huntsville-al-united-states-3421832",
@@ -236,7 +305,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 42.2
+      "score": 42.1
     },
     {
       "externalId": "agentic-ai-optimization-developer-can-ontario-toronto-canada-3423997",
@@ -257,7 +326,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 42.18
+      "score": 42.08
     },
     {
       "externalId": "data-scientist-data-valorization-complexe-desjardins-montreal-canada-3423267",
@@ -278,7 +347,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 41.5
+      "score": 41.4
     },
     {
       "externalId": "data-scientist-iii-senior-easton-ops-cols-c-oh-united-states-3421619",
@@ -299,7 +368,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 40.91
+      "score": 40.81
     },
     {
       "externalId": "edw-developer-senior-100-remote-broadmoor-campus-united-states-3423730",
@@ -318,7 +387,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.98
+      "score": 39.88
     },
     {
       "externalId": "senior-data-modeller-london-england-united-kingdom-3421191",
@@ -337,7 +406,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 38.73
+      "score": 38.63
     },
     {
       "externalId": "big-data-engineer-graduate-tiktok-recommendation-architecture-2027-start-san-jose-california-united-states-3419492",
@@ -356,7 +425,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.66
+      "score": 38.56
     },
     {
       "externalId": "senior-data-engineer-eden-prairie-minnesota-united-states-remote-3423240",
@@ -375,7 +444,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 38.32
+      "score": 38.22
     },
     {
       "externalId": "senior-data-engineer-primary-location-eden-prairie-minnesota-3423233",
@@ -394,7 +463,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.09
+      "score": 37.99
     },
     {
       "externalId": "data-engineer-mid-gh-office-tysons-corner-va-headquarters-united-states-3421854",
@@ -414,27 +483,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 38.08
-    },
-    {
-      "externalId": "deployment-strategist-canada-canada-3416813",
-      "source": "foorilla",
-      "url": "https://jobs.ashbyhq.com/elevenlabs/74b8610d-697c-404b-9620-8b934e3c65bd",
-      "title": "Deployment Strategist - Canada",
-      "company": "ElevenLabs",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Advise agent deployment best practices * Collaborate with research teams * Deliver implementation outcomes * Design agent orchestration * Develop demos and presentations * Embed with customer teams * Engage strategic customers * Ensure production readiness * Identify customer pain points * Integrate APIs * Own enterprise deals end to end * Prototype with Python * Structure commercial terms Perks/Benefits: + Annual company offsite + Co-working stipend + Learning & development stipend + Social travel stipend Skills/Tech stack required: [Agent Frameworks][AI Agent][AI Agent Frameworks][API Integration][LLM][Python] Educational requirements: N/A Role(s): [Architect][Deployment Strategist][Solutions Architect][Strategist]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 37.86
+      "score": 37.98
     },
     {
       "externalId": "devops-engineer-zagreb-croatia-3421900",
@@ -454,7 +503,45 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 37.65
+      "score": 37.55
+    },
+    {
+      "externalId": "data-scientist-ann-arbor-mi-united-states-3424396",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Dominos/744000143177809-data-scientist",
+      "title": "Data Scientist",
+      "company": "Dominos",
+      "location": "Ann Arbor, MI, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and validate predictive models * Collect, clean, and preprocess data * Conduct data collection for tracking * Document methodologies and results * Generate reports and visualizations * Maintain data pipelines * Mine and synthesize data sources * Monitor model performance * Transform geospatial datasets into insights * Troubleshoot data quality issues Perks/Benefits: + 401k matching + Adoption Assistance + Childcare tuition discounts + Company bonus + Fertility benefits + Fitness and wellness programs + Medical, dental, and vision insurance + Mental health support + Paid Holidays + Paid vacation + Stock purchase discount Skills/Tech stack required: [ArcGIS][Arcpy][Data Analysis][Exploratory Data Analysis][FastAPI][Geopandas][Geospatial SQL][Git][Jupyter Notebook][Machine Learning][Matplotlib][Pandas][Power BI][Predictive Modeling][Python][Seaborn][SQL][Statistical modeling][Tableau] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 37.12
+    },
+    {
+      "externalId": "computational-physicist-for-accelerators-be-op-sps-2026-135-grap-geneva-geneva-switzerland-3424333",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/CERN/744000143097109-computational-physicist-for-accelerators-be-op-sps-2026-135-grap-",
+      "title": "Computational Physicist for Accelerators (BE-OP-SPS-2026-135-GRAP)",
+      "company": "CERN",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze operational and instrumentation data * Automate accelerator setup tuning and performance monitoring * Collaborate with accelerator physicists operators and developers * Develop beam optimisation software for particle accelerators * Document software and study results * Perform data analysis and optimisation for beam performance * Present progress and results at technical meetings * Support beam commissioning and performance studies * Test validate and deploy optimisation and machine learning tools Perks/Benefits: + 30 days paid leave + Health insurance coverage + Hybrid work + Pension fund membership + Relocation package + Training and language classes Skills/Tech stack required: [Data Analysis][Experimental data][Experimental data analysis][Git][Linux][Machine Learning][Numerical Methods][Optimization][Particle accelerators][Python][Scientific Computing] Educational requirements: [Master of Science][PhD] Role(s): [Applied Physicist][Computational Physicist][Physicist]",
+      "postedAt": "2026-08-12T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 36.93
     },
     {
       "externalId": "software-engineer-education-analytics-mexico-city-cdmx-mexico-3418102",
@@ -474,7 +561,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.99
+      "score": 36.89
     },
     {
       "externalId": "senior-data-developer-vancouver-british-columbia-ca-3417904",
@@ -493,7 +580,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.71
+      "score": 36.61
     },
     {
       "externalId": "dbadata-analyst-i-police-communications-midland-tx-3424008",
@@ -510,7 +597,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 36.67
+      "score": 36.57
     },
     {
       "externalId": "computational-scientist-university-3420914",
@@ -530,7 +617,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.62
+      "score": 36.52
     },
     {
       "externalId": "data-engineering-tech-lead-work-at-home-ohio-united-states-3421851",
@@ -549,7 +636,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.71
+      "score": 35.61
     },
     {
       "externalId": "senior-data-analyst-deerfield-beach-united-states-3420935",
@@ -566,7 +653,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.68
+      "score": 35.58
     },
     {
       "externalId": "senior-data-engineer-id82548-monterrey-mexico-3420300",
@@ -586,7 +673,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.48
+      "score": 35.38
     },
     {
       "externalId": "database-applications-lead-arlington-va-united-states-3422873",
@@ -603,7 +690,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.32
+      "score": 35.22
     },
     {
       "externalId": "full-stack-software-engineer-it-ca-ir-2026-198-grae-geneva-geneva-switzerland-3419614",
@@ -623,7 +710,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.27
+      "score": 35.17
     },
     {
       "externalId": "data-engineer-ii-us-rhode-island-providence-3419900",
@@ -643,7 +730,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.09
+      "score": 34.99
     },
     {
       "externalId": "senior-data-engineer-id82548-guadalajara-mexico-3420298",
@@ -662,7 +749,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.84
+      "score": 34.74
     },
     {
       "externalId": "manager-data-science-and-analytics-richmond-va-united-states-3420583",
@@ -679,7 +766,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.84
+      "score": 34.74
     },
     {
       "externalId": "senior-data-engineer-id82548-leon-de-los-aldama-mexico-3420299",
@@ -699,7 +786,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.62
+      "score": 34.52
     },
     {
       "externalId": "senior-data-engineer-id82548-zapopan-mexico-3420312",
@@ -719,7 +806,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.42
+      "score": 34.32
     },
     {
       "externalId": "senior-software-engineer-huntsville-al-usa-3422123",
@@ -738,7 +825,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.36
+      "score": 34.26
     },
     {
       "externalId": "senior-data-engineer-id82548-queretaro-mexico-3420302",
@@ -757,7 +844,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.32
+      "score": 34.22
     },
     {
       "externalId": "data-analytics-bi-manager-remote-poland-3423130",
@@ -774,7 +861,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.32
+      "score": 34.22
     },
     {
       "externalId": "manager-business-intelligence-akron-oh-3423626",
@@ -793,7 +880,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.19
+      "score": 34.09
     },
     {
       "externalId": "senior-data-engineer-id82548-playas-de-rosarito-mexico-3420326",
@@ -813,7 +900,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.14
+      "score": 34.04
     },
     {
       "externalId": "senior-data-engineer-id82548-puebla-heroica-puebla-mexico-3420301",
@@ -832,7 +919,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.1
+      "score": 34
     },
     {
       "externalId": "ai-art-director-palo-alto-california-usa-3423846",
@@ -849,7 +936,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.79
+      "score": 33.69
     },
     {
       "externalId": "senior-data-engineer-id82554-puebla-heroica-puebla-mexico-3420689",
@@ -868,7 +955,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.58
+      "score": 33.48
     },
     {
       "externalId": "senior-data-engineer-id82554-quetzaltenango-guatemala-3420683",
@@ -887,7 +974,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.43
+      "score": 33.33
     },
     {
       "externalId": "senior-data-engineer-id82554-zapopan-mexico-3420684",
@@ -906,7 +993,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.43
+      "score": 33.33
     },
     {
       "externalId": "senior-data-engineer-id82554-guadalajara-mexico-3420690",
@@ -925,7 +1012,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.39
+      "score": 33.29
     },
     {
       "externalId": "senior-data-engineer-id82554-zona-1-guatemala-3420682",
@@ -944,7 +1031,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.23
+      "score": 33.13
     },
     {
       "externalId": "senior-data-engineer-id82554-monterrey-mexico-3420685",
@@ -963,7 +1050,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.17
+      "score": 33.07
     },
     {
       "externalId": "senior-data-engineer-id82554-ciudad-de-mexico-mexico-3420687",
@@ -982,7 +1069,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.17
+      "score": 33.07
     },
     {
       "externalId": "data-engineer-chattanooga-tn-united-states-3423241",
@@ -999,7 +1086,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.03
+      "score": 32.93
     },
     {
       "externalId": "senior-data-engineer-id82554-leon-de-los-aldama-mexico-3420688",
@@ -1018,7 +1105,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.91
+      "score": 32.81
     },
     {
       "externalId": "senior-data-engineer-id82554-playas-de-rosarito-mexico-3420691",
@@ -1037,7 +1124,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.91
+      "score": 32.81
     },
     {
       "externalId": "senior-data-engineer-id82554-queretaro-mexico-3420686",
@@ -1056,7 +1143,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.74
+      "score": 32.64
     },
     {
       "externalId": "data-analyst-salt-lake-city-ut-united-states-3421824",
@@ -1073,24 +1160,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.59
-    },
-    {
-      "externalId": "etl-data-engineer-w2-hiring-columbus-oh-united-states-3413358",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/PDDNINC/744000142981659-etl-data-engineer-w2-hiring-",
-      "title": "ETL Data Engineer W2 Hiring.",
-      "company": "PDDNINC",
-      "location": "Columbus, OH, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and maintain ETL pipelines * Build connections to source systems and validate ingestion * Collaborate with cross-functional teams for automation * Document data mappings and ETL requirements * Enforce governance and access control * Implement audits and reconciliation * Integrate source data into process intelligence platform * Lead ETL design and development * Optimize ETL pipelines for performance and scalability * Provide production ETL operational support * Support agile delivery and planning * Troubleshoot ETL failures and performance issues Perks/Benefits: N/A Skills/Tech stack required: [Access Control][Agile][APIs][Data Governance][Data integration][Data Modeling][Data Pipelines][Data Quality][Data Validation][ETL][JDBC][Kafka][Performance Tuning][PLSQL][Reconciliation][Reconciliation processes][REST APIs][Scalability][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer][ETL Data Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.59
+      "score": 32.49
     },
     {
       "externalId": "analytic-product-operation-analyst-data-platform-san-jose-california-united-states-3419548",
@@ -1107,26 +1177,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.13
-    },
-    {
-      "externalId": "senior-software-engineer-united-states-3419826",
-      "source": "foorilla",
-      "url": "https://apply.careers.microsoft.com/careers/apply?pid=/careers/job/1970393556751840",
-      "title": "Senior Software Engineer",
-      "company": "Careers at Microsoft",
-      "location": "United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Collaborate with partner teams on end to end testing * Debug using tools tests logs telemetry * Establish scalability performance live site coverage escalation pathways * Identify dependencies * Review code and test coverage * Use AI tools across SDLC * Verify assumptions before production Perks/Benefits: N/A Skills/Tech stack required: [Artificial Intelligence][C#][C++][Debugging][High Performance][High-Performance Computing][Java][JavaScript][Log Analysis][Performance Computing][Performance Testing][Python][Scalability][SDLC][Telemetry][Testing] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-11T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 31.98
+      "score": 32.03
     }
   ]
 }
