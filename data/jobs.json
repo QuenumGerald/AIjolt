@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T02:51:42.033Z",
+  "generatedAt": "2026-08-14T05:08:31.272Z",
   "jobs": [
     {
       "externalId": "artificial-intelligence-machine-learning-engineer-usa-va-ashburn-3431064",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.94
+      "score": 55.85
     },
     {
       "externalId": "agentic-ai-engineer-dmf-carnaxide-pt-2790-012-3428104",
@@ -44,7 +44,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.33
+      "score": 55.24
     },
     {
       "externalId": "full-stack-ai-engineer-boise-id-main-site-united-states-3434584",
@@ -65,7 +65,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.15
+      "score": 55.05
     },
     {
       "externalId": "ai-engineer-krakow-maopolskie-pl-3431836",
@@ -86,7 +86,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.96
+      "score": 53.86
     },
     {
       "externalId": "mlops-platform-engineer-mwd-thalheim-bei-wels-austria-3433775",
@@ -107,7 +107,28 @@
       ],
       "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 53.8
+      "score": 53.71
+    },
+    {
+      "externalId": "machine-learning-operations-engineer-braga-portugal-3435818",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000143346629-machine-learning-operations-engineer",
+      "title": "Machine Learning Operations Engineer",
+      "company": "BoschGroup",
+      "location": "Braga, Portugal",
+      "country": "Portugal",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build monitoring dashboards and alerts * Collaborate on MLOps strategy * Collaborate with ML engineers and data scientists * Design MLOps platform architecture * Develop MLOps documentation * Ensure model development toolchain reproducibility * Implement infrastructure-as-code * Implement security measures * Participate in code reviews and best practices development * Provision and manage cloud resources with Terraform Perks/Benefits: + Canteen + Employee discounts + Flexible hours + Medical services + Public transport access + Sports and health activities Skills/Tech stack required: [Ansible][“as-code”][Azure][Bash][DevOps][Entra ID][Git][GitHub Actions][GNU/Linux][Infrastructure as Code][Kubernetes][Machine Learning][Microsoft Entra][Microsoft Entra ID][MLOps][Python][Terraform] Educational requirements: [Master of Science][PhD] Role(s): [Engineer][Machine Learning Operations Engineer][Operations Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "MLOps",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.88,
+      "visaSponsored": false,
+      "score": 51.92
     },
     {
       "externalId": "canada-principal-ml-system-engineer-remote-or-mississauga-3425890",
@@ -130,7 +151,7 @@
       ],
       "aiRelevance": 0.63,
       "visaSponsored": false,
-      "score": 49.08
+      "score": 48.99
     },
     {
       "externalId": "gen-ai-developer-specialist-united-states-3431829",
@@ -152,7 +173,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 47.45
+      "score": 47.35
     },
     {
       "externalId": "consultant-data-senior-fh-fr-levallois-perret-kdf-france-3433057",
@@ -173,7 +194,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 46.59
+      "score": 46.5
     },
     {
       "externalId": "data-visualization-engineer-remote-nationwide-united-states-3432185",
@@ -190,7 +211,28 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 45.96
+      "score": 45.86
+    },
+    {
+      "externalId": "platform-engineer-data-science-ai-platform-london-england-united-kingdom-3435760",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ASOS/744000143391739-platform-engineer-data-science-ai-platform",
+      "title": "Platform Engineer – Data Science & AI Platform",
+      "company": "ASOS",
+      "location": "London, England, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Add observability for agent traces responses evaluations and monitoring * Apply security and compliance best practices with RBAC and ACLs and identity and access management * Build and evolve data and ML platform infrastructure * Collaborate with data engineers data scientists and ML engineers * Create documentation standards and best practices * Develop data processing components with Python and Spark * Enhance observability for data quality pipeline reliability and model performance * Implement data and ML governance with lineage and permissions * Implement evaluation pipelines and safety guardrails * Implement infrastructure-as-code * Improve platform reliability, performance, and security * Maintain shared datasets and platform services * Manage access control and secure configuration * Manage data and ML lifecycle with pipelines experiment tracking and versioning * Manage Dev/Test/Prod environments * Operate agentops capabilities including LLM gateway tool integration and prompt version management * Set up CI/CD pipelines Perks/Benefits: + Employee discount + Employee sample sales + Fixed annual payment + Paid annual leave + Personalised learning + Private medical care scheme Skills/Tech stack required: [Access Management][ACL][AgentOps][Apache Spark][“as-code”][Azure Data][Azure Databricks][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure DevOps][Azure Virtual][Azure Virtual Network][CI/CD][Data Lake Storage Gen2][Data Lineage][Data Quality][Docker][Entra ID][Experiment tracking][GitHub Actions][Identity and access][Identity and Access Management][Infrastructure as Code][Kubernetes][LLM Gateway][Model Monitoring][Network Security][Network Security Groups][Observability][Private Endpoint][Prompt engineering][Python][RBAC][Secure Configuration][Security groups][Terraform][Unity Catalog][Virtual Network] Educational requirements: N/A Role(s): [Data Platform][Data Platform Engineer][Engineer][ML Platform Engineer][Platform][Platform Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.21,
+      "visaSponsored": false,
+      "score": 43.28
     },
     {
       "externalId": "engineering-analyst-ai-answers-google-search-dublin-ireland-3430285",
@@ -211,7 +253,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 42.66
+      "score": 42.57
     },
     {
       "externalId": "aiml-engineer-primary-location-eden-prairie-minnesota-3433494",
@@ -232,7 +274,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 42.32
+      "score": 42.23
     },
     {
       "externalId": "solution-architect-data-ai-services-the-hague-haagse-poort-low-rise-netherlands-3432692",
@@ -253,7 +295,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 38.95
+      "score": 38.86
     },
     {
       "externalId": "lead-specialist-learning-and-development-london-united-kingdom-3431572",
@@ -270,7 +312,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 38.54
+      "score": 38.45
     },
     {
       "externalId": "senior-data-ai-solution-architect-kyiv-kyiv-city-ua-3431858",
@@ -289,7 +331,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.33
+      "score": 38.24
     },
     {
       "externalId": "data-scientist-austin-oakhill-office-united-states-3432169",
@@ -308,27 +350,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 37.96
-    },
-    {
-      "externalId": "statisticiandata-analyst-usa-dc-washington-330-c-st-sw-dcc127-united-states-3434701",
-      "source": "foorilla",
-      "url": "https://gdit.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/USA-DC-Washington/Statistician-Data-Analyst_RQ226086-2",
-      "title": "Statistician/Data Analyst",
-      "company": "GD Information Technology, Inc.",
-      "location": "USA DC Washington - 330 C St SW (DCC127), United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and publish reports to development and production * Compile analyze and visualize data * Conduct statistical analysis * Create presentations and documentation * Develop reporting products * Identify performance outcomes and indicators * Identify uniform data points * Prepare written summaries and presentations * Prototype data products * Provide ad-hoc data reporting * Recommend automated solutions * Support data collection, analysis, and visualization * Train analysts and staff on data tools * Update data collection tools and processes Perks/Benefits: N/A Skills/Tech stack required: [Analytics][Data analytics][Data Modeling][Data reporting][Data Visualization][ETL][Language Processing][Natural Language][Natural Language Processing][Predictive Statistics][Python][Quantitative Analysis][R][SAS][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Analyst][Data Analyst][Statistician]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "NLP"
-      ],
-      "aiRelevance": 0.18,
-      "visaSponsored": false,
-      "score": 37.52
+      "score": 37.87
     },
     {
       "externalId": "sr-platform-engineer-kubernetes-pa-west-chester-1354-boot-rd-united-states-3432311",
@@ -349,7 +371,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.55
+      "score": 36.46
     },
     {
       "externalId": "product-data-operations-program-manager-menlo-park-ca-3430435",
@@ -368,7 +390,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.54
+      "score": 36.44
     },
     {
       "externalId": "senior-data-engineer-id82547-puebla-heroica-puebla-mexico-3432089",
@@ -388,7 +410,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.77
+      "score": 35.67
     },
     {
       "externalId": "senior-software-developer-portugal-3431147",
@@ -410,7 +432,7 @@
       ],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 35.43
+      "score": 35.34
     },
     {
       "externalId": "senior-data-engineer-ks-overland-park-united-states-3433629",
@@ -430,7 +452,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.39
+      "score": 35.3
     },
     {
       "externalId": "senior-ibm-master-data-management-integration-developer-albany-al-us-3432670",
@@ -450,7 +472,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.37
+      "score": 35.27
     },
     {
       "externalId": "expert-developer-data-analytics-data-engineering-ref5086i-budapest-hungary-3430793",
@@ -469,28 +491,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.25
-    },
-    {
-      "externalId": "data-engineer-nyc-1211-ave-of-the-americas-united-states-3434721",
-      "source": "foorilla",
-      "url": "https://dowjones.wd1.myworkdayjobs.com/en-US/New_York_Post_Careers/job/NYC---1211-Ave-of-the-Americas/Data-Engineer_Job_Req_54519",
-      "title": "Data Engineer",
-      "company": "NYP Holdings, Inc",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build real-time and batch processing pipelines * Collaborate with product editorial and data science teams * Design build and operate cloud based data pipelines * Develop and maintain ETL pipelines * Document functional requirements * Monitor optimize and improve reliability security and cost efficiency * Participate in code reviews architecture discussions and agile sprints * Write clean testable maintainable Python code Perks/Benefits: N/A Skills/Tech stack required: [Agile][Airflow][Authentication][Authorization][AWS][Big Data][BigQuery][CI/CD][Cloud Functions][Dataflow][Docker][DynamoDB][ETL][GCP][Git][Glue][GraphQL][Jira][Kubernetes][Lambda][Linux][PySpark][Python][Redshift][REST][S3][Shell Scripting][Snowflake][SQL][SSH][Unit Testing][Vertex AI] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 35.13
+      "score": 35.16
     },
     {
       "externalId": "senior-backend-engineer-python-data-intensive-systems-kyiv-ukraine-ua-3431994",
@@ -510,7 +511,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.08
+      "score": 34.98
     },
     {
       "externalId": "senior-data-engineer-id82547-zapopan-mexico-3432093",
@@ -530,7 +531,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.98
+      "score": 34.89
     },
     {
       "externalId": "data-center-manager-wink-texas-usa-3426107",
@@ -549,7 +550,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.91
+      "score": 34.81
+    },
+    {
+      "externalId": "senior-data-engineer-data-science-platform-london-england-united-kingdom-3435739",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ASOS/744000143355639-senior-data-engineer-data-science-platform",
+      "title": "Senior Data Engineer - Data Science Platform",
+      "company": "ASOS",
+      "location": "London, England, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipeline components * Collaborate with stakeholders on data requirements * Design data pipelines * Develop data engineering templates and tooling * Implement data quality validation and testing * Improve data observability and metadata management * Maintain scalable reusable data pipelines * Optimize pipeline performance reliability and cost * Promote CI CD for data pipelines * Standardize data ingestion transformation and serving Perks/Benefits: + Discretionary bonus scheme + Employee discount + Employee sample sales + Flexible benefits allowance + Paid annual leave + Personalised learning + Private medical care scheme Skills/Tech stack required: [Apache Spark][“as-code”][Azure][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][CI/CD][Databricks][Data Factory][Data Lake Storage][Data Modeling][Data Quality][Data Testing][DBT][Delta Lake][Infrastructure as Code][Metadata Management][Observability][PySpark][Python][Scala][Terraform] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.8
     },
     {
       "externalId": "senior-data-engineer-id82547-queretaro-mexico-3432096",
@@ -569,7 +589,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.89
+      "score": 34.8
     },
     {
       "externalId": "data-engineer-coppell-texas-usa-3434718",
@@ -588,7 +608,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.58
+      "score": 34.49
     },
     {
       "externalId": "senior-data-engineer-ukraine-remote-3431326",
@@ -607,7 +627,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.58
+      "score": 34.49
     },
     {
       "externalId": "senior-data-engineer-id82547-guadalajara-mexico-3432091",
@@ -627,7 +647,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.57
+      "score": 34.47
     },
     {
       "externalId": "data-engineer-split-croatia-3432103",
@@ -646,7 +666,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.36
+      "score": 34.27
     },
     {
       "externalId": "senior-data-engineer-id82547-playas-de-rosarito-mexico-3432090",
@@ -665,7 +685,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.25
+      "score": 34.16
     },
     {
       "externalId": "senior-data-engineer-id82547-monterrey-mexico-3432092",
@@ -684,7 +704,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.15
+      "score": 34.05
     },
     {
       "externalId": "senior-data-engineer-id82547-leon-de-los-aldama-mexico-3432095",
@@ -703,7 +723,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.93
+      "score": 33.83
     },
     {
       "externalId": "trainee-developer-azure-databricks-sql-leicester-leicestershire-united-kingdom-3430853",
@@ -720,7 +740,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.69
+      "score": 33.6
     },
     {
       "externalId": "data-analyst-senior-mexico-3433611",
@@ -739,7 +759,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.49
+      "score": 33.4
+    },
+    {
+      "externalId": "senior-data-engineer-guadalajara-jal-mexico-3435740",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Blend360/744000143339479-senior-data-engineer",
+      "title": "Senior Data Engineer",
+      "company": "Blend360",
+      "location": "Guadalajara, Jal., Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build scalable data models for analytics * Build scalable data pipelines * Collaborate with analytics and engineering teams * Consolidate KPIs metrics and attributes * Design modular, reusable components * Develop data pipelines in Databricks * Develop data pipelines in Snowflake * Ensure data quality, performance, and reliability * Maintain optimize and automate code repositories * Refactor legacy code for maintainability Perks/Benefits: + Company-provided equipment + English lessons + Flexible working options + Learning opportunities + Mentorship programs + Travel for conferences + Udemy Business Skills/Tech stack required: [Analytics][Databricks][Data Modeling][Data Pipelines][Data Quality][GitHub][Performance optimization][Snowflake] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 33
     },
     {
       "externalId": "ai-trainer-freelance-data-annotator-france-remote-3430293",
@@ -756,7 +793,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.86
+      "score": 31.77
     },
     {
       "externalId": "data-engineer-budapestbudapesthungary-3433628",
@@ -775,7 +812,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.81
+      "score": 31.71
     },
     {
       "externalId": "data-engineer-data-platform-engineer-wmd-berlin-de-10557-3429090",
@@ -792,7 +829,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.72
+      "score": 30.62
     }
   ]
 }
