@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T19:19:02.955Z",
+  "generatedAt": "2026-08-14T21:45:34.977Z",
   "jobs": [
     {
       "externalId": "machine-learning-engineer-mulheim-karlich-rp-germany-3443138",
@@ -20,7 +20,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 57.83
+      "score": 57.72
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3443827",
@@ -45,7 +45,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.16
+      "score": 56.05
     },
     {
       "externalId": "principal-mlai-engineer-remote-ga-3-remotely-working-in-georgia-united-states-3443362",
@@ -64,7 +64,31 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 54.72
+      "score": 54.62
+    },
+    {
+      "externalId": "lead-swe-ai-devit-operations-remote-or-hybrid-in-dc-or-mn-primary-location-minnetonka-minnesota-3445017",
+      "source": "foorilla",
+      "url": "https://careers.unitedhealthgroup.com/en/job/minnetonka/lead-swe-ai-dev-it-operations-remote-or-hybrid-in-dc-or-mn/34088/99220211376",
+      "title": "Lead SWE, AI Dev/IT Operations - Remote or Hybrid in DC or MN",
+      "company": "UnitedHealth Group",
+      "location": "Primary location: Minnetonka, Minnesota",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply MLOps practices for model lifecycle monitoring and governance * Apply responsible AI principles for fairness transparency explainability and accountability * Build agentic AI components for incident triage and root cause analysis * Build and maintain data pipelines for observability and ITSM data * Collaborate with engineering operations security and business stakeholders * Deploy and operationalize machine learning models at scale * Design build and maintain machine learning models and AI automation for IT operations * Develop and maintain feature sets for anomaly detection and predictive analytics * Integrate ML and AI outputs into orchestration and automation workflows * Use cloud architectures for real time analytics and scalable inference Perks/Benefits: + 401k contribution + Comprehensive benefits package + Equity/Stock Purchase Plan + Hybrid work options + Incentive and recognition programs + Remote work flexibility Skills/Tech stack required: [AWS][Azure][CI/CD][Cloud platform][Data Pipelines][Docker][Dynatrace][Generative AI][Google Cloud][Google Cloud Platform][ITSM][Jenkins][Kubernetes][Language Models][Large Language Models][LLM Frameworks][Machine Learning][MLOps][Model Monitoring][NLP][Observability][Python][Responsible AI][ServiceNow][Spark][Splunk][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Engineer][Lead][Lead Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "NLP",
+        "MLOps",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.78,
+      "visaSponsored": false,
+      "score": 52.8
     },
     {
       "externalId": "research-engineer-monetization-ai-sunnyvale-ca-bellevue-wa-menlo-park-ca-seattle-wa-new-york-ny-fremont-ca-3442590",
@@ -85,7 +109,7 @@
       ],
       "aiRelevance": 0.69,
       "visaSponsored": false,
-      "score": 52.8
+      "score": 52.7
     },
     {
       "externalId": "machine-learning-operations-engineer-fmdiv-braga-portugal-3443132",
@@ -106,7 +130,7 @@
       ],
       "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 52.31
+      "score": 52.21
     },
     {
       "externalId": "forward-deployed-engineer-iii-google-cloud-consulting-french-german-paris-france-3442327",
@@ -127,7 +151,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 47.56
+      "score": 47.45
     },
     {
       "externalId": "gen-ai-developer-specialist-united-states-3443354",
@@ -149,7 +173,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 47.46
+      "score": 47.36
     },
     {
       "externalId": "data-ai-platform-architect-elsbethen-salzburg-austria-3440188",
@@ -170,7 +194,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 45.21
+      "score": 45.1
     },
     {
       "externalId": "ai-enterprise-architect-kansas-city-ks-united-states-3444316",
@@ -189,7 +213,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 43.17
+      "score": 43.06
     },
     {
       "externalId": "aihpc-system-performance-engineer-menlo-park-ca-3442592",
@@ -210,7 +234,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 40.59
+      "score": 40.49
     },
     {
       "externalId": "enterprise-ai-architect-ireland-dublin-3443353",
@@ -229,7 +253,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.05
+      "score": 39.95
     },
     {
       "externalId": "technical-staff-engineering-technologist-london-united-kingdom-3442944",
@@ -248,7 +272,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.51
+      "score": 39.4
     },
     {
       "externalId": "data-operations-labeling-specialist-munich-berlin-3443123",
@@ -268,7 +292,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.21
+      "score": 39.1
     },
     {
       "externalId": "analyst-financial-crime-technology-amsterdam-nh-netherlands-3440440",
@@ -287,7 +311,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.82
+      "score": 38.71
     },
     {
       "externalId": "data-solutions-architect-krakow-wojewodztwo-maopolskie-poland-3443125",
@@ -306,7 +330,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.23
+      "score": 38.12
     },
     {
       "externalId": "computational-biologist-i-simmons-cancer-center-texas-dallas-5323-harry-hines-blvd-3443532",
@@ -325,7 +349,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.39
+      "score": 37.29
     },
     {
       "externalId": "data-scientist-vin-pattern-engineer-vilnius-vilnius-city-municipality-lithuania-3441325",
@@ -344,7 +368,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.95
+      "score": 35.85
     },
     {
       "externalId": "staff-software-engineer-flinkstreaming-analytics-team-czech-republic-remote-czechia-3443400",
@@ -365,7 +389,47 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.39
+      "score": 35.29
+    },
+    {
+      "externalId": "ingeniero-de-datos-big-data-jr-mexico-3445082",
+      "source": "foorilla",
+      "url": "https://softtek.eightfold.ai/careers/job/893397012055",
+      "title": "Ingeniero de Datos Big Data Jr",
+      "company": "Softtek",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and optimize data processing pipelines * Collaborate with QA and operations teams * Deploy to DEV UAT and PROD * Develop and maintain ETL processes * Document technical and operational evidence for data governance * Document test results and changes * Ensure compliance with model governance standards * Manage version control with git * Optimize Python and PySpark code * Publish and manage libraries and packages * Refactorize Python code * Run unit tests and validate code Perks/Benefits: N/A Skills/Tech stack required: [Airflow][Artifactory][AWS][Azure][Big Data][CI/CD][Cloud Computing][Cloud platform][Continuous Deployment][Control-M][Database monitoring][Data Governance][Data pipeline][Docker][ETL][Git][Google Cloud][Google Cloud Platform][Kanban][Model Governance][Nexus][NoSQL][PySpark][Python][Relational databases][Release Management][Scrum][Unit Testing] Educational requirements: N/A Role(s): [Big Data Engineer][Data Engineer][Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 35.2
+    },
+    {
+      "externalId": "dataops-engineer-tbilisi-georgia-3445139",
+      "source": "foorilla",
+      "url": "https://jsc-bank-of-georgia.hirehive.com/dataops-engineer-tbilisi-Jq2JUI",
+      "title": "DataOps Engineer",
+      "company": "HireHive.com",
+      "location": "Tbilisi, Georgia",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Adhere to architecture best practices * Automate existing processes * Build automated data infrastructure solutions * Configure monitoring for system performance and uptime * Define and build data pipelines * Design data engineering assets * Expand data platform capabilities * Implement internal process improvements * Maintain data platform operations for user management and audit * Manage production data pipelines * Migrate legacy solutions to cloud data platforms * Modify ETL processes for automation and schema changes Perks/Benefits: N/A Skills/Tech stack required: [Amazon Web Services][Apache Airflow][Apache Hive][Apache Kafka][Apache NiFi][Azure][Continuous integration][DNS][ETL][Feast][Git][Hadoop][HTTP][Jenkins][Kubernetes][Linux][MLflow][Python][Relational databases][TCP/IP][Web Services][Windows] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][DataOps Engineer][Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 35.11
     },
     {
       "externalId": "senior-data-engineer-id71671-queretaro-mexico-3442403",
@@ -385,28 +449,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.04
-    },
-    {
-      "externalId": "full-stack-software-engineer-python-cloud-react-dallas-texas-united-states-3441805",
-      "source": "foorilla",
-      "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/18759",
-      "title": "Full Stack Software Engineer (Python / Cloud / React)",
-      "company": "EXL Talent Acquisition Team",
-      "location": "Dallas, Texas, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build CI/CD pipelines * Build responsive user interfaces * Build restful APIs * Conduct sprint planning and architecture discussions * Deploy applications to cloud * Develop backend services * Improve backend performance reliability scalability * Lead data science projects * Manage relational databases * Mentor junior team members * Oversee data science standards * Participate in code reviews * Support schema design and data modeling * Troubleshoot production issues * Use Jira for workflow and documentation * Write SQL queries Perks/Benefits: N/A Skills/Tech stack required: [Atlassian Bitbucket][Atlassian Confluence][Atlassian Jira][AWS][Azure][CI/CD][CloudFormation][Cloud platform][Django][Docker][FastAPI][Git][GitHub Actions][Google Cloud][Google Cloud Platform][Jenkins][Kubernetes][Microservices][Node.js][Python][React][REST API][SQL][Terraform] Educational requirements: N/A Role(s): [Engineer][Full Stack][Full-stack Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 34.99
+      "score": 34.94
     },
     {
       "externalId": "data-engineer-nashville-tn-united-states-3443581",
@@ -425,7 +468,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.56
+      "score": 34.45
+    },
+    {
+      "externalId": "sr-data-engineer-cr003-el-coyol-alajuela-coyol-free-zone-costa-rica-3445109",
+      "source": "foorilla",
+      "url": "https://jj.wd5.myworkdayjobs.com/en-US/JJ/job/Alajuela-Costa-Rica/Sr-Data-Engineer_R-078067-1",
+      "title": "Sr. Data Engineer",
+      "company": "7758-SWAV CR SOCIEDAD DE RESPONSABILIDAD LIMITADA Legal Entity",
+      "location": "CR003 El Coyol, Alajuela, Coyol Free Zone, Costa Rica",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain production data pipelines * Create dashboards and advanced visualizations in Power BI * Design build and launch data models in Snowflake for multiple use cases * Document data pipelines and processes * Extract and load data from Oracle Fusion Cloud and Salesforce * Implement data observability tools * Implement data quality checks and monitoring * Optimize code and data pipeline performance * Solve data integration problems * Transform data using dbt * Troubleshoot and resolve pipeline issues Perks/Benefits: N/A Skills/Tech stack required: [Coalesce][Data Modeling][Data Observability][Data Quality][Data Transformation][DBT][Fivetran][Fusion Cloud][Oracle Fusion][Oracle Fusion Cloud][Power BI][Python][Salesforce][Snowflake][SQL] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.96
     },
     {
       "externalId": "lead-data-engineer-secret-clearance-required-baltimore-maryland-united-states-mclean-virginia-united-states-richmond-virginia-united-stat-3443585",
@@ -442,7 +504,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.9
+      "score": 33.79
     },
     {
       "externalId": "oracle-applications-data-engineer-sarasota-200300-series-united-states-3443593",
@@ -461,7 +523,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.67
+      "score": 33.57
     },
     {
       "externalId": "data-engineer-iii-rosslyn-virginia-united-states-3442559",
@@ -478,7 +540,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.61
+      "score": 33.5
     },
     {
       "externalId": "data-analytics-data-science-specialist-lake-success-nassau-united-states-3442996",
@@ -497,7 +559,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.57
+      "score": 33.46
     },
     {
       "externalId": "retail-e-commerce-data-engineer-lisboa-lisboa-portugal-3443124",
@@ -516,7 +578,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.38
+      "score": 33.27
     },
     {
       "externalId": "senior-palantir-ai-and-data-science-engineer-rosslyn-virginia-united-states-3443623",
@@ -533,7 +595,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.18
+      "score": 33.07
     },
     {
       "externalId": "associate-data-solutions-analyst-python-sql-airflow-pa-working-at-home-pennsylvania-united-states-3443870",
@@ -552,7 +614,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.71
+      "score": 32.61
+    },
+    {
+      "externalId": "data-analysts-retail-banking-analytics-tbilisi-georgia-3445031",
+      "source": "foorilla",
+      "url": "https://jsc-bank-of-georgia.hirehive.com/data-analysts-retail-banking-analytics-tbilisi-Rbmfht",
+      "title": "Data Analysts – Retail Banking Analytics",
+      "company": "HireHive.com",
+      "location": "Tbilisi, Georgia",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze customer behavior to optimize campaigns pricing and engagement * Collect process and interpret complex datasets * Deliver data driven insights for commercial and operational decisions * Plan and analyze campaign offer and promotional effectiveness * Strengthen internal reporting and performance tracking tools Perks/Benefits: N/A Skills/Tech stack required: [Hypothesis Testing][Microsoft Office][Power BI][PySpark][Python][SQL][Statistical Analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 32.59
     },
     {
       "externalId": "master-data-specialist-bucuresti-ro-3437060",
@@ -569,7 +650,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.63
+      "score": 32.53
     },
     {
       "externalId": "software-engineer-commodities-data-team-london-3439746",
@@ -588,7 +669,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.05
+      "score": 31.95
     }
   ]
 }
