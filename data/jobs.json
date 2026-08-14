@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-08-14T05:08:31.272Z",
+  "generatedAt": "2026-08-14T07:55:44.245Z",
   "jobs": [
+    {
+      "externalId": "senior-machine-learning-engineer-remote-ontario-canada-3436389",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/reddit/jobs/6960833",
+      "title": "Senior Machine Learning Engineer",
+      "company": "Job Application for Senior Machine Learning Engineer at Reddit",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply state of the art machine learning techniques * Build data pipelines * Build model pipelines * Build production ML systems * Conduct machine learning research * Contribute to ML strategy and architecture * Deploy machine learning systems * Design production machine learning models * Develop content understanding representations * Develop user understanding representations * Evaluate and align LLMs * Evaluate machine learning models * Fine-tune LLMs * Implement automated retraining * Improve model quality metrics * Improve prediction systems * Improve search relevance * Monitor model performance * Optimize advertising systems * Optimize latency and throughput * Optimize ranking and recommendations * Own ML lifecycle * Perform feature engineering * Serve machine learning models * Train machine learning models Perks/Benefits: + 401k match + Caregiving support + Family planning support + Flexible vacation + Gender-affirming care + Healthcare benefits + Mental health and coaching + Paid parental leave + Paid volunteer time off + Professional development Skills/Tech stack required: [Advertising Auctions][Airflow][Automated retraining][BigQuery][Convolutional Neural Networks][Data Pipelines][Data Processing][Deep learning][Distributed Systems][Feature Engineering][Fine Tuning][Go][Graph Neural Network][Graph Neural Networks][Java][Kafka][Knowledge Distillation][LLM Alignment][LLM Evaluation][Low Latency][Low-Latency Systems][Machine Learning][Model Deployment][Model Evaluation][Model Monitoring][Model Optimization][Model Serving][Model Training][Neural Network][Neural Networks][Python][PyTorch][RAG][Random Forests][Ray][Recommender Systems][Redis][Scalable pipelines][Search & Ranking][Spark][TensorFlow][Transformers][XGBoost] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Learning Engineer][Machine Learning Engineer][Senior Machine Learning Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "LLM",
+        "RAG",
+        "MLOps"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 59.46
+    },
     {
       "externalId": "artificial-intelligence-machine-learning-engineer-usa-va-ashburn-3431064",
       "source": "foorilla",
@@ -22,7 +46,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.85
+      "score": 55.73
     },
     {
       "externalId": "agentic-ai-engineer-dmf-carnaxide-pt-2790-012-3428104",
@@ -44,28 +68,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.24
-    },
-    {
-      "externalId": "full-stack-ai-engineer-boise-id-main-site-united-states-3434584",
-      "source": "foorilla",
-      "url": "https://micron.wd1.myworkdayjobs.com/en-US/External/job/Boise-ID---Main-Site/Full-Stack-AI-Engineer_JR108058",
-      "title": "Full Stack AI Engineer",
-      "company": "1000 Micron Technology, Inc.",
-      "location": "Boise, ID - Main Site, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build custom AI agents * Create secure API integrations * Design full-stack applications * Develop MCP-based integrations * Develop platform services * Ensure security, reliability, and performance * Implement embeddings and search * Improve observability and maintainability * Integrate large language models * Maintain production systems * Test and deploy software Perks/Benefits: + Dental insurance + Disability insurance + Health insurance + Paid family leave + Paid Holidays + Paid time off + Vision insurance Skills/Tech stack required: [Agent systems][Angular][ASP.NET][C#][CI/CD][Containerization][Docker][Embeddings][GraphQL][JavaScript][Kubernetes][Language Models][Large Language Models][Model Context Protocol][Multi-Agent][Multi-Agent Systems][NoSQL][Observability][Prompt engineering][Python][RAG][REST API][Retrieval-Augmented Generation][Security][SQL][System design][TypeScript][Vector Search] Educational requirements: [Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Full Stack][Full Stack Engineer][Stack Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "RAG",
-        "Kubernetes"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.05
+      "score": 55.12
     },
     {
       "externalId": "ai-engineer-krakow-maopolskie-pl-3431836",
@@ -86,28 +89,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.86
-    },
-    {
-      "externalId": "mlops-platform-engineer-mwd-thalheim-bei-wels-austria-3433775",
-      "source": "foorilla",
-      "url": "https://fronius.wd3.myworkdayjobs.com/en-US/Job_Board/job/Thalheim-bei-Wels/MLOps---Platform-Engineer--m-w-d-_REQ-10009137",
-      "title": "MLOps / Platform Engineer (m/w/d)",
-      "company": "Fronius International GmbH",
-      "location": "Thalheim bei Wels, Austria",
-      "country": "Austria",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build CI/CD pipelines * Develop MCP server for AI tools integration * Implement observability logs metrics alerting * Improve ingress controller configuration * Integrate new services into cluster * Maintain GitOps pipelines * Maintain LLM gateway services * Maintain workflow automation services * Manage DNS configuration * Manage Kubernetes secrets * Manage TLS certificate provisioning * Monitor production services * Operate Kubernetes cluster services * Optimize performance of self hosted LLMs * Support GPU scheduling * Support GPU workload routing and scaling * Troubleshoot service incidents Perks/Benefits: + Company events + Education program + EV charging stations + Family support childcare + Flexible working hours + Meal allowance + Parking + Partial home office + Paten program + Public transport ticket coverage + Sports benefits Skills/Tech stack required: [Alerting][Cert-Manager][CI/CD][DevOps][DNS][GitOps][GPU infrastructure][GPU scheduling][Grafana][Ingress Controller][Kubernetes][Linux][LLM Gateway][LLM serving][Logging][Loki][MLOps][Model Context Protocol][Monitoring][Networking][Observability][Prometheus][Ray][Secret management] Educational requirements: N/A Role(s): [DevOps][DevOps Engineer][Engineer][MLOps Engineer][Platform][Platform Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "MLOps",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.88,
-      "visaSponsored": false,
-      "score": 53.71
+      "score": 53.74
     },
     {
       "externalId": "machine-learning-operations-engineer-braga-portugal-3435818",
@@ -128,7 +110,7 @@
       ],
       "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 51.92
+      "score": 51.8
     },
     {
       "externalId": "canada-principal-ml-system-engineer-remote-or-mississauga-3425890",
@@ -151,7 +133,27 @@
       ],
       "aiRelevance": 0.63,
       "visaSponsored": false,
-      "score": 48.99
+      "score": 48.87
+    },
+    {
+      "externalId": "robotics-data-operator-intern-el-segundo-california-united-states-3436916",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/faradayfuture/jobs/7828531003",
+      "title": "Robotics Data Operator Intern",
+      "company": "Job Application for Robotics Data Operator Intern at Faraday Future",
+      "location": "El Segundo, California, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collect egocentric human behavior data * Extract camera intrinsic parameters * Filter clips with shaking occlusion or focus failures * Follow recording specifications * Format and upload data files * Operate robotic systems via VR teleoperation * Perform data quality self inspections * Synchronize sensor timestamps Perks/Benefits: N/A Skills/Tech stack required: [AI Data][AI data labeling][Camera Calibration][Data labeling][Data Preprocessing][Data synchronization][HTC Vive][Linux][Meta Quest][Python][Quality Assurance][ROS2][Sensor data][Sensor data synchronization][Video quality][Video Quality Assurance][Video recording] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Intern][Robotics Data Operator][Robotics Data Operator Intern]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Robotics"
+      ],
+      "aiRelevance": 0.73,
+      "visaSponsored": false,
+      "score": 47.89
     },
     {
       "externalId": "gen-ai-developer-specialist-united-states-3431829",
@@ -173,28 +175,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 47.35
-    },
-    {
-      "externalId": "consultant-data-senior-fh-fr-levallois-perret-kdf-france-3433057",
-      "source": "foorilla",
-      "url": "https://konectagroup.wd3.myworkdayjobs.com/en-US/Konecta/job/LEVALLOIS-PERRET-92/Consultant-Data-Senior-F-H_JR0002334",
-      "title": "Consultant Data Senior F/H",
-      "company": "KONECTA DIGITAL FRANCE",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build reusable datasets for generative AI * Contribute to data governance and compliance * Define and maintain metadata and data lineage * Design and develop data pipelines * Design data models * Document data models and data quality rules * Implement analytics and machine learning workflows * Integrate data from databases APIs and applications * Prepare and evaluate data for projects * Prepare data for RAG and GraphRAG * Profile and analyze data quality * Support semantic search embeddings and knowledge graphs Perks/Benefits: + CDI + Full remote Skills/Tech stack required: [Apache Airflow][Azure Data][Azure Data Factory][Azure Data Lake][BigQuery][Collibra][Databricks][Data Factory][Data Governance][Data Lake][Data Lineage][Data Processing][Data Quality][DBT][ELT][Embeddings][ETL][GraphRAG][Informatica][Knowledge graphs][Merise][Metadata Management][Microsoft Fabric][MLOps][PowerDesigner][Python][RAG][Real Time][Real-time Data][Real-time Data Processing][Semantic Search][Snowflake][SQL][Streaming][UML] Educational requirements: N/A Role(s): [Consultant][Data Consultant][Data Engineer][Data Scientist][Engineer][Scientist]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "RAG",
-        "MLOps"
-      ],
-      "aiRelevance": 0.57,
-      "visaSponsored": false,
-      "score": 46.5
+      "score": 47.23
     },
     {
       "externalId": "data-visualization-engineer-remote-nationwide-united-states-3432185",
@@ -211,7 +192,29 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 45.86
+      "score": 45.74
+    },
+    {
+      "externalId": "ai-ops-engineer-professional-services-canada-3437163",
+      "source": "foorilla",
+      "url": "https://jobs.lever.co/agiloft/da2bdd58-3001-47b3-8dad-fe6a0f90be88",
+      "title": "AI Ops Engineer - Professional Services",
+      "company": "Agiloft",
+      "location": "Canada",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Advise on delivery methodology and tooling * Build AI automation tooling * Build automation to reduce manual configuration testing and validation * Communicate project status, risks, and opportunities * Create prompt based tools and lightweight AI applications * Define AI roadmap for Professional Services * Design AI-powered workflows * Develop agentic workflows using LLM frameworks * Develop training programs to drive AI adoption * Ensure AI solutions comply with AI governance policies * Evaluate emerging AI technologies and recommend adoption * Monitor test and improve deployed AI solutions * Partner on architecture data and platform alignment * Provide coaching and hands on support for AI adoption * Register solutions in AI build registry Perks/Benefits: + Employee resource groups + Floating holidays + Wellness day + Work-life balance Skills/Tech stack required: [Agentic Workflows][API][Embeddings][Langchain][Langgraph][LLM][Prompt engineering][Prompting][Python][RAG][Tool use][Vector Database] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Science in Computer Science][Bachelor of Science in Information Systems] Role(s): [AI][AI Engineer][AI Ops Engineer][Engineer][Ops Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "LangChain"
+      ],
+      "aiRelevance": 0.48,
+      "visaSponsored": false,
+      "score": 44.98
     },
     {
       "externalId": "platform-engineer-data-science-ai-platform-london-england-united-kingdom-3435760",
@@ -232,7 +235,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 43.28
+      "score": 43.16
     },
     {
       "externalId": "engineering-analyst-ai-answers-google-search-dublin-ireland-3430285",
@@ -253,49 +256,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 42.57
-    },
-    {
-      "externalId": "aiml-engineer-primary-location-eden-prairie-minnesota-3433494",
-      "source": "foorilla",
-      "url": "https://careers.unitedhealthgroup.com/en/job/eden-prairie/ai-ml-engineer/34088/99146911152",
-      "title": "AI/ML Engineer",
-      "company": "UnitedHealth Group",
-      "location": "Primary location: Eden Prairie, Minnesota",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze failure modes * Automate workflows * Build classification models * Build llm workflows * Create evaluation datasets * Design AI-powered solutions * Develop decision support tools * Develop prompt strategies * Develop RAG pipelines * Develop scoring rubrics * Document model behavior and limitations * Ensure responsible AI guardrails * Evaluate emerging AI trends * Improve relevance accuracy and consistency * Integrate model APIs * Monitor drift * Monitor latency and operational cost * Monitor output quality * Reduce hallucination risk * Run model performance tests * Support model observability Perks/Benefits: + 401k contribution + Career development opportunities + Comprehensive benefits package + Equity stock purchase + Incentive and recognition programs + Telecommute within US Skills/Tech stack required: [Agents][Data Pipelines][Drift monitoring][Embeddings][Guardrails][Hallucination detection][Language Models][Large Language Models][Model APIs][Model Evaluation][Orchestration frameworks][Production Monitoring][Prompt chains][Prompt engineering][Python][Responsible AI][Retrieval-Augmented Generation][Tool-Calling][Vector Databases][Vector Search] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [AI][AI/ML Engineer][Engineer][ML Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG"
-      ],
-      "aiRelevance": 0.32999999999999996,
-      "visaSponsored": false,
-      "score": 42.23
-    },
-    {
-      "externalId": "solution-architect-data-ai-services-the-hague-haagse-poort-low-rise-netherlands-3432692",
-      "source": "foorilla",
-      "url": "https://nngroup.wd3.myworkdayjobs.com/en-US/WDExternal/job/The-Hague/Solution-Architect-Data---AI-Services_REQ2708006",
-      "title": "Solution Architect Data & AI Services",
-      "company": "NN Personeel B.V.",
-      "location": "The Hague - Haagse Poort - Low Rise, Netherlands",
-      "country": "Netherlands",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Advise product and engineering stakeholders * Define end to end data and AI architectures * Design integration patterns for data governance data engineering AI engineering and business intelligence * Ensure data products are reusable discoverable secure * Lead architecture decision records and design reviews * Translate business outcomes into technical solutions Perks/Benefits: + 27 vacation days + Diversity Days + Home-office allowance + Internet allowance + Modern pension + Training and learning opportunities + Unlimited travel via business card Skills/Tech stack required: [Amazon Web Services][Application Programming][Application Programming Interfaces][As-a-Service][“as-code”][Azure][CI/CD][Cloud Security][Data Engineering][Data Governance][Data mesh][Data Quality][Development Life Cycle][DevSecOps][Event Driven][Event-driven architecture][Infrastructure as Code][Kubernetes][Microservices][MLOps][Observability][Platform as a Service][Programming interfaces][Python][Software development][Software Development Life Cycle][Web Services] Educational requirements: N/A Role(s): [Architect][Solution Architect]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "MLOps",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.21,
-      "visaSponsored": false,
-      "score": 38.86
+      "score": 42.45
     },
     {
       "externalId": "lead-specialist-learning-and-development-london-united-kingdom-3431572",
@@ -312,7 +273,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 38.45
+      "score": 38.33
     },
     {
       "externalId": "senior-data-ai-solution-architect-kyiv-kyiv-city-ua-3431858",
@@ -331,47 +292,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.24
-    },
-    {
-      "externalId": "data-scientist-austin-oakhill-office-united-states-3432169",
-      "source": "foorilla",
-      "url": "https://nxp.wd3.myworkdayjobs.com/en-US/careers/job/Austin-Oakhill-Office/Data-Scientist_R-10066257",
-      "title": "Data Scientist",
-      "company": "Data Scientist",
-      "location": "Austin (Oakhill, Office), United States",
-      "country": "United States",
-      "workMode": "onsite",
-      "salary": null,
-      "description": "Tasks: * Analyze data for pain points * Assess data source effectiveness * Create continuous improvement strategies * Develop custom data models * Develop data algorithms * Identify business needs * Identify root causes of errors * Mine company databases * Monitor model performance to improve operational metrics * Partner with software vendors * Propose data system solutions Perks/Benefits: N/A Skills/Tech stack required: [Algorithms][C#][C plus plus][Data Mining][Data Structures][Deep learning][Graph Algorithms][GraphQL][Machine Learning][MongoDB][Neural Networks][Python][React.js][Retool] Educational requirements: [Bachelor of Science] Role(s): [Data Scientist][Scientist]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.27,
-      "visaSponsored": false,
-      "score": 37.87
-    },
-    {
-      "externalId": "sr-platform-engineer-kubernetes-pa-west-chester-1354-boot-rd-united-states-3432311",
-      "source": "foorilla",
-      "url": "https://comcast.wd5.myworkdayjobs.com/en-US/Comcast_Careers/job/PA---West-Chester-1354-Boot-Rd/Sr-Platform-Engineer--Kubernetes_R441462",
-      "title": "Sr. Platform Engineer, Kubernetes",
-      "company": "Comcast (CC) of Willow Grove",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect and manage Spark platform infrastructure * Automate workflows and incident resolution * Build automation tools using Python Java and Scala * Collaborate with data engineering and science teams * Contribute to open-source projects * Deploy infrastructure using Terraform and Ansible * Develop and optimize data catalog platform * Implement monitoring, logging, and alerting * Maintain documentation and provide training * Package Spark workloads and integrate orchestration * Troubleshoot job failures and optimize resource usage * Write SQL queries Perks/Benefits: + Employee benefits + Onsite collaboration flexible remote option Skills/Tech stack required: [Alluxio][Amazon S3][Ansible][Apache Flyte][Apache Iceberg][Apache Kafka][Apache Spark][AWS EKS][Bash][CI/CD][Databricks][Delta Lake][DNS][Docker][EC2][GitHub][Grafana][Hadoop][HDFS][IAM][Java][Kubernetes][Linux][Load Balancer][Networking protocols][Prometheus][Python][Scala][Snowflake][SQL][TCP/IP][Terraform][Unity Catalog][VPC] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [DevOps][DevOps Engineer][Engineer][Platform][Platform Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 36.46
+      "score": 38.12
     },
     {
       "externalId": "product-data-operations-program-manager-menlo-park-ca-3430435",
@@ -390,7 +311,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.44
+      "score": 36.32
     },
     {
       "externalId": "senior-data-engineer-id82547-puebla-heroica-puebla-mexico-3432089",
@@ -410,7 +331,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.67
+      "score": 35.55
     },
     {
       "externalId": "senior-software-developer-portugal-3431147",
@@ -432,27 +353,7 @@
       ],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 35.34
-    },
-    {
-      "externalId": "senior-data-engineer-ks-overland-park-united-states-3433629",
-      "source": "foorilla",
-      "url": "https://empower.wd12.myworkdayjobs.com/en-US/empower/job/Nationwide-Remote/Sr-Engineer-Data_R0061234",
-      "title": "Senior Data Engineer",
-      "company": "Empower Retirement, LLC",
-      "location": "KS Overland Park, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build scalable backend data processing using ETL * Collaborate with cross-functional teams on requirements * Design build and maintain backend data workflows * Develop and optimize data processing solutions * Implement and support CI/CD pipelines * Lead design and development of backend data pipelines * Mentor junior engineers * Participate in code reviews * Troubleshoot data performance and reliability issues * Write clean, maintainable, and well-tested code Perks/Benefits: + Business casual environment + Business resource groups + FMLA leave + Medical, dental, vision and life insurance + Paid Long Term Disability + Paid parental leave + Paid Short Term Disability + Paid time off + Paid volunteer time + Remote or Hybrid Work Support + Retirement Savings 401k Match + Tuition reimbursement Skills/Tech stack required: [Agile][Apache Spark][Automated testing][AWS][CI/CD][ETL][GitHub][Jenkins][Python][SAP BODS][Snowflake][SQL] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 35.3
+      "score": 35.22
     },
     {
       "externalId": "senior-ibm-master-data-management-integration-developer-albany-al-us-3432670",
@@ -472,7 +373,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.27
+      "score": 35.15
     },
     {
       "externalId": "expert-developer-data-analytics-data-engineering-ref5086i-budapest-hungary-3430793",
@@ -491,7 +392,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.16
+      "score": 35.04
     },
     {
       "externalId": "senior-backend-engineer-python-data-intensive-systems-kyiv-ukraine-ua-3431994",
@@ -511,7 +412,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.98
+      "score": 34.86
     },
     {
       "externalId": "senior-data-engineer-id82547-zapopan-mexico-3432093",
@@ -531,7 +432,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.89
+      "score": 34.77
     },
     {
       "externalId": "data-center-manager-wink-texas-usa-3426107",
@@ -550,7 +451,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.81
+      "score": 34.69
     },
     {
       "externalId": "senior-data-engineer-data-science-platform-london-england-united-kingdom-3435739",
@@ -569,7 +470,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.8
+      "score": 34.68
     },
     {
       "externalId": "senior-data-engineer-id82547-queretaro-mexico-3432096",
@@ -589,7 +490,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.8
+      "score": 34.68
     },
     {
       "externalId": "data-engineer-coppell-texas-usa-3434718",
@@ -608,26 +509,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.49
-    },
-    {
-      "externalId": "senior-data-engineer-ukraine-remote-3431326",
-      "source": "foorilla",
-      "url": "https://apply.workable.com/j/5ABCD4492A/apply",
-      "title": "Senior Data Engineer",
-      "company": "Senior Data Engineer - SPD Technology",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate financial reporting to general ledger * Build automated ELT pipelines * Collaborate with BI finance and integration partners * Create data mapping layer for customer identity * Deliver KPI and forecasting dashboard data models * Implement monitoring data quality checks and alerting * Model data marts for variance analysis Perks/Benefits: + Corporate library + CSR initiatives + Flexible schedule + Fully remote + Licensed software + Performance and merit reviews + Personal development plans + Provided laptop + Public speaking support + Referral bonus + Tech and cultural events Skills/Tech stack required: [Airflow][Alerting][CI/CD][Dagster][Data Modeling][Data Quality][Data Quality Testing][DBT][Dimensional Modeling][ELT][ETL][Git][Idempotent Pipelines][Incremental loads][Monitoring][Prefect][Python][Quality testing][Query Optimization][Snowflake][SQL][Star Schema][Version control][Window Functions] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 34.49
+      "score": 34.37
     },
     {
       "externalId": "senior-data-engineer-id82547-guadalajara-mexico-3432091",
@@ -647,26 +529,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.47
-    },
-    {
-      "externalId": "data-engineer-split-croatia-3432103",
-      "source": "foorilla",
-      "url": "https://infobip.wd3.myworkdayjobs.com/en-US/InfobipCareers/job/Split-Croatia/Data-Engineer_JR104499",
-      "title": "Data Engineer",
-      "company": "Infobip HR",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data pipelines * Collaborate with BI developers analysts and stakeholders * Collect and process data from systems and APIs * Develop data models and transformation logic * Improve data quality and visibility * Maintain technical documentation * Monitor and optimize ETL workflows * Provide datasets for reporting and analytics * Transform structured and unstructured datasets * Troubleshoot data processing issues Perks/Benefits: + Career mobility + Employee stock ownership plan + Flexible work arrangements + Flexible working hours + Hybrid work model + International mobility + Mentorship + Remote work + Special leave days + Time off + Training programs Skills/Tech stack required: [Data Governance][Data integration][Data lifecycle][Data Lifecycle Management][Data Modeling][Data Quality][Data Warehousing][Dimensional Modeling][ETL][Lifecycle Management][Microsoft Azure][Python][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-13T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 34.27
+      "score": 34.35
     },
     {
       "externalId": "senior-data-engineer-id82547-playas-de-rosarito-mexico-3432090",
@@ -685,7 +548,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.16
+      "score": 34.04
     },
     {
       "externalId": "senior-data-engineer-id82547-monterrey-mexico-3432092",
@@ -704,7 +567,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.05
+      "score": 33.93
     },
     {
       "externalId": "senior-data-engineer-id82547-leon-de-los-aldama-mexico-3432095",
@@ -723,7 +586,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.83
+      "score": 33.71
     },
     {
       "externalId": "trainee-developer-azure-databricks-sql-leicester-leicestershire-united-kingdom-3430853",
@@ -740,7 +603,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.6
+      "score": 33.48
     },
     {
       "externalId": "data-analyst-senior-mexico-3433611",
@@ -759,7 +622,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.4
+      "score": 33.28
+    },
+    {
+      "externalId": "master-data-specialist-bucuresti-ro-3437060",
+      "source": "foorilla",
+      "url": "https://theheinekencompany-rmk.jobs.hr.cloud.sap/Romania/job/Bucure%C8%99ti-Master-Data-Specialist-013714/1426204533/",
+      "title": "Master Data Specialist",
+      "company": "HEINEKEN",
+      "location": "București, RO",
+      "country": "Romania",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with data owners on data standards * Define required data and quality levels with analytics manager * Develop data governance policies * Ensure data quality and integrity * Implement data ownership in projects * Investigate and resolve data discrepancies * Manage data projects and timelines * Monitor data quality using tracking tools * Support data management standards and tooling Perks/Benefits: N/A Skills/Tech stack required: [Collibra][Data Governance][Data Quality][ETL][Mendix][PowerMe][SAP][SQL] Educational requirements: N/A Role(s): [Data Governance][Data Governance Specialist][Data Specialist][Governance Specialist][Master Data Specialist][Specialist]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 33.1
     },
     {
       "externalId": "senior-data-engineer-guadalajara-jal-mexico-3435740",
@@ -776,7 +656,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33
+      "score": 32.88
     },
     {
       "externalId": "ai-trainer-freelance-data-annotator-france-remote-3430293",
@@ -793,7 +673,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.77
+      "score": 31.65
     },
     {
       "externalId": "data-engineer-budapestbudapesthungary-3433628",
@@ -812,7 +692,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.71
+      "score": 31.59
     },
     {
       "externalId": "data-engineer-data-platform-engineer-wmd-berlin-de-10557-3429090",
@@ -829,7 +709,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.62
+      "score": 30.5
     }
   ]
 }
