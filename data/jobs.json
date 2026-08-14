@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T22:08:14.648Z",
+  "generatedAt": "2026-08-14T02:51:42.033Z",
   "jobs": [
     {
       "externalId": "artificial-intelligence-machine-learning-engineer-usa-va-ashburn-3431064",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.14
+      "score": 55.94
     },
     {
       "externalId": "agentic-ai-engineer-dmf-carnaxide-pt-2790-012-3428104",
@@ -44,7 +44,28 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.53
+      "score": 55.33
+    },
+    {
+      "externalId": "full-stack-ai-engineer-boise-id-main-site-united-states-3434584",
+      "source": "foorilla",
+      "url": "https://micron.wd1.myworkdayjobs.com/en-US/External/job/Boise-ID---Main-Site/Full-Stack-AI-Engineer_JR108058",
+      "title": "Full Stack AI Engineer",
+      "company": "1000 Micron Technology, Inc.",
+      "location": "Boise, ID - Main Site, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build custom AI agents * Create secure API integrations * Design full-stack applications * Develop MCP-based integrations * Develop platform services * Ensure security, reliability, and performance * Implement embeddings and search * Improve observability and maintainability * Integrate large language models * Maintain production systems * Test and deploy software Perks/Benefits: + Dental insurance + Disability insurance + Health insurance + Paid family leave + Paid Holidays + Paid time off + Vision insurance Skills/Tech stack required: [Agent systems][Angular][ASP.NET][C#][CI/CD][Containerization][Docker][Embeddings][GraphQL][JavaScript][Kubernetes][Language Models][Large Language Models][Model Context Protocol][Multi-Agent][Multi-Agent Systems][NoSQL][Observability][Prompt engineering][Python][RAG][REST API][Retrieval-Augmented Generation][Security][SQL][System design][TypeScript][Vector Search] Educational requirements: [Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Full Stack][Full Stack Engineer][Stack Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG",
+        "Kubernetes"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.15
     },
     {
       "externalId": "ai-engineer-krakow-maopolskie-pl-3431836",
@@ -65,7 +86,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.15
+      "score": 53.96
     },
     {
       "externalId": "mlops-platform-engineer-mwd-thalheim-bei-wels-austria-3433775",
@@ -86,7 +107,7 @@
       ],
       "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 54
+      "score": 53.8
     },
     {
       "externalId": "canada-principal-ml-system-engineer-remote-or-mississauga-3425890",
@@ -109,7 +130,7 @@
       ],
       "aiRelevance": 0.63,
       "visaSponsored": false,
-      "score": 49.28
+      "score": 49.08
     },
     {
       "externalId": "gen-ai-developer-specialist-united-states-3431829",
@@ -131,7 +152,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 47.64
+      "score": 47.45
     },
     {
       "externalId": "consultant-data-senior-fh-fr-levallois-perret-kdf-france-3433057",
@@ -152,7 +173,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 46.79
+      "score": 46.59
     },
     {
       "externalId": "data-visualization-engineer-remote-nationwide-united-states-3432185",
@@ -169,29 +190,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 46.15
-    },
-    {
-      "externalId": "senior-net-developer-ai-mexico-city-3426967",
-      "source": "foorilla",
-      "url": "https://jobs.ashbyhq.com/delinea/77b628fc-09d2-407d-b854-1742aeb4bba4",
-      "title": "Senior .Net Developer Ai",
-      "company": "Delinea",
-      "location": "Mexico City",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build backend services * Build CI/CD pipelines * Build RAG pipelines * Create context pipelines * Deliver end-to-end software * Design backend services * Design event-driven microservices * Develop AI agents * Develop LLM-powered features * Evaluate LLM outputs * Implement asynchronous architectures * Implement infrastructure-as-code * Implement tool calling * Integrate LLM models * Monitor production systems * Operate backend services * Participate in code reviews * Participate in design reviews * Respond to production incidents Perks/Benefits: + Employee assistance program + Healthcare insurance + Life insurance + Paid Company Holidays + Pension/retirement matching + Time off plans Skills/Tech stack required: [Agents][AI Foundry][API Design][“as-code”][Azure][Azure AI][Azure AI Foundry][C#][CI/CD][Distributed Systems][Go][Infrastructure as Code][Kubernetes][LLM][Microservices][Monitoring][Multi-tenant][Multi-tenant SaaS][.NET][Python][RAG][Terraform][Tool-Calling] Educational requirements: N/A Role(s): [Developer][Engineer][.NET][.NET Developer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-12T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.48,
-      "visaSponsored": false,
-      "score": 43.74
+      "score": 45.96
     },
     {
       "externalId": "engineering-analyst-ai-answers-google-search-dublin-ireland-3430285",
@@ -212,7 +211,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 42.86
+      "score": 42.66
     },
     {
       "externalId": "aiml-engineer-primary-location-eden-prairie-minnesota-3433494",
@@ -233,7 +232,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 42.52
+      "score": 42.32
     },
     {
       "externalId": "solution-architect-data-ai-services-the-hague-haagse-poort-low-rise-netherlands-3432692",
@@ -254,7 +253,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 39.15
+      "score": 38.95
     },
     {
       "externalId": "lead-specialist-learning-and-development-london-united-kingdom-3431572",
@@ -271,7 +270,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 38.74
+      "score": 38.54
     },
     {
       "externalId": "senior-data-ai-solution-architect-kyiv-kyiv-city-ua-3431858",
@@ -290,7 +289,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.53
+      "score": 38.33
     },
     {
       "externalId": "data-scientist-austin-oakhill-office-united-states-3432169",
@@ -309,26 +308,27 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.16
+      "score": 37.96
     },
     {
-      "externalId": "human-data-manager-palo-alto-california-3429980",
+      "externalId": "statisticiandata-analyst-usa-dc-washington-330-c-st-sw-dcc127-united-states-3434701",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/xai/jobs/5210802007",
-      "title": "Human Data Manager",
-      "company": "Job Application for Human Data Manager at SpaceXAI",
-      "location": "Palo Alto, California",
-      "country": "Unknown",
+      "url": "https://gdit.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/USA-DC-Washington/Statistician-Data-Analyst_RQ226086-2",
+      "title": "Statistician/Data Analyst",
+      "company": "GD Information Technology, Inc.",
+      "location": "USA DC Washington - 330 C St SW (DCC127), United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Coordinate cross functional stakeholders for alignment and knowledge sharing * Deliver end to end data and evaluation projects * Design data collection annotation and generation workflows * Improve annotation workflows using agents and no low code tools * Integrate multimodal data * Maintain data integrity and factual accuracy validation * Manage project plans for data management optimization and analysis * Measure data effectiveness using AI agents and platforms * Partner with engineering teams to define data needs and evaluation strategies * Scale projects and report status insights and blockers Perks/Benefits: + 401k + Dental insurance + Disability insurance + Life insurance + Medical insurance + Travel opportunities + Vision insurance Skills/Tech stack required: [AI Agents][Alignment Evaluation][Data Annotation][Data collection][Data Generation][Data Integrity][Dataset evaluation][Data Validation][Factual accuracy][Low Code][Multimodal Learning][No Code][Python][SQL][Truthfulness Evaluation] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Data Engineer][Analyst][Data Analyst][Data Engineer][Data Scientist][Engineer][Scientist]",
-      "postedAt": "2026-08-12T00:00:00.000Z",
+      "description": "Tasks: * Build and publish reports to development and production * Compile analyze and visualize data * Conduct statistical analysis * Create presentations and documentation * Develop reporting products * Identify performance outcomes and indicators * Identify uniform data points * Prepare written summaries and presentations * Prototype data products * Provide ad-hoc data reporting * Recommend automated solutions * Support data collection, analysis, and visualization * Train analysts and staff on data tools * Update data collection tools and processes Perks/Benefits: N/A Skills/Tech stack required: [Analytics][Data analytics][Data Modeling][Data reporting][Data Visualization][ETL][Language Processing][Natural Language][Natural Language Processing][Predictive Statistics][Python][Quantitative Analysis][R][SAS][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Analyst][Data Analyst][Statistician]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
       "skills": [
-        "Python"
+        "Python",
+        "NLP"
       ],
-      "aiRelevance": 0.15,
+      "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.32
+      "score": 37.52
     },
     {
       "externalId": "sr-platform-engineer-kubernetes-pa-west-chester-1354-boot-rd-united-states-3432311",
@@ -349,7 +349,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.75
+      "score": 36.55
     },
     {
       "externalId": "product-data-operations-program-manager-menlo-park-ca-3430435",
@@ -368,7 +368,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.73
+      "score": 36.54
     },
     {
       "externalId": "senior-data-engineer-id82547-puebla-heroica-puebla-mexico-3432089",
@@ -388,7 +388,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.96
+      "score": 35.77
     },
     {
       "externalId": "senior-software-developer-portugal-3431147",
@@ -410,7 +410,7 @@
       ],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 35.63
+      "score": 35.43
     },
     {
       "externalId": "senior-data-engineer-ks-overland-park-united-states-3433629",
@@ -430,7 +430,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.59
+      "score": 35.39
     },
     {
       "externalId": "senior-ibm-master-data-management-integration-developer-albany-al-us-3432670",
@@ -450,7 +450,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.56
+      "score": 35.37
     },
     {
       "externalId": "expert-developer-data-analytics-data-engineering-ref5086i-budapest-hungary-3430793",
@@ -469,7 +469,28 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.45
+      "score": 35.25
+    },
+    {
+      "externalId": "data-engineer-nyc-1211-ave-of-the-americas-united-states-3434721",
+      "source": "foorilla",
+      "url": "https://dowjones.wd1.myworkdayjobs.com/en-US/New_York_Post_Careers/job/NYC---1211-Ave-of-the-Americas/Data-Engineer_Job_Req_54519",
+      "title": "Data Engineer",
+      "company": "NYP Holdings, Inc",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build real-time and batch processing pipelines * Collaborate with product editorial and data science teams * Design build and operate cloud based data pipelines * Develop and maintain ETL pipelines * Document functional requirements * Monitor optimize and improve reliability security and cost efficiency * Participate in code reviews architecture discussions and agile sprints * Write clean testable maintainable Python code Perks/Benefits: N/A Skills/Tech stack required: [Agile][Airflow][Authentication][Authorization][AWS][Big Data][BigQuery][CI/CD][Cloud Functions][Dataflow][Docker][DynamoDB][ETL][GCP][Git][Glue][GraphQL][Jira][Kubernetes][Lambda][Linux][PySpark][Python][Redshift][REST][S3][Shell Scripting][Snowflake][SQL][SSH][Unit Testing][Vertex AI] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.09,
+      "visaSponsored": false,
+      "score": 35.13
     },
     {
       "externalId": "senior-backend-engineer-python-data-intensive-systems-kyiv-ukraine-ua-3431994",
@@ -489,7 +510,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.27
+      "score": 35.08
     },
     {
       "externalId": "senior-data-engineer-id82547-zapopan-mexico-3432093",
@@ -509,7 +530,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.18
+      "score": 34.98
     },
     {
       "externalId": "data-center-manager-wink-texas-usa-3426107",
@@ -528,7 +549,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.1
+      "score": 34.91
     },
     {
       "externalId": "senior-data-engineer-id82547-queretaro-mexico-3432096",
@@ -548,7 +569,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.09
+      "score": 34.89
+    },
+    {
+      "externalId": "data-engineer-coppell-texas-usa-3434718",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006220668ENUS",
+      "title": "Data Engineer",
+      "company": "TEKsystems",
+      "location": "Coppell, Texas, USA",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and optimize data pipelines * Build dashboards and self service analytics enablement * Debug pipeline issues * Deliver trusted data for reporting and analytics * Design database models * Develop automation scripts * Maintain data pipeline health * Optimize database models * Resolve bugs * Support data science data delivery * Write SQL and Python Perks/Benefits: + 401k retirement plan + Employee assistance program + Health savings account + Life insurance + Long-term disability + Medical/Dental/Vision + Paid time off + Short-term disability + Transportation benefits Skills/Tech stack required: [Airflow][Amazon Redshift][Apache Spark][Azure][Azure Data][Azure Data Factory][BigQuery][CI/CD][Dagster][Databricks][Data Factory][Data Modeling][Data Quality][Data Warehouse][Delta Lake][DevOps][Dimensional Modeling][Git][Normalized modeling][Observability][Pandas][Power BI][Prefect][PySpark][Python][Snowflake][SQL][Unity Catalog] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-13T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.58
     },
     {
       "externalId": "senior-data-engineer-ukraine-remote-3431326",
@@ -567,7 +607,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.78
+      "score": 34.58
     },
     {
       "externalId": "senior-data-engineer-id82547-guadalajara-mexico-3432091",
@@ -587,7 +627,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.76
+      "score": 34.57
     },
     {
       "externalId": "data-engineer-split-croatia-3432103",
@@ -606,7 +646,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.56
+      "score": 34.36
     },
     {
       "externalId": "senior-data-engineer-id82547-playas-de-rosarito-mexico-3432090",
@@ -625,7 +665,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.45
+      "score": 34.25
     },
     {
       "externalId": "senior-data-engineer-id82547-monterrey-mexico-3432092",
@@ -644,7 +684,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.34
+      "score": 34.15
     },
     {
       "externalId": "senior-data-engineer-id82547-leon-de-los-aldama-mexico-3432095",
@@ -663,7 +703,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.12
+      "score": 33.93
     },
     {
       "externalId": "trainee-developer-azure-databricks-sql-leicester-leicestershire-united-kingdom-3430853",
@@ -680,7 +720,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.89
+      "score": 33.69
     },
     {
       "externalId": "data-analyst-senior-mexico-3433611",
@@ -699,7 +739,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.69
+      "score": 33.49
     },
     {
       "externalId": "ai-trainer-freelance-data-annotator-france-remote-3430293",
@@ -716,7 +756,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.06
+      "score": 31.86
     },
     {
       "externalId": "data-engineer-budapestbudapesthungary-3433628",
@@ -735,7 +775,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32
+      "score": 31.81
     },
     {
       "externalId": "data-engineer-data-platform-engineer-wmd-berlin-de-10557-3429090",
@@ -752,7 +792,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.91
+      "score": 30.72
     }
   ]
 }
