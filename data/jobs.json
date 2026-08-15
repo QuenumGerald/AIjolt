@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T18:52:15.022Z",
+  "generatedAt": "2026-08-15T21:39:34.158Z",
   "jobs": [
     {
       "externalId": "senior-ai-engineer-guadalajara-jal-mexico-3446829",
@@ -23,7 +23,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.33
+      "score": 56.21
     },
     {
       "externalId": "ai-engineer-naucalpan-de-juarez-mexico-mexico-3451043",
@@ -48,7 +48,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.45
+      "score": 55.33
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3443827",
@@ -73,7 +73,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.17
+      "score": 55.06
     },
     {
       "externalId": "ai-engineer-on-site-grand-rapids-michigan-3448353",
@@ -93,7 +93,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.9
+      "score": 53.79
     },
     {
       "externalId": "ai-engineer-internship-london-3448516",
@@ -116,7 +116,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 52.15
+      "score": 52.03
     },
     {
       "externalId": "senior-machine-learning-engineer-causal-decision-systems-hybrid-toronto-on-3448339",
@@ -136,7 +136,7 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 50.23
+      "score": 50.12
     },
     {
       "externalId": "senior-machine-learning-engineer-i-senior-machine-learning-engineer-ii-budapest-hungary-3447493",
@@ -155,7 +155,7 @@
       ],
       "aiRelevance": 0.7000000000000001,
       "visaSponsored": false,
-      "score": 47.34
+      "score": 47.22
     },
     {
       "externalId": "ai-enterprise-architect-kansas-city-ks-united-states-3444316",
@@ -174,7 +174,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 42.18
+      "score": 42.07
     },
     {
       "externalId": "data-analytics-specialist-naucalpan-de-juarez-mex-mexico-3451063",
@@ -194,7 +194,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 38.6
+      "score": 38.49
     },
     {
       "externalId": "data-scientist-datacenter-united-states-washington-redmond-3449953",
@@ -213,7 +213,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.39
+      "score": 37.28
     },
     {
       "externalId": "senior-data-architect-databricks-platform-mexico-3448646",
@@ -232,7 +232,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.28
+      "score": 36.16
+    },
+    {
+      "externalId": "ai-intern-baton-rouge-louisiana-3452900",
+      "source": "foorilla",
+      "url": "https://careers.terracon.com/en/job/united-states/ai-intern/37184/99251995440",
+      "title": "AI Intern",
+      "company": "Terracon Consultants, Inc.",
+      "location": "Baton Rouge, Louisiana",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assist with data cleaning * Assist with data collection * Build machine learning models * Conduct exploratory analysis * Conduct literature reviews * Document methodologies and results * Evaluate machine learning models * Perform data preprocessing * Tune machine learning models * Validate machine learning models Perks/Benefits: + Mentorship + Professional development Skills/Tech stack required: [Data Analysis][Data cleaning][Data Preparation][Data Preprocessing][Data Validation][Documentation][Exploratory Data Analysis][Machine Learning][Model Evaluation][Model Tuning][Python] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [AI][AI Intern][Data Science][Data Science Intern][Intern][Science Intern]",
+      "postedAt": "2026-08-15T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 35.97
     },
     {
       "externalId": "data-engineer-aws-azure-gcp-denver-co-united-states-3449847",
@@ -253,7 +272,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.88
+      "score": 35.76
     },
     {
       "externalId": "data-engineersr-data-engineer-it-analytics-fort-worth-tx-us-3448529",
@@ -272,7 +291,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.83
+      "score": 35.71
     },
     {
       "externalId": "data-engineer-i-camden-new-jersey-united-states-3448656",
@@ -292,26 +311,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.52
-    },
-    {
-      "externalId": "senior-data-engineer-bolivia-colombia-costa-rica-peru-3448062",
-      "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/encora10/jobs/5185998007",
-      "title": "Senior Data Engineer",
-      "company": "E...",
-      "location": "Bolivia; Colombia; Costa Rica; Peru",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build optimize Databricks lakehouse architectures * Collaborate with software teams on data access integrations migrations API contracts * Contribute to data governance security lineage compliance * Design develop support data ingestion pipelines * Design maintain dimensional models star schemas * Implement maintain ETL ELT processes automated testing monitoring alerting data quality controls * Own enhance stored procedures views functions * Perform database performance tuning query optimization execution plan analysis indexing partitioning * Support data migration validation reconciliation go live activities * Write optimize maintain complex SQL Perks/Benefits: + Remote work Skills/Tech stack required: [Agile][API Integrations][Aurora PostgreSQL][AWS][CDC][CD pipelines][CI/CD][CI/CD pipelines][Code Reviews][Database performance][Database performance tuning][Databricks][Data Governance][Data Lineage][Data Quality][Data Security][Dimensional Modeling][ELT][ETL][Execution Plans][Functions][Git][Indexing][MySQL][Partitioning][Performance Tuning][PostgreSQL][PySpark][Query Optimization][Scrum][Spark SQL][SQL][SQL Server][Star Schema][Stored Procedures][Views] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
-      "skills": [
-        "AWS"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 35.28
+      "score": 35.41
     },
     {
       "externalId": "hpc-engineer-ai-and-data-remote-united-states-3449163",
@@ -331,7 +331,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.22
+      "score": 35.11
     },
     {
       "externalId": "data-analystbi-engineer-united-states-3448608",
@@ -350,7 +350,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.66
+      "score": 34.55
     },
     {
       "externalId": "senior-data-engineer-aws-azure-gcp-chicago-il-united-states-3449840",
@@ -370,27 +370,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.65
-    },
-    {
-      "externalId": "senior-ai-driven-net-cloud-engineer-greensboro-north-carolina-usa-3445700",
-      "source": "foorilla",
-      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006222037ENUS",
-      "title": "Senior A.I. Driven .NET Cloud Engineer",
-      "company": "TEKsystems",
-      "location": "Greensboro, North Carolina, USA",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build CI/CD pipelines * Collaborate on architecture and specifications * Deploy containers to Kubernetes * Design cloud-native applications * Design observability solutions * Develop APIs and microservices * Implement telemetry distributed tracing logging and metrics * Implement zero downtime deployments * Maintain cloud native workloads * Modernize legacy systems * Optimize memory utilization * Refactor legacy codebases * Support production environments * Troubleshoot performance and scalability issues Perks/Benefits: N/A Skills/Tech stack required: [ASP.Net Core][AWS EKS][C#][CI/CD][Distributed tracing][Docker][Kubernetes][Memory Management][Metrics][Microservices][.NET][OpenTelemetry][Performance Tuning][Query Optimization][SQL Server][Structured Logging][Telemetry][T-SQL][Zero-downtime][Zero-downtime deployment] Educational requirements: N/A Role(s): [Cloud Engineer][Engineer][.Net Cloud Engineer][Senior .Net Cloud Engineer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
-      "skills": [
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.45
+      "score": 34.54
     },
     {
       "externalId": "sr-workforce-data-analyst-blue-bell-pa-united-states-3452632",
@@ -407,7 +387,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.37
+      "score": 34.26
     },
     {
       "externalId": "ingeniero-de-datos-digital-guadalajara-jalisco-mexico-3452379",
@@ -426,7 +406,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.32
+      "score": 34.2
     },
     {
       "externalId": "ingeniero-de-datos-big-data-jr-mexico-3445082",
@@ -446,7 +426,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.32
+      "score": 34.2
     },
     {
       "externalId": "data-engineer-implementation-integration-remote-united-states-3449938",
@@ -465,7 +445,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.84
+      "score": 33.73
     },
     {
       "externalId": "ingeniero-de-datos-digital-sr-guadalajara-jalisco-mexico-3452378",
@@ -484,7 +464,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.6
+      "score": 33.49
     },
     {
       "externalId": "data-engineer-nashville-tn-united-states-3443581",
@@ -503,7 +483,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.57
+      "score": 33.46
     },
     {
       "externalId": "sr-advanced-data-engineer-monterrey-nle-mexico-3451167",
@@ -523,7 +503,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 32.86
+      "score": 32.75
+    },
+    {
+      "externalId": "data-engineer-spain-3452975",
+      "source": "foorilla",
+      "url": "https://telekom.eightfold.ai/careers/job/563465354149566",
+      "title": "Data Engineer",
+      "company": "Careers at Deutsche Telekom",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines * Design data pipeline architecture * Develop software for data products and services * Enable regulatory compliance evidence * Explore and analyze data * Integrate data for customer service analytics * Maintain and fix data pipelines * Process transform and model data * Support quality management data Perks/Benefits: + Continuous training + Flexible schedule + Hybrid work model + Life and accident insurance Skills/Tech stack required: [Apache Spark][Data Architecture][Data Exploration][Data Modeling][Data pipeline][Data Processing][Data Transformation][Git][Hadoop][PySpark][Python][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 32.17
     },
     {
       "externalId": "business-intelligence-data-engineer-133-2015-tulsa-ok-us-3451164",
@@ -540,7 +539,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.22
+      "score": 32.1
     },
     {
       "externalId": "senior-data-engineer-bolivia-colombia-costa-rica-peru-3448244",
@@ -557,7 +556,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.2
+      "score": 32.08
     }
   ]
 }
