@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T15:39:25.302Z",
+  "generatedAt": "2026-08-15T18:52:15.022Z",
   "jobs": [
     {
       "externalId": "senior-ai-engineer-guadalajara-jal-mexico-3446829",
@@ -23,7 +23,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.46
+      "score": 56.33
     },
     {
       "externalId": "ai-engineer-naucalpan-de-juarez-mexico-mexico-3451043",
@@ -48,7 +48,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.58
+      "score": 55.45
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3443827",
@@ -73,7 +73,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.31
+      "score": 55.17
     },
     {
       "externalId": "ai-engineer-on-site-grand-rapids-michigan-3448353",
@@ -93,7 +93,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.04
+      "score": 53.9
     },
     {
       "externalId": "ai-engineer-internship-london-3448516",
@@ -116,7 +116,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 52.28
+      "score": 52.15
     },
     {
       "externalId": "senior-machine-learning-engineer-causal-decision-systems-hybrid-toronto-on-3448339",
@@ -136,7 +136,7 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 50.37
+      "score": 50.23
     },
     {
       "externalId": "senior-machine-learning-engineer-i-senior-machine-learning-engineer-ii-budapest-hungary-3447493",
@@ -155,7 +155,7 @@
       ],
       "aiRelevance": 0.7000000000000001,
       "visaSponsored": false,
-      "score": 47.47
+      "score": 47.34
     },
     {
       "externalId": "ai-enterprise-architect-kansas-city-ks-united-states-3444316",
@@ -174,7 +174,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 42.32
+      "score": 42.18
     },
     {
       "externalId": "data-analytics-specialist-naucalpan-de-juarez-mex-mexico-3451063",
@@ -194,7 +194,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 38.74
+      "score": 38.6
     },
     {
       "externalId": "data-scientist-datacenter-united-states-washington-redmond-3449953",
@@ -213,7 +213,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.53
+      "score": 37.39
     },
     {
       "externalId": "senior-data-architect-databricks-platform-mexico-3448646",
@@ -232,7 +232,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.41
+      "score": 36.28
     },
     {
       "externalId": "data-engineer-aws-azure-gcp-denver-co-united-states-3449847",
@@ -253,7 +253,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.01
+      "score": 35.88
     },
     {
       "externalId": "data-engineersr-data-engineer-it-analytics-fort-worth-tx-us-3448529",
@@ -272,7 +272,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.96
+      "score": 35.83
     },
     {
       "externalId": "data-engineer-i-camden-new-jersey-united-states-3448656",
@@ -292,7 +292,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.66
+      "score": 35.52
+    },
+    {
+      "externalId": "senior-data-engineer-bolivia-colombia-costa-rica-peru-3448062",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/encora10/jobs/5185998007",
+      "title": "Senior Data Engineer",
+      "company": "E...",
+      "location": "Bolivia; Colombia; Costa Rica; Peru",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build optimize Databricks lakehouse architectures * Collaborate with software teams on data access integrations migrations API contracts * Contribute to data governance security lineage compliance * Design develop support data ingestion pipelines * Design maintain dimensional models star schemas * Implement maintain ETL ELT processes automated testing monitoring alerting data quality controls * Own enhance stored procedures views functions * Perform database performance tuning query optimization execution plan analysis indexing partitioning * Support data migration validation reconciliation go live activities * Write optimize maintain complex SQL Perks/Benefits: + Remote work Skills/Tech stack required: [Agile][API Integrations][Aurora PostgreSQL][AWS][CDC][CD pipelines][CI/CD][CI/CD pipelines][Code Reviews][Database performance][Database performance tuning][Databricks][Data Governance][Data Lineage][Data Quality][Data Security][Dimensional Modeling][ELT][ETL][Execution Plans][Functions][Git][Indexing][MySQL][Partitioning][Performance Tuning][PostgreSQL][PySpark][Query Optimization][Scrum][Spark SQL][SQL][SQL Server][Star Schema][Stored Procedures][Views] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 35.28
     },
     {
       "externalId": "hpc-engineer-ai-and-data-remote-united-states-3449163",
@@ -312,7 +331,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.36
+      "score": 35.22
     },
     {
       "externalId": "data-analystbi-engineer-united-states-3448608",
@@ -331,7 +350,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.8
+      "score": 34.66
     },
     {
       "externalId": "senior-data-engineer-aws-azure-gcp-chicago-il-united-states-3449840",
@@ -351,7 +370,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.79
+      "score": 34.65
     },
     {
       "externalId": "senior-ai-driven-net-cloud-engineer-greensboro-north-carolina-usa-3445700",
@@ -371,7 +390,43 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.59
+      "score": 34.45
+    },
+    {
+      "externalId": "sr-workforce-data-analyst-blue-bell-pa-united-states-3452632",
+      "source": "foorilla",
+      "url": "https://myjobs.adp.com/externalpmacompanies/cx/job-details?reqId=5001219021006",
+      "title": "Sr. Workforce Data Analyst",
+      "company": "P...",
+      "location": "Blue Bell, PA, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate workforce reporting * Build workforce analytics datasets * Create reporting dashboards * Develop workforce data models * Document data definitions and mappings * Implement data governance * Integrate new data sources * Maintain workforce data structures * Manage data security and access controls * Perform root cause analysis * Streamline reporting processes * Support HCM integrations and conversions * Transform HCM and payroll data * Validate and reconcile data Perks/Benefits: N/A Skills/Tech stack required: [Access Control][Cause analysis][Data Governance][Data integration][Data Modeling][Data Quality][Data Reconciliation][Data Security][Data Validation][Data Warehousing][Dimensional Modeling][ELT][ETL][Lakehouse][Microsoft Fabric][Power Automate][Power BI][Power Query][Role-Based Access][Role-Based Access Control][Root cause][Root Cause Analysis][Semantic Modeling][SharePoint][SQL] Educational requirements: N/A Role(s): [Analyst][Data Analyst][Senior Workforce Data Analyst][Workforce Data Analyst]",
+      "postedAt": "2026-08-15T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 34.37
+    },
+    {
+      "externalId": "ingeniero-de-datos-digital-guadalajara-jalisco-mexico-3452379",
+      "source": "foorilla",
+      "url": "https://fa-eqwz-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/317729",
+      "title": "Ingeniero de Datos Digital",
+      "company": "Sitio de Oportunidades Empleo Grupo Coppel",
+      "location": "Guadalajara, Jalisco, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply data architecture * Build Data Integration solutions * Build data pipelines * Collaborate with development, architecture, and business teams * Comply with data privacy regulations * Design scalable data architecture * Enable data-driven decision-making * Ensure data availability for digital channels * Ensure data quality and integrity * Handle high-volume data * Implement scalable data systems * Integrate external systems * Integrate internal systems * Optimize data flows * Synchronize prices inventory and promotions Perks/Benefits: + Aguinaldo + Ambiente de trabajo agradable + Becas para estudio + Club de protección familiar + Descuentos en compras de muebles y ropa + Día libre de cumpleaños + Fondo de Ahorro + Prima vacacional + Reparto de Utilidades + Útiles escolares + Vacaciones Skills/Tech stack required: [API Gateway][Apigee][BigQuery][Cloud Storage][Data integration][Data Pipelines][Data Privacy][Data Quality][ETL][Git][GitHub][MuleSoft][Python][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.32
     },
     {
       "externalId": "ingeniero-de-datos-big-data-jr-mexico-3445082",
@@ -391,27 +446,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.45
-    },
-    {
-      "externalId": "senior-data-engineer-id71671-queretaro-mexico-3442403",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258586571",
-      "title": "Senior Data Engineer ID71671",
-      "company": "AgileEngine",
-      "location": "Querétaro, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply CI/CD practices * Architect data platform * Build ETL/ELT pipelines * Implement data lineage tracking * Implement dataops practices * Implement data quality checks * Integrate REST APIs and event sources * Maintain Git version control * Optimize Snowflake schemas * Orchestrate workflow pipelines * Set up automated testing and validation * Use Docker for data repositories Perks/Benefits: + Flexible hours + Internal tech talks + Learning budget + Mentorship + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Apache Airflow][Apache Kafka][“as-code”][AWS Kinesis][CI/CD][Dagster][Data Lineage][Data Observability][Data Quality][DBT][Docker][ELT][ETL][Git][Great Expectations][Infrastructure as Code][Integration Testing][Prefect][Python][REST APIs][Snowflake][SQL][Unit Testing] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.19
+      "score": 34.32
     },
     {
       "externalId": "data-engineer-implementation-integration-remote-united-states-3449938",
@@ -430,7 +465,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.98
+      "score": 33.84
+    },
+    {
+      "externalId": "ingeniero-de-datos-digital-sr-guadalajara-jalisco-mexico-3452378",
+      "source": "foorilla",
+      "url": "https://fa-eqwz-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/317731",
+      "title": "Ingeniero de Datos Digital Sr",
+      "company": "Sitio de Oportunidades Empleo Grupo Coppel",
+      "location": "Guadalajara, Jalisco, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze metrics and propose improvements * Build data pipelines for pricing inventory and promotions * Comply with data privacy regulations * Define data infrastructure strategy and technical guidelines * Design data architecture * Develop data integration solutions * Enable analytics data availability * Ensure data quality and data integrity * Ensure data scalability and resiliency * Integrate internal and external systems in real time * Monitor data platform performance * Optimize omnichannel data integration Perks/Benefits: N/A Skills/Tech stack required: [API Gateway][Apigee][BigQuery][CCPA][Cloud platform][Cloud Storage][Data Governance][Data Modeling][Data Pipelines][Data Quality][ETL][GDPR][Git][GitHub][Google Cloud][Google Cloud Platform][MuleSoft][Python][Realtime Integration][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Software Engineering] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.6
     },
     {
       "externalId": "data-engineer-nashville-tn-united-states-3443581",
@@ -449,7 +503,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.71
+      "score": 33.57
     },
     {
       "externalId": "sr-advanced-data-engineer-monterrey-nle-mexico-3451167",
@@ -469,7 +523,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33
+      "score": 32.86
     },
     {
       "externalId": "business-intelligence-data-engineer-133-2015-tulsa-ok-us-3451164",
@@ -486,7 +540,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.35
+      "score": 32.22
     },
     {
       "externalId": "senior-data-engineer-bolivia-colombia-costa-rica-peru-3448244",
@@ -503,7 +557,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.33
+      "score": 32.2
     }
   ]
 }
