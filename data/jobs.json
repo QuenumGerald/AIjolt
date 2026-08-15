@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T13:03:53.951Z",
+  "generatedAt": "2026-08-15T15:39:25.302Z",
   "jobs": [
     {
       "externalId": "senior-ai-engineer-guadalajara-jal-mexico-3446829",
@@ -23,7 +23,32 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.57
+      "score": 56.46
+    },
+    {
+      "externalId": "ai-engineer-naucalpan-de-juarez-mexico-mexico-3451043",
+      "source": "foorilla",
+      "url": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/67481",
+      "title": "AI Engineer",
+      "company": "Ford Global",
+      "location": "Naucalpan de Juárez, México, México",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate model training retraining and deployment pipelines * Build and scale AI MLOps platform on GCP * Build CI/CD pipelines * Collaborate on AI system design * Deploy machine learning models to production * Develop autonomous AI “Agents” * Develop Python based applications using GenAI * Innovate and standardize AI ML development practices * Integrate RESTful APIs for ML platform systems * Perform code reviews * Run simulations for algorithm development * Use AI powered development tools for coding assistance * Use Git for version control * Write testable, maintainable code Perks/Benefits: N/A Skills/Tech stack required: [Agile][Airflow][Angular][Bash][CI/CD][Dash][DevSecOps][Docker][GCP][Generative AI][Git][GitHub Actions][Google Cloud][Google Cloud Vertex][Google Cloud Vertex AI][Kubeflow][Kubernetes][Langchain][Langgraph][Language Models][Large Language Models][LLM][Machine Learning][MLOps][Powershell][Python][PyTorch][React][RESTful APIs][Scikit-learn][SonarQube][Tekton][TensorFlow][Terraform][Test-Driven][Test-Driven Development][Vertex AI] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "LLM",
+        "MLOps",
+        "Kubernetes",
+        "LangChain"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.58
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3443827",
@@ -48,7 +73,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.42
+      "score": 55.31
     },
     {
       "externalId": "ai-engineer-on-site-grand-rapids-michigan-3448353",
@@ -68,7 +93,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.15
+      "score": 54.04
     },
     {
       "externalId": "ai-engineer-internship-london-3448516",
@@ -91,7 +116,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 52.39
+      "score": 52.28
     },
     {
       "externalId": "senior-machine-learning-engineer-causal-decision-systems-hybrid-toronto-on-3448339",
@@ -111,7 +136,7 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 50.48
+      "score": 50.37
     },
     {
       "externalId": "senior-machine-learning-engineer-i-senior-machine-learning-engineer-ii-budapest-hungary-3447493",
@@ -130,7 +155,7 @@
       ],
       "aiRelevance": 0.7000000000000001,
       "visaSponsored": false,
-      "score": 47.58
+      "score": 47.47
     },
     {
       "externalId": "ai-enterprise-architect-kansas-city-ks-united-states-3444316",
@@ -149,7 +174,27 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 42.43
+      "score": 42.32
+    },
+    {
+      "externalId": "data-analytics-specialist-naucalpan-de-juarez-mex-mexico-3451063",
+      "source": "foorilla",
+      "url": "https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/67097",
+      "title": "Data & Analytics Specialist",
+      "company": "Ford Global",
+      "location": "Naucalpan de Juarez, MEX, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assemble data * Build data pipelines * Build predictive models * Compile and unify datasets for analysis * Deploy AI/ML solutions * Design AI architecture * Develop autonomous AI “Agents” * Develop multi-agent systems * Integrate reusable AI services * Perform predictive analytics * Perform prescriptive analytics * Run data queries * Translate business requirements into mathematical problems Perks/Benefits: N/A Skills/Tech stack required: [Agent systems][Autonomous Agents][Data integration][Data Modeling][Data pipeline][Langchain][Langgraph][Machine Learning][Multi-Agent][Multi-Agent Systems][Predictive Analytics][Prescriptive Analytics][PySpark][Python][Scala][Software Architecture][SQL] Educational requirements: [Bachelor of Science] Role(s): [AI][AI Engineer][Data Scientist][Engineer][Scientist]",
+      "postedAt": "2026-08-14T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LangChain"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 38.74
     },
     {
       "externalId": "data-scientist-datacenter-united-states-washington-redmond-3449953",
@@ -168,7 +213,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.64
+      "score": 37.53
     },
     {
       "externalId": "senior-data-architect-databricks-platform-mexico-3448646",
@@ -187,7 +232,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.52
+      "score": 36.41
     },
     {
       "externalId": "data-engineer-aws-azure-gcp-denver-co-united-states-3449847",
@@ -208,7 +253,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.12
+      "score": 36.01
     },
     {
       "externalId": "data-engineersr-data-engineer-it-analytics-fort-worth-tx-us-3448529",
@@ -227,7 +272,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.07
+      "score": 35.96
     },
     {
       "externalId": "data-engineer-i-camden-new-jersey-united-states-3448656",
@@ -247,7 +292,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.77
+      "score": 35.66
     },
     {
       "externalId": "hpc-engineer-ai-and-data-remote-united-states-3449163",
@@ -267,7 +312,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.47
+      "score": 35.36
     },
     {
       "externalId": "data-analystbi-engineer-united-states-3448608",
@@ -286,7 +331,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.91
+      "score": 34.8
     },
     {
       "externalId": "senior-data-engineer-aws-azure-gcp-chicago-il-united-states-3449840",
@@ -306,7 +351,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.9
+      "score": 34.79
     },
     {
       "externalId": "senior-ai-driven-net-cloud-engineer-greensboro-north-carolina-usa-3445700",
@@ -326,7 +371,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.7
+      "score": 34.59
     },
     {
       "externalId": "ingeniero-de-datos-big-data-jr-mexico-3445082",
@@ -346,27 +391,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.56
-    },
-    {
-      "externalId": "dataops-engineer-tbilisi-georgia-3445139",
-      "source": "foorilla",
-      "url": "https://jsc-bank-of-georgia.hirehive.com/dataops-engineer-tbilisi-Jq2JUI",
-      "title": "DataOps Engineer",
-      "company": "HireHive.com",
-      "location": "Tbilisi, Georgia",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Adhere to architecture best practices * Automate existing processes * Build automated data infrastructure solutions * Configure monitoring for system performance and uptime * Define and build data pipelines * Design data engineering assets * Expand data platform capabilities * Implement internal process improvements * Maintain data platform operations for user management and audit * Manage production data pipelines * Migrate legacy solutions to cloud data platforms * Modify ETL processes for automation and schema changes Perks/Benefits: N/A Skills/Tech stack required: [Amazon Web Services][Apache Airflow][Apache Hive][Apache Kafka][Apache NiFi][Azure][Continuous integration][DNS][ETL][Feast][Git][Hadoop][HTTP][Jenkins][Kubernetes][Linux][MLflow][Python][Relational databases][TCP/IP][Web Services][Windows] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][DataOps Engineer][Engineer]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.47
+      "score": 34.45
     },
     {
       "externalId": "senior-data-engineer-id71671-queretaro-mexico-3442403",
@@ -386,7 +411,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.3
+      "score": 34.19
     },
     {
       "externalId": "data-engineer-implementation-integration-remote-united-states-3449938",
@@ -405,7 +430,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.09
+      "score": 33.98
     },
     {
       "externalId": "data-engineer-nashville-tn-united-states-3443581",
@@ -424,77 +449,44 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.82
+      "score": 33.71
     },
     {
-      "externalId": "data-engineer-tartu-estonia-3446907",
+      "externalId": "sr-advanced-data-engineer-monterrey-nle-mexico-3451167",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Playtech/744000143529720-data-engineer",
-      "title": "Data Engineer",
-      "company": "Playtech",
-      "location": "Tartu, Estonia",
-      "country": "Estonia",
+      "url": "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/155864",
+      "title": "Sr Advanced Data Engineer",
+      "company": "Honeywell",
+      "location": "Monterrey, NLE, Mexico",
+      "country": "Mexico",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build and maintain BigQuery tables * Collaborate with reporting developers analysts and engineers * Develop and modify Apache Airflow pipelines * Participate in code reviews * Perform data quality checks * Prepare SQL logic for transformations and reporting tables * Provide database development and support * Validate query results and fix inconsistencies * Write table and pipeline documentation Perks/Benefits: + Active lifestyle and mental well-being + Inclusive work environment + Mentoring + Professional development Skills/Tech stack required: [Apache Airflow][BigQuery][Cloud platform][Data Quality][Data Transformation][ETL][Google Cloud][Google Cloud Platform][MariaDB][Oracle][PostgreSQL][Python][SQL] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer]",
+      "description": "Tasks: * Build data integration processes * Collaborate with cross-functional teams * Design data pipelines * Develop data models * Implement data validation * Optimize data storage * Optimize ETL performance * Perform data cleansing * Stay updated on data engineering best practices * Translate business requirements into data solutions Perks/Benefits: N/A Skills/Tech stack required: [Apache Spark][AWS][Azure][Data Cleansing][Data Modeling][Data Pipelines][Data Quality][Data Validation][ETL][Google Cloud][Hadoop][Python][SQL] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Advanced Data Engineer][Data Engineer][Engineer][Senior Data Engineer]",
       "postedAt": "2026-08-14T00:00:00.000Z",
       "skills": [
-        "Python"
+        "Python",
+        "AWS"
       ],
-      "aiRelevance": 0.03,
+      "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.2
+      "score": 33
     },
     {
-      "externalId": "lead-data-engineer-secret-clearance-required-baltimore-maryland-united-states-mclean-virginia-united-states-richmond-virginia-united-stat-3443585",
+      "externalId": "business-intelligence-data-engineer-133-2015-tulsa-ok-us-3451164",
       "source": "foorilla",
-      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Lead-Data-Engineer-secret-clearance-required/362654",
-      "title": "Lead Data Engineer (secret clearance required)",
-      "company": "Deloitte US",
-      "location": "Baltimore, Maryland, United States; McLean, Virginia, United States; Richmond, Virginia, United States; Rosslyn, Virginia, United States",
+      "url": "https://jobs.dayforcehcm.com/en-US/ccok/CCOK/jobs/5963",
+      "title": "Business Intelligence - Data Engineer 133-2015",
+      "company": "Dayforce Jobs",
+      "location": "Tulsa, OK, US",
       "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Collaborate with Data Scientists, Analysts, and Business stakeholders * Define and govern enterprise data architecture * Design canonical data models and platform data standards * Oversee data engineering delivery pipeline design and code reviews * Plan and execute data migrations including validation reconciliation and rollback Perks/Benefits: + Mentorship + Professional development Skills/Tech stack required: [Data Architecture][Data Migration][Data Modeling][Data Pipelines][Data Reconciliation][Data Structures][Data Validation][Dimensional Modeling][Enterprise Data][Enterprise Data Architecture][ETL][Graph Databases][Hierarchical data][Hierarchical data structures][PySpark][Query Language][Recursive Data Structures][Relational databases][Schema Changes][Structured Query][Structured Query Language] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
+      "description": "Tasks: * Assemble large complex datasets * Automate manual processes * Build analytics tools for business metrics * Expand data pipeline architecture * Implement ETL pipelines * Monitor data pipeline performance * Optimize data flow and collection * Support data initiatives across teams Perks/Benefits: + Background check Skills/Tech stack required: [Database Design][Data pipeline][Data Transformation][Dependency management][ETL][Metadata Management][Scalability][SSIS][Workload management] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-15T00:00:00.000Z",
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.16
-    },
-    {
-      "externalId": "data-engineer-iii-rosslyn-virginia-united-states-3442559",
-      "source": "foorilla",
-      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Data-Engineer-III/362890",
-      "title": "Data Engineer III",
-      "company": "Deloitte US",
-      "location": "Rosslyn, Virginia, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build streaming data pipelines * Collaborate on data requirements * Design batch data pipelines * Develop data models * Document data flows * Document technical designs * Implement transformation logic * Improve data quality * Maintain data pipelines * Maintain implementation standards * Monitor data workflows * Optimize data integration processes * Translate requirements into solutions * Troubleshoot data workflows Perks/Benefits: + Mentorship + Professional development + Travel opportunities Skills/Tech stack required: [Batch Processing][Databricks][Data integration][Data Modeling][Data Pipelines][Data Quality][Data Transformation][Dimensional Modeling][ETL][Relational databases][Spark][Streaming Data] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Engineer][Data Engineer III][Engineer][Engineer III]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.87
-    },
-    {
-      "externalId": "sr-tableau-developer-trenton-nj-united-states-3448966",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/SpikeITGlobalSolutionsInc/744000143514740-sr-tableau-developer-",
-      "title": "Sr Tableau Developer",
-      "company": "SpikeITGlobalSolutionsInc",
-      "location": "Trenton, NJ, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build Tableau reports * Create documentation * Design develop test deploy Tableau dashboards * Ensure data quality in dashboards * Evaluate predictive analytics models * Gather business requirements * Present insights to stakeholders * Provide end-user training * Refine BI strategy * Research recommend BI visualization solutions Perks/Benefits: + Confidentiality per EEO guidelines + End user training sessions + Training and documentation Skills/Tech stack required: [Data Structures][Data Warehousing][Design Patterns][Predictive Analytics][Salesforce][Snowflake][Software development][Tableau][Tableau Desktop][Tableau Online][Test-Driven][Test-Driven Development] Educational requirements: [Bachelor of Science] Role(s): [Business Intelligence][Business Intelligence Developer][Developer][Senior Tableau Developer][Tableau Developer]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.7
+      "score": 32.35
     },
     {
       "externalId": "senior-data-engineer-bolivia-colombia-costa-rica-peru-3448244",
@@ -511,24 +503,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.44
-    },
-    {
-      "externalId": "senior-palantir-ai-and-data-science-engineer-rosslyn-virginia-united-states-3443623",
-      "source": "foorilla",
-      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Senior-Palantir-AI-and-Data-Science-Engineer/362895",
-      "title": "Senior Palantir AI and Data Science Engineer",
-      "company": "Deloitte US",
-      "location": "Rosslyn, Virginia, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply DevOps practices * Apply statistical programming for data quality * Build and deploy data engineering solutions * Build data pipelines * Collaborate on requirements * Deploy scalable solutions * Design data architecture * Develop analytics products * Develop data workflows * Improve operational efficiency * Improve platform performance * Integrate and transform enterprise data * Operationalize enterprise data * Resolve technical issues Perks/Benefits: + Travel opportunities Skills/Tech stack required: [Analytics products][Cloud Computing][Data Architecture][Data Pipelines][Data workflows][DevOps][Palantir Foundry][Statistical programming] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Data Scientist][Engineer][Scientist]",
-      "postedAt": "2026-08-14T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.44
+      "score": 32.33
     }
   ]
 }
