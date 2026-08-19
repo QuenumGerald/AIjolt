@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T07:11:08.701Z",
+  "generatedAt": "2026-08-19T09:54:02.470Z",
   "jobs": [
     {
       "externalId": "lead-agentic-ai-engineer-id80141-warsaw-poland-3467119",
@@ -20,7 +20,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.07
+      "score": 55.95
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-iasi-romania-3467132",
@@ -42,7 +42,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.91
+      "score": 55.79
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-lublin-poland-3467121",
@@ -63,7 +63,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.81
+      "score": 55.69
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-braga-portugal-3467125",
@@ -85,7 +85,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.72
+      "score": 55.6
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-lisboa-portugal-3467124",
@@ -107,7 +107,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.62
+      "score": 55.51
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-cluj-napoca-romania-3467128",
@@ -129,7 +129,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.39
+      "score": 55.28
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-aveiro-portugal-3467123",
@@ -151,7 +151,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.38
+      "score": 55.27
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-barcelona-spain-3467136",
@@ -172,7 +172,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.22
+      "score": 55.11
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-bratislava-slovakia-3467134",
@@ -195,50 +195,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.2
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-madrid-spain-3467138",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874696",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Madrid, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG based systems * Create Rego policies for compliance * Design CI CD validation workflows * Develop vector database solutions * Generate Terraform modules for cloud configuration * Integrate LLM APIs * Lead distributed engineering team * Mentor and guide engineers * Perform drift detection analysis * Remediate configuration drift issues Perks/Benefits: + Annual learning budget + Flexible hours + Local well being programs + Mentorship + Remote work + Support programs + Techtalks Skills/Tech stack required: [“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Drift Detection][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.14
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-krakow-poland-3467120",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872684",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Kraków, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG systems * Create Rego policies * Develop vector database pipelines * Generate compliant Terraform modules * Implement drift detection and remediation * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy * Write Regula test cases Perks/Benefits: + Challenging projects + Flexible hours + Internal TechTalks + Learning budget + Mentorship + No micromanagement + Performance reviews + Remote work + Supportive team culture + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language model APIs][Large Language Model][Large Language Model APIs][Model APIs][Open Policy Agent][Policy Agent][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.13
+      "score": 55.09
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-ljubljana-smartno-slovenia-3467135",
@@ -260,7 +217,50 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.13
+      "score": 55.02
+    },
+    {
+      "externalId": "lead-agentic-ai-engineer-id80141-madrid-spain-3467138",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874696",
+      "title": "Lead Agentic AI Engineer ID80141",
+      "company": "AgileEngine",
+      "location": "Madrid, Spain",
+      "country": "Spain",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG based systems * Create Rego policies for compliance * Design CI CD validation workflows * Develop vector database solutions * Generate Terraform modules for cloud configuration * Integrate LLM APIs * Lead distributed engineering team * Mentor and guide engineers * Perform drift detection analysis * Remediate configuration drift issues Perks/Benefits: + Annual learning budget + Flexible hours + Local well being programs + Mentorship + Remote work + Support programs + Techtalks Skills/Tech stack required: [“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Drift Detection][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-18T00:00:00.000Z",
+      "skills": [
+        "LLM",
+        "RAG",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.02
+    },
+    {
+      "externalId": "lead-agentic-ai-engineer-id80141-krakow-poland-3467120",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872684",
+      "title": "Lead Agentic AI Engineer ID80141",
+      "company": "AgileEngine",
+      "location": "Kraków, Poland",
+      "country": "Poland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG systems * Create Rego policies * Develop vector database pipelines * Generate compliant Terraform modules * Implement drift detection and remediation * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy * Write Regula test cases Perks/Benefits: + Challenging projects + Flexible hours + Internal TechTalks + Learning budget + Mentorship + No micromanagement + Performance reviews + Remote work + Supportive team culture + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language model APIs][Large Language Model][Large Language Model APIs][Model APIs][Open Policy Agent][Policy Agent][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
+      "postedAt": "2026-08-18T00:00:00.000Z",
+      "skills": [
+        "LLM",
+        "RAG",
+        "AWS",
+        "LangChain"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.01
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-sofija-bulgaria-3467114",
@@ -281,7 +281,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.07
+      "score": 54.96
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-wrocaw-poland-3467116",
@@ -302,7 +302,28 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.04
+      "score": 54.92
+    },
+    {
+      "externalId": "lead-agentic-ai-engineer-id80141-gdansk-poland-3467118",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872690",
+      "title": "Lead Agentic AI Engineer ID80141",
+      "company": "AgileEngine",
+      "location": "Gdańsk, Poland",
+      "country": "Poland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build vector database retrieval * Design CI CD validation workflows * Detect cloud drift * Develop Regula test cases * Generate Rego policies * Generate Terraform modules * Implement RAG systems * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy * Perform remediation actions Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + No micromanagement + Remote work + Supportive environment + Well-being programs Skills/Tech stack required: [“as-code”][CI/CD][Cloud Security][Generative AI][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer][Software Engineer]",
+      "postedAt": "2026-08-18T00:00:00.000Z",
+      "skills": [
+        "LLM",
+        "RAG",
+        "LangChain"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.92
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-timisoara-romania-3467130",
@@ -324,28 +345,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.04
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-gdansk-poland-3467118",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872690",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Gdańsk, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build vector database retrieval * Design CI CD validation workflows * Detect cloud drift * Develop Regula test cases * Generate Rego policies * Generate Terraform modules * Implement RAG systems * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy * Perform remediation actions Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + No micromanagement + Remote work + Supportive environment + Well-being programs Skills/Tech stack required: [“as-code”][CI/CD][Cloud Security][Generative AI][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.03
+      "score": 54.92
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-brasov-romania-3467129",
@@ -367,7 +367,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.98
+      "score": 54.87
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-plovdiv-bulgaria-3467115",
@@ -389,7 +389,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.94
+      "score": 54.82
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-ukraine-3467139",
@@ -410,29 +410,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.93
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-ukraine-3467185",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883047",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Івано-Франківськ, Ukraine",
-      "country": "Ukraine",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate creation of cloud security baseline enforcement * Create Regula test cases * Develop AI enabled drift detection * Develop AI enabled gap analysis * Generate compliant Rego policies * Generate compliant Terraform modules * Implement generative AI workflows for cloud configuration baselines * Integrate AI workflows into CI CD pipelines * Validate Rego policies * Validate Terraform modules Perks/Benefits: + Annual learning budget + Competitive compensation + Flexible hours + Internal technical talks + Mentorship + People focused support + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Cloud Security][Drift Detection][Gap Analysis][Generative AI][Infrastructure as Code][JavaScript][Langchain][Langgraph][LLM API][OpenAI API][Open Policy Agent][Policy Agent][Python][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.93
+      "score": 54.82
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-sector-1-romania-3467133",
@@ -452,7 +430,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.92
+      "score": 54.8
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-valencia-spain-3467137",
@@ -474,7 +452,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.87
+      "score": 54.76
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-szczecin-poland-3467117",
@@ -496,7 +474,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.84
+      "score": 54.73
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-poznan-poland-3467122",
@@ -518,7 +496,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.83
+      "score": 54.72
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-braga-portugal-3467170",
@@ -539,7 +517,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.78
+      "score": 54.67
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-coimbra-portugal-3467127",
@@ -559,7 +537,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.73
+      "score": 54.61
     },
     {
       "externalId": "lead-agentic-ai-engineer-id80141-porto-portugal-3467126",
@@ -581,7 +559,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.64
+      "score": 54.52
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-coimbra-portugal-3467169",
@@ -602,7 +580,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.55
+      "score": 54.43
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-warsaw-poland-3467162",
@@ -623,7 +601,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.29
+      "score": 54.17
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-ljubljana-smartno-slovenia-3467181",
@@ -645,7 +623,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.25
+      "score": 54.14
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-krakow-poland-3467163",
@@ -666,7 +644,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.24
+      "score": 54.12
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-plovdiv-bulgaria-3467161",
@@ -687,7 +665,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.21
+      "score": 54.1
     },
     {
       "externalId": "researcher-computer-vision-human-centered-ai-markham-ontario-canada-3471874",
@@ -705,27 +683,6 @@
         "Python",
         "LLM",
         "Computer Vision"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.16
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-barcelona-spain-3467184",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879328",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Barcelona, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and validate Regula test cases for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate and validate Rego policies for CI CD pipelines * Generate and validate Terraform modules for CI CD pipelines * Implement generative AI workflows using RAG Perks/Benefits: + Annual learning budget + Flexible hours + Internal tech talks + Mentorship + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Generative AI][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
@@ -750,7 +707,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.99
+      "score": 53.88
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-aveiro-portugal-3467173",
@@ -771,7 +728,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.98
+      "score": 53.86
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-timisoara-romania-3467179",
@@ -792,7 +749,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.89
+      "score": 53.78
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-poznan-poland-3467165",
@@ -813,7 +770,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.79
+      "score": 53.68
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-brasov-romania-3467175",
@@ -833,7 +790,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.76
+      "score": 53.65
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-bratislava-slovakia-3467180",
@@ -853,7 +810,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.72
+      "score": 53.61
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-valencia-spain-3467183",
@@ -873,7 +830,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.71
+      "score": 53.6
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-iasi-romania-3467178",
@@ -893,7 +850,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.65
+      "score": 53.53
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-gdansk-poland-3467167",
@@ -913,7 +870,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.48
+      "score": 53.36
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-sector-1-romania-3467177",
@@ -933,7 +890,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.44
+      "score": 53.32
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-lublin-poland-3467164",
@@ -953,7 +910,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.26
+      "score": 53.14
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-madrid-spain-3467182",
@@ -972,7 +929,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 52.76
+      "score": 52.65
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-sofija-bulgaria-3467160",
@@ -991,7 +948,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 52.69
+      "score": 52.58
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-wrocaw-poland-3467166",
@@ -1011,7 +968,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 52.54
+      "score": 52.43
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-porto-portugal-3467171",
@@ -1030,7 +987,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 52.44
+      "score": 52.32
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-lisboa-portugal-3467172",
@@ -1049,7 +1006,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 52.35
+      "score": 52.24
     },
     {
       "externalId": "senior-agentic-ai-engineer-id80140-cluj-napoca-romania-3467174",
@@ -1068,7 +1025,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 52.32
+      "score": 52.2
     },
     {
       "externalId": "senior-consultant-data-ai-data-engineer-data-scientist-all-genders-deutschland-3469451",
@@ -1090,7 +1047,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 46.8
+      "score": 46.68
     },
     {
       "externalId": "aiml-engineer-dearborn-michigan-usa-3470361",
@@ -1111,7 +1068,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 45.21
+      "score": 45.09
     },
     {
       "externalId": "ai-augmented-software-developer-krakow-lesser-poland-voivodeship-poland-3471402",
@@ -1132,7 +1089,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 44.57
+      "score": 44.45
     },
     {
       "externalId": "senior-software-engineer-fullstack-mexico-3472014",
@@ -1153,7 +1110,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 40.2
+      "score": 40.09
     },
     {
       "externalId": "technical-program-manager-ml-irvine-ca-3472649",
@@ -1172,7 +1129,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.58
+      "score": 38.46
     },
     {
       "externalId": "lead-data-engineer-id71008-queretaro-mexico-3467535",
@@ -1193,7 +1150,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 37.11
+      "score": 37
     },
     {
       "externalId": "lead-data-engineer-id71008-zapopan-mexico-3467512",
@@ -1214,7 +1171,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.98
+      "score": 36.87
     },
     {
       "externalId": "lead-data-engineer-id71008-puebla-heroica-puebla-mexico-3467537",
@@ -1235,7 +1192,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.74
+      "score": 36.63
     },
     {
       "externalId": "lead-data-engineer-id71008-playas-de-rosarito-mexico-3467516",
@@ -1256,7 +1213,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.77
+      "score": 35.65
     },
     {
       "externalId": "lead-data-engineer-id71008-monterrey-mexico-3467530",
@@ -1277,7 +1234,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.73
+      "score": 35.62
     },
     {
       "externalId": "lead-data-engineer-id71008-guadalajara-mexico-3467518",
@@ -1298,7 +1255,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.42
+      "score": 35.31
     },
     {
       "externalId": "lead-data-engineer-id71008-leon-de-los-aldama-mexico-3467536",
@@ -1319,7 +1276,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.1
+      "score": 34.98
     },
     {
       "externalId": "ingeniero-de-datos-ssis-senior-cdmx-mexico-3469204",
@@ -1338,7 +1295,45 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.59
+      "score": 34.48
+    },
+    {
+      "externalId": "data-engineer-toronto-3473768",
+      "source": "foorilla",
+      "url": "https://www.konrad.com/careers/job/7894910003?gh_jid=7894910003",
+      "title": "Data Engineer",
+      "company": "K...",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data architectures * Deliver data solutions to stakeholders * Design data pipelines * Ensure data security and compliance * Extract transform load data * Implement ETL and ELT processes * Maintain data platforms * Monitor data ingestion pipelines * Optimize data workflows * Perform data modeling Perks/Benefits: + Flexible working hours + Health and wellness benefits + Learning and development culture + Parental leave + Retirement planning + Service recognition + Social events + Work from home Skills/Tech stack required: [Azure][Azure Data][Azure Data Factory][Azure Fabric][Batch Ingestion][CI/CD][Databricks][Data Factory][Data Modeling][Data Vault][DBT][DevOps][Dimension tables][ELT][ETL][Fact tables][Grain][Hadoop][Kafka][Medallion Architecture][Python][Real Time][Real-time Ingestion][Schema Design][Snowflake][Spark][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-18T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.1
+    },
+    {
+      "externalId": "senior-data-engineer-toronto-3473767",
+      "source": "foorilla",
+      "url": "https://www.konrad.com/careers/job/7894916003?gh_jid=7894916003",
+      "title": "Senior Data Engineer",
+      "company": "K...",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines * Design data platforms * Ensure data security and compliance * Extract, transform and load data * Implement Azure Fabric solutions * Implement DataBricks solutions * Implement Snowflake solutions * Improve data quality * Maintain data architectures * Optimize data workflows * Perform data modeling * Support analytics enablement Perks/Benefits: + Annual tech allowance + Annual travel allowance + Flexible working hours + Health insurance + Learning and development + Parental leave + Retirement planning + Service Recognition Programs + Social events + Work from home Skills/Tech stack required: [Azure Data][Azure Data Factory][Azure Fabric][Databricks][Data Factory][Data Modeling][Data pipeline][ELT][ETL][Hadoop][Kafka][Python][Snowflake][Spark][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][High School Diploma][Master of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-18T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34
     },
     {
       "externalId": "senior-data-analyst-id80370-quetzaltenango-guatemala-3467442",
@@ -1358,27 +1353,24 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.27
+      "score": 33.15
     },
     {
-      "externalId": "senior-data-analyst-id80370-zona-1-guatemala-3467460",
+      "externalId": "technical-data-analyst-data-warehouse-services-montreal-quebec-3473742",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258890049",
-      "title": "Senior Data Analyst ID80370",
-      "company": "AgileEngine",
-      "location": "ZONA 1, Guatemala",
+      "url": "https://job-boards.greenhouse.io/aylo/jobs/8614017002",
+      "title": "Technical Data Analyst - Data Warehouse Services",
+      "company": "Job Application for Technical Data Analyst - Data Warehouse Services at Aylo Careers",
+      "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build and maintain BI dashboards * Ensure reporting accuracy and data quality * Improve reporting and automation processes * Respond to ad hoc data requests * Support reporting tools datasets and business metrics * Troubleshoot reporting issues Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Mentorship + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [AWS][Data Modeling][ETL][Looker][Power BI][Python][R][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
+      "description": "Tasks: * Analyze data structures and content for business intelligence * Collaborate with stakeholders to define reporting strategy and requirements * Coordinate and maintain development roadmaps * Develop and optimize SQL queries * Engage business partners to clarify data needs * Estimate time and effort with database administrators and developers * Investigate data issues and reporting structure changes * Serve as subject matter expert in business domains and reporting tools * Track project status identify risks and resolve issues Perks/Benefits: + Hybrid work environment + Remote work opportunity Skills/Tech stack required: [Business Intelligence][Customer support][Data Cubes][Data Flow][Data Modeling][Excel][Microsoft Fabric][Power BI][Reporting][SQL][SQL Server] Educational requirements: N/A Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
       "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
+      "skills": [],
+      "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.2
+      "score": 32.89
     },
     {
       "externalId": "data-engineer-mfd-cologne-germany-3471322",
@@ -1397,7 +1389,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.08
+      "score": 31.96
     }
   ]
 }
