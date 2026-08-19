@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-08-19T18:58:25.527Z",
+  "generatedAt": "2026-08-19T21:46:03.919Z",
   "jobs": [
+    {
+      "externalId": "senior-ai-large-language-model-llm-architect-dublin-1-grand-canal-square-ireland-3480821",
+      "source": "foorilla",
+      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Dublin/Senior-AI-Large-Language-Model--LLM--Architect_R00351833",
+      "title": "Senior AI Large Language Model (LLM) Architect",
+      "company": "3100 Accenture Limited Company",
+      "location": "Dublin, 1 Grand Canal Square, Ireland",
+      "country": "Ireland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Adapt foundation model routing and selection * Architect end to end data pipeline * Architect memory and agent services * Architect multi-agent systems * Build proof of concept prototypes and components * Create architecture artifacts and ADRs * Define enterprise AI reference architecture * Define non-functional requirements * Design context layer for grounded RAG * Design defense in depth security framework * Enforce security governance and observability controls * Establish system evaluation framework * Evaluate build-vs-buy decisions * Implement agent registry and AI gateway * Implement certification gate * Implement FinOps controls at AI gateway * Implement low latency inference optimizations * Implement vector search and semantic retrieval * Lead stakeholder workshops * Mentor cross-functional engineering teams * Research and integrate emerging AI patterns * Translate business strategy into technical vision Perks/Benefits: N/A Skills/Tech stack required: [Agent Orchestration][Cost Allocation][Deep learning][Fine Tuning][FinOps][Generative AI][IAM][Inference Optimization][Knowledge graphs][Language Models][Large Language Models][Machine Learning][Model Evaluation][Multi-Agent][Multi-agent orchestration][NLP][Observability][OpenTelemetry][Python][RAG][Request batching][Response Caching][Security Architecture][Semantic Retrieval][Token budgeting][Vector Search] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Architect][Architect][Large Language Model Architect]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "NLP"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 57.78
+    },
+    {
+      "externalId": "associate-data-and-ai-engineer-hartford-ct-home-office-united-states-3481485",
+      "source": "foorilla",
+      "url": "https://thehartford.wd5.myworkdayjobs.com/en-US/Careers_Restricted/job/Hartford-CT/Associate-Data-and-AI-Engineer_R2626437-1",
+      "title": "Associate Data and AI Engineer",
+      "company": "T...",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain ML and AI systems * Collaborate with AI ops and infrastructure teams * Collaborate with cross-functional and external partners * Develop code artifacts and documentation * Develop real time and batch modeling solutions * Enable deployment through monitoring and incident management * Implement data pipelines for structured and unstructured data * Ingest AI models into front end systems * Translate business requests into technical requirements * Validate data sources for availability and quality Perks/Benefits: + Hybrid work arrangement + Remote work option Skills/Tech stack required: [Agile][Airflow][Artificial Intelligence][AWS][AWS Lambda][BigQuery][Cloud Functions][Cron][Data Lineage][Data Pipelines][Data Validation][ETL][GCP][GitHub][Google Cloud][Google Cloud Functions][Jenkins][Machine Learning][Metadata Management][Python][Redshift][REST API][S3][Snowflake][SQL][Terraform] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI Engineer][Associate][Associate Data and AI Engineer][Associate Data Engineer][Data and AI Engineer][Data Engineer][Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.8500000000000001,
+      "visaSponsored": false,
+      "score": 52.69
+    },
+    {
+      "externalId": "senior-aiml-computational-scientist-dublin-1-grand-canal-square-ireland-3480607",
+      "source": "foorilla",
+      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Dublin/Senior-AI-ML-Computational-Scientist_R00351838",
+      "title": "Senior AI/ML Computational Scientist",
+      "company": "3100 Accenture Limited Company",
+      "location": "Dublin, 1 Grand Canal Square, Ireland",
+      "country": "Ireland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines for training and production * Collaborate with business and technical stakeholders * Customize deep learning and generative AI models * Deploy AI machine learning models to production * Design MLOps and LLMOps pipelines * Develop machine learning algorithms and models * Formulate AI machine learning solutions * Implement data storage and retrieval for models and knowledge * Justify model approaches for business problems * Manage distributed data and compute systems * Monitor and maintain model quality and reliability Perks/Benefits: N/A Skills/Tech stack required: [Alerting][Big Data][C++][Cloud Computing][Computer Architecture][Data Preprocessing][Data Storage][Deep learning][Distributed Computing][Edge Computing][Generative AI][High Performance][High-Performance Computing][Java][Language Models][Language Processing][Large Language Models][LLMOps][Machine Learning][MLOps][Model Monitoring][Natural Language][Natural Language Processing][Performance Computing][Python][PyTorch][R][SQL][System Engineering][TensorFlow] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Machine Learning Computational Scientist][Computational Scientist][Engineer][Learning Engineer][Machine Learning Engineer][Scientist]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "LLM",
+        "NLP",
+        "MLOps"
+      ],
+      "aiRelevance": 0.78,
+      "visaSponsored": false,
+      "score": 51.89
+    },
     {
       "externalId": "ai-for-science-residency-machine-learning-resident-germany-berlin-berlin-united-kingdom-cambridgeshire-cambridge-netherlands-noord-holland-amst-3477033",
       "source": "foorilla",
@@ -16,7 +82,7 @@
       "skills": [],
       "aiRelevance": 0.67,
       "visaSponsored": false,
-      "score": 46.82
+      "score": 46.7
     },
     {
       "externalId": "ai-engineering-data-foundations-spain-barcelona-3479008",
@@ -36,7 +102,7 @@
       ],
       "aiRelevance": 0.54,
       "visaSponsored": false,
-      "score": 46.74
+      "score": 46.62
     },
     {
       "externalId": "research-scientist-intern-ai-cyber-security-safety-msl-trust-safety-phd-menlo-park-ca-3477234",
@@ -56,7 +122,26 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 42.23
+      "score": 42.11
+    },
+    {
+      "externalId": "research-scientist-intern-multimodal-sensing-on-device-perception-global-frontier-tech-recruitment-program-2027-start-phd-san-jose-california-united-states-3480416",
+      "source": "foorilla",
+      "url": "https://joinbytedance.com/search/7629159746370406661",
+      "title": "Research Scientist Intern - Multimodal Sensing & On-Device Perception - Global Frontier Tech Recruitment Program - 2027 Start (PHD)",
+      "company": "Research Scientist Intern - Multimodal Sensing & On-Device Perception - Global Frontier Tech Recruitment Program - 2027 Start (PHD)",
+      "location": "San Jose, California, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build end to end imaging pipeline * Characterize sensor and optical pipeline * Co optimize models with hardware constraints * Design sensor architecture * Develop perception models * Evaluate power bandwidth and latency tradeoffs * Leverage vision language and world model needs * Perform signal processing and compression research * Preserve or transform scene information * Prototype imaging architecture Perks/Benefits: N/A Skills/Tech stack required: [Co-design][Computer Vision][Data Compression][Deep learning][Efficient Neural Networks][Embedded Machine Learning][Event Driven][Event driven computing][Hardware/software][Hardware-Software Co-design][Image Signal Processing][Language Modeling][Machine Learning][Neural Networks][Optics][Sequence Modeling][Signal Processing][Software Co-design] Educational requirements: [PhD] Role(s): [Intern][Research Scientist][Research Scientist Intern][Scientist][Scientist Intern]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Computer Vision"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 41.96
     },
     {
       "externalId": "software-engineer-intent-translation-oxford-england-united-kingdom-3476048",
@@ -76,7 +161,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 40.22
+      "score": 40.1
     },
     {
       "externalId": "senior-data-scientist-ai-engineering-dublin-ireland-3476242",
@@ -97,7 +182,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 38.93
+      "score": 38.82
     },
     {
       "externalId": "data-architect-databricks-bulgaria-bulgaria-sofia-varna-3479283",
@@ -117,7 +202,27 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 38.48
+      "score": 38.37
+    },
+    {
+      "externalId": "ai-data-engineer-lisbon-exeo-lumnia-portugal-3480818",
+      "source": "foorilla",
+      "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Lisbon-Exeo-Lumnia/AI-Data-Engineer_R00351834",
+      "title": "AI Data Engineer",
+      "company": "6101 ATS,S.A. Company",
+      "location": "Lisbon, Exeo Lumnia, Portugal",
+      "country": "Portugal",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and optimize BigQuery solutions * Contribute to data architecture decisions and technical guidance * Design scalable data pipelines and platforms * Develop data models for reporting analytics and operations * Ensure data quality governance security and compliance * Gather requirements and translate into data solutions * Monitor and optimize data platform performance reliability and cost * Prepare and manage datasets for AI and advanced analytics * Present technical recommendations to client stakeholders * Support ETL ELT best practices Perks/Benefits: + Client-facing experience + Communication with stakeholders + English C1 proficiency Skills/Tech stack required: [BigQuery][Cloud platform][Data Architecture][Data Compliance][Data Governance][Data Modeling][Data pipeline][Data Quality][Data Security][ELT][Embeddings][ETL][Function Calling][Google Cloud][Google Cloud Platform][Prompt engineering][Python][Retrieval-Augmented Generation][SQL][Vertex AI] Educational requirements: N/A Role(s): [AI][AI Data Engineer][Data Engineer][Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 38.2
     },
     {
       "externalId": "data-engineer-consultant-amsterdam-nh-netherlands-3478306",
@@ -138,7 +243,28 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 38.3
+      "score": 38.18
+    },
+    {
+      "externalId": "senior-data-engineer-9364-macdill-air-force-base-fl-united-states-3481570",
+      "source": "foorilla",
+      "url": "https://leidos.wd5.myworkdayjobs.com/en-US/External/job/Tampa-FL/Senior-Data-Engineer_R-00189989",
+      "title": "Senior Data Engineer",
+      "company": "00100 LEIDOS, INC.",
+      "location": "9364 MacDill Air Force Base FL, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply automation Infrastructure as Code and CI CD * Build APIs and data services for secure integration * Build data warehouses data lakes and lake houses * Collaborate with data scientists and analysts on data requirements * Create data cleansing and quality validation processes * Create technical documentation and operating procedures * Design scalable data pipelines * Develop batch near real time and streaming data processing * Develop ETL and ELT workflows * Implement data quality monitoring lineage and observability * Implement enterprise data models and governance * Integrate structured, semi-structured, and unstructured data * Mentor junior engineers * Modernize cloud and hybrid cloud data platforms * Optimize pipeline performance scalability reliability and cost * Troubleshoot data integration and pipeline issues Perks/Benefits: N/A Skills/Tech stack required: [Apache Spark][“as-code”][AWS][Azure Data][Azure Data Factory][CI/CD][Databricks][Data Factory][Data Governance][Data Lakes][Data Lineage][Data Modeling][Data Quality][Data Warehousing][DevSecOps][Docker][ELT][ETL][Git][Infrastructure as Code][Kafka][Kubernetes][Lakehouse][Metadata Management][Microsoft Fabric][NoSQL][Python][REST API][Snowflake][SQL][Terraform] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.09,
+      "visaSponsored": false,
+      "score": 37.78
     },
     {
       "externalId": "senior-data-engineer-consultant-brussel-belgium-3478304",
@@ -157,7 +283,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 37.07
+      "score": 36.95
     },
     {
       "externalId": "analytics-engineer-houston-tx-united-states-3479028",
@@ -174,7 +300,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 36.83
+      "score": 36.72
     },
     {
       "externalId": "lead-gen-ai-analyst-santa-clara-california-united-states-3478917",
@@ -193,7 +319,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.75
+      "score": 36.63
     },
     {
       "externalId": "senior-databricks-engineer-bulgaria-bulgaria-sofia-varna-3479356",
@@ -213,7 +339,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.55
+      "score": 36.43
     },
     {
       "externalId": "data-engineer-ii-us-rhode-island-providence-3478610",
@@ -233,7 +359,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.54
+      "score": 36.42
     },
     {
       "externalId": "consultant-data-engineer-google-cloud-gcp-rotterdam-amsterdam-netherlands-3478288",
@@ -253,7 +379,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.4
+      "score": 36.29
     },
     {
       "externalId": "computational-scientist-university-3479232",
@@ -272,7 +398,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36
+      "score": 35.89
     },
     {
       "externalId": "software-engineer-data-lakehouse-and-ai-data-platform-engineer-vice-president-stockholm-stockholm-sweden-3479329",
@@ -292,7 +418,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.86
+      "score": 35.75
     },
     {
       "externalId": "analytics-architect-usa-united-states-3476349",
@@ -312,7 +438,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.43
+      "score": 35.31
     },
     {
       "externalId": "senior-data-engineer-copenhagen-denmark-arne-jacobsens-3476590",
@@ -331,7 +457,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35
+      "score": 34.88
     },
     {
       "externalId": "data-assurance-engineer-tel-aviv-yafo-tel-aviv-district-il-3480145",
@@ -351,7 +477,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.85
+      "score": 34.74
     },
     {
       "externalId": "computational-analyst-i-laboratory-for-laser-energetics-united-states-3479233",
@@ -370,7 +496,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.71
+      "score": 34.6
     },
     {
       "externalId": "big-data-engineering-lead-ciudad-de-mexico-cdmx-mx-3479206",
@@ -389,7 +515,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.44
+      "score": 34.32
     },
     {
       "externalId": "data-engineer-databricks-bulgaria-bulgaria-sofia-varna-3479293",
@@ -408,26 +534,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.33
-    },
-    {
-      "externalId": "data-engineer-toronto-3473768",
-      "source": "foorilla",
-      "url": "https://www.konrad.com/careers/job/7894910003?gh_jid=7894910003",
-      "title": "Data Engineer",
-      "company": "K...",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data architectures * Deliver data solutions to stakeholders * Design data pipelines * Ensure data security and compliance * Extract transform load data * Implement ETL and ELT processes * Maintain data platforms * Monitor data ingestion pipelines * Optimize data workflows * Perform data modeling Perks/Benefits: + Flexible working hours + Health and wellness benefits + Learning and development culture + Parental leave + Retirement planning + Service recognition + Social events + Work from home Skills/Tech stack required: [Azure][Azure Data][Azure Data Factory][Azure Fabric][Batch Ingestion][CI/CD][Databricks][Data Factory][Data Modeling][Data Vault][DBT][DevOps][Dimension tables][ELT][ETL][Fact tables][Grain][Hadoop][Kafka][Medallion Architecture][Python][Real Time][Real-time Ingestion][Schema Design][Snowflake][Spark][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.72
+      "score": 34.21
     },
     {
       "externalId": "software-engineer-infrastructure-athens-greece-3477151",
@@ -446,26 +553,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.66
-    },
-    {
-      "externalId": "senior-data-engineer-toronto-3473767",
-      "source": "foorilla",
-      "url": "https://www.konrad.com/careers/job/7894916003?gh_jid=7894916003",
-      "title": "Senior Data Engineer",
-      "company": "K...",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data pipelines * Design data platforms * Ensure data security and compliance * Extract, transform and load data * Implement Azure Fabric solutions * Implement DataBricks solutions * Implement Snowflake solutions * Improve data quality * Maintain data architectures * Optimize data workflows * Perform data modeling * Support analytics enablement Perks/Benefits: + Annual tech allowance + Annual travel allowance + Flexible working hours + Health insurance + Learning and development + Parental leave + Retirement planning + Service Recognition Programs + Social events + Work from home Skills/Tech stack required: [Azure Data][Azure Data Factory][Azure Fabric][Databricks][Data Factory][Data Modeling][Data pipeline][ELT][ETL][Hadoop][Kafka][Python][Snowflake][Spark][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][High School Diploma][Master of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.62
+      "score": 33.55
     },
     {
       "externalId": "consultant-data-engineer-google-cloud-gcp-bruxelles-bruxelles-belgium-3478284",
@@ -485,7 +573,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.59
+      "score": 33.48
     },
     {
       "externalId": "data-engineer-greater-london-united-kingdom-3477492",
@@ -504,7 +592,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.53
+      "score": 33.42
     },
     {
       "externalId": "databricks-developer-poland-remote-3475645",
@@ -523,7 +611,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.5
+      "score": 33.38
     },
     {
       "externalId": "ai-data-governance-consultant-mfx-austria-remote-3477969",
@@ -540,7 +628,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.42
+      "score": 33.31
     },
     {
       "externalId": "full-stack-software-developer-it-ca-osi-2026-208-grae-geneva-geneva-switzerland-3478631",
@@ -560,7 +648,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.12
+      "score": 33
     },
     {
       "externalId": "change-agent-excellence-specialist-hvac-aqua-drives-graasten-dk-6300-3474967",
@@ -577,7 +665,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.87
+      "score": 32.75
     },
     {
       "externalId": "data-center-technician-ii-third-party-data-centers-zurich-switzerland-3477191",
@@ -594,7 +682,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.22
+      "score": 32.1
     }
   ]
 }
