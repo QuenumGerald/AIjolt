@@ -1,619 +1,17 @@
 {
-  "generatedAt": "2026-08-19T09:54:02.470Z",
+  "generatedAt": "2026-08-19T13:13:59.288Z",
   "jobs": [
     {
-      "externalId": "lead-agentic-ai-engineer-id80141-warsaw-poland-3467119",
+      "externalId": "senior-ai-agent-engineer-mexico-3476200",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872687",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Warsaw, Poland",
-      "country": "Poland",
+      "url": "https://www.wizeline.ai/careers/job?gh_jid=8139379",
+      "title": "Senior AI Agent Engineer",
+      "company": "Wizeline",
+      "location": "Mexico",
+      "country": "Mexico",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG based systems * Create Rego policies * Design service architecture and frameworks * Drive AI enablement technical strategy * Generate Terraform modules * Implement drift detection * Integrate LLM APIs * Lead distributed engineering team * Perform continuous discovery and gap analysis * Support remediation workflows Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal tech talks + Mentorship + Performance and compensation reviews + Remote work + Support tailored to location + Well-being programs Skills/Tech stack required: [Agentic Models][Amazon Web Services][API Integration][“as-code”][Azure][CI/CD][Cloud platform][Cloud Security][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][LLM API integration][Open Policy Agent][Policy Agent][RAG Pipelines][Rego][Regula][Regulatory testing][Retrieval-Augmented Generation][Terraform][Vector Databases][Web Services] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.95
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-iasi-romania-3467132",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258871707",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Iaşi, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration requirements generation * Build RAG systems * Create Rego policies * Design service architecture and frameworks * Develop Regula test cases for CI CD * Develop vector database solutions * Enable drift detection * Generate and validate compliant infrastructure as code * Generate Terraform modules * Implement continuous discovery and gap analysis * Integrate LLM APIs * Lead AI enablement strategy * Mentor distributed engineering team Perks/Benefits: + Annual learning budget + Challenging projects + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Agentic AI][Anthropic][“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][OpenAI][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.79
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-lublin-poland-3467121",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258870781",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Lublin, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG systems * Conduct gap analysis * Create Rego policies * Design service architecture * Generate compliant Terraform modules * Generate Regula test cases * Implement drift detection * Integrate LLM APIs * Lead AI enablement strategy * Manage distributed engineering team * Perform continuous discovery * Validate compliance for cloud services Perks/Benefits: + Collaborative culture + Flexible hours + Internal TechTalks + Learning budget + Mentorship + No micromanagement + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Agentic Models][Anthropic][“as-code”][Cloud Security][Continuous discovery][Gap Analysis][GenAI orchestration][IaC][Infrastructure as Code][Langchain][Langgraph][Language model APIs][Large Language Model][Large Language Model APIs][Model APIs][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Rego Policies][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.69
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-braga-portugal-3467125",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258876756",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Braga, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows with RAG * Automate configuration baseline enforcement * Create Rego policies for cloud configuration rules * Design extensible AI service frameworks * Develop Regula test cases for CI CD pipelines * Generate Terraform modules for cloud services * Implement drift detection and remediation workflows * Integrate LLM APIs for compliant outputs * Lead distributed team in follow the sun model * Own technical strategy for AI enablement in cloud security tooling Perks/Benefits: + Flexible hours + Internal tech talks + Learning budget + Mentorship + Performance reviews + Remote work + Supportive collaborative culture + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud infrastructure][Cloud platform][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.6
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-lisboa-portugal-3467124",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258880189",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Lisboa, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build vector database retrieval * Conduct gap analysis and remediation * Create Regula test cases * Design service architecture and frameworks * Generate Rego policies * Generate Terraform modules * Implement RAG systems * Integrate LLM APIs * Lead AI enablement strategy * Mentor distributed engineering team * Perform drift detection Perks/Benefits: + Annual learning budget + Challenging projects + Flexible hours + Internal tech talks + Mentorship + Performance reviews + Recognition + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language model APIs][Large Language Model][Large Language Model APIs][Model APIs][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.51
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-cluj-napoca-romania-3467128",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258880192",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Cluj-Napoca, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG systems * Create Rego policies * Design CI CD validation workflows * Detect configuration drift gaps * Develop remediation automation * Develop vector database solutions * Generate Terraform modules * Implement drift detection * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + Micromanagement free culture + People focused support + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Drift Detection][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.28
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-aveiro-portugal-3467123",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883090",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Aveiro, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG systems * Detect configuration drift * Develop vector database solutions * Generate Rego policies * Generate Terraform modules * Integrate LLM APIs * Lead CI CD pipeline validation * Mentor distributed engineering team * Own AI enablement strategy for cloud security tooling * Provide technical leadership * Remediate configuration issues * Write Regula test cases Perks/Benefits: + Collaborative culture + Flexible hours + Internal TechTalks + Learning budget + Mentorship + People focused support + Remote work + Well-being programs + Zero micromanagement Skills/Tech stack required: [“as-code”][AWS][AWS S3][Azure][CI/CD][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.27
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-barcelona-spain-3467136",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258880195",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Barcelona, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG based systems * Design extensible AI service frameworks * Develop CI CD compliant policy validation * Enable configuration remediation * Generate Rego policies * Generate Terraform modules * Implement drift detection * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy Perks/Benefits: + Collaborative culture + Flexible hours + Internal TechTalks + Learning budget + Mentorship + Performance and compensation reviews + Remote work + Technical growth opportunities + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][CI/CD][Cloud Security][Generative AI][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][Open Policy Agent][Policy Agent][RAG][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.11
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-bratislava-slovakia-3467134",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258875819",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Bratislava, Slovakia",
-      "country": "Slovakia",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows using RAG * Automate configuration baseline enforcement * Design extensible AI service architecture * Develop Regula test cases for CI CD pipelines * Generate and validate Rego policies * Generate and validate Terraform modules * Implement drift detection continuous discovery and gap analysis * Integrate LLM APIs for compliant outputs * Lead distributed team technical strategy for AI enablement * Mentor and lead engineers Perks/Benefits: + Flexible hours + Internal tech talks + Learning budget + Mentorship + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud Security][Generative AI][Google Cloud][IaC][Infrastructure as Code][JavaScript][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][Open Policy Agent][Policy Agent][Python][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.09
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-ljubljana-smartno-slovenia-3467135",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879429",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Ljubljana-Šmartno, Slovenia",
-      "country": "Slovenia",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows with RAG * Automate configuration baseline enforcement * Create vector based retrieval systems * Develop continuous discovery and gap analysis * Generate Rego policies * Generate Terraform modules * Implement drift detection and remediation * Integrate LLM APIs * Support CI CD pipeline validation tests Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][AWS S3][Azure][CI/CD][Cloud platform][Cloud Security][Distributed Systems][Generative AI][Google Cloud][Google Cloud Platform][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.02
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-madrid-spain-3467138",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874696",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Madrid, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG based systems * Create Rego policies for compliance * Design CI CD validation workflows * Develop vector database solutions * Generate Terraform modules for cloud configuration * Integrate LLM APIs * Lead distributed engineering team * Mentor and guide engineers * Perform drift detection analysis * Remediate configuration drift issues Perks/Benefits: + Annual learning budget + Flexible hours + Local well being programs + Mentorship + Remote work + Support programs + Techtalks Skills/Tech stack required: [“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Drift Detection][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.02
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-krakow-poland-3467120",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872684",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Kraków, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG systems * Create Rego policies * Develop vector database pipelines * Generate compliant Terraform modules * Implement drift detection and remediation * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy * Write Regula test cases Perks/Benefits: + Challenging projects + Flexible hours + Internal TechTalks + Learning budget + Mentorship + No micromanagement + Performance reviews + Remote work + Supportive team culture + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language model APIs][Large Language Model][Large Language Model APIs][Model APIs][Open Policy Agent][Policy Agent][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.01
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-sofija-bulgaria-3467114",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258876743",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "София / Sofija, Bulgaria",
-      "country": "Bulgaria",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows with RAG * Automate configuration baseline enforcement * Design service architecture for AI enablement * Develop continuous discovery and gap analysis * Generate compliant Terraform modules * Generate Rego policies * Implement drift detection and remediation * Integrate LLM APIs * Lead and mentor distributed engineering team * Support retrieval using vector databases * Validate compliant modules and policies for CI CD Perks/Benefits: + Collaborative culture + Flexible hours + Internal tech talks + Learning budget + Mentorship + No micromanagement + People focused support + Remote work + Well-being programs Skills/Tech stack required: [“as-code”][CI/CD][Generative AI][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.96
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-wrocaw-poland-3467116",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258876750",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Wrocław, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Build RAG systems * Conduct continuous discovery and gap analysis * Define AI enablement technical strategy * Develop CI CD validation for compliance artifacts * Develop vector database solutions * Generate Rego policies for compliance * Generate Terraform modules for cloud services * Implement drift detection and remediation workflows * Integrate LLM APIs * Lead distributed engineering team * Perform configuration baseline enforcement Perks/Benefits: + Flexible hours + Internal tech talks + Learning budget + Mentorship + No micromanagement + Remote work + Supportive culture + Wellbeing programs Skills/Tech stack required: [Agentic AI][“as-code”][CI/CD][Cloud Security][Generative AI][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.92
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-gdansk-poland-3467118",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872690",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Gdańsk, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build vector database retrieval * Design CI CD validation workflows * Detect cloud drift * Develop Regula test cases * Generate Rego policies * Generate Terraform modules * Implement RAG systems * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy * Perform remediation actions Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + No micromanagement + Remote work + Supportive environment + Well-being programs Skills/Tech stack required: [“as-code”][CI/CD][Cloud Security][Generative AI][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.92
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-timisoara-romania-3467130",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258876759",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Timişoara, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration requirement generation * Build RAG systems * Create Rego policies * Develop drift detection capabilities * Drive CI CD validation * Generate Terraform modules * Implement continuous discovery and gap analysis * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement technical strategy Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + People focused support + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][AWS S3][CI/CD][Cloud Security][Distributed Systems][Generative AI][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Lead Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.92
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-brasov-romania-3467129",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879426",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Braşov, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Build RAG systems * Conduct continuous discovery and gap analysis * Create compliant Terraform modules * Design service architecture * Develop agentic drift detection * Generate Rego policies * Integrate LLM APIs * Lead distributed engineering team * Mentor engineers * Own AI enablement technical strategy * Perform configuration baseline enforcement * Validate AI outputs Perks/Benefits: + Collaborative culture + Flexible hours + Internal TechTalks + Learning budget + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.87
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-plovdiv-bulgaria-3467115",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874690",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Пловдив / Plovdiv, Bulgaria",
-      "country": "Bulgaria",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration requirements generation * Build RAG systems * Create Terraform modules * Design service architecture and frameworks * Generate Rego policies * Integrate LLM APIs * Lead AI enablement technical strategy * Lead distributed engineering team * Perform drift detection and gap analysis * Remediate configuration drift Perks/Benefits: + Flexible hours + Internal tech talks + Learning budget + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS S3][CI/CD][Cloud Security][Continuous discovery][Drift Detection][Generative AI][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM API][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Team leadership][Technical leadership][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.82
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-ukraine-3467139",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883093",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Вінниця, Ukraine",
-      "country": "Ukraine",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration requirements generation * Build RAG systems * Conduct gap analysis * Design extensible AI frameworks * Develop Regula test cases for CI CD * Generate Rego policies * Generate Terraform modules * Implement drift detection * Integrate LLM APIs * Lead AI enablement strategy * Mentor distributed engineering team * Perform continuous discovery * Validate compliant infrastructure as code Perks/Benefits: + 100 percent remote work + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + People focused support + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][CI/CD][Generative AI][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.82
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-sector-1-romania-3467133",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258870784",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Sector 1, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate drift detection and remediation * Build RAG systems * Create Rego policies for compliance * Design CI CD validation for policy and infrastructure tests * Develop vector database solutions * Generate Terraform modules for cloud services * Integrate LLM APIs * Lead AI enablement strategy for cloud security tooling * Manage distributed engineering team * Perform continuous discovery and gap analysis Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal tech talks + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][CI/CD][Cloud deployment][Cloud deployment pipelines][Deployment Pipelines][Generative AI][Infrastructure as Code][LLM APIs][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.8
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-valencia-spain-3467137",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874699",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Valencia, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG systems * Detect configuration drift * Develop Regula test cases * Generate compliant Terraform modules * Generate Rego policies * Integrate LLM APIs * Lead distributed engineering team * Own AI enablement strategy * Remediate cloud configuration issues * Validate AI-generated outputs Perks/Benefits: + Collaborative culture + Flexible hours + Learning budget + Mentorship + People focused support + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [“as-code”][AWS S3][Cloud infrastructure][Cloud infrastructure deployment][Cloud Infrastructure Deployment Pipelines][Cloud Security][Deployment Pipelines][IaC][Infrastructure as Code][Langchain][Langgraph][LLM API][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Database] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.76
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-szczecin-poland-3467117",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874693",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Szczecin, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows using RAG * Develop CI CD validation for policies and modules * Develop drift detection and remediation capabilities * Generate compliant Terraform modules * Generate Rego policies * Integrate LLM APIs for automation * Lead AI enablement technical strategy * Mentor engineers in distributed teams * Perform continuous discovery and gap analysis Perks/Benefits: + Collaborative culture + Flexible hours + Learning budget + Mentorship + People focused support + Performance reviews + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [Agentic AI][“as-code”][AWS][Azure][CI/CD][Cloud platform][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][LLM API][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer][Lead][Lead Agentic AI][Lead Agentic AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.73
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-poznan-poland-3467122",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258870778",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Poznań, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG pipelines * Create Rego policies * Develop Regula test cases * Drive AI enablement technical strategy * Generate compliant Terraform modules * Implement drift detection and gap analysis * Integrate LLM APIs * Lead distributed engineering team * Validate Infrastructure as Code Perks/Benefits: + Annual learning budget + Challenging projects + Flexible hours + Internal TechTalks + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [“as-code”][AWS][Azure][CI/CD][Cloud platform][Cloud Security][Google Cloud][Google Cloud Platform][IaC][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.72
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-braga-portugal-3467170",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879322",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Braga, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baselines * Create Regula test cases for CI CD pipelines * Develop AI enabled drift detection * Generate compliant Terraform modules * Implement generative AI workflows * Perform gap analysis for remediation * Validate Rego policies Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal technical talks + Mentorship + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Amazon Web Services][Anthropic][“as-code”][Azure][CI/CD][Cloud platform][Cloud Security][GenAI orchestration][GenAI orchestration frameworks][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][OpenAI][Open Policy Agent][Orchestration frameworks][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases][Web Services] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.67
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-coimbra-portugal-3467127",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872693",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Coimbra, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Create Rego policies * Define AI enablement technical strategy * Develop RAG-based systems * Drive continuous discovery and gap analysis * Generate compliant Terraform modules * Implement drift detection capabilities * Integrate LLM APIs * Lead distributed engineering team * Mentor engineers * Validate compliant infrastructure modules Perks/Benefits: + Annual learning budget + Flexible hours + Internal TechTalks + Mentorship + Performance reviews + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [“as-code”][CI/CD][Cloud Architecture][Cloud Security][Drift Detection][GenAI][IaC][Infrastructure as Code][Language Model][Large Language Model][LLM APIs][Open Policy Agent][Policy Agent][Public Cloud][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.61
-    },
-    {
-      "externalId": "lead-agentic-ai-engineer-id80141-porto-portugal-3467126",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258876753",
-      "title": "Lead Agentic AI Engineer ID80141",
-      "company": "AgileEngine",
-      "location": "Porto, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect generative AI workflows * Automate configuration baseline enforcement * Build RAG based systems * Design AI enablement service architecture * Generate Rego policies * Generate Terraform modules * Implement drift detection * Integrate LLM APIs * Lead distributed engineering team * Perform gap analysis * Run continuous discovery Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal tech talks + Mentorship + Remote work + Support programs + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][AWS][Azure][CI/CD][Cloud infrastructure][Cloud platform][Cloud Security][Generative AI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][LLM API][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Database] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.52
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-coimbra-portugal-3467169",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883041",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Coimbra, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and validate Regula test cases for CI CD pipelines * Develop AI enabled drift detection * Generate and validate compliant Terraform modules * Implement generative AI workflows using RAG and LLM APIs * Perform gap analysis for configuration compliance * Write Rego policies for CI CD pipelines Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + People focused support + Performance and compensation reviews + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [Amazon Web Services][Anthropic][“as-code”][Azure][CI/CD][Cloud platform][Cloud Security][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][LLM APIs][OpenAI][Open Policy Agent][Policy Agent][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases][Web Services] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.43
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-warsaw-poland-3467162",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883038",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Warsaw, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Develop AI enabled drift detection * Generate compliant Rego policies * Generate compliant Terraform modules * Implement generative AI workflows * Perform continuous discovery and gap analysis * Validate policies and modules in CI CD pipelines * Write and validate Regula test cases Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Health and well-being programs + Mentorship + People focused support + Performance and compensation reviews + Remote work + Techtalks Skills/Tech stack required: [Agentic Models][Anthropic][“as-code”][CI/CD][Cloud Security][IaC][Infrastructure as Code][Langchain][Langgraph][LLM APIs][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Database] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.17
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-ljubljana-smartno-slovenia-3467181",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258871593",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Ljubljana-Šmartno, Slovenia",
-      "country": "Slovenia",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Build AI enabled drift detection * Create and validate Regula test cases * Develop continuous discovery and gap analysis * Generate compliant Terraform modules * Generate Rego policies for CI CD pipelines * Implement generative AI workflows using RAG * Validate compliant policies and modules Perks/Benefits: + Annual learning budget + Flexible hours + Learning budget + Mentorship + People focused support + Performance reviews + Remote work + Wellbeing programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Generative AI][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][LLM APIs][OpenAI API][Open Policy Agent][Policy Agent][Python][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer]",
+      "description": "Tasks: * Build retrieval-augmented generation pipelines * Design multi step reasoning pipelines * Implement security guardrails and PII protection * Integrate agents with business systems * Monitor agents and run iterative tuning * Optimize agent performance and reliability * Orchestrate and plan LLM tool use Perks/Benefits: + Flexible work culture + Global opportunities + Professional development + Vibrant community Skills/Tech stack required: [Agents SDK][API Design][Automated Evaluation][Caching][CI/CD][Containerization][CrewAI][Debugging][Embedding][Evaluation][Function Calling][Go][GPU][GPU infrastructure][Langchain][Langgraph][Model selection][Node.js][OpenAI Agents][OpenAI Agents SDK][Pinecone][Prompt engineering][Python][Retrieval-Augmented Generation][Semantic Search][Testing][Tool-Calling][TypeScript][Weaviate] Educational requirements: N/A Role(s): [Agent Engineer][AI/Agent Engineer][Engineer][Senior AI Agent Engineer]",
       "postedAt": "2026-08-18T00:00:00.000Z",
       "skills": [
         "Python",
@@ -623,431 +21,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.14
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-krakow-poland-3467163",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883035",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Kraków, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baselines * Create Regula test cases for CI CD pipelines * Develop AI enabled drift detection * Generate and validate Rego policies * Generate and validate Terraform modules * Implement generative AI workflows * Perform gap analysis for remediation Perks/Benefits: + Annual learning budget + Flexible hours + Internal TechTalks + Mentorship + Performance reviews + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Amazon Web Services][Anthropic API][“as-code”][Azure][CI/CD][Cloud platform][Cloud Security][GenAI][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][LLM APIs][OPA][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases][Web Services] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.12
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-plovdiv-bulgaria-3467161",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874649",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Пловдив / Plovdiv, Bulgaria",
-      "country": "Bulgaria",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and validate Regula test cases * Develop AI enabled drift detection capabilities * Generate compliant Rego policies * Generate compliant Terraform modules * Implement generative AI workflows using RAG * Perform continuous discovery and gap analysis * Validate compliance in CI CD pipelines Perks/Benefits: + Annual learning budget + Flexible hours + Internal tech talks + Mentorship + People focused support + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Infrastructure as Code][Langchain][Langgraph][Language Model][Large Language Model][LLM API][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Database] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.1
-    },
-    {
-      "externalId": "researcher-computer-vision-human-centered-ai-markham-ontario-canada-3471874",
-      "source": "foorilla",
-      "url": "https://huaweicanada.recruitee.com/o/researcher-computer-vision-human-centered-ai",
-      "title": "Researcher – Computer Vision & Human-Centered AI",
-      "company": "Huawei Technologies Canada Co., Ltd.",
-      "location": "Markham, Ontario, Canada",
-      "country": "Canada",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build vision language model workflows * Collaborate with engineering for product prototypes * Conduct computer vision research * Develop scene understanding pipelines * Establish evaluation frameworks * Integrate LLMs with vision models * Optimize real time vision inference * Perform sensor fusion for spatial awareness Perks/Benefits: N/A Skills/Tech stack required: [3D Vision][Agentic AI][C++][Camera Calibration][Computer Vision][Deep learning][Embedded Systems][Hardware acceleration][Image Segmentation][Language Models][Model Optimization][Multi Camera][Multi-camera calibration][Multimodal fusion][Object Detection][Python][Real Time][Real-time Video][Real-time video processing][Sensor fusion][Video Processing][Vision-language][Vision Language Models] Educational requirements: [Master of Science][PhD] Role(s): [Computer Vision Researcher][Researcher][Vision Researcher]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "Computer Vision"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.04
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-szczecin-poland-3467168",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258870718",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Szczecin, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Build generative AI workflows using RAG * Develop AI enabled drift detection and gap analysis * Generate and validate Rego policies for CI CD pipelines * Generate and validate Terraform modules * Write Regula test cases for CI CD pipelines Perks/Benefits: + Flexible hours + Internal tech talks + Learning budget + Mentorship + Performance and compensation reviews + Remote work + Supportive collaborative culture + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Cloud Security][Drift Detection][GenAI orchestration][Infrastructure as Code][Langchain][Langgraph][LLM APIs][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 53.88
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-aveiro-portugal-3467173",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872625",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Aveiro, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and run Regaula test cases for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate and validate compliant Terraform modules for CI CD pipelines * Generate and validate Rego policies for CI CD pipelines * Implement generative AI workflows using RAG and LLM APIs Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Mentorship + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Cloud Security][Infrastructure as Code][LLM API][OpenAI API][Open Policy Agent][Policy Agent][Python][RAG][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Senior Agentic AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 53.86
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-timisoara-romania-3467179",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258870721",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Timişoara, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and validate Regula test cases for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate and validate compliant Terraform modules * Generate and validate Rego policies for CI CD pipelines * Implement generative AI workflows using RAG Perks/Benefits: + Annual learning budget + Flexible hours + Internal TechTalks + Mentorship + Performance and compensation reviews + Remote work + Supportive collaborative culture + Well-being programs Skills/Tech stack required: [Agentic Models][Anthropic][“as-code”][CI/CD][Cloud Security][Infrastructure as Code][Langchain][Langgraph][LLM APIs][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 53.78
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-poznan-poland-3467165",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258875764",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Poznań, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build AI enabled drift detection and gap analysis * Create Rego policies and validate them for CI CD pipelines * Generate and validate compliant Terraform modules for CI CD pipelines * Implement generative AI workflows for cloud configuration baselines * Write and validate Regula test cases for CI CD pipelines Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Performance reviews + Remote work + Techtalks + Wellbeing programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Cloud Security][Drift Detection][Gap Analysis][Infrastructure as Code][Langchain][Langgraph][LLM APIs][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 53.68
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-brasov-romania-3467175",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258876667",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Braşov, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Create and validate Regula test cases for CI CD pipelines * Develop AI enabled drift detection continuous discovery and gap analysis * Generate and validate compliant Terraform modules * Implement generative AI workflows for cloud configuration baselines * Write and validate Rego policies for CI CD pipelines Perks/Benefits: + Collaborative culture + Flexible hours + Learning budget + Mentorship + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Cloud Security][Drift Detection][Infrastructure as Code][LLM APIs][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Retrieval-Augmented Generation][Terraform][Vector Database] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 53.65
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-bratislava-slovakia-3467180",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872631",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Bratislava, Slovakia",
-      "country": "Slovakia",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build AI enabled drift detection and gap analysis * Create and validate Regula test cases for CI CD pipelines * Generate and validate compliant Terraform modules * Generate and validate Rego policies for policy enforcement * Implement generative AI workflows for cloud configuration baselines Perks/Benefits: + Annual learning budget + Flexible hours + Internal tech talks + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Cloud deployment][Cloud deployment pipelines][Cloud Security][Deployment Pipelines][Infrastructure as Code][LLM APIs][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 53.61
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-valencia-spain-3467183",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879331",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Valencia, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate configuration baseline creation using retrieval augmented generation * Build generative AI workflows for cloud configuration baselines * Create and validate Rego policies for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate validate Terraform modules and Regula test cases Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal tech talks + Mentorship + Performance and compensation reviews + Remote work + Well-being programs + Zero micromanagement Skills/Tech stack required: [Agentic Models][Anthropic API][“as-code”][CI/CD][Cloud Security][Drift Detection][Gap Analysis][Generative AI][Infrastructure as Code][Langchain][Langgraph][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Senior Agentic AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 0.97,
-      "visaSponsored": false,
-      "score": 53.6
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-iasi-romania-3467178",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872628",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Iaşi, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and validate Regula test cases for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate and validate Rego policies * Generate and validate Terraform modules * Implement generative AI workflows using RAG Perks/Benefits: + Flexible hours + Internal tech talks + Learning budget + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Amazon Web Services][Anthropic API][“as-code”][CI/CD][Cloud platform][Cloud Security][Google Cloud][Google Cloud Platform][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][Microsoft Azure][OpenAI API][Open Policy Agent][Policy Agent][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases][Web Services] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 0.97,
-      "visaSponsored": false,
-      "score": 53.53
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-gdansk-poland-3467167",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258871587",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Gdańsk, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Build GenAI workflows with RAG * Develop AI enabled drift detection * Develop Regula test cases * Generate compliant Terraform modules * Perform gap analysis for configuration baselines * Validate policies for CI CD pipelines * Write Rego policies Perks/Benefits: + Flexible hours + Internal TechTalks + Learning budget + Mentorship + People focused support + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Cloud infrastructure][Cloud Security][GenAI workflows][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 0.97,
-      "visaSponsored": false,
-      "score": 53.36
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-sector-1-romania-3467177",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874652",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Sector 1, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create Regula test cases for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate and validate Rego policies * Generate and validate Terraform modules * Implement generative AI workflows Perks/Benefits: + Annual learning budget + Flexible hours + Internal technical talks + Mentorship + People focused support + Performance and compensation reviews + Remote work + Wellbeing programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Cloud Security][Drift Detection][Gap Analysis][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 0.97,
-      "visaSponsored": false,
-      "score": 53.32
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-lublin-poland-3467164",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879316",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Lublin, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Build gap analysis capabilities * Create Regula test cases * Develop AI enabled drift detection * Generate compliant Terraform modules * Generate Rego policies * Implement generative AI workflows * Validate compliant infrastructure as code in CI CD pipelines Perks/Benefits: + Annual learning budget + Flexible hours + Internal TechTalks + Mentorship + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Infrastructure as Code][Langchain][Langgraph][Language Models][Large Language Models][OpenAI][Open Policy Agent][Policy Agent][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer][Senior Agentic AI Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 0.97,
-      "visaSponsored": false,
-      "score": 53.14
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-madrid-spain-3467182",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883044",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Madrid, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Build generative AI workflows using RAG * Create Regula test cases for CI CD pipelines * Develop AI enabled drift detection * Generate compliant Terraform modules * Perform gap analysis for cloud security * Write and validate Rego policies Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Mentorship + No micromanagement + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Cloud infrastructure][Cloud Security][Drift Detection][Gap Analysis][Generative AI][IaC][Infrastructure as Code][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG"
-      ],
-      "aiRelevance": 0.9400000000000001,
-      "visaSponsored": false,
-      "score": 52.65
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-sofija-bulgaria-3467160",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258883032",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "София / Sofija, Bulgaria",
-      "country": "Bulgaria",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and run Regula test cases for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate and validate compliant Terraform modules * Generate and validate Rego policies for CI CD pipelines * Implement generative AI workflows using RAG Perks/Benefits: + Annual learning budget + Flexible hours + Internal tech talks + Mentorship + Performance and compensation reviews + Remote work + Supportive collaborative culture + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Infrastructure as Code][Language Models][Large Language Models][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG"
-      ],
-      "aiRelevance": 0.9400000000000001,
-      "visaSponsored": false,
-      "score": 52.58
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-wrocaw-poland-3467166",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258871590",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Wrocław, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Develop AI enabled drift detection and gap analysis * Generate and validate Rego policies * Generate compliant Terraform modules * Implement generative AI workflows using RAG * Write Regula test cases for CI CD pipelines Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Anthropic][“as-code”][CI/CD][Infrastructure as Code][Langchain][Langgraph][OpenAI][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 0.97,
-      "visaSponsored": false,
-      "score": 52.43
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-porto-portugal-3467171",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879319",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Porto, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Build generative AI workflows using RAG * Create and validate Regula test cases * Develop AI enabled drift detection and gap analysis * Generate compliant Terraform modules * Integrate AI features into CI CD pipelines * Write and validate Rego policies Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Mentorship + People focused support + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Cloud Security][Drift Detection][Generative AI][Infrastructure as Code][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG"
-      ],
-      "aiRelevance": 0.9400000000000001,
-      "visaSponsored": false,
-      "score": 52.32
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-lisboa-portugal-3467172",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258875767",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Lisboa, Portugal",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate cloud configuration baseline creation * Create and validate Regula test cases for CI CD pipelines * Develop AI enabled drift detection and gap analysis * Generate and validate compliant Terraform modules * Generate and validate Rego policies for CI CD pipelines * Implement generative AI workflows using RAG Perks/Benefits: + 100 percent remote work + Annual learning budget + Flexible hours + Mentorship + People focused support + Performance reviews + Techtalks + Well-being programs Skills/Tech stack required: [Anthropic][CI/CD][Language Models][Large Language Models][OpenAI][Open Policy Agent][Policy Agent][Rego][Retrieval-Augmented Generation][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG"
-      ],
-      "aiRelevance": 0.9400000000000001,
-      "visaSponsored": false,
-      "score": 52.24
-    },
-    {
-      "externalId": "senior-agentic-ai-engineer-id80140-cluj-napoca-romania-3467174",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258879325",
-      "title": "Senior Agentic AI Engineer ID80140",
-      "company": "AgileEngine",
-      "location": "Cluj-Napoca, Romania",
-      "country": "Romania",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Develop AI enabled drift detection continuous discovery gap analysis * Generate and validate Rego policies for CI CD pipelines * Generate and validate Terraform modules for CI CD pipelines * Implement generative AI workflows for configuration baseline automation * Write Regula test cases for CI CD pipelines Perks/Benefits: + Annual learning budget + Flexible hours + Internal tech talks + Mentorship + Remote work + Supportive collaborative culture + Well-being programs Skills/Tech stack required: [Anthropic API][“as-code”][CI/CD][Cloud Security][Generative AI][Infrastructure as Code][OpenAI API][Open Policy Agent][Policy Agent][RAG][Rego][Regula][Terraform][Vector Databases] Educational requirements: N/A Role(s): [Agentic AI Engineer][AI Engineer][Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "RAG"
-      ],
-      "aiRelevance": 0.9400000000000001,
-      "visaSponsored": false,
-      "score": 52.2
-    },
-    {
-      "externalId": "senior-consultant-data-ai-data-engineer-data-scientist-all-genders-deutschland-3469451",
-      "source": "foorilla",
-      "url": "https://wavestone.career.softgarden.de/jobs/66820385/-Senior-Consultant-Data-AI-%E2%80%93-Data-Engineer-Data-Scientist-all-genders-/",
-      "title": "(Senior) Consultant Data & AI – Data Engineer / Data Scientist (all genders)",
-      "company": "(Senior) Consultant Data & AI – Data Engineer / Data Scientist (all genders) – Wavestone Germany AG",
-      "location": "-, Deutschland",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Advise customers on data and ai projects * Build agentic AI solutions * Build data pipelines * Build generative AI solutions * Build RAG solutions * Design scalable data platforms * Develop machine learning pipelines * Develop machine learning solutions * Develop semantic data models for analytics * Implement lakehouse architectures * Integrate LLM solutions into systems * Manage project workstreams Perks/Benefits: + AI upskilling + Annual leave + Career Growth Model + Coaching + Corporate benefits program + Corporate shopping discounts + Employee stock ownership plan + Fitness groups + Flexible travel budget + Mobile Work Abroad + Mobile work policy + Sabbatical options + Training academy + Wellness program Skills/Tech stack required: [Agentic AI][AWS][Databricks][Data Engineering][Data Science][Generative AI][Google Cloud][LLM][Machine Learning][Microsoft Azure][Python][RAG][Snowflake][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Consultant][Data Engineer][Data Scientist][Engineer][Scientist][Senior Consultant]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "AWS"
-      ],
-      "aiRelevance": 0.6,
-      "visaSponsored": false,
-      "score": 46.68
+      "score": 54.16
     },
     {
       "externalId": "aiml-engineer-dearborn-michigan-usa-3470361",
@@ -1068,28 +42,27 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 45.09
+      "score": 44.95
     },
     {
-      "externalId": "ai-augmented-software-developer-krakow-lesser-poland-voivodeship-poland-3471402",
+      "externalId": "software-engineer-intent-translation-oxford-england-united-kingdom-3476048",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/SigmaSoftware2/744000144111169-ai-augmented-software-developer",
-      "title": "AI-augmented Software Developer",
-      "company": "SigmaSoftware2",
-      "location": "Kraków, Lesser Poland Voivodeship, Poland",
-      "country": "Poland",
+      "url": "https://apply.workable.com/j/41045D4A40/apply",
+      "title": "Software Engineer - Intent Translation",
+      "company": "Software Engineer - Intent Translation - Ellison Institute of Technology",
+      "location": "Oxford, England, United Kingdom",
+      "country": "United Kingdom",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Advise clients on AI adoption * Automate agent workflows * Benchmark scalability and reliability * Build agent orchestration layers * Build PoCs and prototypes * Communicate technical concepts to stakeholders * Design MCP integrations * Develop AI SDLC pipelines * Evaluate agentic AI models Perks/Benefits: N/A Skills/Tech stack required: [Agent systems][AI orchestration][AI SDLC][Autonomous Agents][Continuous Improvement][Embeddings][Fine Tuning][Go][Java][JavaScript][Learning operations][LLM][Machine Learning][Machine Learning Operations][Model Context Protocol][Model Evaluation][Multi-Agent][Multi-Agent Systems][Prompt engineering][Python][RAG][TypeScript][Vector Databases] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
+      "description": "Tasks: * Build and extend Python libraries and services * Build interfaces for scientists CLI tooling web UI dashboards * Build verification quality control steps for early failure detection * Capture scientific protocol knowledge and encode automated workflows * Define sensing measurement verification checks for trusted runs * Design data models pipelines for experimental data sample tracking provenance * Develop lab hardware integrations using vendor SDKs * Orchestrate and execute scheduled work across the platform * Perform code review CI testing and documentation * Review designs for scientific constraints and communicate limitations * Support lab commissioning and debugging * Validate automated protocols against manual baselines and controls Perks/Benefits: + Electric car scheme + Enhanced holiday pay + Hospital Cash Plan + Income protection + Life assurance + Pension + Perk Box + Private medical insurance + Therapy Services Skills/Tech stack required: [CLI][Code review][Computer Vision][Concurrency][Dashboards][Data handling][Data Modeling][Data Pipelines][ELN][Hardware Integration][Image analysis][Job Scheduling][Laboratory automation][LIMS][Provenance][Python][Quality Assurance][Quality Control][Reproducibility][Sample management][Scientific Data][Scientific Data Handling][Testing][Vendor SDK][Version control][Web UI] Educational requirements: N/A Role(s): [Engineer][Scientific Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
-        "RAG"
+        "Computer Vision"
       ],
-      "aiRelevance": 0.57,
+      "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 44.45
+      "score": 40.46
     },
     {
       "externalId": "senior-software-engineer-fullstack-mexico-3472014",
@@ -1110,7 +83,28 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 40.09
+      "score": 39.95
+    },
+    {
+      "externalId": "senior-data-scientist-ai-engineering-dublin-ireland-3476242",
+      "source": "foorilla",
+      "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/Dublin-Ireland/Senior-AI-Engineer---Foundation-Models-and-Transformers-2_R-286223",
+      "title": "Senior Data Scientist, AI Engineering",
+      "company": "Ireland: Mastercard Ireland Limited",
+      "location": "Dublin, Ireland",
+      "country": "Ireland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply foundation model embeddings * Communicate technical findings to stakeholders * Create reusable assets and modeling standards * Define experimentation approaches and success metrics * Develop evaluation frameworks and benchmarks * Develop machine learning solutions * Drive projects from problem definition to deployment * Mentor junior data scientists * Partner with cross functional teams to prioritize opportunities Perks/Benefits: N/A Skills/Tech stack required: [Amazon Web Services][Anomaly Detection][Apache Spark][Azure][Classification][Cloud platform][Clustering][Databricks][Embeddings][Experimentation][Feature Engineering][Forecasting][Google Cloud][Google Cloud Platform][LightGBM][Machine Learning][Predictive Analytics][Python][PyTorch][Ranking][Recommendation Systems][Regression][Representation Learning][Scikit-learn][SQL][Statistical modeling][TensorFlow][Transformer Models][Web Services][XGBoost] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow"
+      ],
+      "aiRelevance": 0.21,
+      "visaSponsored": false,
+      "score": 39.17
     },
     {
       "externalId": "technical-program-manager-ml-irvine-ca-3472649",
@@ -1129,154 +123,85 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.46
+      "score": 38.32
     },
     {
-      "externalId": "lead-data-engineer-id71008-queretaro-mexico-3467535",
+      "externalId": "junior-ai-software-engineer-chantillyherndon-va-3475079",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872570",
-      "title": "Lead Data Engineer ID71008",
-      "company": "AgileEngine",
-      "location": "Querétaro, Mexico",
-      "country": "Mexico",
+      "url": "https://job-boards.greenhouse.io/darkwolfsolutions/jobs/7886153003",
+      "title": "Junior AI Software Engineer",
+      "company": "Job Application for Junior AI Software Engineer at Dark Wolf Solutions",
+      "location": "Chantilly/Herndon, VA",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Collaborate with DevOps on requirements and constraints * Define partitioning and file formats * Design ETL pipelines * Design schema and data types * Drive AWS data stack architecture * Implement near real time processing * Lead engineering team and mentor developers * Orchestrate scheduled batch workflows with Airflow * Own data pipeline architecture * Review pull requests and enforce code quality Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Mentorship + No micromanagement + People focused support + Performance reviews + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [AI Assisted Development][AI-Assisted Development Tools][Amazon EKS][Amazon S3][Apache Airflow][Athena][BigQuery][ClickHouse][Code Quality][DAG][Data Lake][Data pipeline][Development tools][Docker][ETL][FastAPI][Flask][GraphQL][Kubernetes][Linux Terminal][MacOS][Near-real-time][Near-real-time Processing][Object storage][OLAP][ORC][Parquet][Partitioning Strategy][PostgreSQL][Presto][Pull request][Pull request review][Python][Real-time Processing][REST][Schema Design][Serverless Querying][Snowflake][Spark SQL][Time processing][Trino][Trino/Presto] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
+      "description": "Tasks: * Assist with AI and machine learning pipeline deployment * Build and maintain ML data ingestion pipelines * Conduct code reviews * Containerize application modules with Docker * Develop Bash scripts * Develop Python scripts * Participate in agile ceremonies * Perform unit testing * Refine backlog items * Run automated security scanning Perks/Benefits: N/A Skills/Tech stack required: [Agile][AWS][Azure][Bash][Code Analysis][Docker][Feature Engineering][Kanban][Machine Learning][Prompt engineering][Python][PyTorch][Scrum][SonarQube][Static Code Analysis][TensorFlow][Unit Testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Software Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
       "postedAt": "2026-08-18T00:00:00.000Z",
       "skills": [
         "Python",
-        "Kubernetes",
+        "PyTorch",
+        "TensorFlow",
         "AWS"
       ],
-      "aiRelevance": 0.09,
+      "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 37
+      "score": 37.46
     },
     {
-      "externalId": "lead-data-engineer-id71008-zapopan-mexico-3467512",
+      "externalId": "analytics-architect-usa-united-states-3476349",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258876469",
-      "title": "Lead Data Engineer ID71008",
-      "company": "AgileEngine",
-      "location": "Zapopan, Mexico",
-      "country": "Mexico",
+      "url": "https://fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/26756",
+      "title": "Analytics Architect | USA",
+      "company": "Photon",
+      "location": "United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Architect partitioning file formats and schema * Define and orchestrate batch workflows with DAGs * Design and own ETL pipelines * Drive AWS data stack architecture * Extract transform and validate data at scale * Implement near real time processing for OLAP workloads * Lead developers and align engineering practices * Partner with DevOps on requirements * Review pull requests and enforce code quality Perks/Benefits: + Annual learning budget + Collaborative culture + Competitive compensation reviews + Flexible hours + Learning budget + Local support programs + Mentorship + People focused support + Performance reviews + Remote work + Techtalks + Wellbeing programs Skills/Tech stack required: [AI Assisted Development][AI-Assisted Development Tools][Amazon S3][Apache Airflow][Athena][BigQuery][ClickHouse][DAG][Data Lake][Development tools][Docker][EKS][ETL][FastAPI][Flask][GraphQL][Kubernetes][Linux Terminal][MacOS][Near-real-time][Near-real-time Processing][Object storage][OLAP][ORC][Parquet][PostgreSQL][Presto][Pull request][Pull request review][Python][Real-time Processing][REST][REST API][Schema Design][Snowflake][Spark SQL][Time processing][Trino] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
+      "description": "Tasks: * Collaborate with cross-functional teams * Define data & analytics strategy * Ensure compliance with data security and privacy regulations * Ensure scalable optimized data systems * Establish and enforce data governance policies * Generate stakeholder recommendations * Lead and mentor data analysts * Perform advanced data analysis * Present insights to non-technical stakeholders * Prioritize analytics projects * Select implement and maintain analytics tools Perks/Benefits: + 401k retirement plan + Dental benefits + Independent contractor opportunity + Medical benefits + Paid Holidays + Paid time off + Variable pay/incentives + Vision benefits Skills/Tech stack required: [AWS][Azure][Cloud platform][GA4][Google Cloud][Google Cloud Platform][Google Tag][Google Tag Manager][Hadoop][Looker][Optimizely][Power BI][Python][R][Spark][SQL][Tableau][Tag Manager] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Analytics][Analytics Architect][Architect]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
       "skills": [
         "Python",
-        "Kubernetes",
         "AWS"
       ],
-      "aiRelevance": 0.09,
+      "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.87
+      "score": 35.67
     },
     {
-      "externalId": "lead-data-engineer-id71008-puebla-heroica-puebla-mexico-3467537",
+      "externalId": "senior-data-engineer-copenhagen-denmark-arne-jacobsens-3476590",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258871473",
-      "title": "Lead Data Engineer ID71008",
-      "company": "AgileEngine",
-      "location": "Puebla (Heroica Puebla), Mexico",
-      "country": "Mexico",
+      "url": "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers/job/Copenhagen-Denmark-Arne-Jacobsens/Senior-Data-Engineer_R-288038-1",
+      "title": "Senior Data Engineer",
+      "company": "Denmark: Aiia A/S",
+      "location": "Copenhagen, Denmark (Arne Jacobsens)",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Architect ETL pipelines * Collaborate with DevOps on requirements * Define partitioning strategy * Design analytical data architecture * Design file formats * Design schema and data types * Drive AWS data lake strategy * Enforce engineering best practices * Extract transform and validate data from databases and APIs * Implement near real time processing * Lead and guide developers * Manage Athena and serverless query workloads * Orchestrate batch workflows with Airflow * Own data pipeline * Review pull requests for code quality Perks/Benefits: + Annual performance reviews + Collaborative culture + Flexible hours + Internal tech talks + Learning budget + Mentorship + People focused support + Remote work + Well-being programs + Zero micromanagement Skills/Tech stack required: [Amazon S3][Apache Airflow][Athena][BigQuery][ClickHouse][Code review][DAG][Data Lake][Docker][EKS][ETL][FastAPI][Flask][GraphQL][Kubernetes][Near-real-time][Object storage][OLAP][ORC][Parquet][Partitioning][PostgreSQL][Presto][Python][Python Testing][Real Time][REST][REST API][Schema Design][Serverless][Snowflake][Spark SQL][Trino] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
+      "description": "Tasks: * Align analytics infrastructure with product strategy * Build ETL/ELT processes * Conduct technical design reviews code reviews * Create technical documentation runbooks * Define data capture instrumentation measurement * Design scalable data pipelines * Develop data integration and data products * Ensure data quality, security, reliability, performance * Implement workflow orchestration * Mentor junior engineers * Perform troubleshooting root cause analysis performance tuning * Support production deployments monitoring incident management Perks/Benefits: N/A Skills/Tech stack required: [Apache Kafka][Apache Spark][Databricks][Data Governance][Data integration][Data Modeling][Data Processing][Data Quality][Data Security][Data Warehousing][DBT][DBT Cloud][Distributed data][Distributed data processing][ELT][ETL][Lakehouse][Privacy Compliance][Python][Snowflake][SQL][Workflow Orchestration] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
       "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
+        "Python"
       ],
-      "aiRelevance": 0.09,
+      "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.63
+      "score": 35.24
     },
     {
-      "externalId": "lead-data-engineer-id71008-playas-de-rosarito-mexico-3467516",
+      "externalId": "data-governance-quality-engineer-latam-3475602",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258870644",
-      "title": "Lead Data Engineer ID71008",
-      "company": "AgileEngine",
-      "location": "Playas de Rosarito, Mexico",
-      "country": "Mexico",
+      "url": "https://job-boards.greenhouse.io/nttdatausa/jobs/8727409002",
+      "title": "Data Governance & Quality Engineer",
+      "company": "Job Application for Data Governance & Quality Engineer at NTT DATA, Europe & LATAM, Branch in USA, Inc.",
+      "location": "LATAM",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Collaborate with DevOps on requirements * Define partitioning and file formats * Design Airflow DAG workflows * Design ETL pipelines * Drive AWS data stack implementation * Implement near real time processing * Lead developers and align engineering practices * Orchestrate batch data workflows * Own data pipeline architecture * Review pull requests and enforce code quality * Validate and govern data quality Perks/Benefits: + Annual learning budget + Flexible hours + Internal tech talks + Mentorship + People focused support + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Amazon S3][Apache Airflow][Athena][BigQuery][ClickHouse][DAG][Data Partitioning][Docker][Docker Compose][EKS][ETL][FastAPI][Flask][GraphQL][Kubernetes][Object storage][OLAP][ORC][Parquet][PostgreSQL][Presto][Python][REST][Schema Design][Serverless computing][Snowflake][Spark SQL][SQL][Trino] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
+      "description": "Tasks: * Accelerate rule definition and metadata classification * Collaborate with data owners and stakeholders * Configure quality policies * Create data quality rules * Ensure data traceability and lineage * Ensure regulatory compliance * Govern Databricks Lakehouse lineage * Implement governance platform * Integrate catalog with source systems * Maintain data governance and quality platforms * Manage stewardship workflows Perks/Benefits: + Career development + Remote work Skills/Tech stack required: [Cloud Data Governance and Catalog][Cloud Data Quality][Databricks Lakehouse][Databricks Unity][Databricks Unity Catalog][Data Catalog][Data Classification][Data Governance][Data Lineage][Data Privacy][Data profiling][Data Quality][Data Quality Rules][Data Stewardship][Informatica CLAIRE][Informatica Cloud][Informatica Cloud Data][Informatica Cloud Data Governance][Informatica Cloud Data Governance and Catalog][Informatica Cloud Data Quality][Informatica Data Quality][Metadata Management][Quality Rules][Regulatory Compliance][Unity Catalog] Educational requirements: N/A Role(s): [Data Governance][Data Governance Engineer][Data Quality][Data Quality Engineer][Engineer][Governance Engineer][Quality Engineer]",
       "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
+      "skills": [],
+      "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.65
-    },
-    {
-      "externalId": "lead-data-engineer-id71008-monterrey-mexico-3467530",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258860923",
-      "title": "Lead Data Engineer ID71008",
-      "company": "AgileEngine",
-      "location": "Monterrey, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Define Airflow DAG orchestration strategies * Design and own ETL pipelines * Design partitioning strategy and file formats * Design schema and data type strategy * Drive AWS data stack architecture * Implement near real time processing for OLAP workloads * Lead developers and align engineering practices * Review pull requests and enforce code quality * Validate and govern data pipelines Perks/Benefits: + Annual performance reviews + Flexible hours + Learning budget + Mentorship + People focused support + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [AI Assisted Development][Amazon S3][Apache Airflow][Athena][AWS EKS][BigQuery][ClickHouse][Code review][DAG][Data Lake][Docker][ETL][FastAPI][Flask][GraphQL][Kubernetes][Linux][MacOS][Near-real-time][OLAP][ORC][Parquet][Partitioning][PostgreSQL][Presto][Python][Real Time][REST][Schema Design][Snowflake][Spark SQL][Terminal][Trino] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 35.62
-    },
-    {
-      "externalId": "lead-data-engineer-id71008-guadalajara-mexico-3467518",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258872567",
-      "title": "Lead Data Engineer ID71008",
-      "company": "AgileEngine",
-      "location": "Guadalajara, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Define file formats and schema * Design ETL pipelines * Design partitioning strategy * Drive AWS data stack architecture * Implement near real time processing * Lead developers and align engineering practices * Orchestrate batch workflows with DAGs * Own data pipeline * Partner with DevOps on requirements * Review pull requests and enforce code quality Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Health programs + Mentorship + People focused support + Performance and compensation reviews + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [Airflow][Athena][BigQuery][ClickHouse][DAG][Data Lake][Docker][EKS][ETL][FastAPI][Flask][GraphQL][Kubernetes][Linux][MacOS][Object storage][OLAP][ORC][Parquet][PostgreSQL][Presto][Python][REST][S3][Snowflake][Spark SQL][Task Orchestration][Trino] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 35.31
-    },
-    {
-      "externalId": "lead-data-engineer-id71008-leon-de-los-aldama-mexico-3467536",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874538",
-      "title": "Lead Data Engineer ID71008",
-      "company": "AgileEngine",
-      "location": "León de los Aldama, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect partitioning strategy * Define file formats and schema design * Design ETL pipelines * Design scheduled batch workflows dependencies and triggers * Drive AWS data lake and analytics stack * Implement near real time processing * Lead and guide developers * Orchestrate batch workflows with Airflow DAGs * Own data pipeline * Review pull requests and enforce code quality Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Remote work + Support tailored to location + Techtalks + Well-being programs Skills/Tech stack required: [Amazon Athena][Amazon S3][Apache Airflow][BigQuery][ClickHouse][DAG Workflow][Docker][EKS][ETL][FastAPI][Flask][GraphQL][Kubernetes][Object storage][OLAP][ORC][Parquet][PostgreSQL][Presto][Python][REST][Snowflake][Spark SQL][Trino] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Lead][Lead Data][Lead Data Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 34.98
+      "score": 34.56
     },
     {
       "externalId": "ingeniero-de-datos-ssis-senior-cdmx-mexico-3469204",
@@ -1295,7 +220,27 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.48
+      "score": 34.34
+    },
+    {
+      "externalId": "junior-data-engineer-chantillyherndon-va-3474953",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/darkwolfsolutions/jobs/7886212003",
+      "title": "Junior Data Engineer",
+      "company": "Job Application for Junior Data Engineer at Dark Wolf Solutions",
+      "location": "Chantilly/Herndon, VA",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Clean and transform datasets * Conduct data quality checks * Construct ETL/ELT pipelines * Deploy application modules with Docker * Execute security scanning * Ingest structured and unstructured datasets * Maintain data pipelines * Participate in agile activities * Perform code reviews * Perform data profiling * Perform unit testing * Refine backlog items * Run and maintain Docker containers * Validate data schemas Perks/Benefits: N/A Skills/Tech stack required: [Agile][Amazon S3][Apache Spark][AWS][Azure][Azure Storage][Bash][Code Analysis][Data Modeling][Dimensional Modeling][Docker][Kanban][NoSQL][Pandas][PostgreSQL][Python][Relational schema][Relational Schema Design][Schema Design][Scrum][SonarQube][SQL][Static Code Analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer][Entry Level Data Engineer][Junior Data Engineer]",
+      "postedAt": "2026-08-18T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 34.33
     },
     {
       "externalId": "data-engineer-toronto-3473768",
@@ -1314,7 +259,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.1
+      "score": 33.96
     },
     {
       "externalId": "senior-data-engineer-toronto-3473767",
@@ -1333,27 +278,43 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34
+      "score": 33.86
     },
     {
-      "externalId": "senior-data-analyst-id80370-quetzaltenango-guatemala-3467442",
+      "externalId": "databricks-developer-poland-remote-3475645",
       "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000258874944",
-      "title": "Senior Data Analyst ID80370",
-      "company": "AgileEngine",
-      "location": "QUETZALTENANGO, Guatemala",
+      "url": "https://apply.workable.com/j/71D2BA5C39/apply",
+      "title": "Databricks Developer",
+      "company": "Databricks Developer - Trinetix",
+      "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build BI dashboards * Ensure data quality * Ensure reporting accuracy * Improve reporting and process efficiency * Improve reporting automation * Maintain reporting solutions * Respond to ad hoc data requests * Support business metrics * Support reporting tools and datasets * Troubleshoot reporting issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [AWS][Data Modeling][ETL][Looker][Power BI][Python][R][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
+      "description": "Tasks: * Build PySpark jobs * Design data ingestion pipelines * Develop analytics pipelines * Develop data transformation pipelines * Develop unit tests for Databricks workloads * Implement Databricks workflows * Maintain Delta Lake solutions * Manage delta tables * Optimize Parquet storage formats * Tune Apache Spark performance Perks/Benefits: N/A Skills/Tech stack required: [Apache Spark][CI/CD][Databricks][Databricks Workflows][Data Ingestion][Data pipeline][Data pipeline orchestration][Data Transformation][Delta Lake][Delta Tables][Pandas][Parquet][Performance Tuning][Pipeline Orchestration][PySpark][Python][Unit Testing] Educational requirements: N/A Role(s): [Databricks Developer][Data Engineer][Developer][Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
       "skills": [
-        "Python",
-        "AWS"
+        "Python"
       ],
-      "aiRelevance": 0.06,
+      "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.15
+      "score": 33.74
+    },
+    {
+      "externalId": "change-agent-excellence-specialist-hvac-aqua-drives-graasten-dk-6300-3474967",
+      "source": "foorilla",
+      "url": "https://jobs.danfoss.com/job/Graasten-Change-Agent-&-Excellence-Specialist-%28HVAC-&-Aqua-Drives%29-6300/1366574357/",
+      "title": "Change Agent & Excellence Specialist (HVAC & Aqua Drives)",
+      "company": "Danfoss",
+      "location": "Graasten, DK, 6300",
+      "country": "Denmark",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate manual work * Build governance models * Create dashboards and insights * Design scalable processes * Develop decision frameworks * Drive stakeholder adoption * Enable data access * Implement AI solutions * Improve workflows Perks/Benefits: + Flexible schedule + Health insurance + Mentoring + Paid vacation + Pension plan + Training + Work-life balance Skills/Tech stack required: [Automation][Data Analysis][Data Visualization][Excel][Microsoft 365][Microsoft Copilot][N8n][Power BI][Power Platform][Process Improvement][Salesforce] Educational requirements: [Associate Degree][Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Change Agent][Operational Excellence Specialist][Specialist]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 33.11
     },
     {
       "externalId": "technical-data-analyst-data-warehouse-services-montreal-quebec-3473742",
@@ -1370,26 +331,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.89
+      "score": 32.75
     },
     {
-      "externalId": "data-engineer-mfd-cologne-germany-3471322",
+      "externalId": "sr-solutions-engineer-munich-germany-3475136",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Redcare-Pharmacy/744000144108319-data-engineer-m-f-d-",
-      "title": "Data Engineer (m/f/d)",
-      "company": "Redcare-Pharmacy",
-      "location": "Not specified",
-      "country": "Unknown",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8721005002",
+      "title": "Sr. Solutions Engineer",
+      "company": "Sr. Solutions Engineer - Databricks",
+      "location": "Munich, Germany",
+      "country": "Germany",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply CI CD practices in data projects * Build scalable data pipelines * Collaborate with teams on data needs * Enhance data architecture * Improve performance scalability and data quality * Process and transform large datasets Perks/Benefits: + Employee discount + Mental health support + Onboarding program + Training and development + Work from home Skills/Tech stack required: [Apache Flink][Apache Kafka][Apache Spark][Azure][CI/CD][Databricks][Java][Python][Scala][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "description": "Tasks: * Advise on big data analytics architecture * Author reference architectures * Contribute to technical community * Create demo applications * Deliver technical propositions * Develop Spark based integrations * Identify customer pain points * Perform hands-on evaluations * Present data engineering solutions * Provide technical value to clients Perks/Benefits: N/A Skills/Tech stack required: [Apache Spark][Big Data][Big data analytics][Cloud Computing][Data analytics][Data Engineering][Proof of Concept][Python][Solution architecture] Educational requirements: N/A Role(s): [Architect][Engineer][Solutions Architect][Solutions Engineer]",
       "postedAt": "2026-08-18T00:00:00.000Z",
       "skills": [
         "Python"
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.96
+      "score": 32.31
     }
   ]
 }
