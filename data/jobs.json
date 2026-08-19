@@ -1,27 +1,22 @@
 {
-  "generatedAt": "2026-08-19T13:13:59.288Z",
+  "generatedAt": "2026-08-19T15:51:03.037Z",
   "jobs": [
     {
-      "externalId": "senior-ai-agent-engineer-mexico-3476200",
+      "externalId": "ai-for-science-residency-machine-learning-resident-germany-berlin-berlin-united-kingdom-cambridgeshire-cambridge-netherlands-noord-holland-amst-3477033",
       "source": "foorilla",
-      "url": "https://www.wizeline.ai/careers/job?gh_jid=8139379",
-      "title": "Senior AI Agent Engineer",
-      "company": "Wizeline",
-      "location": "Mexico",
-      "country": "Mexico",
+      "url": "https://apply.careers.microsoft.com/careers/apply?pid=/careers/job/1970393556871066",
+      "title": "AI for Science Residency - Machine Learning Resident",
+      "company": "Careers at Microsoft",
+      "location": "Germany, Berlin, Berlin; United Kingdom, Cambridgeshire, Cambridge; Netherlands, Noord-Holland, Amsterdam",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build retrieval-augmented generation pipelines * Design multi step reasoning pipelines * Implement security guardrails and PII protection * Integrate agents with business systems * Monitor agents and run iterative tuning * Optimize agent performance and reliability * Orchestrate and plan LLM tool use Perks/Benefits: + Flexible work culture + Global opportunities + Professional development + Vibrant community Skills/Tech stack required: [Agents SDK][API Design][Automated Evaluation][Caching][CI/CD][Containerization][CrewAI][Debugging][Embedding][Evaluation][Function Calling][Go][GPU][GPU infrastructure][Langchain][Langgraph][Model selection][Node.js][OpenAI Agents][OpenAI Agents SDK][Pinecone][Prompt engineering][Python][Retrieval-Augmented Generation][Semantic Search][Testing][Tool-Calling][TypeScript][Weaviate] Educational requirements: N/A Role(s): [Agent Engineer][AI/Agent Engineer][Engineer][Senior AI Agent Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
+      "description": "Tasks: * Build data generation model training and inference infrastructure * Collaborate with domain experts on metrics and benchmarks * Develop machine learning models for materials science * Drive machine learning research agenda for materials * Publish technical papers and presentations * Stay current with machine learning research developments Perks/Benefits: + Interdisciplinary collaboration + Ongoing professional development + Research publications Skills/Tech stack required: [Coding][Data Generation][Generative Models][Inference][Machine Learning][Model Training][Software development] Educational requirements: [PhD] Role(s): [Machine Learning Researcher][Machine Learning Resident][Researcher]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0.67,
       "visaSponsored": false,
-      "score": 54.16
+      "score": 46.95
     },
     {
       "externalId": "aiml-engineer-dearborn-michigan-usa-3470361",
@@ -42,7 +37,27 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 44.95
+      "score": 44.84
+    },
+    {
+      "externalId": "research-scientist-intern-ai-cyber-security-safety-msl-trust-safety-phd-menlo-park-ca-3477234",
+      "source": "foorilla",
+      "url": "https://www.metacareers.com/profile/job_details/1027438186737957",
+      "title": "Research Scientist Intern, AI, Cyber Security, Safety — MSL Trust & Safety (PhD)",
+      "company": "Meta",
+      "location": "Menlo Park, CA",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate vulnerability patching * Develop AI security techniques * Develop methodologies for model cyber probing * Evaluate cyber capabilities of frontier models * Leverage frontier AI models for vulnerability detection * Red team AI systems for safety risks Perks/Benefits: + Mentorship + Opportunity to publish Skills/Tech stack required: [Agentic Systems][AI Safety][AI Security][Artificial Intelligence][Cybersecurity][Deep learning][Language Models][Language Processing][Large Language Models][Machine Learning][Model Evaluation][Multimodal Models][Natural Language][Natural Language Processing][Patch Management][PyTorch][Red Teaming][Trust and Safety][Vulnerability Detection] Educational requirements: [Doctor of Philosophy][PhD] Role(s): [Intern][Research Scientist][Research Scientist Intern][Scientist][Scientist Intern]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "PyTorch",
+        "NLP"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 42.36
     },
     {
       "externalId": "software-engineer-intent-translation-oxford-england-united-kingdom-3476048",
@@ -62,28 +77,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 40.46
-    },
-    {
-      "externalId": "senior-software-engineer-fullstack-mexico-3472014",
-      "source": "foorilla",
-      "url": "https://jobs.lever.co/coderpad/7367bdea-c6a9-4bb8-991b-63fbb05a02bc",
-      "title": "Senior Software Engineer, Fullstack",
-      "company": "CoderPad",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and ship fullstack product features * Build deterministic internal tooling for safe repeatable execution * Design APIs and data models * Develop streaming AI user experiences * Drive runbook reliability improvements * Implement frontend user interface features * Implement tool function calling patterns * Improve real time AI powered interview experiences * Integrate LLM providers and manage latency cost reliability * Lead and mentor through code review * Maintain observability monitoring alerting and incident follow up * Participate in on-call operations * Plan and deliver technical debt and architecture initiatives Perks/Benefits: + Documentation Focus + On-call rotation + Remote work Skills/Tech stack required: [API Design][AWS][Backend Development][Code review][Containerization][Cost Optimization][Datadog][Data Modeling][Debugging][Deterministic systems][Firebase Realtime Database][Frontend Development][Fullstack development][Function Calling][GCP][GitLab CI][GraphQL][Incident Response][JavaScript][LaunchDarkly][LLM integration][Monitoring][Observability][OpenAI API][PostgreSQL][Prompt engineering][Python][React][Realtime Database][Redis][Ruby on Rails][Runbooks][Sidekiq][Streaming][Testing][Token Cost][Token Cost Optimization][Tool-Calling][TypeScript] Educational requirements: N/A Role(s): [Developer][Engineer][Fullstack Developer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "AWS"
-      ],
-      "aiRelevance": 0.21,
-      "visaSponsored": false,
-      "score": 39.95
+      "score": 40.35
     },
     {
       "externalId": "senior-data-scientist-ai-engineering-dublin-ireland-3476242",
@@ -104,7 +98,28 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 39.17
+      "score": 39.06
+    },
+    {
+      "externalId": "data-engineer-consultant-amsterdam-nh-netherlands-3478306",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Sia/744000144270886-data-engineer-consultant-",
+      "title": "Data Engineer Consultant -",
+      "company": "Sia",
+      "location": "Amsterdam, NH, Netherlands",
+      "country": "Netherlands",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines * Create server side tools * Deploy applications with CI/CD * Develop ETL scripts * Develop infrastructure as code * Develop REST API server * Implement application security features * Implement data storage and compute architecture * Manage code lifecycle from development to deployment * Manage container orchestration * Monitor and optimize cloud costs * Set up cloud role management * Support deployment of machine learning solutions Perks/Benefits: + Diversity + Knowledge sharing + Well-being Skills/Tech stack required: [“as-code”][AWS][Azure][Big Data][Certificate management][CI/CD][Credential Management][Docker][ETL][GCP][GitLab][HTTPS][Infrastructure as Code][Kubernetes][MongoDB][OAuth][OAuth2][OAuth 2.0][PostgreSQL][Python][REST API][SQL][Terraform] Educational requirements: [Master of Engineering][Master of Science] Role(s): [Consultant][Data Engineer][Data Engineer Consultant][Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.21,
+      "visaSponsored": false,
+      "score": 38.43
     },
     {
       "externalId": "technical-program-manager-ml-irvine-ca-3472649",
@@ -123,29 +138,66 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.32
+      "score": 38.21
     },
     {
-      "externalId": "junior-ai-software-engineer-chantillyherndon-va-3475079",
+      "externalId": "senior-data-engineer-consultant-brussel-belgium-3478304",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/darkwolfsolutions/jobs/7886153003",
-      "title": "Junior AI Software Engineer",
-      "company": "Job Application for Junior AI Software Engineer at Dark Wolf Solutions",
-      "location": "Chantilly/Herndon, VA",
+      "url": "https://jobs.smartrecruiters.com/Sia/744000144289799-senior-data-engineer-consultant-",
+      "title": "Senior Data Engineer Consultant",
+      "company": "Sia",
+      "location": "Brussel, Belgium",
+      "country": "Belgium",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Co-design data engineering solutions * Design and implement cloud data solutions * Design data architectures and pipelines * Develop data engineering offerings * Develop data models and optimize database solutions * Drive business development proposals and partnerships * Enable CI CD for data services and infrastructure * Implement batch, streaming, and real-time data integration * Implement data ingestion processing and delivery * Lead client data engineering engagements * Maintain DataOps practices * Manage stakeholders * Represent company at professional events * Supervise and mentor consultants Perks/Benefits: + Flexible working arrangements + International project exposure + Knowledge sharing + Training and development Skills/Tech stack required: [Apache Spark][“as-code”][AWS][Batch Processing][CI/CD][Cloud platform][Cost Optimization][Data Architecture][Databricks][Data integration][Data Modeling][DataOps][Data Pipelines][Google Cloud][Google Cloud Platform][Graph Databases][IAM][Infrastructure as Code][Kafka][Microsoft Azure][NoSQL][Real Time][Real-time Data][Relational databases][Snowflake][Streaming processing][Time Series][Time-series databases] Educational requirements: [Bachelor of Science][Master of Engineering][Master of Science] Role(s): [Consultant][Data Engineer Consultant][Data Engineering][Data Engineering Consultant][Engineering Consultant][Senior Data Engineer][Senior Data Engineer Consultant]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 37.2
+    },
+    {
+      "externalId": "data-engineer-ii-us-rhode-island-providence-3478610",
+      "source": "foorilla",
+      "url": "https://textron.taleo.net/careersection/textron/jobdetail.ftl?job=344435",
+      "title": "Data Engineer II",
+      "company": "Find a Career - Textron",
+      "location": "US-Rhode Island-Providence",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Assist with AI and machine learning pipeline deployment * Build and maintain ML data ingestion pipelines * Conduct code reviews * Containerize application modules with Docker * Develop Bash scripts * Develop Python scripts * Participate in agile ceremonies * Perform unit testing * Refine backlog items * Run automated security scanning Perks/Benefits: N/A Skills/Tech stack required: [Agile][AWS][Azure][Bash][Code Analysis][Docker][Feature Engineering][Kanban][Machine Learning][Prompt engineering][Python][PyTorch][Scrum][SonarQube][Static Code Analysis][TensorFlow][Unit Testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Software Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
+      "description": "Tasks: * Design data pipelines for ingestion transformation delivery * Develop data models storage solutions metadata management * Ensure data systems security compliance regulatory standards * Gather requirements analyze data needs translate to solutions * Implement data validation quality testing * Maintain version control for engineering objects * Mentor junior data engineers * Optimize data workflows for performance reliability cost * Oversee ETL and ELT deployment maintenance * Troubleshoot complex data issues implement root cause solutions Perks/Benefits: + 401k matching + Dental insurance + Health insurance + Onsite fitness center + Relocation assistance + Tuition reimbursement Skills/Tech stack required: [Airflow][AWS][Azure][Azure DevOps][Azure Synapse][Batch Processing][BigQuery][CI/CD][Cloud platform][Databricks][Data Modeling][Data Quality][Data Validation][Data Warehousing][ELT][ETL][Git][Google Cloud][Google Cloud Platform][Java][MongoDB][NoSQL][PostgreSQL][Python][Relational databases][Scala][Snowflake][SQL][Streaming][Test automation] Educational requirements: N/A Role(s): [Data Engineer][Data Engineering][Data Engineering Specialist][Engineer][Engineering Specialist][Specialist]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
       "skills": [
         "Python",
-        "PyTorch",
-        "TensorFlow",
         "AWS"
       ],
-      "aiRelevance": 0.24,
+      "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 37.46
+      "score": 36.67
+    },
+    {
+      "externalId": "consultant-data-engineer-google-cloud-gcp-rotterdam-amsterdam-netherlands-3478288",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Sia/744000144277909-consultant-data-engineer-google-cloud-gcp-",
+      "title": "Consultant Data Engineer - Google Cloud (GCP)",
+      "company": "Sia",
+      "location": "Rotterdam, Amsterdam, Netherlands",
+      "country": "Netherlands",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build containerized applications * Build data pipelines * Create CI/CD pipelines * Deploy applications and data science projects * Design cloud architecture * Develop ETL scripts * Develop Python server-side tools * Develop REST API * Implement cost optimization * Implement infrastructure-as-code * Implement OAuth2 authentication * Integrate and deploy ML services * Manage certificate and HTTPS security * Manage IAM and security * Manage Kubernetes clusters Perks/Benefits: + Diversity and knowledge-sharing + Team collaboration + Well-being focus Skills/Tech stack required: [Access Management][“as-code”][BigQuery][Certificate management][CI/CD][Cloud platform][Cloud Storage][Cost Optimization][DevOps][Docker][ETL][GCP][GitLab][Google Cloud][Google Cloud Platform][HTTPS][Identity and access][Identity and Access Management][Infrastructure as Code][Kubernetes][MongoDB][NoSQL][OAuth 2.0][PostgreSQL][Python][REST API][SQL][Terraform] Educational requirements: [Bachelor of Science][Master of Engineering][Master of Science] Role(s): [Cloud)][Cloud Data Engineer][Consultant][Data Engineer][Data Engineering][Data Engineering Consultant][Engineer][Engineering Consultant]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 36.53
     },
     {
       "externalId": "analytics-architect-usa-united-states-3476349",
@@ -165,7 +217,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.67
+      "score": 35.56
     },
     {
       "externalId": "senior-data-engineer-copenhagen-denmark-arne-jacobsens-3476590",
@@ -184,7 +236,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.24
+      "score": 35.13
     },
     {
       "externalId": "data-governance-quality-engineer-latam-3475602",
@@ -201,7 +253,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.56
+      "score": 34.45
     },
     {
       "externalId": "ingeniero-de-datos-ssis-senior-cdmx-mexico-3469204",
@@ -220,27 +272,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.34
-    },
-    {
-      "externalId": "junior-data-engineer-chantillyherndon-va-3474953",
-      "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/darkwolfsolutions/jobs/7886212003",
-      "title": "Junior Data Engineer",
-      "company": "Job Application for Junior Data Engineer at Dark Wolf Solutions",
-      "location": "Chantilly/Herndon, VA",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Clean and transform datasets * Conduct data quality checks * Construct ETL/ELT pipelines * Deploy application modules with Docker * Execute security scanning * Ingest structured and unstructured datasets * Maintain data pipelines * Participate in agile activities * Perform code reviews * Perform data profiling * Perform unit testing * Refine backlog items * Run and maintain Docker containers * Validate data schemas Perks/Benefits: N/A Skills/Tech stack required: [Agile][Amazon S3][Apache Spark][AWS][Azure][Azure Storage][Bash][Code Analysis][Data Modeling][Dimensional Modeling][Docker][Kanban][NoSQL][Pandas][PostgreSQL][Python][Relational schema][Relational Schema Design][Schema Design][Scrum][SonarQube][SQL][Static Code Analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer][Entry Level Data Engineer][Junior Data Engineer]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "AWS"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 34.33
+      "score": 34.23
     },
     {
       "externalId": "data-engineer-toronto-3473768",
@@ -259,7 +291,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.96
+      "score": 33.85
+    },
+    {
+      "externalId": "software-engineer-infrastructure-athens-greece-3477151",
+      "source": "foorilla",
+      "url": "https://www.metacareers.com/profile/job_details/904881105542003",
+      "title": "Software Engineer, Infrastructure",
+      "company": "Meta",
+      "location": "Athens, Greece",
+      "country": "Greece",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze and optimize code quality efficiency performance * Architect scalable efficient systems * Collaborate with cross-functional teams to build application experiences * Drive technical initiatives goals and mentorship * Establish component ownership end to end * Identify and resolve performance and scalability issues * Implement custom user interfaces * Provide code review feedback * Reduce technical debt Perks/Benefits: N/A Skills/Tech stack required: [Agent Orchestration][AI tools][C#][C++][Code review][Hack][Java][JavaScript][Monitoring][Prompt engineering][Python][Technical Debt][Testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Engineer][Infrastructure][Infrastructure Engineer][Software Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.79
     },
     {
       "externalId": "senior-data-engineer-toronto-3473767",
@@ -278,7 +329,46 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.86
+      "score": 33.75
+    },
+    {
+      "externalId": "consultant-data-engineer-google-cloud-gcp-bruxelles-bruxelles-belgium-3478284",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Sia/744000144289231-consultant-data-engineer-google-cloud-gcp-",
+      "title": "Consultant Data Engineer - Google Cloud (GCP)",
+      "company": "Sia",
+      "location": "Bruxelles, Bruxelles, Belgium",
+      "country": "Belgium",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines * Build REST API services * Deploy applications using containerization * Design cloud data and AI solutions * Develop ETL scripts * Develop Python server-side tools * Implement IAM and security protections * Maintain infrastructure-as-code * Manage CI/CD pipelines Perks/Benefits: N/A Skills/Tech stack required: [CI/CD][Cloud platform][Docker][ETL][GCP][Google Cloud][Google Cloud Platform][HTTPS][IAM][Kubernetes][MongoDB][OAuth][OAuth2][PostgreSQL][Python][REST API][SQL][Terraform] Educational requirements: [Master of Science] Role(s): [Cloud)][Cloud Data Engineer][Data Engineer][Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.72
+    },
+    {
+      "externalId": "data-engineer-greater-london-united-kingdom-3477492",
+      "source": "foorilla",
+      "url": "https://hdow.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/248894",
+      "title": "Data Engineer",
+      "company": "Cantor Fitzgerald/BGC",
+      "location": "Greater London, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain data pipelines * Collaborate with data scientists and analysts * Create APIs and tables for integrations * Design and implement data architecture * Develop and manage metadata * Ensure data security and privacy compliance * Establish and monitor data quality gates * Implement data lineage tracking and permissions * Monitor and optimize data pipeline performance Perks/Benefits: N/A Skills/Tech stack required: [Access Control][Azure][Databricks][Data Lineage][Data Modeling][Data Quality][Delta Lake][ELT][ETL][Kdb Plus][Permissions][Python][Series data][Snowflake][SQL][Time Series][Time Series Data] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.66
     },
     {
       "externalId": "databricks-developer-poland-remote-3475645",
@@ -297,7 +387,44 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.74
+      "score": 33.63
+    },
+    {
+      "externalId": "ai-data-governance-consultant-mfx-austria-remote-3477969",
+      "source": "foorilla",
+      "url": "https://join.com/companies/virtual-identity/16597731-ai-data-governance-consultant-m-f-x",
+      "title": "AI Data Governance Consultant (m/f/x)",
+      "company": "Virtual Identity AG",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Advise on data security and governance for AI initiatives * Advise on secure data architecture * Assess AI data security risks * Define data access control requirements * Design governance framework for AI data flows * Guide model and data lineage governance * Provide data engineering perspective on data warehousing governance * Support risk assessment and mitigation planning * Support sales conversations and client engagement closure Perks/Benefits: N/A Skills/Tech stack required: [Access Control][Client consulting][Cloud Security][Data Classification][Data Engineering][Data Governance][Data Lineage][Data Security][Data Warehousing][Risk Assessment][Secure Architecture] Educational requirements: N/A Role(s): [AI][AI Data Governance Consultant][Consultant][Data Governance][Data Governance Consultant][Governance Consultant]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 33.55
+    },
+    {
+      "externalId": "full-stack-software-developer-it-ca-osi-2026-208-grae-geneva-geneva-switzerland-3478631",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/CERN/744000144248640-full-stack-software-developer-it-ca-osi-2026-208-grae-",
+      "title": "Full-Stack Software Developer (IT-CA-OSI-2026-208-GRAE)",
+      "company": "CERN",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with external institutes and partners on open science * Deploy and operate services on Kubernetes * Develop frontend and backend features * Support reusable computational data analysis practices Perks/Benefits: + Formal training + Hybrid work + Language classes + On-the-job training + Paid leave Skills/Tech stack required: [Docker][Go][Helm][Kubernetes][Python][React] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.25
     },
     {
       "externalId": "change-agent-excellence-specialist-hvac-aqua-drives-graasten-dk-6300-3474967",
@@ -314,24 +441,24 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.11
+      "score": 33
     },
     {
-      "externalId": "technical-data-analyst-data-warehouse-services-montreal-quebec-3473742",
+      "externalId": "data-center-technician-ii-third-party-data-centers-zurich-switzerland-3477191",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/aylo/jobs/8614017002",
-      "title": "Technical Data Analyst - Data Warehouse Services",
-      "company": "Job Application for Technical Data Analyst - Data Warehouse Services at Aylo Careers",
-      "location": "Not specified",
-      "country": "Unknown",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/139750080260252358-data-center-technician-ii-third-party-data-centers",
+      "title": "Data Center Technician II, Third Party Data Centers",
+      "company": "Data Center Technician II, Third Party Data Centers — Google Careers",
+      "location": "Zürich, Switzerland",
+      "country": "Switzerland",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze data structures and content for business intelligence * Collaborate with stakeholders to define reporting strategy and requirements * Coordinate and maintain development roadmaps * Develop and optimize SQL queries * Engage business partners to clarify data needs * Estimate time and effort with database administrators and developers * Investigate data issues and reporting structure changes * Serve as subject matter expert in business domains and reporting tools * Track project status identify risks and resolve issues Perks/Benefits: + Hybrid work environment + Remote work opportunity Skills/Tech stack required: [Business Intelligence][Customer support][Data Cubes][Data Flow][Data Modeling][Excel][Microsoft Fabric][Power BI][Reporting][SQL][SQL Server] Educational requirements: N/A Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
-      "postedAt": "2026-08-18T00:00:00.000Z",
+      "description": "Tasks: * Deploy data center infrastructure * Diagnose networking protocol issues * Disassemble end-of-life equipment * Maintain data security and integrity * Operate data center infrastructure * Perform component level IT equipment repairs * Perform preventative maintenance * Track media for data security compliance * Troubleshoot server hardware issues Perks/Benefits: N/A Skills/Tech stack required: [Linux][Networking][Preventative maintenance][Server Hardware][Troubleshooting] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Center Technician][Technician]",
+      "postedAt": "2026-08-19T00:00:00.000Z",
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.75
+      "score": 32.35
     },
     {
       "externalId": "sr-solutions-engineer-munich-germany-3475136",
@@ -350,7 +477,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.31
+      "score": 32.2
     }
   ]
 }
