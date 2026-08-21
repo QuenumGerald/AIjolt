@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T15:52:27.843Z",
+  "generatedAt": "2026-08-21T19:01:17.755Z",
   "jobs": [
     {
       "externalId": "ai-engineer-united-states-3499515",
@@ -26,7 +26,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 57.23
+      "score": 57.1
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3496989",
@@ -52,7 +52,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.65
+      "score": 55.52
     },
     {
       "externalId": "juniormiddle-computer-vision-engineer-id72410-west-palm-beach-united-states-3502342",
@@ -72,7 +72,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 51.38
+      "score": 51.25
     },
     {
       "externalId": "sr-systems-engineer-ai-kansas-city-ks-united-states-3500603",
@@ -91,7 +91,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 44.65
+      "score": 44.52
     },
     {
       "externalId": "ai-intern-woodridge-il-united-states-3499522",
@@ -113,7 +113,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 44.34
+      "score": 44.21
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -136,27 +136,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 44.02
-    },
-    {
-      "externalId": "senior-ai-platform-engineer-lisbon-pt-3500629",
-      "source": "foorilla",
-      "url": "https://careers.chainiq.com/job/Lisbon-Senior-AI-Platform-Engineer/1428572033/",
-      "title": "Senior AI Platform Engineer",
-      "company": "chainiqgro",
-      "location": "Lisbon, PT",
-      "country": "Portugal",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply governance for reproducibility version management auditability compliance * Automate operational workflows across AI lifecycle * Build production AI platform capabilities * Create automated model deployment pipelines * Define deployment strategies for canary releases A B testing progressive rollouts * Deploy and operate production AI systems * Implement model evaluation frameworks * Implement observability metrics logging tracing * Manage versioning testing rollout and rollback * Set up monitoring for models and inference services * Support agentic software development lifecycle with evaluation and automation Perks/Benefits: N/A Skills/Tech stack required: [A/B][A/B Testing][AI Agents][“as-code”][Audit Logging][Automation][B testing][Canary Releases][CI/CD][Containerization][Deployment Pipelines][Distributed Systems][Inference][Infrastructure as Code][Kubernetes][Logging][Machine Learning][Metrics][Model Deployment][Model Evaluation][Observability][Operational telemetry][Progressive rollouts][Release automation][Retrieval systems][Scalability][Security][Tracing][Version control] Educational requirements: N/A Role(s): [AI Platform Engineer][Engineer][Platform Engineer][Senior AI Platform Engineer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "MLOps",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 41.79
+      "score": 43.89
     },
     {
       "externalId": "software-engineer-iii-cloud-ai-warsaw-poland-3500258",
@@ -176,7 +156,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.09
+      "score": 39.96
     },
     {
       "externalId": "data-governance-enablement-manager-miami-lakes-fl-united-states-3495258",
@@ -195,7 +175,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.53
+      "score": 39.4
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -217,7 +197,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.65
+      "score": 38.52
     },
     {
       "externalId": "tax-data-systems-and-process-analyst-chicago-il-usa-3501612",
@@ -237,7 +217,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.57
+      "score": 36.44
     },
     {
       "externalId": "mid-level-data-engineer-work-from-home-va-united-states-3499762",
@@ -258,7 +238,41 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.48
+      "score": 36.35
+    },
+    {
+      "externalId": "data-engineer-dublin-ireland-3503429",
+      "source": "foorilla",
+      "url": "https://fulcrumdigital.zohorecruit.com/jobs/Careers/613047000062236709",
+      "title": "Data Engineer",
+      "company": "Fulcrum Digital",
+      "location": "Dublin, Ireland",
+      "country": "Ireland",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze production issues and perform root cause analysis * Define and implement data quality frameworks metrics and controls * Develop and validate data pipelines with PySpark and Databricks * Execute source to target reconciliation * Identify investigate and resolve data anomalies * Implement proactive monitoring and automated quality checks * Monitor data across Databricks Lakehouse * Optimize data processing jobs for performance and scalability * Perform end to end data pipeline validation * Run data quality checks and monitoring * Track and manage data defects through resolution * Validate business rules and transformation logic against source systems * Write advanced SQL for data profiling and root cause analysis Perks/Benefits: N/A Skills/Tech stack required: [Amazon Web Services][Apache Airflow][Apache Kafka][Azure][CI/CD][Cloud platform][Databricks][Data Lake][Data Monitoring][Data Observability][Data Testing][Data Warehouse][Delta Lake][Dimensional Modeling][ELT][ETL][Google Cloud][Google Cloud Platform][Hadoop][HDFS][Hive][Lakehouse][PySpark][Snowflake Schema][Spark][SQL][Star Schema][Unity Catalog][Web Services] Educational requirements: N/A Role(s): [Data Engineer][Data Quality][Data Quality Engineer][Engineer][Quality Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 35.56
+    },
+    {
+      "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
+      "source": "foorilla",
+      "url": "https://reflexiveconcepts.catsone.com/careers/74775/jobs/16846904-Technical-AI-Requirements-Systems-Engineer",
+      "title": "Technical AI Requirements Systems Engineer",
+      "company": "Technical AI Requirements Systems Engineer",
+      "location": "Annapolis Junction, MD",
+      "country": "Moldova",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with customers to elicit and document requirements * Conduct functional testing * Define low-level software requirements * Evaluate AI architectures and model performance * Oversee planning design and implementation * Present recommended AI approaches and tradeoffs * Serve as technical liaison across cross functional teams * Translate requirements into Jira user stories and epics * Validate functional requirements and new features Perks/Benefits: N/A Skills/Tech stack required: [Agile][Amazon Web Services][Cloud Architecture][Java][JavaScript][Jira][Machine Learning][Microservices][REST][Web Services] Educational requirements: N/A Role(s): [Engineer][Software Engineer][Systems Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0.12,
+      "visaSponsored": false,
+      "score": 35.31
     },
     {
       "externalId": "test-automation-engineer-bucharest-romania-3502292",
@@ -275,7 +289,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.42
+      "score": 35.29
+    },
+    {
+      "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
+      "source": "foorilla",
+      "url": "https://apply.jobappnetwork.com/clients/14637/posting/11107322/",
+      "title": "Sr Business Data Analyst",
+      "company": "Talentreef",
+      "location": "Westerville, OH, US",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply Python or R for reporting and automation * Build data visualization and back end data models * Clean model and analyze data with SQL and DAX * Create customized analytics solutions for business teams * Design and implement ETL data pipelines * Develop Power BI reports * Implement standard reporting tools * Lead knowledge sharing sessions on data literacy * Manage analytics projects across multiple sites * Provide point of contact for Power BI and analytics community * Support site startups with analytics tools and reporting frameworks Perks/Benefits: + Bonus plan + Dental insurance + Discounted stock purchase + Medical insurance + Paid time off + Prescription Coverage + Vision insurance Skills/Tech stack required: [Dashboard Development][Data Modeling][Data Pipelines][Data Visualization][DAX][ETL][Power BI][Python][R][SQL][Statistical Analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Business Data Analyst][Data Analyst][Senior Business Data Analyst]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.99
     },
     {
       "externalId": "senior-data-engineer-python-con-ingles-madrid-md-spain-3501877",
@@ -294,7 +327,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.3
+      "score": 34.17
     },
     {
       "externalId": "computer-scientist-i-las-vegas-nv-united-states-3495218",
@@ -311,7 +344,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.3
+      "score": 34.17
+    },
+    {
+      "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
+      "source": "foorilla",
+      "url": "https://newgentechnologies.catsone.com/careers/52695/jobs/16846881-Sr-Software-Developer",
+      "title": "Sr. Software Developer",
+      "company": "Sr. Software Developer",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Coach junior team members * Debug test and deploy across environments * Design and develop software components * Develop and maintain database for data processing * Extract, transform and load data * Follow software development standards * Implement Continuous Integration and Continuous Delivery * Improve software integration processes * Interface with cross-functional teams * Participate in code reviews * Participate in design reviews * Research data sources and technical solutions * Translate requirements into implementable solutions Perks/Benefits: N/A Skills/Tech stack required: [CI/CD][Debugging][Deployment][Development Life Cycle][ETL][Python][Software development][Software Development Life Cycle][SQL][Testing] Educational requirements: N/A Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.99
     },
     {
       "externalId": "data-engineer-google-maps-mountain-view-ca-usa-3499759",
@@ -330,7 +382,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.96
+      "score": 32.83
     },
     {
       "externalId": "data-analyst-salt-lake-city-ut-united-states-3495876",
@@ -347,24 +399,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.44
-    },
-    {
-      "externalId": "ai-trainer-freelance-data-annotator-ireland-remote-3501319",
-      "source": "foorilla",
-      "url": "https://apply.workable.com/j/E411EF4573/apply",
-      "title": "AI Trainer - Freelance Data Annotator",
-      "company": "AI Trainer - Freelance Data Annotator - Mindrift - Data annotation",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Compare responses * Evaluate factual accuracy * Identify and flag incorrect sensitive inappropriate unclear content * Label or classify content * Review provided data Perks/Benefits: + Flexible schedule + Freelance work + Part-time work + Portfolio Experience + Remote work Skills/Tech stack required: [Content Moderation][Data Annotation][English C1][Fact-checking][Instruction following][Logical reasoning][Quality Assurance] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Trainer][Annotator][Data Annotator][Trainer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.28
+      "score": 32.31
     },
     {
       "externalId": "data-engineer-intern-e-commerce-2027-summer-san-jose-california-united-states-3501574",
@@ -381,7 +416,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.26
+      "score": 32.13
+    },
+    {
+      "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
+      "source": "foorilla",
+      "url": "https://newgentechnologies.catsone.com/careers/52695/jobs/16846885-Data-Engineer",
+      "title": "Data Engineer",
+      "company": "Data Engineer",
+      "location": "Herndon, VA; Information Technology; Chantilly, VA; Information Technology; Chantilly, VA; Information Technology; Herndon, VA; Information Technology; McLean/Chantilly, VA; Information Technology; Chantilly, VA; Information Technology",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze data sources for accuracy * Build data pipelines * Design data models and schemas * Develop ETL workflows * Support production systems troubleshooting * Translate requirements into implementable solutions Perks/Benefits: N/A Skills/Tech stack required: [Database Management][Data Modeling][Data pipeline][ETL][Linux][PostgreSQL][Python][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 31.95
     }
   ]
 }
