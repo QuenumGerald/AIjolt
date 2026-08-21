@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T19:01:17.755Z",
+  "generatedAt": "2026-08-21T21:44:43.023Z",
   "jobs": [
     {
       "externalId": "ai-engineer-united-states-3499515",
@@ -26,7 +26,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 57.1
+      "score": 56.98
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3496989",
@@ -52,7 +52,29 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.52
+      "score": 55.4
+    },
+    {
+      "externalId": "senior-consultant-ai-data-engineering-microsoft-azure-all-genders-romania-3504137",
+      "source": "foorilla",
+      "url": "https://wavestone.career.softgarden.de/jobs/66894090/Senior-Consultant-AI-Data-Engineering---Microsoft-Azure-all-genders-/",
+      "title": "Senior Consultant AI Data Engineering - Microsoft Azure (all genders)",
+      "company": "Senior Consultant AI Data Engineering - Microsoft Azure (all genders) – Wavestone Germany AG",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Advise clients on target architectures and migrations * Build data pipelines and ETL ELT * Build data products for analytics and AI * Build scalable cloud data solutions * Create semantic data models * Design and implement data platforms * Design end to end data lifecycle architectures * Develop and integrate LLM-based applications * Develop conversational BI solutions * Develop lakehouse architectures * Establish best practices and reusable assets * Implement RAG architectures * Integrate AI agents into data engineering workflows * Lead data and AI workstreams Perks/Benefits: + Benefits platform + Continuing education + Flexible mobile working + Flexible working hours + German classes + Mindfulness training + Networking events + Private health insurance + Remote work option + Tailored vacation days Skills/Tech stack required: [AI Foundry][API][“as-code”][Azure AI][Azure AI Foundry][Azure Data][Azure Data Factory][Azure Synapse][Azure Synapse Analytics][CI/CD][Databricks][Data Factory][Data Modeling][Data Quality][Data Warehouse][DBT][ELT][ETL][Infrastructure as Code][Lakehouse][Language Models][Large Language Models][LLMOps][Microsoft Azure][Microsoft Fabric][MLOps][Power BI][Power Platform][PySpark][Python][RAG][Snowflake][SQL][Synapse Analytics] Educational requirements: N/A Role(s): [AI][AI Data Engineering][AI Data Engineering Consultant][AI Engineer][Consultant][Data Engineer][Data Engineering Consultant][Engineer][Engineering Consultant][Senior AI Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "MLOps"
+      ],
+      "aiRelevance": 0.72,
+      "visaSponsored": false,
+      "score": 51.81
     },
     {
       "externalId": "juniormiddle-computer-vision-engineer-id72410-west-palm-beach-united-states-3502342",
@@ -72,7 +94,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 51.25
+      "score": 51.13
     },
     {
       "externalId": "sr-systems-engineer-ai-kansas-city-ks-united-states-3500603",
@@ -91,7 +113,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 44.52
+      "score": 44.41
     },
     {
       "externalId": "ai-intern-woodridge-il-united-states-3499522",
@@ -113,7 +135,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 44.21
+      "score": 44.09
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -136,7 +158,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 43.89
+      "score": 43.78
     },
     {
       "externalId": "software-engineer-iii-cloud-ai-warsaw-poland-3500258",
@@ -156,7 +178,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.96
+      "score": 39.85
     },
     {
       "externalId": "data-governance-enablement-manager-miami-lakes-fl-united-states-3495258",
@@ -175,7 +197,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.4
+      "score": 39.29
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -197,7 +219,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.52
+      "score": 38.4
     },
     {
       "externalId": "tax-data-systems-and-process-analyst-chicago-il-usa-3501612",
@@ -217,7 +239,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.44
+      "score": 36.33
     },
     {
       "externalId": "mid-level-data-engineer-work-from-home-va-united-states-3499762",
@@ -238,7 +260,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.35
+      "score": 36.24
     },
     {
       "externalId": "data-engineer-dublin-ireland-3503429",
@@ -255,7 +277,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.56
+      "score": 35.44
     },
     {
       "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
@@ -272,7 +294,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 35.31
+      "score": 35.19
     },
     {
       "externalId": "test-automation-engineer-bucharest-romania-3502292",
@@ -289,7 +311,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.29
+      "score": 35.17
     },
     {
       "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
@@ -308,7 +330,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.99
+      "score": 34.87
+    },
+    {
+      "externalId": "computer-scientist-i-las-vegas-nv-united-states-3495218",
+      "source": "foorilla",
+      "url": "https://myjobs.adp.com/jt4currentopeningscx3/cx/job-details?reqId=5001220090006",
+      "title": "Computer Scientist I",
+      "company": "J...",
+      "location": "Las Vegas, NV, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Advise team on technical problems * Assist with system software maintenance * Assist with system sustainment activities * Design System and Software * Document design & implementation * Implement design through software coding * Interact with customers and project managers * Interpret customer requirements * Participate in design reviews * Plan integration testing * Plan system testing * Plan unit testing Perks/Benefits: + 401k plan + Dental insurance + Disability insurance + Flexible spending account + Health savings account + Life insurance + Medical insurance + Paid time off + Tuition reimbursement + Vision insurance Skills/Tech stack required: [Development Lifecycle][Integration Testing][Requirements Analysis][Software coding][Software development][Software Development Lifecycle][Systems engineering][System Testing][Technical documentation][Unit Testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Computer Scientist][Scientist]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 34.06
     },
     {
       "externalId": "senior-data-engineer-python-con-ingles-madrid-md-spain-3501877",
@@ -327,24 +366,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.17
-    },
-    {
-      "externalId": "computer-scientist-i-las-vegas-nv-united-states-3495218",
-      "source": "foorilla",
-      "url": "https://myjobs.adp.com/jt4currentopeningscx3/cx/job-details?reqId=5001220090006",
-      "title": "Computer Scientist I",
-      "company": "J...",
-      "location": "Las Vegas, NV, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Advise team on technical problems * Assist with system software maintenance * Assist with system sustainment activities * Design System and Software * Document design & implementation * Implement design through software coding * Interact with customers and project managers * Interpret customer requirements * Participate in design reviews * Plan integration testing * Plan system testing * Plan unit testing Perks/Benefits: + 401k plan + Dental insurance + Disability insurance + Flexible spending account + Health savings account + Life insurance + Medical insurance + Paid time off + Tuition reimbursement + Vision insurance Skills/Tech stack required: [Development Lifecycle][Integration Testing][Requirements Analysis][Software coding][Software development][Software Development Lifecycle][Systems engineering][System Testing][Technical documentation][Unit Testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Computer Scientist][Scientist]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 34.17
+      "score": 34.05
     },
     {
       "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
@@ -363,7 +385,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.99
+      "score": 33.87
     },
     {
       "externalId": "data-engineer-google-maps-mountain-view-ca-usa-3499759",
@@ -382,7 +404,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.83
+      "score": 32.72
     },
     {
       "externalId": "data-analyst-salt-lake-city-ut-united-states-3495876",
@@ -399,7 +421,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.31
+      "score": 32.2
     },
     {
       "externalId": "data-engineer-intern-e-commerce-2027-summer-san-jose-california-united-states-3501574",
@@ -416,7 +438,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.13
+      "score": 32.02
     },
     {
       "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
@@ -435,7 +457,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.95
+      "score": 31.84
     }
   ]
 }
