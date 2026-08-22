@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T07:04:14.731Z",
+  "generatedAt": "2026-08-22T09:47:48.287Z",
   "jobs": [
     {
       "externalId": "mlops-engineer-juno-beach-florida-usa-3505478",
@@ -21,7 +21,120 @@
       ],
       "aiRelevance": 0.91,
       "visaSponsored": false,
-      "score": 57.36
+      "score": 57.25
+    },
+    {
+      "externalId": "co-op-researcher-llms-computer-vision-markham-ontario-canada-3507055",
+      "source": "foorilla",
+      "url": "https://huaweicanada.recruitee.com/o/co-op-researcher-llms-computer-vision",
+      "title": "Co-op Researcher - LLMs & Computer Vision",
+      "company": "Huawei Technologies Canada Co., Ltd.",
+      "location": "Markham, Ontario, Canada",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Adapt and fine-tune models * Build multimodal reasoning pipelines * Develop image and video synthesis systems * Develop image and video understanding systems * Develop Large Language Model solutions * Develop vision language model solutions * Evaluate model performance * Optimize models for mobile constraints * Perform prompt engineering * Research and develop computer vision technology Perks/Benefits: N/A Skills/Tech stack required: [Adversarial Networks][Agentic Workflows][Blender][Computer Vision][Deep learning][Fine Tuning][Gemma][Generative Adversarial Networks][Git][Human Feedback][Image Generation][Language Models][Large Language Models][Learning from Human Feedback][Llama][Machine Learning][Model Adaptation][Multimodal Learning][OpenCV][Photoshop][Post-training][Preference optimization][Prompt engineering][Python][PyTorch][Qwen][Reinforcement Learning][Reinforcement Learning from Human Feedback][Reinforcement Learning Post Training][Stable Diffusion][Supervised Fine Tuning][Video Generation][Vision-language][Vision Language Models] Educational requirements: N/A Role(s): [Computer Vision Researcher][Machine Learning Researcher][Research Co Operative Researcher][Researcher][Vision Researcher]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "LLM",
+        "Computer Vision"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.72
+    },
+    {
+      "externalId": "senior-aiml-engineer-genai-aws-ukraine-3506996",
+      "source": "foorilla",
+      "url": "https://jobs.lever.co/provectus/c33189c6-3584-46a7-b362-6bf902d49ba0",
+      "title": "Senior AI/ML Engineer (GenAI, AWS)",
+      "company": "Provectus",
+      "location": "Ukraine",
+      "country": "Ukraine",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and optimize RAG systems * Build evaluation harness * Build production GenAI systems * Conduct model evaluation and improve failure modes * Deploy AI systems to AWS * Implement LLMOps and AgentOps * Integrate AI components into backend services and RESTful APIs * Mentor AI engineers and conduct code reviews * Provide documentation runbooks and handover * Write production code across stack Perks/Benefits: + Access to premium subscriptions + Conference attendance + Equipment provided + Internal training programs + Paid public holidays + Paid sick leave + Paid vacation + Private medical insurance + Remote-friendly culture Skills/Tech stack required: [Agentic Orchestration][AgentOps][Amazon ECR][Amazon ECS][Amazon S3][Amazon SQS][Anthropic API][“as-code”][AWS Bedrock][AWS Lambda][Caching][CI/CD][Containers][Cost Optimization][Drift Detection][Evaluation Harness][Graph orchestration][Infrastructure as Code][Kubernetes][Latency optimization][LLMOps][Model Monitoring][OpenAI API][Prompt management][Python][RAG][Regression testing][State management][Tool use][TypeScript][Version Management] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Senior AI Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.6
+    },
+    {
+      "externalId": "ai-application-engineer-ai-products-llm-rag-mfd-berlin-berlin-germany-3507215",
+      "source": "foorilla",
+      "url": "https://machinelearningreply.recruitee.com/o/ai-application-engineer-ai-products-llm-rag-mfd-4",
+      "title": "AI Application Engineer – AI Products (LLM & RAG) (m/f/d)",
+      "company": "Machine Learning Reply",
+      "location": "Berlin, Berlin, Germany",
+      "country": "Germany",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build knowledge retrieval systems * Build LLM powered applications with RAG * Deploy AI systems to cloud and production * Design AI powered applications * Design scalable AI microservices and APIs * Develop end-to-end AI products * Ensure reliable scalable and observable AI services * Implement CI/CD pipelines and monitoring * Implement vector search and embeddings pipelines * Integrate LLM APIs with enterprise data sources * Prototype AI product features to production Perks/Benefits: + Childcare allowance + Conferences + Corporate savings plan + Gym subsidy + Hackathons + Home office + Insurance and pension scheme + Paid communities of practice + Paid training + Wellpass + Workation options Skills/Tech stack required: [AI Observability][APIs][AWS][Azure][CI/CD][DevOps][Docker][Embeddings][GCP][Huggingface][Kubernetes][Langchain][Llamaindex][LLM APIs][LLM Evaluation][Microservices][Monitoring][Python][RAG][Retrieval-Augmented Generation][Vector Databases][Vector Search] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Application Engineer][Application Engineer][Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "Kubernetes",
+        "AWS",
+        "LangChain"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.37
+    },
+    {
+      "externalId": "data-engineer-genai-brussels-capital-belgium-3507105",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/8443729002?gh_jid=8443729002",
+      "title": "Data Engineer - GenAI",
+      "company": "Bot Detection",
+      "location": "Brussels-Capital, Belgium",
+      "country": "Belgium",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build scalable AI platforms and vector databases * Collaborate on data models and data as a service layers * Containerize and deploy microservices with Docker * Deploy microservices with Kubernetes * Design and deploy batch and streaming data pipelines for unstructured data * Develop and maintain Python and SQL code * Implement data governance for enterprise AI compliance * Implement data transformation with dbt * Orchestrate data workflows with Airflow * Orchestrate data workflows with Dagster * Orchestrate data workflows with Prefect Perks/Benefits: + Collaborative workplace + Company car + Mobility budget + Premium insurance + Professional growth + Research budget + Training budget Skills/Tech stack required: [Airflow][AWS][Azure][Dagster][Databricks][Data Governance][Data Modeling][DBT][Docker][Feature Engineering][Git][Kubernetes][LLMOps][Machine Learning][Prefect][PySpark][Python][Retrieval-Augmented Generation][Spark][SparkSQL][SQL][Vector Database] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.81
+    },
+    {
+      "externalId": "data-scientist-genai-brussels-capital-belgium-3507121",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/7804825002?gh_jid=7804825002",
+      "title": "Data Scientist - GenAI",
+      "company": "Bot Detection",
+      "location": "Brussels-Capital, Belgium",
+      "country": "Belgium",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build evaluation frameworks for LLM performance * Deploy and maintain AI systems models and APIs * Design train and fine tune LLM models * Develop and integrate agentic AI solutions * Optimize LLM product performance scalability and usability * Participate in technical discussions * Research and implement generative AI applications Perks/Benefits: + Certification support + Inclusive workplace + Professional development resources + Training opportunities Skills/Tech stack required: [APIs][Evaluation][Fine Tuning][Generative AI][Hugging Face][Language Models][Language Processing][Large Language Models][Machine Learning][Model Context Protocol][Natural Language][Natural Language Processing][OpenAI][Python][Tool-Calling] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "NLP"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 53.91
     },
     {
       "externalId": "senior-consultant-ai-data-engineering-microsoft-azure-all-genders-romania-3504137",
@@ -43,7 +156,7 @@
       ],
       "aiRelevance": 0.72,
       "visaSponsored": false,
-      "score": 51.42
+      "score": 51.31
     },
     {
       "externalId": "juniormiddle-computer-vision-engineer-id72410-west-palm-beach-united-states-3502342",
@@ -63,14 +176,14 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 50.75
+      "score": 50.63
     },
     {
       "externalId": "senior-ai-knowledge-graph-engineer-prague-czech-republic-3506899",
       "source": "foorilla",
       "url": "https://job-boards.greenhouse.io/purestorage/jobs/7823868",
       "title": "Senior AI Knowledge Graph Engineer",
-      "company": "page_title",
+      "company": "Job Application for Senior AI Knowledge Graph Engineer at Everpure",
       "location": "Prague, Czech Republic",
       "country": "Czech Republic",
       "workMode": "unknown",
@@ -84,7 +197,52 @@
       ],
       "aiRelevance": 0.69,
       "visaSponsored": false,
-      "score": 48.79
+      "score": 48.68
+    },
+    {
+      "externalId": "data-scientist-stationsplein-32-3511-ed-utrecht-3507142",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/8530912002?gh_jid=8530912002",
+      "title": "Data Scientist",
+      "company": "Bot Detection",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply MLOps best practices * Build machine learning pipelines * Collaborate with cross-functional teams * Develop machine learning solutions * Ensure quality deliverables * Lead transformational data projects * Mentor junior data scientists * Optimize code for internal tools Perks/Benefits: + Central office location + Daily lunch + Hybrid work environment + Learning opportunities + Massage sessions + Onefit membership discount + Phone reimbursement + Remote work allowance + Team events + Travel reimbursement Skills/Tech stack required: [Algorithms][Computer Vision][Data Architecture][Data Governance][Data Processing][Data Quality][Language Processing][Machine Learning][MLOps][Natural Language][Natural Language Processing][Optimization][Python][R][Series forecasting][SQL][Time Series][Time Series Forecasting] Educational requirements: [Master of Arts][Master of Engineering][Master of Science] Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "NLP",
+        "MLOps",
+        "Computer Vision"
+      ],
+      "aiRelevance": 0.6,
+      "visaSponsored": false,
+      "score": 45.94
+    },
+    {
+      "externalId": "senior-ai-data-science-montreal-quebec-canada-3507125",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/8733195002?gh_jid=8733195002",
+      "title": "Senior, AI & Data Science",
+      "company": "Bot Detection",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data pipelines for ingestion and transformation * Build LLM evaluation suites * Create dashboards and visualizations * Deploy and monitor machine learning models * Develop statistical and machine learning models * Implement embeddings and retrieval * Justify model technique selection * Make model selection decisions * Mentor junior data scientists * Present findings to client stakeholders * Run fine-tuning experiments * Translate business challenges into analytics use cases Perks/Benefits: + 401k with company matching + Hybrid work model + Learning and development + Medical, dental, and vision coverage + Mentorship and growth opportunities + Paid parental leave + Unlimited paid time off Skills/Tech stack required: [Causal Inference][Classification][Clustering][Data Pipelines][Embeddings][Fine Tuning][Forecasting][Language Models][Large Language Models][LLM Evaluation][Machine Learning][Model Deployment][Model Monitoring][Prompting][Python][PyTorch][Regression][Retrieval-Augmented Generation][Scikit-learn][SQL][XGBoost] Educational requirements: [Master of Arts][Master of Engineering][Master of Science][PhD] Role(s): [Data Scientist][Engineer][Learning Engineer][Machine Learning Engineer][Scientist][Senior Data Scientist][Senior Machine Learning Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "LLM",
+        "RAG",
+        "MLOps"
+      ],
+      "aiRelevance": 0.51,
+      "visaSponsored": false,
+      "score": 45.75
     },
     {
       "externalId": "sr-systems-engineer-ai-kansas-city-ks-united-states-3500603",
@@ -103,7 +261,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 44.02
+      "score": 43.91
     },
     {
       "externalId": "ai-intern-woodridge-il-united-states-3499522",
@@ -125,7 +283,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 43.71
+      "score": 43.59
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -148,7 +306,26 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 43.39
+      "score": 43.28
+    },
+    {
+      "externalId": "data-scientist-manager-9th-arrondissement-of-paris-75009-paris-france-3507132",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/4127302002?gh_jid=4127302002",
+      "title": "Data Scientist Manager",
+      "company": "Bot Detection",
+      "location": "9th arrondissement of Paris, 75009, Paris, France",
+      "country": "France",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Advise on AI feasibility risks and ROI * Anticipate risks and unblock teams * Build internal reusable accelerators * Conduct performance reviews * Conduct workshops and knowledge sharing * Define team career framework * Deploy AI solutions to production * Drive innovation in ways of working * Ensure project delivery stays on track * Evaluate emerging tools frameworks and cloud services * Foster collaboration with data engineers and business teams * Implement AI solutions for measurable impact * Lead end-to-end client projects * Manage data science team staffing * Mentor and coach team members * Promote MLOps best practices * Promote software engineering best practices * Provide constructive feedback to data scientists * Select AI methodologies and architectures * Support continuous well being and career development * Test and implement advanced AI approaches * Validate data availability for use cases Perks/Benefits: N/A Skills/Tech stack required: [Cloud Computing][Data Engineering][Generative AI][Machine Learning][MLOps][Software Engineering] Educational requirements: N/A Role(s): [Data Science][Data Science Manager][Data Scientist][Data Scientist Manager][Manager][Scientist Manager]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "MLOps"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 42.84
     },
     {
       "externalId": "id-10047-data-ingestion-engieer-monterrey-nl-mexico-3506537",
@@ -168,7 +345,27 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 42.79
+      "score": 42.67
+    },
+    {
+      "externalId": "senior-data-scientist-9th-arrondissement-of-paris-75009-paris-france-3507124",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/4127339002?gh_jid=4127339002",
+      "title": "Senior Data Scientist",
+      "company": "Bot Detection",
+      "location": "9th arrondissement of Paris, 75009, Paris, France",
+      "country": "France",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply MLOps best practices * Assess feasibility risks and ROI * Build AI architectures * Define solution approach * Design generative AI solutions * Design machine learning solutions * Ensure production-ready solutions * Explain AI approaches to stakeholders * Explore advanced AI techniques * Frame AI use cases with business teams * Implement AI pipelines * Maintain technology watch * Mentor junior data scientists * Promote coding testing deployment best practices * Provide feedback and support growth * Provide technical guidance * Share best practices through workshops and documentation * Validate data availability Perks/Benefits: N/A Skills/Tech stack required: [AI architecture][Cloud Computing][Data Engineering][Generative AI][Machine Learning][Machine Learning Pipelines][MLOps][Python][Software Engineering][SQL] Educational requirements: N/A Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "MLOps"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 42.04
     },
     {
       "externalId": "id-10048-data-app-engineer-monterrey-nl-mexico-3506237",
@@ -187,7 +384,27 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 41.99
+      "score": 41.88
+    },
+    {
+      "externalId": "data-scientist-macdill-afb-fl-3507616",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/clarityinnovates/jobs/5216077007",
+      "title": "Data Scientist",
+      "company": "Job Application for Data Scientist at Clarity Innovations",
+      "location": "MacDill AFB, FL",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and automate data processes * Collaborate with data engineers on data environments * Communicate insights to non-technical audiences * Conduct large scale data processing * Create data visualizations * Deliver technical training to personnel * Design data pipelines * Develop natural language processing solutions * Develop predictive modeling and prescriptive modeling * Interpret and analyze complex data * Perform text mining and processing * Plan execute and manage machine learning projects * Program and develop machine learning algorithms Perks/Benefits: + Technical training delivery + Travel opportunities Skills/Tech stack required: [Agile][C++][Cloudera][Cloud Pak][Clustering][Data Analysis][Databricks][Data Mining][Digital storytelling][Distributed SQL][Exploratory Data Analysis][Forecasting][Git][Hadoop][IBM Cloud][IBM Cloud Pak][Java][Language Processing][Machine Learning][Natural Language][Natural Language Processing][Non-relational][Non-relational Databases][NumPy][Pandas][Power BI][Predictive Modeling][Prescriptive Modeling][Python][R][Relational databases][R Shiny][SciPy][Secret Clearance][Snowflake][Spark][SQL][Tableau][Text Mining] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Scientist][Scientist]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "NLP"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 41.32
     },
     {
       "externalId": "senior-ai-platforms-engineer-brooklyn-ny-united-states-3506236",
@@ -207,7 +424,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.77
+      "score": 39.65
     },
     {
       "externalId": "id-10049-data-modeler-monterrey-nl-mexico-3506393",
@@ -227,7 +444,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 39.48
+      "score": 39.37
     },
     {
       "externalId": "software-engineer-iii-cloud-ai-warsaw-poland-3500258",
@@ -247,7 +464,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.46
+      "score": 39.35
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -269,7 +486,46 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.02
+      "score": 37.9
+    },
+    {
+      "externalId": "data-analysts-united-states-3507071",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/zestai/jobs/6135604004",
+      "title": "Data Analysts",
+      "company": "Job Application for Data Analysts at Zest AI",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with cross functional teams to identify value from machine learning models * Deliver credit policy analysis * Deliver economic forecasts * Deliver fairness analysis * Deliver risk analysis * Evaluate statistical and economic performance of credit models * Test iterate and develop internal and external software tools * Translate unstructured business problems into quantitative analysis projects Perks/Benefits: + Dental benefits + Medical benefits + Retirement benefits + Telecommuting permitted + Vision benefits Skills/Tech stack required: [C++][Credit Risk][Credit Risk Analysis][Data Visualization][Economic analysis][Java][Python][Quantitative Analysis][R][Risk Analysis][Statistical Analysis] Educational requirements: [Bachelor of Science][Bachelor of Science in Business Intelligence][Bachelor of Science in Computer Science][Bachelor of Science in Economics][Bachelor of Science in Finance][Bachelor of Science in Mathematics][Master of Science][Master of Science in Business Intelligence][Master of Science in Computer Science][Master of Science in Economics][Master of Science in Finance][Master of Science in Mathematics] Role(s): [Analyst][Data Analyst]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 37.69
+    },
+    {
+      "externalId": "data-analytics-manager-9th-arrondissement-of-paris-75009-paris-france-3507017",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/4245881002?gh_jid=4245881002",
+      "title": "Data Analytics Manager",
+      "company": "Bot Detection",
+      "location": "9th arrondissement of Paris, 75009, Paris, France",
+      "country": "France",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate analytics processes for efficiency * Define and communicate analytics roadmap * Develop best practice documentation * Develop measurement and analytics solutions * Implement review and sign off processes * Lead analytics on new business pitches * Lead data analytics strategy and delivery * Pilot multidisciplinary teams * Plan and deliver advanced analytics projects * Recommend statistical analysis techniques Perks/Benefits: N/A Skills/Tech stack required: [Apache Superset][Attribution][Attribution Modeling][AWS][Azure][BigQuery][Clean rooms][Cloud][Cloud platform][Customer Data][Customer Data Platform][Databricks][Dataiku][Data platform][DBT][Generative AI][Git][Google Cloud][Google Cloud Platform][Hightouch][Looker][Marketing Mix][Marketing Mix Modeling][Mix Modeling][Power BI][Python][Snowflake][SQL][Tableau][Tealium][Treasure Data] Educational requirements: N/A Role(s): [Analytics Manager][Data Analytics][Data Analytics Manager][Manager]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 37.23
     },
     {
       "externalId": "senior-data-analytics-engineer-latin-america-3506671",
@@ -286,7 +542,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 36.26
+      "score": 36.15
     },
     {
       "externalId": "tax-data-systems-and-process-analyst-chicago-il-usa-3501612",
@@ -306,28 +562,26 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.94
+      "score": 35.83
     },
     {
-      "externalId": "mid-level-data-engineer-work-from-home-va-united-states-3499762",
+      "externalId": "senior-data-scientist-cork-ireland-dublin-ireland-3507119",
       "source": "foorilla",
-      "url": "https://myjobs.adp.com/ecsfederal/cx/job-details?reqId=5001197303106",
-      "title": "Mid-Level Data Engineer",
-      "company": "E...",
-      "location": "Work from home, VA, United States",
-      "country": "United States",
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=8135458",
+      "title": "Senior Data Scientist",
+      "company": "M...",
+      "location": "Not specified",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply data governance best practices * Build data services with Pandas * Build data services with PyTorch * Build data services with TensorFlow * Design Workflow Orchestration * Develop API endpoints and microservices * Develop production grade ETL workflows * Implement logging and monitoring * Implement schema enforcement and data validation * Ingest, transform, and validate data * Perform performance tuning * Support Azure Data Lake Storage * Support Azure SQL Perks/Benefits: + Public trust clearance support + Remote work Skills/Tech stack required: [API Development][Azure][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure SQL][Data Factory][Data Governance][Data Lake Storage][Data Quality][Data Validation][ETL][Logging][Microservices][Microsoft Fabric][Monitoring][NumPy][Pandas][Performance Tuning][Python][PyTorch][Schema Enforcement][Scikit-learn][SQL][TensorFlow] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Data Engineer][Engineer]",
+      "description": "Tasks: * Communicate machine learning concepts to non machine learning audiences * Conduct code reviews and contribute to tooling * Create dashboards and analyze user feedback * Develop production ready statistical and machine learning algorithms * Instrument model architecture with performance metrics * Partner with engineers on resource scaling and release safety Perks/Benefits: + Hybrid work model + Parental leave Skills/Tech stack required: [Dashboards][Data Simulation][Machine Learning][Model Evaluation][Model Tuning][Monitoring][Object-Oriented][Object-oriented programming][Python][Query Optimization][Statistical Analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Engineering][Master of Science][PhD] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
       "postedAt": "2026-08-21T00:00:00.000Z",
       "skills": [
-        "Python",
-        "PyTorch",
-        "TensorFlow"
+        "Python"
       ],
-      "aiRelevance": 0.09,
+      "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.85
+      "score": 35.82
     },
     {
       "externalId": "data-engineer-dublin-ireland-3503429",
@@ -344,7 +598,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.06
+      "score": 34.94
     },
     {
       "externalId": "data-engineer-platform-engineering-barcelona-3506703",
@@ -365,7 +619,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.03
+      "score": 34.92
     },
     {
       "externalId": "senior-data-analyst-peabody-ma-united-states-3505356",
@@ -384,7 +638,28 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.93
+      "score": 34.81
+    },
+    {
+      "externalId": "software-engineer-developer-experience-portugal-remote-3507281",
+      "source": "foorilla",
+      "url": "https://www.dremio.com/careers/job-postings/?gh_jid=7822098003",
+      "title": "Software Engineer - Developer Experience",
+      "company": "Dremio",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze performance bottlenecks and root causes * Automate local development workflows * Automate manual processes * Automate release engineering processes * Build and maintain CI/CD pipelines * Create and maintain playbooks * Identify workarounds and document them * Implement and maintain CI/CD systems * Manage access to infrastructure * Perform code reviews * Report CI CD system reliability status * Solve engineering productivity issues Perks/Benefits: N/A Skills/Tech stack required: [Amazon Web Services][“as-code”][AWS][Azure][Bash][CI/CD][Cloud platform][Docker][Go][Google Cloud][Google Cloud Platform][Infrastructure as Code][Java][Jenkins][Kubernetes][Maven][Python][Terraform][Web Services] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [DevOps][DevOps Engineer][Engineer][Software Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.09,
+      "visaSponsored": false,
+      "score": 34.7
     },
     {
       "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
@@ -401,7 +676,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 34.81
+      "score": 34.69
     },
     {
       "externalId": "test-automation-engineer-bucharest-romania-3502292",
@@ -418,7 +693,27 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.79
+      "score": 34.67
+    },
+    {
+      "externalId": "senior-data-engineer-17th-floor-5-aldermanbury-square-london-ec2v-7hr-3507103",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/8532897002?gh_jid=8532897002",
+      "title": "Senior Data Engineer",
+      "company": "Bot Detection",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain data pipelines * Design data pipelines * Develop dashboards and reports * Enforce data governance security compliance * Evaluate new data engineering technologies * Implement CI/CD for data pipelines * Lead complex data system integration * Manage and mentor data engineers * Optimize data retrieval * Translate business requirements into technical implementations Perks/Benefits: + Hybrid work arrangement Skills/Tech stack required: [Apache Airflow][“as-code”][AWS Glue][Azure Data][Azure Data Factory][CI/CD][Data Architecture][Databricks][Data Compliance][Data Factory][Data Governance][Data Lake][Data Lakehouse][Data mesh][Data Security][Data Warehouse][DevOps][DevSecOps][Infrastructure as Code][PySpark][Python][Snowflake][SQL][Terraform] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 34.47
     },
     {
       "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
@@ -437,7 +732,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.49
+      "score": 34.37
+    },
+    {
+      "externalId": "enterprise-sales-engineer-fed-district-of-columbia-usa-remote-maryland-usa-remote-virginia-usa-remote-3507351",
+      "source": "foorilla",
+      "url": "https://careers.datadoghq.com/detail/8144607/?gh_jid=8144607",
+      "title": "Enterprise Sales Engineer - FED",
+      "company": "Datadog Careers | Datadog",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build project plans * Conduct customer discovery * Define success criteria * Deliver product demos * Document deal progress * Identify technical champions * Lead technical evaluations * Lead technical sales process * Manage technical blockers * Provide technical feedback * Translate customer needs to solutions Perks/Benefits: + Best in class onboarding + Career pathing + Continuous professional development + Global benefits + Hybrid workplace + Inclusive culture + Mentor and buddy program + Product training Skills/Tech stack required: [Amazon Web Services][Application performance][Application Performance Monitoring][Cloud platform][Developer experience][Google Cloud][Google Cloud Platform][Kubernetes][Microsoft Azure][Observability][Performance Monitoring][Public Cloud][Security][Tracing][Web Services] Educational requirements: N/A Role(s): [Engineer][Enterprise Sales][Enterprise Sales Engineer][Sales][Sales Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.92
     },
     {
       "externalId": "senior-data-engineer-python-con-ingles-madrid-md-spain-3501877",
@@ -456,7 +770,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.67
+      "score": 33.55
     },
     {
       "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
@@ -475,7 +789,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.49
+      "score": 33.37
     },
     {
       "externalId": "sr-engineer-data-engineering-roswell-ga-united-states-3506072",
@@ -494,7 +808,46 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.27
+      "score": 33.15
+    },
+    {
+      "externalId": "senior-data-engineer-remote-mexico-3507091",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/kunai/jobs/5207153007",
+      "title": "Senior Data Engineer",
+      "company": "Job Application for Senior Data Engineer at Kunai",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build dbt models * Collaborate with stakeholders * Design data pipelines * Develop ETL workflows * Ensure data quality and consistency * Maintain data pipelines * Monitor data pipeline performance * Optimize SQL queries * Translate requirements into data models * Troubleshoot pipeline issues Perks/Benefits: + Flexible work arrangements + Professional development opportunities Skills/Tech stack required: [Data Modeling][Data pipeline][Data Pipeline Monitoring][Data Quality][DBT][ETL][Pipeline monitoring][Python][Snowflake][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 32.36
+    },
+    {
+      "externalId": "junior-engineer-17th-floor-5-aldermanbury-square-london-ec2v-7hr-3507359",
+      "source": "foorilla",
+      "url": "https://www.artefact.com/careers/8611804002?gh_jid=8611804002",
+      "title": "Junior Engineer",
+      "company": "Bot Detection",
+      "location": "17th Floor, 5 Aldermanbury Square, London, EC2V 7HR",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply CI/CD practices * Learn and improve through training and certification * Query relational databases with SQL * Use version control with git * Work on engineering projects with senior team members * Write clean, well-documented code Perks/Benefits: + Hybrid working Skills/Tech stack required: [AWS][Azure][CI/CD][Docker][GCP][Git][Python][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Software Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 32.32
     },
     {
       "externalId": "data-engineer-google-maps-mountain-view-ca-usa-3499759",
@@ -513,7 +866,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.33
+      "score": 32.22
     },
     {
       "externalId": "data-engineer-data-analyst-mf-lisboa-lisboa-portugal-3506066",
@@ -532,7 +885,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.19
+      "score": 32.08
     },
     {
       "externalId": "data-engineer-intern-e-commerce-2027-summer-san-jose-california-united-states-3501574",
@@ -549,7 +902,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.63
+      "score": 31.52
     },
     {
       "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
@@ -568,7 +921,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.45
+      "score": 31.34
     }
   ]
 }
