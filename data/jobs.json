@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T13:05:47.349Z",
+  "generatedAt": "2026-08-22T15:39:49.368Z",
   "jobs": [
     {
       "externalId": "mlops-engineer-juno-beach-florida-usa-3505478",
@@ -21,7 +21,7 @@
       ],
       "aiRelevance": 0.91,
       "visaSponsored": false,
-      "score": 57.11
+      "score": 57
     },
     {
       "externalId": "senior-ai-engineer-data-ai-organisation-all-genders-full-part-time-weiterstadt-hessen-de-64331-3507672",
@@ -44,7 +44,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.68
+      "score": 55.58
     },
     {
       "externalId": "co-op-researcher-llms-computer-vision-markham-ontario-canada-3507055",
@@ -66,7 +66,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.58
+      "score": 55.48
     },
     {
       "externalId": "senior-consultant-ai-data-engineering-microsoft-azure-all-genders-romania-3504137",
@@ -88,7 +88,7 @@
       ],
       "aiRelevance": 0.72,
       "visaSponsored": false,
-      "score": 51.17
+      "score": 51.06
     },
     {
       "externalId": "juniormiddle-computer-vision-engineer-id72410-west-palm-beach-united-states-3502342",
@@ -108,28 +108,27 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 50.49
+      "score": 50.39
     },
     {
-      "externalId": "senior-ai-knowledge-graph-engineer-prague-czech-republic-3506899",
+      "externalId": "data-scientist-guadalajara-mexico-3508892",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/purestorage/jobs/7823868",
-      "title": "Senior AI Knowledge Graph Engineer",
-      "company": "Job Application for Senior AI Knowledge Graph Engineer at Everpure",
-      "location": "Prague, Czech Republic",
-      "country": "Czech Republic",
+      "url": "https://www.salesloft.com/company/careers?gh_jid=8111798",
+      "title": "Data Scientist",
+      "company": "Salesloft",
+      "location": "Not specified",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Compute document similarity * Define and own data pipelines for knowledge graphs * Deploy and operate graph and vector databases * Deploy monitor and iterate ML systems * Design build and deploy graph based AI solutions * Drive architecture decisions for applied AI solutions * Generate embeddings for semantic analysis * Integrate LLMs into text processing pipelines * Optimize model inference for production constraints Perks/Benefits: + Company-sponsored team events + Flexible time off + In office role in Prague + Wellness resources Skills/Tech stack required: [Continuous integration][Cost Optimization][Docker][Document similarity][Embeddings][Entity Resolution][Graph Databases][Knowledge graphs][Latency optimization][LLM][Machine Learning][MLOps][Neo4j][NetworkX][Node2vec][Ontology Modeling][Prompt engineering][Python][Retrieval][Semantic Search][SentenceTransformers][Throughput Optimization][Vector Databases] Educational requirements: N/A Role(s): [AI Engineer][Applied AI Engineer][Engineer][Graph Engineer][Knowledge Graph Engineer][Senior Applied AI Engineer][Senior Knowledge Graph Engineer]",
+      "description": "Tasks: * Apply statistical techniques to analyze data * Build machine learning models * Collaborate with cross-functional teams * Communicate results to stakeholders * Conduct NLP research * Convert research findings into actionable insights * Design experiments and evaluate results * Develop product feature prototypes * Own complex projects * Translate research needs into data science problems Perks/Benefits: N/A Skills/Tech stack required: [AI Agents][Deep learning][Information Extraction][Langgraph][Language Processing][Machine Learning][Natural Language][Natural Language Processing][NLP][OpenAI][Python][Statistical Analysis] Educational requirements: N/A Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
       "postedAt": "2026-08-21T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
-        "MLOps"
+        "NLP"
       ],
-      "aiRelevance": 0.69,
+      "aiRelevance": 0.54,
       "visaSponsored": false,
-      "score": 48.54
+      "score": 43.32
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -152,7 +151,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 43.14
+      "score": 43.03
     },
     {
       "externalId": "id-10047-data-ingestion-engieer-monterrey-nl-mexico-3506537",
@@ -172,7 +171,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 42.53
+      "score": 42.43
     },
     {
       "externalId": "ai-solutions-architect-mexico-3507683",
@@ -191,7 +190,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 41.88
+      "score": 41.77
     },
     {
       "externalId": "id-10048-data-app-engineer-monterrey-nl-mexico-3506237",
@@ -210,7 +209,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 41.74
+      "score": 41.63
     },
     {
       "externalId": "data-scientist-macdill-afb-fl-3507616",
@@ -230,7 +229,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 41.18
+      "score": 41.08
     },
     {
       "externalId": "senior-ai-platforms-engineer-brooklyn-ny-united-states-3506236",
@@ -250,7 +249,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.51
+      "score": 39.41
     },
     {
       "externalId": "id-10049-data-modeler-monterrey-nl-mexico-3506393",
@@ -270,7 +269,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 39.23
+      "score": 39.12
     },
     {
       "externalId": "ai-engineering-lead-europe-3507678",
@@ -287,7 +286,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 38.11
+      "score": 38
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -309,7 +308,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 37.76
+      "score": 37.66
     },
     {
       "externalId": "data-analysts-united-states-3507071",
@@ -328,7 +327,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.55
+      "score": 37.44
     },
     {
       "externalId": "bi-solution-architect-prague-3508666",
@@ -348,7 +347,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.4
+      "score": 37.3
     },
     {
       "externalId": "senior-data-analytics-engineer-latin-america-3506671",
@@ -365,7 +364,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 36.01
+      "score": 35.9
     },
     {
       "externalId": "senior-data-scientist-cork-ireland-dublin-ireland-3507119",
@@ -384,7 +383,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.68
+      "score": 35.58
     },
     {
       "externalId": "analytics-engineer-mexico-city-cdmx-3507686",
@@ -403,7 +402,27 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.6
+      "score": 35.5
+    },
+    {
+      "externalId": "senior-data-engineer-databricks-mexico-3508849",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/caylent/jobs/6149824004",
+      "title": "Senior Data Engineer - Databricks",
+      "company": "Job Application for Senior Data Engineer - Databricks at Caylent",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build lakehouse platforms * Communicate technical topics * Contribute to solution design * Define RDS data sources * Develop engineering standards * Develop ETL jobs * Execute data platform migrations * Manage data warehouses * Orchestrate Databricks jobs * Perform implementation reviews * Produce technical documentation * Troubleshoot data pipeline performance * Troubleshoot reliability issues * Troubleshoot scalability issues Perks/Benefits: + Equipment and office stipend + Flexible PTO + Learning and development stipend + Paid exams and certifications + Paid Holidays + Peer bonus awards + Professional development plan + Remote work + State of the art laptop Skills/Tech stack required: [Apache Spark][“as-code”][Automation Scripting][AWS][CI/CD][Cost Optimization][Databricks][Data Lake][Data Warehouse][Delta Lake][Disaster Recovery][ETL][Event Driven][Event-driven ingestion][High Availability][Infrastructure as Code][Lakehouse][PySpark][Python][Query Optimization][Relational databases][Schema Design][Security][SQL][Streaming][Unity Catalog] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 35.37
     },
     {
       "externalId": "data-engineer-dublin-ireland-3503429",
@@ -420,7 +439,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.8
+      "score": 34.7
     },
     {
       "externalId": "data-engineer-platform-engineering-barcelona-3506703",
@@ -441,7 +460,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.78
+      "score": 34.67
     },
     {
       "externalId": "senior-data-analyst-peabody-ma-united-states-3505356",
@@ -460,7 +479,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.67
+      "score": 34.57
     },
     {
       "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
@@ -477,7 +496,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 34.55
+      "score": 34.45
     },
     {
       "externalId": "test-automation-engineer-bucharest-romania-3502292",
@@ -494,7 +513,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.53
+      "score": 34.43
+    },
+    {
+      "externalId": "data-engineer-remote-united-states-3508845",
+      "source": "foorilla",
+      "url": "https://recruiting.ultipro.com/GUI1001/JobBoard/634382fd-6424-ec1b-8e37-2aa4ce4c10de/OpportunityDetail?opportunityId=ff4f5956-88b1-45fc-b462-a0d5b2a5b242",
+      "title": "Data Engineer",
+      "company": "G...",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assess data source accuracy * Automate data delivery and infrastructure * Build analytics tools * Build data lake pipelines * Create tools for data science teams * Design data warehouse schemas * Execute data strategy * Expand and optimize data pipeline architecture * Extract Load Transform data * Govern tool and platform usage * Monitor data warehouse performance * Monitor platform usage and costs * Monitor trends and prevent errors * Optimize data flow and collection * Perform root cause analysis * Secure personally identifiable information Perks/Benefits: N/A Skills/Tech stack required: [Access Control][Airflow][C#][Data Catalog][Data Engineering][Data Governance][Data Lake][Data masking][Data pipeline][Data Quality][Data Warehouse][ELT][Extract Transform][Extract Transform Load][High Availability][Informatica][Java][JavaScript][Kafka][NoSQL][Python][R][Relational databases][Scala][Snowflake][Snowflake Schema][Spark][SQL][Star Schema][Streaming Analytics] Educational requirements: [Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.3
     },
     {
       "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
@@ -513,7 +551,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.23
+      "score": 34.13
     },
     {
       "externalId": "enterprise-sales-engineer-fed-district-of-columbia-usa-remote-maryland-usa-remote-virginia-usa-remote-3507351",
@@ -532,7 +570,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.78
+      "score": 33.68
     },
     {
       "externalId": "lakebase-associate-director-amsterdam-netherlands-3508130",
@@ -549,26 +587,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.67
-    },
-    {
-      "externalId": "senior-data-engineer-python-con-ingles-madrid-md-spain-3501877",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Devoteam/744000144747234-senior-data-engineer-python-con-ingles",
-      "title": "Senior data engineer (Python) con inglés",
-      "company": "Devoteam",
-      "location": "Madrid, MD, Spain",
-      "country": "Spain",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build CI/CD pipelines * Build data ingestion pipelines * Collaborate with stakeholders in agile teams * Conduct code reviews * Design data solutions * Develop ETL/ELT pipelines * Implement clean modular code * Optimize pipeline performance * Package and deploy Python libraries * Set up monitoring logging alerting observability * Support production systems * Transform and cleanse data * Validate and enrich datasets * Write unit tests Perks/Benefits: + Certifications + Online training platform Skills/Tech stack required: [Agile][Alerting][Azure][CI/CD][Clean Code][Code review][Data Cleansing][Data Enrichment][Data Ingestion][Data Transformation][Data Validation][DevOps][ELT][ETL][Logging][Modular Design][Monitoring][NumPy][Observability][Pandas][Python][Testing] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.41
+      "score": 33.56
     },
     {
       "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
@@ -587,7 +606,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.23
+      "score": 33.13
     },
     {
       "externalId": "sr-engineer-data-engineering-roswell-ga-united-states-3506072",
@@ -606,7 +625,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.01
+      "score": 32.91
     },
     {
       "externalId": "data-analyst-raf-mildenhall-uk-3507775",
@@ -625,7 +644,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.69
+      "score": 32.59
+    },
+    {
+      "externalId": "data-analyst-canada-3508829",
+      "source": "foorilla",
+      "url": "https://stripe.com/jobs/search?gh_jid=5416444",
+      "title": "Data Analyst",
+      "company": "Stripe",
+      "location": "Canada",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build metrics * Build scalable data pipelines * Create dashboards and reports * Deliver data storytelling for business recommendations * Extract insights from complex data * Partner with cross functional teams to define data problems * Provide training for data literacy * Support self service reporting tooling * Translate business needs into analytics requirements Perks/Benefits: N/A Skills/Tech stack required: [Apache Spark][Business Intelligence][Code review][Dashboards][Data Pipelines][Python][SQL][Statistical Analysis][Testing] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Analyst][Data Analyst]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 32.21
     },
     {
       "externalId": "senior-data-engineer-remote-mexico-3507091",
@@ -644,7 +682,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.22
+      "score": 32.12
     },
     {
       "externalId": "data-engineer-intern-weave-headquarters-lehi-ut-3507791",
@@ -663,7 +701,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.18
+      "score": 32.07
     },
     {
       "externalId": "data-engineer-data-analyst-mf-lisboa-lisboa-portugal-3506066",
@@ -682,24 +720,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.94
-    },
-    {
-      "externalId": "data-engineer-intern-e-commerce-2027-summer-san-jose-california-united-states-3501574",
-      "source": "foorilla",
-      "url": "https://lifeattiktok.com/search/7676250516494436661",
-      "title": "Data Engineer Intern (E-commerce) - 2027 Summer",
-      "company": "Data Engineer Intern (E-commerce) - 2027 Summer",
-      "location": "San Jose, California, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Design and build data transformations * Design and implement big data systems * Develop ETL pipelines * Ensure reliable scalable robust extensible architectures * Perform data analysis * Support data ingestion and integration Perks/Benefits: + Development workshops + Industry exposure + Learning programs + Social events Skills/Tech stack required: [Apache Spark][ClickHouse][Data Modeling][ETL][Flink][Hadoop][Hive][Kafka][Presto][SQL] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Data Engineer Intern][Engineer Intern][Intern]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 31.38
+      "score": 31.83
     },
     {
       "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
@@ -718,7 +739,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.2
+      "score": 31.09
     }
   ]
 }
