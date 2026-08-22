@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T04:00:43.579Z",
+  "generatedAt": "2026-08-22T07:04:14.731Z",
   "jobs": [
     {
       "externalId": "mlops-engineer-juno-beach-florida-usa-3505478",
@@ -21,60 +21,7 @@
       ],
       "aiRelevance": 0.91,
       "visaSponsored": false,
-      "score": 57.49
-    },
-    {
-      "externalId": "ai-engineer-united-states-3499515",
-      "source": "foorilla",
-      "url": "https://fa-etqd-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/2026001869",
-      "title": "AI Engineer",
-      "company": "Perficient",
-      "location": "United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build optimize machine learning pipelines * Collaborate with data scientists software engineers product managers and stakeholders * Design develop test deploy AI ML models and applications * Develop APIs and microservices for AI integration * Develop generative AI solutions with large language models * Extract insights from structured and unstructured datasets * Fine-tune foundation models * Implement Retrieval-Augmented Generation architectures * Monitor model performance for scalability reliability security Perks/Benefits: + Paid Holidays + Paid time off + Rewards and Recognition Program + Work-life balance Skills/Tech stack required: [Amazon Web Services][AWS Bedrock][Azure][Azure OpenAI][Azure OpenAI Service][ChromaDB][CI/CD][Deep learning][Docker][Faiss][Generative AI][Google Cloud][Google Vertex][Google Vertex AI][Kubeflow][Kubernetes][Langchain][Language Models][Language Processing][Large Language Models][Llamaindex][Machine Learning][MLflow][MLOps][Natural Language][Natural Language Processing][Neural Networks][OpenAI Service][Pinecone][Python][PyTorch][RAG][REST APIs][Retrieval-Augmented Generation][SageMaker][Scikit-learn][Semantic Kernel][TensorFlow][Vector Databases][Vertex AI][Weaviate][Web Services] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [AI][AI Data Engineer][AI Engineer][Data Engineer][Engineer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "PyTorch",
-        "TensorFlow",
-        "RAG",
-        "NLP",
-        "MLOps",
-        "Kubernetes",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 56.72
-    },
-    {
-      "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3496989",
-      "source": "foorilla",
-      "url": "https://myjobs.adp.com/lincolntech/cx/job-details?reqId=5001218850006",
-      "title": "Lead AI Engineer-Machine Learning",
-      "company": "L...",
-      "location": "Parsippany, NJ, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data pipelines for large datasets * Create and optimize deep learning and generative AI models * Define AI ML metrics * Define AI/ML roadmap * Design scalable AI/ML infrastructure * Develop advanced NLP models * Develop and deploy AI/ML models * Lead end to end AI ML lifecycle * Mentor team members * Troubleshoot AI ML application and model issues Perks/Benefits: + 401k match + Dental insurance + Disability insurance + Growth opportunities + Holidays + Life insurance + Medical insurance + Paid time off + Vision insurance Skills/Tech stack required: [Agile][AWS][Azure][CI/CD][Computer Vision][Confluence][Data pipeline][Docker][GCP][Generative AI][GitHub][Java][Jenkins][Jira][Kubernetes][Language Processing][LLM][Natural Language][Natural Language Processing][Python][PyTorch][Scala][Scikit-learn][Software Architecture][Spark MLlib][System design][TensorFlow] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "PyTorch",
-        "TensorFlow",
-        "LLM",
-        "NLP",
-        "Kubernetes",
-        "AWS",
-        "Computer Vision"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.14
+      "score": 57.36
     },
     {
       "externalId": "senior-consultant-ai-data-engineering-microsoft-azure-all-genders-romania-3504137",
@@ -96,7 +43,7 @@
       ],
       "aiRelevance": 0.72,
       "visaSponsored": false,
-      "score": 51.55
+      "score": 51.42
     },
     {
       "externalId": "juniormiddle-computer-vision-engineer-id72410-west-palm-beach-united-states-3502342",
@@ -116,7 +63,28 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 50.87
+      "score": 50.75
+    },
+    {
+      "externalId": "senior-ai-knowledge-graph-engineer-prague-czech-republic-3506899",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/purestorage/jobs/7823868",
+      "title": "Senior AI Knowledge Graph Engineer",
+      "company": "page_title",
+      "location": "Prague, Czech Republic",
+      "country": "Czech Republic",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Compute document similarity * Define and own data pipelines for knowledge graphs * Deploy and operate graph and vector databases * Deploy monitor and iterate ML systems * Design build and deploy graph based AI solutions * Drive architecture decisions for applied AI solutions * Generate embeddings for semantic analysis * Integrate LLMs into text processing pipelines * Optimize model inference for production constraints Perks/Benefits: + Company-sponsored team events + Flexible time off + In office role in Prague + Wellness resources Skills/Tech stack required: [Continuous integration][Cost Optimization][Docker][Document similarity][Embeddings][Entity Resolution][Graph Databases][Knowledge graphs][Latency optimization][LLM][Machine Learning][MLOps][Neo4j][NetworkX][Node2vec][Ontology Modeling][Prompt engineering][Python][Retrieval][Semantic Search][SentenceTransformers][Throughput Optimization][Vector Databases] Educational requirements: N/A Role(s): [AI Engineer][Applied AI Engineer][Engineer][Graph Engineer][Knowledge Graph Engineer][Senior Applied AI Engineer][Senior Knowledge Graph Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "MLOps"
+      ],
+      "aiRelevance": 0.69,
+      "visaSponsored": false,
+      "score": 48.79
     },
     {
       "externalId": "sr-systems-engineer-ai-kansas-city-ks-united-states-3500603",
@@ -135,7 +103,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 44.15
+      "score": 44.02
     },
     {
       "externalId": "ai-intern-woodridge-il-united-states-3499522",
@@ -157,7 +125,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 43.83
+      "score": 43.71
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -180,7 +148,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 43.52
+      "score": 43.39
     },
     {
       "externalId": "id-10047-data-ingestion-engieer-monterrey-nl-mexico-3506537",
@@ -200,7 +168,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 42.91
+      "score": 42.79
     },
     {
       "externalId": "id-10048-data-app-engineer-monterrey-nl-mexico-3506237",
@@ -219,7 +187,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 42.12
+      "score": 41.99
     },
     {
       "externalId": "senior-ai-platforms-engineer-brooklyn-ny-united-states-3506236",
@@ -239,7 +207,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.89
+      "score": 39.77
     },
     {
       "externalId": "id-10049-data-modeler-monterrey-nl-mexico-3506393",
@@ -259,7 +227,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 39.61
+      "score": 39.48
     },
     {
       "externalId": "software-engineer-iii-cloud-ai-warsaw-poland-3500258",
@@ -279,7 +247,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.59
+      "score": 39.46
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -301,7 +269,24 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.14
+      "score": 38.02
+    },
+    {
+      "externalId": "senior-data-analytics-engineer-latin-america-3506671",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/encora10/jobs/5211265007",
+      "title": "Senior Data Analytics Engineer",
+      "company": "Job Application for Senior Data Analytics Engineer at Encora",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Contribute to BI standards best practices documentation * Design data models and semantic layers for self service analytics * Develop and maintain reusable data models * Develop data visualizations and data storytelling * Gather reporting requirements from business teams * Implement governance security and role based access * Lead dashboard migration from ThoughtSpot to Power BI * Optimize report performance and usability * Participate in Agile sprint ceremonies * Partner with data engineering to ensure scalable Power BI data sources * Support reporting modernization and BI platform consolidation * Train and onboard users to Power BI * Translate ThoughtSpot workflows into Power BI reports Perks/Benefits: + Remote work Skills/Tech stack required: [Access Control][Agile][APIs][Azure][Azure Data][Azure Databricks][Azure Data Factory][Azure Synapse][Azure Synapse Analytics][BI governance][Business Intelligence][CI/CD][Databricks Medallion Architecture][Data Factory][Data Layer][Data Modeling][Data Storytelling][Data Visualization][DAX][DBT][Deployment Pipelines][Medallion Architecture][Power BI][Power BI Service][Power Query][Role-Based Access][Role-Based Access Control][Semantic data][Semantic Data Layer][SQL][Synapse Analytics][ThoughtSpot] Educational requirements: N/A Role(s): [Analytics Engineer][Business Intelligence Engineer][Data Analytics Engineer][Engineer][Intelligence Engineer][Senior Business Intelligence Engineer][Senior Data Analytics][Senior Data Analytics Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 36.26
     },
     {
       "externalId": "tax-data-systems-and-process-analyst-chicago-il-usa-3501612",
@@ -321,7 +306,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.07
+      "score": 35.94
     },
     {
       "externalId": "mid-level-data-engineer-work-from-home-va-united-states-3499762",
@@ -342,7 +327,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.98
+      "score": 35.85
     },
     {
       "externalId": "data-engineer-dublin-ireland-3503429",
@@ -359,7 +344,28 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.18
+      "score": 35.06
+    },
+    {
+      "externalId": "data-engineer-platform-engineering-barcelona-3506703",
+      "source": "foorilla",
+      "url": "https://n26.com/en-eu/careers/positions/8147446?gh_jid=8147446",
+      "title": "Data Engineer - Platform Engineering",
+      "company": "N26",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply cloud infrastructure networking and CI CD best practices * Build and maintain database platform solutions * Contribute to roadmap by delivering code and infrastructure improvements * Maintain and enhance observability solutions * Orchestrate access and metadata management with product and analytics teams * Participate in on call rotations and incident troubleshooting Perks/Benefits: + Additional annual leave + Fitness and wellness memberships + Language apps + Premium bank account subscription + Public transportation discounts + Relocation support + Visa support + Work from home Skills/Tech stack required: [Apache Airflow][ArgoCD][AWS][CI/CD][CloudFormation][Datadog][DBT][Docker][EKS][GitHub Actions][Grafana][Jenkins][Kubernetes][Networking][OpenTelemetry][Prometheus][Python][Security][Terraform] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.09,
+      "visaSponsored": false,
+      "score": 35.03
     },
     {
       "externalId": "senior-data-analyst-peabody-ma-united-states-3505356",
@@ -378,7 +384,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.05
+      "score": 34.93
     },
     {
       "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
@@ -395,7 +401,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 34.93
+      "score": 34.81
     },
     {
       "externalId": "test-automation-engineer-bucharest-romania-3502292",
@@ -412,7 +418,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.91
+      "score": 34.79
     },
     {
       "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
@@ -431,7 +437,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.61
+      "score": 34.49
     },
     {
       "externalId": "senior-data-engineer-python-con-ingles-madrid-md-spain-3501877",
@@ -450,7 +456,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.79
+      "score": 33.67
     },
     {
       "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
@@ -469,7 +475,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.61
+      "score": 33.49
     },
     {
       "externalId": "sr-engineer-data-engineering-roswell-ga-united-states-3506072",
@@ -488,7 +494,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.39
+      "score": 33.27
     },
     {
       "externalId": "data-engineer-google-maps-mountain-view-ca-usa-3499759",
@@ -507,7 +513,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.46
+      "score": 32.33
     },
     {
       "externalId": "data-engineer-data-analyst-mf-lisboa-lisboa-portugal-3506066",
@@ -526,7 +532,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.32
+      "score": 32.19
     },
     {
       "externalId": "data-engineer-intern-e-commerce-2027-summer-san-jose-california-united-states-3501574",
@@ -543,7 +549,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.76
+      "score": 31.63
     },
     {
       "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
@@ -562,7 +568,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.58
+      "score": 31.45
     }
   ]
 }
