@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T01:55:08.356Z",
+  "generatedAt": "2026-08-22T04:00:43.579Z",
   "jobs": [
     {
       "externalId": "mlops-engineer-juno-beach-florida-usa-3505478",
@@ -21,7 +21,7 @@
       ],
       "aiRelevance": 0.91,
       "visaSponsored": false,
-      "score": 57.58
+      "score": 57.49
     },
     {
       "externalId": "ai-engineer-united-states-3499515",
@@ -48,7 +48,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.81
+      "score": 56.72
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3496989",
@@ -74,7 +74,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.23
+      "score": 55.14
     },
     {
       "externalId": "senior-consultant-ai-data-engineering-microsoft-azure-all-genders-romania-3504137",
@@ -96,7 +96,7 @@
       ],
       "aiRelevance": 0.72,
       "visaSponsored": false,
-      "score": 51.64
+      "score": 51.55
     },
     {
       "externalId": "juniormiddle-computer-vision-engineer-id72410-west-palm-beach-united-states-3502342",
@@ -116,7 +116,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 50.96
+      "score": 50.87
     },
     {
       "externalId": "sr-systems-engineer-ai-kansas-city-ks-united-states-3500603",
@@ -135,7 +135,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 44.24
+      "score": 44.15
     },
     {
       "externalId": "ai-intern-woodridge-il-united-states-3499522",
@@ -157,7 +157,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 43.92
+      "score": 43.83
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -180,7 +180,86 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 43.61
+      "score": 43.52
+    },
+    {
+      "externalId": "id-10047-data-ingestion-engieer-monterrey-nl-mexico-3506537",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Inetum2/744000144809924--id-10047-data-ingestion-engieer",
+      "title": "ID 10047 | Data Ingestion Engieer",
+      "company": "Inetum2",
+      "location": "Monterrey, N.L., Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with architecture BI and business * Configure real time data replication * Design real time and batch data architectures * Design SAP SLT replication scenarios * Document data architectures * Explore Snowflake as cloud destination * Implement data quality controls * Manage initial data loading * Model SAP HANA attribute views * Model SAP HANA calculation views * Monitor replication performance * Optimize replication processes * Reconcile source and target data * Support SAP HANA administration and query optimization * Troubleshoot replication issues Perks/Benefits: + International projects + Life insurance + Meal vouchers + Medical insurance + Performance recognition + Professional development + Wellbeing programs Skills/Tech stack required: [Apache Airflow][Attribute Views][Azure Data][Azure Data Factory][Calculation views][Clustering keys][Data Factory][Data integration][Data loading][Data orchestration][Data pipeline][Data Quality][Data Reconciliation][Data replication][Enterprise Cloud][HANA Enterprise Cloud][Language Processing][Machine Learning][Natural Language][Natural Language Processing][Python][Real Time][Real-time replication][Replication Server][SAP ECC][SAP HANA][SAP HANA Enterprise Cloud][SAP Landscape][SAP Landscape Transformation][SAP Landscape Transformation Replication Server][SAP S4HANA][SAP SLT][Snowflake][Snowpipe][Star Schema][Translational Mapping][Trigger Based Replication] Educational requirements: N/A Role(s): [Data Engineer][Data Integration Engineer][Engineer][Integration Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "NLP"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 42.91
+    },
+    {
+      "externalId": "id-10048-data-app-engineer-monterrey-nl-mexico-3506237",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Inetum2/744000144812239-id-10048-data-app-engineer",
+      "title": "ID 10048 | Data App Engineer",
+      "company": "Inetum2",
+      "location": "Monterrey, N.L., Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with team using Git branching pull requests and code reviews * Design and optimize complex SQL queries in Snowflake * Develop and maintain multi module React applications * Ensure scalable clean documented architecture * Implement CI/CD workflows * Implement Snowflake Cortex AI functions for ML and LLM tasks sentiment summarization and search * Integrate Power BI datasets via REST API to publish dashboards * Manage React deployment lifecycle build semantic versioning packaging and environment configuration * Model data for analytics consumption * Participate in agile ceremonies * Use generative AI tools for code generation refactoring and review Perks/Benefits: + Food vouchers + International project growth opportunities + Life insurance + Medical expenses insurance + Professional development platform access + Recognition and rewards + Training and continuous learning + Wellbeing programs Skills/Tech stack required: [Azure DevOps][CI/CD][Code-splitting][Cortex AI][CTE][Cypress][Docker][Embedding][FastAPI][Git][Gitflow][GitHub Actions][GitLab CI][JavaScript][Jest][JSON][Lazy Loading][Node.js][Nx][Power BI][React][React testing][React Testing Library][Redux][REST API][Snowflake][Snowflake Cortex][Snowflake Cortex AI][Snowpark][SQL][Testing Library][Trunk-based][Trunk-based development][Turborepo][TypeScript][VARIANT][Window Functions][Zustand] Educational requirements: N/A Role(s): [App Engineer][Data App Engineer][Data Engineer][Developer][Engineer][Frontend][Frontend Developer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "LLM"
+      ],
+      "aiRelevance": 0.27,
+      "visaSponsored": false,
+      "score": 42.12
+    },
+    {
+      "externalId": "senior-ai-platforms-engineer-brooklyn-ny-united-states-3506236",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/BuzzClanLLC/744000144819640-senior-ai-platforms-engineer",
+      "title": "Senior AI & Platforms Engineer",
+      "company": "BuzzClanLLC",
+      "location": "Brooklyn, NY, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect scalable data pipelines * Automate testing, deployment, and monitoring * Build asynchronous Python microservices * Build data query patterns * Design autonomous multi-agent systems * Develop gRPC APIs * Develop REST APIs * Establish MLOps pipelines * Implement cognitive architectures * Monitor systems with Prometheus * Set up CI/CD pipelines * Track ML models with MLflow * Visualize metrics with Grafana Perks/Benefits: + Contract position + Local candidates required + Onsite work 3 days per week Skills/Tech stack required: [AIOps][Asyncio][Autogen][CI/CD][CrewAI][Databricks][Delta Lake][FastAPI][GitHub Actions][GitLab CI][Grafana][GRPC][Lakehouse][Langgraph][MLflow][MLOps][Prometheus][Pytest][Python][REST][Semantic Kernel][Snowflake][Unity Catalog] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platforms Engineer][Engineer][Platforms Engineer][Senior AI Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "MLOps"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 39.89
+    },
+    {
+      "externalId": "id-10049-data-modeler-monterrey-nl-mexico-3506393",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Inetum2/744000144814119-id-10049-data-modeler",
+      "title": "ID 10049 | Data Modeler",
+      "company": "Inetum2",
+      "location": "Monterrey, N.L., Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain semantic layer * Collaborate with data engineering and governance teams * Define metrics and reusable dimensions * Design dimensional data models * Develop and optimize Power BI dashboards * Document data lineage and data dictionary * Facilitate business discovery sessions * Implement analytic data models in Snowflake * Implement Snowflake Cortex Agents with natural language queries * Integrate semantic layer with Cortex responses * Optimize Snowflake models for large scale consumption * Translate business KPIs into data structures Perks/Benefits: + Enhanced legal benefits + Learning and development programs + Life insurance + Meal vouchers + Medical insurance + Wellbeing programs Skills/Tech stack required: [Alation][Atlan][Clustering keys][Collibra][Cortex Agents][Cortex AI][Data Catalog][Data Dictionary][Data Governance][Data Lineage][Data Modeling][Data Vault][Data Vault 2.0][DAX][DBT][Dimensional Modeling][DirectQuery][Dynamic Tables][Import mode][Inmon][Kimball][Language Processing][Looker][Materialized views][Natural Language][Natural Language Processing][Power BI][Python][Qlik][Secure views][Semantic layer][Semantic Search][Snowflake][Snowflake Cortex][Snowflake Semantic Layer][Snowpark][SQL][Star Schema][Streamlit][Tableau] Educational requirements: N/A Role(s): [Analytics][Analytics Engineer][Data Engineer][Data Modeler][Engineer][Modeler]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "NLP"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 39.61
     },
     {
       "externalId": "software-engineer-iii-cloud-ai-warsaw-poland-3500258",
@@ -200,7 +279,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.68
+      "score": 39.59
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -222,7 +301,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.23
+      "score": 38.14
     },
     {
       "externalId": "tax-data-systems-and-process-analyst-chicago-il-usa-3501612",
@@ -242,7 +321,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.16
+      "score": 36.07
     },
     {
       "externalId": "mid-level-data-engineer-work-from-home-va-united-states-3499762",
@@ -263,7 +342,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.07
+      "score": 35.98
     },
     {
       "externalId": "data-engineer-dublin-ireland-3503429",
@@ -280,7 +359,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.27
+      "score": 35.18
     },
     {
       "externalId": "senior-data-analyst-peabody-ma-united-states-3505356",
@@ -299,7 +378,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.14
+      "score": 35.05
     },
     {
       "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
@@ -316,7 +395,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 35.02
+      "score": 34.93
     },
     {
       "externalId": "test-automation-engineer-bucharest-romania-3502292",
@@ -333,7 +412,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35
+      "score": 34.91
     },
     {
       "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
@@ -352,24 +431,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.7
-    },
-    {
-      "externalId": "computer-scientist-i-las-vegas-nv-united-states-3495218",
-      "source": "foorilla",
-      "url": "https://myjobs.adp.com/jt4currentopeningscx3/cx/job-details?reqId=5001220090006",
-      "title": "Computer Scientist I",
-      "company": "J...",
-      "location": "Las Vegas, NV, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Advise team on technical problems * Assist with system software maintenance * Assist with system sustainment activities * Design System and Software * Document design & implementation * Implement design through software coding * Interact with customers and project managers * Interpret customer requirements * Participate in design reviews * Plan integration testing * Plan system testing * Plan unit testing Perks/Benefits: + 401k plan + Dental insurance + Disability insurance + Flexible spending account + Health savings account + Life insurance + Medical insurance + Paid time off + Tuition reimbursement + Vision insurance Skills/Tech stack required: [Development Lifecycle][Integration Testing][Requirements Analysis][Software coding][Software development][Software Development Lifecycle][Systems engineering][System Testing][Technical documentation][Unit Testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Computer Scientist][Scientist]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.89
+      "score": 34.61
     },
     {
       "externalId": "senior-data-engineer-python-con-ingles-madrid-md-spain-3501877",
@@ -388,7 +450,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.88
+      "score": 33.79
     },
     {
       "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
@@ -407,7 +469,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.7
+      "score": 33.61
+    },
+    {
+      "externalId": "sr-engineer-data-engineering-roswell-ga-united-states-3506072",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/PilotCompany/744000144829660--sr-engineer-data-engineering",
+      "title": "Sr Engineer, Data Engineering",
+      "company": "PilotCompany",
+      "location": "Roswell, GA, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Ensure data integrity and security * Implement data analytics specifications * Maintain and tune code * Mentor team members * Model data using Star Schema * Modify data engineering jobs * Oversee testing for solutions * Perform code and process reviews * Research develop data engineering processes * Review data lake documentation * Troubleshoot failed jobs and connection issues Perks/Benefits: N/A Skills/Tech stack required: [Amazon Web Services][Apache Spark][Azure][Databricks][Data Lake][Data Warehouse][Google Cloud][Lakehouse][Message Queues][Oracle][PostgreSQL][Python][Snowflake][Spark Streaming][SQL][SQL Server][Star Schema][Web Services] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.39
     },
     {
       "externalId": "data-engineer-google-maps-mountain-view-ca-usa-3499759",
@@ -426,24 +507,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.55
+      "score": 32.46
     },
     {
-      "externalId": "data-analyst-salt-lake-city-ut-united-states-3495876",
+      "externalId": "data-engineer-data-analyst-mf-lisboa-lisboa-portugal-3506066",
       "source": "foorilla",
-      "url": "https://myjobs.adp.com/albanyjobs/cx/job-details?reqId=5001214139806",
-      "title": "Data Analyst",
-      "company": "A...",
-      "location": "Salt Lake City, UT, United States",
-      "country": "United States",
+      "url": "https://transforgroup.factorialhr.pt/job_posting/data-engineer-data-analyst-m-f-318988",
+      "title": "Data Engineer / Data Analyst (m/f)",
+      "company": "Data Engineer / Data Analyst (m/f)",
+      "location": "Lisboa, Lisboa, Portugal",
+      "country": "Portugal",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Analyze operational program manufacturing supply chain data * Build maintain dashboards reports KPI scorecards * Evaluate performance measure impact * Gather clean validate data * Improve data quality reporting processes automation * Provide recurring reports ad hoc analysis presentations * Work cross functionally to deliver actionable analysis Perks/Benefits: N/A Skills/Tech stack required: [Data Pipelines][Data Visualization][Excel][KPI Development][Power BI][Reporting Automation][SAP][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst]",
+      "description": "Tasks: * Create and maintain Power BI dashboards and reports * Define metrics and KPIs with business teams * Develop ETL/ELT data pipelines * Ensure data quality cleaning and standardization * Integrate data from multiple systems * Model star schema dimensions and facts for reporting Perks/Benefits: N/A Skills/Tech stack required: [Azure Data][Azure Data Factory][Data Factory][Data Modeling][ELT][ETL][Power BI][Python][SQL][Star Schema] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Data Engineer][Engineer]",
       "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.03
+      "score": 32.32
     },
     {
       "externalId": "data-engineer-intern-e-commerce-2027-summer-san-jose-california-united-states-3501574",
@@ -460,7 +543,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.85
+      "score": 31.76
     },
     {
       "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
@@ -479,7 +562,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.67
+      "score": 31.58
     }
   ]
 }
