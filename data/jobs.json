@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-08-21T21:44:43.023Z",
+  "generatedAt": "2026-08-22T01:55:08.356Z",
   "jobs": [
+    {
+      "externalId": "mlops-engineer-juno-beach-florida-usa-3505478",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006236459ENUS",
+      "title": "MLOps Engineer",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build scalable ETL/ELT pipelines * Collaborate with data scientists to bridge experimentation and production * Convert notebooks and prototype code into production grade solutions * Create curated datasets for data science and machine learning * Create reusable frameworks for efficient model deployment * Design and implement reliable data pipelines for machine learning and analytical workloads * Design build and maintain production grade MLOps pipelines * Develop monitoring for model performance data quality data drift and operational health * Develop reusable data transformation frameworks * Establish and improve CI CD practices for machine learning workloads * Implement data validation and data quality controls * Implement logging, monitoring, and error handling * Implement model versioning artifact management experiment tracking and reproducibility * Integrate structured and unstructured data from multiple sources * Optimize pipelines for performance, scalability, and cost * Productionize machine learning models * Support batch and event driven or streaming workloads * Translate data science requirements into scalable engineering solutions * Troubleshoot production machine learning pipelines Perks/Benefits: + 401k retirement plan + Employee assistance program + Health savings account + Life insurance + Long-term disability + Medical/Dental/Vision + PTO + Short-term disability + Transportation benefits Skills/Tech stack required: [Airflow][Amazon CloudWatch][Amazon ECR][Amazon ECS][Amazon EKS][Amazon EventBridge][Amazon S3][Amazon SageMaker][Apache Spark][AWS][AWS CDK][AWS CodeBuild][AWS CodePipeline][AWS Glue][AWS IAM][AWS Lambda][AWS Step Functions][CI/CD][Data Quality][Data Validation][Docker][Git][Kubernetes][Machine Learning][MLflow][PySpark][Python][SQL][Step Functions][Terraform] Educational requirements: N/A Role(s): [Data Engineer][Engineer][MLOps Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "MLOps",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.91,
+      "visaSponsored": false,
+      "score": 57.58
+    },
     {
       "externalId": "ai-engineer-united-states-3499515",
       "source": "foorilla",
@@ -26,7 +48,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.98
+      "score": 56.81
     },
     {
       "externalId": "lead-ai-engineer-machine-learning-parsippany-nj-united-states-3496989",
@@ -52,7 +74,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.4
+      "score": 55.23
     },
     {
       "externalId": "senior-consultant-ai-data-engineering-microsoft-azure-all-genders-romania-3504137",
@@ -74,7 +96,7 @@
       ],
       "aiRelevance": 0.72,
       "visaSponsored": false,
-      "score": 51.81
+      "score": 51.64
     },
     {
       "externalId": "juniormiddle-computer-vision-engineer-id72410-west-palm-beach-united-states-3502342",
@@ -94,7 +116,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 51.13
+      "score": 50.96
     },
     {
       "externalId": "sr-systems-engineer-ai-kansas-city-ks-united-states-3500603",
@@ -113,7 +135,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 44.41
+      "score": 44.24
     },
     {
       "externalId": "ai-intern-woodridge-il-united-states-3499522",
@@ -135,7 +157,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 44.09
+      "score": 43.92
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -158,7 +180,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 43.78
+      "score": 43.61
     },
     {
       "externalId": "software-engineer-iii-cloud-ai-warsaw-poland-3500258",
@@ -178,26 +200,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.85
-    },
-    {
-      "externalId": "data-governance-enablement-manager-miami-lakes-fl-united-states-3495258",
-      "source": "foorilla",
-      "url": "https://myjobs.adp.com/bankunitedexternal/cx/job-details?reqId=5001192331206",
-      "title": "Data Governance & Enablement Manager",
-      "company": "B...",
-      "location": "Miami Lakes, FL, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Conduct data and AI governance maturity assessments * Coordinate data and AI use case value realization * Define and enforce governance controls * Define governance KPIs and KRIs * Develop data and AI governance framework * Develop governance policies standards and procedures * Enable responsible AI and advanced analytics adoption * Establish data and AI lifecycle governance * Implement data catalog metadata and lineage tools * Operationalize enterprise data governance * Perform data quality assessments * Provide governance training and education * Support audit readiness with governance evidence * Support risk compliance and internal audit alignment Perks/Benefits: N/A Skills/Tech stack required: [Advanced Analytics][AI Governance][Alation][Audit management][AWS][Azure][COBIT][Collibra][Confluence][DAMA-DMBOK][Databricks][Data Catalog][Data Governance][Data Lineage][Data Management][Data Quality][DCAM][Evidence collection][Governance frameworks][Informatica][Jira][KPIs][KRIs][Lineage Management][Machine Learning][Maturity assessments][Metadata Management][Regulatory Compliance][Risk Management][Snowflake] Educational requirements: [Bachelor of Business Administration][Bachelor of Engineering][Bachelor of Science] Role(s): [AI Enablement Manager][Data Governance][Data Governance and AI Enablement Manager][Data Governance Manager][Enablement Manager][Governance Manager][Manager]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "AWS"
-      ],
-      "aiRelevance": 0.15,
-      "visaSponsored": false,
-      "score": 39.29
+      "score": 39.68
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -219,7 +222,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.4
+      "score": 38.23
     },
     {
       "externalId": "tax-data-systems-and-process-analyst-chicago-il-usa-3501612",
@@ -239,7 +242,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.33
+      "score": 36.16
     },
     {
       "externalId": "mid-level-data-engineer-work-from-home-va-united-states-3499762",
@@ -260,7 +263,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.24
+      "score": 36.07
     },
     {
       "externalId": "data-engineer-dublin-ireland-3503429",
@@ -277,7 +280,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.44
+      "score": 35.27
+    },
+    {
+      "externalId": "senior-data-analyst-peabody-ma-united-states-3505356",
+      "source": "foorilla",
+      "url": "https://myjobs.adp.com/accesscorpcareers/cx/job-details?reqId=5001219471906",
+      "title": "Senior Data Analyst",
+      "company": "A...",
+      "location": "Peabody, MA, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply source control testing deployment monitoring documentation * Automate data preparation validation analytical workflows * Build finance data products * Build semantic models dashboards and analytical tools * Develop ETL and ELT pipelines and reusable datasets * Develop tables views transformations pipelines analytical models * Enable self service analytics for FP and A users * Identify resolve data quality issues and logic gaps * Maintain metric definitions data lineage business rules documentation * Reconcile outputs to source systems financial reporting and operational reporting * Translate FP and A needs into data requirements business rules and quality controls Perks/Benefits: N/A Skills/Tech stack required: [Azure][CI/CD][Data Modeling][Data Quality][Data Reconciliation][Data Warehousing][DAX][Dimensional Modeling][Documentation][ELT][ETL][Git][Lakehouse][Microsoft Fabric][Monitoring][Orchestration][Power BI][Python][Semantic Modeling][SQL] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 35.14
     },
     {
       "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
@@ -294,7 +316,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 35.19
+      "score": 35.02
     },
     {
       "externalId": "test-automation-engineer-bucharest-romania-3502292",
@@ -311,7 +333,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.17
+      "score": 35
     },
     {
       "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
@@ -330,7 +352,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.87
+      "score": 34.7
     },
     {
       "externalId": "computer-scientist-i-las-vegas-nv-united-states-3495218",
@@ -347,7 +369,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.06
+      "score": 33.89
     },
     {
       "externalId": "senior-data-engineer-python-con-ingles-madrid-md-spain-3501877",
@@ -366,7 +388,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.05
+      "score": 33.88
     },
     {
       "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
@@ -385,7 +407,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.87
+      "score": 33.7
     },
     {
       "externalId": "data-engineer-google-maps-mountain-view-ca-usa-3499759",
@@ -404,7 +426,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.72
+      "score": 32.55
     },
     {
       "externalId": "data-analyst-salt-lake-city-ut-united-states-3495876",
@@ -421,7 +443,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.2
+      "score": 32.03
     },
     {
       "externalId": "data-engineer-intern-e-commerce-2027-summer-san-jose-california-united-states-3501574",
@@ -438,7 +460,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.02
+      "score": 31.85
     },
     {
       "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
@@ -457,7 +479,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.84
+      "score": 31.67
     }
   ]
 }
