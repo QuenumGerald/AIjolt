@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T18:53:13.776Z",
+  "generatedAt": "2026-08-22T21:41:17.777Z",
   "jobs": [
     {
       "externalId": "senior-ai-engineer-data-ai-organisation-all-genders-full-part-time-weiterstadt-hessen-de-64331-3507672",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.44
+      "score": 55.33
     },
     {
       "externalId": "co-op-researcher-llms-computer-vision-markham-ontario-canada-3507055",
@@ -44,7 +44,28 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.34
+      "score": 55.23
+    },
+    {
+      "externalId": "mlops-engineer-ciudad-de-mexico-cdmx-mx-3511471",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/sequoiaconnect/45.004/mlops-engineer/7E.07D",
+      "title": "MLOps Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Deploy version and release models using CI CD * Detect and triage production incidents * Execute rollbacks throttling or model disabling * Implement responsible AI audit trails * Integrate monitoring, logging, and alerting * Maintain model registries and lineage * Monitor fairness bias explainability transparency * Monitor models in production * Standardize AI Ops patterns * Track model drift and data distribution Perks/Benefits: + Remote work Skills/Tech stack required: [Alerting][Audit trails][Azure][Bias monitoring][CI/CD][Cloud Platforms][Containerization][Data Drift][Docker][Explainability][Fairness evaluation][LLM][Logging][Machine Learning][MLOps][Model Drift][Model lineage][Model Monitoring][Model Registry][Python][Responsible AI] Educational requirements: N/A Role(s): [Engineer][Learning Engineer][Machine Learning Engineer][MLOps Engineer][ML Platform Engineer][Platform Engineer]",
+      "postedAt": "2026-08-22T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "MLOps"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.65
     },
     {
       "externalId": "software-engineer-united-states-washington-redmond-3510625",
@@ -70,7 +91,7 @@
       ],
       "aiRelevance": 0.84,
       "visaSponsored": false,
-      "score": 49.97
+      "score": 49.86
     },
     {
       "externalId": "data-scientist-guadalajara-mexico-3508892",
@@ -90,7 +111,7 @@
       ],
       "aiRelevance": 0.54,
       "visaSponsored": false,
-      "score": 43.18
+      "score": 43.07
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -113,7 +134,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 42.9
+      "score": 42.78
     },
     {
       "externalId": "id-10047-data-ingestion-engieer-monterrey-nl-mexico-3506537",
@@ -133,7 +154,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 42.29
+      "score": 42.18
     },
     {
       "externalId": "ai-solutions-architect-mexico-3507683",
@@ -152,7 +173,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 41.64
+      "score": 41.52
     },
     {
       "externalId": "id-10048-data-app-engineer-monterrey-nl-mexico-3506237",
@@ -171,7 +192,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 41.5
+      "score": 41.38
     },
     {
       "externalId": "senior-ai-platforms-engineer-brooklyn-ny-united-states-3506236",
@@ -191,7 +212,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.27
+      "score": 39.16
     },
     {
       "externalId": "id-10049-data-modeler-monterrey-nl-mexico-3506393",
@@ -211,24 +232,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 38.99
-    },
-    {
-      "externalId": "ai-engineering-lead-europe-3507678",
-      "source": "foorilla",
-      "url": "https://jobs.ashbyhq.com/onhires/7d1ce6e3-01bd-428e-bae2-29d02be63068",
-      "title": "AI Engineering Lead",
-      "company": "OnHires",
-      "location": "Europe",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect and integrate AI solutions across enterprise systems * Build scalable secure maintainable automation solutions * Champion adoption of AI and automation across organization * Conduct architecture code and technical reviews * Continuously improve solution effectiveness and sustainability * Develop and execute AI automation roadmap * Drive AI and automation strategy * Establish governance and execution standards * Guide technical decision making across AI and analytics * Identify technical ethical and adoption risks and mitigate * Lead AI solution lifecycle design development deployment scaling * Mentor engineers and strengthen AI automation integration skills * Monitor performance adoption impact * Operationalize AI automation initiatives * Translate priorities into AI automation initiatives Perks/Benefits: + Career growth + Health insurance + Housing + Mentorship + Regular feedback + Training programs Skills/Tech stack required: [Analytics][API Integration][Artificial Intelligence][Automation engineering][Data platforms][Enterprise systems][Enterprise Systems Integration][Experimentation][Machine Learning][Middleware][Risk Management][Software development][Systems Integration][Systems Thinking][Workflow Orchestration] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [AI][AI Engineering][AI Engineering Lead][Engineering Lead][Lead]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0.12,
-      "visaSponsored": false,
-      "score": 37.87
+      "score": 38.87
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -250,7 +254,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 37.52
+      "score": 37.41
     },
     {
       "externalId": "data-analysts-united-states-3507071",
@@ -269,24 +273,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.31
-    },
-    {
-      "externalId": "senior-data-analytics-engineer-latin-america-3506671",
-      "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/encora10/jobs/5211265007",
-      "title": "Senior Data Analytics Engineer",
-      "company": "Job Application for Senior Data Analytics Engineer at Encora",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Contribute to BI standards best practices documentation * Design data models and semantic layers for self service analytics * Develop and maintain reusable data models * Develop data visualizations and data storytelling * Gather reporting requirements from business teams * Implement governance security and role based access * Lead dashboard migration from ThoughtSpot to Power BI * Optimize report performance and usability * Participate in Agile sprint ceremonies * Partner with data engineering to ensure scalable Power BI data sources * Support reporting modernization and BI platform consolidation * Train and onboard users to Power BI * Translate ThoughtSpot workflows into Power BI reports Perks/Benefits: + Remote work Skills/Tech stack required: [Access Control][Agile][APIs][Azure][Azure Data][Azure Databricks][Azure Data Factory][Azure Synapse][Azure Synapse Analytics][BI governance][Business Intelligence][CI/CD][Databricks Medallion Architecture][Data Factory][Data Layer][Data Modeling][Data Storytelling][Data Visualization][DAX][DBT][Deployment Pipelines][Medallion Architecture][Power BI][Power BI Service][Power Query][Role-Based Access][Role-Based Access Control][Semantic data][Semantic Data Layer][SQL][Synapse Analytics][ThoughtSpot] Educational requirements: N/A Role(s): [Analytics Engineer][Business Intelligence Engineer][Data Analytics Engineer][Engineer][Intelligence Engineer][Senior Business Intelligence Engineer][Senior Data Analytics][Senior Data Analytics Engineer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 35.77
+      "score": 37.19
     },
     {
       "externalId": "senior-data-scientist-cork-ireland-dublin-ireland-3507119",
@@ -305,7 +292,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.44
+      "score": 35.33
     },
     {
       "externalId": "analytics-engineer-mexico-city-cdmx-3507686",
@@ -324,28 +311,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.36
+      "score": 35.25
     },
     {
-      "externalId": "data-engineer-platform-engineering-barcelona-3506703",
+      "externalId": "senior-data-scientist-strategic-data-intelligence-4400-west-18th-street-houston-texas-us-tx-77092-8501-united-states-3511714",
       "source": "foorilla",
-      "url": "https://n26.com/en-eu/careers/positions/8147446?gh_jid=8147446",
-      "title": "Data Engineer - Platform Engineering",
-      "company": "N26",
-      "location": "Not specified",
-      "country": "Unknown",
+      "url": "https://apply.houstonisd.org/careers/job/171827993626",
+      "title": "Senior Data Scientist Strategic Data Intelligence",
+      "company": "Houston ISD",
+      "location": "4400 West 18th Street, Houston, Texas (US-TX), 77092-8501, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply cloud infrastructure networking and CI CD best practices * Build and maintain database platform solutions * Contribute to roadmap by delivering code and infrastructure improvements * Maintain and enhance observability solutions * Orchestrate access and metadata management with product and analytics teams * Participate in on call rotations and incident troubleshooting Perks/Benefits: + Additional annual leave + Fitness and wellness memberships + Language apps + Premium bank account subscription + Public transportation discounts + Relocation support + Visa support + Work from home Skills/Tech stack required: [Apache Airflow][ArgoCD][AWS][CI/CD][CloudFormation][Datadog][DBT][Docker][EKS][GitHub Actions][Grafana][Jenkins][Kubernetes][Networking][OpenTelemetry][Prometheus][Python][Security][Terraform] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "description": "Tasks: * Build decision support tools * Build machine learning models * Clean normalize and combine ERP data * Collaborate with data engineers for reproducible models * Create executive Power BI dashboards * Develop forecasts and classification models * Document findings for technical and non technical audiences * Evaluate external datasets for forecasting * Mentor analysts and data professionals Perks/Benefits: N/A Skills/Tech stack required: [Classification][Clustering][Data cleaning][Data Modeling][Data Normalization][Data Storytelling][Data Structures][ERP Data][ERP data structures][Forecasting][Machine Learning][Microsoft Fabric][Oracle Fusion][Power BI][Python][R][SAP][SQL] Educational requirements: [Master of Science] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
       "postedAt": "2026-08-21T00:00:00.000Z",
       "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
+        "Python"
       ],
-      "aiRelevance": 0.09,
+      "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.54
+      "score": 35.22
     },
     {
       "externalId": "technical-ai-requirements-systems-engineer-annapolis-junction-md-3503817",
@@ -362,7 +347,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 34.31
+      "score": 34.2
     },
     {
       "externalId": "data-engineer-remote-united-states-3508845",
@@ -381,7 +366,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.16
+      "score": 34.05
     },
     {
       "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
@@ -400,7 +385,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.99
+      "score": 33.88
     },
     {
       "externalId": "data-science-intern-aii-bachelor-degree-level-rochester-mn-united-states-3510398",
@@ -419,7 +404,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 33.7
+      "score": 33.59
     },
     {
       "externalId": "computational-scientist-psychiatry-texas-dallas-5323-harry-hines-blvd-3510333",
@@ -436,7 +421,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.2
+      "score": 33.08
     },
     {
       "externalId": "senior-power-bi-developer-toronto-on-canada-3510322",
@@ -453,7 +438,24 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.09
+      "score": 32.97
+    },
+    {
+      "externalId": "data-visualization-engineer-powerbi-sr-mexico-3511721",
+      "source": "foorilla",
+      "url": "https://softtek.eightfold.ai/careers/job/893397131851",
+      "title": "Data Visualization Engineer PowerBI Sr",
+      "company": "Softtek",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and troubleshoot MicroStrategy cubes * Build MicroStrategy reports dashboards and scorecards * Coordinate with stakeholders to define analytical use cases * Create and troubleshoot MicroStrategy attributes * Create and troubleshoot MicroStrategy metrics * Deploy maintain and support production MicroStrategy solutions * Develop business intelligence solutions for complex problems * Develop derived metrics and complex metrics * Evaluate cube efficiency * Implement attribute scripting with case statements * Model data in MicroStrategy * Write and troubleshoot SQL queries Perks/Benefits: + Advanced English language environment + Hybrid work Skills/Tech stack required: [Attributes][Business Intelligence][Cubes][Data Modeling][Looker][Metrics][Microstrategy][Power BI][Snowflake][SQL][Tableau] Educational requirements: N/A Role(s): [Data Visualization][Data Visualization Engineer][Developer][Engineer][MicroStrategy Developer][Visualization Engineer]",
+      "postedAt": "2026-08-21T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 32.95
     },
     {
       "externalId": "healthcare-data-engineer-hedis-quality-us-hartford-connecticut-united-states-3510377",
@@ -472,7 +474,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.05
+      "score": 32.93
     },
     {
       "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
@@ -491,7 +493,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.99
+      "score": 32.88
     },
     {
       "externalId": "sr-engineer-data-engineering-roswell-ga-united-states-3506072",
@@ -510,26 +512,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.77
+      "score": 32.66
     },
     {
-      "externalId": "data-analyst-canada-3508829",
+      "externalId": "data-analyst-customer-success-raleigh-nc-us-3511528",
       "source": "foorilla",
-      "url": "https://stripe.com/jobs/search?gh_jid=5416444",
-      "title": "Data Analyst",
-      "company": "Stripe",
-      "location": "Canada",
-      "country": "Canada",
+      "url": "https://www.comeet.com/jobs/vastdata/43.001/data-analyst-customer-success/7E.074",
+      "title": "Data Analyst, Customer Success",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Not specified",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build metrics * Build scalable data pipelines * Create dashboards and reports * Deliver data storytelling for business recommendations * Extract insights from complex data * Partner with cross functional teams to define data problems * Provide training for data literacy * Support self service reporting tooling * Translate business needs into analytics requirements Perks/Benefits: N/A Skills/Tech stack required: [Apache Spark][Business Intelligence][Code review][Dashboards][Data Pipelines][Python][SQL][Statistical Analysis][Testing] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Analyst][Data Analyst]",
+      "description": "Tasks: * Build SQL queries for customer success data extraction and transformation * Collect clean and interpret data from multiple sources * Create and maintain Tableau dashboards * Deliver insights for key customer success business questions * Develop ad-hoc reports and analytics packages * Identify data quality gaps and improve reporting data integrity * Maintain documentation and data definitions for metrics * Model operational metrics for reporting * Track analytics work in Jira * Use AI assisted tools to speed up SQL development documentation and testing * Visualize metrics trends and performance in Tableau Perks/Benefits: N/A Skills/Tech stack required: [Business Intelligence][Data Analysis][Data Modeling][Data Quality][Data Visualization][Jira][SQL][Tableau] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst]",
       "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
+      "skills": [],
+      "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.07
+      "score": 32.51
     },
     {
       "externalId": "senior-data-engineer-remote-mexico-3507091",
@@ -548,7 +548,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.98
+      "score": 31.87
     },
     {
       "externalId": "data-engineer-intern-weave-headquarters-lehi-ut-3507791",
@@ -567,26 +567,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.94
+      "score": 31.82
     },
     {
-      "externalId": "data-engineer-data-analyst-mf-lisboa-lisboa-portugal-3506066",
+      "externalId": "business-intelligence-data-engineer-133-2016-tulsa-ok-us-3511696",
       "source": "foorilla",
-      "url": "https://transforgroup.factorialhr.pt/job_posting/data-engineer-data-analyst-m-f-318988",
-      "title": "Data Engineer / Data Analyst (m/f)",
-      "company": "Data Engineer / Data Analyst (m/f)",
-      "location": "Lisboa, Lisboa, Portugal",
-      "country": "Portugal",
+      "url": "https://jobs.dayforcehcm.com/en-US/ccok/CCOK/jobs/6040",
+      "title": "Business Intelligence - Data Engineer 133-2016",
+      "company": "Dayforce Jobs",
+      "location": "Tulsa, OK, US",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Create and maintain Power BI dashboards and reports * Define metrics and KPIs with business teams * Develop ETL/ELT data pipelines * Ensure data quality cleaning and standardization * Integrate data from multiple systems * Model star schema dimensions and facts for reporting Perks/Benefits: N/A Skills/Tech stack required: [Azure Data][Azure Data Factory][Data Factory][Data Modeling][ELT][ETL][Power BI][Python][SQL][Star Schema] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Data Engineer][Engineer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
+      "description": "Tasks: * Assemble complex data sets * Automate manual processes * Build analytics tools for business metrics * Design ETL processes * Improve scalability of data infrastructure * Maintain data pipeline architecture * Optimize data flow and collection Perks/Benefits: N/A Skills/Tech stack required: [Data Architecture][Data Modeling][Data Pipelines][Data Transformation][Dependency management][ETL][Metadata Management][Scalability][SSIS][Workload management] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-22T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.7
+      "score": 31.72
     },
     {
       "externalId": "data-engineer-herndon-va-information-technology-chantilly-va-information-technology-chantilly-va-informati-3503427",
@@ -605,7 +603,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.96
+      "score": 30.84
     }
   ]
 }
