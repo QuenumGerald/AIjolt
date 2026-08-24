@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T04:10:54.072Z",
+  "generatedAt": "2026-08-24T07:33:20.969Z",
   "jobs": [
     {
       "externalId": "senior-ai-engineer-data-ai-organisation-all-genders-full-part-time-weiterstadt-hessen-de-64331-3507672",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.06
+      "score": 53.92
     },
     {
       "externalId": "co-op-researcher-llms-computer-vision-markham-ontario-canada-3507055",
@@ -44,7 +44,27 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.96
+      "score": 53.82
+    },
+    {
+      "externalId": "middle-ai-engineer-genai-deployment-lviv-ukraine-3512954",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/robotsandpencils/jobs/5365275008",
+      "title": "Middle AI Engineer (GenAI Deployment)",
+      "company": "Job Application for Middle AI Engineer (GenAI Deployment) at Robots and Pencils",
+      "location": "Lviv, Ukraine",
+      "country": "Ukraine",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Configure Azure ML workspace * Containerize and host FastAPI services * Deploy GenAI agents to cloud * Deploy prediction serving APIs * Document deployment architecture and limitations * Implement logging health checks and alerting * Own model context protocol server architecture * Productionize generative AI agents * Provision cloud compute and troubleshoot capacity * Set up CI CD for deployments Perks/Benefits: + Gig contract + Medical insurance + Military Draft Deferment Support + Paid sick days + Paid vacation + Public holidays off + Unpaid vacation Skills/Tech stack required: [Alerting][Amazon EC2][Amazon ECS][App Service][Azure][Azure App][Azure App Service][Azure Container][Azure Container Apps][Azure ML][CI/CD][Container Apps][Docker][FastAPI][GenAI][GitHub Actions][GitHub Enterprise][Health Checks][LLM][Logging][Model Context Protocol][Observability][Python] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
+      "postedAt": "2026-08-22T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 53.69
     },
     {
       "externalId": "mlops-engineer-ciudad-de-mexico-cdmx-mx-3511471",
@@ -65,7 +85,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.38
+      "score": 53.24
     },
     {
       "externalId": "software-engineer-united-states-washington-redmond-3510625",
@@ -91,27 +111,24 @@
       ],
       "aiRelevance": 0.84,
       "visaSponsored": false,
-      "score": 48.59
+      "score": 48.45
     },
     {
-      "externalId": "data-scientist-guadalajara-mexico-3508892",
+      "externalId": "computational-chemist-saint-charles-mo-united-states-3512992",
       "source": "foorilla",
-      "url": "https://www.salesloft.com/company/careers?gh_jid=8111798",
-      "title": "Data Scientist",
-      "company": "Salesloft",
-      "location": "Not specified",
-      "country": "Unknown",
+      "url": "https://jobs.smartrecruiters.com/Eurofins/744000145043919-computational-chemist",
+      "title": "Computational Chemist",
+      "company": "Eurofins",
+      "location": "Saint Charles, MO, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply statistical techniques to analyze data * Build machine learning models * Collaborate with cross-functional teams * Communicate results to stakeholders * Conduct NLP research * Convert research findings into actionable insights * Design experiments and evaluate results * Develop product feature prototypes * Own complex projects * Translate research needs into data science problems Perks/Benefits: N/A Skills/Tech stack required: [AI Agents][Deep learning][Information Extraction][Langgraph][Language Processing][Machine Learning][Natural Language][Natural Language Processing][NLP][OpenAI][Python][Statistical Analysis] Educational requirements: N/A Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "NLP"
-      ],
-      "aiRelevance": 0.54,
+      "description": "Tasks: * Analyze interpret integrate and report research informatics data * Apply tools and data mining for integrative analysis and visualization * Build computer aided drug design and simulation tools * Collaborate with IT and laboratory teams on data governance * Design validate and benchmark computational workflows * Develop computational chemistry methods * Develop computational workflows for hit finding and drug discovery * Oversee scientific data governance * Perform meta analyses of internal and external data * Represent computational chemistry for nonclinical research and development * Support medicinal chemistry for docking and scoring Perks/Benefits: + 401k match + Dental insurance + Disability insurance + Health insurance + Life insurance + Paid Holidays + Paid vacation + Vision insurance Skills/Tech stack required: [ADMET Prediction][Artificial Intelligence][Benchmarking][Computational Chemistry][Computer-aided drug design][Conformational analysis][Data Governance][Data integration][Data Mining][Data Standardization][Deep learning][Drug design][FEP][Free energy][Free energy perturbation][Generative Models][Ligand-Based Design][Machine Learning][MMGBSA][Model Validation][Molecular Docking][Molecular simulation][QSAR][Reproducible pipelines][Scoring][Similarity Searching][Software Engineering][Statistical Analysis][Uncertainty Analysis][Version control] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Chemist][Computational Chemist][Data Scientist][Engineer][Learning Engineer][Machine Learning Engineer][Scientist]",
+      "postedAt": "2026-08-23T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 41.8
+      "score": 41.64
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -134,7 +151,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 41.51
+      "score": 41.37
     },
     {
       "externalId": "id-10047-data-ingestion-engieer-monterrey-nl-mexico-3506537",
@@ -154,7 +171,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.91
+      "score": 40.77
     },
     {
       "externalId": "ai-solutions-architect-mexico-3507683",
@@ -173,7 +190,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 40.25
+      "score": 40.11
     },
     {
       "externalId": "id-10048-data-app-engineer-monterrey-nl-mexico-3506237",
@@ -192,7 +209,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.11
+      "score": 39.97
     },
     {
       "externalId": "senior-ai-platforms-engineer-brooklyn-ny-united-states-3506236",
@@ -212,7 +229,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 37.89
+      "score": 37.75
     },
     {
       "externalId": "id-10049-data-modeler-monterrey-nl-mexico-3506393",
@@ -232,7 +249,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 37.6
+      "score": 37.46
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -254,7 +271,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 36.14
+      "score": 36
     },
     {
       "externalId": "data-analysts-united-states-3507071",
@@ -273,14 +290,14 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.92
+      "score": 35.78
     },
     {
       "externalId": "senior-data-scientist-cork-ireland-dublin-ireland-3507119",
       "source": "foorilla",
       "url": "https://www.mongodb.com/careers/job/?gh_jid=8135458",
       "title": "Senior Data Scientist",
-      "company": "M...",
+      "company": "MongoDB",
       "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
@@ -292,7 +309,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.06
+      "score": 33.92
     },
     {
       "externalId": "analytics-engineer-mexico-city-cdmx-3507686",
@@ -311,7 +328,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.98
+      "score": 33.84
     },
     {
       "externalId": "senior-data-scientist-strategic-data-intelligence-4400-west-18th-street-houston-texas-us-tx-77092-8501-united-states-3511714",
@@ -330,7 +347,46 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 33.95
+      "score": 33.81
+    },
+    {
+      "externalId": "data-engineer-ai-analytics-remote-spain-3513155",
+      "source": "foorilla",
+      "url": "https://job-boards.greenhouse.io/powerdigitalmarketing/jobs/5219547007",
+      "title": "Data Engineer, AI & Analytics",
+      "company": "Job Application for Data Engineer, AI & Analytics at Power Digital",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build data marts and semantic layer * Build ingestion handling API changes and rate limits * Collaborate with product and client teams * Create metric definitions for AI generated SQL * Design, build, and maintain data pipelines * Develop dbt models and incremental strategies * Implement Git and CI CD practices * Model marketing data sources * Monitor and resolve data quality issues * Optimize pipelines for cost and performance Perks/Benefits: N/A Skills/Tech stack required: [API Integration][“as-code”][CI/CD][Data Modeling][Data Quality][Data Quality Testing][DBT][GCP][Git][Infrastructure as Code][Jinja][Jinja Macros][Python][Quality testing][Snowflake][SQL][Testing] Educational requirements: N/A Role(s): [Analytics][Analytics Engineer][Data Engineer][Engineer]",
+      "postedAt": "2026-08-23T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.22
+    },
+    {
+      "externalId": "senior-data-engineer-germany-spain-romania-remote-3513005",
+      "source": "foorilla",
+      "url": "https://jobs.lever.co/trustyou/3a8b741b-679d-43da-830a-b15a7609ab84",
+      "title": "Senior Data Engineer",
+      "company": "T...",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Design and optimize real time streaming pipelines * Develop data infrastructure architecture * Implement spec driven development * Mentor junior engineers through reviews * Orchestrate agentic AI workflows * Test and monitor mission critical data Perks/Benefits: + Career development training and coaching + Flexible working hours + Learning time + Location Based Social Benefits + Remote-first + Team events Skills/Tech stack required: [CI/CD][ClickHouse][Docker][Elasticsearch][GitHub][Kafka][Kubernetes][OLAP][Open Source][Openspec][Python][Redis][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-23T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.2
     },
     {
       "externalId": "data-engineer-remote-united-states-3508845",
@@ -349,26 +405,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.78
-    },
-    {
-      "externalId": "sr-business-data-analyst-westerville-oh-us-3503406",
-      "source": "foorilla",
-      "url": "https://apply.jobappnetwork.com/clients/14637/posting/11107322/",
-      "title": "Sr Business Data Analyst",
-      "company": "Talentreef",
-      "location": "Westerville, OH, US",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply Python or R for reporting and automation * Build data visualization and back end data models * Clean model and analyze data with SQL and DAX * Create customized analytics solutions for business teams * Design and implement ETL data pipelines * Develop Power BI reports * Implement standard reporting tools * Lead knowledge sharing sessions on data literacy * Manage analytics projects across multiple sites * Provide point of contact for Power BI and analytics community * Support site startups with analytics tools and reporting frameworks Perks/Benefits: + Bonus plan + Dental insurance + Discounted stock purchase + Medical insurance + Paid time off + Prescription Coverage + Vision insurance Skills/Tech stack required: [Dashboard Development][Data Modeling][Data Pipelines][Data Visualization][DAX][ETL][Power BI][Python][R][SQL][Statistical Analysis] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Business Data Analyst][Data Analyst][Senior Business Data Analyst]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 32.61
+      "score": 32.64
     },
     {
       "externalId": "data-science-intern-aii-bachelor-degree-level-rochester-mn-united-states-3510398",
@@ -387,7 +424,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 32.32
+      "score": 32.18
     },
     {
       "externalId": "computational-scientist-psychiatry-texas-dallas-5323-harry-hines-blvd-3510333",
@@ -404,7 +441,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.81
+      "score": 31.67
     },
     {
       "externalId": "senior-power-bi-developer-toronto-on-canada-3510322",
@@ -421,7 +458,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.7
+      "score": 31.56
     },
     {
       "externalId": "data-visualization-engineer-powerbi-sr-mexico-3511721",
@@ -438,7 +475,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.68
+      "score": 31.54
     },
     {
       "externalId": "healthcare-data-engineer-hedis-quality-us-hartford-connecticut-united-states-3510377",
@@ -457,26 +494,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.66
-    },
-    {
-      "externalId": "sr-software-developer-herndon-va-information-technology-tysons-va-information-technology-annapolis-junction-md-inf-3503528",
-      "source": "foorilla",
-      "url": "https://newgentechnologies.catsone.com/careers/52695/jobs/16846881-Sr-Software-Developer",
-      "title": "Sr. Software Developer",
-      "company": "Sr. Software Developer",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Coach junior team members * Debug test and deploy across environments * Design and develop software components * Develop and maintain database for data processing * Extract, transform and load data * Follow software development standards * Implement Continuous Integration and Continuous Delivery * Improve software integration processes * Interface with cross-functional teams * Participate in code reviews * Participate in design reviews * Research data sources and technical solutions * Translate requirements into implementable solutions Perks/Benefits: N/A Skills/Tech stack required: [CI/CD][Debugging][Deployment][Development Life Cycle][ETL][Python][Software development][Software Development Life Cycle][SQL][Testing] Educational requirements: N/A Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
-      "postedAt": "2026-08-21T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 31.61
+      "score": 31.52
     },
     {
       "externalId": "sr-engineer-data-engineering-roswell-ga-united-states-3506072",
@@ -495,7 +513,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.39
+      "score": 31.25
     },
     {
       "externalId": "data-analyst-customer-success-raleigh-nc-us-3511528",
@@ -512,7 +530,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.24
+      "score": 31.1
     },
     {
       "externalId": "senior-data-engineer-remote-mexico-3507091",
@@ -531,7 +549,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.6
+      "score": 30.46
     },
     {
       "externalId": "data-engineer-intern-weave-headquarters-lehi-ut-3507791",
@@ -550,7 +568,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.55
+      "score": 30.41
     },
     {
       "externalId": "business-intelligence-data-engineer-133-2016-tulsa-ok-us-3511696",
@@ -567,7 +585,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.45
+      "score": 30.31
     }
   ]
 }
