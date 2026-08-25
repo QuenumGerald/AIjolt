@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-08-25T13:16:59.275Z",
+  "generatedAt": "2026-08-25T16:05:58.778Z",
   "jobs": [
+    {
+      "externalId": "ai-engineer-montreal-8585-cote-de-liesse-qc-canada-3520496",
+      "source": "foorilla",
+      "url": "https://cae.wd3.myworkdayjobs.com/en-US/career/job/Montreal-St-Laurent/AI-Engineer_123169",
+      "title": "AI Engineer",
+      "company": "C...",
+      "location": "Montreal - 8585 Cote-De-Liesse, QC, Canada",
+      "country": "Canada",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build AI copilots chatbots recommendation systems and predictive analytics * Collaborate with cross-functional teams to identify AI opportunities * Conduct proof of concepts to evaluate new AI capabilities * Deploy and monitor AI solutions with Azure AI Services and Azure Machine Learning * Develop test and deploy AI and machine learning solutions * Document and support responsible AI governance controls * Ensure AI solutions comply with security privacy and regulatory requirements * Implement CI CD practices for AI and machine learning solutions * Integrate generative AI large language models and intelligent agents into enterprise applications * Optimize machine learning models and monitor performance * Perform model versioning testing monitoring and operationalization * Prepare transform and validate structured and unstructured datasets * Troubleshoot production AI workloads and performance issues Perks/Benefits: + Collaborative workplace + Flexible work environment + Opportunities for innovation and cutting edge projects + Professional growth and learning opportunities Skills/Tech stack required: [AI Foundry][AI Services][Azure AI][Azure AI Foundry][Azure AI Services][Azure Machine Learning][Azure OpenAI][CI/CD][Docker][Generative AI][Git][Hugging Face][Langchain][Language Models][Large Language Models][Machine Learning][Microsoft Fabric][MLOps][OpenAI SDK][Python][PyTorch][REST APIs][Retrieval-Augmented Generation][Scikit-learn][Semantic Kernel][SQL][TensorFlow][Vector Databases] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Science in Artificial Intelligence][Bachelor of Science in Computer Science][Bachelor of Science in Data Science][Bachelor of Science in Software Engineering] Role(s): [AI][AI Engineer][Engineer]",
+      "postedAt": "2026-08-24T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "RAG",
+        "MLOps",
+        "LangChain"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 58.32
+    },
     {
       "externalId": "agentic-ai-engineer-usa-va-home-office-vahome-united-states-3515586",
       "source": "foorilla",
@@ -23,7 +47,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.52
+      "score": 56.4
     },
     {
       "externalId": "us-lbm-ai-engineer-remote-texas-united-states-3518444",
@@ -49,7 +73,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.31
+      "score": 56.19
     },
     {
       "externalId": "generative-ai-developer-locations-mississauga-ontario-canada-3518435",
@@ -71,7 +95,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.7
+      "score": 55.58
     },
     {
       "externalId": "aiml-engineer-primary-location-minnetonka-minnesota-3517963",
@@ -94,7 +118,7 @@
       ],
       "aiRelevance": 0.99,
       "visaSponsored": false,
-      "score": 55.12
+      "score": 55
     },
     {
       "externalId": "applied-ai-engineer-internship-cork-ireland-3519413",
@@ -116,7 +140,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.78
+      "score": 54.66
     },
     {
       "externalId": "senior-ai-engineer-remote-united-states-3513294",
@@ -138,7 +162,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.03
+      "score": 53.91
     },
     {
       "externalId": "data-ai-engineer-zaltbommel-gelderland-3518445",
@@ -159,7 +183,34 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.68
+      "score": 53.56
+    },
+    {
+      "externalId": "agentic-ai-software-engineer-munich-bayern-germany-3520504",
+      "source": "foorilla",
+      "url": "https://machinelearningreply.recruitee.com/o/agentic-ai-software-engineer-9",
+      "title": "Agentic AI Software Engineer",
+      "company": "Machine Learning Reply",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build deploy scalable cloud services * Build retrieval pipelines * Design production cloud systems * Develop Agentic AI systems * Develop high-performance APIs * Implement AI features from prototype to production * Implement CI/CD workflows * Implement rag pipelines * Integrate AI tools into workflows * Integrate LLM based generative AI * Optimize performance * Orchestrate AI workflows * Perform testing monitoring observability * Run model evaluation and deployment * Set up LLMOps pipelines * Set up MLOps pipelines Perks/Benefits: + Access to certifications + Community events + Conferences + Flexible working model + Hackathons + Remote work options + Training opportunities Skills/Tech stack required: [AWS][Azure][CI/CD][Docker][FastAPI][Fine Tuning][Flask][GCP][Hugging Face][Java][JavaScript][Kubernetes][Langchain][Langgraph][LLM][LLMOps][MLOps][Monitoring][NoSQL][Observability][OpenAI API][Prompt engineering][Python][PyTorch][RAG][Rust][SOLID][Spring Boot][SQL][TensorFlow][Testing][Vector Database][Version control] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [AI][AI Software Engineer][Backend][Backend Developer][Developer][Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
+      "postedAt": "2026-08-24T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "LLM",
+        "RAG",
+        "MLOps",
+        "Kubernetes",
+        "AWS",
+        "LangChain"
+      ],
+      "aiRelevance": 0.87,
+      "visaSponsored": false,
+      "score": 53.01
     },
     {
       "externalId": "ai-engineer-omaha-nebraska-usa-3519522",
@@ -178,7 +229,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 53.11
+      "score": 52.99
     },
     {
       "externalId": "senior-intelligent-automation-agentic-ai-engineer-porto-portugal-3515598",
@@ -200,7 +251,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 52.99
+      "score": 52.87
     },
     {
       "externalId": "ai-engineer-mwd-berlin-admiralspalast-3514934",
@@ -223,7 +274,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 52.87
+      "score": 52.75
     },
     {
       "externalId": "senior-devops-mlops-engineer-dresden-3515061",
@@ -244,7 +295,7 @@
       ],
       "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 51.92
+      "score": 51.8
     },
     {
       "externalId": "genai-safety-analyst-usa-3516589",
@@ -263,7 +314,7 @@
       ],
       "aiRelevance": 0.9400000000000001,
       "visaSponsored": false,
-      "score": 51.51
+      "score": 51.39
     },
     {
       "externalId": "ml-engineer-analyst-new-jersey-office-210-hudson-street-united-states-3518709",
@@ -286,7 +337,7 @@
       ],
       "aiRelevance": 0.75,
       "visaSponsored": false,
-      "score": 49.77
+      "score": 49.65
     },
     {
       "externalId": "machine-learning-software-engineer-i-new-grad-rbc-waterpark-place-88-queens-quay-wtoronto-canada-3518702",
@@ -305,7 +356,7 @@
       ],
       "aiRelevance": 0.8200000000000001,
       "visaSponsored": false,
-      "score": 49.35
+      "score": 49.23
     },
     {
       "externalId": "machine-learning-software-engineer-new-grad-6666-rue-st-urbain-floor-3montreal-canada-3518704",
@@ -324,7 +375,7 @@
       ],
       "aiRelevance": 0.8200000000000001,
       "visaSponsored": false,
-      "score": 49.23
+      "score": 49.11
     },
     {
       "externalId": "lead-engineer-advanced-ai-engineering-london-10-gresham-street-united-kingdom-3519523",
@@ -346,7 +397,7 @@
       ],
       "aiRelevance": 0.72,
       "visaSponsored": false,
-      "score": 49
+      "score": 48.88
     },
     {
       "externalId": "machine-learning-software-engineer-new-grad-777-bay-st-th-27toronto-canada-3518705",
@@ -366,7 +417,7 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 47.78
+      "score": 47.66
     },
     {
       "externalId": "care-innovation-senior-solution-engineer-135-2034-tulsa-ok-us-3516269",
@@ -389,7 +440,7 @@
       ],
       "aiRelevance": 0.63,
       "visaSponsored": false,
-      "score": 47.27
+      "score": 47.15
     },
     {
       "externalId": "senior-database-administrator-rs-25-antiguo-cuscatlan-la-libertad-el-salvador-3515059",
@@ -409,7 +460,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": true,
-      "score": 46.1
+      "score": 45.98
     },
     {
       "externalId": "ai-integration-automation-engineer-inver-grove-heights-mn-usa-3518450",
@@ -428,7 +479,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 43.8
+      "score": 43.68
     },
     {
       "externalId": "aiml-engineer-mfd-autonomous-systems-berlin-germany-3515564",
@@ -451,7 +502,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 41.05
+      "score": 40.93
     },
     {
       "externalId": "computational-chemist-saint-charles-mo-united-states-3512992",
@@ -468,7 +519,7 @@
       "skills": [],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 40.4
+      "score": 40.28
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -491,7 +542,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 40.13
+      "score": 40.01
     },
     {
       "externalId": "ai-architect-iii-ohio-wfh-united-states-3520123",
@@ -511,7 +562,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 39.84
+      "score": 39.72
     },
     {
       "externalId": "senior-data-engineer-austin-texas-usa-3519467",
@@ -530,7 +581,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.81
+      "score": 39.69
     },
     {
       "externalId": "senior-data-engineer-london-gbr-united-kingdom-3518551",
@@ -549,7 +600,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.61
+      "score": 36.49
     },
     {
       "externalId": "senior-data-engineer-toronto-on-ca-m5h-0a9-3513459",
@@ -566,7 +617,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.8
+      "score": 35.68
     },
     {
       "externalId": "data-engineer-elk-ofallon-illinois-united-states-3520140",
@@ -586,7 +637,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.72
+      "score": 35.6
     },
     {
       "externalId": "data-engineer-locations-mississauga-ontario-canada-3518560",
@@ -606,14 +657,14 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.69
+      "score": 35.57
     },
     {
       "externalId": "cyber-security-analyst-databricks-little-canada-minnesota-usa-3519464",
       "source": "foorilla",
       "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006241742ENUS",
       "title": "Cyber Security Analyst (Databricks)",
-      "company": "TEKsystems",
+      "company": "T...",
       "location": "Little Canada, Minnesota, USA",
       "country": "United States",
       "workMode": "unknown",
@@ -623,7 +674,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.55
+      "score": 35.43
     },
     {
       "externalId": "data-engineer-ermesinde-porto-district-portugal-3519960",
@@ -643,7 +694,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.3
+      "score": 35.18
     },
     {
       "externalId": "mobile-threat-analyst-london-uk-3516646",
@@ -662,7 +713,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.25
+      "score": 35.13
     },
     {
       "externalId": "databricks-data-engineer-amsterdam-nh-netherlands-3515770",
@@ -682,7 +733,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.85
+      "score": 34.73
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -704,14 +755,14 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 34.76
+      "score": 34.64
     },
     {
       "externalId": "senior-data-engineer-charlotte-united-states-3520250",
       "source": "foorilla",
       "url": "https://ghr.wd1.myworkdayjobs.com/en-US/US-EMPLSV/job/Charlotte/Senior-Data-Engineer_26030539-1",
       "title": "Senior Data Engineer",
-      "company": "94-1687665 Bank of America, National Association",
+      "company": "B...",
       "location": "Charlotte, United States",
       "country": "United States",
       "workMode": "unknown",
@@ -721,7 +772,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.37
+      "score": 34.25
     },
     {
       "externalId": "data-engineer-center-center-district-il-3516910",
@@ -741,27 +792,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 33.93
-    },
-    {
-      "externalId": "data-engineer-cheltenham-england-united-kingdom-remote-3515044",
-      "source": "foorilla",
-      "url": "https://apply.workable.com/j/49A3854970/apply",
-      "title": "Data Engineer",
-      "company": "Data Engineer - Ripjar",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Add observability with metrics logs and tracing * Build batch and near real time processing components * Contribute to CI CD and safer releases * Design data contracts and schema validation * Engineer distributed ingestion services * Ensure production quality with unit and integration tests * Harden pipelines against failures retries and rate limits * Participate in code reviews and incident retrospectives Perks/Benefits: + 35 hour working week + Additional annual leave + Employee assistance programme + Enhanced maternity/paternity pay + MacBook Pro provided + Pension contributions + Private family healthcare + Remote Working + Tech equipment provided Skills/Tech stack required: [Airflow][Ansible][Argo CD][CI/CD][Dagster][GitHub][GitHub Actions][HBase][HDFS][Helm][Kubernetes][Linux][MongoDB][Nifi][Node.js][OpenSearch][Python][Rundeck][Spark][Terraform] Educational requirements: [Associate Degree][Bachelor of Arts][Bachelor of Engineering][Bachelor of Science][PhD] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-23T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes"
-      ],
-      "aiRelevance": 0.06,
-      "visaSponsored": false,
-      "score": 33.82
+      "score": 33.81
     },
     {
       "externalId": "data-engineer-locations-madrid-spain-3515766",
@@ -781,7 +812,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.76
+      "score": 33.64
     },
     {
       "externalId": "business-intel-eng-1year-ftc-supply-chain-eu-scot-london-england-gbr-3520383",
@@ -801,7 +832,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.75
+      "score": 33.63
     },
     {
       "externalId": "lead-engineer-mfd-data-infrastructure-berlin-germany-3516371",
@@ -818,7 +849,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.58
+      "score": 33.46
     },
     {
       "externalId": "senior-data-engineer-16-22-bedford-street-belfast-united-kingdom-3515778",
@@ -837,7 +868,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.55
+      "score": 33.43
     },
     {
       "externalId": "data-analyst-sr-ipc-cdi-ciudad-de-mexico-mexico-3518522",
@@ -854,7 +885,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.5
+      "score": 33.38
     },
     {
       "externalId": "data-engineer-digital-solutions-lousado-braga-portugal-3519962",
@@ -871,7 +902,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.11
+      "score": 32.99
     },
     {
       "externalId": "data-engineer-p-175-northeast-dallas-tx-3520142",
@@ -890,7 +921,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.9
+      "score": 32.78
     },
     {
       "externalId": "data-analyst-salt-lake-city-united-states-salt-lake-city-ut-united-states-calvin-rampton-bldg-4501-s-2700-w-3518538",
@@ -909,7 +940,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.64
+      "score": 32.52
     },
     {
       "externalId": "analytics-engineer-all-genders-supply-data-solutions-hamburg-germany-3514727",
@@ -928,14 +959,14 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.63
+      "score": 32.51
     },
     {
       "externalId": "data-analyst-northampton-barclays-campus-pavilion-drive-united-kingdom-3518542",
       "source": "foorilla",
       "url": "https://barclays.wd3.myworkdayjobs.com/en-US/External_Career_Site_Barclays/job/Northampton-Barclays-Campus-Pavilion-Drive/Data-Analyst_JR-0000109429-1",
       "title": "Data Analyst",
-      "company": "3761 Barclays - BX - UK",
+      "company": "B...",
       "location": "Northampton, Barclays Campus, Pavilion Drive, United Kingdom",
       "country": "United Kingdom",
       "workMode": "unknown",
@@ -947,14 +978,14 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.2
+      "score": 32.08
     },
     {
       "externalId": "data-engineer-dublin-office-georges-quay-house-ireland-3516905",
       "source": "foorilla",
       "url": "https://fil.wd3.myworkdayjobs.com/en-US/001/job/Dublin-Office---Georges-Quay-House/Data-Engineer_J70908-1",
       "title": "Data Engineer",
-      "company": "355 FIL Transaction Services Ltd",
+      "company": "F...",
       "location": "Dublin Office - George's Quay House, Ireland",
       "country": "Ireland",
       "workMode": "onsite",
@@ -964,7 +995,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.18
+      "score": 32.06
     },
     {
       "externalId": "fbs-data-analyst-sql-google-analytics-mexico-remote-3514957",
@@ -983,7 +1014,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.17
+      "score": 32.05
     },
     {
       "externalId": "bioinformatics-scientist-united-kingdom-harrow-remote-3520243",
@@ -1000,7 +1031,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.14
+      "score": 32.02
     },
     {
       "externalId": "data-engineer-ai-analytics-remote-spain-3513155",
@@ -1019,7 +1050,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.98
+      "score": 31.86
     },
     {
       "externalId": "data-engineer-spain-3518043",
@@ -1038,7 +1069,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.92
+      "score": 31.8
     },
     {
       "externalId": "data-engineer-plateforme-data-engineering-vitrolles-provence-alpes-cote-dazur-france-3515771",
@@ -1055,7 +1086,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.73
+      "score": 31.61
     },
     {
       "externalId": "cloud-data-engineer-austin-tx-us-3515006",
@@ -1074,7 +1105,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.49
+      "score": 31.37
     },
     {
       "externalId": "student-assistant-for-cryo-product-management-ballerup-copenhagen-dk-3517843",
@@ -1091,7 +1122,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.26
+      "score": 31.14
     }
   ]
 }
