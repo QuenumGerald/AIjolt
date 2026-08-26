@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T07:14:09.033Z",
+  "generatedAt": "2026-08-26T10:02:36.919Z",
   "jobs": [
     {
       "externalId": "senior-quant-ai-researcher-london-greater-london-united-kingdom-3527206",
@@ -21,7 +21,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.1
+      "score": 55.98
     },
     {
       "externalId": "aimachine-learning-engineer-ft-meade-md-laurel-md-3529280",
@@ -45,7 +45,26 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.86
+      "score": 54.74
+    },
+    {
+      "externalId": "ai-research-scientist-reinforcement-learning-llm-and-post-training-uscasanta-clara-3531571",
+      "source": "foorilla",
+      "url": "https://careers.amd.com/careers-home/jobs/90507",
+      "title": "AI Research Scientist, Reinforcement Learning (LLM) and Post-Training",
+      "company": "AI Research Scientist, Reinforcement Learning (LLM) and Post-Training in Santa Clara, California | Advanced Micro Devices, Inc",
+      "location": "US,CA,Santa Clara",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze failure modes reward hacking and instability * Collaborate to scale training with RL infrastructure * Define interfaces for rollout generation and logging * Design reward models and training curricula * Develop reinforcement learning methods for post training large language models and code models * Publish research at top academic venues * Run off policy and on policy training experiments Perks/Benefits: N/A Skills/Tech stack required: [Distributed Training][Experiment design][GPU Acceleration][Language Models][Large Language Models][Off Policy][Off Policy Learning][On Policy][On Policy Learning][Policy learning][Policy Optimization][Preference Learning][Reinforcement Learning][Reward Hacking][Reward Hacking Mitigation][Reward Modeling][RLAIF][RLHF][Variance reduction] Educational requirements: [PhD] Role(s): [AI][AI Research Scientist][Engineer][Learning Engineer][Machine Learning Engineer][Research Scientist][Scientist]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "LLM"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.34
     },
     {
       "externalId": "machine-learning-engineer-co-op-cambridge-ma-arlington-va-seattle-wa-3522050",
@@ -68,7 +87,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.7
+      "score": 53.58
     },
     {
       "externalId": "senior-data-scientist-tampere-espoo-3528953",
@@ -91,7 +110,7 @@
       ],
       "aiRelevance": 0.75,
       "visaSponsored": false,
-      "score": 50.32
+      "score": 50.2
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-chicago-united-states-3529797",
@@ -110,7 +129,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 48.38
+      "score": 48.26
     },
     {
       "externalId": "ai-developer-anywhere-us-remotework-from-home-anywhere-united-states-3520930",
@@ -127,7 +146,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 47.73
+      "score": 47.61
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-austin-united-states-3529800",
@@ -147,7 +166,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 47.25
+      "score": 47.13
     },
     {
       "externalId": "software-engineer-iii-google-cloud-google-threat-intelligence-malaga-spain-3525619",
@@ -169,7 +188,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 45.74
+      "score": 45.63
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-blacksburg-united-states-3529801",
@@ -189,7 +208,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 44.75
+      "score": 44.64
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-jacksonville-united-states-3529787",
@@ -209,7 +228,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 44.69
+      "score": 44.57
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-fort-lauderdale-united-states-3529795",
@@ -229,7 +248,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 44.44
+      "score": 44.32
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-port-charlotte-united-states-3529785",
@@ -249,7 +268,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 44.36
+      "score": 44.25
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-boston-united-states-3529802",
@@ -269,7 +288,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 44.29
+      "score": 44.17
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-orlando-united-states-3529798",
@@ -288,26 +307,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 44.25
-    },
-    {
-      "externalId": "ai-platform-tech-lead-id84742-tampa-united-states-3529784",
-      "source": "foorilla",
-      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259426207",
-      "title": "AI Platform Tech Lead ID84742",
-      "company": "AgileEngine",
-      "location": "Tampa, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Administer and optimize enterprise AI platforms monitoring and lifecycle management * Build AI solutions using MCP function calling and APIs * Create secure integrations across enterprise systems * Design build test maintain AI agents and workflows * Develop APIs data connectors webhooks and RAG solutions * Ensure access controls permissions and data security * Establish standards for AI agent integrations testing deployment and security * Lead technical solution reviews mentor contributors and provide escalation * Test and evaluate AI quality reliability safety and performance * Troubleshoot AI platform integration and data retrieval issues Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Controls][Access Management][APIs][“as-code”][CI/CD][Data Governance][Data Security][Enterprise Search][Evaluation][Function Calling][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][Model Context Protocol][Monitoring][OAuth][OAuth2][Observability][Prompt engineering][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Testing][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platform Tech Lead][Engineer][Lead][Platform Tech Lead][Tech Lead]",
-      "postedAt": "2026-08-25T00:00:00.000Z",
-      "skills": [
-        "RAG"
-      ],
-      "aiRelevance": 0.39,
-      "visaSponsored": false,
-      "score": 44.12
+      "score": 44.14
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-boca-raton-united-states-3529789",
@@ -327,7 +327,26 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 44.12
+      "score": 44.01
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-tampa-united-states-3529784",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259426207",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Tampa, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms monitoring and lifecycle management * Build AI solutions using MCP function calling and APIs * Create secure integrations across enterprise systems * Design build test maintain AI agents and workflows * Develop APIs data connectors webhooks and RAG solutions * Ensure access controls permissions and data security * Establish standards for AI agent integrations testing deployment and security * Lead technical solution reviews mentor contributors and provide escalation * Test and evaluate AI quality reliability safety and performance * Troubleshoot AI platform integration and data retrieval issues Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Controls][Access Management][APIs][“as-code”][CI/CD][Data Governance][Data Security][Enterprise Search][Evaluation][Function Calling][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][Model Context Protocol][Monitoring][OAuth][OAuth2][Observability][Prompt engineering][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Testing][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platform Tech Lead][Engineer][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 44
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-jersey-city-united-states-3529781",
@@ -347,7 +366,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 44.02
+      "score": 43.9
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-atlanta-united-states-3529803",
@@ -366,7 +385,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 43.98
+      "score": 43.86
     },
     {
       "externalId": "lead-ai-platform-engineer-dublin-ireland-3523237",
@@ -389,7 +408,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 43.86
+      "score": 43.75
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-west-palm-beach-united-states-3529794",
@@ -408,7 +427,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 43.76
+      "score": 43.65
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-new-york-united-states-3529786",
@@ -427,7 +446,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 43.45
+      "score": 43.34
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-irving-united-states-3529782",
@@ -447,7 +466,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 42.98
+      "score": 42.86
     },
     {
       "externalId": "professional-services-engineer-sw-developer-bucharest-bucharest-ro-3529843",
@@ -469,7 +488,7 @@
       ],
       "aiRelevance": 0.36,
       "visaSponsored": false,
-      "score": 42.88
+      "score": 42.77
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-baltimore-united-states-3529790",
@@ -488,7 +507,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 42.4
+      "score": 42.29
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-tallahassee-united-states-3529788",
@@ -507,7 +526,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 41.73
+      "score": 41.62
     },
     {
       "externalId": "ai-developer-microsoft-stack-vilnius-lt-3520592",
@@ -528,7 +547,7 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 41.4
+      "score": 41.29
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-dallas-united-states-3529783",
@@ -547,7 +566,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 41.16
+      "score": 41.04
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-san-francisco-united-states-3529793",
@@ -567,7 +586,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 41.06
+      "score": 40.94
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-houston-united-states-3529796",
@@ -587,7 +606,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.89
+      "score": 40.77
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-texas-city-united-states-3529792",
@@ -607,7 +626,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.51
+      "score": 40.39
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-richmond-united-states-3529791",
@@ -626,7 +645,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.33
+      "score": 40.21
     },
     {
       "externalId": "ai-platform-tech-lead-id84742-miami-united-states-3529799",
@@ -645,7 +664,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.17
+      "score": 40.06
     },
     {
       "externalId": "sr-data-scientist-juncos-juncos-puerto-rico-3523816",
@@ -666,7 +685,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 39.98
+      "score": 39.87
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -689,7 +708,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 39.38
+      "score": 39.27
     },
     {
       "externalId": "lead-architect-snowflake-all-genders-full-part-time-weiterstadt-hessen-de-64331-3523200",
@@ -709,7 +728,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.23
+      "score": 36.11
     },
     {
       "externalId": "full-stack-developer-id84745-leon-de-los-aldama-mexico-3529111",
@@ -729,7 +748,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.02
+      "score": 35.91
     },
     {
       "externalId": "data-consultant-hybrid-london-3525843",
@@ -748,7 +767,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36
+      "score": 35.88
     },
     {
       "externalId": "full-stack-developer-id84745-puebla-heroica-puebla-mexico-3529110",
@@ -768,7 +787,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.94
+      "score": 35.83
     },
     {
       "externalId": "full-stack-developer-id84745-playas-de-rosarito-mexico-3529114",
@@ -788,7 +807,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.92
+      "score": 35.81
     },
     {
       "externalId": "full-stack-developer-id84745-guadalajara-mexico-3529116",
@@ -808,7 +827,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.92
+      "score": 35.81
     },
     {
       "externalId": "full-stack-developer-id84745-queretaro-mexico-3529109",
@@ -828,7 +847,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.83
+      "score": 35.72
     },
     {
       "externalId": "full-stack-developer-id84745-zapopan-mexico-3529112",
@@ -848,7 +867,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.82
+      "score": 35.71
     },
     {
       "externalId": "full-stack-developer-id84745-monterrey-mexico-3529115",
@@ -868,7 +887,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.8
+      "score": 35.69
     },
     {
       "externalId": "full-stack-developer-id84745-ukraine-3529117",
@@ -888,7 +907,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.71
+      "score": 35.6
     },
     {
       "externalId": "full-stack-developer-id84745-ciudad-de-mexico-mexico-3529113",
@@ -908,7 +927,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.69
+      "score": 35.57
     },
     {
       "externalId": "full-stack-developer-id84745-zona-1-guatemala-3529108",
@@ -928,7 +947,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.62
+      "score": 35.51
     },
     {
       "externalId": "full-stack-developer-id84745-quetzaltenango-guatemala-3529107",
@@ -948,7 +967,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.59
+      "score": 35.48
     },
     {
       "externalId": "senior-ai-ml-platform-engineer-tech-lead-all-genders-mollet-del-valles-barcelona-es-08100-3523201",
@@ -969,7 +988,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.57
+      "score": 35.46
     },
     {
       "externalId": "data-visualisation-specialist-mfh-brussels-brussels-belgium-3527021",
@@ -988,7 +1007,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.78
+      "score": 34.66
     },
     {
       "externalId": "senior-technical-consultant-data-architect-london-england-gb-3528901",
@@ -1008,7 +1027,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.26
+      "score": 34.15
     },
     {
       "externalId": "senior-data-engineer-databricks-london-england-united-kingdom-3526860",
@@ -1025,7 +1044,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.26
+      "score": 34.15
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -1047,7 +1066,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 34.01
+      "score": 33.89
     },
     {
       "externalId": "kafka-devops-infra-engineer-sofia-sofia-city-province-bg-3529003",
@@ -1068,7 +1087,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 33.98
+      "score": 33.87
     },
     {
       "externalId": "data-engineer-luxembourg-karlsruhe-karlsruhe-3521227",
@@ -1088,7 +1107,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.96
+      "score": 33.84
     },
     {
       "externalId": "senior-data-engineer-wrocaw-poland-3527336",
@@ -1108,7 +1127,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.33
+      "score": 33.21
     },
     {
       "externalId": "data-engineer-usa-va-herndon-3528182",
@@ -1127,7 +1146,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.02
+      "score": 32.9
     },
     {
       "externalId": "data-engineer-london-united-kingdom-3523809",
@@ -1144,7 +1163,26 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.66
+      "score": 32.55
+    },
+    {
+      "externalId": "software-engineer-lviv-ukraine-3531201",
+      "source": "foorilla",
+      "url": "https://app.dover.com/apply/xperteez/de48690d-9e94-41ca-8236-92e007159745/",
+      "title": "🇺🇦 Software Engineer",
+      "company": "Dover",
+      "location": "Lviv, Ukraine",
+      "country": "Ukraine",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Collaborate with cross-functional teams * Design software solutions * Develop software solutions * Improve development processes * Maintain software solutions * Support incident resolution * Test software solutions * Translate business requirements into technical solutions * Troubleshoot debug and resolve technical issues * Use AI-powered tools to enhance development Perks/Benefits: N/A Skills/Tech stack required: [Artificial Intelligence][Automation][Cloud Computing][C Sharp][.NET][Python][Software development][Software Development Life Cycle][Software Development Life Cycle (SDLC)] Educational requirements: N/A Role(s): [Engineer][Software Engineer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 32.55
     },
     {
       "externalId": "data-engineer-bucuresti-bucuresti-ro-3528912",
@@ -1161,7 +1199,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.51
+      "score": 32.4
     },
     {
       "externalId": "data-engineer-gdansk-poland-3527334",
@@ -1178,7 +1216,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.03
+      "score": 30.91
     }
   ]
 }
