@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T04:07:44.906Z",
+  "generatedAt": "2026-08-26T07:14:09.033Z",
   "jobs": [
     {
       "externalId": "senior-quant-ai-researcher-london-greater-london-united-kingdom-3527206",
@@ -21,50 +21,31 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.23
+      "score": 56.1
     },
     {
-      "externalId": "lead-ai-engineer-onsite-delaware-united-states-3523772",
+      "externalId": "aimachine-learning-engineer-ft-meade-md-laurel-md-3529280",
       "source": "foorilla",
-      "url": "https://fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/26801",
-      "title": "Lead AI Engineer | Onsite - Delaware",
-      "company": "Photon",
-      "location": "United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Define evaluation frameworks * Define LLM usage standards * Deliver AI agent systems * Deliver multi LLM scenarios * Deliver RAG systems * Design knowledgebase * Implement AI observability * Implement guardrails for safety compliance and PII * Implement real time eval strategy * Integrate AI testing into CI/CD * Integrate tool use patterns * Manage context windows * Manage offshore delivery * Own LLM API integration * Perform code and design reviews * Profile latency * Report risks blockers and status * Select vector database * Set prompt engineering standards * Track AI costs * Unblock delivery issues Perks/Benefits: + 401k retirement plan + Dental benefits + Medical benefits + Paid Holidays + Paid time off + Vision benefits Skills/Tech stack required: [Agent systems][AI Agents][AI Observability][AWS Bedrock][CI/CD][Compliance][Content Safety][Context window][Context window management][Cost Management][Evaluation Frameworks][Guardrails][Knowledgebase Design][Langchain][Latency profiling][Llamaindex][LLM][LLM API][MCP][Multi-Agent][Multi-Agent Systems][PII protection][Prompt engineering][Python][RAG][Real Time][Real-time evaluation][Retrieval-Augmented Generation][SDK][Semantic Kernel][Time Evaluation][Tool use][Vector Databases][Window management] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Lead][Lead AI][Lead AI Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.71
-    },
-    {
-      "externalId": "machine-learning-engineer-fmd-a1-competence-delivery-center-51-bulgaria-3528472",
-      "source": "foorilla",
-      "url": "https://a1group.wd3.myworkdayjobs.com/en-US/a1_jobs_bg/job/----51-/AI-Specialist--f-m-d----A1-Competence-Delivery-Center_REQ-6901",
-      "title": "Machine Learning Engineer (f/m/d) @ A1 Competence Delivery Center",
-      "company": "A1 Bulgaria",
+      "url": "https://optimustechnology.catsone.com/careers/64625/jobs/16848005-AIMachine-Learning-Engineer",
+      "title": "AI/Machine Learning Engineer",
+      "company": "AI/Machine Learning Engineer",
       "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Collaborate with Automation Developers Business Analysts and Solution Architects * Consume AI services via REST APIs * Create technical documentation * Identify and analyze AI use cases in business processes * Integrate AI and GenAI services into automation solutions * Process and extract value from structured and unstructured data Perks/Benefits: + Employee benefits + Employee discounts + Hybrid work model + Learning opportunities Skills/Tech stack required: [Agile][API Integration][Azure OpenAI][Classification][Cognitive Services][Data Processing][Decision support][Generative AI][Information Extraction][Java][Language Models][Language Processing][Large Language Models][Machine Learning][Natural Language][Natural Language Processing][Prompt engineering][Python][REST APIs][Scrum] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
+      "description": "Tasks: * Capture user workflows * Design LLM based agentic workflows * Ensure security and governance compliance * Ensure solutions run reliably in production * Implement agent based automation * Integrate AI systems with APIs * Integrate AI systems with enterprise data stores * Integrate AI systems with mission platforms * Orchestrate LLM tool integrations * Translate workflows into structured process maps Perks/Benefits: + 401k Company Contributions + Career development + Company funded HRA + Employer-paid life insurance + Long-term disability + Paid time off + Premium health dental vision + Referral bonuses + Short-term disability + Tuition assistance Skills/Tech stack required: [Agentic Workflows][API Integration][AWS][Azure][CrewAI][Data Stores][Enterprise Data][Enterprise Data Stores][Langchain][Langgraph][Language Models][Large Language Models][Llama.cpp][LLM orchestration][Multi-step reasoning][PydanticAI][Python][PyTorch][TensorFlow][Tool integration][VLLM] Educational requirements: N/A Role(s): [Artificial Intelligence][Artificial Intelligence Engineer][Engineer][Intelligence Engineer][Learning Engineer][Machine Learning Engineer]",
       "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
         "Python",
-        "NLP"
+        "PyTorch",
+        "TensorFlow",
+        "LLM",
+        "AWS",
+        "LangChain"
       ],
-      "aiRelevance": 1,
+      "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.39
+      "score": 54.86
     },
     {
       "externalId": "machine-learning-engineer-co-op-cambridge-ma-arlington-va-seattle-wa-3522050",
@@ -87,28 +68,49 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.83
+      "score": 53.7
     },
     {
-      "externalId": "computer-vision-engineering-intern-fall-2026-sunnyvale-ca-united-states-3521081",
+      "externalId": "senior-data-scientist-tampere-espoo-3528953",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Intuitive/744000145329669-computer-vision-engineering-intern-fall-2026",
-      "title": "Computer Vision Engineering Intern - Fall 2026",
-      "company": "Intuitive",
-      "location": "Sunnyvale, CA, United States",
+      "url": "https://emp.jobylon.com/jobs/375088-etteplan-senior-data-scientist/",
+      "title": "Senior Data Scientist",
+      "company": "Jobylon",
+      "location": "Tampere; Espoo",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assess energy usage and usability * Build device failure models * Design KPIs * Develop anomaly detection models * Develop predictive maintenance models * Implement data-driven solutions * Integrate models into production systems * Manipulate analyze data with SQL * Profile data * Provide AI integration guidance * Stay current with data science developments * Turn industrial data into insights * Use agentic workflows * Visualize data Perks/Benefits: + Career development + Hybrid work model Skills/Tech stack required: [Agentic SDLC][Agentic Workflows][Anomaly Detection][AWS][Azure AI][Azure OpenAI][BigQuery][Computer Vision][Databricks][Data Lakes][Data Manipulation][Data mesh][Data Processing][Data profiling][Data Vault][Data Visualization][Data Warehousing][GenAI][Google Cloud][IIoT][Language Models][Large Language Models][LLMs][Machine Learning][Microsoft Azure][Microsoft Fabric][Power BI][Predictive Maintenance][Production ML][Python][RAG][Real Time][Real-time Data][Real-time Data Processing][Snowflake][SQL][Unstructured Data][Unstructured Data Processing] Educational requirements: N/A Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "AWS",
+        "Computer Vision"
+      ],
+      "aiRelevance": 0.75,
+      "visaSponsored": false,
+      "score": 50.32
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-chicago-united-states-3529797",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259420672",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Chicago, United States",
       "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Conduct literature surveys * Evaluate model performance on image and video datasets * Explore computer vision foundation models * Prototype computer vision algorithms * Summarize findings in reports and presentations Perks/Benefits: N/A Skills/Tech stack required: [C++][CLIP][Computer Vision][Deep learning][Diffusion Models][DINO][Feature detection][HuggingFace Transformers][Language Models][Multimodal Learning][OpenCV][Python][PyTorch][Scene Understanding][Video Analysis][Video Classification][Vision-language][Vision Language Models] Educational requirements: [Doctor of Philosophy][Master of Science][PhD] Role(s): [Computer Vision Engineer][Computer Vision Engineer Intern][Engineer Intern][Intern]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Administer and optimize enterprise AI platforms access configurations integrations monitoring and lifecycle management * Build AI solutions using MCP function calling APIs agents and integration frameworks * Design build test and maintain AI agents skills prompts tools workflows automations * Develop APIs data connectors webhooks search integrations and RAG semantic search solutions * Ensure AI systems preserve source system permissions access controls and data security * Establish standards for AI agents integrations configurations testing deployment and security * Evaluate AI solutions for quality reliability safety performance and data grounding * Implement secure integrations across enterprise systems Slack Google Workspace Gemini Glean and AI assistants * Lead technical solution reviews mentor contributors and provide technical escalation * Translate business needs into technical designs prototypes and production AI capabilities * Troubleshoot AI platform integration connector and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + People focused support + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][API Integration][Artificial Intelligence][CI/CD][Data Governance][Enterprise Search][Function Calling][Identity and access][Identity and Access Management][Incident Response][Machine Learning][Model Context Protocol][Monitoring][OAuth][Prompt engineering][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Security Compliance][Semantic Search][Single Sign-On][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platform Tech Lead][Engineer][Lead][Platform Tech Lead][Tech Lead][Technical Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
-        "Python",
-        "PyTorch",
-        "Computer Vision"
+        "RAG"
       ],
-      "aiRelevance": 0.88,
+      "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 49.89
+      "score": 48.38
     },
     {
       "externalId": "ai-developer-anywhere-us-remotework-from-home-anywhere-united-states-3520930",
@@ -125,7 +127,27 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 47.86
+      "score": 47.73
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-austin-united-states-3529800",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259420663",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Austin, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms including access configurations integrations monitoring lifecycle management * Build AI solutions using Model Context Protocol function calling APIs agents integration frameworks * Build secure integrations across Slack Google Workspace Gemini Glean and AI assistants * Design build test and maintain AI agents skills prompts tools workflows automations * Develop APIs data connectors webhooks search integrations and RAG semantic search solutions * Establish standards for AI agents integrations configurations testing deployment and security * Lead technical solution reviews mentor contributors and provide technical escalation * Preserve source system permissions access controls data security and governance * Test and evaluate AI solutions for quality reliability safety performance and data grounding * Translate business needs into technical designs prototypes and production ready AI capabilities * Troubleshoot AI platform integration connector and data retrieval issues Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Mentorship + No micromanagement + People focused support + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][API Development][“as-code”][Change Management][ChatGPT][CI/CD][Claude][Cloud Platforms][Function Calling][Gemini for Workspace][Glean][Google Workspace][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][JavaScript][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Python][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Slack integration][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platform Tech Lead][Engineer][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 47.25
     },
     {
       "externalId": "software-engineer-iii-google-cloud-google-threat-intelligence-malaga-spain-3525619",
@@ -147,28 +169,204 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 45.87
+      "score": 45.74
     },
     {
-      "externalId": "ai-agent-engineer-toronto-3523125",
+      "externalId": "ai-platform-tech-lead-id84742-blacksburg-united-states-3529801",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/appnovation/jobs/8743344002",
-      "title": "AI / Agent Engineer",
-      "company": "Job Application for AI / Agent Engineer at Appnovation Technologies",
-      "location": "Toronto",
-      "country": "Unknown",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259419505",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Blacksburg, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build and evolve MCP servers tools and skills * Collaborate in agile sprint model * Design and refine graph RAG pipeline * Document designs prompts and tool interfaces * Implement multi tier retrieval and temporal replay * Improve answer quality with eval driven QA * Iterate on model and agent performance * Monitor deployed agents and troubleshoot issues * Write production-grade code and perform code reviews Perks/Benefits: N/A Skills/Tech stack required: [CI/CD][Embeddings][Git][Graph RAG][Language Models][Language Processing][Large Language Models][Machine Learning][Natural Language][Natural Language Processing][Neo4j][PostgreSQL][Python][Retrieval-Augmented Generation][Security][Supabase][Testing][Vector Databases] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build AI solutions with agents and APIs * Build secure enterprise integrations * Design build test maintain AI agents * Develop APIs data connectors webhooks and RAG solutions * Ensure source system permissions access control and governance * Establish standards for agents integrations and deployments * Lead technical solution reviews and mentor contributors * Recommend platform technical improvements * Test and evaluate AI quality reliability safety performance * Translate business needs into technical designs * Troubleshoot integration connector and retrieval issues Perks/Benefits: + Annual performance reviews + Flexible hours + Learning budget + Mentorship + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Access Control][Access Management][Agent evaluation][APIs][CI/CD][Data Governance][Function Calling][Identity and access][Identity and Access Management][Incident Response][JavaScript][Logging][MCP][Model Context Protocol][Model Evaluation][Monitoring][OAuth][Observability][Prompt engineering][Python][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Security][Semantic Search][Single Sign-On][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platform Tech Lead][Architect][Engineer][Lead][Platform Tech Lead][Software Architect][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
         "Python",
-        "RAG",
-        "NLP"
+        "RAG"
       ],
-      "aiRelevance": 0.57,
+      "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 44.35
+      "score": 44.75
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-jacksonville-united-states-3529787",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259425272",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Jacksonville, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build RAG integrations * Design build maintain AI agents * Develop APIs data connectors webhooks * Ensure access control data security governance * Establish technical standards for agents integrations testing deployment security * Implement secure enterprise system integrations * Lead technical solution reviews mentor contributors * Propose technical recommendations for emerging AI capabilities * Test evaluate AI solutions quality safety performance * Troubleshoot integration connector data retrieval issues Perks/Benefits: + Collaborative culture + Flexible hours + Internal tech talks + Learning budget + Mentorship + People focused support + Performance and compensation reviews + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][API Development][Change Management][CI/CD][Cloud Platforms][Data Connectors][Data Governance][Data Security][Enterprise Search][Function Calling][Identity and access][Identity and Access Management][Incident Response][JavaScript][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][Python][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][Secrets management][Single Sign-On][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platform Tech Lead][Engineer][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 44.69
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-fort-lauderdale-united-states-3529795",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259422416",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Fort Lauderdale, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer optimize enterprise AI platforms including access configurations integrations monitoring and lifecycle management * Build AI solutions using Model Context Protocol function calling APIs agents integration frameworks * Design build test maintain AI agents skills prompts tools workflows automations * Develop APIs data connectors webhooks search integrations and retrieval augmented generation solutions * Ensure AI systems enforce source system permissions access controls data security and governance * Establish standards for AI agents integrations configurations testing deployment and security * Implement secure enterprise integrations across Slack Google Workspace Gemini Glean and AI assistants * Lead technical solution reviews mentor contributors and provide technical escalation * Test evaluate AI solutions for quality reliability safety performance and data grounding * Translate business needs into technical designs prototypes and production ready AI capabilities * Troubleshoot complex AI platform integration connector and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][APIs][“as-code”][Change Management][ChatGPT][CI/CD][Claude][Cloud Computing][Data Governance][Data Security][Enterprise Search][Function Calling][Gemini][Glean][Google Workspace][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][JavaScript][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Python][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Single Sign-On][Slack API][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 44.44
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-port-charlotte-united-states-3529785",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259425278",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Port Charlotte, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build AI solutions with MCP function calling and APIs * Create APIs data connectors webhooks and RAG integrations * Design build test and maintain AI agents * Develop secure enterprise integrations with Slack and Google Workspace * Ensure access controls data security and governance * Establish standards for agents integrations testing and deployment * Evaluate AI solutions for quality reliability safety and performance * Lead technical solution reviews and mentor contributors * Troubleshoot integration connector and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][ChatGPT][CI/CD][Claude][Function Calling][Glean][Google Gemini][Google Workspace][GraphQL][Identity and access][Identity and Access Management][Incident Response][JavaScript][Logging][MCP][Monitoring][OAuth][Python][REST APIs][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Service accounts][Single Sign-On][Slack integrations][TypeScript][Vector Databases][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Engineer][Lead][Learning Engineer][Machine Learning Engineer][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 44.36
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-boston-united-states-3529802",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259415914",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Boston, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms access configurations integrations monitoring lifecycle management * Build AI solutions using MCP function calling APIs agents integration frameworks * Design build test maintain AI agents skills prompts tools workflows automations * Develop APIs data connectors webhooks search integrations RAG semantic search * Establish standards for AI agents integrations configurations testing deployment security * Evaluate emerging AI capabilities provide technical recommendations * Implement secure integrations across Slack Google Workspace Gemini Glean and enterprise systems * Lead technical solution reviews mentor contributors technical escalation * Preserve source system permissions access controls data security governance * Test and evaluate AI solutions for quality reliability safety performance grounding * Translate business needs into technical designs prototypes production AI capabilities * Troubleshoot AI platform integration connector and data retrieval issues Perks/Benefits: + Collaborative culture + Flexible hours + Learning budget + Mentorship + Modern projects + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][APIs][“as-code”][ChatGPT][CI/CD][Claude][Compliance][Data Governance][Function Calling][Gemini][Glean][Google Workspace][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][JavaScript][Model Context Protocol][Monitoring][OAuth][Privacy][Python][RBAC][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Security][Semantic Search][Single Sign-On][Slack][Testing][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead][Technical Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 44.29
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-orlando-united-states-3529798",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259420669",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Orlando, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize AI platforms * Build RAG and semantic search solutions * Design and build AI agents * Develop APIs data connectors and webhooks * Ensure access control and data governance * Establish AI standards for development testing and deployment * Implement secure enterprise integrations * Lead technical solution reviews and mentoring * Recommend emerging AI capabilities * Test and evaluate AI solutions * Troubleshoot integration and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Performance reviews + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Access Control][Access Management][Agentic Workflows][API Design][Architecture Documentation][Artificial Intelligence][Change Management][CI/CD][Data Connectors][Data Governance][Data Security][Enterprise Search][Function Calling][GraphQL][Identity and access][Identity and Access Management][Incident Response][Logging][Machine Learning][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][REST APIs][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secure integration][Security Compliance][Semantic Search][Single Sign-On][Troubleshooting][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineering][AI Engineering Manager][AI Platform Tech Lead][Architect][Engineering Manager][Lead][Manager][Platform Tech Lead][Solutions Architect][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 44.25
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-tampa-united-states-3529784",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259426207",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Tampa, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms monitoring and lifecycle management * Build AI solutions using MCP function calling and APIs * Create secure integrations across enterprise systems * Design build test maintain AI agents and workflows * Develop APIs data connectors webhooks and RAG solutions * Ensure access controls permissions and data security * Establish standards for AI agent integrations testing deployment and security * Lead technical solution reviews mentor contributors and provide escalation * Test and evaluate AI quality reliability safety and performance * Troubleshoot AI platform integration and data retrieval issues Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Controls][Access Management][APIs][“as-code”][CI/CD][Data Governance][Data Security][Enterprise Search][Evaluation][Function Calling][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][Model Context Protocol][Monitoring][OAuth][OAuth2][Observability][Prompt engineering][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Testing][Webhooks] Educational requirements: N/A Role(s): [AI][AI Engineer][AI Platform Tech Lead][Engineer][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 44.12
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-boca-raton-united-states-3529789",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259423369",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Boca Raton, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Design and build AI agents * Develop AI skills prompts tools workflows automations * Ensure access controls data security and governance * Establish standards for agents integrations testing deployment and security * Implement RAG and semantic search * Integrate enterprise systems via APIs and webhooks * Lead technical solution reviews and mentoring * Test and evaluate AI systems for quality safety and performance * Troubleshoot integration connector and data retrieval issues Perks/Benefits: + Flexible hours + Internal training + Learning budget + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][APIs][Automation][CI/CD][Function Calling][Identity and access][Identity and Access Management][Incident Response][JavaScript][Logging][MCP][Model Context Protocol][Model Evaluation][Monitoring][OAuth][Observability][Prompt engineering][Python][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Security][Semantic Search][Single Sign-On][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Engineer][Lead][Learning Engineer][Machine Learning Engineer][Platform Tech Lead][Software Engineer][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 44.12
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-jersey-city-united-states-3529781",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259427137",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Jersey City, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build APIs data connectors and webhooks * Create secure enterprise integrations * Design and build AI agents * Develop AI workflows and automations * Establish standards for development testing deployment and security * Implement RAG integrations * Lead technical solution reviews and mentor contributors * Preserve access controls and permissions * Test evaluate AI quality safety and reliability * Troubleshoot integration and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][APIs][“as-code”][CI/CD][Enterprise Search][Function Calling][Identity and access][Identity and Access Management][Infrastructure as Code][JavaScript][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][Python][RAG][REST][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Security Governance][Semantic Search][Single Sign-On][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Architect][Engineer][Lead][Learning Engineer][Machine Learning Engineer][Platform Tech Lead][Software Architect][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 44.02
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-atlanta-united-states-3529803",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259415911",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Atlanta, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platform integrations and monitoring * Build APIs data connectors webhooks and search integrations * Design build test maintain AI agents * Develop AI integrations using MCP and function calling * Develop RAG and semantic search solutions * Ensure source system permissions access control and governance * Establish standards for agent integrations testing deployment and security * Implement secure integrations across enterprise systems * Lead technical solution reviews mentor contributors and escalate issues * Test and evaluate AI solutions for quality safety reliability and performance * Troubleshoot AI platform integration and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][Agentic Workflows][API Development][Artificial Intelligence][CI/CD][Data Governance][Data Security][Enterprise Search][Function Calling][Identity and access][Identity and Access Management][Incident Response][Logging][Machine Learning][Model Context Protocol][Monitoring][OAuth][Prompt engineering][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 43.98
     },
     {
       "externalId": "lead-ai-platform-engineer-dublin-ireland-3523237",
@@ -191,7 +389,125 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 43.99
+      "score": 43.86
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-west-palm-beach-united-states-3529794",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259422419",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "West Palm Beach, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer optimize enterprise AI platforms * Build secure enterprise integrations * Design build test maintain AI agents * Develop APIs data connectors webhooks * Ensure access controls data security governance * Establish standards for agent development testing deployment security * Implement retrieval-augmented generation * Lead technical solution reviews mentor contributors * Test evaluate AI quality reliability safety performance * Translate business needs into technical designs * Troubleshoot integration connector data retrieval issues Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Performance reviews + Remote work + Support programs + Well-being programs Skills/Tech stack required: [Access Control][Access Management][AI Agents][APIs][Change Management][CI/CD][Data Connectors][Function Calling][Google Workspace][Google Workspace Integrations][Identity & Access][Identity & Access Management][Incident Response][Logging][Model Context Protocol][Monitoring][OAuth][OAuth 2][OAuth 2 0][Observability][Prompt engineering][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][Secrets management][Semantic Search][Slack integrations][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Engineer][Lead][Learning Engineer][Machine Learning Engineer][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 43.76
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-new-york-united-states-3529786",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259425275",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "New York, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Create APIs data connectors webhooks and search integrations * Define standards for AI agent development testing and deployment * Design, build and test AI agents * Develop RAG and semantic search solutions * Evaluate AI agents for safety reliability performance * Implement secure access controls and governance * Integrate AI assistants with enterprise systems * Lead technical solution reviews and mentor contributors * Troubleshoot integration and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][Agent evaluation][AI Agent][AI agent evaluation][API Development][Automation][CI/CD][Data Governance][Data Security][Enterprise Search][Function Calling][Identity and access][Identity and Access Management][Incident Response][Integration frameworks][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][RAG][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Engineer][Lead][Learning Engineer][Machine Learning Engineer][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 43.45
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-irving-united-states-3529782",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259426213",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Irving, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build AI solutions using MCP and function calling * Build RAG and semantic search solutions * Design build test maintain AI agents * Develop APIs data connectors webhooks and search integrations * Ensure permissions access controls and data security * Establish standards for agents integrations testing deployment and security * Implement secure enterprise integrations * Lead technical solution reviews and mentor contributors * Recommend technical improvements for emerging AI capabilities * Test and evaluate AI quality reliability safety and performance * Troubleshoot AI platform integration and data retrieval issues Perks/Benefits: + Collaborative culture + Flexible hours + Internal training + Learning budget + Mentorship + Modern projects + No micromanagement + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][API Integration][“as-code”][Change Management][ChatGPT][CI/CD][Claude][Data Governance][Data Security][Enterprise Search][Function Calling][Gemini][Glean][Google Workspace][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][JavaScript][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Python][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Slack][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead][Technical Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 42.98
+    },
+    {
+      "externalId": "professional-services-engineer-sw-developer-bucharest-bucharest-ro-3529843",
+      "source": "foorilla",
+      "url": "https://www.comeet.com/jobs/comm-it/76.008/professional-services-engineer-sw-developer/9F.07F-6D.40F",
+      "title": "Professional Services Engineer (SW Developer)",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply AI ML techniques for internal processes * Build data pipeline integrations * Build reusable frameworks templates and tooling * Collaborate with R D and Product * Conduct architecture reviews for high complexity implementations * Design and develop custom integrations * Develop workflows and extensions * Drive continuous improvement through engineering * Engage with enterprise customers to co design solutions * Ensure technical feasibility before commitments * Identify and build AI powered automation tools * Integrate REST APIs and Webhooks * Lead scoping workshops and deployment reviews * Mentor engineers in distributed teams * Own FDE program technical definition * Perform technical escalation for deployment challenges * Scope engagements and define solution architectures * Translate requirements into maintainable solutions Perks/Benefits: + International travel Skills/Tech stack required: [Agentic Workflows][AI][Anthropic][AWS][Azure][CI/CD][Cloud platform][Data Pipelines][Docker][ETL][Google Cloud][Google Cloud Platform][Kubernetes][Leadership][LLMs][Machine Learning][Node.js][NoSQL][OpenAI][Python][REST APIs][Solutions Architecture][SQL][Webhooks][Workflow automation] Educational requirements: N/A Role(s): [Engineer][Professional Services Engineer][Services Engineer][Software Engineer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 0.36,
+      "visaSponsored": false,
+      "score": 42.88
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-baltimore-united-states-3529790",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259423366",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Baltimore, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer optimize enterprise AI platforms monitoring lifecycle * Design build maintain AI agents * Design build RAG integrations * Develop APIs data connectors webhooks * Establish technical standards testing deployment security * Implement access controls data security governance * Implement secure enterprise integrations * Lead technical solution reviews mentor contributors * Test evaluate AI quality reliability safety performance * Troubleshoot integration and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][APIs][CI/CD][Function Calling][Identity and access][Identity and Access Management][Logging][Model Context Protocol][Monitoring][OAuth][Prompt engineering][RAG][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Engineer][Lead][Learning Engineer][Machine Learning Engineer][Platform Tech Lead][Software Engineer][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.39,
+      "visaSponsored": false,
+      "score": 42.4
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-tallahassee-united-states-3529788",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259423372",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Tallahassee, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build RAG and semantic search solutions * Design build test maintain AI agents * Develop APIs data connectors webhooks and search integrations * Ensure permissions access controls and data security * Establish standards for agents integrations testing deployment security * Evaluate AI solutions for quality reliability safety and performance * Implement secure enterprise integrations * Lead technical solution reviews mentor contributors and advise stakeholders * Troubleshoot AI platform and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][AI Agents][API Development][Automation][CI/CD][Data Connectors][Enterprise Search][Function Calling][Google Gemini][Google Workspace][Google Workspace Integrations][Identity and access][Identity and Access Management][Incident Response][Logging][Model Context Protocol][Monitoring][OAuth][OAuth2][Observability][Prompt engineering][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Secure integrations][Semantic Search][Service accounts][Single Sign-On][Slack integrations][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][AI Solutions][AI Solutions Architect][Architect][Lead][Platform Tech Lead][Solutions Architect][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.27,
+      "visaSponsored": false,
+      "score": 41.73
     },
     {
       "externalId": "ai-developer-microsoft-stack-vilnius-lt-3520592",
@@ -212,70 +528,124 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 41.53
+      "score": 41.4
     },
     {
-      "externalId": "data-architect-engineer-toronto-3521204",
+      "externalId": "ai-platform-tech-lead-id84742-dallas-united-states-3529783",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/appnovation/jobs/8743315002",
-      "title": "Data Architect / Engineer",
-      "company": "Job Application for Data Architect / Engineer at Appnovation Technologies",
-      "location": "Toronto",
-      "country": "Unknown",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259426210",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Dallas, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Advise on Supabase Postgres architecture suitability * Build ingestion ETL pipelines from SharePoint and Microsoft stack * Build monitoring alerting and error handling for ingestion jobs * Define schema taxonomy and graph model for knowledge domains * Design temporal document versions and machine readable representations * Document data models schemas and pipeline architecture * Establish data quality, lineage, and governance standards * Handle multimodal content ingestion for presentations documents transcripts * Keep knowledge graph synchronized with evolving source documents * Optimize pipeline cost throughput and reliability * Validate ingested content quality with QA Perks/Benefits: N/A Skills/Tech stack required: [Airflow][Change Data Capture][Data Capture][Data Governance][Data Lineage][Data Modeling][Data Pipelines][Data Privacy][Data Quality][Data Security][Document versioning][ETL][Graph Databases][Incremental ingestion][Knowledge representation][LLM retrieval][Neo4j][Ontology][Postgres][Python][RAG][SQL][Supabase][Taxonomy][Temporal Data] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Architect][Data Architect][Data Engineer][Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build AI solutions using APIs and function calling * Design build test and maintain AI agents * Develop APIs data connectors and webhooks * Ensure access controls and data security * Establish technical standards for agent development and deployment * Implement RAG and semantic search solutions * Integrate enterprise systems with secure integrations * Lead technical solution reviews mentor contributors * Test and evaluate AI solutions for safety and performance * Troubleshoot integration and data retrieval issues Perks/Benefits: + Flexible hours + Growth opportunities + Learning budget + Mentorship + People focused support + Remote work + Supportive collaborative culture + Well-being programs Skills/Tech stack required: [Access Control][Access Management][APIs][“as-code”][ChatGPT][CI/CD][Claude][Function Calling][Gemini][Glean][Google Workspace][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][Logging][Model Context Protocol][Monitoring][OAuth][Observability][RAG][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][Slack][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead][Technical Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
-        "Python",
-        "LLM",
         "RAG"
       ],
-      "aiRelevance": 0.32999999999999996,
+      "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.8
+      "score": 41.16
     },
     {
-      "externalId": "data-architect-engineer-san-jose-medellin-bogota-mexico-city-buenos-aires-3521199",
+      "externalId": "ai-platform-tech-lead-id84742-san-francisco-united-states-3529793",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/appnovation/jobs/8743321002",
-      "title": "Data Architect / Engineer",
-      "company": "Job Application for Data Architect / Engineer at Appnovation Technologies",
-      "location": "San José, Medellin, Bogota, Mexico City, Buenos Aires",
-      "country": "Unknown",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259422422",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "San Francisco, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Advise on backend architecture suitability * Build ingestion ETL pipelines from enterprise content sources * Build monitoring alerting and error handling for ingestion * Define schema for knowledge domains * Define taxonomy and graph model * Design machine readable document representations * Document data models schemas and pipeline architecture * Establish data governance and security standards * Establish data quality and lineage standards * Handle multimodal content ingestion * Maintain knowledge graph accuracy as sources change * Model temporal document facts * Optimize pipeline cost throughput and reliability * Validate ingested content quality with QA Perks/Benefits: N/A Skills/Tech stack required: [Airflow][Change Data Capture][Cloud Data][Cloud Data Services][Data Capture][Data Governance][Data Modeling][Data Pipelines][Data Privacy][Data Security][Data Services][ETL][Graph Databases][Graph Modeling][Incremental ingestion][Knowledge graphs][LLM retrieval][Neo4j][Ontology][PostgreSQL][Python][RAG][SQL][Supabase][Taxonomy] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Architect][Data Architect][Data Engineer][Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Build AI solutions * Design AI agents * Develop APIs and connectors * Establish security and governance controls * Implement RAG solutions * Integrate enterprise systems * Lead technical solution reviews * Mentor contributors * Recommend platform improvements * Test and evaluate AI systems * Troubleshoot integration and data retrieval issues Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Management][APIs][“as-code”][Automation][ChatGPT][CI/CD][Claude][Data Governance][Enterprise Search][Function Calling][Gemini for Workspace][Glean][Google Workspace][Identity and access][Identity and Access Management][Incident Response][Infrastructure as Code][JavaScript][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][Python][RBAC][Retrieval-Augmented Generation][SCIM][Secrets management][Security Compliance][Semantic Search][Single Sign-On][Slack][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Architect][Lead][Platform Tech Lead][Software Architect][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
         "RAG"
       ],
-      "aiRelevance": 0.32999999999999996,
+      "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.7
+      "score": 41.06
     },
     {
-      "externalId": "data-architect-engineer-london-3521200",
+      "externalId": "ai-platform-tech-lead-id84742-houston-united-states-3529796",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/appnovation/jobs/8743320002",
-      "title": "Data Architect / Engineer",
-      "company": "Job Application for Data Architect / Engineer at Appnovation Technologies",
-      "location": "London",
-      "country": "Unknown",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259422413",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Houston, United States",
+      "country": "United States",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Advise on backend architecture and long term suitability * Build ingestion ETL pipelines from enterprise content sources * Build monitoring alerting and error handling for ingestion jobs * Define schema taxonomy and graph model for knowledge domains * Design document and fact evolution structures * Document data models schemas and pipeline architecture * Establish data quality, lineage, and governance standards * Handle multimodal content ingestion * Keep knowledge graph synchronized with source document changes * Model temporal versioned document representations * Optimize pipeline cost throughput and reliability * Validate ingested content quality with QA Perks/Benefits: N/A Skills/Tech stack required: [Airflow][Change Data Ingestion][Data Governance][Data Ingestion][Data Lineage][Data Modeling][Data Pipelines][Data Privacy][Data Quality][Data Security][ETL][Graph Databases][Knowledge graph][LLM retrieval][Neo4j][Ontology][PostgreSQL][Power Automate][Python][RAG][SharePoint][SQL][Supabase][Taxonomy][Temporal Data] Educational requirements: [Bachelor of Science] Role(s): [Architect][Data Architect][Data Engineer][Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Design and build AI agents and workflows * Develop APIs and data connectors * Develop secure enterprise integrations * Ensure access control and data governance * Establish AI agent testing and deployment standards * Evaluate AI solutions for quality safety performance * Implement RAG integrations * Lead technical solution reviews and mentor contributors * Troubleshoot integration and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Supportive culture + Well-being programs Skills/Tech stack required: [Access Controls][Access Management][API Development][Change Management][CI/CD][Data Governance][Function Calling][Identity and access][Identity and Access Management][Incident Response][JavaScript][Logging][Model Context Protocol][Model Evaluation][Monitoring][OAuth][Observability][Prompt engineering][Python][RAG][RBAC][REST APIs][Retrieval-Augmented Generation][SCIM][Secrets management][Security][Semantic Search][Single Sign-On][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
         "Python",
-        "LLM",
         "RAG"
       ],
-      "aiRelevance": 0.32999999999999996,
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 40.89
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-texas-city-united-states-3529792",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259422425",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Texas City, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Create APIs connectors and webhooks * Design and build AI agents * Develop AI integrations and RAG solutions * Establish standards for agent integration testing deployment and security * Implement secure enterprise system integrations * Lead technical solution reviews and mentor contributors * Monitor and troubleshoot AI platform issues * Test and evaluate AI solutions for safety quality and reliability Perks/Benefits: + Flexible hours + Learning budget + Mentorship + People focused support + Remote work + Wellbeing programs Skills/Tech stack required: [Access Control][Access Management][CI/CD][Data Governance][Function Calling][Identity and access][Identity and Access Management][JavaScript][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][Python][RAG][REST APIs][Role-Based Access][Role-Based Access Control][SCIM][Secrets management][Semantic Search][Single Sign-On][TypeScript][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG"
+      ],
+      "aiRelevance": 0.3,
       "visaSponsored": false,
       "score": 40.51
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-richmond-united-states-3529791",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259423363",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Richmond, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer optimize enterprise AI platform monitoring lifecycle * Design build test maintain AI agents * Design build test RAG integrations * Develop APIs data connectors webhooks * Develop secure enterprise system integrations * Establish standards for agents integrations testing deployment security * Evaluate AI solutions for quality reliability safety * Implement access control security governance * Lead technical solution reviews mentor contributors * Troubleshoot AI platform integration connector issues Perks/Benefits: + Flexible hours + Health and wellness programs + Learning budget + Mentorship + Performance reviews + Remote work Skills/Tech stack required: [Access Control][Access Management][AI Safety][API Development][CI/CD][Data Security][Enterprise Search][Function Calling][Identity and access][Identity and Access Management][Incident Response][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][Secrets management][Semantic Search][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.27,
+      "visaSponsored": false,
+      "score": 40.33
+    },
+    {
+      "externalId": "ai-platform-tech-lead-id84742-miami-united-states-3529799",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259420666",
+      "title": "AI Platform Tech Lead ID84742",
+      "company": "AgileEngine",
+      "location": "Miami, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer and optimize enterprise AI platforms * Create RAG integrations * Design and build AI agents * Develop secure enterprise integrations * Implement APIs and data connectors * Lead solution reviews mentor contributors and technical escalations * Recommend emerging AI capabilities to leadership * Set AI agent standards and deployment processes * Test and evaluate AI quality reliability safety and performance * Troubleshoot integration and data retrieval issues Perks/Benefits: + Flexible hours + Learning budget + Mentorship + Remote work + Well-being programs Skills/Tech stack required: [Access Control][Access Controls][Access Management][APIs][Automation][CI/CD][Data Governance][Enterprise Search][Function Calling][Identity and access][Identity and Access Management][Incident Response][Logging][Model Context Protocol][Monitoring][OAuth][Observability][Prompt engineering][Retrieval-Augmented Generation][Role-Based Access][Role-Based Access Control][Secrets management][Security Testing][Semantic Search][Single Sign-On][Webhooks] Educational requirements: N/A Role(s): [AI][AI Platform Tech Lead][Lead][Platform Tech Lead][Tech Lead]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "RAG"
+      ],
+      "aiRelevance": 0.27,
+      "visaSponsored": false,
+      "score": 40.17
     },
     {
       "externalId": "sr-data-scientist-juncos-juncos-puerto-rico-3523816",
@@ -296,28 +666,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 40.11
-    },
-    {
-      "externalId": "senior-data-analyst-mexico-city-3521156",
-      "source": "foorilla",
-      "url": "https://jobs.ashbyhq.com/delinea/35ba4b39-c3e6-4b6e-9684-6f8238cafd05",
-      "title": "Senior Data Analyst",
-      "company": "Delinea",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and maintain Power BI reporting * Build release monitoring and end to end support for Streamlit apps * Build scalable efficient SQL queries and datasets * Communicate analytics results to technical and non technical stakeholders * Design develop optimize Snowflake data models * Design develop ship production Streamlit applications * Integrate AI ML model outputs into user facing Streamlit applications * Partner with GTM and sales ops to identify data product opportunities * Wire in model and data services into production apps Perks/Benefits: + Bonus program + Employee assistance program + Healthcare insurance + Life insurance + Pension or retirement matching + Time off plans Skills/Tech stack required: [Azure DevOps][Data Modeling][MLOps][Power BI][Prompt engineering][Python][RAG][Snowflake][SQL][Streamlit] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science][PhD] Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "RAG",
-        "MLOps"
-      ],
-      "aiRelevance": 0.32999999999999996,
-      "visaSponsored": false,
-      "score": 39.68
+      "score": 39.98
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -340,66 +689,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 39.51
-    },
-    {
-      "externalId": "senior-data-engineer-austin-texas-usa-3519467",
-      "source": "foorilla",
-      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006242174ENUS",
-      "title": "Senior Data Engineer",
-      "company": "TEKsystems",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build Power BI semantic models and reports * Build Snowflake ELT frameworks * Design scalable data platform architectures * Develop data ingestion pipelines * Develop data transformation pipelines * Gather requirements * Implement CI/CD pipelines * Implement data governance and security controls * Implement Lakehouse and Warehouse models * Implement Streams and Tasks * Ingest data using Snowpipe and Copy Command * Mentor junior engineers * Optimize performance tuning * Orchestrate data workflows * Participate in architectural discussions * Translate requirements into technical solutions Perks/Benefits: + 401k retirement plan + Employee assistance program + Health spending account + Life insurance + Long-term disability + Medical/Dental/Vision + Paid time off + Short-term disability + Transportation benefits Skills/Tech stack required: [AI Services][Azure AI][Azure AI Services][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure Data Lake Storage Gen2][Azure DevOps][Azure Machine Learning][Azure SQL][Azure Synapse][Azure Synapse Analytics][CI/CD][Copy command][CSV][Databricks][Data Engineering][Data Factory][Data Lake Storage Gen2][Data Modeling][Data Sharing][DevOps][Dimensional Modeling][Dynamic Tables][ELT][ETL][Git][JSON][Lakehouse][Machine Learning][Medallion Architecture][Microsoft Fabric][OneLake][Parquet][Power BI][Purview][Python][Snowflake][Snowflake Schema][Snowpipe][SQL][Star Schema][Streaming Data][Streams][Synapse Analytics][Synapse Data Engineering][Tasks][Virtual Warehouses][XML] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.15,
-      "visaSponsored": false,
-      "score": 39.19
-    },
-    {
-      "externalId": "senior-data-scientist-remote-united-kingdom-3521374",
-      "source": "foorilla",
-      "url": "https://netspi.rec.pro.ukg.net/NET1500NSPI/JobBoard/944d4e9c-f503-4e74-bb8b-f79214e2a5e1/OpportunityDetail?opportunityId=0ffaed86-0ef4-4b96-aa66-c9280a76be28",
-      "title": "Senior Data Scientist",
-      "company": "N...",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and validate statistical and machine learning models * Create data visualizations and communicate results * Design and evaluate LLM driven agents * Design data layer SQL schema and query pipelines * Harden LLM agents with deterministic evidence * Monitor drift and uncertainty quantification * Own features end to end in Python codebase * Train and fine-tune large language models Perks/Benefits: N/A Skills/Tech stack required: [Calibration][Data Visualization][Deterministic Evidence][Drift monitoring][Feature Engineering][Gradient boosting][Graph Embeddings][Grouped Validation][Leakage detection][LLM][Machine Learning][Prompt engineering][Python][R][SQL][Statistical modeling][Temporal Validation][Tool design][Uncertainty Quantification] Educational requirements: [Master of Science][PhD] Role(s): [Data Scientist][Scientist][Senior Data Scientist]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 38.48
-    },
-    {
-      "externalId": "ai-agent-engineer-san-jose-medellin-bogota-mexico-city-buenos-aires-3523120",
-      "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/appnovation/jobs/8743350002",
-      "title": "AI / Agent Engineer",
-      "company": "Job Application for AI / Agent Engineer at Appnovation Technologies",
-      "location": "San José, Medellin, Bogota, Mexico City, Buenos Aires",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build and evolve MCP servers tools and skills * Collaborate with product data and QA in agile sprints * Design Graph RAG pipelines * Document designs prompts and tool interfaces * Implement retrieval across multiple tiers * Monitor deployed agents and models * Participate in code reviews * Partner with QA on eval driven improvements * Troubleshoot and iterate on performance * Write production-grade code Perks/Benefits: N/A Skills/Tech stack required: [CI/CD][Embeddings][Git][Graph RAG][Language Models][Large Language Models][Neo4j][PostgreSQL][Python][RAG][Supabase][Testing][Vector Database] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [Agent Engineer][AI][AI Engineer][Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "RAG"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 37.88
+      "score": 39.38
     },
     {
       "externalId": "lead-architect-snowflake-all-genders-full-part-time-weiterstadt-hessen-de-64331-3523200",
@@ -419,26 +709,27 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.36
+      "score": 36.23
     },
     {
-      "externalId": "data-scientist-level-2-annapolis-junction-md-us-3526571",
+      "externalId": "full-stack-developer-id84745-leon-de-los-aldama-mexico-3529111",
       "source": "foorilla",
-      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4444570",
-      "title": "Data Scientist - Level 2",
-      "company": "Applied Network Solutions Inc",
-      "location": "Annapolis Junction, MD, US",
-      "country": "United States",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259419100",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "León de los Aldama, Mexico",
+      "country": "Mexico",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Conduct data modeling and assessment * Create data visualizations * Design and execute machine learning models * Design and implement machine learning and advanced analytical algorithms * Document analytic results * Manipulate and analyze large data sets * Perform data mining * Provide statistical analysis * Support data management and curation Perks/Benefits: + 401k plan + Dental insurance + Disability insurance + Flexible work schedules + Health insurance + Life insurance + Maternity leave + Paid Holidays + Paid overtime potential + Paid time off + Paternity leave + Professional development program + Vision insurance Skills/Tech stack required: [Apache Spark][Artificial Intelligence][Big Data][Data Curation][Data Management][Data Mining][Data Modeling][Data Visualization][Hypothesis Testing][Jupyter Notebooks][Machine Learning][Model Evaluation][Predictive Modeling][Python][R][Statistical Analysis][Time Series][Workflow reproducibility] Educational requirements: [Bachelor of Science] Role(s): [Data Scientist][Scientist]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Build and maintain React frontend components * Collaborate with Product, QA, and Engineering teams * Contribute to scalable maintainable solutions * Develop and extend Python backend services * Develop and integrate LLM based functionality * Integrate LLM APIs Perks/Benefits: + Annual learning budget + Flexible hours + Health and wellbeing programs + Internal TechTalks + Mentorship + People focused support + Performance reviews + Remote work + Zero micromanagement Skills/Tech stack required: [API Development][FastAPI][JavaScript][LLM APIs][Prompt engineering][Python][React][State management] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
-        "Python"
+        "Python",
+        "LLM"
       ],
-      "aiRelevance": 0.15,
+      "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.21
+      "score": 36.02
     },
     {
       "externalId": "data-consultant-hybrid-london-3525843",
@@ -457,24 +748,207 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.13
+      "score": 36
     },
     {
-      "externalId": "enterprise-data-steward-i-oklahoma-city-oklahoma-united-states-3521425",
+      "externalId": "full-stack-developer-id84745-puebla-heroica-puebla-mexico-3529110",
       "source": "foorilla",
-      "url": "https://recruiting2.ultipro.com/WAR1007/JobBoard/c797a398-9b95-4930-bf05-5a0dd78b6bca/OpportunityDetail?opportunityId=15574a98-2624-4b1e-848e-7b872e2b5861",
-      "title": "Enterprise Data Steward I",
-      "company": "W...",
-      "location": "Oklahoma City, Oklahoma, United States",
-      "country": "United States",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259420085",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Puebla (Heroica Puebla), Mexico",
+      "country": "Mexico",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Assist users locating trusted data sources * Assist users understanding data definitions and reports * Document business rules and metric definitions * Document data lineage * Document data quality issues * Document user questions and governance requests * Escalate data governance and data quality issues * Identify data quality issues * Maintain business glossary terms * Maintain data definitions and metadata * Maintain data ownership records * Maintain data quality scorecards * Maintain governance documentation * Maintain training resources and learning materials * Participate in governance meetings and stewardship initiatives * Perform data quality monitoring * Provide guidance on data interpretation * Support data access and data privacy policies * Support data literacy and self service analytics training * Track remediation activities Perks/Benefits: + Dental insurance + Health insurance + Life insurance + Vision insurance Skills/Tech stack required: [Business glossary][Business Intelligence][Data Analysis][Data Classification][Data Governance][Data Lineage][Data Literacy][Data Management][Data Privacy][Data Quality][Data quality monitoring][Data Retention][Data Security][Data Stewardship][Master Data][Master Data Management][Metadata Management][Microsoft Office][Quality monitoring][Reporting][Self-Service][Self-service analytics][Service analytics] Educational requirements: [Bachelor of Administration][Bachelor of Data Analytics][Bachelor of Engineering][Bachelor of Information Systems][Bachelor of Science] Role(s): [Analyst][Data Governance][Data Governance Analyst][Data Steward][Governance Analyst][Steward]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
+      "description": "Tasks: * Build and integrate LLM based functionality * Collaborate with Product, QA, and Engineering teams * Develop and extend Python backend services * Develop and maintain React frontend components * Integrate LLM APIs * Participate in design discussions for scalable solutions Perks/Benefits: + Annual learning budget + Flexible hours + Internal TechTalks + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [API Development][Claude API][Distributed Systems][FastAPI][LLM][OpenAI API][Prompt engineering][Python][React][State management] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.08
+      "score": 35.94
+    },
+    {
+      "externalId": "full-stack-developer-id84745-playas-de-rosarito-mexico-3529114",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259414602",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Playas de Rosarito, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build React frontend components * Collaborate with product QA and engineering * Develop backend APIs and integrations * Develop LLM based functionality * Extend Python backend services * Integrate LLM APIs * Participate in scalable design discussions * Process data for AI workflows Perks/Benefits: + Annual learning budget + Challenging projects + Flexible hours + Internal TechTalks + Learning budget + Mentorship + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Claude API][FastAPI][LLM][OpenAI API][Prompt engineering][Python][React] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.92
+    },
+    {
+      "externalId": "full-stack-developer-id84745-guadalajara-mexico-3529116",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259409973",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Guadalajara, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and integrate LLM functionality * Build scalable, maintainable solutions * Collaborate with product and QA teams * Develop and test prompts and AI workflows * Develop React frontend components * Extend Python backend services * Integrate LLM APIs * Participate in design discussions Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Performance reviews + Remote work + Support programs + Techtalks + Well-being programs Skills/Tech stack required: [Claude API][FastAPI][LLM][OpenAI API][Prompt engineering][Python][React][REST API][State management] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.92
+    },
+    {
+      "externalId": "full-stack-developer-id84745-queretaro-mexico-3529109",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259420088",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Querétaro, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and integrate LLM powered features * Collaborate with product and QA teams * Develop and maintain backend APIs * Develop React frontend components * Extend Python backend services * Integrate LLM APIs * Participate in scalable maintainable design Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + People focused support + Performance reviews + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [API Development][Claude API][FastAPI][LLM APIs][OpenAI API][Prompt engineering][Python][React][State management] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.83
+    },
+    {
+      "externalId": "full-stack-developer-id84745-zapopan-mexico-3529112",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259419097",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Zapopan, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain React frontend components * Collaborate with Product, QA, and Engineering teams * Develop and extend Python backend services * Develop and integrate LLM based functionality * Integrate LLM APIs into product features Perks/Benefits: + Annual learning budget + Flexible hours + Internal TechTalks + Local well being programs + Mentorship + Performance and compensation reviews + Remote work + Supportive team culture Skills/Tech stack required: [Claude API][FastAPI][JavaScript][LLM][OpenAI API][Prompt engineering][Python][React][REST APIs] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.82
+    },
+    {
+      "externalId": "full-stack-developer-id84745-monterrey-mexico-3529115",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259412863",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Monterrey, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and integrate LLM powered features * Collaborate with product and QA teams * Contribute to scalable maintainable solutions * Develop and maintain API services * Develop React frontend components * Extend Python backend services * Integrate LLM APIs * Participate in design discussions Perks/Benefits: + Annual learning budget + Flexible hours + Mentorship + Performance reviews + Remote work + Techtalks + Well-being programs Skills/Tech stack required: [API Development][FastAPI][JavaScript][LLM APIs][Prompt engineering][Python][React][REST APIs] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.8
+    },
+    {
+      "externalId": "full-stack-developer-id84745-ukraine-3529117",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259419110",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Дніпро, Ukraine",
+      "country": "Ukraine",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build React frontend components * Collaborate with product QA and engineering * Develop backend APIs and integrations * Develop LLM based functionality * Extend Python backend services * Integrate LLM API workflows * Participate in design discussions Perks/Benefits: + Annual learning budget + Flexible hours + Internal TechTalks + Mentorship + No micromanagement + People focused support + Remote work + Well-being programs Skills/Tech stack required: [Claude API][FastAPI][LLM][OpenAI API][Prompt engineering][Python][React][REST API] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.71
+    },
+    {
+      "externalId": "full-stack-developer-id84745-ciudad-de-mexico-mexico-3529113",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259419094",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "Ciudad de México, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build React frontend components * Collaborate with product QA engineering * Develop and maintain backend APIs * Develop LLM based functionality * Extend Python backend services * Integrate LLM API workflows * Participate in scalable design discussions Perks/Benefits: + Annual learning budget + Collaborative culture + Flexible hours + Internal TechTalks + Mentorship + People focused support + Performance reviews + Remote work + Wellbeing programs Skills/Tech stack required: [FastAPI][LLM API][Prompt engineering][Python][React] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.69
+    },
+    {
+      "externalId": "full-stack-developer-id84745-zona-1-guatemala-3529108",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259410813",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "ZONA 1, Guatemala",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build LLM based functionality * Collaborate with product and QA teams * Design scalable, maintainable solutions * Develop React frontend components * Extend Python backend services * Integrate LLM APIs Perks/Benefits: + Flexible hours + Internal TechTalks + Learning budget + Mentorship + People focused support + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [AI workflows][API Integration][FastAPI][JavaScript][LLM APIs][Prompt engineering][Python][React][REST APIs][TypeScript] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.62
+    },
+    {
+      "externalId": "full-stack-developer-id84745-quetzaltenango-guatemala-3529107",
+      "source": "foorilla",
+      "url": "https://agileengine.zohorecruit.com/jobs/Careers/248544000259413789",
+      "title": "Full Stack Developer ID84745",
+      "company": "AgileEngine",
+      "location": "QUETZALTENANGO, Guatemala",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build React frontend components * Collaborate with product QA and engineering * Develop backend APIs * Develop LLM functionality * Extend Python backend services * Integrate LLM APIs * Process data for AI workflows Perks/Benefits: + Collaborative culture + Flexible hours + Internal TechTalks + Learning budget + Mentorship + Performance reviews + Remote work + Well-being programs Skills/Tech stack required: [Claude API][FastAPI][JavaScript][LLM APIs][OpenAI API][Prompt engineering][Python][React][TypeScript] Educational requirements: N/A Role(s): [Developer][Full Stack][Full Stack Developer][Stack Developer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM"
+      ],
+      "aiRelevance": 0.18,
+      "visaSponsored": false,
+      "score": 35.59
     },
     {
       "externalId": "senior-ai-ml-platform-engineer-tech-lead-all-genders-mollet-del-valles-barcelona-es-08100-3523201",
@@ -495,24 +969,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.7
-    },
-    {
-      "externalId": "cyber-security-analyst-databricks-little-canada-minnesota-usa-3519464",
-      "source": "foorilla",
-      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006241742ENUS",
-      "title": "Cyber Security Analyst (Databricks)",
-      "company": "T...",
-      "location": "Little Canada, Minnesota, USA",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Conduct consumer onboarding sessions * Coordinate remediation with platform engineering * Develop consumer training materials * Develop executive reporting dashboards * Enable audit and compliance assurance use cases * Enable cyber data consumption * Enable security analytics and detection use cases * Maintain consumer dataset catalogs * Measure platform adoption and utilization * Monitor data quality and consumer experience * Publish data quality metrics and scorecards * Support query development and reporting * Support security investigations dataset discovery * Validate telemetry availability and accessibility Perks/Benefits: + 401k retirement plan + Employee assistance program + Health savings account + Life insurance + Long-term disability + Medical, dental, and vision + Paid time off + Short-term disability + Transportation benefits Skills/Tech stack required: [ArcSight][Azure Data][Azure Data Explorer][Azure Synapse][Azure Synapse Analytics][Cybersecurity][Cybersecurity telemetry][Databricks][Data Explorer][Data Governance][Data Lake][Data Quality][Elastic Stack][Google BigQuery][Google Chronicle][IBM QRadar][Logging][Microsoft Sentinel][Monitoring][Security analytics][SIEM][Snowflake][Splunk][SQL][Synapse Analytics] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Analyst][Cyber Security][Cyber Security Analyst][Security Analyst]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 34.93
+      "score": 35.57
     },
     {
       "externalId": "data-visualisation-specialist-mfh-brussels-brussels-belgium-3527021",
@@ -531,27 +988,27 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.91
+      "score": 34.78
     },
     {
-      "externalId": "data-engineer-ermesinde-porto-district-portugal-3519960",
+      "externalId": "senior-technical-consultant-data-architect-london-england-gb-3528901",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Inetum2/744000145324108-data-engineer",
-      "title": "Data Engineer",
-      "company": "Inetum2",
-      "location": "Ermesinde, Porto District, Portugal",
-      "country": "Portugal",
+      "url": "https://jobs.dayforcehcm.com/en-GB/caciltd/CANDIDATEPORTAL/jobs/3231",
+      "title": "Senior Technical Consultant - Data Architect",
+      "company": "Dayforce Jobs",
+      "location": "London, England, GB",
+      "country": "United Kingdom",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build data ingestion solutions * Collaborate with data science teams * Deploy and maintain machine learning pipelines * Design data pipelines * Develop and maintain data pipelines * Ensure data quality and performance * Integrate and operationalize machine learning models * Optimize data processing workflows Perks/Benefits: N/A Skills/Tech stack required: [Apache Airflow][AWS][Azure][CI/CD][Cloud platform][Databricks][Git][Google Cloud][Google Cloud Platform][Machine Learning][Polars][PySpark][Python][REST APIs][Software testing][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Advise on AI ML advanced analytics * Create enterprise data models * Define data ingestion and transformation patterns * Design and implement Databricks Lakehouse architectures * Design and optimize Snowflake environments * Develop migration strategies to cloud data platforms * Establish data governance frameworks * Implement data security and access controls * Lead Data platform architecture * Maintain architecture documentation Perks/Benefits: + Hybrid working + Security clearance eligible Skills/Tech stack required: [Apache Airflow][AWS][Azure][Azure Data][Azure Data Factory][Databricks][Data Factory][Data Governance][Data Lineage][Data Modeling][Data Warehouse][DBT][Delta Lake][ELT][ETL][Kafka][Lakehouse][Metadata Management][Python][Snowflake][Spark][SQL][Unity Catalog] Educational requirements: N/A Role(s): [Architect][Data Architect]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
         "Python",
         "AWS"
       ],
-      "aiRelevance": 0.18,
+      "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.68
+      "score": 34.26
     },
     {
       "externalId": "senior-data-engineer-databricks-london-england-united-kingdom-3526860",
@@ -568,7 +1025,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.39
+      "score": 34.26
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -590,27 +1047,28 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 34.14
+      "score": 34.01
     },
     {
-      "externalId": "ai-evaluation-engineer-qa-san-jose-medellin-bogota-mexico-city-buenos-aires-3523246",
+      "externalId": "kafka-devops-infra-engineer-sofia-sofia-city-province-bg-3529003",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/appnovation/jobs/8743301002",
-      "title": "AI Evaluation Engineer (QA)",
-      "company": "Job Application for AI Evaluation Engineer (QA) at Appnovation Technologies",
+      "url": "https://www.comeet.com/jobs/SolarEdge/71.00A/kafka-devops-infra-engineer/BF.073",
+      "title": "Kafka DevOps Infra Engineer",
+      "company": "Spark Hire Recruit - Collaborative Recruiting",
       "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Build data integration pipelines * Create CI CD pipelines for data solutions * Define data validation and evaluation frameworks * Deploy cloud-native data infrastructure * Design data modeling and schema migrations * Design scalable data storage systems * Implement infrastructure-as-code * Improve data system reliability after incidents * Prototype end to end data applications * Set service level objectives and monitor SLIs Perks/Benefits: + Growth opportunities + Hybrid working model + Inclusive culture + Supportive work environment Skills/Tech stack required: [“as-code”][AWS][Azure][CI/CD][CloudFormation][Data evaluation][Data Modeling][Data Pipelines][Data Validation][ELT][ETL][GCP][Infrastructure as Code][Python][Schema migration][Service Level][Service level indicators][Service-Level Objectives][SQL][Terraform] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Evaluation Engineer][Data Engineer][Engineer][Evaluation Engineer][QA Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Build Kafka cluster * Develop log pipelines * Ensure automation reliability * Evaluate emerging technologies * Implement automation processes * Improve platform monitoring * Manage infrastructure Perks/Benefits: + Extended annual leave + Hybrid work model + Medical insurance + Professional development Skills/Tech stack required: [Ansible][Apache Cassandra][Apache NiFi][Apache Trino][AWS][Bash][Elasticsearch][Filebeat][Git][GitLab][Grafana][Jenkins][Kafka][Kubernetes][Linux][Logstash][Prometheus][Python][Redis][Terraform][VMware] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [DataOps Engineer][DevOps][DevOps Engineer][Engineer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [
         "Python",
+        "Kubernetes",
         "AWS"
       ],
-      "aiRelevance": 0.06,
+      "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.12
+      "score": 33.98
     },
     {
       "externalId": "data-engineer-luxembourg-karlsruhe-karlsruhe-3521227",
@@ -630,7 +1088,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.09
+      "score": 33.96
     },
     {
       "externalId": "senior-data-engineer-wrocaw-poland-3527336",
@@ -650,24 +1108,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.46
-    },
-    {
-      "externalId": "8fa-data-engineer-bi-developer-san-jose-san-jose-province-costa-rica-3521058",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/SoftwareMind/744000145339475--8fa-data-engineer-bi-developer-",
-      "title": "[8FA] Data Engineer (BI Developer)",
-      "company": "SoftwareMind",
-      "location": "San José, San José Province, Costa Rica",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data models star schema and snowflake schema * Build reporting and analytics solutions * Create DAX measures * Design data pipelines * Develop Fabric pipelines and dataflows * Develop Power BI reports and dashboards * Document technical designs * Implement data warehouse dimensional modeling * Manage Power BI workspaces * Migrate legacy ETL workloads * Monitor troubleshoot and tune pipeline performance * Optimize ETL/ELT pipelines * Write complex T-SQL queries Perks/Benefits: N/A Skills/Tech stack required: [Agile][Azure Data][Azure Data Factory][Azure Data Lake][Azure Data Lake Storage][Azure SQL][Azure SQL Database][Azure Synapse][Azure Synapse Analytics][Data Factory][Dataflows Gen2][Data Lake Storage][Data Modeling][Data Warehouse][DAX][Dimensional Modeling][ELT][ETL][Lakehouse][Microsoft Fabric][Notebooks][Power BI][Power Query][Scrum][Slowly Changing Dimensions][Snowflake Schema][SQL][SQL Database][SSIS][Star Schema][Synapse Analytics][T-SQL] Educational requirements: N/A Role(s): [BI Developer][Data Engineer][Developer][Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 33.16
+      "score": 33.33
     },
     {
       "externalId": "data-engineer-usa-va-herndon-3528182",
@@ -686,43 +1127,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.15
-    },
-    {
-      "externalId": "digital-data-product-analyst-united-states-3526556",
-      "source": "foorilla",
-      "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/19217",
-      "title": "Digital Data Product Analyst",
-      "company": "EXL Talent Acquisition Team",
-      "location": "United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Act as data subject matter expert * Assess business value risk and complexity for prioritization * Collaborate with data engineering and architects * Collect, clean, and analyze data * Define testing acceptance criteria * Elicit and document requirements * Ensure requirements traceability * Facilitate stakeholder alignment * Monitor and improve data quality * Translate insights into business recommendations Perks/Benefits: N/A Skills/Tech stack required: [Acceptance criteria][Adobe Analytics][Amazon Web Services][Clickstream analytics][Databricks][Data Lineage][Data Modeling][Data Quality][ELT][ETL][Google Analytics][Metadata Management][Process Analysis][Process Mapping][Python][Requirements Elicitation][Snowflake][SQL][User Story][Web Services] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Business Analyst][Data Analyst][Data Product Analyst][Product Analyst]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 33.1
-    },
-    {
-      "externalId": "data-analyst-sr-ipc-cdi-ciudad-de-mexico-mexico-3518522",
-      "source": "foorilla",
-      "url": "https://softtek.eightfold.ai/careers/job/893397267431",
-      "title": "Data Analyst Sr (IPC, CDI)",
-      "company": "Softtek",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze and document data integration processes * Assess source and target structures to understand data transformations * Build source to target data mapping at table and field level * Collaborate with business architecture development and data teams * Create functional and technical documentation for business rules and transformations * Execute data validation using SQL comparisons * Generate technical artifacts for migration maintenance and evolution * Identify and document end to end data lineage * Identify components to rebuild modify or adapt for migrations * Review Informatica mappings workflows and jobs Perks/Benefits: + Hybrid work Skills/Tech stack required: [Azure][Azure Data][Azure Data Factory][Databricks][Data Cataloging][Data Factory][Data Governance][Data Lineage][Data Mapping][Data Monitoring][Data Quality][Data Validation][ELT][ETL][Informatica PowerCenter][PLSQL][Source to Target][SQL] Educational requirements: N/A Role(s): [Analyst][Data Analyst][Senior Data Analyst]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.88
+      "score": 33.02
     },
     {
       "externalId": "data-engineer-london-united-kingdom-3523809",
@@ -739,58 +1144,24 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.79
+      "score": 32.66
     },
     {
-      "externalId": "chef-dequipe-analyse-des-donnees-montreal-quebec-3525784",
+      "externalId": "data-engineer-bucuresti-bucuresti-ro-3528912",
       "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/aylofr/jobs/8628867002",
-      "title": "Chef d'équipe, analyse des données",
-      "company": "Candidature à un emploi de Chef d&#x27;équipe, analyse des données chez Aylo Carrières",
-      "location": "Montréal, Québec",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze data from data marts * Collaborate with stakeholders on reporting requirements * Coordinate development roadmaps * Design reporting structures for business units * Develop data analysis queries * Estimate project scope with database administrators and developers * Lead Data Analysts team * Refine effort estimates each iteration * Serve as business domain expert * Track project status and identify risks Perks/Benefits: + Hybrid work environment + Remote work support Skills/Tech stack required: [Azure][Data Analysis][Data extraction][Data Flows][Data Marts][Data Modeling][Excel][Microsoft Fabric][MySQL][Power BI][SQL][SQL Server][T-SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst Team Lead][Analytics][Analytics Team Lead][Data Analyst][Data Analyst Team Lead][Lead][Team Lead]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 32.07
-    },
-    {
-      "externalId": "lead-technical-data-analyst-data-warehouse-services-montreal-quebec-3521155",
-      "source": "foorilla",
-      "url": "https://job-boards.greenhouse.io/aylo/jobs/8628865002",
-      "title": "Lead Technical Data Analyst - Data Warehouse Services",
-      "company": "Job Application for Lead Technical Data Analyst - Data Warehouse Services at Aylo Careers",
+      "url": "https://www.comeet.com/jobs/evoke/E2.001/data-engineer/A6.075",
+      "title": "Data Engineer",
+      "company": "8...",
       "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Act as subject matter expert * Analyze data from data marts * Coordinate development roadmaps * Design data models for reporting * Develop reporting strategy and specifications * Estimate report delivery effort with database administrators * Gather business requirements with stakeholders * Identify project risks and status * Lead team of analysts * Write SQL queries for investigation Perks/Benefits: + Flexible work options + Hybrid work environment Skills/Tech stack required: [Business Analysis][Data Flow][Data Modeling][Excel][Microsoft Azure][MySQL][Power BI][SQL][SQL Server][TSQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Analyst][Data Analyst][Lead][Lead Data][Lead Data Analyst][Team Lead][Team Lead Data][Team Lead Data Analyst][Technical Data Analyst]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
+      "description": "Tasks: * Build Snowflake data processes * Design and develop ETL processes * Develop and maintain SSIS packages * Develop data pipelines * Operate in Agile methodology * Support backend data solutions from design to production * Work with stakeholders and applications * Write SQL queries and stored procedures Perks/Benefits: + Career development + Flexibility + Trust culture Skills/Tech stack required: [Agile][Apache Airflow][Data Warehousing][DBT][ETL][Integration Services][Microsoft SQL][Microsoft SQL Server][Server Integration Services][Snowflake][SQL][SQL Server][SQL Server integration][SQL Server Integration Services][SSIS][Stored Procedures] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-08-25T00:00:00.000Z",
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.91
-    },
-    {
-      "externalId": "gcp-data-engineer-mexico-city-mexico-3527342",
-      "source": "foorilla",
-      "url": "https://careers.sdggroup.com/jobs/8262957-gcp-data-engineer",
-      "title": "GCP Data Engineer",
-      "company": "SDG Group",
-      "location": "Mexico City, Mexico",
-      "country": "Mexico",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build BigQuery data models * Collaborate with cross-functional teams * Design data pipelines * Develop data pipelines * Ensure data governance * Implement automated data validation * Implement data quality controls * Migrate SAS models * Optimize data pipelines * Orchestrate data workflows Perks/Benefits: + Continuous training + Hybrid work model + Indefinite employment + Telework bonus Skills/Tech stack required: [Apache Airflow][BigQuery][Cloud Composer][Cloud platform][Clustering][Dataflow][Data Governance][Data Lake][Dataproc][Data Quality][Data Warehouse][Google Cloud][Google Cloud Platform][Lakehouse][Partitioning][SAS][SQL][Workflow Orchestration] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-08-24T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 31.51
+      "score": 32.51
     },
     {
       "externalId": "data-engineer-gdansk-poland-3527334",
@@ -807,7 +1178,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.16
+      "score": 31.03
     }
   ]
 }
