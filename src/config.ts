@@ -23,7 +23,7 @@ export const config = {
   reserve: integer('BUFFER_QUEUE_RESERVE', 2),
   queueCapacity: integer('BUFFER_QUEUE_CAPACITY', 10),
   bufferSyncMaxPosts: integer('BUFFER_SYNC_MAX_POSTS', 20),
-  bufferSyncMinIntervalMinutes: integer('BUFFER_SYNC_MIN_INTERVAL_MINUTES', 15),
+  bufferSyncMinIntervalMinutes: integer('BUFFER_SYNC_MIN_INTERVAL_MINUTES', 1440),
   boards: {
     greenhouse: boards('GREENHOUSE_BOARDS', 'greenhouse'),
     lever: boards('LEVER_SITES', 'lever'),
