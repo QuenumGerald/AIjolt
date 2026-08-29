@@ -2,7 +2,7 @@ import { config } from './config.js';
 import { db, rowToNews } from './db.js';
 import { logger } from './logger.js';
 import { generateNewsPost } from './news-posts.js';
-import { createBufferPost, newsQueuedCount, syncBufferPublications } from './publisher.js';
+import { BufferRateLimitError, createBufferPost, newsQueuedCount, syncBufferPublications } from './publisher.js';
 
 export async function publishNews(dryRunFlag = false): Promise<void> {
   if (!config.news.enabled) {
@@ -35,6 +35,10 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
       db.prepare(`INSERT INTO news_publications(news_id,network,status,text,provider_id,created_at) VALUES(?,'x','queued',?,?,?) ON CONFLICT(news_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, text, post.id, new Date().toISOString());
       logger.info(`Buffer scheduled AI news ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`);
     } catch (error) {
+      if (error instanceof BufferRateLimitError) {
+        logger.warn(`${error.message}; stopping AI news publication cycle without marking additional posts failed`);
+        return;
+      }
       const message = error instanceof Error ? error.message : String(error);
       if (!dry) db.prepare(`INSERT INTO news_publications(news_id,network,status,text,error,created_at) VALUES(?,'x','failed','',?,?) ON CONFLICT(news_id,network) DO UPDATE SET status='failed',error=excluded.error,created_at=excluded.created_at`).run(row.id, message, new Date().toISOString());
       logger.error(`AI news ${row.id} skipped: ${message}`);

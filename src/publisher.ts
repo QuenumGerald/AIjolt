@@ -2,10 +2,30 @@ import { config } from './config.js'; import { db, rowToJob } from './db.js'; im
 type Network = 'x'|'linkedin';
 const BUFFER_API = 'https://api.buffer.com';
 let lastBufferSyncAt = 0;
+let bufferBlockedUntil = 0;
+
+export class BufferRateLimitError extends Error {
+  constructor(public readonly retryAfterSeconds: number) {
+    super(`Buffer rate limited; retry after ${retryAfterSeconds}s`);
+    this.name = 'BufferRateLimitError';
+  }
+}
+
+function ensureBufferAvailable(): void {
+  const remainingMs = bufferBlockedUntil - Date.now();
+  if (remainingMs > 0) throw new BufferRateLimitError(Math.ceil(remainingMs / 1000));
+}
+
 
 export async function bufferRequest(body: object): Promise<unknown> {
   if (!config.buffer.token) throw new Error('BUFFER_ACCESS_TOKEN is missing');
+  ensureBufferAvailable();
   const response = await fetch(BUFFER_API, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${config.buffer.token}` }, body: JSON.stringify(body), signal: AbortSignal.timeout(20_000) });
+  if (response.status === 429) {
+    const retryAfterSeconds = Math.max(60, Number.parseInt(response.headers.get('retry-after') || '900', 10) || 900);
+    bufferBlockedUntil = Date.now() + retryAfterSeconds * 1000;
+    throw new BufferRateLimitError(retryAfterSeconds);
+  }
   if (!response.ok) throw new Error(`Buffer API ${response.status} ${response.statusText}`);
   return response.json();
 }
@@ -32,6 +52,11 @@ export async function syncBufferPublications(force = false): Promise<{ published
       else if (state.kind === 'missing') { updateMissing.run(`Buffer history unavailable: ${state.message}`, row.id); summary.published++; }
       else { updateFailed.run(state.message, row.id); summary.failed++; }
     } catch (error) {
+      if (error instanceof BufferRateLimitError) {
+        logger.warn(`${error.message}; stopping Buffer sync`);
+        summary.queued++;
+        break;
+      }
       logger.warn(`Buffer sync deferred for ${row.provider_id}: ${error instanceof Error ? error.message : String(error)}`);
       summary.queued++;
     }
@@ -66,6 +91,6 @@ export async function publish(dryRunFlag = false) {
     const job = rowToJob(row), text = await generatePost(job, network); emitted[network]++;
     if (dry) { logger.info(`[DRY RUN] ${network}:\n${text}`); continue; }
     const channelId = config.buffer[network]; if (!channelId) { logger.error(`Skipping ${network}: BUFFER_${network === 'x' ? 'X' : 'LINKEDIN'}_CHANNEL_ID is missing`); continue; }
-    try { const post = await createBufferPost(text, channelId); db.prepare(`INSERT INTO publications(job_id,network,status,text,provider_id,created_at) VALUES(?,?,'queued',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, network, text, post.id, new Date().toISOString()); logger.info(`Buffer scheduled ${network} job ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`); } catch (error) { const message = error instanceof Error ? error.message : String(error); db.prepare(`INSERT INTO publications(job_id,network,status,text,error,created_at) VALUES(?,?,'failed',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='failed',error=excluded.error,created_at=excluded.created_at`).run(row.id, network, text, message, new Date().toISOString()); logger.error(`Buffer failed ${network} job ${row.id}: ${message}`); }
+    try { const post = await createBufferPost(text, channelId); db.prepare(`INSERT INTO publications(job_id,network,status,text,provider_id,created_at) VALUES(?,?,'queued',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, network, text, post.id, new Date().toISOString()); logger.info(`Buffer scheduled ${network} job ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`); } catch (error) { if (error instanceof BufferRateLimitError) { logger.warn(`${error.message}; stopping job publication cycle without marking additional posts failed`); return; } const message = error instanceof Error ? error.message : String(error); db.prepare(`INSERT INTO publications(job_id,network,status,text,error,created_at) VALUES(?,?,'failed',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='failed',error=excluded.error,created_at=excluded.created_at`).run(row.id, network, text, message, new Date().toISOString()); logger.error(`Buffer failed ${network} job ${row.id}: ${message}`); }
   }
 }
