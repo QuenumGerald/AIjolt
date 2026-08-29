@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T10:11:20.686Z",
+  "generatedAt": "2026-08-29T16:47:54.473Z",
   "jobs": [
     {
       "externalId": "ai-engineer-amsterdam-rotterdam-london-manchester-berlin-hamburg-budapest-zagreb-split-skopje-3558767",
@@ -24,7 +24,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.74
+      "score": 54.46
     },
     {
       "externalId": "computer-vision-software-engineering-intern-columbus-in-united-states-3555011",
@@ -45,7 +45,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.44
+      "score": 54.17
     },
     {
       "externalId": "senior-ai-engineer-notebooks-bordeaux-france-dublin-ireland-france-remote-germany-remote-lyon-france-madrid-spain-mon-3558143",
@@ -65,7 +65,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 52.25
+      "score": 51.98
     },
     {
       "externalId": "automation-ai-engineer-kelowna-bc-3556933",
@@ -84,7 +84,7 @@
       ],
       "aiRelevance": 0.7000000000000001,
       "visaSponsored": false,
-      "score": 49.12
+      "score": 48.85
     },
     {
       "externalId": "llm-trainer-agent-function-call-india-pakistan-nigeria-kenya-egypt-ghana-bangladesh-turkey-brazil-mexico-3554405",
@@ -104,7 +104,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 48.14
+      "score": 47.87
     },
     {
       "externalId": "agentic-ai-data-engineer-dc-gpu-caonhome-office-3554449",
@@ -126,7 +126,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 45.73
+      "score": 45.45
     },
     {
       "externalId": "data-scientist-sales-operations-ustxaustin-3554147",
@@ -148,7 +148,7 @@
       ],
       "aiRelevance": 0.48,
       "visaSponsored": false,
-      "score": 41.93
+      "score": 41.65
     },
     {
       "externalId": "data-engineer-madrid-based-madrid-es-3555280",
@@ -168,7 +168,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 40.67
+      "score": 40.39
     },
     {
       "externalId": "technical-product-manager-united-states-3559350",
@@ -187,7 +187,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 40.36
+      "score": 40.09
     },
     {
       "externalId": "associate-software-engineer-ai-boeing-riverside-plaza-3555454",
@@ -208,7 +208,27 @@
       ],
       "aiRelevance": 0.32999999999999996,
       "visaSponsored": false,
-      "score": 40.09
+      "score": 39.81
+    },
+    {
+      "externalId": "databricks-senior-solutions-architect-belgium-netherlands-contractor-amsterdam-nh-netherlands-3560657",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Hiflylabs/744000146142741-databricks-senior-solutions-architect-belgium-netherlands-contractor",
+      "title": "Databricks Senior Solutions Architect - Belgium & Netherlands | Contractor",
+      "company": "Hiflylabs",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Architect production workload pipelines * Deliver tutorials and training sessions * Design and implement big data projects * Develop and deploy machine learning models * Guide customer technical roadmap * Perform performance testing and optimization * Provide technical leadership post sales * Tune and troubleshoot Spark workloads Perks/Benefits: + Learning and development opportunities + Mentorship + Remote work flexibility + Supportive corporate culture Skills/Tech stack required: [Apache Spark][Automation][AWS][Azure][CI/CD][Cloud platform][Databricks][Deep learning][Google Cloud][Google Cloud Platform][Hadoop][Integration Testing][Java][Jenkins][Machine Learning][MLflow][NoSQL][Orchestration][Python][REST API][Scala][SQL][Unit Testing] Educational requirements: N/A Role(s): [Architect][Data Engineer][Engineer][Solutions Architect]",
+      "postedAt": "2026-08-28T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.3,
+      "visaSponsored": false,
+      "score": 38.87
     },
     {
       "externalId": "senior-data-scientist-global-data-analytics-for-internal-audit-function-ams-new-york-united-states-3552265",
@@ -228,7 +248,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 39.12
+      "score": 38.84
     },
     {
       "externalId": "software-engineer-senior-nje-paco-de-arcos-pt-3556183",
@@ -250,7 +270,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.9
+      "score": 38.62
     },
     {
       "externalId": "senior-data-scientist-global-data-analytics-for-internal-audit-function-ams-san-jose-california-united-states-3552261",
@@ -270,7 +290,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 38.89
+      "score": 38.62
     },
     {
       "externalId": "data-scientist-ann-arbor-mi-united-states-3555053",
@@ -289,7 +309,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.01
+      "score": 37.73
     },
     {
       "externalId": "senior-data-scientist-global-data-analytics-for-internal-audit-function-ams-los-angeles-california-united-states-3552262",
@@ -308,7 +328,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.57
+      "score": 37.29
     },
     {
       "externalId": "mainframe-systems-programmer-mainframe-dba-los-angeles-ca-hybrid-los-angeles-ca-united-states-3560077",
@@ -325,7 +345,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 36.89
+      "score": 36.61
     },
     {
       "externalId": "analytics-engineer-remote-united-states-3557547",
@@ -344,7 +364,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.69
+      "score": 36.41
     },
     {
       "externalId": "data-engineer-dea-arlington-va-3555281",
@@ -364,7 +384,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 36.41
+      "score": 36.14
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -387,7 +407,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 36.26
+      "score": 35.99
     },
     {
       "externalId": "database-site-reliability-engineer-dublin-ireland-3560088",
@@ -406,7 +426,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.65
+      "score": 35.38
     },
     {
       "externalId": "data-scientist-ii-washington-dc-united-states-3559978",
@@ -425,7 +445,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.06
+      "score": 34.79
     },
     {
       "externalId": "senior-software-engineer-ai-discovery-and-posture-mexico-city-3559050",
@@ -444,7 +464,26 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35
+      "score": 34.73
+    },
+    {
+      "externalId": "senior-scientific-programmer-houston-tx-us-3560733",
+      "source": "foorilla",
+      "url": "https://jobs.bcm.edu/job/Houston-Senior-Scientific-Programmer-TX-77001/1423994500/",
+      "title": "Senior Scientific Programmer",
+      "company": "Baylor College of Medicine",
+      "location": "Houston, TX, US",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze high-throughput sequencing datasets * Build interactive data exploration applications * Collaborate with investigators to define computational solutions * Develop and maintain software environments * Develop bioinformatics pipelines * Develop reproducible research workflows * Document analytical workflows and provide user guidance * Maintain bioinformatics software tools * Manage research databases and data systems * Operate and troubleshoot HPC environments * Perform genome assembly and annotation * Support comparative genomics and metagenomics Perks/Benefits: N/A Skills/Tech stack required: [Amazon DynamoDB][Bash][Bioinformatics][Cloud Computing][Comparative Genomics][Database Management][Data Visualization][Genome annotation][Genome assembly][High Performance][High-Performance Computing][Metagenomics][Microbiome Genomics][Nextflow][NoSQL][Performance Computing][Python][R][R Shiny][Snakemake][SQL][Virome Analysis][Workflow Management] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Bioinformatics Scientist][Programmer][Scientific Programmer][Scientist]",
+      "postedAt": "2026-08-28T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.64
     },
     {
       "externalId": "senior-devops-engineer-data-ai-platform-ottawa-on-canada-3558894",
@@ -463,7 +502,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.13
+      "score": 33.86
     },
     {
       "externalId": "technical-account-manager-uk-united-kingdom-london-united-kingdom-remote-3556270",
@@ -484,7 +523,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 34.09
+      "score": 33.81
     },
     {
       "externalId": "data-analyst-reporting-visualization-1861-chihuahua-mexico-3550894",
@@ -503,7 +542,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.09
+      "score": 33.81
     },
     {
       "externalId": "technical-escalations-engineer-2-logs-us-east-boston-massachusetts-usa-new-york-new-york-usa-3559007",
@@ -520,7 +559,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.93
+      "score": 33.65
     },
     {
       "externalId": "junior-data-engineer-dea-arlington-va-3555282",
@@ -540,7 +579,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.69
+      "score": 33.42
     },
     {
       "externalId": "manufacturing-tech-manassas-united-states-3551488",
@@ -557,7 +596,27 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.6
+      "score": 33.33
+    },
+    {
+      "externalId": "research-associate-iv-alabama-3562296",
+      "source": "foorilla",
+      "url": "https://careers.pageuppeople.com/1012/cw/en-us/job/504332",
+      "title": "Research Associate IV",
+      "company": "The University of Alabama in Huntsville",
+      "location": "Alabama",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build automated workflows * Conduct data quality control * Design and develop software applications * Develop scripts * Develop technical documentation * Implement corrective actions * Ingest data into cloud environments * Integrate and validate data sources * Optimize data for analytics and reporting * Perform research * Test and implement data workflows * Troubleshoot data processing issues * Validate datasets and identify anomalies Perks/Benefits: N/A Skills/Tech stack required: [Amazon EC2][Amazon S3][Automation][AWS][AWS Lambda][Data Analysis][Data Ingestion][Data Processing][Data Quality][Data quality control][Data Validation][MS Office][Python][Quality Control][Software development][Technical documentation] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Associate][Research Associate][Research Associate IV]",
+      "postedAt": "2026-08-27T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 32.91
     },
     {
       "externalId": "data-developer-greenville-south-carolina-3556902",
@@ -574,7 +633,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.14
+      "score": 32.87
     },
     {
       "externalId": "data-engineer-ii-baltimore-maryland-usa-3554694",
@@ -593,7 +652,27 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.99
+      "score": 32.71
+    },
+    {
+      "externalId": "senior-software-engineer-data-data-foundations-all-genders-hamburg-or-berlin-germany-3560797",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000145991009-senior-software-engineer-data-data-foundations-all-genders-",
+      "title": "Senior Software Engineer (Data) - Data Foundations (all genders)",
+      "company": "ABOUTYOUGmbH",
+      "location": "Hamburg or Berlin, Germany",
+      "country": "Germany",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and maintain data platform * Build custom data tooling for data teams * Catalog and manage data assets * Deliver critical executive reports * Develop data monitoring and data checks * Drive migration to new data platform * Ensure source system performance during syncs * Implement cost controlling for data pipelines * Maintain and optimize ELT pipelines * Move data from MySQL to BigQuery * Set up testing and CI CD for data workflows Perks/Benefits: N/A Skills/Tech stack required: [Amazon ECS][AWS CloudFormation][CI/CD][Dagster][Data Pipelines][Data Quality][DBT][Docker][ELT][ETL][Google BigQuery][Monitoring][MySQL][Python][SQL][Terraform][Testing] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-08-27T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 32.46
     },
     {
       "externalId": "data-engineer-dallas-tx-3556002",
@@ -612,7 +691,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.65
+      "score": 32.37
     },
     {
       "externalId": "it-developer-atlanta-ga-united-states-3556894",
@@ -629,7 +708,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.97
+      "score": 31.69
     },
     {
       "externalId": "palantir-mss-developer-engineer-baltimore-maryland-united-states-mclean-virginia-united-states-richmond-virginia-united-stat-3551288",
@@ -648,7 +727,27 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 31.96
+      "score": 31.69
+    },
+    {
+      "externalId": "senior-data-engineer-data-foundations-all-genders-hamburg-oder-berlin-germany-3560640",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000145990969-senior-data-engineer-data-foundations-all-genders-",
+      "title": "Senior Data Engineer - Data Foundations (all genders)",
+      "company": "ABOUTYOUGmbH",
+      "location": "Hamburg oder Berlin, Germany",
+      "country": "Germany",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply testing and CI CD * Build and maintain data platform * Deliver executive reporting * Implement monitoring and data checks * Maintain data cataloging * Manage connectors and cost control * Migrate MySQL data to BigQuery * Optimize ELT pipelines Perks/Benefits: + After work drinks + Company events + Flexible inclusion culture + Team lunch events Skills/Tech stack required: [Amazon ECS][AWS CloudFormation][CI/CD][Dagster][Data Quality][DBT][Docker][Google BigQuery][Monitoring][Python][SQL][Terraform][Testing] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-08-27T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "AWS"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 31.63
     },
     {
       "externalId": "senior-data-engineer-data-foundations-all-genders-hamburg-or-berlin-germany-3555040",
@@ -668,24 +767,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 31.79
-    },
-    {
-      "externalId": "data-center-technician-ii-engineering-field-services-atlanta-ga-usa-3550249",
-      "source": "foorilla",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/128731786191479494-data-center-technician-ii-engineering-field-services",
-      "title": "Data Center Technician II, Engineering Field Services",
-      "company": "Data Center Technician II, Engineering Field Services — Google Careers",
-      "location": "Atlanta, GA, USA",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Deploy data center infrastructure * Diagnose straightforward infrastructure issues * Disassemble end-of-life equipment * Maintain data security * Operate data center infrastructure * Perform preventative maintenance * Repair servers * Track media security status * Troubleshoot equipment issues Perks/Benefits: N/A Skills/Tech stack required: [Component-level repair][Computer hardware][Data center][Data center operations][Networking protocols][Network operations][Network Operations Center][Operating Systems][Operations Center][Preventative maintenance][Security procedures][Server Hardware][Troubleshooting] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Data Center Technician][Data Center Technician II][Operations][Operations Technician][Technician][Technician II]",
-      "postedAt": "2026-08-27T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 31.66
+      "score": 31.51
     },
     {
       "externalId": "data-engineer-plateforme-data-engineering-hf-boulogne-billancourt-idf-france-3550295",
@@ -702,7 +784,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 31.21
+      "score": 30.94
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -724,7 +806,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 30.89
+      "score": 30.61
     },
     {
       "externalId": "early-career-etl-developer-pittsburgh-pennsylvania-usa-3556903",
@@ -743,7 +825,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 30.88
+      "score": 30.6
     },
     {
       "externalId": "database-engineer-herndon-virginia-3552790",
@@ -760,7 +842,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 30.19
+      "score": 29.92
     }
   ]
 }
