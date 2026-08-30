@@ -1,28 +1,6 @@
 {
-  "generatedAt": "2026-08-29T23:25:31.757Z",
+  "generatedAt": "2026-08-30T05:30:59.341Z",
   "jobs": [
-    {
-      "externalId": "ai-software-development-engineer-uscasan-jose-3564310",
-      "source": "foorilla",
-      "url": "https://careers.amd.com/careers-home/jobs/91393",
-      "title": "AI Software Development Engineer",
-      "company": "AI Software Development Engineer in San Jose, California | Advanced Micro Devices, Inc",
-      "location": "US,CA,San Jose",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze machine learning reference solutions * Architect AI and ML solutions * Benchmark models on cloud environments * Build and fine-tune machine learning models * Create and deploy early proof of concepts * Deploy machine learning models on hardware systems * Develop demonstration application software * Develop roadmap of AI solutions * Develop scalable production ready AI ML systems * Integrate emerging AI trends into solution roadmap * Publish open source repositories and collaborate * Serve machine learning applications in production runtime Perks/Benefits: + Hybrid work location + Visa sponsorship not available Skills/Tech stack required: [Agentic AI][ASR][AWS][C#][C++][CICD][Cloud Computing][Cloud platform][Deep learning][Fine Tuning][Generative AI][GitHub][Google Cloud][Google Cloud Platform][Hardware acceleration][Image Generation][Jupyter][Language Models][Large Language Models][Machine Learning][Microsoft Azure][Model Deployment][Model Fine-tuning][Multimodal][Open Source][Python][Retrieval-Augmented Generation][TTS] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [AI][AI Software Development Engineer][Development Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Software Development Engineer]",
-      "postedAt": "2026-08-28T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "RAG",
-        "MLOps",
-        "AWS"
-      ],
-      "aiRelevance": 0.6,
-      "visaSponsored": true,
-      "score": 57.01
-    },
     {
       "externalId": "research-scientist-machine-learning-sunnyvale-ca-3570078",
       "source": "foorilla",
@@ -42,7 +20,7 @@
       ],
       "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 52.32
+      "score": 52.07
     },
     {
       "externalId": "senior-data-engineer-krakow-pl-3566084",
@@ -63,7 +41,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 46.69
+      "score": 46.44
     },
     {
       "externalId": "software-engineer-iii-agent-quality-and-efficiency-optimization-warsaw-poland-3566080",
@@ -84,27 +62,7 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 42.28
-    },
-    {
-      "externalId": "applied-scientist-ai-economics-tokenops-finops-united-states-3567929",
-      "source": "foorilla",
-      "url": "https://apply.careers.microsoft.com/careers/apply?pid=/careers/job/1970393556979454",
-      "title": "Applied Scientist, AI Economics (TokenOps, FinOps)",
-      "company": "Careers at Microsoft",
-      "location": "United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply CVaR and chance constraints for risk aware recommendations * Build conformal and empirical calibration methods * Create reusable forecast and calibration assessments * Design stochastic optimization methods under uncertainty * Develop probabilistic forecasting models for cost and delivery outcomes * Establish monitoring validation and versioning for deployed models * Implement production quality scientific software in Python * Own proactive planning algorithms and predictive model calibration for TokenOps and FinOps decisions * Partner on fact store data telemetry and lineage * Run Monte Carlo simulations and scenario analysis * Translate model outputs into customer decision recommendations * Use causal inference to assess TokenOps intervention impact Perks/Benefits: N/A Skills/Tech stack required: [Causal Inference][Chance constraints][Conformal Prediction][CVaR][Data Lineage][Data Quality][Drift Detection][Empirical Calibration][Experimental Design][Machine Learning][MLOps][Model Monitoring][Model Validation][Monte Carlo][Monte Carlo Simulation][Probabilistic Forecasting][Probabilistic Models][Python][Scenario Analysis][Stochastic Optimization][Uncertainty Quantification] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Engineering][Master of Science] Role(s): [Applied Scientist][Scientist]",
-      "postedAt": "2026-08-28T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "MLOps"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 41.13
+      "score": 42.03
     },
     {
       "externalId": "senior-data-engineer-id86297-queretaro-mexico-3566928",
@@ -123,7 +81,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.16
+      "score": 38.91
     },
     {
       "externalId": "ai-platform-engineer-de-germany-home-office-3566092",
@@ -145,27 +103,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 38.91
-    },
-    {
-      "externalId": "data-science-analyst-middleburg-heights-ohio-united-states-3566114",
-      "source": "foorilla",
-      "url": "https://recruiting.ultipro.com/QUA1015QDX/JobBoard/6c3a5901-71eb-469e-bc54-32e75ea40735/OpportunityDetail?opportunityId=53ce82a7-bf03-4d11-89e7-b4c3598de74b",
-      "title": "Data Science Analyst",
-      "company": "Q...",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze complex data sets * Apply statistical methods and visualization * Build and optimize document intelligence solutions * Create and maintain project documentation * Create business insights and improve data quality * Design and develop AI/ML solutions * Develop, train, and deploy machine learning models * Identify opportunities for data leverage * Interpret and present analysis results * Profile cleanse transform and validate data * Query and explore data * Test data accuracy Perks/Benefits: + Remote work allowed Skills/Tech stack required: [Agile][AI Foundry][AI Studio][Azure][Azure AI][Azure AI Foundry][Azure AI Studio][Azure OCR][Document Intelligence][Excel][LLMs][Machine Learning][OCR][Power BI][Python][Scikit-learn][SDLC][Snowflake][SQL][XGBoost] Educational requirements: N/A Role(s): [Analyst][Data Analyst][Data Science][Data Science Analyst]",
-      "postedAt": "2026-08-28T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM"
-      ],
-      "aiRelevance": 0.3,
-      "visaSponsored": false,
-      "score": 38.7
+      "score": 38.66
     },
     {
       "externalId": "senior-data-engineer-id86297-puebla-heroica-puebla-mexico-3566931",
@@ -184,7 +122,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.15
+      "score": 37.9
     },
     {
       "externalId": "middle-data-engineer-id86295-ukraine-3566855",
@@ -203,7 +141,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.1
+      "score": 37.85
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-playas-de-rosarito-mexico-3566800",
@@ -224,7 +162,24 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 37.78
+      "score": 37.53
+    },
+    {
+      "externalId": "ai-copilot-microsoft-365-specialist-anaheim-ca-us-3573278",
+      "source": "foorilla",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4462551",
+      "title": "AI Copilot / Microsoft 365 Specialist",
+      "company": "TOTAL WAREHOUSE INC",
+      "location": "anaheim, CA, US",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build Power Automate workflows * Conduct process discovery * Create Copilot use cases * Create internal knowledge search solutions * Create quick reference guides and SOPs * Create SharePoint sites * Develop AI solutions for productivity * Develop Power Apps * Develop reusable prompts and AI workflows * Document current workflows * Draft and summarize email using AI * Ensure AI permission and data access compliance * Establish AI usage guidelines * Generate meeting summaries and action items * Identify AI-enabled process improvements * Improve Excel workflows * Improve Microsoft Forms usage * Improve Microsoft Lists usage * Improve PowerPoint workflows * Improve Word workflows * Optimize Microsoft Teams usage * Optimize OneDrive usage * Optimize Outlook usage * Optimize SharePoint usage * Produce employee training materials * Recommend process improvements * Research and test new AI capabilities * Review Microsoft 365 permissions and information management best practices * Support Microsoft Copilot adoption * Track AI and Microsoft 365 adoption * Train employees on Microsoft 365 and Copilot Perks/Benefits: + Adoption enablement + Training support + Workflow improvement impact Skills/Tech stack required: [AI Governance][Knowledge Management][Microsoft 365][Microsoft Copilot][Microsoft Excel][Microsoft Forms][Microsoft Knowledge Management][Microsoft Lists][Microsoft Outlook][Microsoft PowerPoint][Microsoft Teams][Microsoft Word][OneDrive][Power Apps][Power Automate][Prompt engineering][SharePoint] Educational requirements: N/A Role(s): [AI][AI Automation][AI Automation Specialist][AI Solutions][AI Solutions Specialist][Automation Specialist][Microsoft 365 Specialist][Solutions Specialist][Specialist]",
+      "postedAt": "2026-08-29T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 37.46
     },
     {
       "externalId": "data-engineering-summerfall-co-op-june-dec-27-irvine-ca-us-3564896",
@@ -243,26 +198,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 37.61
-    },
-    {
-      "externalId": "martech-data-integration-developer-jericho-ny-united-states-3570264",
-      "source": "foorilla",
-      "url": "https://myjobs.adp.com/800flowerscareers/cx/job-details?reqId=5001221020106",
-      "title": "MarTech Data & Integration Developer",
-      "company": "1...",
-      "location": "Jericho, NY, United States",
-      "country": "United States",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build scheduled data workflows * Build SQL transformations in Snowflake * Develop API integrations * Develop data pipelines for MarTech platforms * Develop event streaming integrations * Document data pipelines and integrations * Maintain data pipelines * Monitor and reconcile data pipelines * Perform exploratory data analysis * Support customer identity segmentation and personalization data flows * Use Python and SQL to automate data processing * Validate and troubleshoot data integrations Perks/Benefits: + 401k + Dental insurance + Disability insurance + Employee assistance program + Employee discount + Flexible spending account + Health insurance + Health savings account + Life insurance + Paid Holidays + Paid vacation + Vision insurance Skills/Tech stack required: [Apache Airflow][API Integration][Clickstream Data][Cloud platform][Data Pipelines][Data Transformation][DBT][ELT][ETL][Event Streaming][Git][Google Cloud][Google Cloud Platform][JavaScript][JSON][JSON parsing][Kafka][Machine Learning][Python][REST APIs][Snowflake][SQL] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science][Master of Science] Role(s): [Data Integration Developer][Developer][Integration Developer][MarTech Data Integration Developer]",
-      "postedAt": "2026-08-28T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.15,
-      "visaSponsored": false,
-      "score": 37.55
+      "score": 37.36
     },
     {
       "externalId": "ai-application-cloud-operations-engineer-mid-level-plano-tx-united-states-3565201",
@@ -282,7 +218,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 37.52
+      "score": 37.27
     },
     {
       "externalId": "middle-data-engineer-id86295-monterrey-mexico-3566989",
@@ -301,7 +237,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.45
+      "score": 37.2
     },
     {
       "externalId": "junior-data-scientist-supply-chain-advanced-analytics-aiml-amsterdam-nh-nl-3567026",
@@ -320,7 +256,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.04
+      "score": 36.79
     },
     {
       "externalId": "senior-data-engineer-id86297-leon-de-los-aldama-mexico-3566930",
@@ -339,7 +275,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.83
+      "score": 36.58
     },
     {
       "externalId": "senior-data-engineer-id86297-guadalajara-mexico-3566933",
@@ -358,7 +294,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.62
+      "score": 36.37
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-ciudad-de-mexico-mexico-3566819",
@@ -379,7 +315,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 36.3
+      "score": 36.05
     },
     {
       "externalId": "middle-data-engineer-id86295-ciudad-de-mexico-mexico-3566995",
@@ -398,7 +334,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.03
+      "score": 35.78
     },
     {
       "externalId": "senior-data-engineer-id86297-zapopan-mexico-3566935",
@@ -417,7 +353,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.91
+      "score": 35.66
     },
     {
       "externalId": "data-engineer-cdmx-hibrido-mexico-city-mexico-city-mexico-3569028",
@@ -437,7 +373,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 35.91
+      "score": 35.66
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-queretaro-mexico-3566797",
@@ -458,7 +394,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.78
+      "score": 35.53
     },
     {
       "externalId": "senior-data-engineer-id86297-ciudad-de-mexico-mexico-3566932",
@@ -477,7 +413,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.77
+      "score": 35.52
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -500,7 +436,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 35.71
+      "score": 35.46
     },
     {
       "externalId": "middle-data-engineer-id86295-queretaro-mexico-3566997",
@@ -519,7 +455,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.59
+      "score": 35.34
     },
     {
       "externalId": "middle-data-engineer-id86295-leon-de-los-aldama-mexico-3566991",
@@ -538,7 +474,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.4
+      "score": 35.15
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-monterrey-mexico-3566828",
@@ -559,7 +495,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.37
+      "score": 35.12
     },
     {
       "externalId": "data-engineering-winterspring-co-op-jan-june-27-irvine-ca-us-3564895",
@@ -578,7 +514,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.33
+      "score": 35.08
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-puebla-heroica-puebla-mexico-3566824",
@@ -599,7 +535,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.3
+      "score": 35.05
     },
     {
       "externalId": "senior-data-engineer-id86297-ukraine-3566847",
@@ -618,7 +554,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.29
+      "score": 35.04
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-leon-de-los-aldama-mexico-3566807",
@@ -639,7 +575,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.27
+      "score": 35.02
     },
     {
       "externalId": "senior-data-engineer-id86297-playas-de-rosarito-mexico-3566929",
@@ -658,7 +594,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.18
+      "score": 34.93
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-zapopan-mexico-3566801",
@@ -679,7 +615,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 35.17
+      "score": 34.92
     },
     {
       "externalId": "middle-data-engineer-id86295-zapopan-mexico-3567001",
@@ -698,7 +634,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.94
+      "score": 34.69
     },
     {
       "externalId": "middle-data-engineer-id86295-guadalajara-mexico-3566987",
@@ -717,7 +653,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.8
+      "score": 34.55
     },
     {
       "externalId": "middle-data-engineer-id86295-puebla-heroica-puebla-mexico-3566993",
@@ -736,26 +672,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.78
-    },
-    {
-      "externalId": "ingeniero-big-data-ciudad-de-mexico-cdmx-mexico-3568445",
-      "source": "foorilla",
-      "url": "https://softtek.eightfold.ai/careers/job/893397435231",
-      "title": "Ingeniero Big Data",
-      "company": "Softtek",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Analyze and optimize ETL performance * Design data integration pipelines * Develop and improve machine learning data solutions * Develop data transformation processes * Identify automation opportunities * Implement coding best practices * Maintain technical documentation * Manage source code versions * Optimize data processing pipelines * Participate in integration and deployment processes * Perform technical reviews Perks/Benefits: + Hybrid work + Technical documentation Skills/Tech stack required: [Artifactory][CI/CD][Cloudera][ETL][Git][GitHub][Jenkins][Machine Learning][Pipelines][PySpark][Python][RLM][SQL] Educational requirements: N/A Role(s): [Big Data Engineer][Data Engineer][Engineer]",
-      "postedAt": "2026-08-28T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.15,
-      "visaSponsored": false,
-      "score": 34.73
+      "score": 34.53
     },
     {
       "externalId": "senior-data-engineer-id86297-monterrey-mexico-3566934",
@@ -774,7 +691,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.71
+      "score": 34.46
     },
     {
       "externalId": "middle-data-engineer-id86295-playas-de-rosarito-mexico-3566999",
@@ -793,7 +710,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.66
+      "score": 34.41
     },
     {
       "externalId": "senior-data-scientist-mmm-id71005-guadalajara-mexico-3566804",
@@ -813,7 +730,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.56
+      "score": 34.31
     },
     {
       "externalId": "databricks-technical-architect-canada-toronto-3569488",
@@ -832,7 +749,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.34
+      "score": 33.09
     },
     {
       "externalId": "data-center-technician-ii-ai-infrastructure-waltham-cross-uk-3565544",
@@ -849,7 +766,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.77
+      "score": 32.52
     },
     {
       "externalId": "data-teaching-expert-tegucigalpa-honduras-hn-3570242",
@@ -868,7 +785,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.49
+      "score": 32.24
     },
     {
       "externalId": "data-center-technician-ii-operations-engineering-stillwater-ok-usa-3565545",
@@ -885,7 +802,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.33
+      "score": 32.08
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -907,7 +824,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 30.33
+      "score": 30.08
     }
   ]
 }
