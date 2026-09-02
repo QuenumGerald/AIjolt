@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T23:24:03.667Z",
+  "generatedAt": "2026-09-02T04:43:49.363Z",
   "jobs": [
     {
       "externalId": "senior-ai-engineer-zagreb-croatia-remote-3589670",
@@ -22,7 +22,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 57.01
+      "score": 56.79
     },
     {
       "externalId": "data-scientist-usa-va-arlington-usa-remote-work-3587953",
@@ -43,14 +43,14 @@
       ],
       "aiRelevance": 0.44999999999999996,
       "visaSponsored": false,
-      "score": 55.91
+      "score": 55.69
     },
     {
       "externalId": "ai-engineer-llms-agents-rijeka-or-zagreb-croatia-remote-3589668",
       "source": "foorilla",
       "url": "https://elixirrdigital.talentlyft.com/o/9LNagN",
       "title": "AI Engineer (LLMs & Agents)",
-      "company": "Elixirr Digital",
+      "company": "E...",
       "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
@@ -64,7 +64,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.76
+      "score": 55.54
     },
     {
       "externalId": "senior-ai-engineer-id80138-braga-portugal-3589238",
@@ -84,7 +84,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.39
+      "score": 55.17
     },
     {
       "externalId": "senior-ai-engineer-id80138-aveiro-portugal-3589235",
@@ -104,7 +104,29 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.19
+      "score": 54.97
+    },
+    {
+      "externalId": "applied-data-scientist-llm-agentic-systems-kyiv-ukraine-3593160",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Wix2/744000146736340-applied-data-scientist-llm-agentic-systems-",
+      "title": "Applied Data Scientist (LLM & Agentic Systems)",
+      "company": "Wix2",
+      "location": "Kyiv, Ukraine",
+      "country": "Ukraine",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build Retrieval Augmented Generation systems * Define success metrics * Deploy AI systems * Design evaluation strategies * Develop agentic systems * Develop generative AI features * Fine-tune LLM models * Frame customer care problems * Integrate AI systems with existing systems * Iterate based on real world performance * Monitor AI system performance * Perform llm context engineering * Research solutions using experiments * Write production-quality code Perks/Benefits: N/A Skills/Tech stack required: [Automatic Evaluation][Code review][Fine Tuning][Information Retrieval][Language Models][Language Processing][Large Language Models][Machine Learning][Model Fine-tuning][Natural Language][Natural Language Processing][NLP][Observability][Python][Retrieval-Augmented Generation][Software Engineering][SQL][Statistics][Testing][Version control] Educational requirements: N/A Role(s): [Applied Data Scientist][Data Scientist][Scientist]",
+      "postedAt": "2026-09-01T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "NLP"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.54
     },
     {
       "externalId": "senior-ai-engineer-id80138-warsaw-poland-3589232",
@@ -124,7 +146,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.71
+      "score": 54.49
     },
     {
       "externalId": "senior-ai-engineer-id80138-gdansk-poland-3589233",
@@ -144,7 +166,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.66
+      "score": 54.44
     },
     {
       "externalId": "senior-ai-engineer-id80138-lublin-poland-3589227",
@@ -164,7 +186,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.65
+      "score": 54.43
     },
     {
       "externalId": "senior-ai-engineer-id80138-szczecin-poland-3589228",
@@ -184,31 +206,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.59
-    },
-    {
-      "externalId": "ai-engineer-warsaw-masovian-voivodeship-poland-3587801",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Talan/744000146690062-ai-engineer",
-      "title": "AI Engineer",
-      "company": "Talan",
-      "location": "Warsaw, Masovian Voivodeship, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build RAG pipelines * Deploy models to production * Design AI solutions * Develop ML pipelines * Ensure data quality * Evaluate and validate models * Fine-tune models * Implement AI models * Integrate AI models * Maintain models in production * Monitor model performance * Perform feature engineering * Prepare datasets * Serve models Perks/Benefits: + Life insurance + Lunch card + Online language classes + Private medical insurance + Smart office pack + Transport card Skills/Tech stack required: [CI/CD][Data Quality][Docker][Embeddings][Feature Engineering][Fine Tuning][Kubernetes][Langchain][Llamaindex][MLflow][Model Serving][NVIDIA Triton][PGVector][Prompt engineering][Python][PyTorch][Qdrant][Retrieval-Augmented Generation][Scikit-learn][SQL][TensorFlow][Vector Databases][VLLM] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer]",
-      "postedAt": "2026-09-01T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "PyTorch",
-        "TensorFlow",
-        "RAG",
-        "Kubernetes",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 54.58
+      "score": 54.37
     },
     {
       "externalId": "senior-ai-engineer-id80138-valencia-spain-3589249",
@@ -228,7 +226,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.5
+      "score": 54.28
     },
     {
       "externalId": "senior-ai-engineer-id80138-barcelona-spain-3589259",
@@ -248,7 +246,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.41
+      "score": 54.19
     },
     {
       "externalId": "senior-ai-engineer-id80138-iasi-romania-3589243",
@@ -268,7 +266,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.35
+      "score": 54.13
     },
     {
       "externalId": "senior-ai-engineer-id80138-sector-1-romania-3589244",
@@ -288,7 +286,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.33
+      "score": 54.11
     },
     {
       "externalId": "senior-ai-engineer-id80138-poznan-poland-3589229",
@@ -308,7 +306,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.32
+      "score": 54.1
     },
     {
       "externalId": "senior-ai-engineer-id80138-madrid-spain-3589247",
@@ -328,7 +326,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.32
+      "score": 54.1
     },
     {
       "externalId": "senior-ai-engineer-id80138-cluj-napoca-romania-3589239",
@@ -348,7 +346,29 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.3
+      "score": 54.08
+    },
+    {
+      "externalId": "ai-engineer-san-diego-california-usa-3592280",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006260833ENUS",
+      "title": "Ai Engineer",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build AI agents and GenAI applications * Collaborate to deliver AI solutions to production * Create MCP tools and integrations * Deploy and manage cloud native AI workloads * Design develop and optimize RAG solutions * Develop knowledge graph and graph based retrieval capabilities * Improve AI model performance accuracy and governance Perks/Benefits: + 401k retirement plan + Employee assistance program + Health spending account + Life insurance + Long-term disability + Medical, dental, and vision + PTO vacation or sick leave + Short-term disability + Transportation benefits Skills/Tech stack required: [Amazon Bedrock][Amazon EKS][AWS][CI/CD][Docker][Generative AI][Graph Databases][Knowledge graphs][Kubernetes][Neo4j][Python][Retrieval-Augmented Generation] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer]",
+      "postedAt": "2026-09-01T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.01
     },
     {
       "externalId": "senior-ai-engineer-id80138-timisoara-romania-3589240",
@@ -368,7 +388,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.2
+      "score": 53.98
     },
     {
       "externalId": "senior-ai-engineer-id80138-lisboa-portugal-3589237",
@@ -388,7 +408,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.16
+      "score": 53.94
     },
     {
       "externalId": "senior-ai-engineer-id80138-brasov-romania-3589242",
@@ -408,7 +428,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.13
+      "score": 53.91
     },
     {
       "externalId": "senior-ai-engineer-id80138-sofija-bulgaria-3589225",
@@ -428,7 +448,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.1
+      "score": 53.88
     },
     {
       "externalId": "senior-ai-engineer-id80138-porto-portugal-3589236",
@@ -448,7 +468,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.07
+      "score": 53.85
     },
     {
       "externalId": "senior-ai-engineer-id80138-ljubljana-smartno-slovenia-3589246",
@@ -468,7 +488,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 54.04
+      "score": 53.82
     },
     {
       "externalId": "senior-ai-engineer-id80138-krakow-poland-3589231",
@@ -488,7 +508,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 53.98
+      "score": 53.76
     },
     {
       "externalId": "senior-ai-engineer-id80138-bratislava-slovakia-3589245",
@@ -508,7 +528,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.98
+      "score": 53.76
     },
     {
       "externalId": "senior-ai-engineer-id80138-coimbra-portugal-3589234",
@@ -528,7 +548,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.91
+      "score": 53.69
     },
     {
       "externalId": "senior-ai-engineer-id80138-ukraine-3589250",
@@ -548,7 +568,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.6
+      "score": 53.38
     },
     {
       "externalId": "senior-ai-engineer-id80138-wrocaw-poland-3589230",
@@ -568,7 +588,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.39
+      "score": 53.17
     },
     {
       "externalId": "senior-ai-engineer-id80138-plovdiv-bulgaria-3589226",
@@ -588,14 +608,14 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.33
+      "score": 53.11
     },
     {
       "externalId": "machine-learning-engineer-zagreb-croatia-3590007",
       "source": "foorilla",
       "url": "https://croz.talentlyft.com/o/HPuagN",
       "title": "Machine Learning Engineer",
-      "company": "croz",
+      "company": "C...",
       "location": "Zagreb, Croatia",
       "country": "Croatia",
       "workMode": "unknown",
@@ -611,7 +631,7 @@
       ],
       "aiRelevance": 0.8200000000000001,
       "visaSponsored": false,
-      "score": 52.46
+      "score": 52.24
     },
     {
       "externalId": "seniorstaff-llm-application-engineer-data-application-san-jose-california-united-states-3587244",
@@ -631,7 +651,7 @@
       ],
       "aiRelevance": 0.8500000000000001,
       "visaSponsored": false,
-      "score": 49.46
+      "score": 49.24
     },
     {
       "externalId": "agentic-ai-engineer-delivery-consultant-ai-and-analytics-solutions-mechanicsburg-pennsylvania-united-states-3587717",
@@ -651,7 +671,7 @@
       ],
       "aiRelevance": 0.73,
       "visaSponsored": false,
-      "score": 48.42
+      "score": 48.2
     },
     {
       "externalId": "ai-developer-toronto-canada-3588546",
@@ -673,27 +693,7 @@
       ],
       "aiRelevance": 0.6,
       "visaSponsored": false,
-      "score": 47.33
-    },
-    {
-      "externalId": "ai-architect-warsaw-masovian-voivodeship-poland-3588559",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Talan/744000146693369-ai-architect",
-      "title": "AI Architect",
-      "company": "Talan",
-      "location": "Warsaw, Masovian Voivodeship, Poland",
-      "country": "Poland",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Architect large scale RAG solutions * Architect LLM orchestration and integrations * Define AI technical standards * Define model and data governance frameworks * Design end to end AI solution architecture * Design LLMOps pipelines and practices * Design scalable model serving infrastructure * Ensure AI security compliance alignment * Make build vs buy technology decisions * Select models and integration patterns Perks/Benefits: + Hybrid work setup + Life insurance + Lunch card + Online language classes + Private medical insurance + Transport card Skills/Tech stack required: [Access Control][AI architecture][Cloud deployment][Data Governance][Data Privacy][GPU Computing][Language Models][Large Language Models][LLMOps][Machine Learning][Model Governance][Model Serving][Networking][On-Premises][On-premises deployment][Orchestration][RAG][Security Compliance] Educational requirements: N/A Role(s): [AI][AI Architect][Architect]",
-      "postedAt": "2026-09-01T00:00:00.000Z",
-      "skills": [
-        "LLM",
-        "RAG"
-      ],
-      "aiRelevance": 0.42,
-      "visaSponsored": false,
-      "score": 42.57
+      "score": 47.11
     },
     {
       "externalId": "senior-backend-engineer-autonomous-ai-platform-cork-ireland-office-cork-3591086",
@@ -715,7 +715,7 @@
       ],
       "aiRelevance": 0.36,
       "visaSponsored": false,
-      "score": 41.26
+      "score": 41.04
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-guadalajara-mexico-3588921",
@@ -734,7 +734,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 39.3
+      "score": 39.08
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-playas-de-rosarito-mexico-3588442",
@@ -753,7 +753,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.15
+      "score": 37.93
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-zapopan-mexico-3588420",
@@ -772,7 +772,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 37.53
+      "score": 37.31
     },
     {
       "externalId": "data-qa-engineer-data-quality-engineer-mwd-rotterdam-zh-netherlands-3587973",
@@ -791,7 +791,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.06
+      "score": 35.84
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-ciudad-de-mexico-mexico-3588434",
@@ -810,14 +810,14 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.82
+      "score": 35.6
     },
     {
       "externalId": "data-architect-zagreb-rijeka-osijek-croatia-hybrid-3589832",
       "source": "foorilla",
       "url": "https://careers.span.eu/o/6KgagN",
       "title": "Data Architect",
-      "company": "span",
+      "company": "S...",
       "location": "Not specified",
       "country": "Unknown",
       "workMode": "unknown",
@@ -829,7 +829,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.6
+      "score": 35.38
     },
     {
       "externalId": "data-management-architect-united-states-3588553",
@@ -848,7 +848,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.55
+      "score": 35.33
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-guadalajara-mexico-3588438",
@@ -867,7 +867,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.52
+      "score": 35.3
     },
     {
       "externalId": "data-stewarddatabase-developer-annapolis-junction-md-information-technology-3589873",
@@ -884,7 +884,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.45
+      "score": 35.23
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-ukraine-3588468",
@@ -903,7 +903,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.41
+      "score": 35.19
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-leon-de-los-aldama-mexico-3588909",
@@ -922,7 +922,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.35
+      "score": 35.13
     },
     {
       "externalId": "technical-program-manager-ai-applications-enterprise-intelligence-toronto-3590356",
@@ -939,7 +939,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 35.34
+      "score": 35.12
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-ukraine-3588460",
@@ -958,7 +958,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.25
+      "score": 35.03
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-zapopan-mexico-3588915",
@@ -977,7 +977,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.13
+      "score": 34.91
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-puebla-heroica-puebla-mexico-3588923",
@@ -996,7 +996,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.02
+      "score": 34.8
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-leon-de-los-aldama-mexico-3588439",
@@ -1015,7 +1015,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.91
+      "score": 34.69
+    },
+    {
+      "externalId": "early-career-etl-data-analytics-developer-birmingham-alabama-usa-3592290",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006260553ENUS",
+      "title": "Early Career - ETL (Data Analytics) Developer",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build ETL pipelines * Collaborate cross-functionally * Create Unix/Linux Shell Scripts * Develop PL/SQL procedures * Implement batch processing workflows * Perform troubleshooting and production support * Schedule and monitor jobs using CA7 * Support production ETL pipelines * Use JCL concepts for job execution * Write Oracle SQL queries * Write technical documentation Perks/Benefits: + 401k retirement plan + Employee assistance program + Health spending account + Life insurance + Long-term disability + Medical/Dental/Vision + Paid time off + Short-term disability + Transportation benefits Skills/Tech stack required: [Agile][Angular][API][CA7][Cloud Data Integration][Data integration][Data Warehousing][Informatica][Informatica Cloud][Informatica Cloud Data][Informatica Cloud Data Integration][Informatica PowerCenter][Java][JavaScript][JCL][Microservices][Oracle SQL][PL/SQL][Python][React][Shell Scripting][SQL][Teradata][Unix/Linux] Educational requirements: N/A Role(s): [Developer][ETL Developer][Software Developer]",
+      "postedAt": "2026-09-01T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.63
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-monterrey-mexico-3588445",
@@ -1034,7 +1053,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.76
+      "score": 34.54
     },
     {
       "externalId": "sr-business-data-analyst-olive-branch-ms-us-3589814",
@@ -1053,7 +1072,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.73
+      "score": 34.51
     },
     {
       "externalId": "apex-data-engineer-bucuresti-ilfov-romania-3588880",
@@ -1072,7 +1091,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.69
+      "score": 34.47
     },
     {
       "externalId": "senior-databricks-data-engineer-id86297-playas-de-rosarito-mexico-3588443",
@@ -1091,7 +1110,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.68
+      "score": 34.46
+    },
+    {
+      "externalId": "senior-data-engineer-dublin-county-dublin-ireland-3593138",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Version1/744000146705662-senior-data-engineer",
+      "title": "Senior Data Engineer",
+      "company": "Version1",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Configure Databricks clusters * Design, develop, and optimize data pipelines * Develop data integration solutions * Gather data integration requirements * Integrate statistical and forecasting algorithms into data pipelines * Maintain technical and operational documentation * Manage Agile Scrum tasks * Mentor junior colleagues * Optimize spark performance Perks/Benefits: + Bike to work + Educational assistance + Employee assistance program + Employee discount + Enhanced maternity leave + Enhanced paternity leave + Financial advice + Generous holiday allowance + Gym discounts + Hybrid work + Incentivised certifications + Life assurance + Pension + Private healthcare + Remote work flexibility Skills/Tech stack required: [Agile][Caching][Cluster Resource Optimization][Databricks][Data Warehousing][ETL][Memory Management][Python][Resource Optimization][Scrum][Spark][SQL][SQL Server][Unity Catalog] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
+      "postedAt": "2026-09-01T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 34.44
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-monterrey-mexico-3588444",
@@ -1110,7 +1148,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.54
+      "score": 34.32
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-puebla-heroica-puebla-mexico-3588927",
@@ -1129,7 +1167,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.52
+      "score": 34.3
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-ciudad-de-mexico-mexico-3588435",
@@ -1148,7 +1186,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.4
+      "score": 34.18
     },
     {
       "externalId": "middle-databricks-data-engineer-id86295-queretaro-mexico-3588417",
@@ -1167,26 +1205,43 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.19
+      "score": 33.97
     },
     {
-      "externalId": "software-engineer-iii-compute-infrastructure-control-simulations-krakow-poland-3587473",
+      "externalId": "data-engineer-gcp-atlanta-georgia-usa-3592386",
       "source": "foorilla",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/105477948487672518-software-engineer-iii-compute-infrastructure-control-simulations",
-      "title": "Software Engineer III, Compute infrastructure, Control Simulations",
-      "company": "Software Engineer III, Compute infrastructure, Control Simulations — Google Careers",
-      "location": "Kraków, Poland",
-      "country": "Poland",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006260723ENUS",
+      "title": "Data Engineer (GCP)",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Communicate requirements with partners * Debug and enhance workloads scheduling * Design large scale systems * Develop performance measurement tools * Drive adoption efforts * Identify and drive compute infrastructure optimizations * Implement software components for workload scheduling * Quantify and fine tune production load Perks/Benefits: N/A Skills/Tech stack required: [Algorithms][C++][Data Structures][Large-scale][Large-scale system][Large-Scale System Design][Multithreading][Performance Analysis][Python][Refactoring][Simulation][SQL][System design][Test-Driven][Test-Driven Development] Educational requirements: [Bachelor of Science][Master of Science][PhD] Role(s): [Engineer][Software Engineer]",
+      "description": "Tasks: * Build enterprise data pipelines * Develop ETL and ELT workflows * Enhance finance reporting solutions * Ensure daily data loads meet SLA * Integrate SAP data into enterprise data warehouse * Maintain data models and semantic layers * Monitor and resolve data quality issues * Orchestrate data pipeline jobs * Support SOX controlled datasets * Transform and optimize data for reporting Perks/Benefits: + 401k retirement plan + Employee assistance program + Health spending account + Life insurance + Long-term disability + Medical, dental, and vision + Paid time off + Remote work + Short-term disability + Transportation benefits Skills/Tech stack required: [CI/CD][Data Modeling][Data pipeline][Data pipeline orchestration][Dimensional Modeling][ELT][ETL][Google BigQuery][Pipeline Orchestration][Python][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
       "postedAt": "2026-09-01T00:00:00.000Z",
       "skills": [
         "Python"
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.25
+      "score": 33.85
+    },
+    {
+      "externalId": "database-administrator-tallahassee-florida-3592419",
+      "source": "foorilla",
+      "url": "https://www.governmentjobs.com/careers/fleg/jobs/5323889",
+      "title": "Database Administrator",
+      "company": "Florida Legislature",
+      "location": "Tallahassee, Florida",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Administer Microsoft SQL instances * Debug database issues * Develop ETL with SSIS * Develop SQL solutions * Diagnose technical problems * Install Microsoft SQL instances * Maintain Microsoft SQL instances * Manage data warehousing * Solve technical problems * Support Microsoft SQL instances * Update technical documentation * Upgrade Microsoft SQL instances * Use SQL Server management tools * Use third party database management tools Perks/Benefits: N/A Skills/Tech stack required: [Database Administration][Data Warehousing][ETL][Integration Services][Microsoft SQL][Microsoft SQL Server][Server Integration Services][SQL][SQL Server][SQL Server integration][SQL Server Integration Services] Educational requirements: [Bachelor of Engineering][Bachelor of Science] Role(s): [Administrator][Analyst][Database Administrator][IT Analyst][Senior IT Analyst]",
+      "postedAt": "2026-09-01T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 33.14
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -1209,7 +1264,43 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 32.71
+      "score": 32.49
+    },
+    {
+      "externalId": "senior-software-engineer-java-database-development-heredia-heredia-costa-rica-3593174",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/Experian/744000146836769-senior-software-engineer-java-database-development",
+      "title": "Senior Software Engineer- Java & Database Development",
+      "company": "Experian",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build and test Java applications * Collaborate with stakeholders on requirements * Design Java applications * Develop and maintain stored procedures * Improve application performance * Maintain Java applications * Optimize relational database objects * Participate in code reviews * Perform troubleshooting and root cause analysis * Write and optimize SQL queries Perks/Benefits: N/A Skills/Tech stack required: [Git][Hibernate][Java][JPA][Maven][Relational databases][SQL] Educational requirements: [Bachelor of Engineering][Bachelor of Science][High School Diploma] Role(s): [Engineer][Senior Software Engineer][Software Engineer]",
+      "postedAt": "2026-09-01T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 32.01
+    },
+    {
+      "externalId": "data-engineer-plano-tx-united-states-3593133",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ProximateTechnologiesInc1/744000146804879-data-engineer",
+      "title": "Data Engineer",
+      "company": "ProximateTechnologiesInc1",
+      "location": "Plano, TX, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build ETL pipelines * Collaborate with data analysts and application teams on data requirements * Create data lakes and data warehouses * Develop data workflows in AWS * Resolve data related technical challenges * Use Unix tools for data transformation Perks/Benefits: N/A Skills/Tech stack required: [AWS][Data Lake][Data Pipelines][Data Transformation][Data Warehouse][ETL][Unix] Educational requirements: [Bachelor of Science][Master of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-09-01T00:00:00.000Z",
+      "skills": [
+        "AWS"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 31.89
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -1231,7 +1322,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 27.33
+      "score": 27.11
     }
   ]
 }
