@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T23:24:59.237Z",
+  "generatedAt": "2026-09-03T04:40:57.906Z",
   "jobs": [
     {
       "externalId": "senior-artificial-machine-learning-operations-engineer-usa-va-ashburn-3601896",
@@ -24,7 +24,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.91
+      "score": 56.69
     },
     {
       "externalId": "senior-ai-engineer-2-warszawa-mazowieckie-pl-3599418",
@@ -47,7 +47,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.1
+      "score": 55.88
     },
     {
       "externalId": "applied-ai-engineer-london-uk-madrid-spain-3601301",
@@ -68,7 +68,29 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.84
+      "score": 55.62
+    },
+    {
+      "externalId": "ai-engineer-san-diego-california-usa-3607043",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006262246ENUS",
+      "title": "AI Engineer",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build AI platform integrations and tooling * Collaborate with engineering product and AI teams to deliver AI capabilities * Contribute to CI CD pipelines and production deployment * Design develop and optimize RAG solutions * Develop AI agents and agentic workflows * Develop and deploy cloud native AI solutions * Develop and deploy containerized applications with Kubernetes and Docker * Enhance knowledge graph and contextual retrieval capabilities * Implement AI governance monitoring and safety controls * Improve quality accuracy and reliability of AI outputs Perks/Benefits: + 401k + Employee assistance program + HSA + Life insurance + Long-term disability + Medical/Dental/Vision + Paid time off (PTO) + Short-term disability + Transportation benefits Skills/Tech stack required: [AI Agents][AI Safety][APIs][AWS][Azure][CI/CD][Containerization][Docker][GCP][Graph Databases][Knowledge graphs][Kubernetes][Language Models][Large Language Models][Monitoring][Python][Retrieval-Augmented Generation] Educational requirements: N/A Role(s): [AI][AI Engineer][Engineer]",
+      "postedAt": "2026-09-02T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "RAG",
+        "Kubernetes",
+        "AWS"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 55.21
     },
     {
       "externalId": "senior-machine-learning-engineer-london-england-united-kingdom-3601899",
@@ -90,7 +112,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.38
+      "score": 55.16
     },
     {
       "externalId": "senior-ai-engineer-berlin-germany-3601307",
@@ -112,7 +134,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.06
+      "score": 54.84
     },
     {
       "externalId": "ai-engineer-generative-ai-automation-mwd-munchen-remote-rostock-3598349",
@@ -133,7 +155,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.37
+      "score": 54.15
     },
     {
       "externalId": "machine-learning-engineer-london-england-united-kingdom-3601897",
@@ -154,7 +176,7 @@
       ],
       "aiRelevance": 0.88,
       "visaSponsored": false,
-      "score": 51.94
+      "score": 51.72
     },
     {
       "externalId": "junior-ai-software-engineer-all-gender-stuttgart-bw-germany-3601333",
@@ -177,7 +199,7 @@
       ],
       "aiRelevance": 0.75,
       "visaSponsored": false,
-      "score": 50.69
+      "score": 50.47
     },
     {
       "externalId": "machine-learning-engineer-budapest-3600190",
@@ -198,7 +220,7 @@
       ],
       "aiRelevance": 0.76,
       "visaSponsored": false,
-      "score": 50.29
+      "score": 50.07
     },
     {
       "externalId": "lead-ai-data-trainer-ai-model-optimization-engineer-prague-czech-republic-3596081",
@@ -220,7 +242,7 @@
       ],
       "aiRelevance": 0.72,
       "visaSponsored": false,
-      "score": 49.98
+      "score": 49.76
     },
     {
       "externalId": "tech-lead-software-engineer-tiktok-aigc-agentic-workflow-san-jose-california-united-states-3602092",
@@ -243,7 +265,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 47.37
+      "score": 47.15
     },
     {
       "externalId": "software-engineer-tiktok-aigc-agentic-workflow-san-jose-california-united-states-3602090",
@@ -265,7 +287,7 @@
       ],
       "aiRelevance": 0.36,
       "visaSponsored": false,
-      "score": 42.79
+      "score": 42.57
     },
     {
       "externalId": "senior-software-engineer-tiktok-aigc-agentic-workflow-san-jose-california-united-states-3602091",
@@ -287,7 +309,7 @@
       ],
       "aiRelevance": 0.36,
       "visaSponsored": false,
-      "score": 42.64
+      "score": 42.42
     },
     {
       "externalId": "product-manager-support-menlo-park-ca-3602882",
@@ -304,7 +326,7 @@
       "skills": [],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 42.24
+      "score": 42.02
     },
     {
       "externalId": "senior-software-engineer-warsaw-poland-3602116",
@@ -323,7 +345,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 42.24
+      "score": 42.02
     },
     {
       "externalId": "ai-data-analytics-engineer-lisle-illinois-3601344",
@@ -345,7 +367,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 41.66
+      "score": 41.44
     },
     {
       "externalId": "bd-director-ai-data-solutions-new-york-city-new-york-united-states-3594958",
@@ -364,7 +386,7 @@
       ],
       "aiRelevance": 0.39,
       "visaSponsored": false,
-      "score": 41.07
+      "score": 40.85
     },
     {
       "externalId": "ai-developer-full-stack-ai-automation-kyiv-kyiv-ua-3603295",
@@ -383,7 +405,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 39.12
+      "score": 38.9
     },
     {
       "externalId": "software-engineer-iii-python-databricks-glasgow-lanarkshire-united-kingdom-3601662",
@@ -403,7 +425,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 38.93
+      "score": 38.71
     },
     {
       "externalId": "sr-solutions-architect-automotive-munich-germany-3596113",
@@ -422,7 +444,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.6
+      "score": 38.38
     },
     {
       "externalId": "software-engineer-3-tg-1678-hanover-md-information-technology-3604452",
@@ -439,7 +461,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 38.52
+      "score": 38.3
     },
     {
       "externalId": "principal-data-scientist-zurich-zh-switzerland-3596977",
@@ -458,7 +480,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 37.8
+      "score": 37.58
     },
     {
       "externalId": "cloud-software-engineer-ai-powered-end-to-end-warsaw-pl-3603545",
@@ -480,7 +502,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 37.54
+      "score": 37.32
     },
     {
       "externalId": "data-scientist-romania-pitesti-3601622",
@@ -499,7 +521,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.59
+      "score": 36.37
     },
     {
       "externalId": "sr-data-scientist-enterprise-data-intelligence-4400-west-18th-street-houston-texas-us-tx-77092-united-states-3605161",
@@ -518,7 +540,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.55
+      "score": 36.33
     },
     {
       "externalId": "software-engineer-dusseldorf-nrw-de-hamburg-hh-de-home-ireland-homeirl-de-gb-fr-at-be-hlavni-mesto-pra-3605391",
@@ -537,7 +559,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.55
+      "score": 36.33
     },
     {
       "externalId": "pre-training-text-data-united-states-3602874",
@@ -556,7 +578,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 36.34
+      "score": 36.12
     },
     {
       "externalId": "software-engineer-1-tg-1676-hanover-md-information-technology-3604163",
@@ -575,7 +597,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.81
+      "score": 35.59
     },
     {
       "externalId": "senior-data-analyst-deerfield-beach-united-states-3601545",
@@ -592,7 +614,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 34.9
+      "score": 34.68
     },
     {
       "externalId": "data-scientist-lisbon-3599433",
@@ -611,7 +633,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 34.89
+      "score": 34.67
     },
     {
       "externalId": "integration-talend-etl-developer-hibrido-oporto-distrito-de-oporto-portugal-3604522",
@@ -631,7 +653,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.69
+      "score": 34.47
     },
     {
       "externalId": "data-analytics-apprenticeship-february-2027-start-new-york-ny-usa-atlanta-ga-usa-3601351",
@@ -648,7 +670,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 34.57
+      "score": 34.35
     },
     {
       "externalId": "lead-data-engineer-on-site-in-gdl-guadalajara-jalisco-mexico-3596095",
@@ -667,7 +689,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.5
+      "score": 34.28
     },
     {
       "externalId": "ingenieure-data-hf-lille-france-3602542",
@@ -687,7 +709,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.47
+      "score": 34.25
     },
     {
       "externalId": "software-engineer-ii-python-databricks-glasgow-lanarkshire-united-kingdom-3601661",
@@ -706,7 +728,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.2
+      "score": 33.98
     },
     {
       "externalId": "senior-scientific-software-engineer-paris-3596098",
@@ -725,7 +747,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.16
+      "score": 33.94
+    },
+    {
+      "externalId": "associate-data-engineer-london-england-united-kingdom-3607281",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ASOS/744000146981519-associate-data-engineer",
+      "title": "Associate Data Engineer",
+      "company": "ASOS",
+      "location": "London, England, United Kingdom",
+      "country": "United Kingdom",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automating data pipelines with CI CD * Building reliable data systems * Collaborating in agile cross functional teams * Conducting code reviews * Delivering scalable data solutions * Designing data solutions * Improving engineering standards * Maintaining well tested maintainable solutions * Running proof of concept work * Supporting data telemetry investigations Perks/Benefits: + Employee discount + Employee sample sales + Paid annual leave + Personalized learning opportunities + Private medical care scheme Skills/Tech stack required: [Agile][Apache Spark][Azure Cosmos][Azure Cosmos DB][Azure Data][Azure Databricks][Azure Data Factory][Azure SQL][Azure SQL Database][CI/CD][Cosmos DB][Data Factory][Data Modeling][Git][Kanban][Microsoft Azure][Power BI][Python][Scrum][SQL Database] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-09-02T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.76
     },
     {
       "externalId": "devops-engineer-lisbon-3599432",
@@ -746,7 +787,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 33.95
+      "score": 33.73
     },
     {
       "externalId": "senior-software-engineer-poland-3602150",
@@ -765,7 +806,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.71
+      "score": 33.49
     },
     {
       "externalId": "senior-ai-native-fullstack-engineer-warsaw-poland-remote-3604335",
@@ -784,7 +825,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.7
+      "score": 33.48
     },
     {
       "externalId": "data-engineering-intern-lisbon-lisbon-lisboa-portugal-3594876",
@@ -804,7 +845,26 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 33.5
+      "score": 33.28
+    },
+    {
+      "externalId": "data-engineer-with-python-experience-w2-only-atlanta-georgia-usa-3607038",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006262442ENUS",
+      "title": "Data Engineer With Python Experience (W2 ONLY)",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply medallion architecture transformations * Architect and optimize PostgreSQL schemas * Design data processing pipelines in Python * Process localized analytics with DuckDB * Scale ETL and data transformation with distributed compute * Standardize data storage with open formats * Use SQLite for embedded data storage Perks/Benefits: + 401k retirement plan + Employee assistance program + HSA + Life insurance + Long-term disability + Medical/Dental/Vision + PTO vacation sick leave + Short-term disability + Transportation benefits Skills/Tech stack required: [Apache Iceberg][Apache Spark][Databricks][Delta Lake][DuckDB][ETL][Medallion Architecture][Parquet][PostgreSQL][Python][SQLite] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-09-02T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.26
     },
     {
       "externalId": "data-architect-croatia-3598264",
@@ -823,7 +883,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.35
+      "score": 33.13
     },
     {
       "externalId": "data-engineer-hibrido-pozuelo-de-alarcon-madrid-espana-3604071",
@@ -842,7 +902,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.34
+      "score": 33.12
     },
     {
       "externalId": "data-engineer-lisbon-3599434",
@@ -862,7 +922,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 32.98
+      "score": 32.76
     },
     {
       "externalId": "senior-data-engineer-talend-on-site-in-gdl-guadalajara-jalisco-mexico-3596478",
@@ -879,7 +939,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.8
+      "score": 32.58
     },
     {
       "externalId": "big-data-engineer-lisbon-3599436",
@@ -898,7 +958,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.76
+      "score": 32.54
+    },
+    {
+      "externalId": "data-analyst-lincoln-3607248",
+      "source": "foorilla",
+      "url": "https://www.governmentjobs.com/careers/lincolnne/jobs/5469315",
+      "title": "Data Analyst",
+      "company": "City of Lincoln/Lancaster County",
+      "location": "Lincoln",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assist with testing and implementing automated solutions * Collect organize verify and analyze data * Create charts summaries and recommendations * Develop reports dashboards and spreadsheets * Document data processes and maintain SOPs * Identify workflow inefficiencies and support process improvements * Maintain and update databases and spreadsheets * Support staff in understanding and using departmental data Perks/Benefits: N/A Skills/Tech stack required: [Data Analysis][Database Management][Data Documentation][Data Quality][Data Visualization][Excel][Microsoft Office][Power BI][Statistical Analysis] Educational requirements: [Bachelor of Science] Role(s): [Analyst][Data Analyst]",
+      "postedAt": "2026-09-02T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 32.3
     },
     {
       "externalId": "data-architect-lisbon-3600029",
@@ -915,7 +992,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.47
+      "score": 32.25
     },
     {
       "externalId": "senior-data-engineer-cybersecurity-platform-warsaw-masovian-voivodeship-poland-3600003",
@@ -932,7 +1009,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.44
+      "score": 32.22
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -955,7 +1032,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 31.71
+      "score": 31.49
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -977,7 +1054,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 26.33
+      "score": 26.11
     }
   ]
 }
