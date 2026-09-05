@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T23:06:20.788Z",
+  "generatedAt": "2026-09-05T04:37:05.530Z",
   "jobs": [
     {
       "externalId": "robotics-software-engineer-machine-learning-computer-vision-vlm-warszawa-poland-3630551",
@@ -23,7 +23,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 61.5
+      "score": 61.27
     },
     {
       "externalId": "mlai-engineer-toronto-3630567",
@@ -47,7 +47,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 56.9
+      "score": 56.67
     },
     {
       "externalId": "senior-machine-learning-engineer-das-acoustic-sensing-poland-poland-3633801",
@@ -68,7 +68,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.89
+      "score": 55.66
     },
     {
       "externalId": "junior-ai-engineer-verona-italy-3633045",
@@ -89,30 +89,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 55.76
-    },
-    {
-      "externalId": "associate-ai-engineer-london-united-kingdom-3629001",
-      "source": "foorilla",
-      "url": "https://recruiting.ultipro.com/TEG1001TEGR/JobBoard/ad4204e8-c7f7-47f1-8177-c9f64730dccc/OpportunityDetail?opportunityId=11ce8665-83bc-4b74-8160-2688d6439d6f",
-      "title": "Associate AI Engineer",
-      "company": "I...",
-      "location": "London, United Kingdom",
-      "country": "United Kingdom",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate operational workflows * Build internal AI-powered tools * Connect LLMs to existing systems * Debug monitor and improve live applications * Develop platform features * Evaluate AI usage reliability and responsible AI * Implement logging and monitoring for reliability * Integrate APIs services and data sources * Participate in testing code reviews and documentation * Prototype and productionize AI powered applications * Write maintainable, well-tested code Perks/Benefits: + Hybrid working model + Life assurance + Paid time off + Pension + Private medical insurance Skills/Tech stack required: [APIs][AWS][Azure][Cloud Applications][Code Documentation][Code review][Databases][Debugging][GCP][Golang][Langchain][Language Models][Large Language Models][Logging][Monitoring][OpenAI API][Prompt engineering][Python][Retrieval-Augmented Generation][Software testing] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Bachelor of Science in Computer Science][Bachelor of Science in Engineering][Bachelor of Science in Mathematics] Role(s): [AI][AI Engineer][Engineer][Software Engineer]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "LLM",
-        "RAG",
-        "AWS",
-        "LangChain"
-      ],
-      "aiRelevance": 1,
-      "visaSponsored": false,
-      "score": 55.66
+      "score": 55.53
     },
     {
       "externalId": "senior-ai-engineer-bulgaria-3633443",
@@ -132,7 +109,29 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 55.33
+      "score": 55.1
+    },
+    {
+      "externalId": "machine-learning-computer-vision-hillsboro-or-united-states-3639857",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/ChabezTech/744000147579869-machine-learning-computer-vision",
+      "title": "Machine Learning / Computer Vision",
+      "company": "ChabezTech",
+      "location": "Hillsboro, OR, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Apply few shot and self supervised learning methods * Build computer vision models * Conduct model calibration and uncertainty analysis * Develop image classification or detection pipelines * Implement metric learning and embeddings workflows * Improve data quality * Perform model validation and experimentation * Support model deployment and lifecycle using MLOps * Train deep learning models Perks/Benefits: N/A Skills/Tech stack required: [Convolutional Neural Networks][Data Quality][Embeddings][Experimentation][Few-shot][Few-Shot Learning][Image classification][Metric Learning][MLOps][Model calibration][Model Validation][Neural Networks][Novelty Detection][Object Detection][Python][PyTorch][Self-supervised][Self-Supervised Learning][Similarity Search][Supervised Learning][Uncertainty Estimation][Vision Transformers] Educational requirements: N/A Role(s): [Computer Vision Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Vision Engineer]",
+      "postedAt": "2026-09-04T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "MLOps",
+        "Computer Vision"
+      ],
+      "aiRelevance": 1,
+      "visaSponsored": false,
+      "score": 54.69
     },
     {
       "externalId": "software-engineer-ii-google-search-machine-learning-london-uk-3631836",
@@ -153,7 +152,7 @@
       ],
       "aiRelevance": 1,
       "visaSponsored": false,
-      "score": 54.59
+      "score": 54.36
     },
     {
       "externalId": "sr-ai-engineer-barcelona-spain-3633769",
@@ -173,7 +172,7 @@
       ],
       "aiRelevance": 0.97,
       "visaSponsored": false,
-      "score": 53.79
+      "score": 53.56
     },
     {
       "externalId": "cyber-ai-security-forensic-engineer-it-ot-denver-united-states-3634613",
@@ -194,7 +193,7 @@
       ],
       "aiRelevance": 0.57,
       "visaSponsored": false,
-      "score": 51.26
+      "score": 51.03
     },
     {
       "externalId": "machine-learning-engineer-united-states-remote-3629652",
@@ -216,7 +215,7 @@
       ],
       "aiRelevance": 0.79,
       "visaSponsored": false,
-      "score": 51.12
+      "score": 50.89
     },
     {
       "externalId": "ai-data-engineer-stockholm-sweden-3633767",
@@ -237,7 +236,7 @@
       ],
       "aiRelevance": 0.69,
       "visaSponsored": false,
-      "score": 50.55
+      "score": 50.32
     },
     {
       "externalId": "machine-learning-engineer-raleigh-nc-us-3632708",
@@ -259,7 +258,7 @@
       ],
       "aiRelevance": 0.79,
       "visaSponsored": false,
-      "score": 49.2
+      "score": 48.97
     },
     {
       "externalId": "ai-technology-specialist-milwaukee-wisconsin-united-states-3629642",
@@ -279,7 +278,52 @@
       ],
       "aiRelevance": 0.54,
       "visaSponsored": false,
-      "score": 48.48
+      "score": 48.25
+    },
+    {
+      "externalId": "associate-ai-builder-growth-transformation-sales-strategy-operations-dublin-d-ireland-3640288",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/LinkedIn3/744000147557469-associate-ai-builder-growth-transformation-sales-strategy-operations-",
+      "title": "Associate (AI Builder), Growth & Transformation – Sales Strategy & Operations",
+      "company": "LinkedIn3",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Automate sales operations workflows * Build AI agents * Build AI copilots * Build LLM assistants * Communicate tool value to stakeholders * Design AI-powered tools * Gather requirements from sales and customers * Measure impact of AI tools * Partner with product technology and marketing * Prototype AI-powered tools * Refine AI tools iteratively * Ship AI-powered tools * Support rollout and adoption * Test prototypes with users * Use Excel dashboards and SQL to evaluate impact Perks/Benefits: + Employee growth opportunities + Hybrid work + Paid time off Skills/Tech stack required: [Copilot Studio][Dashboarding][Excel][Language Models][Large Language Models][LLM APIs][Power Automate][Prompt engineering][Python][Retrieval-Augmented Generation][SQL] Educational requirements: [Bachelor of Arts][Bachelor of Engineering][Bachelor of Science] Role(s): [AI][AI Engineer][Engineer][Learning Engineer][Machine Learning Engineer][Software Engineer]",
+      "postedAt": "2026-09-04T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG"
+      ],
+      "aiRelevance": 0.69,
+      "visaSponsored": false,
+      "score": 48.08
+    },
+    {
+      "externalId": "data-engineer-usa-fl-team-disney-florida-united-states-3638654",
+      "source": "foorilla",
+      "url": "https://disney.wd5.myworkdayjobs.com/en-US/disneycareer/job/Lake-Buena-Vista-FL-USA/Data-Engineer_10153225",
+      "title": "Data Engineer",
+      "company": "T...",
+      "location": "USA - FL - Team Disney - Florida, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Acquire data for projects * Build and maintain federated data access * Build and maintain knowledge graphs * Develop data pipelines * Develop semantic data interfaces * Enable federated querying across heterogeneous sources * Implement semantic modeling * Implement unified query layers * Integrate data for semantic and AI use cases * Optimize query performance * Process and integrate enterprise data Perks/Benefits: N/A Skills/Tech stack required: [Amazon Neptune][Amazon S3][Apache Airflow][Apache Flink][Apache Iceberg][API Development][AWS Bedrock][Databricks][Data Modeling][Data orchestration][DevOps][Docker][Embeddings][Git][Graph Databases][GraphQL][Kafka][Kafka Connect][Knowledge graphs][Kubernetes][Langchain][LLM][Neo4j][Ontology][OpenAI][PostgreSQL][Presto][Python][Qdrant][Query Optimization][RAG][Semantic Web][Semantic Web Technologies][Snowflake][SQL][Trino][Vector Databases][Web Technologies] Educational requirements: [Bachelor of Engineering][Bachelor of Science][Master of Engineering][Master of Science] Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-09-04T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "LLM",
+        "RAG",
+        "Kubernetes",
+        "AWS",
+        "LangChain"
+      ],
+      "aiRelevance": 0.42,
+      "visaSponsored": false,
+      "score": 42.99
     },
     {
       "externalId": "senior-applied-scientist-united-states-california-mountain-view-united-states-washington-redmond-3632679",
@@ -299,7 +343,7 @@
       ],
       "aiRelevance": 0.42,
       "visaSponsored": false,
-      "score": 42.14
+      "score": 41.91
     },
     {
       "externalId": "senior-software-engineer-id87210-zona-1-guatemala-3635658",
@@ -319,7 +363,7 @@
       ],
       "aiRelevance": 0.3,
       "visaSponsored": false,
-      "score": 41.55
+      "score": 41.32
     },
     {
       "externalId": "data-engineer-northern-virginia-va-northern-virginia-va-northern-virginia-va-northern-virginia-va-northern-3635947",
@@ -340,7 +384,7 @@
       ],
       "aiRelevance": 0.09,
       "visaSponsored": false,
-      "score": 40.79
+      "score": 40.56
     },
     {
       "externalId": "uksenior-engineer-ai-core-services-england-cambridge-united-kingdom-of-great-britain-and-northern-ireland-3635398",
@@ -363,7 +407,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 40.04
+      "score": 39.81
     },
     {
       "externalId": "senior-data-engineer-stockholm-sweden-3632469",
@@ -384,7 +428,26 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 39.11
+      "score": 38.88
+    },
+    {
+      "externalId": "decision-scientist-course-developerinstructor-usa-fl-team-disney-florida-united-states-3638728",
+      "source": "foorilla",
+      "url": "https://disney.wd5.myworkdayjobs.com/en-US/disneycareer/job/Lake-Buena-Vista-FL-USA/Decision-Scientist---Course-Developer-Instructor_10142558",
+      "title": "Decision Scientist - Course Developer/Instructor",
+      "company": "1008 Disney Worldwide Services, Inc.",
+      "location": "USA - FL - Team Disney - Florida, United States",
+      "country": "United States",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Conduct office hour consultations * Develop and deliver Data Science courses * Develop decision science tools * Identify and apply advanced analytics best practices * Implement decision science solutions * Present analytics results to business partners * Research decision science frameworks * Translate research into practical solutions Perks/Benefits: + Financial benefits + Long-term incentives + Medical benefits Skills/Tech stack required: [ARIMA][Bayesian statistics][Clustering][Data Visualization][Decision analysis][Decision Making][Design of Experiments][Difference-in-differences][Discrete event][Discrete Event Simulation][Event simulation)][Game theory][Generalized Linear Models][Graphical Models][Instrumental Variables][Integer optimization][Julia][Linear Models][Machine Learning][Mixed Integer][Mixed integer optimization][Mixture models][Multiple Criteria Decision Making][Neural Networks][Nonlinear Optimization][Nonparametric Regression][Panel data][Python][R][Random Forests][Regression discontinuity][Reinforcement Learning][Stochastic Optimization][Structural Equation Models][Support Vector Machines][Time Series][Vector machines] Educational requirements: [Master of Science][PhD] Role(s): [Data Science][Data Science Trainer][Data Scientist][Decision Scientist][Engineer][Learning Engineer][Machine Learning Engineer][Scientist][Trainer]",
+      "postedAt": "2026-09-04T00:00:00.000Z",
+      "skills": [
+        "Python"
+      ],
+      "aiRelevance": 0.15,
+      "visaSponsored": false,
+      "score": 38.82
     },
     {
       "externalId": "senior-ml-engineer-eu-countries-czechia-3633444",
@@ -403,7 +466,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 38.97
+      "score": 38.74
     },
     {
       "externalId": "data-engineer-ii-smyrna-georgia-united-states-3631224",
@@ -420,7 +483,7 @@
       "skills": [],
       "aiRelevance": 0.12,
       "visaSponsored": false,
-      "score": 38.85
+      "score": 38.62
     },
     {
       "externalId": "network-engineer-deployment-support-temple-tx-papillion-ne-aurora-il-garland-tx-huntsville-al-houston-tx-3631860",
@@ -439,7 +502,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.78
+      "score": 38.55
     },
     {
       "externalId": "senior-data-engineer-calgary-alberta-canada-winnipeg-manitoba-canada-toronto-ontario-canada-3633770",
@@ -460,7 +523,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 38.75
+      "score": 38.52
     },
     {
       "externalId": "senior-software-engineer-id87210-quetzaltenango-guatemala-3635671",
@@ -479,26 +542,7 @@
       ],
       "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 38.51
-    },
-    {
-      "externalId": "data-science-consultant-maastricht-netherlands-3633845",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Sia/744000147444272-data-science-consultant",
-      "title": "Data Science Consultant",
-      "company": "Sia",
-      "location": "Maastricht, Netherlands",
-      "country": "Netherlands",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply generative AI using large language models * Build machine learning solutions * Develop statistical models * Facilitate client workshops * Identify business challenges from data * Implement optimization solutions * Present analytical results to clients Perks/Benefits: + Flexible working hours + Health insurance + International project opportunities + Lease car + Pension + Personalized training + Structured mentorship + Training and development Skills/Tech stack required: [Generative AI][Language Models][Large Language Models][Machine Learning][Optimization][Python][R][SQL][Statistical modeling] Educational requirements: [Master of Science] Role(s): [Consultant][Data Science][Data Science Consultant]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.27,
-      "visaSponsored": false,
-      "score": 38.32
+      "score": 38.28
     },
     {
       "externalId": "senior-devops-engineer-kosice-slovakia-slovakia-3630618",
@@ -519,7 +563,7 @@
       ],
       "aiRelevance": 0.21,
       "visaSponsored": false,
-      "score": 37.96
+      "score": 37.73
     },
     {
       "externalId": "data-scientist-research-reliability-analytics-london-uk-3630625",
@@ -538,7 +582,7 @@
       ],
       "aiRelevance": 0.27,
       "visaSponsored": false,
-      "score": 37.84
+      "score": 37.61
     },
     {
       "externalId": "senior-data-engineer-richardson-tx-united-states-3629914",
@@ -555,7 +599,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 37.42
+      "score": 37.19
     },
     {
       "externalId": "technical-ai-account-manager-sf-ca-3633341",
@@ -575,26 +619,7 @@
       ],
       "aiRelevance": 0.18,
       "visaSponsored": false,
-      "score": 36.46
-    },
-    {
-      "externalId": "senior-data-engineer-consultant-brussel-belgium-3634211",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Sia/744000147445579-senior-data-engineer-consultant-",
-      "title": "Senior Data Engineer Consultant",
-      "company": "Sia",
-      "location": "Brussel, Belgium",
-      "country": "Belgium",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply DataOps practices for automation reliability versioning * Build cloud based data architectures * Co-design data engineering solutions * Design scalable data pipelines * Develop data engineering offerings * Develop logical and physical data models * Enable CI CD for data services and infrastructure * Implement batch streaming and real time integration * Lead client data engineering engagements * Manage stakeholders and project delivery * Mentor junior consultants * Optimize database solutions for workloads Perks/Benefits: + Flexible mobility options + Flexible working arrangements + International project exposure + Knowledge sharing + Training and development Skills/Tech stack required: [Apache Kafka][Apache Spark][“as-code”][AWS][Azure][Batch Processing][CI/CD][Cloud Architecture][Cost Optimization][Data Architecture][Databricks][Data Engineering][Data integration][Data Modeling][DataOps][Data Pipelines][Distributed Systems][Google Cloud][Graph Databases][IAM][Infrastructure as Code][NoSQL][Real Time][Real-time Data][Real-Time Data Integration][Relational databases][Snowflake][Streaming][Time data integration][Time Series][Time-series databases] Educational requirements: [Master of Engineering][Master of Science][PhD] Role(s): [Consultant][Data Engineer][Data Engineer Consultant][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "AWS"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 36.4
+      "score": 36.23
     },
     {
       "externalId": "platform-engineer-united-kingdom-occasional-office-visit-required-3633339",
@@ -613,87 +638,26 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 36.05
-    },
-    {
-      "externalId": "consultant-data-engineer-brussels-belgium-3633343",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Sia/744000147444569-consultant-data-engineer",
-      "title": "Consultant Data Engineer",
-      "company": "Sia",
-      "location": "Brussels, Belgium",
-      "country": "Belgium",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Build data pipelines * Build REST API server * Containerize applications with Docker * Deploy applications and data science projects * Design cloud storage and compute architecture * Develop ETL scripts * Develop Python server-side tools * Implement application security with HTTPS * Implement authentication and authorization * Implement OAuth2 authentication * Manage CI/CD deployment pipelines * Manage credentials * Manage infrastructure as code * Monitor and optimize cloud costs * Orchestrate workloads with Kubernetes Perks/Benefits: + Diversity + Great Place to Work certification + Knowledge sharing + Well-being Skills/Tech stack required: [“as-code”][AWS][Azure][Certificate management][CI/CD][Credential Management][Data Pipelines][Docker][ETL][GCP][GitLab][HTTPS][Infrastructure as Code][Kubernetes][MongoDB][OAuth2][OAuth2 authentication][PostgreSQL][Python][REST API][SQL][Terraform] Educational requirements: [Master of Science] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 35.87
-    },
-    {
-      "externalId": "senior-data-engineer-consultant-antwerp-belgium-3634212",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Sia/744000147443520-senior-data-engineer-consultant-",
-      "title": "Senior Data Engineer Consultant",
-      "company": "Sia",
-      "location": "Antwerp, Belgium",
-      "country": "Belgium",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Apply DataOps automation for data workflows * Co-design data engineering solutions * Design and implement cloud based distributed data solutions * Design data architectures and pipelines * Develop data engineering offerings and training * Develop data models and optimize databases * Implement batch and streaming data integration * Lead data engineering client engagements * Set up CI CD for data services * Supervise and mentor junior consultants Perks/Benefits: + Flexible mobility options + Flexible working arrangements + International project exposure + Knowledge sharing + Training and development Skills/Tech stack required: [Apache Kafka][Apache Spark][Automation][AWS][Azure][Batch Processing][CI/CD][Data Architecture][Database optimization][Databricks][Data integration][Data Modeling][DataOps][Data pipeline][GCP][Graph Databases][NoSQL][Real Time][Real-time Data][Real-Time Data Integration][Relational databases][Snowflake][Streaming processing][Time data integration][Time Series][Time-series databases][Version control] Educational requirements: [Master of Science] Role(s): [Consultant][Data Engineer][Data Engineering][Data Engineering Consultant][Engineer][Engineering Consultant][Senior Data Engineer]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "AWS"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
       "score": 35.82
     },
     {
-      "externalId": "data-architect-amsterdam-netherlands-3634206",
+      "externalId": "data-reduction-physicist-ep-cms-tdq-2026-146-grap-geneva-geneva-switzerland-3640226",
       "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Sia/744000147444732-data-architect",
-      "title": "Data Architect",
-      "company": "Sia",
-      "location": "Amsterdam, Netherlands",
-      "country": "Netherlands",
+      "url": "https://jobs.smartrecruiters.com/CERN/744000147520539-data-reduction-physicist-ep-cms-tdq-2026-146-grap-",
+      "title": "Data Reduction Physicist (EP-CMS-TDQ-2026-146-GRAP)",
+      "company": "CERN",
+      "location": "Geneva, GENEVA, Switzerland",
+      "country": "Switzerland",
       "workMode": "unknown",
       "salary": null,
-      "description": "Tasks: * Apply DataOps practices * Build data architecture and pipelines * Build distributed data processing systems * Design and implement cloud data solutions * Design data engineering solutions * Develop and enhance Data Engineering offerings * Develop data models * Enable continuous integration and deployment for data services * Implement batch, streaming, and real-time data integration * Ingest process and deliver structured and unstructured data * Lead client engagements * Mentor junior consultants * Optimize database solutions * Represent company at professional events Perks/Benefits: + Flexible work arrangements + International project exposure + Knowledge sharing + Training and development Skills/Tech stack required: [Apache Kafka][Apache Spark][AWS][Azure][Batch Processing][CI/CD][Cloud platform][Data Architecture][Database Design][Databricks][Data integration][Data Modeling][DataOps][Data Pipelines][Google Cloud][Google Cloud Platform][Graph Databases][NoSQL][Real Time][Real-time Data][Relational databases][Snowflake][Streaming][Time Series][Time-series databases] Educational requirements: [Master of Engineering][Master of Science] Role(s): [Architect][Data Architect][Data Engineer][Engineer]",
+      "description": "Tasks: * Advance lossless compression using reconstructed objects * Apply AI and ML for data reduction * Benchmark compression and decompression performance * Build end to end framework for lossy compression metrics * Design data structures for data reduction * Ensure accelerator native data formats Perks/Benefits: + Health insurance + Paid leave + Relocation support + Training and language classes Skills/Tech stack required: [AutoEncoder][Automated Regression][Automated regression testing][C++][CI/CD][Data Compression][GPU Programming][Heterogeneous computing][Lossless Compression][Lossy compression][Machine Learning][Python][Regression testing][ROOT] Educational requirements: [Master of Science][PhD] Role(s): [Data Reduction Physicist][Physicist]",
       "postedAt": "2026-09-04T00:00:00.000Z",
       "skills": [
-        "AWS"
+        "Python"
       ],
-      "aiRelevance": 0.03,
+      "aiRelevance": 0.15,
       "visaSponsored": false,
-      "score": 35.78
-    },
-    {
-      "externalId": "consultant-data-engineer-antwerp-belgium-3633342",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/Sia/744000147445619-consultant-data-engineer",
-      "title": "Consultant Data Engineer",
-      "company": "Sia",
-      "location": "Antwerp, Belgium",
-      "country": "Belgium",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate application deployment * Build data pipelines * Build REST API server * Deploy and manage Kubernetes clusters * Design cloud architectures * Develop ETL scripts * Develop Python server-side tools * Implement application security solutions * Implement authentication * Implement CI/CD pipelines * Implement OAuth2 authentication * Manage credentials and certificate management * Manage GCP AWS and Azure services * Manage infrastructure as code * Manage TLS and HTTPS * Set up Docker containerization * Support deployment of Data Science projects Perks/Benefits: + Diversity and inclusion + Knowledge sharing + Well-being Skills/Tech stack required: [“as-code”][AWS][Azure][Big Data][CI/CD][Docker][Docker Compose][ETL][GCP][GitLab][GitLab CI][HTTPS][Infrastructure as Code][Kubernetes][Linux][MongoDB][OAuth2][PostgreSQL][Python][REST API][SQL][Terraform][TLS] Educational requirements: [Master of Science] Role(s): [Data Engineer][Engineer]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "Python",
-        "Kubernetes",
-        "AWS"
-      ],
-      "aiRelevance": 0.09,
-      "visaSponsored": false,
-      "score": 35.72
+      "score": 35.75
     },
     {
       "externalId": "java-engineer-with-data-engineering-experience-jalisco-guadalajara-mexico-3635307",
@@ -713,7 +677,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 35.34
+      "score": 35.11
     },
     {
       "externalId": "middle-data-engineer-id87373-zapopan-mexico-3635607",
@@ -732,26 +696,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.23
-    },
-    {
-      "externalId": "senior-data-engineer-eim-canada-remote-0002-3628682",
-      "source": "foorilla",
-      "url": "https://www.lifeatvena.com/en/postings/b24ce0e2-f0c4-4da2-8b71-51e2de070ac9",
-      "title": "Senior Data Engineer, EIM",
-      "company": "Vena Solutions",
-      "location": "Not specified",
-      "country": "Unknown",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate data engineering processes * Build automated deployment pipelines * Build data pipelines * Create data models * Create reusable ETL frameworks * Design data warehouse * Develop real-time data pipelines * Ensure data governance and security alignment * Foster data literacy and data-driven culture * Implement data integration workflows * Implement ETL transformations * Map data sources to targets * Monitor and evolve data platform * Partner with stakeholders on scalable data architecture * Set up automated testing and continuous integration Perks/Benefits: + Hybrid work option + Remote work option + Work in Toronto office option Skills/Tech stack required: [Agile][Amazon Redshift][APIs][Automated testing][CI/CD][Continuous integration][Data Modeling][Data Pipelines][Data Warehousing][Dimensional data][Dimensional data modeling][ETL][Fivetran][JSON][Python][Real Time][Real-time Data][Real-time data pipelines][Relational Data][Relational Data Modeling][Scrum][Snowflake][SQL][Stitch][XML] Educational requirements: N/A Role(s): [Data Engineer][Engineer][Senior Data Engineer]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 35.18
+      "score": 35
     },
     {
       "externalId": "data-engineer-kbenhavn-denmark-3633541",
@@ -770,7 +715,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 35.14
+      "score": 34.91
     },
     {
       "externalId": "data-analyst-ii-madison-wisconsin-united-states-3632479",
@@ -789,24 +734,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.76
-    },
-    {
-      "externalId": "advisory-ai-data-specialist-solna-stockholm-sweden-3632839",
-      "source": "foorilla",
-      "url": "https://iawmqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/298677",
-      "title": "Advisory AI Data Specialist",
-      "company": "Dell",
-      "location": "Solna, Stockholm, Sweden",
-      "country": "Sweden",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Align data flows with AI software stack * Build ETL/ELT pipelines * Catalog data assets * Coach data engineers and platform teams * Collaborate with AI architects * Configure access control * Configure data governance controls * Define integration patterns * Deliver AI-ready datasets * Document data flows and governance artifacts * Ensure production aware monitoring and reliability * Handle sensitive data * Lead data readiness assessments * Perform data integration and transformation Perks/Benefits: + Social impact + Travel opportunities Skills/Tech stack required: [Access Control][Auditability][Compliance][Data Cataloging][Data Engineering][Data Governance][Data handling][Data integration][Data Pipelines][Data Privacy][Data Quality][Data Security][Data Transformation][ELT][ETL][Integration Patterns][Monitoring][Performance optimization][Reliability Engineering][Sensitive data][Sensitive Data Handling] Educational requirements: N/A Role(s): [Advisory][Advisory AI Data Specialist][AI Data Specialist][Data Engineer][Data Specialist][Engineer][Specialist]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [],
-      "aiRelevance": 0,
-      "visaSponsored": false,
-      "score": 34.42
+      "score": 34.53
     },
     {
       "externalId": "data-engineer-ii-library-systems-baltimore-md-united-states-3637391",
@@ -826,7 +754,7 @@
       ],
       "aiRelevance": 0.06,
       "visaSponsored": false,
-      "score": 34.34
+      "score": 34.11
     },
     {
       "externalId": "data-analytics-engineer-payments-dublin-ireland-3630492",
@@ -845,7 +773,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.3
+      "score": 34.07
     },
     {
       "externalId": "middle-data-engineer-id87373-puebla-heroica-puebla-mexico-3635578",
@@ -864,7 +792,46 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 34.19
+      "score": 33.96
+    },
+    {
+      "externalId": "data-engineer-ciudad-de-mexico-dif-mexico-3639883",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/NielsenIQ/744000147559659-data-engineer",
+      "title": "Data Engineer",
+      "company": "NielsenIQ",
+      "location": "Ciudad de México, DIF, Mexico",
+      "country": "Mexico",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Assemble data pipelines * Build infrastructure for extract transform load * Extract data from multiple sources * Generate facts for clients * Integrate finished models into pipelines * Load transformed data into targets * Maintain data pipelines * Optimize Spark code * Run data transformations * Transition features to L2 support * Write and maintain documentation Perks/Benefits: + Employee Assistance Program (EAP) + Flexible working environment + LinkedIn Learning + Volunteer time off Skills/Tech stack required: [Apache Airflow][Apache Spark][Azure][CI/CD][Databricks][Data Modeling][Data Warehousing][DevSecOps][Docker][Kubernetes][PySpark][Python][Scala][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-09-04T00:00:00.000Z",
+      "skills": [
+        "Python",
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.06,
+      "visaSponsored": false,
+      "score": 33.77
+    },
+    {
+      "externalId": "data-engineer-duckdb-required-and-w2-only-atlanta-georgia-usa-3638657",
+      "source": "foorilla",
+      "url": "https://careers.teksystems.com/us/en/job/TESYUSJP006267418ENUS",
+      "title": "Data Engineer (DuckDB Required And W2 ONLY)",
+      "company": "TEKsystems",
+      "location": "Not specified",
+      "country": "Unknown",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Build maintain and optimize GitHub Actions CI CD workflows * Configure GitHub Workload Identity Federation with OIDC for GCP access * Deploy and scale Keycloak clusters * Deploy manage and scale Kubernetes workloads * Provision infrastructure using Terraform * Run automated testing and containerization Perks/Benefits: + 401k + Employee assistance program + Health spending account + Life insurance + Long-term disability + Medical/Dental/Vision + Paid time off + Short-term disability + Transportation benefits Skills/Tech stack required: [CI/CD][Cloud platform][Docker][GitHub Actions][GitHub Workload Identity Federation][Google Cloud][Google Cloud Platform][Helm][Identity Federation][Keycloak][Kubernetes][Kustomize][OIDC][Terraform][Workload Identity Federation] Educational requirements: N/A Role(s): [DevOps][DevOps Engineer][Engineer]",
+      "postedAt": "2026-09-04T00:00:00.000Z",
+      "skills": [
+        "Kubernetes"
+      ],
+      "aiRelevance": 0.03,
+      "visaSponsored": false,
+      "score": 33.7
     },
     {
       "externalId": "data-engineer-data-warehouse-etl-lisbon-lisbon-portugal-3633831",
@@ -883,7 +850,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.92
+      "score": 33.69
     },
     {
       "externalId": "senior-ai-gameplay-programmer-stockholm-sweden-3631920",
@@ -900,7 +867,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.9
+      "score": 33.67
     },
     {
       "externalId": "digitalization-specialist-fmd-ganderkesee-germany-3632621",
@@ -919,7 +886,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 33.44
+      "score": 33.21
     },
     {
       "externalId": "ai-enablement-intelligent-automation-specialist-deerfield-beach-united-states-3634063",
@@ -936,7 +903,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.16
+      "score": 32.93
     },
     {
       "externalId": "business-intelligence-analyst-slough-gbr-sl14dx-3637959",
@@ -953,7 +920,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 33.07
+      "score": 32.84
     },
     {
       "externalId": "dataops-engineer-fornebu-norway-3632451",
@@ -970,26 +937,7 @@
       "skills": [],
       "aiRelevance": 0,
       "visaSponsored": false,
-      "score": 32.89
-    },
-    {
-      "externalId": "analytics-engineer-all-genders-supply-data-solutions-hamburg-germany-3633844",
-      "source": "foorilla",
-      "url": "https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000147445859-analytics-engineer-all-genders-supply-data-solutions",
-      "title": "Analytics Engineer (all genders) - Supply Data Solutions",
-      "company": "ABOUTYOUGmbH",
-      "location": "Hamburg, Germany",
-      "country": "Germany",
-      "workMode": "unknown",
-      "salary": null,
-      "description": "Tasks: * Automate routine reporting * Collaborate to ensure data quality * Communicate findings to technical and non-technical audiences * Design implement advanced dashboards * Enable self-service analytics * Foster data-driven culture * Fulfill reporting requests * Gather analyze interpret data * Maintain existing reports * Support ad-hoc analysis * Translate data into actionable insights Perks/Benefits: N/A Skills/Tech stack required: [Dashboarding][Data Visualization][Excel][Google BigQuery][Looker Studio][Python][SQL] Educational requirements: N/A Role(s): [Analyst][Analytics][Analytics Engineer][Data Analyst][Engineer]",
-      "postedAt": "2026-09-04T00:00:00.000Z",
-      "skills": [
-        "Python"
-      ],
-      "aiRelevance": 0.03,
-      "visaSponsored": false,
-      "score": 32.83
+      "score": 32.66
     },
     {
       "externalId": "data-engineer-consultant-with-databricks-experience-stockholm-sweden-3633789",
@@ -1008,7 +956,7 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.75
+      "score": 32.52
     },
     {
       "externalId": "data-science-phd-intern-2027-warsaw-poland-3631305",
@@ -1027,7 +975,24 @@
       ],
       "aiRelevance": 0.03,
       "visaSponsored": false,
-      "score": 32.35
+      "score": 32.12
+    },
+    {
+      "externalId": "data-engineer-mwd-with-focus-on-data-migration-brussels-brussels-belgium-3639885",
+      "source": "foorilla",
+      "url": "https://jobs.smartrecruiters.com/EVERIENCE/744000147551759-data-engineer-m-w-d-with-focus-on-data-migration",
+      "title": "Data Engineer (m/w/d) with focus on data migration",
+      "company": "EVERIENCE",
+      "location": "Brussels, Brussels, Belgium",
+      "country": "Belgium",
+      "workMode": "unknown",
+      "salary": null,
+      "description": "Tasks: * Analyze source databases and systems * Create data transformation and mapping rules * Design migration approach with migration architect and engineers * Ensure data integrity during migration * Perform data validation and quality control * Retrieve analyze and manipulate data with SQL * Support data modeling and database management Perks/Benefits: N/A Skills/Tech stack required: [Database Management][Data Integrity][Data Mapping][Data Modeling][Data Quality][Data Transformation][ETL][Non-relational][Non-relational Databases][Relational databases][SQL] Educational requirements: N/A Role(s): [Data Engineer][Engineer]",
+      "postedAt": "2026-09-04T00:00:00.000Z",
+      "skills": [],
+      "aiRelevance": 0,
+      "visaSponsored": false,
+      "score": 31.96
     },
     {
       "externalId": "mid-level-ai-software-engineer-tssci-fs-poly-columbia-maryland-3458152",
@@ -1050,7 +1015,7 @@
       ],
       "aiRelevance": 0.51,
       "visaSponsored": false,
-      "score": 29.72
+      "score": 29.49
     },
     {
       "externalId": "junior-ai-software-engineer-tssci-fs-poly-laurel-maryland-3477830",
@@ -1072,7 +1037,7 @@
       ],
       "aiRelevance": 0.24,
       "visaSponsored": false,
-      "score": 24.35
+      "score": 24.12
     }
   ]
 }
