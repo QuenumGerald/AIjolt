@@ -19,7 +19,15 @@
     "site:dev": "npm run dev --prefix site",
     "site:build": "npm run build --prefix site",
     "doctor": "tsx src/cli.ts doctor",
-    "start": "tsx src/cli.ts start"
+    "start": "tsx src/cli.ts start",
+    "story:create": "tsx src/cli.ts story create",
+    "story:run": "tsx src/cli.ts story run",
+    "story:status": "tsx src/cli.ts story status",
+    "story:list": "tsx src/cli.ts story list",
+    "story:retry": "tsx src/cli.ts story retry",
+    "story:approve": "tsx src/cli.ts story approve",
+    "story:publish": "tsx src/cli.ts story publish",
+    "story:script": "tsx src/cli.ts story script"
   },
   "dependencies": {
     "better-sqlite3": "^12.11.1",
