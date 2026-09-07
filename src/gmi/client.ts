@@ -104,8 +104,9 @@ export function createGmiClient(options: { dryRun?: boolean; fetchImpl?: typeof 
       const contentType = fileType === 'mp4' ? 'video/mp4'
         : fileType === 'mp3' ? 'audio/mpeg'
           : fileType === 'wav' ? 'audio/wav'
-            : fileType === 'png' ? 'image/png'
-              : 'image/jpeg';
+            : fileType === 'm4a' ? 'audio/mp4'
+              : fileType === 'png' ? 'image/png'
+                : 'image/jpeg';
       const put = await fetchImpl(ticket.upload_url, {
         method: 'PUT',
         headers: { 'content-type': contentType },
