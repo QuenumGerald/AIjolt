@@ -1,5 +1,5 @@
 import { mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { extname, join } from 'node:path';
 import { writeFile } from 'node:fs/promises';
 import { statSync } from 'node:fs';
 import pLimit from 'p-limit';
@@ -69,13 +69,14 @@ export class StoryPipeline {
     }
     requireRatesForLiveRun(this.deps.dryRun);
     assertWithinBudget(store, episodeId);
-    const character = loadCharacterStyle();
+    let character = loadCharacterStyle();
 
     if (!episode.script) {
       episode = await this.generateScript(episode, character);
     }
     if (options.pauseAfterScript) return store.getEpisode(episodeId);
     assertCharacterReady(character, this.deps.dryRun);
+    character = await this.prepareCharacterReferences(character);
     episode = store.setStatus(episodeId, 'GENERATING');
     const narration = await this.generateNarration(episode, options.retryFailed ?? false);
     const audioProbe = await ffprobe(narration.path!);
@@ -92,6 +93,19 @@ export class StoryPipeline {
     return this.generateScript(episode, character);
   }
 
+  private async prepareCharacterReferences(character: CharacterStyle): Promise<CharacterStyle> {
+    if (this.deps.dryRun || !character.referenceImagePaths.length) return character;
+    const uploaded = await Promise.all(character.referenceImagePaths.map(async path => {
+      const extension = extname(path).toLowerCase();
+      const fileType = extension === '.jpg' || extension === '.jpeg' ? 'jpg' as const : 'png' as const;
+      return (await this.deps.gmi.upload(path, fileType)).publicUrl;
+    }));
+    return {
+      ...character,
+      referenceImageUrls: [...character.referenceImageUrls, ...uploaded].slice(0, 9),
+    };
+  }
+
   private async generateScript(episode: Episode, character: CharacterStyle): Promise<Episode> {
     const { store, llm, dryRun } = this.deps;
     const existing = store.findTask(episode.id, 'script');
@@ -99,7 +113,7 @@ export class StoryPipeline {
     if (existing?.status === 'succeeded' && episode.script && existing.inputHash === inputHash) return episode;
     requireRatesForLiveRun(dryRun);
     assertWithinBudget(store, episode.id);
-    const task = store.upsertTask({ episodeId: episode.id, step: 'script', status: 'submitted', provider: 'deepseek', inputHash, incrementAttempts: true });
+    const task = store.upsertTask({ episodeId: episode.id, step: 'script', status: 'submitted', provider: 'gmi-deepseek', inputHash, incrementAttempts: true });
     if (!dryRun && task.attempts > config.story.maxAttempts) throw new Error(`Script: trop de tentatives (${task.attempts})`);
     try {
       const generated = await generateScript({
@@ -114,14 +128,14 @@ export class StoryPipeline {
       store.addUsage({
         episodeId: episode.id,
         taskId: task.id,
-        provider: 'deepseek',
+        provider: 'gmi-deepseek',
         kind: 'llm',
         costKind: llmCost.costKind,
         estimatedUsd: llmCost.usd,
         units: generated.usage ? (generated.usage.promptTokens ?? 0) + (generated.usage.completionTokens ?? 0) : null,
         unitKind: 'tokens',
       });
-      store.upsertTask({ episodeId: episode.id, step: 'script', status: 'succeeded', provider: 'deepseek', inputHash });
+      store.upsertTask({ episodeId: episode.id, step: 'script', status: 'succeeded', provider: 'gmi-deepseek', inputHash });
       await writeFile(join(episodeDir(episode.id), 'script.json'), JSON.stringify(generated.script, null, 2));
       store.addAsset({ episodeId: episode.id, kind: 'script', path: join(episodeDir(episode.id), 'script.json'), mime: 'application/json', metadata: { model: generated.model, dryRun } });
       logger.info(`Episode ${episode.id}: script prêt (${generated.script.scenes.length} scènes, modèle ${generated.model})`);
@@ -304,9 +318,6 @@ export class StoryPipeline {
       return this.finishSegment(input.episode, input.index, task.providerRequestId, dest, inputHash);
     }
     const cost = videoCostUsd(input.durationSeconds);
-    if (cost.costKind === 'unknown' && !config.story.budgetAllowUnknown) {
-      throw new Error('GMI_VIDEO_USD_PER_SECOND_720P manquant: impossible de respecter le budget vidéo');
-    }
     assertWithinBudget(input.store, input.episode.id, cost.usd ?? 0);
     input.store.upsertTask({ episodeId: input.episode.id, step: 'video', segmentIndex: input.index, status: 'submitted', provider: 'gmi', inputHash, incrementAttempts: true });
     if ((input.store.findTask(input.episode.id, 'video', input.index)?.attempts ?? 0) > config.story.maxAttempts) {
@@ -321,11 +332,12 @@ export class StoryPipeline {
       generate_audio: config.story.generateVideoAudio,
       web_search: false,
     };
+    // Les références avatar sont compatibles avec le ratio explicite. La
+    // continuité entre segments est portée par le prompt et la vidéo précédente.
     if (input.character.referenceImageUrls.length) payload.reference_images = input.character.referenceImageUrls.slice(0, 9);
     if (input.character.avatarAssetIds.length) payload.avatar_asset_ids = input.character.avatarAssetIds;
     const videos = [input.previousPublicUrl, ...input.character.referenceVideoUrls].filter(Boolean).slice(0, 3);
     if (videos.length) payload.reference_videos = videos;
-    if (input.previousFrameUrl) payload.first_frame = input.previousFrameUrl;
     const submitted = await input.gmi.submit(config.gmi.videoModel, payload);
     input.store.upsertTask({ episodeId: input.episode.id, step: 'video', segmentIndex: input.index, status: 'polling', provider: 'gmi', providerRequestId: submitted.request_id, inputHash });
     input.store.addUsage({

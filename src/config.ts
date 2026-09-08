@@ -26,7 +26,7 @@ const boards = (name: string, source: Source): BoardConfig[] => list(name).map(e
   return { source, id, company };
 });
 
-export const ALLOWED_EPISODE_DURATIONS = [120, 180, 300] as const;
+export const ALLOWED_EPISODE_DURATIONS = [30, 120, 180, 300] as const;
 export type EpisodeDurationSeconds = typeof ALLOWED_EPISODE_DURATIONS[number];
 
 export const config = {
@@ -85,6 +85,8 @@ export const config = {
     apiKey: process.env.GMI_API_KEY,
     baseUrl: (process.env.GMI_API_BASE_URL ?? 'https://console.gmicloud.ai').replace(/\/$/, ''),
     orgId: process.env.GMI_ORG_ID,
+    llmBaseUrl: (process.env.GMI_LLM_BASE_URL ?? 'https://api.gmi-serving.com/v1').replace(/\/$/, ''),
+    llmModel: process.env.GMI_LLM_MODEL ?? 'deepseek-ai/DeepSeek-V4-Flash-0731',
     videoModel: process.env.GMI_VIDEO_MODEL ?? 'seedance-2-5-260628',
     ttsModel: process.env.GMI_TTS_MODEL ?? 'minimax-tts-speech-2.8-hd',
     voiceId: process.env.GMI_TTS_VOICE_ID ?? '',
@@ -97,13 +99,16 @@ export const config = {
     ttsUsdPer1kChars: float('GMI_TTS_USD_PER_1K_CHARS', 0.10),
   },
   story: {
+    seriesTitle: process.env.STORY_SERIES_TITLE ?? 'Side Quest',
     assetsDir: process.env.STORY_ASSETS_DIR ?? './data/episodes',
     characterConfigPath: process.env.STORY_CHARACTER_CONFIG ?? './config/character.json',
     characterName: process.env.STORY_CHARACTER_NAME ?? '',
     characterDescription: process.env.STORY_CHARACTER_DESCRIPTION ?? '',
     characterOutfit: process.env.STORY_CHARACTER_OUTFIT ?? '',
     styleDescription: process.env.STORY_STYLE_DESCRIPTION ?? 'animation 3D stylisée, rendu cinématique propre, éclairage doux',
+    continuityDetails: process.env.STORY_CHARACTER_CONTINUITY_DETAILS ?? '',
     referenceImageUrls: list('STORY_CHARACTER_REFERENCE_URLS'),
+    referenceImagePaths: list('STORY_CHARACTER_REFERENCE_PATHS'),
     referenceVideoUrls: list('STORY_CHARACTER_REFERENCE_VIDEO_URLS'),
     avatarAssetIds: list('STORY_AVATAR_ASSET_IDS'),
     ratio: process.env.STORY_RATIO ?? '9:16',

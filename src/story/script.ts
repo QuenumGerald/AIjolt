@@ -82,7 +82,7 @@ export async function generateScript(input: {
   const result = await input.llm.complete([
     {
       role: 'system',
-      content: `Tu écris des scripts d'épisodes fictionnels animés en 3D, en français naturel. Réponds uniquement avec un JSON valide.`,
+      content: `Tu écris des scripts d'épisodes animés dans le style visuel demandé, en français oral naturel. Garde une voix humaine, spontanée et personnelle : mots simples, rythme parlé, contractions et formulations imparfaites si elles sonnent juste. N'écris pas comme un narrateur littéraire ou une publicité. Réponds uniquement avec un JSON valide.`,
     },
     {
       role: 'user',
@@ -94,9 +94,10 @@ ${input.note}
 
 Contraintes:
 - Langue: français naturel, oral, pour une narration TTS.
+- Préserve la façon de parler de la note : ne transforme pas une parole personnelle en texte littéraire ou trop propre.
 - Durée cible: ${minutes} minutes. Vise une narration d'environ ${Math.round(minutes * 150)} mots, sans garantir la durée uniquement par le nombre de mots.
 - Préserve les éléments fournis dans la note. N'ajoute aucun fait sensible sur de vraies personnes. Fictionnalise si besoin.
-- ${segments} scènes visuelles, chacune ${config.story.segmentMinSeconds}-${config.story.segmentMaxSeconds}s, pour Seedance (animation 3D continue, pas un diaporama).
+- ${segments} scènes visuelles, chacune ${config.story.segmentMinSeconds}-${config.story.segmentMaxSeconds}s, pour Seedance (animation continue dans le style visuel demandé, pas un diaporama).
 - Chaque scène a une instruction visuelle précise: action, lieu, lumière, caméra verticale 9:16, continuité du personnage.
 - Ne décris pas de dialogues générés dans la vidéo: la narration TTS porte toute la voix.
 - generate_audio vidéo sera désactivé.
@@ -131,7 +132,7 @@ export function visualPromptForScene(scene: SceneScript, character: CharacterSty
     `Lieu: ${scene.location}`,
     `Tenue: ${scene.outfit || character.outfit}`,
     `Action: ${scene.visualPrompt}`,
-    'Animation 3D stylisée continue, personnage en mouvement, pas d\'image fixe, vertical 9:16.',
+    'Animation continue dans le style visuel demandé, personnage en mouvement, pas d\'image fixe, vertical 9:16.',
     'Aucune parole, aucun dialogue à l\'écran, bouche non synchronisée sur une autre voix.',
   ].join('\n');
 }

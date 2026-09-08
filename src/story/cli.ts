@@ -50,7 +50,7 @@ export function registerStoryCommands(cli: Command): void {
   jsonOpt(story.command('create').description('enregistrer une note et une durée'))
     .option('--note <text>', 'texte dicté')
     .option('--file <path>', 'lire la note depuis un fichier texte')
-    .requiredOption('--duration <minutes>', 'durée cible en minutes: 2, 3 ou 5')
+    .requiredOption('--duration <minutes>', 'durée cible en minutes: 0.5, 2, 3 ou 5')
     .action((opts: { note?: string; file?: string; duration: string; json?: boolean }) => {
       const note = opts.note ?? (opts.file ? readFileSync(opts.file, 'utf8') : '');
       if (!note.trim()) throw new Error('Fournissez --note ou --file');

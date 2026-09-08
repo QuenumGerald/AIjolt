@@ -54,7 +54,9 @@ export interface CharacterStyle {
   description: string;
   outfit: string;
   style: string;
+  continuityDetails: string;
   referenceImageUrls: string[];
+  referenceImagePaths: string[];
   referenceVideoUrls: string[];
   avatarAssetIds: string[];
   missing: string[];

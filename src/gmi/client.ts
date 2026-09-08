@@ -18,7 +18,7 @@ export type GmiClient = {
   submit(model: string, payload: Record<string, unknown>): Promise<GmiRequest>;
   get(requestId: string): Promise<GmiRequest>;
   wait(requestId: string, options?: { intervalMs?: number; timeoutMs?: number }): Promise<GmiRequest>;
-  upload(localPath: string, fileType: 'mp4' | 'mp3' | 'wav' | 'png' | 'jpg' | 'jpeg'): Promise<{ publicUrl: string }>;
+  upload(localPath: string, fileType: 'mp4' | 'mp3' | 'wav' | 'm4a' | 'png' | 'jpg' | 'jpeg'): Promise<{ publicUrl: string }>;
   download(url: string, destPath: string): Promise<void>;
 };
 
@@ -67,7 +67,10 @@ export function createGmiClient(options: { dryRun?: boolean; fetchImpl?: typeof 
       headers: { ...gmiHeaders(), ...(init.headers as Record<string, string> | undefined), ...(init.body ? { 'content-type': 'application/json' } : {}) },
       signal: init.signal ?? AbortSignal.timeout(60_000),
     });
-    if (!response.ok) throw new Error(`GMI API ${response.status} ${response.statusText}`);
+    if (!response.ok) {
+      const detail = (await response.text()).trim().slice(0, 1000);
+      throw new Error(`GMI API ${response.status} ${response.statusText}${detail ? `: ${detail}` : ''}`);
+    }
     return response.json();
   }
 

@@ -63,6 +63,54 @@ export function createDeepSeekClient(options: { dryRun?: boolean; fetchImpl?: ty
   };
 }
 
+export function createGmiDeepSeekClient(options: { dryRun?: boolean; fetchImpl?: typeof fetch } = {}): LlmClient {
+  const dryRun = options.dryRun ?? config.dryRun;
+  const fetchImpl = options.fetchImpl ?? fetch;
+  return {
+    async complete(messages, completeOptions = {}) {
+      if (dryRun) throw new DryRunLlmError();
+      if (!config.gmi.apiKey) throw new Error('GMI_API_KEY is required for script generation');
+      const headers: Record<string, string> = {
+        'content-type': 'application/json',
+        accept: 'application/json',
+        authorization: `Bearer ${config.gmi.apiKey}`,
+      };
+      if (config.gmi.orgId) headers['X-Organization-ID'] = config.gmi.orgId;
+      const response = await fetchImpl(`${config.gmi.llmBaseUrl}/chat/completions`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          model: config.gmi.llmModel,
+          temperature: completeOptions.temperature ?? 0.7,
+          max_tokens: completeOptions.maxTokens ?? 8192,
+          messages,
+        }),
+        signal: AbortSignal.timeout(120_000),
+      });
+      if (!response.ok) {
+        const detail = (await response.text()).trim().slice(0, 1000);
+        throw new Error(`GMI LLM API ${response.status} ${response.statusText}${detail ? `: ${detail}` : ''}`);
+      }
+      const payload = await response.json() as {
+        model?: string;
+        choices?: Array<{ message?: { content?: string } }>;
+        usage?: { prompt_tokens?: number; completion_tokens?: number; total_tokens?: number };
+      };
+      const text = payload.choices?.[0]?.message?.content?.trim();
+      if (!text) throw new Error('GMI LLM returned no script content');
+      return {
+        text,
+        model: payload.model ?? config.gmi.llmModel,
+        usage: {
+          promptTokens: payload.usage?.prompt_tokens,
+          completionTokens: payload.usage?.completion_tokens,
+          totalTokens: payload.usage?.total_tokens,
+        },
+      };
+    },
+  };
+}
+
 export function estimateLlmUsd(usage: LlmUsage): { costKind: 'estimated' | 'unknown'; usd: number | null } {
   const inputRate = config.deepseek.usdPer1kInputTokens;
   const outputRate = config.deepseek.usdPer1kOutputTokens;

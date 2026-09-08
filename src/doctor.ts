@@ -25,7 +25,7 @@ export function doctor(): void {
   }
   checks.push({ name: 'gmi', ok: config.dryRun || Boolean(config.gmi.apiKey), detail: config.gmi.apiKey ? `models ${config.gmi.videoModel} / ${config.gmi.ttsModel}` : 'GMI_API_KEY missing (required unless DRY_RUN)' });
   checks.push({ name: 'tts-voice', ok: config.dryRun || Boolean(config.gmi.voiceId), detail: config.gmi.voiceId ? 'GMI_TTS_VOICE_ID set' : 'missing (no voice clone will be started automatically)' });
-  checks.push({ name: 'llm-script', ok: config.dryRun || Boolean(config.deepseek.apiKey), detail: `DeepSeek ${config.deepseek.model}${config.deepseek.apiKey ? '' : ' key missing'}` });
+  checks.push({ name: 'llm-script', ok: config.dryRun || Boolean(config.gmi.apiKey), detail: `GMI/${config.gmi.llmModel}${config.gmi.apiKey ? '' : ' key missing'}` });
   for (const check of checks) process.stdout.write(`${check.ok ? 'OK  ' : 'WARN'} ${check.name}: ${check.detail}\n`);
   if (!checks.find(check => check.name === 'sqlite')?.ok) process.exitCode = 1;
 }

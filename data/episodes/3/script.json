@@ -1,0 +1,26 @@
+{
+  "title": "L'appel de Clara",
+  "logline": "Après une série de refus, Gé continue d'y croire. Un appel inattendu depuis Marseille va tout changer.",
+  "narration": "Je revenais de San Francisco avec des idées plein la tête. Mais partout où je postulais, on me disait non. Encore et encore. Alors j'ai continué à charbonner sur mes projets, même quand personne n'y croyait. Jusqu'au jour où Clara, une recruteuse, m'a appelé. Elle avait trouvé une équipe à Marseille qui cherchait exactement mon profil. Cette fois, ce n'était pas un refus. C'était le début de ma revanche.",
+  "language": "fr",
+  "scenes": [
+    {
+      "index": 0,
+      "durationSeconds": 15,
+      "narration": "Je revenais de San Francisco avec des idées plein la tête. Mais partout où je postulais, on me disait non. Encore et encore. Alors j'ai continué à charbonner sur mes projets, même quand personne n'y croyait.",
+      "visualPrompt": "Intérieur d'un atelier/appartement la nuit. Gé, homme adulte afro-européen, barbe courte soignée, silhouette athlétique, porte une casquette noire à l'envers, un t-shirt noir avec motif bleu et une chaîne argentée avec pendentif. Il est assis à un bureau encombré de croquis et de lettres de refus, une valise avec un sticker de San Francisco posée près de lui. Une femme brune aux cheveux bouclés entre en tenant une tasse fumante, un chat saute sur le bureau. Lumière chaude de lampe et lueur d'écran, animation 3D stylisée en rendu anime 2D expressif, contours propres, couleurs cinématiques, éclairage doux, animation fluide. Caméra verticale 9:16, lent mouvement avant vers Gé et le chat.",
+      "location": "Atelier/appartement de Gé, nuit",
+      "outfit": "Casquette noire à l'envers, t-shirt noir avec motif bleu, chaîne argentée avec pendentif",
+      "continuityNotes": "Même tenue et même pièce dans la scène suivante; la femme brune et le chat restent des présences récurrentes."
+    },
+    {
+      "index": 1,
+      "durationSeconds": 15,
+      "narration": "Jusqu'au jour où Clara, une recruteuse, m'a appelé. Elle avait trouvé une équipe à Marseille qui cherchait exactement mon profil. Cette fois, ce n'était pas un refus. C'était le début de ma revanche.",
+      "visualPrompt": "Même atelier au petit matin, lumière douce traversant une fenêtre. Gé, toujours en casquette noire à l'envers, t-shirt noir à motif bleu et chaîne argentée, décroche son téléphone; son visage s'éclaire d'un sourire et il serre le poing. La femme brune aux cheveux bouclés sourit depuis le canapé, le chat le regarde. Sur l'écran du téléphone apparaît le nom 'Clara' et un post-it avec 'Marseille' est visible sur le mur. Animation 3D stylisée en rendu anime 2D expressif, contours nets, couleurs cinématiques, éclairage matinal chaud, animation fluide. Caméra verticale 9:16, lent zoom avant sur Gé puis léger déplacement pour inclure la femme et le chat.",
+      "location": "Même atelier/appartement de Gé, petit matin",
+      "outfit": "Casquette noire à l'envers, t-shirt noir avec motif bleu, chaîne argentée avec pendentif",
+      "continuityNotes": "Continuité stricte de la tenue, de la pièce et de la lumière matinale. Aucun dialogue audio dans la vidéo: la narration TTS porte toute la voix."
+    }
+  ]
+}

@@ -20,7 +20,7 @@ import type Database from 'better-sqlite3';
 
 export function assertAllowedDuration(seconds: number): asserts seconds is EpisodeDurationSeconds {
   if (!ALLOWED_EPISODE_DURATIONS.includes(seconds as EpisodeDurationSeconds)) {
-    throw new Error(`Duration must be 2, 3 or 5 minutes (got ${seconds}s)`);
+    throw new Error(`Duration must be 0.5, 2, 3 or 5 minutes (got ${seconds}s)`);
   }
 }
 

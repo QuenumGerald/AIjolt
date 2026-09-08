@@ -47,7 +47,8 @@ function sampleScript(durationSeconds: number): EpisodeScript {
 }
 
 describe('durées autorisées', () => {
-  it('accepte 2, 3 et 5 minutes seulement', () => {
+  it('accepte 30 secondes, 2, 3 et 5 minutes', () => {
+    expect(minutesToSeconds(0.5)).toBe(30);
     expect(minutesToSeconds(2)).toBe(120);
     expect(minutesToSeconds(3)).toBe(180);
     expect(minutesToSeconds(5)).toBe(300);

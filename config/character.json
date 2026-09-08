@@ -1,9 +1,14 @@
 {
   "name": "Personnage récurrent",
-  "description": "Identité visuelle stylisée 3D du narrateur, sans obligation de ressemblance exacte.",
-  "outfit": "Tenue signature à conserver d'une séquence à l'autre.",
-  "style": "animation 3D stylisée, éclairage doux, rendu cinématique propre, vertical 9:16",
+  "description": "Gé, homme adulte afro-européen, barbe courte soignée, silhouette athlétique. Personnage fictionnel en anime 2D stylisé.",
+  "outfit": "Tenue signature full black : vêtements noirs, accessoires noirs, chaussures Nike Air Force 1 noires, sac North Face noir.",
+  "style": "anime 2D expressif, contours dessinés propres, couleurs cinématiques, éclairage doux, animation fluide verticale 9:16",
+  "continuityDetails": "Femme de Gé : blanche, cheveux noirs bouclés, grands yeux marron. Chat noir. Objets récurrents : ordinateur Lenovo noir, sac North Face noir, voiture BMW noire. Garder ces couleurs, marques et caractéristiques lorsqu'ils apparaissent ; ne pas les remplacer ni les recolorer.",
   "referenceImageUrls": [],
+  "referenceImagePaths": [
+    "./Planche de référence du personnage animé.png",
+    "./Portrait animé, bras croisés.png"
+  ],
   "referenceVideoUrls": [],
   "avatarAssetIds": []
 }

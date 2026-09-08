@@ -1,4 +1,5 @@
 import { spawn } from 'node:child_process';
+import { dirname, relative } from 'node:path';
 import { config } from '../config.js';
 import pLimit from 'p-limit';
 
@@ -64,6 +65,10 @@ export async function extractLastFrame(videoPath: string, destPng: string): Prom
 
 export async function writeConcatList(listPath: string, files: string[]): Promise<void> {
   const { writeFile } = await import('node:fs/promises');
-  const body = files.map(file => `file '${file.replace(/'/g, "'\\''")}'`).join('\n');
+  const baseDir = dirname(listPath);
+  const body = files.map(file => {
+    const filePath = relative(baseDir, file) || '.';
+    return `file '${filePath.replace(/'/g, "'\\''")}'`;
+  }).join('\n');
   await writeFile(listPath, `${body}\n`);
 }

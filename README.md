@@ -10,7 +10,7 @@ L’ancien collecteur d’offres IA et le pipeline d’actualité restent dans l
 
 - animation 3D stylisée, personnage récurrent (sans obligation de ressemblance exacte) ;
 - vidéos verticales 9:16, 720p (`STORY_RESOLUTION=720p`, `STORY_RATIO=9:16`) ;
-- durées cibles : 2, 3 ou 5 minutes ;
+- durées cibles : 2, 3 ou 5 minutes ; 30 secondes disponibles pour le pilote ;
 - GMI Cloud pour la vidéo (`seedance-2-5-260628`) et le TTS (`minimax-tts-speech-2.8-hd`) ;
 - Buffer pour la diffusion (pas d’API YouTube/TikTok/Instagram directe) ;
 - serveur cible Contabo : 4 cœurs, 8 Go de RAM — FFmpeg local, génération IA distante.
@@ -36,23 +36,23 @@ Voir `.env.example`. Points critiques :
 | Sujet | Variables |
 |---|---|
 | Sécurité | `DRY_RUN=true` jusqu’à validation |
-| LLM script | `DEEPSEEK_API_KEY`, `DEEPSEEK_MODEL=deepseek-chat`, `DEEPSEEK_BASE_URL` |
+| LLM script | `GMI_API_KEY`, `GMI_LLM_BASE_URL=https://api.gmi-serving.com/v1`, `GMI_LLM_MODEL=deepseek-ai/DeepSeek-V4-Flash-0731` |
 | GMI | `GMI_API_KEY`, `GMI_API_BASE_URL=https://console.gmicloud.ai`, `GMI_VIDEO_MODEL`, `GMI_TTS_MODEL` |
 | Voix | `GMI_TTS_VOICE_ID`, `GMI_TTS_LANGUAGE_BOOST=French` — pas de clonage automatique |
-| Personnage | `STORY_CHARACTER_CONFIG`, `STORY_CHARACTER_REFERENCE_URLS` (URLs publiques) |
+| Personnage | `STORY_CHARACTER_CONFIG`, `STORY_CHARACTER_REFERENCE_URLS` (URLs publiques) ou `STORY_CHARACTER_REFERENCE_PATHS` (fichiers locaux) |
 | FFmpeg | `FFMPEG_PATH`, `FFPROBE_PATH`, `FFMPEG_CONCURRENCY=1`, `FFMPEG_THREADS=2` |
-| Budget | `STORY_BUDGET_EPISODE_USD`, `STORY_BUDGET_GLOBAL_USD`, `GMI_VIDEO_USD_PER_SECOND_720P`, `DEEPSEEK_USD_PER_1K_*` |
+| Budget | Les tarifs ne sont pas requis pour exécuter le pipeline |
 | Buffer | `BUFFER_ACCESS_TOKEN`, `BUFFER_TIKTOK_CHANNEL_ID`, `BUFFER_INSTAGRAM_CHANNEL_ID`, `BUFFER_YOUTUBE_CHANNEL_ID` |
 | Média public | `STORY_MEDIA_PUBLIC_BASE_URL` ou `STORY_HOST_VIA_GMI_UPLOAD=true` |
 
-Le tarif Seedance 2.5 n’est **pas** publié dans la doc GMI (contrairement à Seedance 2.0). Une exécution live qui doit respecter un budget exige `GMI_VIDEO_USD_PER_SECOND_720P`. Le TTS MiniMax 2.8 HD est documenté à **0,10 USD / 1000 caractères**.
+Les tarifs ne sont pas nécessaires au fonctionnement du pipeline ; les coûts non calculés peuvent rester marqués `unknown`.
 
 Aucune variable `YOUTUBE_CLIENT_*` n’est utilisée.
 
 ## De la note au MP4
 
 ```bash
-# 1. Enregistrer une note (2, 3 ou 5 minutes)
+# 1. Enregistrer une note (0.5, 2, 3 ou 5 minutes)
 npm run story:create -- --note "J'ai raté le bus, et la ville a changé." --duration 3
 # ou depuis un fichier dicté / collé :
 npm run story:create -- --file ./notes/episode.txt --duration 2 --json
@@ -112,11 +112,9 @@ npm run story:retry -- --id 1 --json
 - si une requête GMI est déjà `queued`/`processing`, le programme **interroge** cet identifiant au lieu de relancer un appel payant ;
 - un changement de script invalide narration, segments, MP4 et l’approbation précédente.
 
-## Budget
+## Suivi des coûts
 
-Plafonds : `STORY_BUDGET_EPISODE_USD` et `STORY_BUDGET_GLOBAL_USD` sur `STORY_BUDGET_PERIOD_DAYS`.
-
-Les coûts sont persistés comme `estimated`, `confirmed` ou `unknown`. Un sponsoring GMI n’est pas traité comme un solde.
+Le pipeline ne bloque pas sur les tarifs. Les coûts éventuellement calculés sont persistés comme `estimated`, `confirmed` ou `unknown`.
 
 ## Contabo (4 cœurs / 8 Go)
 
