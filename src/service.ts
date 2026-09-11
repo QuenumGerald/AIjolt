@@ -3,6 +3,7 @@ import { normalize } from './normalize.js'; import { analyzeAI } from './ai.js';
 import { collectNews } from './news.js'; import { publishNews } from './news-publisher.js';
 type Task = { board: { source: string; id: string; company: string }; load: () => Promise<import('./types.js').RawJob[]> };
 export async function collect() {
+  if (!config.jobsPipelineEnabled) { logger.info('Jobs collection is disabled (JOBS_PIPELINE_ENABLED=false)'); return; }
   const run = db.prepare(`INSERT INTO runs(kind,status,started_at) VALUES('collect','running',?)`).run(new Date().toISOString()); let accepted = 0, errors = 0;
   const tasks: Task[] = [
     ...config.boards.greenhouse.map(board => ({ board, load: () => greenhouse(board.id, board.company) })),
@@ -22,12 +23,12 @@ export function rescore() { const rows = db.prepare(`SELECT * FROM jobs WHERE st
 export function cleanup() { const info = db.prepare(`UPDATE jobs SET status='expired', expires_at=? WHERE status='active' AND (last_seen_at < datetime('now','-30 days') OR (posted_at IS NOT NULL AND posted_at < datetime('now','-120 days')))` ).run(new Date().toISOString()); logger.info(`Expired ${info.changes} jobs`); }
 export async function start() {
   let collecting = false, publishing = false, collectingNews = false, publishingNews = false;
-  const collectCycle = async () => { if (collecting) return logger.warn('Skipping overlapping collection cycle'); collecting = true; try { await collect(); rescore(); cleanup(); } catch (error) { logger.error(`Collection cycle failed: ${error instanceof Error ? error.message : String(error)}`); } finally { collecting = false; } };
-  const publishCycle = async () => { if (publishing) return logger.warn('Skipping overlapping publication cycle'); publishing = true; try { await publish(); } catch (error) { logger.error(`Publication cycle failed: ${error instanceof Error ? error.message : String(error)}`); } finally { publishing = false; } };
+  const collectCycle = async () => { if (!config.jobsPipelineEnabled) return; if (collecting) return logger.warn('Skipping overlapping collection cycle'); collecting = true; try { await collect(); rescore(); cleanup(); } catch (error) { logger.error(`Collection cycle failed: ${error instanceof Error ? error.message : String(error)}`); } finally { collecting = false; } };
+  const publishCycle = async () => { if (!config.jobsPipelineEnabled) return; if (publishing) return logger.warn('Skipping overlapping publication cycle'); publishing = true; try { await publish(); } catch (error) { logger.error(`Publication cycle failed: ${error instanceof Error ? error.message : String(error)}`); } finally { publishing = false; } };
   const newsCollectCycle = async () => { if (!config.news.enabled) return; if (collectingNews) return logger.warn('Skipping overlapping AI news collection cycle'); collectingNews = true; try { await collectNews(); } catch (error) { logger.error(`AI news collection failed: ${error instanceof Error ? error.message : String(error)}`); } finally { collectingNews = false; } };
   const newsPublishCycle = async () => { if (!config.news.enabled) return; if (publishingNews) return logger.warn('Skipping overlapping AI news publication cycle'); publishingNews = true; try { await publishNews(); } catch (error) { logger.error(`AI news publication failed: ${error instanceof Error ? error.message : String(error)}`); } finally { publishingNews = false; } };
   await collectCycle(); await publishCycle(); await newsCollectCycle(); await newsPublishCycle();
   setInterval(() => void collectCycle(), config.collectInterval * 60_000); setInterval(() => void publishCycle(), config.publishInterval * 60_000);
   if (config.news.enabled) { setInterval(() => void newsCollectCycle(), config.news.collectInterval * 60_000); setInterval(() => void newsPublishCycle(), config.news.publishInterval * 60_000); }
-  logger.info(`AIJolt scheduler started; AI news ${config.news.enabled ? 'enabled' : 'disabled'}`);
+  logger.info(`AIJolt scheduler started; jobs ${config.jobsPipelineEnabled ? 'enabled' : 'disabled'}, AI news ${config.news.enabled ? 'enabled' : 'disabled'}; story pipeline via CLI`);
 }
