@@ -1,29 +1,19 @@
 # AIJolt
 
-AIJolt collecte des offres IA depuis les API publiques Greenhouse, Lever et Ashby, les classe, exporte un flux JSON versionné et génère un site Astro statique. Tout se pilote en CLI et se déploie gratuitement via GitHub Actions + Cloudflare Pages.
+AIJolt transforme une note dictée en épisode fictionnel animé en 3D (format vertical 9:16, appelé ici « short »), avec narration française, puis prépare la publication via Buffer vers TikTok, Instagram et YouTube.
 
-Il possède aussi un pipeline X séparé et désactivé par défaut pour commenter l'actualité IA : découverte gratuite via Google News RSS et Hacker News, allowlist de sources, fenêtre de fraîcheur, score de buzz, dédoublonnage, génération sarcastique par DeepSeek et publication Buffer. Les quotas et l'historique de ce pipeline ne sont pas mélangés avec ceux des offres.
+Parcours : texte dicté → script → voix TTS → génération vidéo GMI → assemblage MP4 → validation humaine → publication Buffer.
 
-## Architecture de lancement
+L’ancien collecteur d’offres IA et le pipeline d’actualité restent dans le dépôt, mais leurs collectes, scoring et publications automatiques sont **désactivés par défaut**. Les données existantes ne sont pas supprimées.
 
-* **Collecte** : GitHub Actions toutes les 3 heures ; SQLite reste le stockage de travail du job, puis `data/jobs.json` devient la source publique versionnée.
-* **Site** : Astro dans `site/`, construit vers `site/dist` et déployé sur Cloudflare Pages (`<projet>.pages.dev`).
-* **Réseaux** : Buffer Free reste optionnel ; les textes utilisent un fallback déterministe et DeepSeek si `DEEPSEEK_API_KEY` est configurée.
-* **Coût cible** : 0 € hors éventuels dépassements/quotas des fournisseurs.
+## Décisions figées
 
-## État de la recherche API (2 août 2026)
-
-Les URLs implémentées viennent des documentations officielles, jamais de pages HTML devinées :
-
-| Source | API publique utilisée | Authentification |
-|---|---|---|
-| Greenhouse | `GET https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs?content=true` ([documentation](https://developers.greenhouse.io/job-board.html)) | aucune |
-| Lever | `GET https://api.lever.co/v0/postings/{site}?mode=json` ([documentation officielle](https://github.com/lever/postings-api)) | aucune |
-| Ashby | `GET https://api.ashbyhq.com/posting-api/job-board/{board}?includeCompensation=true` ([documentation](https://developers.ashbyhq.com/docs/public-job-posting-api)) | aucune |
-
-Buffer documente la création automatique de posts via son API GraphQL [ici](https://developers.buffer.com/guides/your-first-post.html). AIJolt utilise cet endpoint officiel avec `BUFFER_ACCESS_TOKEN` et les deux channel IDs. Une publication `queued` est conservée dans SQLite pour empêcher les doublons. `DRY_RUN=true` n'appelle pas Buffer.
-
-> La consultation web automatisée des docs et du registre npm était bloquée par un proxy HTTP 403 dans l'environnement de développement. Les liens ci-dessus permettent de revérifier les contrats avant une mise en production. L'intégration Buffer reste volontairement en fallback plutôt que de risquer un endpoint obsolète.
+- animation 3D stylisée, personnage récurrent (sans obligation de ressemblance exacte) ;
+- vidéos verticales 9:16, 720p (`STORY_RESOLUTION=720p`, `STORY_RATIO=9:16`) ;
+- durées cibles : 2, 3 ou 5 minutes ;
+- GMI Cloud pour la vidéo (`seedance-2-5-260628`) et le TTS (`minimax-tts-speech-2.8-hd`) ;
+- Buffer pour la diffusion (pas d’API YouTube/TikTok/Instagram directe) ;
+- serveur cible Contabo : 4 cœurs, 8 Go de RAM — FFmpeg local, génération IA distante.
 
 ## Installation
 
@@ -31,102 +21,126 @@ Buffer documente la création automatique de posts via son API GraphQL [ici](htt
 git clone <repo> && cd AIjolt
 npm install
 cp .env.example .env
+cp config/character.example.json config/character.json
 npm run build
 ```
 
-Node.js 20+ est requis. La découverte Foorilla est activée par défaut et récupère les nouvelles offres ; le filtre IA intégré élimine les postes non pertinents. Les listes `GREENHOUSE_BOARDS`, `LEVER_SITES` et `ASHBY_BOARDS` sont optionnelles et servent à ajouter des sources ATS directes. Leur format est `slug|Nom affiché` (la partie `|Nom affiché` est optionnelle).
+Node.js 20+, FFmpeg et FFprobe sont requis. Utilisez **npm**, pas pnpm.
 
-### Découverte automatique Foorilla
+`DRY_RUN=true` par défaut : aucun appel payant (LLM, GMI, Buffer). Les fixtures locales simulent la voix et les segments.
 
-AIJolt sélectionne d'abord nativement le topic Foorilla `Data, AI, and Machine Learning`, puis les régions `Europe` et `North America`, avant de parcourir `FOORILLA_PAGES` pages (8 par défaut, soit environ 160 candidates réparties entre les deux régions). Les offres Foorilla déjà ciblées par ces filtres natifs ne passent plus par une recherche de mots-clés IA ou un second filtrage local de pays ; elles sont normalisées et dédoublonnées. Les autres sources ATS conservent leur filtre de pertinence et leur allowlist locale.
+## Configuration principale
 
-```env
-FOORILLA_ENABLED=true
-FOORILLA_PAGES=8
-FOORILLA_BASE_URL=https://foorilla.com
-# Topic natif Foorilla "Data, AI, and Machine Learning".
-FOORILLA_TOPICS=101
-# Les régions Europe et North America sont sélectionnées nativement avant la recherche.
-# Laisser vide pour la liste de pays Europe/Amérique du Nord par défaut, ou fournir sa propre liste.
-ALLOWED_COUNTRIES=
-```
+Voir `.env.example`. Points critiques :
 
-### Découverte avec blazerjobs
+| Sujet | Variables |
+|---|---|
+| Sécurité | `DRY_RUN=true` jusqu’à validation |
+| LLM script | `DEEPSEEK_API_KEY`, `DEEPSEEK_MODEL=deepseek-chat`, `DEEPSEEK_BASE_URL` |
+| GMI | `GMI_API_KEY`, `GMI_API_BASE_URL=https://console.gmicloud.ai`, `GMI_VIDEO_MODEL`, `GMI_TTS_MODEL` |
+| Voix | `GMI_TTS_VOICE_ID`, `GMI_TTS_LANGUAGE_BOOST=French` — pas de clonage automatique |
+| Personnage | `STORY_CHARACTER_CONFIG`, `STORY_CHARACTER_REFERENCE_URLS` (URLs publiques) |
+| FFmpeg | `FFMPEG_PATH`, `FFPROBE_PATH`, `FFMPEG_CONCURRENCY=1`, `FFMPEG_THREADS=2` |
+| Budget | `STORY_BUDGET_EPISODE_USD`, `STORY_BUDGET_GLOBAL_USD`, `GMI_VIDEO_USD_PER_SECOND_720P`, `DEEPSEEK_USD_PER_1K_*` |
+| Buffer | `BUFFER_ACCESS_TOKEN`, `BUFFER_TIKTOK_CHANNEL_ID`, `BUFFER_INSTAGRAM_CHANNEL_ID`, `BUFFER_YOUTUBE_CHANNEL_ID` |
+| Média public | `STORY_MEDIA_PUBLIC_BASE_URL` ou `STORY_HOST_VIA_GMI_UPLOAD=true` |
 
-AIJolt est conçu pour être alimenté en identifiants par le CLI du paquet npm **blazerjobs**, sans serveur ni GUI. Installez/appelez la version disponible dans votre environnement :
+Le tarif Seedance 2.5 n’est **pas** publié dans la doc GMI (contrairement à Seedance 2.0). Une exécution live qui doit respecter un budget exige `GMI_VIDEO_USD_PER_SECOND_720P`. Le TTS MiniMax 2.8 HD est documenté à **0,10 USD / 1000 caractères**.
 
-```bash
-npx blazerjobs --help
-# recherchez les entreprises/boards, puis copiez les slugs ATS obtenus dans .env
-```
+Aucune variable `YOUTUBE_CLIENT_*` n’est utilisée.
 
-`BLAZERJOBS_COMMAND` documente la commande choisie. Son contrat npm n'étant pas accessible dans cet environnement (403), AIJolt ne suppose pas de sous-commande non documentée et ne lance jamais arbitrairement une commande shell. SearXNG/DuckDuckGo peuvent servir à repérer des boards ; la collecte elle-même utilise prioritairement les JSON publics ATS. Playwright, proxies et CapSolver ne sont ni requis ni activés tant que ces APIs fonctionnent.
-
-## Commandes
+## De la note au MP4
 
 ```bash
-npm run collect                 # collecte, normalise, filtre et déduplique
-npm run score                   # recalcule les scores
-npm run publish -- --dry-run    # affiche les posts uniquement
-npm run publish                 # respecte DRY_RUN ; sinon programme automatiquement via Buffer
-npm run news -- collect         # collecte l'actualité IA récente depuis les sources autorisées
-npm run news -- publish --dry-run # génère les posts sarcastiques sans les publier
-npm run news -- publish         # programme les posts d'actualité via Buffer
-npm run cleanup                 # expire les offres anciennes/non revues
-npm run doctor                  # vérifie boards, SQLite, dry-run et channels
-npm run export-json             # écrit le flux public dans data/jobs.json
-npm run site:dev                # lance Astro en local
-npm run site:build              # construit le site statique
-npm run doctor                  # vérifie les sources, SQLite, dry-run et channels Buffer
-npm run start                   # collecte puis planificateur longue durée
-npm test
+# 1. Enregistrer une note (2, 3 ou 5 minutes)
+npm run story:create -- --note "J'ai raté le bus, et la ville a changé." --duration 3
+# ou depuis un fichier dicté / collé :
+npm run story:create -- --file ./notes/episode.txt --duration 2 --json
+
+# 2. Optionnel : générer seulement le script, le relire, le modifier
+npm run story:run -- --id 1 --pause-after-script --json
+npm run story:script -- --id 1                 # affiche le JSON
+npm run story:script -- --id 1 --file ./script.json
+
+# 3. Pipeline complet jusqu'au MP4 (reprend les étapes manquantes)
+npm run story:run -- --id 1 --json
+npm run story:status -- --id 1 --json
+npm run story:list -- --json
 ```
 
-Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité de description (15), le salaire (12), le remote (12) et le visa (10). Le filtre exige un intitulé IA explicite ou plusieurs signaux centraux dans la description. La déduplication combine URL canonique et entreprise+titre+localisation normalisés.
+Les logs partent sur **stderr**. Avec `--json`, le résultat machine est sur **stdout**.
 
-## Sécurité et limites
+Par défaut, `story:run` enchaîne note → script → TTS → segments Seedance (4–15 s, assemblés automatiquement) → MP4 + SRT. Les segments ne se gèrent pas à la main.
 
-* laissez `DRY_RUN=true` jusqu'à validation humaine ;
-* secrets uniquement dans `.env` (ignoré par Git) ;
-* `MAX_POSTS_PER_DAY_X` et `MAX_POSTS_PER_DAY_LINKEDIN` bornent chaque réseau ;
-* `BUFFER_QUEUE_CAPACITY` et `BUFFER_QUEUE_RESERVE` empêchent AIJolt de remplir la capacité réservée à chaque réseau ;
-* requêtes limitées/concurrentes et trois retries exponentiels ;
-* SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
-* une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
-* `HTTPS_PROXY`/`CAPSOLVER_API_KEY` restent optionnels et inutilisés : ne contournez les protections d'un site qu'avec autorisation.
+`generate_audio` Seedance est forcé à `false` pour ne pas superposer une autre voix à la narration TTS.
 
-### Publication automatique Buffer
+Si une référence de personnage manque, le pipeline s’arrête clairement. Il ne crée pas de personnage tout seul.
 
-Lorsque `DRY_RUN=false`, AIJolt appelle l'API GraphQL officielle de Buffer et ajoute chaque post à la file du channel correspondant. Il faut configurer `BUFFER_ACCESS_TOKEN`, `BUFFER_X_CHANNEL_ID` et `BUFFER_LINKEDIN_CHANNEL_ID`. Les identifiants Buffer sont conservés dans SQLite afin d'empêcher les doublons.
+## Approbation et Buffer
+
+La publication exige l’approbation du MP4 courant.
+
+```bash
+npm run story:approve -- --id 1 --asset 42 --json
+npm run story:publish -- --id 1 --destinations tiktok,instagram,youtube --json
+```
+
+Buffer n’a pas d’endpoint d’upload. Le MP4 doit être joignable en HTTPS public et stable jusqu’à la publication réelle ([Hosting media](https://developers.buffer.com/guides/hosting-media.html), [Create video post](https://developers.buffer.com/examples/create-video-post.html)).
+
+Options d’hébergement, sans inventer d’API :
+
+1. `STORY_MEDIA_PUBLIC_BASE_URL` si le VPS sert déjà `data/episodes/` ;
+2. sinon `STORY_HOST_VIA_GMI_UPLOAD=true` utilise l’API documentée `POST /api/v1/ie/requestqueue/apikey/upload-url` (`file_type=mp4`).
+
+Contraintes Buffer utilisées (source : [Sharing videos through Buffer](https://support.buffer.com/en-us/articles/sharing-videos-through-buffer-LOe2p2rnAI)) :
+
+- TikTok : 3 s–10 min, 1 Go, MP4 ;
+- Instagram Reels : 3 s–15 min, 300 Mo, MP4, 9:16 recommandé ;
+- YouTube via Buffer : **Shorts jusqu’à 3 minutes** seulement.
+
+Un épisode de 5 minutes est conservé intégralement ; YouTube est **bloqué** avec une explication, sans raccourcissement automatique et sans API YouTube de remplacement.
+
+Chaque destination a son propre statut. Une file `pending` sans identifiant Buffer n’est pas resoumise (évite un doublon).
+
+## Reprise
+
+```bash
+npm run story:retry -- --id 1 --json
+```
+
+- réutilise les assets `valid` ;
+- si une requête GMI est déjà `queued`/`processing`, le programme **interroge** cet identifiant au lieu de relancer un appel payant ;
+- un changement de script invalide narration, segments, MP4 et l’approbation précédente.
+
+## Budget
+
+Plafonds : `STORY_BUDGET_EPISODE_USD` et `STORY_BUDGET_GLOBAL_USD` sur `STORY_BUDGET_PERIOD_DAYS`.
+
+Les coûts sont persistés comme `estimated`, `confirmed` ou `unknown`. Un sponsoring GMI n’est pas traité comme un solde.
+
+## Contabo (4 cœurs / 8 Go)
+
+- aucun modèle vidéo local ;
+- `GMI_VIDEO_CONCURRENCY=1`, `FFMPEG_CONCURRENCY=1`, `FFMPEG_THREADS=2` ;
+- SQLite WAL déjà en place (`DATABASE_PATH`) ;
+- assets dans `STORY_ASSETS_DIR` (défaut `./data/episodes`) ;
+- ne pas lancer l’ancien `npm run start` d’offres en parallèle d’un gros assemblage.
 
 ```bash
 npm run doctor
-npm run publish -- --dry-run
-npm run publish
 ```
 
-La limite quotidienne compte les états `queued` et `published`. Une publication programmée dans Buffer reste donc bloquante, ce qui privilégie l'absence de doublon à la quantité.
+## Ancien pipeline offres / actualité
 
-### Ligne éditoriale AIJolt
+Toujours présent, **off** par défaut (`JOBS_PIPELINE_ENABLED=false`, `FOORILLA_ENABLED=false`, `AI_NEWS_ENABLED=false`). Le workflow GitHub Actions d’export `data/jobs.json` n’a pas été modifié ici ; désactivez-le dans GitHub si vous arrêtez le site d’offres.
 
-Activez d'abord `AI_NEWS_ENABLED=true` tout en gardant `DRY_RUN=true`. Le moteur ne publie que des sujets de moins de `AI_NEWS_MAX_AGE_HOURS`, provenant d'un média ou domaine autorisé, et dont le score atteint `AI_NEWS_MIN_BUZZ_SCORE`. Hacker News sert de signal de vélocité ; une URL issue de Hacker News n'est éligible que si son domaine est dans l'allowlist.
+Commandes historiques : `collect`, `score`, `publish`, `news`, `cleanup`, `export-json`.
 
-La génération impose une structure simple : fait sérieux sourcé, cible claire, puis chute qui attaque la compétence, la hype ou l'hypocrisie. Elle refuse les hashtags, emojis, attaques contre des personnes privées et toute sortie de plus de 280 caractères. Aucun fallback générique n'est publié si DeepSeek échoue. La source reste enregistrée en base et apparaît dans les logs de dry-run ; `AI_NEWS_INCLUDE_SOURCE_URL=true` permet de l'ajouter au post.
-
-Pour injecter manuellement un sujet repéré sur X, une URL source est obligatoire :
+## Tests
 
 ```bash
-npm run news -- add --title "Confirmed headline" --url "https://source.example/story" --publisher "Publisher" --summary "Verified facts only"
-npm run news -- publish --dry-run
+npm test
+npm run build
 ```
 
-## Cron (alternative à `start`)
-
-```cron
-15 * * * * cd /opt/aijolt && /usr/bin/npm run collect >> logs/cron.log 2>&1
-25 * * * * cd /opt/aijolt && /usr/bin/npm run score >> logs/cron.log 2>&1
-0 */3 * * * cd /opt/aijolt && /usr/bin/npm run publish >> logs/cron.log 2>&1
-30 2 * * * cd /opt/aijolt && /usr/bin/npm run cleanup >> logs/cron.log 2>&1
-```
-
-Créez `logs/` et protégez `.env` (`chmod 600 .env`). Ne faites pas tourner cron et `npm run start` simultanément.
+Les tests d’intégration story utilisent FFmpeg local et des fournisseurs **simulés**. Ils ne valident pas un vrai compte GMI ou Buffer.

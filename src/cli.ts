@@ -5,7 +5,8 @@ import { doctor } from './doctor.js';
 import { exportJobsJson } from './export-json.js';
 import { addNewsItem, collectNews } from './news.js';
 import { publishNews } from './news-publisher.js';
-const cli = new Command().name('aijolt').description('AI job collector and Buffer outbox');
+import { registerStoryCommands } from './story/cli.js';
+const cli = new Command().name('aijolt').description('Pipeline d\'épisodes 3D verticaux et outbox Buffer');
 cli.command('collect').action(collect); cli.command('score').action(rescore);
 cli.command('publish').option('--dry-run', 'print without queueing').action((o: {dryRun?: boolean}) => publish(Boolean(o.dryRun)));
 cli.command('sync-buffer').description('synchronize queued publication statuses with Buffer').action(async () => { await syncBufferPublications(); });
@@ -23,4 +24,5 @@ const outbox = cli.command('outbox').description('manage posts handed to the Buf
 outbox.command('list').action(listOutbox);
 outbox.command('ack <job-id> <network> [provider-id]').action((jobId: string, network: 'x'|'linkedin', providerId?: string) => acknowledgeOutbox(Number(jobId), network, providerId));
 outbox.command('fail <job-id> <network> <reason>').action((jobId: string, network: 'x'|'linkedin', reason: string) => failOutbox(Number(jobId), network, reason));
+registerStoryCommands(cli);
 await cli.parseAsync();
