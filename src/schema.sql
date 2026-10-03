@@ -30,3 +30,90 @@ CREATE TABLE IF NOT EXISTS news_publications (
   FOREIGN KEY(news_id) REFERENCES news_items(id), UNIQUE(news_id, network)
 );
 CREATE TABLE IF NOT EXISTS runs (id INTEGER PRIMARY KEY, kind TEXT NOT NULL, status TEXT NOT NULL, details TEXT, started_at TEXT NOT NULL, finished_at TEXT);
+
+CREATE TABLE IF NOT EXISTS episodes (
+  id INTEGER PRIMARY KEY,
+  title TEXT,
+  note TEXT NOT NULL,
+  duration_seconds INTEGER NOT NULL,
+  status TEXT NOT NULL,
+  script_json TEXT,
+  script_hash TEXT,
+  error TEXT,
+  approved_asset_id INTEGER,
+  output_mp4_asset_id INTEGER,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS episodes_status ON episodes(status, updated_at DESC);
+
+CREATE TABLE IF NOT EXISTS episode_assets (
+  id INTEGER PRIMARY KEY,
+  episode_id INTEGER NOT NULL,
+  kind TEXT NOT NULL,
+  status TEXT NOT NULL,
+  path TEXT,
+  public_url TEXT,
+  duration_ms INTEGER,
+  width INTEGER,
+  height INTEGER,
+  mime TEXT,
+  metadata_json TEXT,
+  checksum TEXT,
+  created_at TEXT NOT NULL,
+  FOREIGN KEY(episode_id) REFERENCES episodes(id)
+);
+CREATE INDEX IF NOT EXISTS episode_assets_lookup ON episode_assets(episode_id, kind, status);
+
+CREATE TABLE IF NOT EXISTS episode_tasks (
+  id INTEGER PRIMARY KEY,
+  episode_id INTEGER NOT NULL,
+  step TEXT NOT NULL,
+  segment_index INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL,
+  attempts INTEGER NOT NULL DEFAULT 0,
+  provider TEXT,
+  provider_request_id TEXT,
+  error TEXT,
+  input_hash TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE(episode_id, step, segment_index),
+  FOREIGN KEY(episode_id) REFERENCES episodes(id)
+);
+CREATE INDEX IF NOT EXISTS episode_tasks_lookup ON episode_tasks(episode_id, step, status);
+
+CREATE TABLE IF NOT EXISTS episode_publications (
+  id INTEGER PRIMARY KEY,
+  episode_id INTEGER NOT NULL,
+  destination TEXT NOT NULL,
+  status TEXT NOT NULL,
+  provider_id TEXT,
+  scheduled_at TEXT,
+  error TEXT,
+  caption TEXT,
+  media_url TEXT,
+  asset_id INTEGER,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE(episode_id, destination),
+  FOREIGN KEY(episode_id) REFERENCES episodes(id)
+);
+
+CREATE TABLE IF NOT EXISTS episode_usage (
+  id INTEGER PRIMARY KEY,
+  episode_id INTEGER NOT NULL,
+  task_id INTEGER,
+  provider TEXT NOT NULL,
+  kind TEXT NOT NULL,
+  cost_kind TEXT NOT NULL,
+  estimated_usd REAL,
+  confirmed_usd REAL,
+  units REAL,
+  unit_kind TEXT,
+  in_flight INTEGER NOT NULL DEFAULT 0,
+  provider_request_id TEXT,
+  created_at TEXT NOT NULL,
+  FOREIGN KEY(episode_id) REFERENCES episodes(id)
+);
+CREATE INDEX IF NOT EXISTS episode_usage_lookup ON episode_usage(episode_id, created_at);

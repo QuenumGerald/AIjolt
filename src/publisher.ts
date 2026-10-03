@@ -1,34 +1,7 @@
-import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { generatePost } from './posts.js'; import { logger } from './logger.js'; import { bufferCreatePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from './buffer.js';
+import { config } from './config.js'; import { db, rowToJob } from './db.js'; import { generatePost } from './posts.js'; import { logger } from './logger.js'; import { bufferCreatePostPayload, bufferGetPostPayload, bufferRequest, BufferRateLimitError, classifyBufferPostResponse, parseBufferCreateResponse } from './buffer.js';
 type Network = 'x'|'linkedin';
-const BUFFER_API = 'https://api.buffer.com';
+export { BufferRateLimitError, bufferRequest } from './buffer.js';
 let lastBufferSyncAt = 0;
-let bufferBlockedUntil = 0;
-
-export class BufferRateLimitError extends Error {
-  constructor(public readonly retryAfterSeconds: number) {
-    super(`Buffer rate limited; retry after ${retryAfterSeconds}s`);
-    this.name = 'BufferRateLimitError';
-  }
-}
-
-function ensureBufferAvailable(): void {
-  const remainingMs = bufferBlockedUntil - Date.now();
-  if (remainingMs > 0) throw new BufferRateLimitError(Math.ceil(remainingMs / 1000));
-}
-
-
-export async function bufferRequest(body: object): Promise<unknown> {
-  if (!config.buffer.token) throw new Error('BUFFER_ACCESS_TOKEN is missing');
-  ensureBufferAvailable();
-  const response = await fetch(BUFFER_API, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${config.buffer.token}` }, body: JSON.stringify(body), signal: AbortSignal.timeout(20_000) });
-  if (response.status === 429) {
-    const retryAfterSeconds = Math.max(60, Number.parseInt(response.headers.get('retry-after') || '900', 10) || 900);
-    bufferBlockedUntil = Date.now() + retryAfterSeconds * 1000;
-    throw new BufferRateLimitError(retryAfterSeconds);
-  }
-  if (!response.ok) throw new Error(`Buffer API ${response.status} ${response.statusText}`);
-  return response.json();
-}
 
 export async function syncBufferPublications(force = false): Promise<{ published: number; queued: number; failed: number }> {
   const now = Date.now();
@@ -66,11 +39,7 @@ export async function syncBufferPublications(force = false): Promise<{ published
 }
 
 export async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
-  const payload = await bufferRequest(bufferCreatePostPayload(text, channelId)) as { errors?: Array<{ message?: string }>; data?: { createPost?: { post?: { id: string; dueAt?: string }; message?: string } } };
-  const error = payload.errors?.map(item => item.message).filter(Boolean).join('; ') || payload.data?.createPost?.message;
-  const post = payload.data?.createPost?.post;
-  if (error || !post?.id) throw new Error(error || 'Buffer API returned no post ID');
-  return post;
+  return parseBufferCreateResponse(await bufferRequest(bufferCreatePostPayload(text, channelId)));
 }
 export function jobQueuedCount(network: Network): number {
   const row = db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status='queued'`).get(network) as { n: number };
@@ -82,6 +51,7 @@ export function newsQueuedCount(network: Network): number {
   return row.n;
 }
 export async function publish(dryRunFlag = false) {
+  if (!config.jobsPipelineEnabled) { logger.info('Jobs publication is disabled (JOBS_PIPELINE_ENABLED=false)'); return; }
   if (!dryRunFlag && !config.dryRun) await syncBufferPublications();
   const dry = dryRunFlag || config.dryRun; const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT 20`).all() as any[]; const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x','linkedin'] as Network[]).map(network => [network, (db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get(network) as any).n])) as Record<Network, number>;

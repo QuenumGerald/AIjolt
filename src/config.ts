@@ -6,13 +6,29 @@ const integer = (name: string, fallback: number) => {
   if (!Number.isFinite(value) || value < 0) throw new Error(`${name} must be a positive number`);
   return value;
 };
+const float = (name: string, fallback: number | null) => {
+  const raw = process.env[name];
+  if (raw === undefined || raw === '') return fallback;
+  const value = Number(raw);
+  if (!Number.isFinite(value) || value < 0) throw new Error(`${name} must be a positive number`);
+  return value;
+};
 const list = (name: string): string[] => (process.env[name] ?? '').split(',').map((x: string) => x.trim()).filter(Boolean);
+const flag = (name: string, fallback: boolean) => {
+  const raw = process.env[name];
+  if (raw === undefined || raw === '') return fallback;
+  return raw.toLowerCase() !== 'false';
+};
 const defaultCountries = ['Albania','Andorra','Austria','Belarus','Belgium','Bosnia and Herzegovina','Bulgaria','Canada','Croatia','Cyprus','Czech Republic','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','Ireland','Italy','Kosovo','Latvia','Liechtenstein','Lithuania','Luxembourg','Malta','Moldova','Monaco','Montenegro','Mexico','Netherlands','North Macedonia','Norway','Poland','Portugal','Romania','Russia','San Marino','Serbia','Slovakia','Slovenia','Spain','Sweden','Switzerland','Turkey','Ukraine','United Kingdom','United States'];
 const boards = (name: string, source: Source): BoardConfig[] => list(name).map(entry => {
   const [id, company = id] = entry.split('|').map(value => value.trim());
   if (!id) throw new Error(`${name} contains an empty board identifier`);
   return { source, id, company };
 });
+
+export const ALLOWED_EPISODE_DURATIONS = [120, 180, 300] as const;
+export type EpisodeDurationSeconds = typeof ALLOWED_EPISODE_DURATIONS[number];
+
 export const config = {
   dryRun: (process.env.DRY_RUN ?? 'true').toLowerCase() !== 'false',
   databasePath: process.env.DATABASE_PATH ?? './data/aijolt.db',
@@ -24,17 +40,33 @@ export const config = {
   queueCapacity: integer('BUFFER_QUEUE_CAPACITY', 10),
   bufferSyncMaxPosts: integer('BUFFER_SYNC_MAX_POSTS', 20),
   bufferSyncMinIntervalMinutes: integer('BUFFER_SYNC_MIN_INTERVAL_MINUTES', 1440),
+  jobsPipelineEnabled: flag('JOBS_PIPELINE_ENABLED', false),
   boards: {
     greenhouse: boards('GREENHOUSE_BOARDS', 'greenhouse'),
     lever: boards('LEVER_SITES', 'lever'),
     ashby: boards('ASHBY_BOARDS', 'ashby'),
   },
-  discovery: { foorilla: (process.env.FOORILLA_ENABLED ?? 'true').toLowerCase() !== 'false', pages: integer('FOORILLA_PAGES', 8), topics: list('FOORILLA_TOPICS').length ? list('FOORILLA_TOPICS') : ['101'], baseUrl: process.env.FOORILLA_BASE_URL ?? 'https://foorilla.com' },
+  discovery: { foorilla: flag('FOORILLA_ENABLED', false), pages: integer('FOORILLA_PAGES', 8), topics: list('FOORILLA_TOPICS').length ? list('FOORILLA_TOPICS') : ['101'], baseUrl: process.env.FOORILLA_BASE_URL ?? 'https://foorilla.com' },
   allowedCountries: new Set(list('ALLOWED_COUNTRIES').length ? list('ALLOWED_COUNTRIES') : defaultCountries),
-  buffer: { token: process.env.BUFFER_ACCESS_TOKEN, x: process.env.BUFFER_X_CHANNEL_ID, linkedin: process.env.BUFFER_LINKEDIN_CHANNEL_ID },
-  deepseek: { apiKey: process.env.DEEPSEEK_API_KEY, model: process.env.DEEPSEEK_MODEL ?? 'deepseek-chat' },
+  buffer: {
+    token: process.env.BUFFER_ACCESS_TOKEN,
+    x: process.env.BUFFER_X_CHANNEL_ID,
+    linkedin: process.env.BUFFER_LINKEDIN_CHANNEL_ID,
+    tiktok: process.env.BUFFER_TIKTOK_CHANNEL_ID,
+    instagram: process.env.BUFFER_INSTAGRAM_CHANNEL_ID,
+    youtube: process.env.BUFFER_YOUTUBE_CHANNEL_ID,
+    youtubeCategoryId: process.env.BUFFER_YOUTUBE_CATEGORY_ID ?? '24',
+    youtubePrivacy: process.env.BUFFER_YOUTUBE_PRIVACY ?? 'public',
+  },
+  deepseek: {
+    apiKey: process.env.DEEPSEEK_API_KEY,
+    model: process.env.DEEPSEEK_MODEL ?? 'deepseek-chat',
+    baseUrl: process.env.DEEPSEEK_BASE_URL ?? 'https://api.deepseek.com',
+    usdPer1kInputTokens: float('DEEPSEEK_USD_PER_1K_INPUT_TOKENS', null),
+    usdPer1kOutputTokens: float('DEEPSEEK_USD_PER_1K_OUTPUT_TOKENS', null),
+  },
   news: {
-    enabled: (process.env.AI_NEWS_ENABLED ?? 'true').toLowerCase() !== 'false',
+    enabled: flag('AI_NEWS_ENABLED', false),
     googleEnabled: (process.env.AI_NEWS_GOOGLE_ENABLED ?? 'true').toLowerCase() !== 'false',
     hackerNewsEnabled: (process.env.AI_NEWS_HN_ENABLED ?? 'true').toLowerCase() !== 'false',
     queries: list('AI_NEWS_QUERIES').length ? list('AI_NEWS_QUERIES') : ['OpenAI OR ChatGPT', 'Anthropic OR Claude', 'Google Gemini AI', 'AI model safety', 'AI model escaped sandbox'],
@@ -48,5 +80,53 @@ export const config = {
     collectInterval: integer('AI_NEWS_COLLECT_INTERVAL_MINUTES', 30),
     publishInterval: integer('AI_NEWS_PUBLISH_INTERVAL_MINUTES', 120),
     includeSourceUrl: (process.env.AI_NEWS_INCLUDE_SOURCE_URL ?? 'false').toLowerCase() === 'true',
+  },
+  gmi: {
+    apiKey: process.env.GMI_API_KEY,
+    baseUrl: (process.env.GMI_API_BASE_URL ?? 'https://console.gmicloud.ai').replace(/\/$/, ''),
+    orgId: process.env.GMI_ORG_ID,
+    videoModel: process.env.GMI_VIDEO_MODEL ?? 'seedance-2-5-260628',
+    ttsModel: process.env.GMI_TTS_MODEL ?? 'minimax-tts-speech-2.8-hd',
+    voiceId: process.env.GMI_TTS_VOICE_ID ?? '',
+    languageBoost: process.env.GMI_TTS_LANGUAGE_BOOST ?? 'French',
+    ttsFormat: process.env.GMI_TTS_FORMAT ?? 'mp3',
+    pollIntervalMs: integer('GMI_POLL_INTERVAL_MS', 5000),
+    pollTimeoutMs: integer('GMI_POLL_TIMEOUT_MS', 900000),
+    videoConcurrency: integer('GMI_VIDEO_CONCURRENCY', 1),
+    usdPerSecond720p: float('GMI_VIDEO_USD_PER_SECOND_720P', null),
+    ttsUsdPer1kChars: float('GMI_TTS_USD_PER_1K_CHARS', 0.10),
+  },
+  story: {
+    assetsDir: process.env.STORY_ASSETS_DIR ?? './data/episodes',
+    characterConfigPath: process.env.STORY_CHARACTER_CONFIG ?? './config/character.json',
+    characterName: process.env.STORY_CHARACTER_NAME ?? '',
+    characterDescription: process.env.STORY_CHARACTER_DESCRIPTION ?? '',
+    characterOutfit: process.env.STORY_CHARACTER_OUTFIT ?? '',
+    styleDescription: process.env.STORY_STYLE_DESCRIPTION ?? 'animation 3D stylisée, rendu cinématique propre, éclairage doux',
+    referenceImageUrls: list('STORY_CHARACTER_REFERENCE_URLS'),
+    referenceVideoUrls: list('STORY_CHARACTER_REFERENCE_VIDEO_URLS'),
+    avatarAssetIds: list('STORY_AVATAR_ASSET_IDS'),
+    ratio: process.env.STORY_RATIO ?? '9:16',
+    resolution: process.env.STORY_RESOLUTION ?? '720p',
+    width: integer('STORY_WIDTH', 720),
+    height: integer('STORY_HEIGHT', 1280),
+    fps: integer('STORY_FPS', 30),
+    segmentMaxSeconds: integer('STORY_SEGMENT_MAX_SECONDS', 15),
+    segmentMinSeconds: integer('STORY_SEGMENT_MIN_SECONDS', 4),
+    durationMaxDriftSeconds: integer('STORY_DURATION_MAX_DRIFT_SECONDS', 30),
+    ffmpegPath: process.env.FFMPEG_PATH ?? 'ffmpeg',
+    ffprobePath: process.env.FFPROBE_PATH ?? 'ffprobe',
+    ffmpegConcurrency: integer('FFMPEG_CONCURRENCY', 1),
+    ffmpegThreads: integer('FFMPEG_THREADS', 2),
+    maxAttempts: integer('STORY_MAX_ATTEMPTS', 3),
+    budgetEpisodeUsd: float('STORY_BUDGET_EPISODE_USD', 20),
+    budgetGlobalUsd: float('STORY_BUDGET_GLOBAL_USD', 80),
+    budgetPeriodDays: integer('STORY_BUDGET_PERIOD_DAYS', 30),
+    budgetAllowUnknown: flag('STORY_BUDGET_ALLOW_UNKNOWN', false),
+    mediaPublicBaseUrl: process.env.STORY_MEDIA_PUBLIC_BASE_URL ?? '',
+    hostViaGmiUpload: flag('STORY_HOST_VIA_GMI_UPLOAD', true),
+    destinations: (list('STORY_BUFFER_DESTINATIONS').length ? list('STORY_BUFFER_DESTINATIONS') : ['tiktok', 'instagram', 'youtube']) as Array<'tiktok' | 'instagram' | 'youtube'>,
+    ttsMaxChars: integer('STORY_TTS_MAX_CHARS', 5000),
+    generateVideoAudio: false,
   },
 };
