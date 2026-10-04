@@ -27,7 +27,7 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
 
   const pendingJobs = unpublishedJobCount('x');
   if (pendingJobs > 0) {
-    logger.info(`Skipping AI news: ${pendingJobs} unpublished jobs own the 10 scheduled Buffer slots`);
+    logger.info(`Skipping AI news: ${pendingJobs} unpublished jobs take priority over satire`);
     return;
   }
 
