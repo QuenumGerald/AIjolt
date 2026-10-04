@@ -1,7 +1,18 @@
 import Database from 'better-sqlite3'; import { mkdirSync, readFileSync } from 'node:fs'; import { dirname } from 'node:path';
 import { config } from './config.js'; import { dedupeKey } from './dedupe.js'; import type { Job, NewsItem } from './types.js';
-mkdirSync(dirname(config.databasePath), { recursive: true });
-export const db = new Database(config.databasePath); db.pragma('busy_timeout = 5000'); db.exec(readFileSync(new URL('./schema.sql', import.meta.url), 'utf8'));
+
+const schemaSql = readFileSync(new URL('./schema.sql', import.meta.url), 'utf8');
+
+export function createDb(databasePath: string): Database.Database {
+  if (databasePath !== ':memory:') mkdirSync(dirname(databasePath), { recursive: true });
+  const database = new Database(databasePath);
+  database.pragma('busy_timeout = 5000');
+  database.pragma('foreign_keys = ON');
+  database.exec(schemaSql);
+  return database;
+}
+
+export const db = createDb(config.databasePath);
 export function upsert(job: Job) {
   const now = new Date().toISOString(); const key = dedupeKey(job); const canonicalUrl = job.url.replace(/[?#].*$/, '').replace(/\/$/, '');
   const duplicate = db.prepare(`SELECT id FROM jobs WHERE (dedupe_key=? OR url=? OR url LIKE ?) AND NOT (source=? AND external_id=?)`).get(key, canonicalUrl, `${canonicalUrl}?%`, job.source, job.externalId) as {id:number}|undefined;
