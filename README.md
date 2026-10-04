@@ -88,8 +88,8 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 
 * laissez `DRY_RUN=true` jusqu'à validation humaine ;
 * secrets uniquement dans `.env` (ignoré par Git) ;
-* `MAX_POSTS_PER_DAY_X` (défaut 480) et `MAX_JOBS_PER_PUBLISH_CYCLE` (10) : jusqu'à 10 annonces toutes les 30 min. `BUFFER_QUEUE_CAPACITY=0` = file Buffer illimitée ;
-* la satire news ne part que s'il n'y a plus d'offres en attente (`MAX_AI_NEWS_POSTS_PER_DAY_X=4`) ;
+* `BUFFER_QUEUE_CAPACITY=10` : limite réelle Buffer (10 posts *scheduled*). Jobs et news **partagent** ces 10 ; les jobs évincent la news si la file est pleine ;
+* `MAX_JOBS_PER_PUBLISH_CYCLE=10` toutes les 30 min pour recharger les slots libérés ; la satire news ne part **que** s’il n’y a plus d’offres en attente ;
 * requêtes limitées/concurrentes et trois retries exponentiels ;
 * SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
 * une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
@@ -105,9 +105,7 @@ npm run publish -- --dry-run
 npm run publish
 ```
 
-Chaque cycle `publish` (30 min) resynchronise Buffer puis enfile jusqu'à 10 annonces jobs. La news n'utilise Buffer que lorsqu'il n'y a plus d'offres à poster. `BUFFER_QUEUE_CAPACITY=0` ne borne plus la file (plan Buffer illimité).
-
-Cadence : **30 min** plutôt qu'1 h. L'API GraphQL Buffer documente une fenêtre du type `100-in-15min` ; un cycle (sync des queued + 10 `createPost`) reste ~50 appels, donc sous le quota, avec le stop déjà en place sur HTTP 429. Une heure sous-utiliserait le plan payant sans gagner en fiabilité.
+Chaque cycle `publish` (30 min) resynchronise Buffer, **évince la news** si les 10 slots scheduled sont pris, puis enfile jusqu'à 10 annonces jobs. `publishNews` est sauté tant qu'il reste des offres non postées. Buffer renvoie `Scheduled posts limit reached` au-delà de 10.
 
 ### Ligne éditoriale AIJolt
 

@@ -205,7 +205,16 @@ export async function publish(dryRunFlag = false) {
     const channelId = config.buffer[network];
     if (!channelId) { logger.error(`Skipping ${network}: BUFFER_${network === 'x' ? 'X' : 'LINKEDIN'}_CHANNEL_ID is missing`); continue; }
     try {
-      const post = await createBufferPost(text, channelId);
+      let post;
+      try {
+        post = await createBufferPost(text, channelId);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        if (network !== 'x' || !/scheduled posts limit reached/i.test(message)) throw error;
+        logger.warn('Buffer scheduled-post cap hit; evicting news to queue a job');
+        await makeRoomForJobPosts(1);
+        post = await createBufferPost(text, channelId);
+      }
       db.prepare(`INSERT INTO publications(job_id,network,status,text,provider_id,created_at) VALUES(?,?,'queued',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, network, text, post.id, new Date().toISOString());
       logger.info(`Buffer scheduled ${network} job ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`);
     } catch (error) {

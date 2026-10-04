@@ -3,7 +3,7 @@ import { db, rowToNews } from './db.js';
 import { logger } from './logger.js';
 import { generateNewsPost } from './news-posts.js';
 import { BufferRateLimitError, createBufferPost, dailyNewsCount, jobQueuedCount, newsQueuedCount, syncBufferPublications, unpublishedJobCount } from './publisher.js';
-import { jobSlotsToday, newsSlotsToday } from './queue-slots.js';
+import { newsSlotsToday } from './queue-slots.js';
 
 function newsLimit(): number {
   return newsSlotsToday({
@@ -26,17 +26,8 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
   if (!config.deepseek.apiKey) throw new Error('DEEPSEEK_API_KEY is required to publish AI news satire');
 
   const pendingJobs = unpublishedJobCount('x');
-  const jobRoom = jobSlotsToday({
-    capacity: config.queueCapacity,
-    reserve: config.reserve,
-    jobQueued: jobQueuedCount('x'),
-    newsQueued: newsQueuedCount('x'),
-    jobsToday: (db.prepare(`SELECT count(*) n FROM publications WHERE network='x' AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get() as { n: number }).n,
-    maxJobsPerDay: config.daily.x,
-    maxPerCycle: config.jobsPerCycle,
-  });
-  if (pendingJobs > 0 && jobRoom > 0) {
-    logger.info(`Skipping AI news: ${pendingJobs} unpublished jobs still have Buffer slots`);
+  if (pendingJobs > 0) {
+    logger.info(`Skipping AI news: ${pendingJobs} unpublished jobs own the 10 scheduled Buffer slots`);
     return;
   }
 
