@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from '../src/buffer.js';
 import { jobSlotsToday, newsSlotsToday, newsToEvictForJobs } from '../src/queue-slots.js';
 import { nextCustomDueAt } from '../src/schedule.js';
+import { clampJobsPerCycle, nextRequestWaitMs, parseRetryAfterSeconds } from '../src/throttle.js';
 
 describe('Buffer status synchronization', () => {
   it('builds a post lookup payload', () => {
@@ -48,5 +49,20 @@ describe('shared Buffer X quota', () => {
     expect(Date.parse(first)).toBe(1_000_000 + 5 * 60_000);
     const second = nextCustomDueAt(1_000_000, Date.parse(first), 30, 5);
     expect(Date.parse(second) - Date.parse(first)).toBe(30 * 60_000);
+  });
+});
+
+describe('Buffer API throttling', () => {
+  it('refuses more than two job creates per cycle even if env asks for a batch', () => {
+    expect(clampJobsPerCycle(10)).toBe(2);
+    expect(clampJobsPerCycle(1)).toBe(1);
+  });
+  it('waits the configured gap between GraphQL calls', () => {
+    expect(nextRequestWaitMs(1000, 1500, 1500)).toBe(1000);
+    expect(nextRequestWaitMs(1000, 3000, 1500)).toBe(0);
+  });
+  it('reads Retry-After without inventing a longer wait', () => {
+    expect(parseRetryAfterSeconds('60')).toBe(60);
+    expect(parseRetryAfterSeconds(null)).toBe(60);
   });
 });

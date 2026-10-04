@@ -4,12 +4,14 @@ import { generatePost } from './posts.js';
 import { logger } from './logger.js';
 import { nextCustomDueAt } from './schedule.js';
 import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from './buffer.js';
+import { clampJobsPerCycle, nextRequestWaitMs, parseRetryAfterSeconds } from './throttle.js';
 import { jobSlotsToday, newsToEvictForJobs } from './queue-slots.js';
 
 type Network = 'x' | 'linkedin';
 const BUFFER_API = 'https://api.buffer.com';
 let lastBufferSyncAt = 0;
 let bufferBlockedUntil = 0;
+let lastBufferRequestAt = 0;
 
 export class BufferRateLimitError extends Error {
   constructor(public readonly retryAfterSeconds: number) {
@@ -26,9 +28,12 @@ function ensureBufferAvailable(): void {
 export async function bufferRequest(body: object): Promise<unknown> {
   if (!config.buffer.token) throw new Error('BUFFER_ACCESS_TOKEN is missing');
   ensureBufferAvailable();
+  const waitMs = nextRequestWaitMs(lastBufferRequestAt || null, Date.now(), config.bufferMinRequestGapMs);
+  if (waitMs) await new Promise(resolve => setTimeout(resolve, waitMs));
+  lastBufferRequestAt = Date.now();
   const response = await fetch(BUFFER_API, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: `Bearer ${config.buffer.token}` }, body: JSON.stringify(body), signal: AbortSignal.timeout(20_000) });
   if (response.status === 429) {
-    const retryAfterSeconds = Math.max(60, Number.parseInt(response.headers.get('retry-after') || '900', 10) || 900);
+    const retryAfterSeconds = parseRetryAfterSeconds(response.headers.get('retry-after'));
     bufferBlockedUntil = Date.now() + retryAfterSeconds * 1000;
     throw new BufferRateLimitError(retryAfterSeconds);
   }
@@ -172,8 +177,8 @@ export async function makeRoomForJobPosts(jobsWanted: number): Promise<number> {
 
 export async function publish(dryRunFlag = false) {
   const dry = dryRunFlag || config.dryRun;
-  if (!dry) await syncBufferPublications(true);
-  const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT ?`).all(Math.max(config.jobsPerCycle * 2, 10)) as any[];
+  if (!dry) await syncBufferPublications(false);
+  const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT ?`).all(Math.max(config.jobsPerCycle, 1)) as any[];
   const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x', 'linkedin'] as Network[]).map(network => [network, dailyJobCount(network)])) as Record<Network, number>;
   if (!dry) {
@@ -191,7 +196,7 @@ export async function publish(dryRunFlag = false) {
         newsToday: dailyNewsCount(),
         maxJobsPerDay: config.daily.x,
         maxXPostsPerDay: config.daily.xTotal,
-        maxPerCycle: config.jobsPerCycle,
+        maxPerCycle: clampJobsPerCycle(config.jobsPerCycle),
         emittedThisCycle: emitted.x,
       })
       : jobSlotsToday({
@@ -201,7 +206,7 @@ export async function publish(dryRunFlag = false) {
         newsQueued: 0,
         jobsToday: dailyCount.linkedin + emitted.linkedin,
         maxJobsPerDay: config.daily.linkedin,
-        maxPerCycle: config.jobsPerCycle,
+        maxPerCycle: clampJobsPerCycle(config.jobsPerCycle),
         emittedThisCycle: emitted.linkedin,
       });
     if (!slots) continue;
