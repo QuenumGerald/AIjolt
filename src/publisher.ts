@@ -180,7 +180,7 @@ export async function publish(dryRunFlag = false) {
       ? jobSlotsToday({
         capacity: config.queueCapacity,
         reserve: config.reserve,
-        jobQueued: jobQueuedCount('x') + emitted.x,
+        jobQueued: jobQueuedCount('x'),
         newsQueued: newsQueuedCount('x'),
         jobsToday: dailyCount.x + emitted.x,
         maxJobsPerDay: config.daily.x,
@@ -190,7 +190,7 @@ export async function publish(dryRunFlag = false) {
       : jobSlotsToday({
         capacity: config.queueCapacity,
         reserve: config.reserve,
-        jobQueued: jobQueuedCount('linkedin') + emitted.linkedin,
+        jobQueued: jobQueuedCount('linkedin'),
         newsQueued: 0,
         jobsToday: dailyCount.linkedin + emitted.linkedin,
         maxJobsPerDay: config.daily.linkedin,
