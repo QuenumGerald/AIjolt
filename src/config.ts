@@ -26,6 +26,8 @@ export const config = {
   staleQueueHours: integer('BUFFER_STALE_QUEUE_HOURS', 24),
   bufferSyncMaxPosts: integer('BUFFER_SYNC_MAX_POSTS', 40),
   bufferSyncMinIntervalMinutes: integer('BUFFER_SYNC_MIN_INTERVAL_MINUTES', 0),
+  postSpacingMinutes: integer('BUFFER_POST_SPACING_MINUTES', 30),
+  postLeadMinutes: integer('BUFFER_POST_LEAD_MINUTES', 5),
   boards: {
     greenhouse: boards('GREENHOUSE_BOARDS', 'greenhouse'),
     lever: boards('LEVER_SITES', 'lever'),

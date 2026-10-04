@@ -97,7 +97,9 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 
 ### Publication automatique Buffer
 
-Lorsque `DRY_RUN=false`, AIJolt appelle l'API GraphQL officielle de Buffer et ajoute chaque post à la file du channel correspondant. Il faut configurer `BUFFER_ACCESS_TOKEN`, `BUFFER_X_CHANNEL_ID` et `BUFFER_LINKEDIN_CHANNEL_ID`. Les identifiants Buffer sont conservés dans SQLite afin d'empêcher les doublons.
+Lorsque `DRY_RUN=false`, AIJolt crée des posts Buffer en `schedulingType: automatic` et **`mode: customScheduled`** avec un `dueAt` toutes les 30 min. **Ne plus utiliser `addToQueue`** : ça consomme les créneaux du *posting schedule* UI (souvent 3–4 heures/jour → 3–4 posts envoyés, même si 50 sont en file).
+
+Le calendrier Buffer (heures personnalisées) **n’a plus besoin** de 48 créneaux. On peut le laisser tel quel ; les heures d’envoi viennent du `dueAt` API. Option UI si on restait en `addToQueue` : ajouter ~48 timeslots/jour — désormais inutile après ce déploiement.
 
 ```bash
 npm run doctor

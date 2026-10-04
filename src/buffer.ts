@@ -1,9 +1,9 @@
-export const createPostMutation = `mutation CreatePost($text: String!, $channelId: ChannelId!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: addToQueue }) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }`;
+export const createPostMutation = `mutation CreatePost($text: String!, $channelId: ChannelId!, $dueAt: DateTime!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: customScheduled, dueAt: $dueAt }) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }`;
 export const getPostQuery = `query GetPost($id: PostId!) { post(input: { id: $id }) { id status dueAt sentAt error { message } } }`;
 export const deletePostMutation = `mutation DeletePost($id: PostId!) { deletePost(input: { id: $id }) { ... on DeletePostSuccess { id } ... on VoidMutationError { message } ... on MutationError { message } } }`;
 
-export function bufferCreatePostPayload(text: string, channelId: string) {
-  return { query: createPostMutation, variables: { text, channelId } };
+export function bufferCreatePostPayload(text: string, channelId: string, dueAt: string) {
+  return { query: createPostMutation, variables: { text, channelId, dueAt } };
 }
 
 export function bufferGetPostPayload(id: string) {
