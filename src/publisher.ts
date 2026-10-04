@@ -97,7 +97,7 @@ export function newsQueuedCount(network: Network): number {
   return row.n;
 }
 
-function dailyJobCount(network: Network): number {
+export function dailyJobCount(network: Network): number {
   return (db.prepare(`SELECT count(*) n FROM publications WHERE network=? AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get(network) as { n: number }).n;
 }
 
@@ -183,7 +183,9 @@ export async function publish(dryRunFlag = false) {
         jobQueued: jobQueuedCount('x'),
         newsQueued: newsQueuedCount('x'),
         jobsToday: dailyCount.x + emitted.x,
+        newsToday: dailyNewsCount(),
         maxJobsPerDay: config.daily.x,
+        maxXPostsPerDay: config.daily.xTotal,
         maxPerCycle: config.jobsPerCycle,
         emittedThisCycle: emitted.x,
       })

@@ -2,7 +2,7 @@ import { config } from './config.js';
 import { db, rowToNews } from './db.js';
 import { logger } from './logger.js';
 import { generateNewsPost } from './news-posts.js';
-import { BufferRateLimitError, createBufferPost, dailyNewsCount, jobQueuedCount, newsQueuedCount, syncBufferPublications, unpublishedJobCount } from './publisher.js';
+import { BufferRateLimitError, createBufferPost, dailyJobCount, dailyNewsCount, jobQueuedCount, newsQueuedCount, syncBufferPublications } from './publisher.js';
 import { newsSlotsToday } from './queue-slots.js';
 
 function newsLimit(): number {
@@ -11,8 +11,11 @@ function newsLimit(): number {
     reserve: config.reserve,
     jobQueued: jobQueuedCount('x'),
     newsQueued: newsQueuedCount('x'),
+    jobsToday: dailyJobCount('x'),
     newsToday: dailyNewsCount(),
     maxNewsPerDay: config.news.maxPostsPerDay,
+    maxXPostsPerDay: config.daily.xTotal,
+    maxPerCycle: 1,
   });
 }
 
@@ -25,15 +28,9 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
   if (!dry) await syncBufferPublications(true);
   if (!config.deepseek.apiKey) throw new Error('DEEPSEEK_API_KEY is required to publish AI news satire');
 
-  const pendingJobs = unpublishedJobCount('x');
-  if (pendingJobs > 0) {
-    logger.info(`Skipping AI news: ${pendingJobs} unpublished jobs own the 10 scheduled Buffer slots`);
-    return;
-  }
-
   const limit = newsLimit();
   if (!limit) {
-    logger.info('No AI news post slot available today');
+    logger.info('No AI news post slot available today (news cap or shared X daily budget)');
     return;
   }
   const rows = db.prepare(`SELECT * FROM news_items n WHERE status='active' AND buzz_score >= ? AND published_at >= datetime('now', ?) AND NOT EXISTS (SELECT 1 FROM news_publications p WHERE p.news_id=n.id AND p.status IN ('published','queued')) ORDER BY buzz_score DESC,published_at DESC LIMIT ?`).all(config.news.minBuzzScore, `-${config.news.maxAgeHours} hours`, limit) as any[];
@@ -47,7 +44,7 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
       }
       if (!config.buffer.x) throw new Error('BUFFER_X_CHANNEL_ID is missing');
       if (!newsLimit()) {
-        logger.info('Stopping AI news: daily news cap reached');
+        logger.info('Stopping AI news: daily news cap or shared X budget reached');
         return;
       }
       const post = await createBufferPost(text, config.buffer.x);

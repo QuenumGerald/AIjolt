@@ -26,16 +26,20 @@ describe('Buffer status synchronization', () => {
 });
 
 describe('shared Buffer X quota', () => {
-  it('lets jobs fill all 10 scheduled slots', () => {
-    expect(jobSlotsToday({ capacity: 10, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 0, maxJobsPerDay: 48, maxPerCycle: 10 })).toBe(10);
+  it('treats capacity 0 as unlimited and still posts one job per 30 min cycle', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 80, newsQueued: 20, jobsToday: 0, newsToday: 3, maxJobsPerDay: 42, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(1);
+    expect(newsToEvictForJobs({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 50, jobsWanted: 10 })).toBe(0);
   });
-  it('evicts queued news when the 10 scheduled slots are full', () => {
-    expect(newsToEvictForJobs({ capacity: 10, reserve: 0, jobQueued: 0, newsQueued: 10, jobsWanted: 10 })).toBe(10);
+  it('stops jobs at 42/day and still allows leftover news under the 50 X budget', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 0, maxJobsPerDay: 42, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(0);
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 0, maxNewsPerDay: 8, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(1);
   });
-  it('gives news no leftover when jobs occupy the scheduled queue', () => {
-    expect(newsSlotsToday({ capacity: 10, reserve: 0, jobQueued: 10, newsQueued: 0, newsToday: 0, maxNewsPerDay: 2 })).toBe(0);
+  it('posts news even while jobs are still waiting, up to 8/day', () => {
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 200, newsQueued: 0, jobsToday: 10, newsToday: 0, maxNewsPerDay: 8, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(1);
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 10, newsToday: 8, maxNewsPerDay: 8, maxXPostsPerDay: 50 })).toBe(0);
   });
-  it('allows at most leftover news after jobs', () => {
-    expect(newsSlotsToday({ capacity: 10, reserve: 0, jobQueued: 8, newsQueued: 0, newsToday: 0, maxNewsPerDay: 2 })).toBe(2);
+  it('never lets jobs plus news exceed 50 X posts in a day', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 8, maxJobsPerDay: 42, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(0);
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 8, maxNewsPerDay: 8, maxXPostsPerDay: 50 })).toBe(0);
   });
 });
