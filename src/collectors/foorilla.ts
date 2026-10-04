@@ -8,7 +8,18 @@ const regionNames = ['Europe', 'North America'];
 export const parseCsrfToken = (html: string) => html.match(/name="csrfmiddlewaretoken"\s+value="([^"]+)"/i)?.[1] ?? '';
 export const parseRegionIds = (data: RegionResponse, names = regionNames) => names.map(name => data.results.find(region => region.name.toLowerCase() === name.toLowerCase())?.pk).filter((pk): pk is number => pk !== undefined);
 export const topicFormBody = (topics: string[]) => new URLSearchParams(topics.map(topic => ['topic', topic]));
-export function parseListingLinks(html: string) { const result: Array<{ path: string; title: string }> = []; const pattern = /<a class="stretched-link"[\s\S]*?hx-get="(\/hiring\/jobs\/[^"?]+)"[\s\S]*?>([\s\S]*?)<\/a>/g; for (const match of html.matchAll(pattern)) result.push({ path: match[1], title: text(match[2]) }); return result; }
+export function parseListingLinks(html: string) {
+  const result: Array<{ path: string; title: string }> = [];
+  for (const match of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+    const attrs = match[1];
+    const className = attrs.match(/\bclass=["']([^"']+)["']/i)?.[1] ?? '';
+    if (!/(^|\s)stretched-link(\s|$)/.test(className)) continue;
+    const path = attrs.match(/\bhx-get=["'](\/hiring\/jobs\/[^"'?]+)/i)?.[1];
+    if (!path) continue;
+    result.push({ path, title: text(match[2]) });
+  }
+  return result;
+}
 export function parseDetail(detail: string, path: string, fallbackTitle: string, baseUrl: string): RawJob & { applyUrl?: string } {
   const title = first(detail, /<h1[^>]*>([\s\S]*?)<\/h1>/i) || fallbackTitle;
   const description = text(detail.match(/<div class="px-1 border-bottom pb-2">([\s\S]*?)<\/div>\s*<div class="d-flex justify-content-between/i)?.[1] ?? detail);

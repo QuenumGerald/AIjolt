@@ -88,8 +88,8 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 
 * laissez `DRY_RUN=true` jusqu'à validation humaine ;
 * secrets uniquement dans `.env` (ignoré par Git) ;
-* `MAX_POSTS_PER_DAY_X` et `MAX_POSTS_PER_DAY_LINKEDIN` bornent chaque réseau ;
-* `BUFFER_QUEUE_CAPACITY` et `BUFFER_QUEUE_RESERVE` empêchent AIJolt de remplir la capacité réservée à chaque réseau ;
+* `BUFFER_QUEUE_CAPACITY=10` : limite réelle Buffer (10 posts *scheduled*). Jobs et news **partagent** ces 10 ; les jobs évincent la news si la file est pleine ;
+* `MAX_JOBS_PER_PUBLISH_CYCLE=10` toutes les 30 min pour recharger les slots libérés ; la satire news ne part **que** s’il n’y a plus d’offres en attente ;
 * requêtes limitées/concurrentes et trois retries exponentiels ;
 * SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
 * une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
@@ -105,7 +105,7 @@ npm run publish -- --dry-run
 npm run publish
 ```
 
-La limite quotidienne compte les états `queued` et `published`. Une publication programmée dans Buffer reste donc bloquante, ce qui privilégie l'absence de doublon à la quantité.
+Chaque cycle `publish` (30 min) resynchronise Buffer, **évince la news** si les 10 slots scheduled sont pris, puis enfile jusqu'à 10 annonces jobs. `publishNews` est sauté tant qu'il reste des offres non postées. Buffer renvoie `Scheduled posts limit reached` au-delà de 10.
 
 ### Ligne éditoriale AIJolt
 
@@ -125,7 +125,7 @@ npm run news -- publish --dry-run
 ```cron
 15 * * * * cd /opt/aijolt && /usr/bin/npm run collect >> logs/cron.log 2>&1
 25 * * * * cd /opt/aijolt && /usr/bin/npm run score >> logs/cron.log 2>&1
-0 */3 * * * cd /opt/aijolt && /usr/bin/npm run publish >> logs/cron.log 2>&1
+*/30 * * * * cd /opt/aijolt && /usr/bin/npm run publish >> logs/cron.log 2>&1
 30 2 * * * cd /opt/aijolt && /usr/bin/npm run cleanup >> logs/cron.log 2>&1
 ```
 
