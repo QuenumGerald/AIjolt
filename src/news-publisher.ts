@@ -2,7 +2,8 @@ import { config } from './config.js';
 import { db, rowToNews } from './db.js';
 import { logger } from './logger.js';
 import { generateNewsPost } from './news-posts.js';
-import { BufferRateLimitError, createBufferPost, newsQueuedCount, syncBufferPublications } from './publisher.js';
+import { BufferRateLimitError, createBufferPost, dailyNewsCount, jobQueuedCount, newsQueuedCount, syncBufferPublications } from './publisher.js';
+import { newsSlotsToday } from './queue-slots.js';
 
 export async function publishNews(dryRunFlag = false): Promise<void> {
   if (!config.news.enabled) {
@@ -10,15 +11,23 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
     return;
   }
   const dry = dryRunFlag || config.dryRun;
-  if (!dry) await syncBufferPublications();
+  if (!dry) await syncBufferPublications(true);
   if (!config.deepseek.apiKey) throw new Error('DEEPSEEK_API_KEY is required to publish AI news satire');
 
-  const dailyCount = (db.prepare(`SELECT count(*) n FROM news_publications WHERE network='x' AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get() as { n: number }).n;
-  const roomToday = Math.max(0, config.news.maxPostsPerDay - dailyCount);
-  const roomInQueue = Math.max(0, config.news.queueCapacity - newsQueuedCount('x'));
-  const limit = Math.min(roomToday, roomInQueue, 10);
+  const jobsToday = (db.prepare(`SELECT count(*) n FROM publications WHERE network='x' AND status IN ('published','queued') AND created_at >= datetime('now','start of day')`).get() as { n: number }).n;
+  const newsToday = dailyNewsCount();
+  const limit = newsSlotsToday({
+    capacity: config.queueCapacity,
+    reserve: config.reserve,
+    jobQueued: jobQueuedCount('x'),
+    newsQueued: newsQueuedCount('x'),
+    jobsToday,
+    newsToday,
+    maxNewsPerDay: Math.min(config.news.maxPostsPerDay, config.news.queueCapacity),
+    maxXPostsPerDay: config.daily.x,
+  });
   if (!limit) {
-    logger.info('No AI news post slot available today or in the dedicated AI news queue');
+    logger.info('No AI news post slot available: jobs own the daily Buffer X quota or the shared queue is full');
     return;
   }
   const rows = db.prepare(`SELECT * FROM news_items n WHERE status='active' AND buzz_score >= ? AND published_at >= datetime('now', ?) AND NOT EXISTS (SELECT 1 FROM news_publications p WHERE p.news_id=n.id AND p.status IN ('published','queued')) ORDER BY buzz_score DESC,published_at DESC LIMIT ?`).all(config.news.minBuzzScore, `-${config.news.maxAgeHours} hours`, limit) as any[];
@@ -31,6 +40,20 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
         continue;
       }
       if (!config.buffer.x) throw new Error('BUFFER_X_CHANNEL_ID is missing');
+      const remaining = newsSlotsToday({
+        capacity: config.queueCapacity,
+        reserve: config.reserve,
+        jobQueued: jobQueuedCount('x'),
+        newsQueued: newsQueuedCount('x'),
+        jobsToday,
+        newsToday: dailyNewsCount(),
+        maxNewsPerDay: Math.min(config.news.maxPostsPerDay, config.news.queueCapacity),
+        maxXPostsPerDay: config.daily.x,
+      });
+      if (!remaining) {
+        logger.info('Stopping AI news: shared Buffer X queue has no leftover slot');
+        return;
+      }
       const post = await createBufferPost(text, config.buffer.x);
       db.prepare(`INSERT INTO news_publications(news_id,network,status,text,provider_id,created_at) VALUES(?,'x','queued',?,?,?) ON CONFLICT(news_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, text, post.id, new Date().toISOString());
       logger.info(`Buffer scheduled AI news ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`);

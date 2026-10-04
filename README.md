@@ -88,8 +88,8 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 
 * laissez `DRY_RUN=true` jusqu'à validation humaine ;
 * secrets uniquement dans `.env` (ignoré par Git) ;
-* `MAX_POSTS_PER_DAY_X` et `MAX_POSTS_PER_DAY_LINKEDIN` bornent chaque réseau ;
-* `BUFFER_QUEUE_CAPACITY` et `BUFFER_QUEUE_RESERVE` empêchent AIJolt de remplir la capacité réservée à chaque réseau ;
+* `MAX_POSTS_PER_DAY_X` (défaut 10) et `MAX_POSTS_PER_DAY_LINKEDIN` bornent chaque réseau ; X jobs et news **partagent** ces 10 slots Buffer ;
+* `BUFFER_QUEUE_CAPACITY` (10) et `BUFFER_QUEUE_RESERVE` (0) : la satire news ne peut plus saturer une file parallèle de 50 ; les jobs évincent la news en file si besoin ;
 * requêtes limitées/concurrentes et trois retries exponentiels ;
 * SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
 * une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
@@ -105,7 +105,7 @@ npm run publish -- --dry-run
 npm run publish
 ```
 
-La limite quotidienne compte les états `queued` et `published`. Une publication programmée dans Buffer reste donc bloquante, ce qui privilégie l'absence de doublon à la quantité.
+Chaque cycle `publish` resynchronise Buffer, libère les posts news (puis les posts de plus de `BUFFER_STALE_QUEUE_HOURS`) si la file X est pleine, puis enfile jusqu'à 10 annonces jobs. `publishNews` n'utilise que les créneaux restants. La limite quotidienne compte `queued` et `published`.
 
 ### Ligne éditoriale AIJolt
 

@@ -1,5 +1,6 @@
 export const createPostMutation = `mutation CreatePost($text: String!, $channelId: ChannelId!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: addToQueue }) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }`;
 export const getPostQuery = `query GetPost($id: PostId!) { post(input: { id: $id }) { id status dueAt sentAt error { message } } }`;
+export const deletePostMutation = `mutation DeletePost($id: PostId!) { deletePost(input: { id: $id }) { ... on DeletePostSuccess { id } ... on VoidMutationError { message } ... on MutationError { message } } }`;
 
 export function bufferCreatePostPayload(text: string, channelId: string) {
   return { query: createPostMutation, variables: { text, channelId } };
@@ -7,6 +8,10 @@ export function bufferCreatePostPayload(text: string, channelId: string) {
 
 export function bufferGetPostPayload(id: string) {
   return { query: getPostQuery, variables: { id } };
+}
+
+export function bufferDeletePostPayload(id: string) {
+  return { query: deletePostMutation, variables: { id } };
 }
 
 export type BufferPostState =
