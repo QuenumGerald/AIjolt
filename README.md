@@ -90,7 +90,7 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 * secrets uniquement dans `.env` (ignoré par Git) ;
 * `BUFFER_QUEUE_CAPACITY=0` : file scheduled illimitée (Buffer Essentials). **Enlever `BUFFER_QUEUE_CAPACITY=10` sur le serveur** (plafond Free) ;
 * `MAX_POSTS_PER_DAY_X=42` (1 job / 30 min) et `MAX_AI_NEWS_POSTS_PER_DAY_X=8` (1 news / 3 h) : total borné par `MAX_X_POSTS_PER_DAY=50` (X non vérifié). Jobs majoritaires, news **sans** attendre que la file d’offres soit vide ;
-* requêtes limitées/concurrentes et trois retries exponentiels ;
+* Buffer API Essentials : **100 req / 15 min** et **250 / 24 h**. 1 `createPost` job / 30 min + 1 news / 3 h. Sync statut **3 posts max**, au plus toutes les **3 h**. Écart **1,5 s** entre appels. `MAX_JOBS_PER_PUBLISH_CYCLE` est borné à 2 (défaut 1) pour éviter un burst de `dueAt` ;
 * SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
 * une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
 * `HTTPS_PROXY`/`CAPSOLVER_API_KEY` restent optionnels et inutilisés : ne contournez les protections d'un site qu'avec autorisation.
@@ -99,7 +99,7 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 
 Lorsque `DRY_RUN=false`, AIJolt crée des posts Buffer en `schedulingType: automatic` et **`mode: customScheduled`** avec un `dueAt` toutes les 30 min. **Ne plus utiliser `addToQueue`** : ça consomme les créneaux du *posting schedule* UI (souvent 3–4 heures/jour → 3–4 posts envoyés, même si 50 sont en file).
 
-Le calendrier Buffer (heures personnalisées) **n’a plus besoin** de 48 créneaux. On peut le laisser tel quel ; les heures d’envoi viennent du `dueAt` API. Option UI si on restait en `addToQueue` : ajouter ~48 timeslots/jour — désormais inutile après ce déploiement.
+Un 429 Buffer arrête le cycle et respecte `Retry-After` (pas de retry en boucle). Ne pas forcer un gros `sync-buffer` ni `MAX_JOBS_PER_PUBLISH_CYCLE>2` sur le serveur.
 
 ```bash
 npm run doctor

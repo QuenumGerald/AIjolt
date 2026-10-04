@@ -25,7 +25,7 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
     return;
   }
   const dry = dryRunFlag || config.dryRun;
-  if (!dry) await syncBufferPublications(true);
+  if (!dry) await syncBufferPublications(false);
   if (!config.deepseek.apiKey) throw new Error('DEEPSEEK_API_KEY is required to publish AI news satire');
 
   const limit = newsLimit();

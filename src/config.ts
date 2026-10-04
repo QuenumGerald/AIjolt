@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import type { BoardConfig, Source } from './types.js';
+import { clampJobsPerCycle } from './throttle.js';
 
 const integer = (name: string, fallback: number) => {
   const value = Number(process.env[name] ?? fallback);
@@ -20,12 +21,13 @@ export const config = {
   collectInterval: integer('COLLECT_INTERVAL_MINUTES', 60), publishInterval: integer('PUBLISH_INTERVAL_MINUTES', 30),
   rps: integer('REQUESTS_PER_SECOND', 2), concurrency: integer('HTTP_CONCURRENCY', 3),
   daily: { x: integer('MAX_POSTS_PER_DAY_X', 42), linkedin: integer('MAX_POSTS_PER_DAY_LINKEDIN', 10), xTotal: integer('MAX_X_POSTS_PER_DAY', 50) },
-  jobsPerCycle: integer('MAX_JOBS_PER_PUBLISH_CYCLE', 1),
+  jobsPerCycle: clampJobsPerCycle(integer('MAX_JOBS_PER_PUBLISH_CYCLE', 1)),
   reserve: integer('BUFFER_QUEUE_RESERVE', 0),
   queueCapacity: integer('BUFFER_QUEUE_CAPACITY', 0),
   staleQueueHours: integer('BUFFER_STALE_QUEUE_HOURS', 24),
-  bufferSyncMaxPosts: integer('BUFFER_SYNC_MAX_POSTS', 40),
-  bufferSyncMinIntervalMinutes: integer('BUFFER_SYNC_MIN_INTERVAL_MINUTES', 0),
+  bufferSyncMaxPosts: integer('BUFFER_SYNC_MAX_POSTS', 3),
+  bufferSyncMinIntervalMinutes: integer('BUFFER_SYNC_MIN_INTERVAL_MINUTES', 180),
+  bufferMinRequestGapMs: integer('BUFFER_MIN_REQUEST_GAP_MS', 1500),
   postSpacingMinutes: integer('BUFFER_POST_SPACING_MINUTES', 30),
   postLeadMinutes: integer('BUFFER_POST_LEAD_MINUTES', 5),
   boards: {
