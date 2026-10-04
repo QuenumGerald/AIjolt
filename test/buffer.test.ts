@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from '../src/buffer.js';
+import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from '../src/buffer.js';
 import { jobSlotsToday, newsSlotsToday, newsToEvictForJobs } from '../src/queue-slots.js';
+import { nextCustomDueAt } from '../src/schedule.js';
 
 describe('Buffer status synchronization', () => {
   it('builds a post lookup payload', () => {
@@ -41,5 +42,11 @@ describe('shared Buffer X quota', () => {
   it('never lets jobs plus news exceed 50 X posts in a day', () => {
     expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 8, maxJobsPerDay: 42, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(0);
     expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 8, maxNewsPerDay: 8, maxXPostsPerDay: 50 })).toBe(0);
+  });
+  it('spaces custom dueAt times 30 minutes apart', () => {
+    const first = nextCustomDueAt(1_000_000, null, 30, 5);
+    expect(Date.parse(first)).toBe(1_000_000 + 5 * 60_000);
+    const second = nextCustomDueAt(1_000_000, Date.parse(first), 30, 5);
+    expect(Date.parse(second) - Date.parse(first)).toBe(30 * 60_000);
   });
 });

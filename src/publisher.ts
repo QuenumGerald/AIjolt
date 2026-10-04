@@ -2,6 +2,7 @@ import { config } from './config.js';
 import { db, rowToJob } from './db.js';
 import { generatePost } from './posts.js';
 import { logger } from './logger.js';
+import { nextCustomDueAt } from './schedule.js';
 import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from './buffer.js';
 import { jobSlotsToday, newsToEvictForJobs } from './queue-slots.js';
 
@@ -70,8 +71,12 @@ export async function syncBufferPublications(force = false): Promise<{ published
   return summary;
 }
 
+let lastCustomDueAtMs: number | null = null;
+
 export async function createBufferPost(text: string, channelId: string): Promise<{ id: string; dueAt?: string }> {
-  const payload = await bufferRequest(bufferCreatePostPayload(text, channelId)) as { errors?: Array<{ message?: string }>; data?: { createPost?: { post?: { id: string; dueAt?: string }; message?: string } } };
+  const dueAt = nextCustomDueAt(Date.now(), lastCustomDueAtMs, config.postSpacingMinutes, config.postLeadMinutes);
+  lastCustomDueAtMs = Date.parse(dueAt);
+  const payload = await bufferRequest(bufferCreatePostPayload(text, channelId, dueAt)) as { errors?: Array<{ message?: string }>; data?: { createPost?: { post?: { id: string; dueAt?: string }; message?: string } } };
   const error = payload.errors?.map(item => item.message).filter(Boolean).join('; ') || payload.data?.createPost?.message;
   const post = payload.data?.createPost?.post;
   if (error || !post?.id) throw new Error(error || 'Buffer API returned no post ID');
