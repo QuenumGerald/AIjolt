@@ -9,16 +9,19 @@ export function jobSlotsToday(input: {
   jobQueued: number;
   newsQueued: number;
   jobsToday: number;
+  newsToday?: number;
   maxJobsPerDay: number;
+  maxXPostsPerDay?: number;
   maxPerCycle?: number;
   emittedThisCycle?: number;
 }): number {
   const usable = usableQueueSlots(input.capacity, input.reserve);
   const roomInQueue = Number.isFinite(usable) ? Math.max(0, usable - input.jobQueued - input.newsQueued) : Number.POSITIVE_INFINITY;
   const roomInDay = Math.max(0, input.maxJobsPerDay - input.jobsToday);
+  const roomOnChannel = Math.max(0, (input.maxXPostsPerDay ?? Number.POSITIVE_INFINITY) - input.jobsToday - (input.newsToday ?? 0));
   const cycleCap = input.maxPerCycle ?? Number.POSITIVE_INFINITY;
   const roomInCycle = Math.max(0, cycleCap - (input.emittedThisCycle ?? 0));
-  return Math.min(roomInQueue, roomInDay, roomInCycle);
+  return Math.min(roomInQueue, roomInDay, roomOnChannel, roomInCycle);
 }
 
 export function newsSlotsToday(input: {
@@ -26,13 +29,18 @@ export function newsSlotsToday(input: {
   reserve: number;
   jobQueued: number;
   newsQueued: number;
+  jobsToday?: number;
   newsToday: number;
   maxNewsPerDay: number;
+  maxXPostsPerDay?: number;
+  maxPerCycle?: number;
 }): number {
   const usable = usableQueueSlots(input.capacity, input.reserve);
   const roomInQueue = Number.isFinite(usable) ? Math.max(0, usable - input.jobQueued - input.newsQueued) : Number.POSITIVE_INFINITY;
   const newsCap = Math.max(0, input.maxNewsPerDay - input.newsToday);
-  return Math.min(roomInQueue, newsCap);
+  const roomOnChannel = Math.max(0, (input.maxXPostsPerDay ?? Number.POSITIVE_INFINITY) - (input.jobsToday ?? 0) - input.newsToday);
+  const cycleCap = input.maxPerCycle ?? Number.POSITIVE_INFINITY;
+  return Math.min(roomInQueue, newsCap, roomOnChannel, cycleCap);
 }
 
 export function newsToEvictForJobs(input: {

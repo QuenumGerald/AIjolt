@@ -89,8 +89,7 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 * laissez `DRY_RUN=true` jusqu'à validation humaine ;
 * secrets uniquement dans `.env` (ignoré par Git) ;
 * `BUFFER_QUEUE_CAPACITY=0` : file scheduled illimitée (Buffer Essentials). **Enlever `BUFFER_QUEUE_CAPACITY=10` sur le serveur** (plafond Free) ;
-* `MAX_POSTS_PER_DAY_X=48` et `MAX_JOBS_PER_PUBLISH_CYCLE=1` toutes les 30 min (~2 jobs/h, étalé ; plafond X non vérifié 50/24 h). Pas 10 jobs/30 min ;
-* la satire news ne part **que** s’il n’y a plus d’offres en attente (`MAX_AI_NEWS_POSTS_PER_DAY_X=2`) ;
+* `MAX_POSTS_PER_DAY_X=42` (1 job / 30 min) et `MAX_AI_NEWS_POSTS_PER_DAY_X=8` (1 news / 3 h) : total borné par `MAX_X_POSTS_PER_DAY=50` (X non vérifié). Jobs majoritaires, news **sans** attendre que la file d’offres soit vide ;
 * requêtes limitées/concurrentes et trois retries exponentiels ;
 * SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
 * une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
@@ -106,7 +105,7 @@ npm run publish -- --dry-run
 npm run publish
 ```
 
-Chaque cycle `publish` (30 min) resynchronise Buffer puis enfile **1 annonce job** (≈ 2/h, 48/jour). `publishNews` est sauté tant qu’il reste des offres non postées. Le plafond utile est quotidien (`MAX_POSTS_PER_DAY_X=48`), pas la file Essentials. X non vérifié = 50 posts/24 h ; compte vérifié = 100. Ne pas viser 20/h.
+Chaque cycle `publish` (30 min) enfile **1 annonce job** (~42/jour). `publishNews` (toutes les 3 h) enfile **1 news** jusqu’à 8/jour, même s’il reste des offres. Jobs + news ≤ `MAX_X_POSTS_PER_DAY=50`. File Essentials illimitée. X non vérifié = 50/24 h ; vérifié = 100. Ne pas viser 20/h.
 
 ### Ligne éditoriale AIJolt
 
