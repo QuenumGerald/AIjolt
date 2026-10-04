@@ -120,7 +120,12 @@ async function dropQueuedRow(table: 'publications' | 'news_publications', id: nu
   markEvicted(table, id, reason);
 }
 
+export function unpublishedJobCount(network: Network): number {
+  return (db.prepare(`SELECT count(*) n FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.network=? AND p.status IN ('published','queued'))`).get(network) as { n: number }).n;
+}
+
 export async function makeRoomForJobPosts(jobsWanted: number): Promise<number> {
+  if (config.queueCapacity <= 0) return 0;
   let evicted = 0;
   const reason = 'evicted: free Buffer slot for a job announcement';
   while (evicted < 50) {
@@ -163,7 +168,7 @@ export async function makeRoomForJobPosts(jobsWanted: number): Promise<number> {
 export async function publish(dryRunFlag = false) {
   const dry = dryRunFlag || config.dryRun;
   if (!dry) await syncBufferPublications(true);
-  const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT 40`).all() as any[];
+  const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT ?`).all(Math.max(config.jobsPerCycle * 2, 10)) as any[];
   const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x', 'linkedin'] as Network[]).map(network => [network, dailyJobCount(network)])) as Record<Network, number>;
   if (!dry) {
@@ -179,6 +184,8 @@ export async function publish(dryRunFlag = false) {
         newsQueued: newsQueuedCount('x'),
         jobsToday: dailyCount.x + emitted.x,
         maxJobsPerDay: config.daily.x,
+        maxPerCycle: config.jobsPerCycle,
+        emittedThisCycle: emitted.x,
       })
       : jobSlotsToday({
         capacity: config.queueCapacity,
@@ -187,6 +194,8 @@ export async function publish(dryRunFlag = false) {
         newsQueued: 0,
         jobsToday: dailyCount.linkedin + emitted.linkedin,
         maxJobsPerDay: config.daily.linkedin,
+        maxPerCycle: config.jobsPerCycle,
+        emittedThisCycle: emitted.linkedin,
       });
     if (!slots) continue;
     const job = rowToJob(row);

@@ -26,16 +26,15 @@ describe('Buffer status synchronization', () => {
 });
 
 describe('shared Buffer X quota', () => {
-  it('lets jobs take all 10 daily slots when the queue is empty', () => {
-    expect(jobSlotsToday({ capacity: 10, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 0, maxJobsPerDay: 10 })).toBe(10);
+  it('treats capacity 0 as unlimited so jobs are not capped by a 10-slot queue', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 80, newsQueued: 20, jobsToday: 0, maxJobsPerDay: 480, maxPerCycle: 10 })).toBe(10);
+    expect(newsToEvictForJobs({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 50, jobsWanted: 10 })).toBe(0);
   });
-  it('evicts queued news so 10 job posts can enter a full Buffer queue', () => {
-    expect(newsToEvictForJobs({ capacity: 10, reserve: 0, jobQueued: 0, newsQueued: 10, jobsWanted: 10 })).toBe(10);
+  it('still batches at most maxPerCycle jobs even with a high daily cap', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 100, maxJobsPerDay: 480, maxPerCycle: 10, emittedThisCycle: 0 })).toBe(10);
   });
-  it('blocks news when jobs already used the 10 daily X posts', () => {
-    expect(newsSlotsToday({ capacity: 10, reserve: 0, jobQueued: 10, newsQueued: 0, jobsToday: 10, newsToday: 0, maxNewsPerDay: 2, maxXPostsPerDay: 10 })).toBe(0);
-  });
-  it('allows leftover news only after jobs', () => {
-    expect(newsSlotsToday({ capacity: 10, reserve: 0, jobQueued: 8, newsQueued: 0, jobsToday: 8, newsToday: 0, maxNewsPerDay: 2, maxXPostsPerDay: 10 })).toBe(2);
+  it('keeps news on its own small daily cap and does not steal job quota', () => {
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 200, newsQueued: 0, newsToday: 0, maxNewsPerDay: 4 })).toBe(4);
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, newsToday: 4, maxNewsPerDay: 4 })).toBe(0);
   });
 });

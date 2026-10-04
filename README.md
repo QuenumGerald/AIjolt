@@ -88,8 +88,8 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 
 * laissez `DRY_RUN=true` jusqu'à validation humaine ;
 * secrets uniquement dans `.env` (ignoré par Git) ;
-* `MAX_POSTS_PER_DAY_X` (défaut 10) et `MAX_POSTS_PER_DAY_LINKEDIN` bornent chaque réseau ; X jobs et news **partagent** ces 10 slots Buffer ;
-* `BUFFER_QUEUE_CAPACITY` (10) et `BUFFER_QUEUE_RESERVE` (0) : la satire news ne peut plus saturer une file parallèle de 50 ; les jobs évincent la news en file si besoin ;
+* `MAX_POSTS_PER_DAY_X` (défaut 480) et `MAX_JOBS_PER_PUBLISH_CYCLE` (10) : jusqu'à 10 annonces toutes les 30 min. `BUFFER_QUEUE_CAPACITY=0` = file Buffer illimitée ;
+* la satire news ne part que s'il n'y a plus d'offres en attente (`MAX_AI_NEWS_POSTS_PER_DAY_X=4`) ;
 * requêtes limitées/concurrentes et trois retries exponentiels ;
 * SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
 * une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
@@ -105,7 +105,9 @@ npm run publish -- --dry-run
 npm run publish
 ```
 
-Chaque cycle `publish` resynchronise Buffer, libère les posts news (puis les posts de plus de `BUFFER_STALE_QUEUE_HOURS`) si la file X est pleine, puis enfile jusqu'à 10 annonces jobs. `publishNews` n'utilise que les créneaux restants. La limite quotidienne compte `queued` et `published`.
+Chaque cycle `publish` (30 min) resynchronise Buffer puis enfile jusqu'à 10 annonces jobs. La news n'utilise Buffer que lorsqu'il n'y a plus d'offres à poster. `BUFFER_QUEUE_CAPACITY=0` ne borne plus la file (plan Buffer illimité).
+
+Cadence : **30 min** plutôt qu'1 h. L'API GraphQL Buffer documente une fenêtre du type `100-in-15min` ; un cycle (sync des queued + 10 `createPost`) reste ~50 appels, donc sous le quota, avec le stop déjà en place sur HTTP 429. Une heure sous-utiliserait le plan payant sans gagner en fiabilité.
 
 ### Ligne éditoriale AIJolt
 
@@ -125,7 +127,7 @@ npm run news -- publish --dry-run
 ```cron
 15 * * * * cd /opt/aijolt && /usr/bin/npm run collect >> logs/cron.log 2>&1
 25 * * * * cd /opt/aijolt && /usr/bin/npm run score >> logs/cron.log 2>&1
-0 */3 * * * cd /opt/aijolt && /usr/bin/npm run publish >> logs/cron.log 2>&1
+*/30 * * * * cd /opt/aijolt && /usr/bin/npm run publish >> logs/cron.log 2>&1
 30 2 * * * cd /opt/aijolt && /usr/bin/npm run cleanup >> logs/cron.log 2>&1
 ```
 
