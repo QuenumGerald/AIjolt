@@ -12,7 +12,7 @@ CREATE INDEX IF NOT EXISTS jobs_selection ON jobs(status, score DESC);
 CREATE INDEX IF NOT EXISTS jobs_dedupe ON jobs(dedupe_key);
 CREATE TABLE IF NOT EXISTS publications (
   id INTEGER PRIMARY KEY, job_id INTEGER NOT NULL, network TEXT NOT NULL, status TEXT NOT NULL,
-  text TEXT NOT NULL, provider_id TEXT, error TEXT, created_at TEXT NOT NULL,
+  text TEXT NOT NULL, provider_id TEXT, error TEXT, created_at TEXT NOT NULL, due_at TEXT,
   FOREIGN KEY(job_id) REFERENCES jobs(id), UNIQUE(job_id, network)
 );
 CREATE TABLE IF NOT EXISTS news_items (
@@ -26,7 +26,7 @@ CREATE INDEX IF NOT EXISTS news_selection ON news_items(status, buzz_score DESC,
 CREATE INDEX IF NOT EXISTS news_dedupe ON news_items(dedupe_key);
 CREATE TABLE IF NOT EXISTS news_publications (
   id INTEGER PRIMARY KEY, news_id INTEGER NOT NULL, network TEXT NOT NULL DEFAULT 'x', status TEXT NOT NULL,
-  text TEXT NOT NULL, provider_id TEXT, error TEXT, created_at TEXT NOT NULL,
+  text TEXT NOT NULL, provider_id TEXT, error TEXT, created_at TEXT NOT NULL, due_at TEXT,
   FOREIGN KEY(news_id) REFERENCES news_items(id), UNIQUE(news_id, network)
 );
 CREATE TABLE IF NOT EXISTS runs (id INTEGER PRIMARY KEY, kind TEXT NOT NULL, status TEXT NOT NULL, details TEXT, started_at TEXT NOT NULL, finished_at TEXT);

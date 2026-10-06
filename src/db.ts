@@ -2,6 +2,10 @@ import Database from 'better-sqlite3'; import { mkdirSync, readFileSync } from '
 import { config } from './config.js'; import { dedupeKey } from './dedupe.js'; import type { Job, NewsItem } from './types.js';
 mkdirSync(dirname(config.databasePath), { recursive: true });
 export const db = new Database(config.databasePath); db.pragma('busy_timeout = 5000'); db.exec(readFileSync(new URL('./schema.sql', import.meta.url), 'utf8'));
+for (const table of ['publications', 'news_publications']) {
+  const columns = db.prepare(`PRAGMA table_info(${table})`).all() as Array<{ name: string }>;
+  if (!columns.some(column => column.name === 'due_at')) db.exec(`ALTER TABLE ${table} ADD COLUMN due_at TEXT`);
+}
 export function upsert(job: Job) {
   const now = new Date().toISOString(); const key = dedupeKey(job); const canonicalUrl = job.url.replace(/[?#].*$/, '').replace(/\/$/, '');
   const duplicate = db.prepare(`SELECT id FROM jobs WHERE (dedupe_key=? OR url=? OR url LIKE ?) AND NOT (source=? AND external_id=?)`).get(key, canonicalUrl, `${canonicalUrl}?%`, job.source, job.externalId) as {id:number}|undefined;

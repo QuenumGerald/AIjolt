@@ -41,8 +41,20 @@ export async function bufferRequest(body: object): Promise<unknown> {
   return response.json();
 }
 
+export function settleLocallyDuePublications(nowMs = Date.now(), graceMinutes = 10): number {
+  const cutoff = new Date(nowMs - graceMinutes * 60_000).toISOString();
+  let settled = 0;
+  for (const table of ['publications', 'news_publications'] as const) {
+    const result = db.prepare(`UPDATE ${table} SET status='published',error=NULL WHERE status='queued' AND due_at IS NOT NULL AND due_at <= ?`).run(cutoff);
+    settled += result.changes;
+  }
+  if (settled) logger.info(`Locally settled ${settled} Buffer posts past due time (+${graceMinutes}m grace)`);
+  return settled;
+}
+
 export async function syncBufferPublications(force = false): Promise<{ published: number; queued: number; failed: number }> {
   const now = Date.now();
+  settleLocallyDuePublications(now);
   const minIntervalMs = config.bufferSyncMinIntervalMinutes * 60_000;
   if (!force && lastBufferSyncAt && now - lastBufferSyncAt < minIntervalMs) {
     logger.info(`Buffer sync skipped: last sync was less than ${config.bufferSyncMinIntervalMinutes} minutes ago`);
@@ -227,7 +239,7 @@ export async function publish(dryRunFlag = false) {
         await makeRoomForJobPosts(1);
         post = await createBufferPost(text, channelId);
       }
-      db.prepare(`INSERT INTO publications(job_id,network,status,text,provider_id,created_at) VALUES(?,?,'queued',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, network, text, post.id, new Date().toISOString());
+      db.prepare(`INSERT INTO publications(job_id,network,status,text,provider_id,created_at,due_at) VALUES(?,?,'queued',?,?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at,due_at=excluded.due_at`).run(row.id, network, text, post.id, new Date().toISOString(), post.dueAt ?? null);
       logger.info(`Buffer scheduled ${network} job ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`);
     } catch (error) {
       if (error instanceof BufferRateLimitError) {

@@ -48,7 +48,7 @@ export async function publishNews(dryRunFlag = false): Promise<void> {
         return;
       }
       const post = await createBufferPost(text, config.buffer.x);
-      db.prepare(`INSERT INTO news_publications(news_id,network,status,text,provider_id,created_at) VALUES(?,'x','queued',?,?,?) ON CONFLICT(news_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at`).run(row.id, text, post.id, new Date().toISOString());
+      db.prepare(`INSERT INTO news_publications(news_id,network,status,text,provider_id,created_at,due_at) VALUES(?,'x','queued',?,?,?,?,?) ON CONFLICT(news_id,network) DO UPDATE SET status='queued',text=excluded.text,provider_id=excluded.provider_id,error=NULL,created_at=excluded.created_at,due_at=excluded.due_at`).run(row.id, text, post.id, new Date().toISOString(), post.dueAt ?? null);
       logger.info(`Buffer scheduled AI news ${row.id} as ${post.id}${post.dueAt ? ` for ${post.dueAt}` : ''}`);
     } catch (error) {
       if (error instanceof BufferRateLimitError) {
