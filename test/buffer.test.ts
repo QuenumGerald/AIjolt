@@ -28,27 +28,27 @@ describe('Buffer status synchronization', () => {
 });
 
 describe('shared Buffer X quota', () => {
-  it('treats capacity 0 as unlimited and still posts one job per 30 min cycle', () => {
-    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 80, newsQueued: 20, jobsToday: 0, newsToday: 3, maxJobsPerDay: 42, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(1);
+  it('treats capacity 0 as unlimited and still posts two jobs per 30 min cycle', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 80, newsQueued: 20, jobsToday: 0, newsToday: 3, maxJobsPerDay: 88, maxXPostsPerDay: 100, maxPerCycle: 2 })).toBe(2);
     expect(newsToEvictForJobs({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 50, jobsWanted: 10 })).toBe(0);
   });
-  it('stops jobs at 42/day and still allows leftover news under the 50 X budget', () => {
-    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 0, maxJobsPerDay: 42, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(0);
-    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 0, maxNewsPerDay: 8, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(1);
+  it('stops jobs at 88/day and still allows leftover news under the 100 X verified budget', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 88, newsToday: 0, maxJobsPerDay: 88, maxXPostsPerDay: 100, maxPerCycle: 2 })).toBe(0);
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 88, newsToday: 0, maxNewsPerDay: 10, maxXPostsPerDay: 100, maxPerCycle: 1 })).toBe(1);
   });
-  it('posts news even while jobs are still waiting, up to 8/day', () => {
-    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 200, newsQueued: 0, jobsToday: 10, newsToday: 0, maxNewsPerDay: 8, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(1);
-    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 10, newsToday: 8, maxNewsPerDay: 8, maxXPostsPerDay: 50 })).toBe(0);
+  it('posts news even while jobs are still waiting, up to 10/day', () => {
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 200, newsQueued: 0, jobsToday: 10, newsToday: 0, maxNewsPerDay: 10, maxXPostsPerDay: 100, maxPerCycle: 1 })).toBe(1);
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 10, newsToday: 10, maxNewsPerDay: 10, maxXPostsPerDay: 100 })).toBe(0);
   });
-  it('never lets jobs plus news exceed 50 X posts in a day', () => {
-    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 8, maxJobsPerDay: 42, maxXPostsPerDay: 50, maxPerCycle: 1 })).toBe(0);
-    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 42, newsToday: 8, maxNewsPerDay: 8, maxXPostsPerDay: 50 })).toBe(0);
+  it('never lets jobs plus news exceed 100 X verified posts in a day', () => {
+    expect(jobSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 88, newsToday: 12, maxJobsPerDay: 88, maxXPostsPerDay: 100, maxPerCycle: 2 })).toBe(0);
+    expect(newsSlotsToday({ capacity: 0, reserve: 0, jobQueued: 0, newsQueued: 0, jobsToday: 90, newsToday: 10, maxNewsPerDay: 10, maxXPostsPerDay: 100 })).toBe(0);
   });
-  it('spaces custom dueAt times 30 minutes apart', () => {
-    const first = nextCustomDueAt(1_000_000, null, 30, 5);
+  it('spaces custom dueAt times 20 minutes apart', () => {
+    const first = nextCustomDueAt(1_000_000, null, 20, 5);
     expect(Date.parse(first)).toBe(1_000_000 + 5 * 60_000);
-    const second = nextCustomDueAt(1_000_000, Date.parse(first), 30, 5);
-    expect(Date.parse(second) - Date.parse(first)).toBe(30 * 60_000);
+    const second = nextCustomDueAt(1_000_000, Date.parse(first), 20, 5);
+    expect(Date.parse(second) - Date.parse(first)).toBe(20 * 60_000);
   });
 });
 
