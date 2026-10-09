@@ -1,6 +1,7 @@
 import { config } from './config.js';
 import { db, rowToJob } from './db.js';
 import { generatePost } from './posts.js';
+import { evaluateJobPost, shouldSkipForHistory } from './post-quality.js';
 import { logger } from './logger.js';
 import { nextCustomDueAt } from './schedule.js';
 import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from './buffer.js';
@@ -190,7 +191,7 @@ export async function makeRoomForJobPosts(jobsWanted: number): Promise<number> {
 export async function publish(dryRunFlag = false) {
   const dry = dryRunFlag || config.dryRun;
   if (!dry) await syncBufferPublications(false);
-  const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued')) ORDER BY score DESC LIMIT ?`).all(Math.max(config.jobsPerCycle, 1)) as any[];
+  const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued','skipped')) ORDER BY score DESC LIMIT ?`).all(Math.max(40, config.jobsPerCycle * 20)) as any[];
   const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x', 'linkedin'] as Network[]).map(network => [network, dailyJobCount(network)])) as Record<Network, number>;
   if (!dry) {
@@ -222,8 +223,25 @@ export async function publish(dryRunFlag = false) {
         emittedThisCycle: emitted.linkedin,
       });
     if (!slots) continue;
-    const job = rowToJob(row);
+    const verdict = evaluateJobPost(rowToJob(row));
+    if (!verdict.ok) {
+      if (verdict.kind === 'permanent') {
+        db.prepare(`INSERT INTO publications(job_id,network,status,text,error,created_at) VALUES(?,?,'skipped','',?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='skipped',error=excluded.error,created_at=excluded.created_at`).run(row.id, network, verdict.reason, new Date().toISOString());
+        logger.info(`Skipping ${network} job ${row.id}: ${verdict.reason}`);
+      }
+      continue;
+    }
+    const job = verdict.job;
+    const recent = db.prepare(`SELECT j.company AS company, p.text AS text FROM publications p JOIN jobs j ON j.id=p.job_id WHERE p.network=? AND p.status IN ('published','queued') ORDER BY datetime(coalesce(p.due_at, p.created_at)) DESC LIMIT 25`).all(network) as Array<{ company: string; text: string }>;
     const text = await generatePost(job, network);
+    const historySkip = shouldSkipForHistory(job, text, recent);
+    if (historySkip) {
+      if (historySkip.startsWith('permanent:')) {
+        db.prepare(`INSERT INTO publications(job_id,network,status,text,error,created_at) VALUES(?,?,'skipped',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='skipped',error=excluded.error,created_at=excluded.created_at`).run(row.id, network, text, historySkip, new Date().toISOString());
+      }
+      logger.info(`Deferring ${network} job ${row.id}: ${historySkip}`);
+      continue;
+    }
     emitted[network]++;
     if (dry) { logger.info(`[DRY RUN] ${network}:\n${text}`); continue; }
     const channelId = config.buffer[network];
