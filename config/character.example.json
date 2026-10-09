@@ -1,11 +1,28 @@
 {
-  "name": "Personnage récurrent",
-  "description": "Identité visuelle stylisée 3D du narrateur, sans obligation de ressemblance exacte.",
-  "outfit": "Tenue signature à conserver d'une séquence à l'autre.",
-  "style": "animation 3D stylisée, éclairage doux, rendu cinématique propre, vertical 9:16",
-  "continuityDetails": "",
+  "name": "Nom du personnage",
+  "description": "Identité visuelle verrouillée: visage, silhouette, coupe. Style cohérent d'un plan à l'autre.",
+  "outfit": "Tenue signature unique à conserver d'une séquence à l'autre.",
+  "outfitLocked": true,
+  "style": "anime 2D expressif, contours dessinés propres, couleurs cinématiques, éclairage doux, animation fluide verticale 9:16",
+  "continuityDetails": "Détails de continuité (lieux, props, companions) à préserver.",
+  "companions": [
+    {
+      "id": "exemple-compagnon",
+      "description": "Description visuelle courte et stable."
+    }
+  ],
+  "props": [
+    "objet récurrent 1"
+  ],
+  "forbiddenVisualTokens": [
+    "accessoire interdit",
+    "recoloration interdite"
+  ],
   "referenceImageUrls": [],
-  "referenceImagePaths": [],
+  "referenceImagePaths": [
+    "./refs/face-sheet.png",
+    "./refs/full-body.png"
+  ],
   "referenceVideoUrls": [],
   "avatarAssetIds": []
 }

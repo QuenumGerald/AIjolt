@@ -49,12 +49,23 @@ export interface EpisodeScript {
   scenes: SceneScript[];
 }
 
+export interface CharacterCompanion {
+  id: string;
+  description: string;
+}
+
 export interface CharacterStyle {
   name: string;
   description: string;
   outfit: string;
+  /** When true, scene outfits are forced to character.outfit before any Seedance call. */
+  outfitLocked: boolean;
   style: string;
   continuityDetails: string;
+  companions: CharacterCompanion[];
+  props: string[];
+  /** Substrings forbidden in visual prompts / outfits (case-insensitive). */
+  forbiddenVisualTokens: string[];
   referenceImageUrls: string[];
   referenceImagePaths: string[];
   referenceVideoUrls: string[];

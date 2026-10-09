@@ -8,6 +8,9 @@ import { publishEpisode } from './publish.js';
 import { snapshotSpend } from './budget.js';
 import type { StoryDestination } from './types.js';
 import { parseEpisodeScript } from './script.js';
+import { loadCharacterStyle } from './character.js';
+import { validateEpisodeScript } from './validate-script.js';
+import { initAnimatedSeries } from './init.js';
 
 function parseId(value: string | number | undefined): number {
   const id = Number(value);
@@ -44,18 +47,58 @@ function episodeView(store: ReturnType<typeof createStoryRuntime>['store'], id: 
 }
 
 export function registerStoryCommands(cli: Command): void {
-  const story = cli.command('story').description('pipeline d\'épisodes 3D verticaux et publication Buffer');
+  const story = cli.command('story').description('pipeline d\'épisodes animés verticaux et publication Buffer');
   const jsonOpt = (cmd: Command) => cmd.option('--json', 'écrire le résultat JSON sur stdout (logs sur stderr)');
 
-  jsonOpt(story.command('create').description('enregistrer une note et une durée'))
+  jsonOpt(story.command('init').description('créer un projet série animée depuis le template'))
+    .requiredOption('--name <title>', 'titre de la série / du personnage')
+    .option('--dir <path>', 'dossier cible', './series/ma-serie')
+    .option('--apply', 'copier aussi la bible vers config/character.json')
+    .option('--force', 'écraser un dossier template déjà présent')
+    .action((opts: { name: string; dir: string; apply?: boolean; force?: boolean; json?: boolean }) => {
+      const result = initAnimatedSeries({
+        name: opts.name,
+        dir: opts.dir,
+        apply: Boolean(opts.apply),
+        force: Boolean(opts.force),
+      });
+      emit(
+        Boolean(opts.json),
+        result,
+        [
+          `Projet série créé: ${result.dir}`,
+          `Bible: ${result.characterPath}`,
+          result.appliedConfigPath ? `Appliqué → ${result.appliedConfigPath}` : 'Pointe STORY_CHARACTER_CONFIG vers la bible du projet',
+          'Ensuite: remplir character.json, déposer refs/, écrire episodes/*.json, puis story create --script …',
+        ].join('\n'),
+      );
+    });
+
+  jsonOpt(story.command('create').description('créer un épisode (note et/ou script JSON)'))
     .option('--note <text>', 'texte dicté')
     .option('--file <path>', 'lire la note depuis un fichier texte')
+    .option('--script <path>', 'script JSON obligatoire pour le mode template (valide + verrouille la bible)')
     .requiredOption('--duration <minutes>', 'durée cible en minutes: 0.5, 2, 3 ou 5')
-    .action((opts: { note?: string; file?: string; duration: string; json?: boolean }) => {
-      const note = opts.note ?? (opts.file ? readFileSync(opts.file, 'utf8') : '');
-      if (!note.trim()) throw new Error('Fournissez --note ou --file');
+    .action((opts: { note?: string; file?: string; script?: string; duration: string; json?: boolean }) => {
       const { store } = createStoryRuntime();
-      const episode = store.createEpisode(note, minutesToSeconds(Number(opts.duration)));
+      const durationSeconds = minutesToSeconds(Number(opts.duration));
+      if (opts.script) {
+        const character = loadCharacterStyle();
+        const parsed = parseEpisodeScript(readFileSync(opts.script, 'utf8'));
+        const { script, warnings } = validateEpisodeScript(parsed, character, durationSeconds);
+        for (const warning of warnings) logger.warn(warning);
+        const note = opts.note?.trim()
+          || (opts.file ? readFileSync(opts.file, 'utf8').trim() : '')
+          || script.narration
+          || script.title;
+        const created = store.createEpisode(note, durationSeconds);
+        const episode = store.saveScript(created.id, script);
+        emit(Boolean(opts.json), episode, `Episode ${episode.id} créé avec script validé (${episode.durationSeconds / 60} min, ${episode.status})`);
+        return;
+      }
+      const note = opts.note ?? (opts.file ? readFileSync(opts.file, 'utf8') : '');
+      if (!note.trim()) throw new Error('Fournissez --script, ou --note / --file');
+      const episode = store.createEpisode(note, durationSeconds);
       emit(Boolean(opts.json), episode, `Episode ${episode.id} créé (${episode.durationSeconds / 60} min, ${episode.status})`);
     });
 
@@ -126,9 +169,13 @@ export function registerStoryCommands(cli: Command): void {
       const { store } = createStoryRuntime();
       const id = parseId(opts.id);
       if (opts.file) {
-        const script = parseEpisodeScript(readFileSync(opts.file, 'utf8'));
-        const episode = store.saveScript(id, script);
-        emit(Boolean(opts.json), episode, `Script mis à jour pour l'épisode ${id}; assets dépendants invalidés`);
+        const episode = store.getEpisode(id);
+        const character = loadCharacterStyle();
+        const parsed = parseEpisodeScript(readFileSync(opts.file, 'utf8'));
+        const { script, warnings } = validateEpisodeScript(parsed, character, episode.durationSeconds);
+        for (const warning of warnings) logger.warn(warning);
+        const saved = store.saveScript(id, script);
+        emit(Boolean(opts.json), saved, `Script validé et mis à jour pour l'épisode ${id}; assets dépendants invalidés`);
         return;
       }
       const episode = store.getEpisode(id);
