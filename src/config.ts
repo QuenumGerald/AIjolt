@@ -40,7 +40,7 @@ export const config = {
   buffer: { token: process.env.BUFFER_ACCESS_TOKEN, x: process.env.BUFFER_X_CHANNEL_ID, linkedin: process.env.BUFFER_LINKEDIN_CHANNEL_ID },
   deepseek: { apiKey: process.env.DEEPSEEK_API_KEY, model: process.env.DEEPSEEK_MODEL ?? 'deepseek-chat' },
   news: {
-    enabled: (process.env.AI_NEWS_ENABLED ?? 'true').toLowerCase() !== 'false',
+    enabled: (process.env.AI_NEWS_ENABLED ?? 'false').toLowerCase() === 'true',
     googleEnabled: (process.env.AI_NEWS_GOOGLE_ENABLED ?? 'true').toLowerCase() !== 'false',
     hackerNewsEnabled: (process.env.AI_NEWS_HN_ENABLED ?? 'true').toLowerCase() !== 'false',
     queries: list('AI_NEWS_QUERIES').length ? list('AI_NEWS_QUERIES') : ['OpenAI OR ChatGPT', 'Anthropic OR Claude', 'Google Gemini AI', 'AI model safety', 'AI model escaped sandbox'],
