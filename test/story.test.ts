@@ -309,3 +309,92 @@ describe('assemblage', () => {
     }
   }, 60_000);
 });
+
+describe('consistance personnages / script', () => {
+  it('rejette les tokens interdits et verrouille la tenue bible', async () => {
+    const { validateEpisodeScript, ScriptValidationError } = await import('../src/story/validate-script.js');
+    const character = {
+      name: 'Gé',
+      description: 'homme afro-européen',
+      outfit: 'full black AF1 North Face',
+      outfitLocked: true,
+      style: 'anime 2D expressif',
+      continuityDetails: '',
+      companions: [],
+      props: [],
+      forbiddenVisualTokens: ['casquette', 'motif bleu'],
+      referenceImageUrls: ['https://example.com/ref.png'],
+      referenceImagePaths: [],
+      referenceVideoUrls: [],
+      avatarAssetIds: [],
+      missing: [],
+    };
+    const bad = sampleScript(30);
+    bad.scenes = bad.scenes.slice(0, Math.ceil(30 / config.story.segmentMaxSeconds));
+    bad.scenes[0].outfit = 'Casquette noire à l\'envers, t-shirt motif bleu';
+    bad.scenes[0].visualPrompt = 'Gé porte une casquette et un motif bleu en ville';
+    bad.narration = bad.scenes.map(s => s.narration).join(' ');
+    expect(() => validateEpisodeScript(bad, character, 30)).toThrow(ScriptValidationError);
+
+    const ok = sampleScript(30);
+    ok.scenes = ok.scenes.slice(0, Math.ceil(30 / config.story.segmentMaxSeconds));
+    ok.scenes = ok.scenes.map(scene => ({
+      ...scene,
+      outfit: 'tenue inventée',
+      visualPrompt: `Gé marche, plan ${scene.index}, anime 2D expressif.`,
+    }));
+    ok.narration = ok.scenes.map(s => s.narration).join(' ');
+    const locked = validateEpisodeScript(ok, character, 30);
+    expect(locked.script.scenes.every(scene => scene.outfit === character.outfit)).toBe(true);
+  });
+
+  it('préfère le style de character.json si STORY_STYLE_DESCRIPTION est vide', async () => {
+    const { loadCharacterStyle } = await import('../src/story/character.js');
+    const prev = config.story.styleDescription;
+    const prevPath = config.story.characterConfigPath;
+    config.story.styleDescription = '';
+    config.story.characterConfigPath = join(process.cwd(), 'config/character.json');
+    try {
+      const style = loadCharacterStyle();
+      expect(style.style.toLowerCase()).toContain('2d');
+      expect(style.outfitLocked).toBe(true);
+      expect(style.forbiddenVisualTokens.length).toBeGreaterThan(0);
+      expect(style.name).toBe('Gé');
+    } finally {
+      config.story.styleDescription = prev;
+      config.story.characterConfigPath = prevPath;
+    }
+  });
+
+  it('inclut la last frame dans reference_images du prompt assemblé', async () => {
+    const { visualPromptForScene } = await import('../src/story/script.js');
+    const character = {
+      name: 'Gé',
+      description: 'desc',
+      outfit: 'full black',
+      outfitLocked: true,
+      style: 'anime 2D',
+      continuityDetails: '',
+      companions: [],
+      props: [],
+      forbiddenVisualTokens: [],
+      referenceImageUrls: [],
+      referenceImagePaths: [],
+      referenceVideoUrls: [],
+      avatarAssetIds: [],
+      missing: [],
+    };
+    const scene = {
+      index: 1,
+      durationSeconds: 10,
+      narration: 'suite',
+      visualPrompt: 'Gé court',
+      location: 'rue',
+      outfit: 'autre chose',
+      continuityNotes: '',
+    };
+    const prompt = visualPromptForScene(scene, character);
+    expect(prompt).toContain('Tenue (verrouillée): full black');
+    expect(prompt).not.toContain('autre chose');
+  });
+});

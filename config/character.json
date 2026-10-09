@@ -1,9 +1,35 @@
 {
-  "name": "Personnage récurrent",
-  "description": "Gé, homme adulte afro-européen, barbe courte soignée, silhouette athlétique. Personnage fictionnel en anime 2D stylisé.",
+  "name": "Gé",
+  "description": "Gé, homme adulte afro-européen, barbe courte soignée, silhouette athlétique. Personnage fictionnel en anime 2D stylisé. Même visage et même coupe d'un plan à l'autre.",
   "outfit": "Tenue signature full black : vêtements noirs, accessoires noirs, chaussures Nike Air Force 1 noires, sac North Face noir.",
+  "outfitLocked": true,
   "style": "anime 2D expressif, contours dessinés propres, couleurs cinématiques, éclairage doux, animation fluide verticale 9:16",
-  "continuityDetails": "Femme de Gé : blanche, cheveux noirs bouclés, grands yeux marron. Chat noir. Objets récurrents : ordinateur Lenovo noir, sac North Face noir, voiture BMW noire. Garder ces couleurs, marques et caractéristiques lorsqu'ils apparaissent ; ne pas les remplacer ni les recolorer.",
+  "continuityDetails": "Garder couleurs, marques et caractéristiques lorsqu'ils apparaissent ; ne pas les remplacer ni les recolorer.",
+  "companions": [
+    {
+      "id": "femme",
+      "description": "Femme de Gé : blanche, cheveux noirs bouclés, grands yeux marron."
+    },
+    {
+      "id": "chat",
+      "description": "Chat noir."
+    }
+  ],
+  "props": [
+    "ordinateur Lenovo noir",
+    "sac North Face noir",
+    "voiture BMW noire",
+    "Nike Air Force 1 noires"
+  ],
+  "forbiddenVisualTokens": [
+    "casquette",
+    "motif bleu",
+    "chaîne argentée",
+    "t-shirt à motif",
+    "t-shirt motif",
+    "capuchon",
+    "hoodie coloré"
+  ],
   "referenceImageUrls": [],
   "referenceImagePaths": [
     "./Planche de référence du personnage animé.png",

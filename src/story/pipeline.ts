@@ -12,6 +12,7 @@ import { StoryStore, hashText } from './store.js';
 import { loadCharacterStyle, assertCharacterReady } from './character.js';
 import { assertWithinBudget, requireRatesForLiveRun, ttsCostUsd, videoCostUsd } from './budget.js';
 import { generateScript, planSegmentDurations, visualPromptForScene } from './script.js';
+import { validateEpisodeScript } from './validate-script.js';
 import { buildCues } from './subtitles.js';
 import { assembleEpisode, makeDryRunNarration, makeDryRunSegment } from './assemble.js';
 import { extractLastFrame, ffprobe } from './ffmpeg.js';
@@ -73,6 +74,8 @@ export class StoryPipeline {
 
     if (!episode.script) {
       episode = await this.generateScript(episode, character);
+    } else {
+      episode = this.lockAndPersistScript(episode, character);
     }
     if (options.pauseAfterScript) return store.getEpisode(episodeId);
     assertCharacterReady(character, this.deps.dryRun);
@@ -106,11 +109,22 @@ export class StoryPipeline {
     };
   }
 
+  private lockAndPersistScript(episode: Episode, character: CharacterStyle): Episode {
+    if (!episode.script) throw new Error(`Episode ${episode.id}: script manquant`);
+    const { script, warnings } = validateEpisodeScript(episode.script, character, episode.durationSeconds);
+    for (const warning of warnings) logger.warn(`Episode ${episode.id}: ${warning}`);
+    const nextHash = hashText(JSON.stringify(script));
+    if (episode.scriptHash === nextHash) return episode;
+    return this.deps.store.saveScript(episode.id, script);
+  }
+
   private async generateScript(episode: Episode, character: CharacterStyle): Promise<Episode> {
     const { store, llm, dryRun } = this.deps;
     const existing = store.findTask(episode.id, 'script');
-    const inputHash = hashText(`${episode.note}|${episode.durationSeconds}|${character.name}|${character.description}`);
-    if (existing?.status === 'succeeded' && episode.script && existing.inputHash === inputHash) return episode;
+    const inputHash = hashText(`${episode.note}|${episode.durationSeconds}|${character.name}|${character.description}|${character.outfit}`);
+    if (existing?.status === 'succeeded' && episode.script && existing.inputHash === inputHash) {
+      return this.lockAndPersistScript(episode, character);
+    }
     requireRatesForLiveRun(dryRun);
     assertWithinBudget(store, episode.id);
     const task = store.upsertTask({ episodeId: episode.id, step: 'script', status: 'submitted', provider: 'gmi-deepseek', inputHash, incrementAttempts: true });
@@ -123,6 +137,7 @@ export class StoryPipeline {
         llm,
         dryRun,
       });
+      for (const warning of generated.warnings) logger.warn(`Episode ${episode.id}: ${warning}`);
       const saved = store.saveScript(episode.id, generated.script);
       const llmCost = generated.usage ? estimateLlmUsd(generated.usage) : { costKind: 'unknown' as const, usd: null };
       store.addUsage({
@@ -247,7 +262,11 @@ export class StoryPipeline {
   private async generateSegments(episode: Episode, character: CharacterStyle, audioDurationMs: number, retryFailed: boolean): Promise<string[]> {
     const { store, gmi, dryRun } = this.deps;
     const script = episode.script!;
-    const durations = planSegmentDurations(audioDurationMs / 1000);
+    if (!script.scenes.length) throw new Error(`Episode ${episode.id}: script sans scènes`);
+    const durations = planSegmentDurations(audioDurationMs / 1000, script.scenes.length);
+    if (durations.length !== script.scenes.length) {
+      throw new Error(`Episode ${episode.id}: ${durations.length} segments planifiés ≠ ${script.scenes.length} scènes`);
+    }
     const limit = pLimit(config.gmi.videoConcurrency);
     const paths: string[] = new Array(durations.length);
     let previousPublicUrl: string | undefined;
@@ -287,7 +306,10 @@ export class StoryPipeline {
     gmi: GmiClient;
     store: StoryStore;
   }): Promise<string> {
-    const scene = input.script.scenes[Math.min(input.index, input.script.scenes.length - 1)];
+    const scene = input.script.scenes[input.index];
+    if (!scene) {
+      throw new Error(`Segment ${input.index}: aucune scène script correspondante (${input.script.scenes.length} scènes). Réécrivez le script avant Seedance.`);
+    }
     const prompt = visualPromptForScene(scene, input.character, input.index > 0 ? input.script.scenes[input.index - 1] : undefined);
     const inputHash = hashText(`${input.episode.scriptHash}|${input.index}|${prompt}|${input.durationSeconds}|${config.gmi.videoModel}`);
     const task = input.store.findTask(input.episode.id, 'video', input.index);
@@ -332,9 +354,13 @@ export class StoryPipeline {
       generate_audio: config.story.generateVideoAudio,
       web_search: false,
     };
-    // Les références avatar sont compatibles avec le ratio explicite. La
-    // continuité entre segments est portée par le prompt et la vidéo précédente.
-    if (input.character.referenceImageUrls.length) payload.reference_images = input.character.referenceImageUrls.slice(0, 9);
+    // Continuité identité: planche perso + last frame du segment précédent.
+    // Continuité motion: vidéo précédente en reference_videos.
+    const referenceImages = [
+      input.previousFrameUrl,
+      ...input.character.referenceImageUrls,
+    ].filter((value): value is string => Boolean(value));
+    if (referenceImages.length) payload.reference_images = referenceImages.slice(0, 9);
     if (input.character.avatarAssetIds.length) payload.avatar_asset_ids = input.character.avatarAssetIds;
     const videos = [input.previousPublicUrl, ...input.character.referenceVideoUrls].filter(Boolean).slice(0, 3);
     if (videos.length) payload.reference_videos = videos;

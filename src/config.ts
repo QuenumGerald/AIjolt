@@ -105,7 +105,8 @@ export const config = {
     characterName: process.env.STORY_CHARACTER_NAME ?? '',
     characterDescription: process.env.STORY_CHARACTER_DESCRIPTION ?? '',
     characterOutfit: process.env.STORY_CHARACTER_OUTFIT ?? '',
-    styleDescription: process.env.STORY_STYLE_DESCRIPTION ?? 'animation 3D stylisée, rendu cinématique propre, éclairage doux',
+    // Empty default so config/character.json style wins unless env override is set.
+    styleDescription: process.env.STORY_STYLE_DESCRIPTION ?? '',
     continuityDetails: process.env.STORY_CHARACTER_CONTINUITY_DETAILS ?? '',
     referenceImageUrls: list('STORY_CHARACTER_REFERENCE_URLS'),
     referenceImagePaths: list('STORY_CHARACTER_REFERENCE_PATHS'),
