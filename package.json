@@ -20,6 +20,7 @@
     "site:build": "npm run build --prefix site",
     "doctor": "tsx src/cli.ts doctor",
     "start": "tsx src/cli.ts start",
+    "story:init": "tsx src/cli.ts story init",
     "story:create": "tsx src/cli.ts story create",
     "story:run": "tsx src/cli.ts story run",
     "story:status": "tsx src/cli.ts story status",

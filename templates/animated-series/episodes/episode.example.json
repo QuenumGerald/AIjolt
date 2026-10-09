@@ -1,0 +1,26 @@
+{
+  "title": "Titre de l'épisode",
+  "logline": "Une phrase : conflit + enjeu.",
+  "narration": "Texte oral complet lu par le TTS. Scène une. Scène deux.",
+  "language": "fr",
+  "scenes": [
+    {
+      "index": 0,
+      "durationSeconds": 15,
+      "narration": "Texte oral complet lu par le TTS. Scène une.",
+      "visualPrompt": "NomDuPerso marche dans la rue, caméra verticale 9:16, lumière du soir.",
+      "location": "rue du quartier",
+      "outfit": "Tenue signature UNIQUE (couleurs, marques, accessoires autorisés).",
+      "continuityNotes": "même visage, même tenue signature"
+    },
+    {
+      "index": 1,
+      "durationSeconds": 15,
+      "narration": "Scène deux.",
+      "visualPrompt": "NomDuPerso s'arrête, regarde le bus partir, même identité, plan serré.",
+      "location": "arrêt de bus",
+      "outfit": "Tenue signature UNIQUE (couleurs, marques, accessoires autorisés).",
+      "continuityNotes": "continuité depuis la scène précédente"
+    }
+  ]
+}

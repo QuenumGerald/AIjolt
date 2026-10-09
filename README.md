@@ -1,8 +1,10 @@
 # AIJolt
 
-AIJolt transforme une note dictée en épisode fictionnel animé en 3D (format vertical 9:16, appelé ici « short »), avec narration française, puis prépare la publication via Buffer vers TikTok, Instagram et YouTube.
+AIJolt produit des épisodes fictionnels animés verticaux 9:16 (shorts) : script verrouillé + personnage stable → TTS → Seedance → MP4 → validation humaine → Buffer (TikTok / Instagram / YouTube).
 
-Parcours : texte dicté → script → voix TTS → génération vidéo GMI → assemblage MP4 → validation humaine → publication Buffer.
+**Mode template (recommandé pour un projet animé)** : `story init` crée un dossier série (bible, refs, scripts) que tu remplis une fois, puis tu enchaînes les épisodes sans retaper la config.
+
+Parcours classique : note ou script JSON → validation bible → voix TTS → génération vidéo GMI → assemblage MP4 → approve → publish.
 
 L’ancien collecteur d’offres IA et le pipeline d’actualité restent dans le dépôt, mais leurs collectes, scoring et publications automatiques sont **désactivés par défaut**. Les données existantes ne sont pas supprimées.
 
@@ -21,11 +23,14 @@ L’ancien collecteur d’offres IA et le pipeline d’actualité restent dans l
 git clone <repo> && cd AIjolt
 npm install
 cp .env.example .env
-cp config/character.example.json config/character.json
+npm run story:init -- --name "Ma série" --dir ./series/ma-serie --apply
+# déposer les planches dans ./series/ma-serie/refs/ puis éditer character.json
 npm run build
 ```
 
 Node.js 20+, FFmpeg et FFprobe sont requis. Utilisez **npm**, pas pnpm.
+
+Le template vivant est dans `templates/animated-series/` (voir son README). `story:init --apply` copie aussi la bible vers `config/character.json`.
 
 `DRY_RUN=true` par défaut : aucun appel payant (LLM, GMI, Buffer). Les fixtures locales simulent la voix et les segments.
 
@@ -49,20 +54,22 @@ Les tarifs ne sont pas nécessaires au fonctionnement du pipeline ; les coûts n
 
 Aucune variable `YOUTUBE_CLIENT_*` n’est utilisée.
 
-## De la note au MP4
+## De la note / du script au MP4
 
 ```bash
-# 1. Enregistrer une note (0.5, 2, 3 ou 5 minutes)
-npm run story:create -- --note "J'ai raté le bus, et la ville a changé." --duration 3
-# ou depuis un fichier dicté / collé :
-npm run story:create -- --file ./notes/episode.txt --duration 2 --json
+# A) Template série (bible + refs + script fourni — recommandé)
+npm run story:init -- --name "Side Quest" --dir ./series/side-quest --apply
+# éditer series/side-quest/character.json + refs/ + episodes/mon-ep.json
+npm run story:create -- --script ./series/side-quest/episodes/mon-ep.json --duration 0.5 --json
+npm run story:run -- --id 1 --json
 
-# 2. Optionnel : générer seulement le script, le relire, le modifier
+# B) Ancien flux note dictée → script LLM
+npm run story:create -- --note "J'ai raté le bus, et la ville a changé." --duration 3
 npm run story:run -- --id 1 --pause-after-script --json
 npm run story:script -- --id 1                 # affiche le JSON
 npm run story:script -- --id 1 --file ./script.json
 
-# 3. Pipeline complet jusqu'au MP4 (reprend les étapes manquantes)
+# Pipeline complet / suivi
 npm run story:run -- --id 1 --json
 npm run story:status -- --id 1 --json
 npm run story:list -- --json

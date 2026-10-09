@@ -398,3 +398,23 @@ describe('consistance personnages / script', () => {
     expect(prompt).not.toContain('autre chose');
   });
 });
+
+describe('template série animée', () => {
+  it('story init crée un dossier utilisable depuis le template', async () => {
+    const { initAnimatedSeries } = await import('../src/story/init.js');
+    const { mkdtempSync, existsSync, readFileSync } = await import('node:fs');
+    const { join } = await import('node:path');
+    const { tmpdir } = await import('node:os');
+    const dir = join(mkdtempSync(join(tmpdir(), 'aijolt-init-')), 'serie');
+    const result = initAnimatedSeries({ name: 'Side Quest', dir });
+    expect(result.slug).toBe('side-quest');
+    expect(existsSync(join(dir, 'character.json'))).toBe(true);
+    expect(existsSync(join(dir, 'episodes', 'episode.example.json'))).toBe(true);
+    expect(existsSync(join(dir, 'refs', 'README.md'))).toBe(true);
+    const character = JSON.parse(readFileSync(join(dir, 'character.json'), 'utf8'));
+    expect(character.outfitLocked).toBe(true);
+    expect(character.referenceImagePaths[0]).toContain('refs/face-sheet.png');
+    const series = JSON.parse(readFileSync(join(dir, 'series.json'), 'utf8'));
+    expect(series.title).toBe('Side Quest');
+  });
+});

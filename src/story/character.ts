@@ -1,6 +1,12 @@
 import { existsSync, readFileSync } from 'node:fs';
+import { dirname, isAbsolute, resolve } from 'node:path';
 import { config } from '../config.js';
 import type { CharacterCompanion, CharacterStyle } from './types.js';
+
+function resolveRefPath(configPath: string, path: string): string {
+  if (isAbsolute(path)) return path;
+  return resolve(dirname(resolve(configPath)), path);
+}
 
 function asStringArray(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
@@ -28,6 +34,8 @@ export function loadCharacterStyle(): CharacterStyle {
   }
   // Env style only wins when explicitly set; otherwise the bible JSON is source of truth.
   const styleFromEnv = config.story.styleDescription.trim();
+  const configPath = resolve(config.story.characterConfigPath);
+  const rawPaths = config.story.referenceImagePaths.length ? config.story.referenceImagePaths : (file.referenceImagePaths ?? []);
   const style: CharacterStyle = {
     name: config.story.characterName || file.name || '',
     description: config.story.characterDescription || file.description || '',
@@ -39,18 +47,20 @@ export function loadCharacterStyle(): CharacterStyle {
     props: asStringArray(file.props),
     forbiddenVisualTokens: asStringArray(file.forbiddenVisualTokens),
     referenceImageUrls: config.story.referenceImageUrls.length ? config.story.referenceImageUrls : (file.referenceImageUrls ?? []),
-    referenceImagePaths: config.story.referenceImagePaths.length ? config.story.referenceImagePaths : (file.referenceImagePaths ?? []),
+    referenceImagePaths: rawPaths.map(path => resolveRefPath(configPath, path)),
     referenceVideoUrls: config.story.referenceVideoUrls.length ? config.story.referenceVideoUrls : (file.referenceVideoUrls ?? []),
     avatarAssetIds: config.story.avatarAssetIds.length ? config.story.avatarAssetIds : (file.avatarAssetIds ?? []),
     missing: [],
   };
   if (!style.name) style.missing.push('nom du personnage');
   if (!style.description) style.missing.push('description du personnage');
-  if (!style.referenceImageUrls.length && !style.referenceImagePaths.length && !style.avatarAssetIds.length) {
+  const existingPaths = style.referenceImagePaths.filter(path => existsSync(path));
+  const missingPaths = style.referenceImagePaths.filter(path => !existsSync(path));
+  style.referenceImagePaths = existingPaths;
+  const hasVisualRef = style.referenceImageUrls.length > 0 || existingPaths.length > 0 || style.avatarAssetIds.length > 0;
+  if (!hasVisualRef) {
     style.missing.push('référence visuelle (STORY_CHARACTER_REFERENCE_URLS, STORY_AVATAR_ASSET_IDS ou config/character.json)');
-  }
-  for (const path of style.referenceImagePaths) {
-    if (!existsSync(path)) style.missing.push(`fichier référence manquant: ${path}`);
+    for (const path of missingPaths) style.missing.push(`fichier référence manquant: ${path}`);
   }
   return style;
 }

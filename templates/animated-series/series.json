@@ -1,0 +1,10 @@
+{
+  "title": "Ma série animée",
+  "slug": "ma-serie-animee",
+  "format": "9:16",
+  "resolution": "720p",
+  "defaultDurationMinutes": 2,
+  "style": "anime 2D expressif, contours dessinés propres, couleurs cinématiques, éclairage doux, animation fluide verticale 9:16",
+  "destinations": ["tiktok", "instagram", "youtube"],
+  "notes": "Remplir character.json + déposer 1–3 planches PNG dans refs/, puis écrire un script dans episodes/."
+}

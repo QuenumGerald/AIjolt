@@ -1,0 +1,31 @@
+{
+  "name": "NomDuPerso",
+  "description": "Visage, silhouette, coupe, teint — description stable à ne jamais reformuler.",
+  "outfit": "Tenue signature UNIQUE (couleurs, marques, accessoires autorisés).",
+  "outfitLocked": true,
+  "style": "anime 2D expressif, contours dessinés propres, couleurs cinématiques, éclairage doux, animation fluide verticale 9:16",
+  "continuityDetails": "Règles de continuité (lieux récurrents, marques, couleurs à ne pas changer).",
+  "companions": [
+    {
+      "id": "compagnon-1",
+      "description": "Apparence fixe du compagnon (si présent dans la série)."
+    }
+  ],
+  "props": [
+    "objet récurrent 1",
+    "objet récurrent 2"
+  ],
+  "forbiddenVisualTokens": [
+    "casquette",
+    "tenue différente",
+    "recoloration",
+    "autre coupe de cheveux"
+  ],
+  "referenceImageUrls": [],
+  "referenceImagePaths": [
+    "./refs/face-sheet.png",
+    "./refs/full-body.png"
+  ],
+  "referenceVideoUrls": [],
+  "avatarAssetIds": []
+}
