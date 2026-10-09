@@ -60,20 +60,18 @@ describe('company and title cleanup', () => {
 });
 
 describe('location and language', () => {
-  it('skips Not specified locations', () => {
-    const verdict = evaluateJobPost(base({ location: '' }));
-    expect(verdict.ok).toBe(false);
-    if (!verdict.ok) expect(verdict.reason).toMatch(/location/i);
+  it('accepts jobs without a specified location', () => {
+    expect(evaluateJobPost(base({ location: '' })).ok).toBe(true);
   });
 
-  it('skips Chinese campus recruiting posts', () => {
+  it('does not filter jobs by language', () => {
     expect(isEnglishOrFrench('NIO 27届校招 冲压设备工程师')).toBe(false);
     expect(evaluateJobPost(base({
       title: '冲压设备工程师（校招）',
       company: 'NIO',
       location: 'Hefei, China',
       description: '27届校招，负责冲压设备维护。',
-    })).ok).toBe(false);
+    })).ok).toBe(true);
   });
 
   it('accepts English and French offers', () => {

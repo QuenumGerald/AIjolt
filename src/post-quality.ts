@@ -114,12 +114,6 @@ export function textsAreNearDuplicates(a: string, b: string): boolean {
 export type SkipKind = 'permanent' | 'temporary';
 
 export function evaluateJobPost(job: Job): { ok: true; job: Job } | { ok: false; kind: SkipKind; reason: string } {
-  if (!isEnglishOrFrench(`${job.title}\n${job.company}\n${job.description}`)) {
-    return { ok: false, kind: 'permanent', reason: 'skipped: not English or French' };
-  }
-  if (isPlaceholderLocation(job.location)) {
-    return { ok: false, kind: 'permanent', reason: 'skipped: location not specified' };
-  }
   const company = cleanCompanyName(job.company, job.title);
   if (!company) {
     return { ok: false, kind: 'permanent', reason: 'skipped: unusable company name' };
