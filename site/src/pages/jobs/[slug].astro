@@ -26,6 +26,7 @@ const postedLabel = formatDate(job.socialPublishedAt ?? job.postedAt);
 const title = jobTitleTag(job);
 const description = jobMetaDescription(job);
 const path = jobPath(job);
+const modeLabel = job.workMode === 'unknown' ? 'Non précisé' : job.workMode;
 ---
 <Layout
   title={title}
@@ -34,105 +35,202 @@ const path = jobPath(job);
   ogType="article"
   jsonLd={jobPostingJsonLd(job)}
 >
-  <main class="shell">
-    <nav class="crumb"><a href="/">← Toutes les annonces</a></nav>
+  <div class="page">
+    <nav class="crumb"><a href="/#annonces">← Annonces AIJolt</a></nav>
+
     <article class="offer">
       <p class="brand">AIJolt</p>
-      <p class="eyebrow">
-        {(job.networks ?? []).join(' · ') || 'publié'}
+      <p class="posted">
+        Posté{(job.networks?.length ? ` · ${job.networks.join(' · ')}` : '')}
         {postedLabel ? ` · ${postedLabel}` : ''}
       </p>
       <h1>{job.title}</h1>
       <p class="company">{job.company}</p>
-      <ul class="facts">
-        <li><span>Lieu</span> {job.location}{job.country !== 'Unknown' ? ` (${job.country})` : ''}</li>
-        <li><span>Mode</span> {job.workMode === 'unknown' ? 'Non précisé' : job.workMode}</li>
-        {job.salary && <li><span>Salaire</span> {job.salary}</li>}
+
+      <dl class="facts">
+        <div><dt>Lieu</dt><dd>{job.location}{job.country !== 'Unknown' ? ` · ${job.country}` : ''}</dd></div>
+        <div><dt>Mode</dt><dd>{modeLabel}</dd></div>
+        {job.salary && <div><dt>Salaire</dt><dd>{job.salary}</dd></div>}
         {job.skills?.length > 0 && (
-          <li><span>Compétences</span> {job.skills.slice(0, 12).join(', ')}</li>
+          <div><dt>Stack</dt><dd>{job.skills.slice(0, 12).join(', ')}</dd></div>
         )}
-      </ul>
-      <div class="body">
+      </dl>
+
+      <section class="body">
         <h2>Description</h2>
         <p>{job.description}</p>
-      </div>
+      </section>
+
       {job.socialText && (
-        <aside class="social">
+        <section class="social">
           <h2>Tel que posté</h2>
           <pre>{job.socialText}</pre>
-        </aside>
+        </section>
       )}
+
       <p class="cta">
-        <a class="apply" href={job.url} target="_blank" rel="noopener noreferrer">Postuler sur le site de l’employeur ↗</a>
+        <a class="apply" href={job.url} target="_blank" rel="noopener noreferrer">Postuler chez l’employeur</a>
       </p>
-      <p class="canonical-note">Page canonique : <a href={jobCanonical(job)}>{jobCanonical(job)}</a></p>
+      <p class="canonical-note">
+        Page canonique : <a href={jobCanonical(job)}>{jobCanonical(job)}</a>
+      </p>
     </article>
-  </main>
+  </div>
 </Layout>
 
 <style>
-  :global(*) { box-sizing: border-box; }
-  :global(body) {
-    margin: 0;
-    background:
-      radial-gradient(1000px 520px at 0% -20%, #dfe8ff 0%, transparent 55%),
-      #f6f7f9;
-    color: #12141a;
-    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  .page {
+    width: min(760px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 36px 0 80px;
   }
-  .shell { max-width: 760px; margin: auto; padding: 28px 24px 80px; }
-  .crumb { margin-bottom: 28px; }
-  .crumb a { color: #0f766e; text-decoration: none; font-weight: 650; font-size: 14px; }
+
+  .crumb {
+    margin-bottom: 36px;
+  }
+
+  .crumb a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--mute);
+  }
+
+  .crumb a:hover {
+    color: var(--ink);
+  }
+
+  .offer {
+    animation: rise 0.7s var(--ease) both;
+  }
+
   .brand {
-    margin: 0 0 8px;
-    font: 700 42px/1 "Fraunces", Georgia, serif;
-    letter-spacing: -0.04em;
-  }
-  .eyebrow {
     margin: 0;
-    color: #0f766e;
-    font: 650 12px/1.4 "IBM Plex Mono", ui-monospace, monospace;
-    letter-spacing: .04em;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+    letter-spacing: -0.05em;
+    line-height: 0.95;
+  }
+
+  .posted {
+    margin: 14px 0 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: #6a8a00;
   }
+
   h1 {
-    font: 650 clamp(28px, 5vw, 44px)/1.15 "Fraunces", Georgia, serif;
-    margin: 14px 0 10px;
-    letter-spacing: -0.03em;
+    margin: 18px 0 10px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+    letter-spacing: -0.035em;
+    line-height: 1.12;
   }
-  .company { font-size: 18px; font-weight: 650; margin: 0 0 22px; }
+
+  .company {
+    margin: 0 0 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--mute);
+  }
+
   .facts {
-    list-style: none; padding: 18px 0; margin: 0 0 28px;
-    border-top: 1px solid #d8dee8; border-bottom: 1px solid #d8dee8;
+    margin: 0 0 36px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 14px;
   }
-  .facts li { margin: 10px 0; color: #334155; line-height: 1.45; }
-  .facts span {
-    display: inline-block; min-width: 110px; color: #64748b; font-size: 13px; font-weight: 650;
+
+  .facts div {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
   }
-  .body h2, .social h2 {
-    font: 650 20px "Fraunces", Georgia, serif; margin: 0 0 12px;
+
+  dt {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mute);
   }
+
+  dd {
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .body h2,
+  .social h2 {
+    margin: 0 0 12px;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
   .body p {
-    white-space: pre-wrap; color: #334155; line-height: 1.65; font-size: 15px; margin: 0;
+    margin: 0;
+    white-space: pre-wrap;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    font-size: 1rem;
   }
+
   .social {
-    margin-top: 32px; padding: 18px; background: rgba(255,255,255,0.75);
-    border: 1px solid #d9e0ea;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
   }
+
   .social pre {
-    margin: 0; white-space: pre-wrap; font: 14px/1.5 "IBM Plex Sans", sans-serif; color: #1e293b;
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
   }
-  .cta { margin-top: 36px; }
+
+  .cta {
+    margin-top: 40px;
+  }
+
   .apply {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #0f172a; color: #f8fafc; text-decoration: none;
-    font-weight: 650; padding: 14px 18px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 22px;
+    background: var(--ink);
+    color: var(--jolt);
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.25s var(--ease), background 0.2s;
   }
-  .apply:hover { background: #0f766e; }
-  .canonical-note { margin-top: 28px; font-size: 12px; color: #94a3b8; }
-  .canonical-note a { color: #64748b; }
-  @media (max-width: 600px) {
-    .shell { padding-inline: 18px; }
-    .facts span { display: block; margin-bottom: 2px; }
+
+  .apply:hover {
+    background: var(--ink-soft);
+    transform: translateY(-2px);
+  }
+
+  .canonical-note {
+    margin-top: 28px;
+    font-size: 0.78rem;
+    color: var(--mute);
+    word-break: break-all;
+  }
+
+  .canonical-note a {
+    color: var(--mute);
+  }
+
+  @media (max-width: 560px) {
+    .page { width: calc(100% - 28px); }
+    .facts div { grid-template-columns: 1fr; gap: 4px; }
   }
 </style>

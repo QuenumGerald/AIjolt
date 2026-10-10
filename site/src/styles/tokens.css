@@ -1,0 +1,85 @@
+:root {
+  --ink: #0b1220;
+  --ink-soft: #1a2333;
+  --mist: #e8eef5;
+  --mist-deep: #d5dee9;
+  --paper: #f3f6fa;
+  --mute: #5c6b7e;
+  --line: #c5d0de;
+  --jolt: #b8f000;
+  --jolt-ink: #0b1220;
+  --focus: #1f6feb;
+  --font-display: "Syne", "Arial Narrow", sans-serif;
+  --font-body: "Space Grotesk", "Helvetica Neue", sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  background:
+    radial-gradient(1000px 640px at 85% -10%, rgba(184, 240, 0, 0.18), transparent 55%),
+    radial-gradient(900px 520px at -5% 20%, rgba(31, 111, 235, 0.12), transparent 50%),
+    linear-gradient(165deg, #f7f9fc 0%, var(--mist) 42%, #e4ebf4 100%);
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--jolt);
+  color: var(--jolt-ink);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 220;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

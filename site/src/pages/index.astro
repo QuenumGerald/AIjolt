@@ -4,131 +4,385 @@ import { generatedAt, jobs } from '../data';
 import { itemListJsonLd, jobPath, SITE_NAME } from '../lib/seo';
 
 const formatDate = (date: string | null) =>
-  date ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(date)) : 'Date non précisée';
-const excerpt = (text: string) => text.replace(/\s+/g, ' ').trim().slice(0, 180);
+  date ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(date)) : null;
 
 const title = `${SITE_NAME} — Offres d’emploi IA publiées`;
 const description = jobs.length
   ? `${jobs.length} offres IA réellement postées par AIJolt sur X / Buffer. Mis à jour ${generatedAt ? formatDate(generatedAt) : 'récemment'}.`
-  : 'AIJolt publie des offres IA sur X / Buffer — chaque annonce postée apparaît ici avec une page SEO dédiée.';
+  : 'AIJolt publie des offres IA sur X / Buffer. Les annonces apparaîtront ici dès qu’elles sont postées — pas un scrape brut.';
 ---
 <Layout title={title} description={description} canonicalPath="/" jsonLd={itemListJsonLd(jobs)}>
-  <main class="shell">
-    <header class="hero">
-      <p class="brand">AIJolt</p>
-      <h1>Annonces IA que l’on poste.</h1>
-      <p class="intro">
-        Chaque offre listée ici a été mise en file ou publiée via AIJolt (Buffer / X) — pas un dump de scrape.
-      </p>
-      <div class="stats">
-        <span>{jobs.length} annonce{jobs.length === 1 ? '' : 's'} publiée{jobs.length === 1 ? '' : 's'}</span>
-        <span>Mis à jour {generatedAt ? formatDate(generatedAt) : 'bientôt'}</span>
+  <div class="page">
+    <section class="hero" aria-label="AIJolt">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <svg class="signal" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="trace" d="M80 620 C260 620 280 280 460 280 C640 280 660 520 860 520 C1060 520 1120 180 1360 180" stroke="currentColor" stroke-width="2.5" />
+          <circle cx="460" cy="280" r="8" fill="var(--jolt)" />
+          <circle cx="860" cy="520" r="8" fill="var(--jolt)" />
+          <circle cx="1360" cy="180" r="8" fill="var(--jolt)" />
+          <g class="bars" stroke="currentColor" stroke-width="14" stroke-linecap="square" opacity="0.55">
+            <line x1="180" y1="680" x2="180" y2="540" />
+            <line x1="230" y1="680" x2="230" y2="420" />
+            <line x1="280" y1="680" x2="280" y2="300" />
+            <line x1="330" y1="680" x2="330" y2="480" />
+            <line x1="380" y1="680" x2="380" y2="360" />
+          </g>
+          <g opacity="0.12" stroke="currentColor" stroke-width="1">
+            <line x1="0" y1="200" x2="1440" y2="200" />
+            <line x1="0" y1="400" x2="1440" y2="400" />
+            <line x1="0" y1="600" x2="1440" y2="600" />
+          </g>
+        </svg>
       </div>
-    </header>
 
-    <section class="toolbar">
-      <h2>Dernières publications</h2>
-      <span>{jobs.length ? 'Classées par date de post social' : 'En attente des prochaines publications'}</span>
+      <div class="hero-copy">
+        <p class="brand">AIJolt</p>
+        <h1>Les offres IA qu’on poste vraiment.</h1>
+        <p class="lede">
+          Chaque annonce ici a déjà été mise en file ou publiée via Buffer / X — une URL propre, prête à indexer.
+        </p>
+        <div class="cta-row">
+          <a class="cta" href="#annonces">{jobs.length ? 'Voir les annonces' : 'État des annonces'}</a>
+          <p class="cta-note">
+            {jobs.length
+              ? `${jobs.length} publiée${jobs.length > 1 ? 's' : ''}${generatedAt && formatDate(generatedAt) ? ` · maj ${formatDate(generatedAt)}` : ''}`
+              : 'Feed vide pour l’instant'}
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="grid" aria-label="Annonces IA publiées">
-      {jobs.map((job) => (
-        <article class="card">
-          <div class="card-top">
-            <span class="badge">{job.workMode === 'unknown' ? 'IA' : job.workMode}</span>
-            <span class="networks">{(job.networks ?? []).join(' · ') || 'posté'}</span>
-          </div>
-          <h3>
-            <a href={jobPath(job)}>{job.title}</a>
-          </h3>
-          <p class="company">{job.company}</p>
-          <p class="meta">
-            {job.location} · {formatDate(job.socialPublishedAt ?? job.postedAt)}
+    <section id="annonces" class="board">
+      <header class="board-head">
+        <h2>Annonces postées</h2>
+        <p>Liste des publications — pas un tableau de bord.</p>
+      </header>
+
+      {jobs.length > 0 ? (
+        <ul class="listing" aria-label="Annonces IA publiées">
+          {jobs.map((job, index) => (
+            <li style={`--i:${index}`}>
+              <a class="row" href={jobPath(job)}>
+                <div class="row-main">
+                  <span class="row-title">{job.title}</span>
+                  <span class="row-company">{job.company}</span>
+                </div>
+                <div class="row-meta">
+                  <span>{job.workMode === 'unknown' ? 'IA' : job.workMode}</span>
+                  <span>{job.location}</span>
+                  <span>{formatDate(job.socialPublishedAt ?? job.postedAt) ?? '—'}</span>
+                </div>
+                <span class="row-go" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class="empty" role="status">
+          <p class="empty-kicker">Rien à indexer pour l’instant</p>
+          <h3>Le feed public est vide.</h3>
+          <p>
+            AIJolt n’affiche que les offres déjà postées (Buffer / X). Dès qu’une publication
+            <code>queued</code> ou <code>published</code> existe sur le gateway, elle apparaîtra ici
+            avec une page SEO <code>/jobs/…</code>.
           </p>
-          <p class="description">
-            {excerpt(job.description)}{job.description.length > 180 ? '…' : ''}
-          </p>
-          <div class="skills">
-            {job.skills.slice(0, 4).map((skill) => <span>{skill}</span>)}
-          </div>
-          <a class="apply" href={jobPath(job)}>Voir l’annonce <span>→</span></a>
-        </article>
-      ))}
+          <p class="empty-hint">Pas de scrape Foorilla sur ce site — volontairement.</p>
+        </div>
+      )}
     </section>
 
-    {jobs.length === 0 && (
-      <div class="empty">
-        <strong>Aucune annonce postée pour l’instant.</strong><br />
-        Dès qu’AIJolt publie une offre via Buffer / X, elle apparaît ici avec une URL SEO dédiée.
-      </div>
-    )}
-  </main>
+    <footer class="foot">
+      <span class="brand-mini">AIJolt</span>
+      <span>Job board des annonces qu’on poste.</span>
+    </footer>
+  </div>
 </Layout>
 
 <style>
-  :global(*) { box-sizing: border-box; }
-  :global(body) {
-    margin: 0;
-    background:
-      radial-gradient(1200px 600px at 10% -10%, #dfe8ff 0%, transparent 55%),
-      radial-gradient(900px 500px at 100% 0%, #e8f3ea 0%, transparent 50%),
-      #f6f7f9;
-    color: #12141a;
-    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  .page {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding-bottom: 72px;
   }
-  .shell { max-width: 1100px; margin: auto; padding: 28px 24px 80px; }
-  .hero { padding: 64px 0 48px; max-width: 720px; }
+
+  .hero {
+    position: relative;
+    isolation: isolate;
+    min-height: min(92vh, 860px);
+    display: flex;
+    align-items: flex-end;
+    padding: 48px 0 64px;
+    margin-inline: calc(50% - 50vw);
+    padding-inline: max(20px, calc(50vw - 560px));
+    width: 100vw;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .hero-atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    color: var(--ink);
+    pointer-events: none;
+  }
+
+  .signal {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+  }
+
+  .trace {
+    stroke-dasharray: 420;
+    animation: draw 1.6s var(--ease) 0.2s both;
+  }
+
+  .bars line {
+    animation: pulse-line 2.8s ease-in-out infinite;
+  }
+  .bars line:nth-child(2) { animation-delay: 0.15s; }
+  .bars line:nth-child(3) { animation-delay: 0.3s; }
+  .bars line:nth-child(4) { animation-delay: 0.45s; }
+  .bars line:nth-child(5) { animation-delay: 0.6s; }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    animation: rise 0.85s var(--ease) both;
+    max-width: 36rem;
+    padding: 28px 0 8px;
+  }
+
   .brand {
     margin: 0;
-    font: 700 clamp(40px, 7vw, 72px)/0.95 "Fraunces", Georgia, serif;
-    letter-spacing: -0.04em;
-    color: #0f172a;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(4.6rem, 14vw, 8.2rem);
+    line-height: 0.84;
+    letter-spacing: -0.065em;
+    color: var(--ink);
+    text-shadow: 0 0 40px rgba(243, 246, 250, 0.85);
   }
+
   h1 {
-    font: 600 clamp(22px, 3.4vw, 34px)/1.25 "IBM Plex Sans", sans-serif;
-    margin: 18px 0 12px;
-    color: #1e293b;
-    max-width: 18ch;
+    margin: 28px 0 14px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.45rem, 2.7vw, 2.05rem);
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    max-width: 15ch;
+    color: var(--ink-soft);
   }
-  .intro { color: #475569; font-size: 18px; line-height: 1.55; max-width: 540px; margin: 0; }
-  .stats, .toolbar, .card-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
-  .stats { margin-top: 28px; color: #64748b; font-size: 13px; }
-  .toolbar { border-top: 1px solid #d8dee8; padding: 22px 0; }
-  h2 { margin: 0; font: 650 24px "Fraunces", Georgia, serif; }
-  .toolbar span { color: #64748b; font-size: 13px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  .card {
-    display: flex; flex-direction: column; min-height: 300px;
-    background: rgba(255,255,255,0.72); border: 1px solid #d9e0ea;
-    padding: 22px; transition: transform .2s ease, border-color .2s ease;
+
+  .lede {
+    margin: 0;
+    color: var(--mute);
+    font-size: 1.08rem;
+    line-height: 1.55;
+    max-width: 34ch;
   }
-  .card:hover { transform: translateY(-3px); border-color: #94a3b8; }
-  .badge, .skills span {
-    border-radius: 4px; background: #e8eef7; color: #334155;
-    font-size: 11px; padding: 5px 8px; letter-spacing: .04em; text-transform: uppercase;
+
+  .cta-row {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 22px;
   }
-  .networks { color: #0f766e; font: 650 12px/1 "IBM Plex Mono", ui-monospace, monospace; }
-  h3 { font: 650 22px/1.15 "Fraunces", Georgia, serif; margin: 22px 0 8px; }
-  h3 a { color: inherit; text-decoration: none; }
-  h3 a:hover { color: #0f766e; }
-  .company { font-weight: 650; margin: 0; }
-  .meta { color: #64748b; font-size: 13px; margin: 7px 0 18px; }
-  .description { color: #475569; line-height: 1.55; font-size: 14px; }
-  .skills { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 18px; }
-  .skills span { background: #f1f5f9; color: #475569; text-transform: none; }
-  .apply {
-    color: #0f172a; border-top: 1px solid #e2e8f0; padding-top: 14px;
-    text-decoration: none; font-weight: 650; font-size: 14px;
-    display: flex; justify-content: space-between;
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 24px;
+    background: var(--ink);
+    color: var(--jolt);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    transition: transform 0.25s var(--ease), background 0.25s var(--ease);
   }
-  .apply:hover { color: #0f766e; }
+
+  .cta:hover {
+    background: var(--ink-soft);
+    transform: translateY(-2px);
+  }
+
+  .cta-note {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--mute);
+  }
+
+  .board {
+    padding: 56px 0 24px;
+  }
+
+  .board-head {
+    margin-bottom: 28px;
+    max-width: 36rem;
+  }
+
+  .board-head h2 {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    letter-spacing: -0.03em;
+  }
+
+  .board-head p {
+    margin: 0;
+    color: var(--mute);
+  }
+
+  .listing {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .listing > li {
+    animation: rise 0.55s var(--ease) both;
+    animation-delay: calc(0.04s * var(--i));
+    border-bottom: 1px solid var(--line);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: 16px 24px;
+    align-items: center;
+    padding: 22px 4px;
+    text-decoration: none;
+    transition: background 0.2s var(--ease), padding-left 0.25s var(--ease);
+  }
+
+  .row:hover {
+    background: rgba(255, 255, 255, 0.42);
+    padding-left: 10px;
+  }
+
+  .row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .row-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .row-company {
+    color: var(--mute);
+    font-size: 0.95rem;
+  }
+
+  .row-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    color: var(--mute);
+    font-size: 0.86rem;
+  }
+
+  .row-go {
+    font-size: 1.25rem;
+    color: var(--ink);
+    transition: transform 0.25s var(--ease), color 0.2s;
+  }
+
+  .row:hover .row-go {
+    transform: translateX(4px);
+    color: #6a8a00;
+  }
+
   .empty {
-    margin-top: 20px; padding: 34px; border: 1px dashed #cbd5e1;
-    color: #64748b; line-height: 1.7; background: rgba(255,255,255,0.5);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 48px 8px 52px;
+    max-width: 40rem;
+    animation: rise 0.7s var(--ease) both;
   }
-  @media (max-width: 600px) {
-    .shell { padding-inline: 18px; }
-    .hero { padding-top: 36px; }
-    .stats, .toolbar { align-items: flex-start; flex-direction: column; }
+
+  .empty-kicker {
+    margin: 0 0 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6a8a00;
+  }
+
+  .empty h3 {
+    margin: 0 0 14px;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.03em;
+  }
+
+  .empty p {
+    margin: 0 0 12px;
+    color: var(--mute);
+    line-height: 1.6;
+  }
+
+  .empty code {
+    font-family: var(--font-body);
+    font-size: 0.92em;
+    background: rgba(11, 18, 32, 0.06);
+    padding: 0.1em 0.35em;
+  }
+
+  .empty-hint {
+    margin-top: 18px !important;
+    font-weight: 600;
+    color: var(--ink-soft) !important;
+  }
+
+  .foot {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    align-items: baseline;
+    color: var(--mute);
+    font-size: 0.9rem;
+  }
+
+  .brand-mini {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      min-height: min(88vh, 720px);
+      align-items: flex-end;
+    }
+    .row {
+      grid-template-columns: 1fr auto;
+      gap: 10px 12px;
+    }
+    .row-meta { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 520px) {
+    .page { width: calc(100% - 28px); }
+    .hero { padding-bottom: 40px; }
+    .brand { font-size: clamp(3.6rem, 20vw, 5rem); }
   }
 </style>
