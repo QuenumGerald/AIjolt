@@ -1,13 +1,49 @@
 ---
-const { title = 'AIJolt — Jobs IA' } = Astro.props;
+import { absoluteUrl, DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from '../lib/seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogType?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[] | null;
+}
+
+const {
+  title = `${SITE_NAME} — Offres d’emploi IA`,
+  description = DEFAULT_DESCRIPTION,
+  canonicalPath = '/',
+  ogType = 'website',
+  jsonLd = null,
+} = Astro.props;
+
+const canonical = absoluteUrl(canonicalPath);
+const jsonLdBlocks = jsonLd == null ? [] : Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 ---
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Les meilleures opportunités de carrière dans l'intelligence artificielle." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="alternate" type="application/json" href={`${SITE_URL}/posted-jobs.json`} title="Posted jobs feed" />
+    {jsonLdBlocks.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
   </head>
-  <body><slot /></body>
+  <body>
+    <slot />
+  </body>
 </html>

@@ -1,50 +1,134 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { generatedAt, jobs } from '../data';
+import { itemListJsonLd, jobPath, SITE_NAME } from '../lib/seo';
 
-const formatDate = (date: string | null) => date ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(date)) : 'Date non précisée';
+const formatDate = (date: string | null) =>
+  date ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(date)) : 'Date non précisée';
 const excerpt = (text: string) => text.replace(/\s+/g, ' ').trim().slice(0, 180);
+
+const title = `${SITE_NAME} — Offres d’emploi IA publiées`;
+const description = jobs.length
+  ? `${jobs.length} offres IA réellement postées par AIJolt sur X / Buffer. Mis à jour ${generatedAt ? formatDate(generatedAt) : 'récemment'}.`
+  : 'AIJolt publie des offres IA sur X / Buffer — chaque annonce postée apparaît ici avec une page SEO dédiée.';
 ---
-<Layout>
+<Layout title={title} description={description} canonicalPath="/" jsonLd={itemListJsonLd(jobs)}>
   <main class="shell">
     <header class="hero">
-      <p class="eyebrow">AIJOLT / OPPORTUNITÉS IA</p>
-      <h1>Le prochain job qui change tout.</h1>
-      <p class="intro">Une sélection fraîche d’offres en intelligence artificielle, collectées et classées automatiquement.</p>
-      <div class="stats"><span>{jobs.length} offres actives</span><span>Mis à jour {generatedAt ? formatDate(generatedAt) : 'bientôt'}</span></div>
+      <p class="brand">AIJolt</p>
+      <h1>Annonces IA que l’on poste.</h1>
+      <p class="intro">
+        Chaque offre listée ici a été mise en file ou publiée via AIJolt (Buffer / X) — pas un dump de scrape.
+      </p>
+      <div class="stats">
+        <span>{jobs.length} annonce{jobs.length === 1 ? '' : 's'} publiée{jobs.length === 1 ? '' : 's'}</span>
+        <span>Mis à jour {generatedAt ? formatDate(generatedAt) : 'bientôt'}</span>
+      </div>
     </header>
-    <section class="toolbar"><h2>Dernières opportunités</h2><span>{jobs.length ? 'Classées par pertinence' : 'Le flux sera bientôt alimenté'}</span></section>
-    <section class="grid" aria-label="Offres d'emploi IA">
-      {jobs.map((job) => <article class="card">
-        <div class="card-top"><span class="badge">{job.workMode === 'unknown' ? 'IA' : job.workMode}</span><span class="score">{Math.round(job.score)}/100</span></div>
-        <h3>{job.title}</h3><p class="company">{job.company}</p>
-        <p class="meta">{job.location} · {formatDate(job.postedAt)}</p>
-        <p class="description">{excerpt(job.description)}{job.description.length > 180 ? '…' : ''}</p>
-        <div class="skills">{job.skills.slice(0, 4).map((skill) => <span>{skill}</span>)}</div>
-        <a class="apply" href={job.url} target="_blank" rel="noreferrer">Voir l’offre <span>↗</span></a>
-      </article>)}
+
+    <section class="toolbar">
+      <h2>Dernières publications</h2>
+      <span>{jobs.length ? 'Classées par date de post social' : 'En attente des prochaines publications'}</span>
     </section>
-    {jobs.length === 0 && <div class="empty"><strong>La veille démarre.</strong><br />Les premières offres apparaîtront après la prochaine collecte.</div>}
+
+    <section class="grid" aria-label="Annonces IA publiées">
+      {jobs.map((job) => (
+        <article class="card">
+          <div class="card-top">
+            <span class="badge">{job.workMode === 'unknown' ? 'IA' : job.workMode}</span>
+            <span class="networks">{(job.networks ?? []).join(' · ') || 'posté'}</span>
+          </div>
+          <h3>
+            <a href={jobPath(job)}>{job.title}</a>
+          </h3>
+          <p class="company">{job.company}</p>
+          <p class="meta">
+            {job.location} · {formatDate(job.socialPublishedAt ?? job.postedAt)}
+          </p>
+          <p class="description">
+            {excerpt(job.description)}{job.description.length > 180 ? '…' : ''}
+          </p>
+          <div class="skills">
+            {job.skills.slice(0, 4).map((skill) => <span>{skill}</span>)}
+          </div>
+          <a class="apply" href={jobPath(job)}>Voir l’annonce <span>→</span></a>
+        </article>
+      ))}
+    </section>
+
+    {jobs.length === 0 && (
+      <div class="empty">
+        <strong>Aucune annonce postée pour l’instant.</strong><br />
+        Dès qu’AIJolt publie une offre via Buffer / X, elle apparaît ici avec une URL SEO dédiée.
+      </div>
+    )}
   </main>
 </Layout>
 
 <style>
   :global(*) { box-sizing: border-box; }
-  :global(body) { margin: 0; background: #f3f1eb; color: #171717; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
-  .shell { max-width: 1180px; margin: auto; padding: 28px 24px 80px; }
-  .hero { padding: 70px 0 54px; max-width: 760px; }
-  .eyebrow { color: #e6502f; font: 700 12px/1 monospace; letter-spacing: .16em; }
-  h1 { font: 700 clamp(44px, 8vw, 92px)/.95 Georgia, serif; letter-spacing: -.055em; margin: 24px 0; }
-  .intro { color: #5b5a55; font-size: 20px; line-height: 1.5; max-width: 560px; }
+  :global(body) {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #dfe8ff 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, #e8f3ea 0%, transparent 50%),
+      #f6f7f9;
+    color: #12141a;
+    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  }
+  .shell { max-width: 1100px; margin: auto; padding: 28px 24px 80px; }
+  .hero { padding: 64px 0 48px; max-width: 720px; }
+  .brand {
+    margin: 0;
+    font: 700 clamp(40px, 7vw, 72px)/0.95 "Fraunces", Georgia, serif;
+    letter-spacing: -0.04em;
+    color: #0f172a;
+  }
+  h1 {
+    font: 600 clamp(22px, 3.4vw, 34px)/1.25 "IBM Plex Sans", sans-serif;
+    margin: 18px 0 12px;
+    color: #1e293b;
+    max-width: 18ch;
+  }
+  .intro { color: #475569; font-size: 18px; line-height: 1.55; max-width: 540px; margin: 0; }
   .stats, .toolbar, .card-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
-  .stats { margin-top: 34px; color: #77746b; font-size: 13px; }
-  .toolbar { border-top: 1px solid #d7d3c8; padding: 22px 0; } h2 { margin: 0; font: 700 27px Georgia, serif; } .toolbar span { color: #77746b; font-size: 13px; }
+  .stats { margin-top: 28px; color: #64748b; font-size: 13px; }
+  .toolbar { border-top: 1px solid #d8dee8; padding: 22px 0; }
+  h2 { margin: 0; font: 650 24px "Fraunces", Georgia, serif; }
+  .toolbar span { color: #64748b; font-size: 13px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  .card { display: flex; flex-direction: column; min-height: 330px; background: #fffdf8; border: 1px solid #e0ddd4; border-radius: 3px; padding: 24px; transition: transform .2s, box-shadow .2s; } .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px #25201812; }
-  .badge, .skills span { border-radius: 99px; background: #e9eee6; color: #426044; font-size: 11px; padding: 6px 9px; text-transform: uppercase; letter-spacing: .06em; } .score { color: #e6502f; font: 700 12px monospace; }
-  h3 { font: 700 26px/1.05 Georgia, serif; margin: 26px 0 7px; } .company { font-weight: 700; margin: 0; } .meta { color: #77746b; font-size: 13px; margin: 7px 0 22px; } .description { color: #5b5a55; line-height: 1.55; font-size: 14px; }
-  .skills { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 20px; } .skills span { background: #f1eee7; color: #5b5a55; text-transform: none; }
-  .apply { color: #171717; border-top: 1px solid #e0ddd4; padding-top: 15px; text-decoration: none; font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; } .apply:hover { color: #e6502f; }
-  .empty { margin-top: 20px; padding: 34px; border: 1px dashed #c7c2b7; color: #77746b; line-height: 1.7; }
-  @media (max-width: 600px) { .shell { padding-inline: 18px; } .hero { padding-top: 40px; } .stats { align-items: flex-start; flex-direction: column; } .toolbar { align-items: flex-start; flex-direction: column; } }
+  .card {
+    display: flex; flex-direction: column; min-height: 300px;
+    background: rgba(255,255,255,0.72); border: 1px solid #d9e0ea;
+    padding: 22px; transition: transform .2s ease, border-color .2s ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: #94a3b8; }
+  .badge, .skills span {
+    border-radius: 4px; background: #e8eef7; color: #334155;
+    font-size: 11px; padding: 5px 8px; letter-spacing: .04em; text-transform: uppercase;
+  }
+  .networks { color: #0f766e; font: 650 12px/1 "IBM Plex Mono", ui-monospace, monospace; }
+  h3 { font: 650 22px/1.15 "Fraunces", Georgia, serif; margin: 22px 0 8px; }
+  h3 a { color: inherit; text-decoration: none; }
+  h3 a:hover { color: #0f766e; }
+  .company { font-weight: 650; margin: 0; }
+  .meta { color: #64748b; font-size: 13px; margin: 7px 0 18px; }
+  .description { color: #475569; line-height: 1.55; font-size: 14px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 18px; }
+  .skills span { background: #f1f5f9; color: #475569; text-transform: none; }
+  .apply {
+    color: #0f172a; border-top: 1px solid #e2e8f0; padding-top: 14px;
+    text-decoration: none; font-weight: 650; font-size: 14px;
+    display: flex; justify-content: space-between;
+  }
+  .apply:hover { color: #0f766e; }
+  .empty {
+    margin-top: 20px; padding: 34px; border: 1px dashed #cbd5e1;
+    color: #64748b; line-height: 1.7; background: rgba(255,255,255,0.5);
+  }
+  @media (max-width: 600px) {
+    .shell { padding-inline: 18px; }
+    .hero { padding-top: 36px; }
+    .stats, .toolbar { align-items: flex-start; flex-direction: column; }
+  }
 </style>

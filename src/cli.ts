@@ -2,16 +2,22 @@
 import { Command } from 'commander'; import { cleanup, collect, rescore, start } from './service.js'; import { publish, syncBufferPublications } from './publisher.js';
 import { acknowledgeOutbox, failOutbox, listOutbox } from './outbox.js';
 import { doctor } from './doctor.js';
-import { exportJobsJson } from './export-json.js';
+import { exportPublicFeeds } from './export-json.js';
 import { addNewsItem, collectNews } from './news.js';
 import { publishNews } from './news-publisher.js';
 const cli = new Command().name('aijolt').description('AI job collector and Buffer outbox');
 cli.command('collect').action(collect); cli.command('score').action(rescore);
-cli.command('publish').option('--dry-run', 'print without queueing').action((o: {dryRun?: boolean}) => publish(Boolean(o.dryRun)));
-cli.command('sync-buffer').description('synchronize queued publication statuses with Buffer').action(async () => { await syncBufferPublications(); });
+cli.command('publish').option('--dry-run', 'print without queueing').action(async (o: {dryRun?: boolean}) => {
+  await publish(Boolean(o.dryRun));
+  if (!o.dryRun) exportPublicFeeds();
+});
+cli.command('sync-buffer').description('synchronize queued publication statuses with Buffer').action(async () => {
+  await syncBufferPublications();
+  exportPublicFeeds();
+});
 cli.command('cleanup').action(cleanup); cli.command('start').action(start);
 cli.command('doctor').description('validate runtime configuration and SQLite').action(doctor);
-cli.command('export-json').description('export active jobs to the public JSON feed').action(() => exportJobsJson());
+cli.command('export-json').description('export active jobs + posted jobs (SEO feed)').action(() => { exportPublicFeeds(); });
 const news = cli.command('news').description('collect and publish sourced AI-news satire');
 news.command('collect').action(collectNews);
 news.command('publish').option('--dry-run', 'generate and print without queueing').action((o: { dryRun?: boolean }) => publishNews(Boolean(o.dryRun)));

@@ -1,10 +1,12 @@
-node_modules/
-dist/
-data/
 !data/
+data/
 !data/jobs.json
+!data/posted-jobs.json
 *.db
 *.db-shm
 *.db-wal
+dist/
 .env
 logs/
+node_modules/
+site/.astro/

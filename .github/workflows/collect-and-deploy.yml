@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name 'aijolt-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add data/jobs.json
+          git add data/jobs.json data/posted-jobs.json
           if git diff --cached --quiet; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
           else
