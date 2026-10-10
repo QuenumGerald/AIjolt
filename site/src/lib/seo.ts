@@ -1,5 +1,6 @@
 import type { PostedJob } from '../types';
 import { defaultLang, localePath, type Lang } from '../i18n/utils';
+import { cleanJobDescription } from './clean-description';
 
 export const SITE_NAME = 'AIJolt';
 export const SITE_URL = 'https://aijolt.pages.dev';
@@ -45,7 +46,7 @@ export function jobMetaDescription(job: PostedJob): string {
     job.workMode !== 'unknown' ? job.workMode : null,
   ].filter(Boolean);
   const lead = bits.join(' · ');
-  const body = metaDescription(job.description, 120);
+  const body = metaDescription(cleanJobDescription(job.description), 120);
   return metaDescription(`${lead}. ${body}`);
 }
 
@@ -85,7 +86,7 @@ export function jobPostingJsonLd(job: PostedJob, lang: Lang = defaultLang) {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
     title: job.title,
-    description: job.description.replace(/\s+/g, ' ').trim().slice(0, 5000),
+    description: cleanJobDescription(job.description).slice(0, 5000),
     datePosted,
     hiringOrganization: {
       '@type': 'Organization',

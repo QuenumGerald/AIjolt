@@ -10,6 +10,7 @@ import {
   jobSlug,
   jobTitleTag,
 } from '../lib/seo';
+import { cleanJobDescription } from '../lib/clean-description';
 import { dateLocale, localePath, type Lang, useTranslations } from '../i18n/utils';
 
 interface Props {
@@ -29,6 +30,7 @@ const description = jobMetaDescription(job);
 const path = jobPath(job, lang);
 const modeLabel = job.workMode === 'unknown' ? t.modeUnknown : job.workMode;
 const within = `/jobs/${jobSlug(job)}`;
+const bodyText = cleanJobDescription(job.description);
 ---
 <Layout
   title={title}
@@ -69,7 +71,7 @@ const within = `/jobs/${jobSlug(job)}`;
 
       <section class="body">
         <h2>{t.description}</h2>
-        <p>{job.description}</p>
+        <p>{bodyText}</p>
       </section>
 
       {job.socialText && (

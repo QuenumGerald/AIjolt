@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
+import { cleanJobDescription } from './clean-description.js';
 import { db, rowToJob } from './db.js';
 import type { Job } from './types.js';
 
@@ -78,6 +79,7 @@ export function listPostedJobs(): PostedJob[] {
       .filter((n: string): n is PostedNetwork => n === 'x' || n === 'linkedin');
     return {
       ...job,
+      description: cleanJobDescription(job.description),
       networks,
       socialPublishedAt: row.social_published_at ?? null,
       socialText: row.social_text ?? null,
