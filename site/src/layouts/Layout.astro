@@ -1,13 +1,70 @@
 ---
-const { title = 'AIJolt — Jobs IA' } = Astro.props;
+import { absoluteUrl, DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL } from '../lib/seo';
+import { defaultLang, localePath, type Lang } from '../i18n/utils';
+import '../styles/tokens.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogType?: string;
+  lang?: Lang;
+  pathWithinLocale?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[] | null;
+}
+
+const {
+  title = `${SITE_NAME} — Offres d’emploi IA`,
+  description = DEFAULT_DESCRIPTION,
+  canonicalPath = '/',
+  ogType = 'website',
+  lang = defaultLang,
+  pathWithinLocale = '/',
+  jsonLd = null,
+} = Astro.props;
+
+const canonical = absoluteUrl(canonicalPath);
+const jsonLdBlocks = jsonLd == null ? [] : Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+const frHref = absoluteUrl(localePath('fr', pathWithinLocale));
+const enHref = absoluteUrl(localePath('en', pathWithinLocale));
+const htmlLang = lang === 'fr' ? 'fr' : 'en';
 ---
 <!doctype html>
-<html lang="fr">
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Les meilleures opportunités de carrière dans l'intelligence artificielle." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#070b10" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="fr" href={frHref} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="x-default" href={frHref} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'fr' ? 'en_US' : 'fr_FR'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="alternate" type="application/json" href={`${SITE_URL}/posted-jobs.json`} title="Posted jobs feed" />
+    {jsonLdBlocks.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
   </head>
-  <body><slot /></body>
+  <body>
+    <slot />
+  </body>
 </html>

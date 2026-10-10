@@ -1,0 +1,46 @@
+---
+import { languages, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  frHref: string;
+  enHref: string;
+}
+
+const { lang, frHref, enHref } = Astro.props;
+---
+<nav class="lang" aria-label={lang === 'fr' ? 'Langue' : 'Language'}>
+  <a class:list={[{ active: lang === 'fr' }]} href={frHref} hreflang="fr" lang="fr">{languages.fr}</a>
+  <span aria-hidden="true">/</span>
+  <a class:list={[{ active: lang === 'en' }]} href={enHref} hreflang="en" lang="en">{languages.en}</a>
+</nav>
+
+<style>
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .lang a {
+    text-decoration: none;
+    color: var(--slate);
+  }
+
+  .lang a:hover,
+  .lang a.active {
+    color: var(--ink);
+  }
+
+  .lang a.active {
+    box-shadow: inset 0 -2px 0 var(--copper);
+  }
+
+  .lang span {
+    color: var(--slate);
+    opacity: 0.5;
+  }
+</style>

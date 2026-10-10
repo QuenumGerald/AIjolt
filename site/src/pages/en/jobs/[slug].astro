@@ -1,0 +1,15 @@
+---
+import JobPage from '../../../components/JobPage.astro';
+import { jobs } from '../../../data';
+import { jobSlug } from '../../../lib/seo';
+
+export function getStaticPaths() {
+  return jobs.map((job) => ({
+    params: { slug: jobSlug(job) },
+    props: { job },
+  }));
+}
+
+const { job } = Astro.props;
+---
+<JobPage lang="en" job={job} />

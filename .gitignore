@@ -1,8 +1,10 @@
 node_modules/
 dist/
+site/.astro/
 data/
 !data/
 !data/jobs.json
+!data/posted-jobs.json
 *.db
 *.db-shm
 *.db-wal
