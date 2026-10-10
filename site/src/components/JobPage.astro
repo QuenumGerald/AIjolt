@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LangSwitch from './LangSwitch.astro';
+import type { PostedJob } from '../types';
+import {
+  jobCanonical,
+  jobMetaDescription,
+  jobPath,
+  jobPostingJsonLd,
+  jobSlug,
+  jobTitleTag,
+} from '../lib/seo';
+import { dateLocale, localePath, type Lang, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  job: PostedJob;
+}
+
+const { lang, job } = Astro.props;
+const t = useTranslations(lang);
+
+const formatDate = (date: string | null) =>
+  date ? new Intl.DateTimeFormat(dateLocale(lang), { dateStyle: 'long' }).format(new Date(date)) : null;
+
+const postedLabel = formatDate(job.socialPublishedAt ?? job.postedAt);
+const title = jobTitleTag(job);
+const description = jobMetaDescription(job);
+const path = jobPath(job, lang);
+const modeLabel = job.workMode === 'unknown' ? t.modeUnknown : job.workMode;
+const within = `/jobs/${jobSlug(job)}`;
+---
+<Layout
+  title={title}
+  description={description}
+  canonicalPath={path}
+  ogType="article"
+  lang={lang}
+  pathWithinLocale={within}
+  jsonLd={jobPostingJsonLd(job, lang)}
+>
+  <div class="page">
+    <div class="top">
+      <nav class="crumb"><a href={`${localePath(lang, '/')}#annonces`}>{t.backToList}</a></nav>
+      <LangSwitch
+        lang={lang}
+        frHref={localePath('fr', within)}
+        enHref={localePath('en', within)}
+      />
+    </div>
+
+    <article class="offer">
+      <p class="brand">AIJolt</p>
+      <p class="posted">
+        {t.posted}{(job.networks?.length ? ` · ${job.networks.join(' · ')}` : '')}
+        {postedLabel ? ` · ${postedLabel}` : ''}
+      </p>
+      <h1>{job.title}</h1>
+      <p class="company">{job.company}</p>
+
+      <dl class="facts">
+        <div><dt>{t.location}</dt><dd>{job.location}{job.country !== 'Unknown' ? ` · ${job.country}` : ''}</dd></div>
+        <div><dt>{t.mode}</dt><dd>{modeLabel}</dd></div>
+        {job.salary && <div><dt>{t.salary}</dt><dd>{job.salary}</dd></div>}
+        {job.skills?.length > 0 && (
+          <div><dt>{t.stack}</dt><dd>{job.skills.slice(0, 12).join(', ')}</dd></div>
+        )}
+      </dl>
+
+      <section class="body">
+        <h2>{t.description}</h2>
+        <p>{job.description}</p>
+      </section>
+
+      {job.socialText && (
+        <section class="social">
+          <h2>{t.asPosted}</h2>
+          <pre>{job.socialText}</pre>
+        </section>
+      )}
+
+      <p class="cta">
+        <a class="apply" href={job.url} target="_blank" rel="noopener noreferrer">{t.apply}</a>
+      </p>
+      <p class="canonical-note">
+        {t.canonical} : <a href={jobCanonical(job, lang)}>{jobCanonical(job, lang)}</a>
+      </p>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page {
+    width: min(740px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 28px 0 88px;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .crumb a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--slate);
+  }
+
+  .crumb a:hover {
+    color: var(--copper);
+  }
+
+  .offer {
+    animation: rise 0.75s var(--ease) both;
+  }
+
+  .brand {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.2rem, 6vw, 3.1rem);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+
+  .posted {
+    margin: 14px 0 0;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sea);
+  }
+
+  h1 {
+    margin: 16px 0 10px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.55rem, 4vw, 2.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  .company {
+    margin: 0 0 28px;
+    color: var(--slate);
+    font-size: 1.08rem;
+    font-weight: 700;
+  }
+
+  .facts {
+    margin: 0 0 36px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 14px;
+  }
+
+  .facts div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+
+  dt {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  dd {
+    margin: 0;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  .body h2,
+  .social h2 {
+    margin: 0 0 12px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  .body p {
+    margin: 0;
+    white-space: pre-wrap;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  .social {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+
+  .social pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: var(--ink-mid);
+    font-weight: 500;
+  }
+
+  .cta {
+    margin-top: 40px;
+  }
+
+  .apply {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 22px;
+    background: var(--ink);
+    color: #0a1016;
+    text-decoration: none;
+    font-weight: 800;
+    transition: transform 0.25s var(--ease), background 0.2s, color 0.2s;
+  }
+
+  .apply:hover {
+    background: var(--copper);
+    color: #140a08;
+    transform: translateY(-2px);
+  }
+
+  .canonical-note {
+    margin-top: 28px;
+    font-size: 0.78rem;
+    color: var(--slate);
+    word-break: break-all;
+  }
+
+  .canonical-note a {
+    color: var(--slate);
+  }
+
+  @media (max-width: 560px) {
+    .page {
+      width: calc(100% - 28px);
+    }
+    .top {
+      flex-wrap: wrap;
+    }
+    .facts div {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+</style>

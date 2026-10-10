@@ -1,4 +1,5 @@
 import type { PostedJob } from '../types';
+import { defaultLang, localePath, type Lang } from '../i18n/utils';
 
 export const SITE_NAME = 'AIJolt';
 export const SITE_URL = 'https://aijolt.pages.dev';
@@ -13,12 +14,12 @@ export function jobSlug(job: Pick<PostedJob, 'externalId'>): string {
     .slice(0, 120);
 }
 
-export function jobPath(job: Pick<PostedJob, 'externalId'>): string {
-  return `/jobs/${jobSlug(job)}`;
+export function jobPath(job: Pick<PostedJob, 'externalId'>, lang: Lang = defaultLang): string {
+  return localePath(lang, `/jobs/${jobSlug(job)}`);
 }
 
-export function jobCanonical(job: Pick<PostedJob, 'externalId'>): string {
-  return `${SITE_URL}${jobPath(job)}`;
+export function jobCanonical(job: Pick<PostedJob, 'externalId'>, lang: Lang = defaultLang): string {
+  return `${SITE_URL}${jobPath(job, lang)}`;
 }
 
 export function absoluteUrl(path: string): string {
@@ -78,7 +79,7 @@ function jobLocationSchema(job: PostedJob) {
 }
 
 /** JSON-LD JobPosting pour Google for Jobs / rich results. */
-export function jobPostingJsonLd(job: PostedJob) {
+export function jobPostingJsonLd(job: PostedJob, lang: Lang = defaultLang) {
   const datePosted = job.socialPublishedAt || job.postedAt || undefined;
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -89,13 +90,15 @@ export function jobPostingJsonLd(job: PostedJob) {
     hiringOrganization: {
       '@type': 'Organization',
       name: job.company,
+      sameAs: job.url,
     },
     identifier: {
       '@type': 'PropertyValue',
       name: SITE_NAME,
       value: job.externalId,
     },
-    url: jobCanonical(job),
+    url: jobCanonical(job, lang),
+    inLanguage: lang === 'fr' ? 'fr-FR' : 'en-US',
     directApply: false,
     industry: 'Artificial Intelligence',
     skills: job.skills?.length ? job.skills.join(', ') : undefined,
@@ -113,23 +116,20 @@ export function jobPostingJsonLd(job: PostedJob) {
   const emp = employmentType(job);
   if (emp) schema.employmentType = emp;
 
-  // Lien de candidature externe (ATS) — pas l’URL canonique AIJolt.
-  schema.applicationContact = undefined;
-  (schema as { hiringOrganization: Record<string, unknown> }).hiringOrganization.sameAs = job.url;
-
   return schema;
 }
 
-export function itemListJsonLd(jobs: PostedJob[]) {
+export function itemListJsonLd(jobs: PostedJob[], lang: Lang = defaultLang) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `${SITE_NAME} — Offres IA publiées`,
+    name: lang === 'fr' ? `${SITE_NAME} — Offres IA publiées` : `${SITE_NAME} — Published AI jobs`,
     numberOfItems: jobs.length,
+    inLanguage: lang === 'fr' ? 'fr-FR' : 'en-US',
     itemListElement: jobs.map((job, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      url: jobCanonical(job),
+      url: jobCanonical(job, lang),
       name: `${job.title} — ${job.company}`,
     })),
   };

@@ -33,7 +33,9 @@ describe('site SEO helpers', () => {
   it('builds stable slugs and paths', () => {
     expect(jobSlug(job)).toBe('senior-llm-engineer-acme-42');
     expect(jobPath(job)).toBe('/jobs/senior-llm-engineer-acme-42');
+    expect(jobPath(job, 'en')).toBe('/en/jobs/senior-llm-engineer-acme-42');
     expect(jobCanonical(job)).toBe('https://aijolt.pages.dev/jobs/senior-llm-engineer-acme-42');
+    expect(jobCanonical(job, 'en')).toBe('https://aijolt.pages.dev/en/jobs/senior-llm-engineer-acme-42');
   });
 
   it('builds unique title and description', () => {

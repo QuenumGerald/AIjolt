@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LangSwitch from './LangSwitch.astro';
+import { generatedAt, jobs } from '../data';
+import { itemListJsonLd, jobPath } from '../lib/seo';
+import { dateLocale, localePath, type Lang, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const formatDate = (date: string | null) =>
+  date ? new Intl.DateTimeFormat(dateLocale(lang), { dateStyle: 'medium' }).format(new Date(date)) : null;
+
+const updated = generatedAt ? formatDate(generatedAt) : null;
+const title = t.homeTitle;
+const description = jobs.length
+  ? t.homeDescriptionFilled(jobs.length, updated)
+  : t.homeDescriptionEmpty;
+const homePath = localePath(lang, '/');
+---
+<Layout
+  title={title}
+  description={description}
+  canonicalPath={homePath}
+  lang={lang}
+  pathWithinLocale="/"
+  jsonLd={itemListJsonLd(jobs, lang)}
+>
+  <div class="page">
+    <div class="topbar">
+      <LangSwitch lang={lang} frHref={localePath('fr', '/')} enHref={localePath('en', '/')} />
+    </div>
+
+    <section class="hero" aria-label="AIJolt">
+      <div class="hero-wash" aria-hidden="true">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="grain"></div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="brand">AIJolt</p>
+        <h1>{t.headline}</h1>
+        <p class="lede">{t.lede}</p>
+        <div class="cta-row">
+          <a class="cta" href={`${homePath}#annonces`}>{jobs.length ? t.ctaFilled : t.ctaEmpty}</a>
+          <p class="cta-note">
+            {jobs.length ? t.ctaNoteFilled(jobs.length, updated) : t.ctaNoteEmpty}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="annonces" class="board">
+      <header class="board-head">
+        <h2>{t.boardTitle}</h2>
+        <p>{t.boardSubtitle}</p>
+      </header>
+
+      {jobs.length > 0 ? (
+        <ul class="listing" aria-label={t.listingAria}>
+          {jobs.map((job, index) => (
+            <li style={`--i:${index}`}>
+              <a class="row" href={jobPath(job, lang)}>
+                <div class="row-main">
+                  <span class="row-title">{job.title}</span>
+                  <span class="row-company">{job.company}</span>
+                </div>
+                <div class="row-meta">
+                  <span>{job.workMode === 'unknown' ? 'IA' : job.workMode}</span>
+                  <span>{job.location}</span>
+                  <span>{formatDate(job.socialPublishedAt ?? job.postedAt) ?? '—'}</span>
+                </div>
+                <span class="row-go" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class="empty" role="status">
+          <p class="empty-kicker">{t.emptyKicker}</p>
+          <h3>{t.emptyTitle}</h3>
+          <p>{t.emptyBody}</p>
+          <p class="empty-hint">{t.emptyHint}</p>
+        </div>
+      )}
+    </section>
+
+    <footer class="foot">
+      <span class="brand-mini">AIJolt</span>
+      <span>{t.footerTag}</span>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+  .page {
+    width: min(1080px, calc(100% - 40px));
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0 0;
+  }
+
+  .hero {
+    position: relative;
+    isolation: isolate;
+    min-height: min(86vh, 780px);
+    display: flex;
+    align-items: flex-end;
+    margin-inline: calc(50% - 50vw);
+    width: 100vw;
+    padding: 40px max(20px, calc(50vw - 540px)) 68px;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .hero-wash {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(48px);
+    animation: drift 14s ease-in-out infinite;
+  }
+
+  .orb-a {
+    width: min(70vw, 640px);
+    height: min(70vw, 640px);
+    right: -8%;
+    top: -18%;
+    background: radial-gradient(circle at 40% 40%, rgba(95, 179, 169, 0.35), transparent 68%);
+  }
+
+  .orb-b {
+    width: min(55vw, 480px);
+    height: min(55vw, 480px);
+    left: -12%;
+    bottom: -20%;
+    background: radial-gradient(circle at 50% 50%, rgba(224, 122, 102, 0.22), transparent 70%);
+    animation-delay: -4s;
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.22;
+    background:
+      linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.04) 50%, transparent 60%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(255, 255, 255, 0.015) 3px,
+        rgba(255, 255, 255, 0.015) 4px
+      );
+  }
+
+  .hero-copy {
+    max-width: 38rem;
+    animation: rise 0.9s var(--ease) both;
+  }
+
+  .brand {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(3.8rem, 11vw, 7.2rem);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    animation: ink-in 1s var(--ease) both;
+  }
+
+  h1 {
+    margin: 26px 0 14px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+    max-width: 16ch;
+    color: var(--ink-mid);
+  }
+
+  .lede {
+    margin: 0;
+    color: var(--slate);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 36ch;
+    font-weight: 500;
+  }
+
+  .cta-row {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 20px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 22px;
+    background: var(--ink);
+    color: #0a1016;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    transition: transform 0.25s var(--ease), background 0.2s, color 0.2s;
+  }
+
+  .cta:hover {
+    background: var(--copper);
+    color: #140a08;
+    transform: translateY(-2px);
+  }
+
+  .cta-note {
+    margin: 0;
+    color: var(--slate);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .board {
+    padding: 58px 0 20px;
+  }
+
+  .board-head {
+    margin-bottom: 26px;
+  }
+
+  .board-head h2 {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+    letter-spacing: -0.03em;
+  }
+
+  .board-head p {
+    margin: 0;
+    color: var(--slate);
+    font-weight: 500;
+  }
+
+  .listing {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .listing > li {
+    border-bottom: 1px solid var(--line);
+    animation: rise 0.55s var(--ease) both;
+    animation-delay: calc(var(--i) * 0.05s);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) auto;
+    gap: 14px 22px;
+    align-items: center;
+    padding: 24px 2px;
+    text-decoration: none;
+    transition: padding-left 0.25s var(--ease), background 0.2s;
+  }
+
+  .row:hover {
+    padding-left: 12px;
+    background: var(--panel);
+  }
+
+  .row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .row-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.12rem;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+  }
+
+  .row-company {
+    color: var(--slate);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .row-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    color: var(--slate);
+    font-size: 0.86rem;
+    font-weight: 500;
+  }
+
+  .row-go {
+    color: var(--copper);
+    font-size: 1.2rem;
+    transition: transform 0.25s var(--ease);
+  }
+
+  .row:hover .row-go {
+    transform: translateX(5px);
+  }
+
+  .empty {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 48px 4px 52px;
+    max-width: 38rem;
+    animation: rise 0.7s var(--ease) both;
+  }
+
+  .empty-kicker {
+    margin: 0 0 10px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sea);
+  }
+
+  .empty h3 {
+    margin: 0 0 14px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.03em;
+  }
+
+  .empty p {
+    margin: 0 0 12px;
+    color: var(--slate);
+    line-height: 1.65;
+    font-weight: 500;
+  }
+
+  .empty-hint {
+    margin-top: 16px !important;
+    color: var(--ink-mid) !important;
+    font-weight: 700 !important;
+  }
+
+  .foot {
+    margin-top: 52px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    align-items: baseline;
+    color: var(--slate);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .brand-mini {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  @media (max-width: 820px) {
+    .hero {
+      min-height: min(82vh, 680px);
+      padding-bottom: 48px;
+    }
+    .row {
+      grid-template-columns: 1fr auto;
+    }
+    .row-meta {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .page {
+      width: calc(100% - 28px);
+    }
+    .brand {
+      font-size: clamp(3.2rem, 17vw, 4.4rem);
+    }
+  }
+</style>

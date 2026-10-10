@@ -7,4 +7,11 @@ export default defineConfig({
   adapter: cloudflare(),
   site: 'https://aijolt.pages.dev',
   integrations: [sitemap()],
+  i18n: {
+    defaultLocale: 'fr',
+    locales: ['fr', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
