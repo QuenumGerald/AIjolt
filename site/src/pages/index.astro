@@ -14,39 +14,24 @@ const description = jobs.length
 <Layout title={title} description={description} canonicalPath="/" jsonLd={itemListJsonLd(jobs)}>
   <div class="page">
     <section class="hero" aria-label="AIJolt">
-      <div class="hero-atmosphere" aria-hidden="true">
-        <svg class="signal" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="trace" d="M80 620 C260 620 280 280 460 280 C640 280 660 520 860 520 C1060 520 1120 180 1360 180" stroke="currentColor" stroke-width="2.5" />
-          <circle cx="460" cy="280" r="8" fill="var(--jolt)" />
-          <circle cx="860" cy="520" r="8" fill="var(--jolt)" />
-          <circle cx="1360" cy="180" r="8" fill="var(--jolt)" />
-          <g class="bars" stroke="currentColor" stroke-width="14" stroke-linecap="square" opacity="0.55">
-            <line x1="180" y1="680" x2="180" y2="540" />
-            <line x1="230" y1="680" x2="230" y2="420" />
-            <line x1="280" y1="680" x2="280" y2="300" />
-            <line x1="330" y1="680" x2="330" y2="480" />
-            <line x1="380" y1="680" x2="380" y2="360" />
-          </g>
-          <g opacity="0.12" stroke="currentColor" stroke-width="1">
-            <line x1="0" y1="200" x2="1440" y2="200" />
-            <line x1="0" y1="400" x2="1440" y2="400" />
-            <line x1="0" y1="600" x2="1440" y2="600" />
-          </g>
-        </svg>
+      <div class="hero-wash" aria-hidden="true">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="grain"></div>
       </div>
 
       <div class="hero-copy">
         <p class="brand">AIJolt</p>
-        <h1>Les offres IA qu’on poste vraiment.</h1>
+        <h1>Le board des annonces qu’on assume.</h1>
         <p class="lede">
-          Chaque annonce ici a déjà été mise en file ou publiée via Buffer / X — une URL propre, prête à indexer.
+          Uniquement les offres déjà mises en file ou publiées via Buffer / X — une URL stable, rien de scrapé pour faire volume.
         </p>
         <div class="cta-row">
-          <a class="cta" href="#annonces">{jobs.length ? 'Voir les annonces' : 'État des annonces'}</a>
+          <a class="cta" href="#annonces">{jobs.length ? 'Parcourir les annonces' : 'Voir l’état du feed'}</a>
           <p class="cta-note">
             {jobs.length
               ? `${jobs.length} publiée${jobs.length > 1 ? 's' : ''}${generatedAt && formatDate(generatedAt) ? ` · maj ${formatDate(generatedAt)}` : ''}`
-              : 'Feed vide pour l’instant'}
+              : 'Aucune publication indexable pour l’instant'}
           </p>
         </div>
       </div>
@@ -55,7 +40,7 @@ const description = jobs.length
     <section id="annonces" class="board">
       <header class="board-head">
         <h2>Annonces postées</h2>
-        <p>Liste des publications — pas un tableau de bord.</p>
+        <p>Lecture linéaire. Pas de tableau de bord.</p>
       </header>
 
       {jobs.length > 0 ? (
@@ -79,163 +64,182 @@ const description = jobs.length
         </ul>
       ) : (
         <div class="empty" role="status">
-          <p class="empty-kicker">Rien à indexer pour l’instant</p>
-          <h3>Le feed public est vide.</h3>
+          <p class="empty-kicker">Feed public</p>
+          <h3>Encore silencieux.</h3>
           <p>
-            AIJolt n’affiche que les offres déjà postées (Buffer / X). Dès qu’une publication
-            <code>queued</code> ou <code>published</code> existe sur le gateway, elle apparaîtra ici
-            avec une page SEO <code>/jobs/…</code>.
+            AIJolt n’expose que ce qui a été réellement posté. Quand le gateway marque une offre
+            <code>queued</code> ou <code>published</code>, elle apparaît ici avec sa page
+            <code>/jobs/…</code>.
           </p>
-          <p class="empty-hint">Pas de scrape Foorilla sur ce site — volontairement.</p>
+          <p class="empty-hint">Pas de remplissage cosmétique depuis Foorilla.</p>
         </div>
       )}
     </section>
 
     <footer class="foot">
       <span class="brand-mini">AIJolt</span>
-      <span>Job board des annonces qu’on poste.</span>
+      <span>Annonces postées · indexables.</span>
     </footer>
   </div>
 </Layout>
 
 <style>
   .page {
-    width: min(1120px, calc(100% - 40px));
+    width: min(1080px, calc(100% - 40px));
     margin: 0 auto;
-    padding-bottom: 72px;
+    padding-bottom: 80px;
   }
 
   .hero {
     position: relative;
     isolation: isolate;
-    min-height: min(92vh, 860px);
+    min-height: min(90vh, 820px);
     display: flex;
     align-items: flex-end;
-    padding: 48px 0 64px;
     margin-inline: calc(50% - 50vw);
-    padding-inline: max(20px, calc(50vw - 560px));
     width: 100vw;
+    padding: 56px max(20px, calc(50vw - 540px)) 68px;
     border-bottom: 1px solid var(--line);
     overflow: hidden;
   }
 
-  .hero-atmosphere {
+  .hero-wash {
     position: absolute;
     inset: 0;
     z-index: -1;
-    color: var(--ink);
-    pointer-events: none;
+    overflow: hidden;
   }
 
-  .signal {
-    width: 100%;
-    height: 100%;
-    opacity: 0.9;
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: drift 14s ease-in-out infinite;
   }
 
-  .trace {
-    stroke-dasharray: 420;
-    animation: draw 1.6s var(--ease) 0.2s both;
+  .orb-a {
+    width: min(70vw, 640px);
+    height: min(70vw, 640px);
+    right: -8%;
+    top: -18%;
+    background: radial-gradient(circle at 40% 40%, rgba(47, 111, 106, 0.55), transparent 68%);
   }
 
-  .bars line {
-    animation: pulse-line 2.8s ease-in-out infinite;
+  .orb-b {
+    width: min(55vw, 480px);
+    height: min(55vw, 480px);
+    left: -12%;
+    bottom: -20%;
+    background: radial-gradient(circle at 50% 50%, rgba(196, 92, 74, 0.28), transparent 70%);
+    animation-delay: -4s;
   }
-  .bars line:nth-child(2) { animation-delay: 0.15s; }
-  .bars line:nth-child(3) { animation-delay: 0.3s; }
-  .bars line:nth-child(4) { animation-delay: 0.45s; }
-  .bars line:nth-child(5) { animation-delay: 0.6s; }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    background:
+      linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.35) 50%, transparent 60%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(10, 21, 32, 0.03) 3px,
+        rgba(10, 21, 32, 0.03) 4px
+      );
+  }
 
   .hero-copy {
-    position: relative;
-    z-index: 1;
-    animation: rise 0.85s var(--ease) both;
-    max-width: 36rem;
-    padding: 28px 0 8px;
+    max-width: 38rem;
+    animation: rise 0.9s var(--ease) both;
   }
 
   .brand {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(4.6rem, 14vw, 8.2rem);
-    line-height: 0.84;
-    letter-spacing: -0.065em;
+    font-size: clamp(3.8rem, 11vw, 7.2rem);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
     color: var(--ink);
-    text-shadow: 0 0 40px rgba(243, 246, 250, 0.85);
+    animation: ink-in 1s var(--ease) both;
   }
 
   h1 {
-    margin: 28px 0 14px;
+    margin: 26px 0 14px;
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(1.45rem, 2.7vw, 2.05rem);
-    line-height: 1.18;
+    font-weight: 600;
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    line-height: 1.25;
     letter-spacing: -0.03em;
-    max-width: 15ch;
-    color: var(--ink-soft);
+    max-width: 16ch;
+    color: var(--ink-mid);
   }
 
   .lede {
     margin: 0;
-    color: var(--mute);
-    font-size: 1.08rem;
-    line-height: 1.55;
-    max-width: 34ch;
+    color: var(--slate);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 36ch;
+    font-weight: 500;
   }
 
   .cta-row {
-    margin-top: 30px;
+    margin-top: 32px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 16px 22px;
+    gap: 16px 20px;
   }
 
   .cta {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     min-height: 50px;
-    padding: 0 24px;
+    padding: 0 22px;
     background: var(--ink);
-    color: var(--jolt);
+    color: #f4f1ec;
     text-decoration: none;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+    letter-spacing: -0.01em;
+    border: 1px solid transparent;
+    transition: transform 0.25s var(--ease), background 0.2s, color 0.2s;
   }
 
   .cta:hover {
-    background: var(--ink-soft);
+    background: var(--copper);
+    color: #fff;
     transform: translateY(-2px);
   }
 
   .cta-note {
     margin: 0;
+    color: var(--slate);
     font-size: 0.92rem;
-    color: var(--mute);
+    font-weight: 600;
   }
 
   .board {
-    padding: 56px 0 24px;
+    padding: 58px 0 20px;
   }
 
   .board-head {
-    margin-bottom: 28px;
-    max-width: 36rem;
+    margin-bottom: 26px;
   }
 
   .board-head h2 {
     margin: 0 0 8px;
     font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 600;
+    font-size: clamp(1.45rem, 2.6vw, 1.9rem);
     letter-spacing: -0.03em;
   }
 
   .board-head p {
     margin: 0;
-    color: var(--mute);
+    color: var(--slate);
+    font-weight: 500;
   }
 
   .listing {
@@ -246,24 +250,24 @@ const description = jobs.length
   }
 
   .listing > li {
-    animation: rise 0.55s var(--ease) both;
-    animation-delay: calc(0.04s * var(--i));
     border-bottom: 1px solid var(--line);
+    animation: rise 0.55s var(--ease) both;
+    animation-delay: calc(var(--i) * 0.05s);
   }
 
   .row {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
-    gap: 16px 24px;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) auto;
+    gap: 14px 22px;
     align-items: center;
-    padding: 22px 4px;
+    padding: 24px 2px;
     text-decoration: none;
-    transition: background 0.2s var(--ease), padding-left 0.25s var(--ease);
+    transition: padding-left 0.25s var(--ease), background 0.2s;
   }
 
   .row:hover {
-    background: rgba(255, 255, 255, 0.42);
-    padding-left: 10px;
+    padding-left: 12px;
+    background: rgba(255, 255, 255, 0.28);
   }
 
   .row-main {
@@ -275,14 +279,15 @@ const description = jobs.length
 
   .row-title {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    font-weight: 600;
+    font-size: 1.12rem;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
   }
 
   .row-company {
-    color: var(--mute);
+    color: var(--slate);
+    font-weight: 600;
     font-size: 0.95rem;
   }
 
@@ -290,99 +295,106 @@ const description = jobs.length
     display: flex;
     flex-wrap: wrap;
     gap: 8px 14px;
-    color: var(--mute);
+    color: var(--slate);
     font-size: 0.86rem;
+    font-weight: 500;
   }
 
   .row-go {
-    font-size: 1.25rem;
-    color: var(--ink);
-    transition: transform 0.25s var(--ease), color 0.2s;
+    color: var(--copper);
+    font-size: 1.2rem;
+    transition: transform 0.25s var(--ease);
   }
 
   .row:hover .row-go {
-    transform: translateX(4px);
-    color: #6a8a00;
+    transform: translateX(5px);
   }
 
   .empty {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    padding: 48px 8px 52px;
-    max-width: 40rem;
+    padding: 48px 4px 52px;
+    max-width: 38rem;
     animation: rise 0.7s var(--ease) both;
   }
 
   .empty-kicker {
     margin: 0 0 10px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #6a8a00;
+    color: var(--sea);
   }
 
   .empty h3 {
     margin: 0 0 14px;
     font-family: var(--font-display);
+    font-weight: 600;
     font-size: clamp(1.5rem, 3vw, 2rem);
     letter-spacing: -0.03em;
   }
 
   .empty p {
     margin: 0 0 12px;
-    color: var(--mute);
-    line-height: 1.6;
+    color: var(--slate);
+    line-height: 1.65;
+    font-weight: 500;
   }
 
   .empty code {
     font-family: var(--font-body);
     font-size: 0.92em;
-    background: rgba(11, 18, 32, 0.06);
-    padding: 0.1em 0.35em;
+    background: rgba(10, 21, 32, 0.06);
+    padding: 0.08em 0.32em;
   }
 
   .empty-hint {
-    margin-top: 18px !important;
-    font-weight: 600;
-    color: var(--ink-soft) !important;
+    margin-top: 16px !important;
+    color: var(--ink-mid) !important;
+    font-weight: 700 !important;
   }
 
   .foot {
-    margin-top: 48px;
+    margin-top: 52px;
     padding-top: 22px;
     border-top: 1px solid var(--line);
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 20px;
+    gap: 10px 18px;
     align-items: baseline;
-    color: var(--mute);
+    color: var(--slate);
     font-size: 0.9rem;
+    font-weight: 500;
   }
 
   .brand-mini {
     font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.15rem;
-    letter-spacing: -0.04em;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.03em;
     color: var(--ink);
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 820px) {
     .hero {
-      min-height: min(88vh, 720px);
-      align-items: flex-end;
+      min-height: min(86vh, 700px);
+      padding-bottom: 48px;
     }
     .row {
       grid-template-columns: 1fr auto;
-      gap: 10px 12px;
     }
-    .row-meta { grid-column: 1 / -1; }
+    .row-meta {
+      grid-column: 1 / -1;
+    }
   }
 
   @media (max-width: 520px) {
-    .page { width: calc(100% - 28px); }
-    .hero { padding-bottom: 40px; }
-    .brand { font-size: clamp(3.6rem, 20vw, 5rem); }
+    .page {
+      width: calc(100% - 28px);
+    }
+    .brand {
+      font-size: clamp(3.2rem, 17vw, 4.4rem);
+    }
   }
 </style>
