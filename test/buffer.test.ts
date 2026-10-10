@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from '../src/buffer.js';
+import {
+  bufferCreatePostPayload,
+  bufferDeletePostPayload,
+  bufferGetPostPayload,
+  bufferListChannelPostsPayload,
+  classifyBufferPostResponse,
+  extractApplyUrls,
+} from '../src/buffer.js';
 import { jobSlotsToday, newsSlotsToday, newsToEvictForJobs } from '../src/queue-slots.js';
 import { nextCustomDueAt } from '../src/schedule.js';
 import { clampJobsPerCycle, nextRequestWaitMs, parseRetryAfterSeconds } from '../src/throttle.js';
@@ -24,6 +31,23 @@ describe('Buffer status synchronization', () => {
     const payload = bufferDeletePostPayload('post-9');
     expect(payload.variables.id).toBe('post-9');
     expect(payload.query).toContain('deletePost');
+  });
+  it('builds a channel posts list payload for backfill', () => {
+    const payload = bufferListChannelPostsPayload({
+      organizationId: 'org-1',
+      channelIds: ['ch-x'],
+      status: 'sent',
+      first: 20,
+    });
+    expect(payload.variables.organizationId).toBe('org-1');
+    expect(payload.variables.channelIds).toEqual(['ch-x']);
+    expect(payload.variables.status).toEqual(['sent']);
+    expect(payload.query).toContain('posts(');
+  });
+  it('extracts apply URLs from Buffer post text', () => {
+    expect(extractApplyUrls('Hiring Foo — Acme\nApply: https://example.com/jobs/1?ref=x #AIJobs')).toEqual([
+      'https://example.com/jobs/1?ref=x',
+    ]);
   });
 });
 

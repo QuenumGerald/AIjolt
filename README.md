@@ -7,7 +7,7 @@ Il possède aussi un pipeline X séparé et désactivé par défaut pour comment
 ## Architecture de lancement
 
 * **Collecte** : GitHub Actions toutes les 3 heures ; SQLite reste le stockage de travail du job, puis `data/jobs.json` devient la source publique versionnée.
-* **Site** : Astro dans `site/`, construit vers `site/dist` et déployé sur Cloudflare Pages (`<projet>.pages.dev`).
+* **Site** : Astro dans `site/`, construit vers `site/dist` et déployé sur Cloudflare Pages depuis le **gateway** (`npm run site:deploy` / wrangler) — **pas via GitHub Actions**. Le feed public SEO est `data/posted-jobs.json` (annonces Buffer `queued|published`), pas le scrape Foorilla brut.
 * **Réseaux** : Buffer Free reste optionnel ; les textes utilisent un fallback déterministe et DeepSeek si `DEEPSEEK_API_KEY` est configurée.
 * **Coût cible** : 0 € hors éventuels dépassements/quotas des fournisseurs.
 
@@ -128,7 +128,10 @@ npm run news -- publish --dry-run
 15 * * * * cd /opt/aijolt && /usr/bin/npm run collect >> logs/cron.log 2>&1
 25 * * * * cd /opt/aijolt && /usr/bin/npm run score >> logs/cron.log 2>&1
 */30 * * * * cd /opt/aijolt && /usr/bin/npm run publish >> logs/cron.log 2>&1
+35 * * * * cd /opt/aijolt && /usr/bin/npm run export-json >> logs/cron.log 2>&1
+5 * * * * cd /opt/aijolt && /usr/bin/npm run site:deploy >> logs/cron.log 2>&1
 30 2 * * * cd /opt/aijolt && /usr/bin/npm run cleanup >> logs/cron.log 2>&1
 ```
 
-Créez `logs/` et protégez `.env` (`chmod 600 .env`). Ne faites pas tourner cron et `npm run start` simultanément.
+Créez `logs/` et protégez `.env` (`chmod 600 .env`). Ne faites pas tourner cron et `npm run start` simultanément.  
+Si le quota Foorilla est vide : `npm run posted-status` puis `export-json` / `backfill-posted -- --from-buffer` — le site n’a besoin que de `posted-jobs.json`.
