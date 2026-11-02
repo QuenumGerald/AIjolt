@@ -38,7 +38,24 @@ export function parseFeed(xml: string, now = Date.now()): Story[] {
 }
 export function formatPost(story: Story): string | null {
   const post = `${story.title}\n\nSource: ${story.publisher}\n${story.url}`;
-  return Array.from(post).length <= 280 ? post : null;
+  if (Array.from(post).length > 280) return null;
+  const topics: Array<[RegExp, string]> = [
+    [/\b(election|elections|vot(?:e|es|ing|ers)|congress|senate|president|white house|governor)\b/i, '#Politics'],
+    [/\b(economy|inflation|jobs report|interest rates|stocks|business)\b/i, '#Economy'],
+    [/\b(earthquake|earthquakes)\b/i, '#Earthquake'],
+    [/\b(hurricane|tornado|storm|flood|weather)\b/i, '#Weather'],
+    [/\b(nfl|nba|mlb|nhl|football|basketball|baseball|sports)\b/i, '#Sports'],
+    [/\b(film|movie|music|grammy|oscars|television|hollywood)\b/i, '#Entertainment'],
+    [/\b(technology|tech|artificial intelligence|cybersecurity)\b/i, '#Technology'],
+  ];
+  const matching = topics.filter(([pattern]) => pattern.test(story.title)).map(([, tag]) => tag);
+  const candidates = matching.length ? matching.slice(0, 2) : ['#News'];
+  const tags: string[] = [];
+  for (const candidate of candidates) {
+    if (new RegExp(`(^|\\s)${candidate}\\b`, 'i').test(story.title)) continue;
+    if (Array.from(`${post}\n\n${[...tags, candidate].join(' ')}`).length <= 280) tags.push(candidate);
+  }
+  return tags.length ? `${post}\n\n${tags.join(' ')}` : post;
 }
 function database() {
   const path = process.env.MEVRIC_DATABASE_PATH || './data/mevric.db';

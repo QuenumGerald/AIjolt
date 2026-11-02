@@ -14,6 +14,18 @@ describe('Mevric feed', () => {
   it('rejects overlong posts instead of truncating facts', () => {
     expect(formatPost({ title: 'a'.repeat(300), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' })).toBeNull();
   });
+  it('adds relevant hashtags and uses a generic tag for other headlines', () => {
+    const story = { title: 'Congress debates new economic plan', url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    expect(formatPost(story)).toContain('#Politics');
+    expect(formatPost({ ...story, title: 'A story from the capital' })).toContain('#News');
+  });
+  it('keeps a fitting headline when there is no room for a hashtag', () => {
+    const story = { title: 'a'.repeat(243), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    const result = formatPost(story);
+    expect(result).not.toBeNull();
+    expect(result).not.toContain('#News');
+    expect(Array.from(result!).length).toBeLessThanOrEqual(280);
+  });
 });
 
 it('extracts only trusted image or video enclosures', () => {

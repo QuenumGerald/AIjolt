@@ -1,6 +1,6 @@
 # Mevric
 
-Mevric is an automated English-language US news feed for X. It collects recent NPR RSS headlines, stores them in a separate SQLite database and schedules attributed posts through a dedicated Buffer channel. Posts contain the original headline, source and article URL. This initial version uses one publisher and does not independently verify or corroborate its reporting.
+Mevric is an automated English-language US news feed for X. It collects recent NPR RSS headlines, stores them in a separate SQLite database and schedules attributed posts through a dedicated Buffer channel. Posts contain the original headline, source and article URL, plus up to two topic hashtags chosen from keywords (or #News if no topic matches), when space allows. Headlines are not rewritten. This initial version uses one publisher and does not independently verify or corroborate its reporting.
 
 Node.js 20+ is required. Install dependencies with `npm ci`. The default commands run Mevric:
 
