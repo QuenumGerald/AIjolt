@@ -44,35 +44,36 @@ it('sends a text-only post when no media is available and attaches an available 
   const { vi } = await import('vitest');
   const { publish } = await import('../src/mevric.js');
   const dir = mkdtempSync(join(tmpdir(), 'mevric-test-'));
-  const previous = { path: process.env.MEVRIC_DATABASE_PATH, token: process.env.BUFFER_ACCESS_TOKEN, channel: process.env.MEVRIC_BUFFER_CHANNEL_ID };
-  const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async () => new Response(JSON.stringify({ data: { createPost: { post: { id: 'post-1' } } } }), { status: 200 }));
+  const previous = { path: process.env.MEVRIC_DATABASE_PATH, token: process.env.BUFFER_ACCESS_TOKEN, channel: process.env.MEVRIC_BUFFER_CHANNEL_ID, ai: process.env.DEEPSEEK_API_KEY };
+  const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => new Response(JSON.stringify(String(url).includes('deepseek.com') ? { choices: [{ message: { content: 'A rewritten news update.' } }] } : { data: { createPost: { post: { id: 'post-1' } } } }), { status: 200 }));
   try {
     process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
     process.env.BUFFER_ACCESS_TOKEN = 'test';
     process.env.MEVRIC_BUFFER_CHANNEL_ID = 'test-channel';
+    process.env.DEEPSEEK_API_KEY = 'test';
     await publish(false); // initializes database
     const db = new Database(process.env.MEVRIC_DATABASE_PATH);
     db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'News', 'NPR', new Date().toISOString());
     db.close();
     await publish(false);
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-    const textRequest = fetchMock.mock.calls[0][1] as RequestInit;
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    const textRequest = fetchMock.mock.calls[1][1] as RequestInit;
     const textPayload = JSON.parse(textRequest.body as string);
-    expect(textPayload.variables.text).toContain('News');
+    expect(textPayload.variables.text).toContain('A rewritten news update.');
     expect(textPayload.variables).not.toHaveProperty('assets');
     const db2 = new Database(process.env.MEVRIC_DATABASE_PATH);
     db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'Another story', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
     db2.close();
     await publish(false);
-    expect(fetchMock).toHaveBeenCalledTimes(2);
-    const request = fetchMock.mock.calls[1][1] as RequestInit;
+    expect(fetchMock).toHaveBeenCalledTimes(4);
+    const request = fetchMock.mock.calls[3][1] as RequestInit;
     expect(JSON.parse(request.body as string).variables.input.assets).toEqual([{ image: { url: 'https://media.npr.org/image.jpg' } }]);
     const db3 = new Database(process.env.MEVRIC_DATABASE_PATH);
     expect(db3.prepare("SELECT COUNT(*) AS count FROM stories WHERE status='queued'").get()).toEqual({ count: 2 });
     db3.close();
   } finally {
     fetchMock.mockRestore();
-    for (const [key, value] of Object.entries({ MEVRIC_DATABASE_PATH: previous.path, BUFFER_ACCESS_TOKEN: previous.token, MEVRIC_BUFFER_CHANNEL_ID: previous.channel })) {
+    for (const [key, value] of Object.entries({ MEVRIC_DATABASE_PATH: previous.path, BUFFER_ACCESS_TOKEN: previous.token, MEVRIC_BUFFER_CHANNEL_ID: previous.channel, DEEPSEEK_API_KEY: previous.ai })) {
       if (value === undefined) delete process.env[key]; else process.env[key] = value;
     }
     rmSync(dir, { recursive: true, force: true });
@@ -88,11 +89,13 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
   const { collect, publish } = await import('../src/mevric.js');
   const dir = mkdtempSync(join(tmpdir(), 'mevric-collect-'));
   const previousPath = process.env.MEVRIC_DATABASE_PATH;
+  const previousKey = process.env.DEEPSEEK_API_KEY;
   const rss = `<rss><channel><item><title>US news</title><link>https://www.npr.org/2026/story</link><pubDate>${new Date().toUTCString()}</pubDate><enclosure url="https://media.npr.org/photo.jpg" type="image/jpeg"/></item></channel></rss>`;
-  const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async () => new Response(rss, { status: 200 }));
+  const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => String(url).includes('deepseek.com') ? new Response(JSON.stringify({ choices: [{ message: { content: 'A US news update.' } }] }), { status: 200 }) : new Response(rss, { status: 200 }));
   const log = vi.spyOn(console, 'log').mockImplementation(() => {});
   try {
     process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
+    process.env.DEEPSEEK_API_KEY = 'test';
     await collect();
     await collect();
     const db = new Database(process.env.MEVRIC_DATABASE_PATH);
@@ -100,11 +103,44 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
     db.close();
     await publish(true);
     expect(log).toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
-    expect(fetchMock).toHaveBeenCalledTimes(6);
+    expect(fetchMock).toHaveBeenCalledTimes(7);
   } finally {
     log.mockRestore();
     fetchMock.mockRestore();
     if (previousPath === undefined) delete process.env.MEVRIC_DATABASE_PATH; else process.env.MEVRIC_DATABASE_PATH = previousPath;
+    if (previousKey === undefined) delete process.env.DEEPSEEK_API_KEY; else process.env.DEEPSEEK_API_KEY = previousKey;
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+it('does not publish when the rewriting service fails', async () => {
+  const { mkdtempSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { default: Database } = await import('better-sqlite3');
+  const { vi } = await import('vitest');
+  const { publish } = await import('../src/mevric.js');
+  const dir = mkdtempSync(join(tmpdir(), 'mevric-failure-'));
+  const oldPath = process.env.MEVRIC_DATABASE_PATH;
+  const oldKey = process.env.DEEPSEEK_API_KEY;
+  const request = vi.spyOn(globalThis, 'fetch').mockImplementation(async () => new Response('error', { status: 500 }));
+  try {
+    process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
+    process.env.DEEPSEEK_API_KEY = 'test';
+    await publish(true);
+    const db = new Database(process.env.MEVRIC_DATABASE_PATH);
+    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'News', 'NPR', new Date().toISOString());
+    db.close();
+    await expect(publish(false)).rejects.toThrow('DeepSeek HTTP 500');
+    expect(request).toHaveBeenCalledTimes(1);
+    expect(String(request.mock.calls[0][0])).toContain('api.deepseek.com');
+    const check = new Database(process.env.MEVRIC_DATABASE_PATH);
+    expect(check.prepare('SELECT status FROM stories').get()).toEqual({ status: 'new' });
+    check.close();
+  } finally {
+    request.mockRestore();
+    if (oldPath === undefined) delete process.env.MEVRIC_DATABASE_PATH; else process.env.MEVRIC_DATABASE_PATH = oldPath;
+    if (oldKey === undefined) delete process.env.DEEPSEEK_API_KEY; else process.env.DEEPSEEK_API_KEY = oldKey;
     rmSync(dir, { recursive: true, force: true });
   }
 });
