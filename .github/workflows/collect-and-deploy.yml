@@ -24,7 +24,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npm run collect
+      - run: npm run aijolt:collect
         env:
           DATABASE_PATH: ./data/aijolt.db
           FOORILLA_ENABLED: ${{ vars.FOORILLA_ENABLED || 'true' }}

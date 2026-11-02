@@ -9,9 +9,9 @@
   "scripts": {
     "build": "tsc -p tsconfig.json && cp src/schema.sql dist/schema.sql",
     "test": "vitest run",
-    "collect": "tsx src/cli.ts collect",
+    "collect": "tsx src/mevric.ts collect",
     "score": "tsx src/cli.ts score",
-    "publish": "tsx src/cli.ts publish",
+    "publish": "tsx src/mevric.ts publish",
     "news": "tsx src/cli.ts news",
     "cleanup": "tsx src/cli.ts cleanup",
     "outbox": "tsx src/cli.ts outbox",
@@ -19,7 +19,13 @@
     "site:dev": "npm run dev --prefix site",
     "site:build": "npm run build --prefix site",
     "doctor": "tsx src/cli.ts doctor",
-    "start": "tsx src/cli.ts start"
+    "start": "tsx src/mevric.ts start",
+    "mevric:collect": "tsx src/mevric.ts collect",
+    "mevric:publish": "tsx src/mevric.ts publish",
+    "mevric:start": "tsx src/mevric.ts start",
+    "aijolt:collect": "tsx src/cli.ts collect",
+    "aijolt:publish": "tsx src/cli.ts publish",
+    "aijolt:start": "tsx src/cli.ts start"
   },
   "dependencies": {
     "better-sqlite3": "^12.11.1",

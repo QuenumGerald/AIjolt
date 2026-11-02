@@ -1,3 +1,9 @@
+# Mevric
+
+Mevric is an automated US news feed for X. Setup, publication, credentials and limitations are documented in [MEVRIC.md](MEVRIC.md). The default `npm run collect`, `npm run publish`, and `npm start` commands run Mevric. The previous AIJolt commands remain available as `npm run aijolt:collect`, `npm run aijolt:publish`, and `npm run aijolt:start`.
+
+---
+
 # AIJolt
 
 AIJolt collecte des offres IA depuis les API publiques Greenhouse, Lever et Ashby, les classe, exporte un flux JSON versionné et génère un site Astro statique. Tout se pilote en CLI et se déploie gratuitement via GitHub Actions + Cloudflare Pages.
