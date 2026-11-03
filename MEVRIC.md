@@ -34,8 +34,10 @@ Image/video extraction does not grant republication rights. Obtain appropriate r
 
 ## Automation safety
 
-When enabled the scheduler polls every 2 minutes, publishes only stories at most 2 hours old, and limits output to one post every 10 minutes. The Buffer `shareNow` request is used for rapid delivery; X may take longer to show the post. `MEVRIC_MEDIA_APPROVED=false` is the safe default: articles can still publish as NEWS text, but NPR images/videos are not attached without prior media rights and relevance approval.
+When enabled the scheduler polls every 2 minutes, publishes only stories less than 24 hours old, and limits output to one post every 10 minutes. The Buffer `shareNow` request is used for rapid delivery; X may take longer to show the post. `MEVRIC_MEDIA_APPROVED=false` is the safe default: articles can still publish as NEWS text, but NPR images/videos are not attached without prior media rights and relevance approval.
 
 ## Buffer & X quota protection
 
 The production scheduler is pinned to the `MevricNews` channel ID, never `Nox_alkimo`. Local hard stop: **200 attempted posts per UTC day**. There is no additional fixed hourly or between-post limit; the scheduler still polls every two minutes and publishes at most one fresh article per cycle. Attempts with ambiguous Buffer results still count toward limits. The Buffer organization reports two configured channels and a 5,000-scheduled-post capacity; that capacity is not a daily X allowance. Actual X/Buffer posting restrictions can be lower and may change. If Buffer reports a limit error, do not retry automatically; investigate before increasing volume.
+
+The eligible news window is **24 hours** from the article publication timestamp, checked both in the scheduler and before creating each Buffer post. The 200-attempt daily cap, single-post-per-cycle behavior, and duplicate protections remain unchanged.

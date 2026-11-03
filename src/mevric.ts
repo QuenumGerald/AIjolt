@@ -197,7 +197,7 @@ export function mediaPostPayload(text: string, channelId: string, _dueAt: string
 export async function publish(dryRun = true): Promise<void> {
   const db = database();
   try {
-    const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 2 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
+    const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 24 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
     if (!row) { console.log('No recent unpublished stories'); return; }
     // NPR social images can be unrelated archive photos and may not be reusable.
     // Attach third-party media only after separate rights + relevance approval.
@@ -248,8 +248,8 @@ async function main() {
         .get(new Date().toISOString().slice(0,10)) as { n: number };
       if (day.n >= 200) { console.log('Daily safety cap reached: 200 MevricNews attempts UTC'); return; }
       const recent = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status='new' AND published_at >= ?")
-        .get(new Date(Date.now() - 2 * 3600_000).toISOString()) as { n: number };
-      if (!recent.n) { console.log('No fresh news in the last 2 hours'); return; }
+        .get(new Date(Date.now() - 24 * 3600_000).toISOString()) as { n: number };
+      if (!recent.n) { console.log('No eligible news in the last 24 hours'); return; }
     } finally { db.close(); }
     await cycle();
   };
