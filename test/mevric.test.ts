@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseFeed, formatPost, articleImage, postHeading } from '../src/mevric.js';
+import { parseFeed, formatPost, articleImage, postHeading, cleanNewsRewrite } from '../src/mevric.js';
 
 describe('Mevric feed', () => {
   const now = Date.parse('2026-11-02T12:00:00Z');
@@ -50,6 +50,44 @@ describe('Mevric feed', () => {
     expect(text).toContain('NEWS 📰');
     expect(text).not.toContain('Source: NPR');
     expect(text).toContain(story.url);
+  });
+  it('removes BBC/ABC/NPR newswire credits but preserves event-specific attribution', () => {
+    const story = {title:'UK-EU draft deal',publisher:'BBC',url:'https://www.bbc.co.uk/news/story',publishedAt:new Date().toISOString()};
+    expect(cleanNewsRewrite('The UK and EU agreed a draft deal, the BBC reports.',story,180))
+      .toBe('The UK and EU agreed a draft deal.');
+    expect(cleanNewsRewrite('The UK and EU agreed a draft deal, the BBC reported.',story,180))
+      .toBe('The UK and EU agreed a draft deal.');
+    expect(cleanNewsRewrite('BBC reports that the UK and EU agreed a draft deal.',story,180))
+      .toBe('The UK and EU agreed a draft deal.');
+    expect(cleanNewsRewrite('According to ABC News, new legislation was approved.',{...story,publisher:'ABC News'},180))
+      .toBe('New legislation was approved.');
+    expect(cleanNewsRewrite('A rescue operation is underway, NPR says.',{...story,publisher:'NPR'},180))
+      .toBe('A rescue operation is underway.');
+    expect(cleanNewsRewrite('The BBC says officials are investigating, BBC adds.',story,180)).toBeNull();
+    expect(cleanNewsRewrite('Russian bombing killed 31 people at an aid centre, Kyiv says.',story,180))
+      .toBe('Russian bombing killed 31 people at an aid centre, Kyiv says.');
+    expect(cleanNewsRewrite('BBC sources say there is a war.',story,180)).toBeNull();
+  });
+  it('sends no publisher in the DeepSeek prompt and defaults to V4 Pro', async () => {
+    const { vi } = await import('vitest');
+    const { rewriteHeadline } = await import('../src/mevric.js');
+    const previous = {api:process.env.DEEPSEEK_API_KEY,model:process.env.DEEPSEEK_MODEL};
+    process.env.DEEPSEEK_API_KEY = 'test-key';
+    delete process.env.DEEPSEEK_MODEL;
+    const mock = vi.spyOn(globalThis,'fetch').mockImplementation(async () => new Response(JSON.stringify({choices:[{finish_reason:'stop',message:{content:'Workers may be reducing extra effort at work, potentially affecting the economy, the BBC reports.'}}]}),{status:200}));
+    try {
+      const story={ title:'Quiet quitting could hit the economy',url:'https://www.bbc.co.uk/news/test',publisher:'BBC',publishedAt:new Date().toISOString() };
+      expect(await rewriteHeadline(story)).toBe('Workers may be reducing extra effort at work, potentially affecting the economy.');
+      const payload=JSON.parse((mock.mock.calls[0][1] as RequestInit).body as string);
+      expect(payload.model).toBe('deepseek-v4-pro');
+      expect(payload.max_tokens).toBeGreaterThan(500);
+      expect(payload.messages[1].content).not.toContain('publisher');
+      expect(payload.messages[1].content).not.toContain('BBC');
+    } finally {
+      mock.mockRestore();
+      if(previous.api===undefined)delete process.env.DEEPSEEK_API_KEY;else process.env.DEEPSEEK_API_KEY=previous.api;
+      if(previous.model===undefined)delete process.env.DEEPSEEK_MODEL;else process.env.DEEPSEEK_MODEL=previous.model;
+    }
   });
   it('varies rewrite length targets across stories and respects room for the article link', async () => {
     const { rewriteTarget } = await import('../src/mevric.js');
