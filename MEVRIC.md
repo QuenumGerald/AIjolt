@@ -57,3 +57,7 @@ The first line is selected from the original NPR headline: `POLITICS`, `WORLD`, 
 ## Attention-grabbing headings (without false urgency)
 
 Posts vary between a topical lead, `IN FOCUS 🔎`, `THE LATEST 🗞️`, or `ON THE RADAR 📡`, chosen consistently per story. `BREAKING 🚨` and `DEVELOPING 🔴` are reserved for explicit evidence in the NPR headline, not arbitrarily applied to regular stories. The headline and URL remain factual; no invented details or urgency.
+
+## Multiple verified RSS publishers
+
+Mevric monitors NPR (3 feeds), BBC News (World, Business, Technology), and Al Jazeera (all news). URLs are HTTPS and strictly publisher-domain checked, and tracking query parameters are removed. Identical normalized headlines across sources are ignored; URL deduplication still prevents reposts. Only NPR pages are scraped for social images; other sources are linked, not rehosted. The scheduler always refreshes RSS before checking for eligible unpublished stories, preventing the previous empty-queue stall.

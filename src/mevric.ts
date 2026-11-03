@@ -4,10 +4,37 @@ import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 
 const feeds = [
-  'https://feeds.npr.org/1001/rss.xml',
-  'https://feeds.npr.org/1014/rss.xml',
-  'https://feeds.npr.org/1003/rss.xml',
-];
+  { url: 'https://feeds.npr.org/1001/rss.xml', publisher: 'NPR' },
+  { url: 'https://feeds.npr.org/1014/rss.xml', publisher: 'NPR' },
+  { url: 'https://feeds.npr.org/1003/rss.xml', publisher: 'NPR' },
+  { url: 'https://feeds.bbci.co.uk/news/world/rss.xml', publisher: 'BBC' },
+  { url: 'https://feeds.bbci.co.uk/news/business/rss.xml', publisher: 'BBC' },
+  { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', publisher: 'BBC' },
+  { url: 'https://www.aljazeera.com/xml/rss/all.xml', publisher: 'Al Jazeera' },
+] as const;
+
+// All URLs kept in a strict publisher allowlist (never trust arbitrary RSS links).
+function trustedArticleUrl(raw: string, publisher: string): string | undefined {
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== 'https:' || url.username || url.password || url.port) return;
+    const host = url.hostname.toLowerCase();
+    const allowed = publisher === 'NPR' ? (host === 'npr.org' || host.endsWith('.npr.org'))
+      : publisher === 'BBC' ? (host === 'bbc.co.uk' || host.endsWith('.bbc.co.uk') || host === 'bbc.com' || host.endsWith('.bbc.com'))
+      : publisher === 'Al Jazeera' ? (host === 'aljazeera.com' || host.endsWith('.aljazeera.com')) : false;
+    if (!allowed) return;
+    // Normalize tracker parameters so the same story never becomes a second row.
+    for (const key of [...url.searchParams.keys()]) {
+      if (/^(utm_|at_medium$|at_campaign$|fbclid$|gclid$)/i.test(key)) url.searchParams.delete(key);
+    }
+    url.hash = '';
+    return url.href;
+  } catch { return; }
+}
+
+function headlineKey(title: string): string {
+  return title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
+}
 const decode = (s: string) => s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/<[^>]*>/g, '').trim();
 const tag = (item: string, name: string) => decode(item.match(new RegExp(`<${name}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${name}>`, 'i'))?.[1] ?? '');
 export type Media = { kind: 'image' | 'video'; url: string };
@@ -85,15 +112,13 @@ async function fetchArticleImage(articleUrl: string): Promise<Media | undefined>
   } catch { return; } // A missing image must not fail news collection.
 }
 
-export function parseFeed(xml: string, now = Date.now()): Story[] {
+export function parseFeed(xml: string, now = Date.now(), publisher = 'NPR'): Story[] {
   return [...xml.matchAll(/<item(?:\s[^>]*)?>([\s\S]*?)<\/item>/gi)].flatMap(([, item]) => {
     const title = tag(item, 'title').replace(/\s+/g, ' ');
-    const url = tag(item, 'link');
+    const url = trustedArticleUrl(tag(item, 'link'), publisher);
     const published = Date.parse(tag(item, 'pubDate'));
-    let validUrl = false;
-    try { const parsed = new URL(url); validUrl = parsed.protocol === 'https:' && (parsed.hostname === 'npr.org' || parsed.hostname.endsWith('.npr.org')); } catch { /* invalid URL */ }
-    if (!title || !validUrl || !Number.isFinite(published) || published > now || now - published > 24 * 3600_000) return [];
-    return [{ title, url, publishedAt: new Date(published).toISOString(), publisher: 'NPR', media: feedMedia(item) }];
+    if (!title || !url || !Number.isFinite(published) || published > now || now - published > 24 * 3600_000) return [];
+    return [{ title, url, publishedAt: new Date(published).toISOString(), publisher, media: publisher === 'NPR' ? feedMedia(item) : undefined }];
   });
 }
 // Choose a factual topic label from the ORIGINAL headline, not the AI rewrite.
@@ -194,10 +219,10 @@ function database() {
   return db;
 }
 export async function collect(): Promise<void> {
-  const results = await Promise.allSettled(feeds.map(async url => {
-    const response = await fetch(url, { signal: AbortSignal.timeout(20000), headers: { 'user-agent': 'Mevric/1.0 (news reader)' } });
-    if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
-    return parseFeed(await response.text());
+  const results = await Promise.allSettled(feeds.map(async feed => {
+    const response = await fetch(feed.url, { signal: AbortSignal.timeout(20000), headers: { 'user-agent': 'Mevric/1.0 (news reader)' } });
+    if (!response.ok) throw new Error(`${feed.publisher} RSS HTTP ${response.status}`);
+    return parseFeed(await response.text(), Date.now(), feed.publisher);
   }));
   for (const result of results) if (result.status === 'rejected') console.error('Feed error:', result.reason);
   if (results.every(result => result.status === 'rejected')) throw new Error('All news feeds failed');
@@ -209,12 +234,21 @@ export async function collect(): Promise<void> {
     const prior = unique.get(story.url);
     if (!prior || (!prior.media && story.media)) unique.set(story.url, story);
   }
-  // Only enrich new/unfinished articles with no media, avoiding unnecessary
-  // repeated page requests and avoiding all edits to queued articles.
+  // Cross-source exact-headline deduplication: never create a second post for
+  // the same normalized headline, even when two publishers use distinct URLs.
+  const seenTitles = new Set((db.prepare('SELECT title FROM stories').all() as { title: string }[]).map(s => headlineKey(s.title)));
+  const knownUrls = new Set((db.prepare('SELECT url FROM stories').all() as { url: string }[]).map(s => s.url));
+  for (const story of unique.values()) {
+    const key = headlineKey(story.title);
+    if (!knownUrls.has(story.url) && seenTitles.has(key)) unique.delete(story.url);
+    else seenTitles.add(key);
+  }
+  // Only NPR pages are eligible for our article-image fallback. Other sources
+  // use text and the article link (potentially a provider-generated link card).
   const needsImage = db.prepare("SELECT media_url, status FROM stories WHERE url=?");
   const pending = [...unique.values()].filter(story => {
     const existing = needsImage.get(story.url) as { media_url: string | null; status: string } | undefined;
-    return !story.media && (!existing || (existing.status === 'new' && !existing.media_url));
+    return story.publisher === 'NPR' && !story.media && (!existing || (existing.status === 'new' && !existing.media_url));
   });
   // Bound concurrency to prevent overwhelming NPR or the small server.
   for (let i = 0; i < pending.length; i += 3) {
@@ -276,10 +310,15 @@ async function main() {
   // Restrict this scheduler to MevricNews. The second Buffer channel is separate.
   if (process.env.MEVRIC_BUFFER_CHANNEL_ID !== '6aea10f0e29c69a1714d0a21') throw new Error('Unexpected Buffer channel; refusing automation');
   let running = false;
-  const cycle = async () => { if (running) return; running = true; try { await collect(); await publish(process.env.DRY_RUN !== 'false'); } catch (error) { console.error('Mevric cycle failed:', error); } finally { running = false; } };
   // No fixed hourly/per-post delay; Buffer/X limits still apply.
   // One scheduler cycle selects at most one fresh, unposted story.
   const safeCycle = async () => {
+    if (running) return;
+    running = true;
+    try {
+    // Always collect before deciding that there is nothing new. Previously,
+    // the guard prevented collection forever once the existing queue emptied.
+    await collect();
     const db = database();
     try {
       // Count all attempts, including uncertain Buffer outcomes, without retrying.
@@ -291,7 +330,8 @@ async function main() {
         .get(new Date(Date.now() - 24 * 3600_000).toISOString()) as { n: number };
       if (!recent.n) { console.log('No eligible news in the last 24 hours'); return; }
     } finally { db.close(); }
-    await cycle();
+    await publish(process.env.DRY_RUN !== 'false');
+    } catch (error) { console.error('Mevric cycle failed:', error); } finally { running = false; }
   };
   await safeCycle();
   setInterval(() => void safeCycle(), 2 * 60_000);
