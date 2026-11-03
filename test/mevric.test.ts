@@ -20,10 +20,10 @@ describe('Mevric feed', () => {
     expect(bbc).toHaveLength(1);
     expect(bbc[0].publisher).toBe('BBC');
     expect(bbc[0].url).toBe('https://www.bbc.co.uk/news/articles/test');
-    const abc = parseFeed(item('https://abcnews.go.com/US/story?id=123456'), now, 'ABC News');
+    const abc = parseFeed(item('https://abcnews.com/US/story?id=123456'), now, 'ABC News');
     expect(abc).toHaveLength(1);
     expect(abc[0].publisher).toBe('ABC News');
-    expect(abc[0].url).toContain('abcnews.go.com/US/story');
+    expect(abc[0].url).toContain('abcnews.com/US/story');
     expect(parseFeed(item('https://www.bbc.co.uk.evil.test/article'),now,'BBC')).toHaveLength(0);
     expect(parseFeed(item('https://abcnews.go.com.evil.test/article'),now,'ABC News')).toHaveLength(0);
     expect(parseFeed(item('https://www.aljazeera.com/news/example'),now,'Al Jazeera')).toHaveLength(0);

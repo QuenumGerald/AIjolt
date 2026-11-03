@@ -22,7 +22,7 @@ function trustedArticleUrl(raw: string, publisher: string): string | undefined {
     const host = url.hostname.toLowerCase();
     const allowed = publisher === 'NPR' ? (host === 'npr.org' || host.endsWith('.npr.org'))
       : publisher === 'BBC' ? (host === 'bbc.co.uk' || host.endsWith('.bbc.co.uk') || host === 'bbc.com' || host.endsWith('.bbc.com'))
-      : publisher === 'ABC News' ? (host === 'abcnews.go.com') : false;
+      : publisher === 'ABC News' ? (host === 'abcnews.go.com' || host === 'abcnews.com' || host === 'www.abcnews.com') : false;
     if (!allowed) return;
     // Normalize tracker parameters so the same story never becomes a second row.
     for (const key of [...url.searchParams.keys()]) {
