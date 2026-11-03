@@ -188,7 +188,7 @@ export async function collect(): Promise<void> {
 export function immediatePostPayload(text: string, channelId: string, media?: Media) {
   return {
     query: `mutation CreatePost($input: CreatePostInput!) { createPost(input: $input) { ... on PostActionSuccess { post { id dueAt status } } ... on MutationError { message } } }`,
-    variables: { input: { text, channelId, schedulingType: 'automatic', mode: 'shareNow', ...(media ? { assets: [{ [media.kind]: { url: media.url } }] } : {}) } },
+    variables: { input: { text, channelId, schedulingType: 'automatic', mode: 'shareNow', needsApproval: false, assets: media ? [{ [media.kind]: { url: media.url } }] : [] } },
   };
 }
 export function mediaPostPayload(text: string, channelId: string, _dueAt: string, media: Media) {
@@ -197,9 +197,12 @@ export function mediaPostPayload(text: string, channelId: string, _dueAt: string
 export async function publish(dryRun = true): Promise<void> {
   const db = database();
   try {
-    const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 24 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
+    const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 2 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
     if (!row) { console.log('No recent unpublished stories'); return; }
-    const media: Media | undefined = row.mediaUrl && (row.mediaKind === 'image' || row.mediaKind === 'video') ? { kind: row.mediaKind, url: row.mediaUrl } : undefined;
+    // NPR social images can be unrelated archive photos and may not be reusable.
+    // Attach third-party media only after separate rights + relevance approval.
+    const mediaAllowed = process.env.MEVRIC_MEDIA_APPROVED === 'true';
+    const media: Media | undefined = mediaAllowed && row.mediaUrl && (row.mediaKind === 'image' || row.mediaKind === 'video') ? { kind: row.mediaKind, url: row.mediaUrl } : undefined;
     const rewritten = await rewriteHeadline(row);
     const text = formatPost(row, rewritten);
     if (!text) { db.prepare("UPDATE stories SET status='skipped', error='Post exceeds 280 characters' WHERE url=?").run(row.url); console.log('Skipped an overlong headline'); return; }
@@ -232,7 +235,20 @@ async function main() {
   if (command !== 'start') throw new Error('Usage: mevric collect|publish|start [--dry-run]');
   let running = false;
   const cycle = async () => { if (running) return; running = true; try { await collect(); await publish(process.env.DRY_RUN !== 'false'); } catch (error) { console.error('Mevric cycle failed:', error); } finally { running = false; } };
-  await cycle();
-  setInterval(() => void cycle(), 2 * 60_000);
+  // Poll frequently, but never dump a backlog or flood followers.
+  const safeCycle = async () => {
+    const db = database();
+    try {
+      const last = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at >= ?")
+        .get(new Date(Date.now() - 10 * 60_000).toISOString()) as { n: number };
+      if (last.n > 0) { console.log('Rate limit: one post per 10 minutes'); return; }
+      const recent = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status='new' AND published_at >= ?")
+        .get(new Date(Date.now() - 2 * 3600_000).toISOString()) as { n: number };
+      if (!recent.n) { console.log('No fresh news in the last 2 hours'); return; }
+    } finally { db.close(); }
+    await cycle();
+  };
+  await safeCycle();
+  setInterval(() => void safeCycle(), 2 * 60_000);
 }
 if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) main().catch(error => { console.error(error); process.exitCode = 1; });

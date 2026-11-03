@@ -31,3 +31,7 @@ Posts start with `NEWS 🚨`, the rewritten headline and a topical hashtag; **th
 Image/video extraction does not grant republication rights. Obtain appropriate rights before publishing third-party media.
 
 **Fast news:** Once enabled, the scheduler checks RSS every two minutes and uses Buffer `shareNow` for immediate delivery requests (actual X delivery depends on Buffer and X). It remains disabled in staging with `DRY_RUN=true`. Clearly labelled file/archive hero photos are rejected and fall back to text-only, but this is not full visual verification or proof of media reuse rights.
+
+## Automation safety
+
+When enabled the scheduler polls every 2 minutes, publishes only stories at most 2 hours old, and limits output to one post every 10 minutes. The Buffer `shareNow` request is used for rapid delivery; X may take longer to show the post. `MEVRIC_MEDIA_APPROVED=false` is the safe default: articles can still publish as NEWS text, but NPR images/videos are not attached without prior media rights and relevance approval.

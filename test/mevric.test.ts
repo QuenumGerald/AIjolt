@@ -56,7 +56,7 @@ it('sends a text-only post when no media is available and attaches an available 
   const { vi } = await import('vitest');
   const { publish } = await import('../src/mevric.js');
   const dir = mkdtempSync(join(tmpdir(), 'mevric-test-'));
-  const previous = { path: process.env.MEVRIC_DATABASE_PATH, token: process.env.BUFFER_ACCESS_TOKEN, channel: process.env.MEVRIC_BUFFER_CHANNEL_ID, ai: process.env.DEEPSEEK_API_KEY };
+  const previous = { path: process.env.MEVRIC_DATABASE_PATH, token: process.env.BUFFER_ACCESS_TOKEN, channel: process.env.MEVRIC_BUFFER_CHANNEL_ID, ai: process.env.DEEPSEEK_API_KEY, media: process.env.MEVRIC_MEDIA_APPROVED };
   const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => new Response(JSON.stringify(String(url).includes('deepseek.com') ? { choices: [{ message: { content: 'A rewritten news update.' } }] } : { data: { createPost: { post: { id: 'post-1' } } } }), { status: 200 }));
   try {
     process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
@@ -75,10 +75,12 @@ it('sends a text-only post when no media is available and attaches an available 
     expect(textPayload.variables.input.text).not.toContain('https://');
     expect(textPayload.variables.input.text).not.toContain('Source: NPR');
     expect(textPayload.variables.input.mode).toBe('shareNow');
-    expect(textPayload.variables.input).not.toHaveProperty('assets');
+    expect(textPayload.variables.input.assets).toEqual([]);
+    expect(textPayload.variables.input.needsApproval).toBe(false);
     const db2 = new Database(process.env.MEVRIC_DATABASE_PATH);
     db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'Another story', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
     db2.close();
+    process.env.MEVRIC_MEDIA_APPROVED = 'true'; // test only: simulate an approved image
     await publish(false);
     expect(fetchMock).toHaveBeenCalledTimes(4);
     const request = fetchMock.mock.calls[3][1] as RequestInit;
@@ -89,7 +91,7 @@ it('sends a text-only post when no media is available and attaches an available 
     db3.close();
   } finally {
     fetchMock.mockRestore();
-    for (const [key, value] of Object.entries({ MEVRIC_DATABASE_PATH: previous.path, BUFFER_ACCESS_TOKEN: previous.token, MEVRIC_BUFFER_CHANNEL_ID: previous.channel, DEEPSEEK_API_KEY: previous.ai })) {
+    for (const [key, value] of Object.entries({ MEVRIC_DATABASE_PATH: previous.path, BUFFER_ACCESS_TOKEN: previous.token, MEVRIC_BUFFER_CHANNEL_ID: previous.channel, DEEPSEEK_API_KEY: previous.ai, MEVRIC_MEDIA_APPROVED: previous.media })) {
       if (value === undefined) delete process.env[key]; else process.env[key] = value;
     }
     rmSync(dir, { recursive: true, force: true });
@@ -118,7 +120,8 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
     expect(db.prepare('SELECT COUNT(*) AS count FROM stories').get()).toEqual({ count: 1 });
     db.close();
     await publish(true);
-    expect(log).toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
+    expect(log).toHaveBeenCalledWith(expect.stringContaining('NEWS 🚨'));
+    expect(log).not.toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
     expect(fetchMock).toHaveBeenCalledTimes(7);
   } finally {
     log.mockRestore();
