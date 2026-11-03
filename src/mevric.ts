@@ -96,11 +96,29 @@ export function parseFeed(xml: string, now = Date.now()): Story[] {
     return [{ title, url, publishedAt: new Date(published).toISOString(), publisher: 'NPR', media: feedMedia(item) }];
   });
 }
+// Choose a factual topic label from the ORIGINAL headline, not the AI rewrite.
+// Prefer specific topics; ambiguous items retain the generic NEWS fallback.
+export function postHeading(story: Story): string {
+  const headline = story.title;
+  const topics: Array<[RegExp, string]> = [
+    [/\b(earthquake|wildfire|hurricane|tornado|flood|severe storm)\b/i, 'WEATHER 🌪️'],
+    [/\b(nfl|nba|mlb|nhl|super bowl|world series|football|basketball|baseball|soccer|olympics)\b/i, 'SPORTS 🏆'],
+    [/\b(cyberattack|ransomware|artificial intelligence|AI model|robotics|software|chipmaker|smartphone|technology)\b/i, 'TECH 💻'],
+    [/\b(election|ballot|congress|senate|white house|president|governor|supreme court|legislation)\b/i, 'POLITICS 🏛️'],
+    [/\b(inflation|interest rates|federal reserve|stock market|tariffs|recession|unemployment|economy)\b/i, 'ECONOMY 📈'],
+    [/\b(movie|film|grammy|oscars|hollywood|album|concert|television)\b/i, 'CULTURE 🎬'],
+    [/\b(clinical trial|vaccine|public health|disease outbreak|medical research|hospital)\b/i, 'HEALTH 🩺'],
+    [/\b(nasa|spacecraft|space station|astronaut|moon mission|mars rover)\b/i, 'SCIENCE 🔬'],
+    [/\b(war|ceasefire|airstrike|missile|military|invasion|peace talks)\b/i, 'WORLD 🌍'],
+  ];
+  return topics.find(([pattern]) => pattern.test(headline))?.[1] ?? 'NEWS 📰';
+}
+
 export function formatPost(story: Story, text = story.title): string | null {
   // The article link is visible so readers can access the original story and
   // its preview image, even when third-party media attachment is disabled.
   // Buffer/X may render its own link preview; no image rights are implied.
-  const post = `NEWS 🚨\n\n${text}\n\n${story.url}`;
+  const post = `${postHeading(story)}\n\n${text}\n\n${story.url}`;
   if (Array.from(post).length > 280) return null;
   const topics: Array<[RegExp, string]> = [
     [/\b(election|elections|vot(?:e|es|ing|ers)|congress|senate|president|white house|governor)\b/i, '#Politics'],
@@ -123,7 +141,7 @@ export function formatPost(story: Story, text = story.title): string | null {
 // Give different stories different length targets, within the strict X budget.
 // Never fill space with facts that are absent from the source headline.
 export function rewriteTarget(story: Story): { target: number; max: number } {
-  const reserved = Array.from(`NEWS 🚨\n\n\n\n${story.url}\n\n#News`).length;
+  const reserved = Array.from(`${postHeading(story)}\n\n\n\n${story.url}\n\n#News`).length;
   const max = Math.min(220, 280 - reserved);
   let hash = 0;
   for (const char of story.url) hash = (Math.imul(hash, 31) + char.codePointAt(0)!) >>> 0;

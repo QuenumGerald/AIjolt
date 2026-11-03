@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseFeed, formatPost, articleImage } from '../src/mevric.js';
+import { parseFeed, formatPost, articleImage, postHeading } from '../src/mevric.js';
 
 describe('Mevric feed', () => {
   const now = Date.parse('2026-11-02T12:00:00Z');
@@ -9,15 +9,24 @@ describe('Mevric feed', () => {
     const stories = parseFeed(xml, now);
     expect(stories).toHaveLength(1);
     expect(stories[0].title).toBe('Election & economy');
-    expect(formatPost(stories[0])).toMatch(/^NEWS 🚨\n\n/);
+    expect(formatPost(stories[0])).toMatch(/^POLITICS 🏛️\n\n/);
     expect(formatPost(stories[0])).not.toContain('Source: NPR');
     expect(formatPost(stories[0])).toContain(stories[0].url);
+  });
+  it('adapts headers by article topic and falls back without inventing certainty', () => {
+    const base = { url:'https://www.npr.org/example', publishedAt:new Date().toISOString(), publisher:'NPR' };
+    expect(postHeading({ ...base, title:'Senate debates election bill' })).toBe('POLITICS 🏛️');
+    expect(postHeading({ ...base, title:'NBA playoffs begin tonight' })).toBe('SPORTS 🏆');
+    expect(postHeading({ ...base, title:'Federal Reserve signals interest rates' })).toBe('ECONOMY 📈');
+    expect(postHeading({ ...base, title:'NASA launches spacecraft' })).toBe('SCIENCE 🔬');
+    expect(postHeading({ ...base, title:'Local community celebrates annual festival' })).toBe('NEWS 📰');
+    expect(formatPost({ ...base, title:'NASA launches spacecraft' })).toMatch(/^SCIENCE 🔬\n\n/);
   });
   it('keeps article links even when no media is available', () => {
     const story = { title: 'News event', url: 'https://www.npr.org/story/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
     const text = formatPost(story);
     expect(text).toContain('News event');
-    expect(text).toMatch(/^NEWS 🚨\n\n/);
+    expect(text).toMatch(/^NEWS 📰\n\n/);
     expect(text).not.toContain('Source: NPR');
     expect(text).toContain(story.url);
   });
@@ -131,7 +140,7 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
     expect(db.prepare('SELECT COUNT(*) AS count FROM stories').get()).toEqual({ count: 1 });
     db.close();
     await publish(true);
-    expect(log).toHaveBeenCalledWith(expect.stringContaining('NEWS 🚨'));
+    expect(log).toHaveBeenCalledWith(expect.stringContaining('NEWS 📰'));
     expect(log).not.toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
     expect(fetchMock).toHaveBeenCalledTimes(7);
   } finally {

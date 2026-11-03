@@ -49,3 +49,7 @@ Mevric now appends the original NPR article URL to every `NEWS 🚨` post. Buffe
 ### Variable post lengths
 
 DeepSeek receives a deterministic per-story length target, with room reserved for the article URL, NEWS label, and hashtag. Updates can use one or two sentences when the headline supports them, otherwise they remain short. No invented facts are allowed.
+
+## Adaptive headline labels
+
+The first line is selected from the original NPR headline: `POLITICS`, `WORLD`, `ECONOMY`, `TECH`, `SPORTS`, `WEATHER`, `HEALTH`, `SCIENCE`, or `CULTURE` with a matching emoji. If none clearly matches, it uses `NEWS 📰`. This does not change the article link, the variable post length, daily quota, or publication schedule.
