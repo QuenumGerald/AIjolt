@@ -233,6 +233,8 @@ async function main() {
   if (command === 'collect') return collect();
   if (command === 'publish') return publish(process.env.DRY_RUN !== 'false' || process.argv.includes('--dry-run'));
   if (command !== 'start') throw new Error('Usage: mevric collect|publish|start [--dry-run]');
+  // Restrict this scheduler to MevricNews. The second Buffer channel is separate.
+  if (process.env.MEVRIC_BUFFER_CHANNEL_ID !== '6aea10f0e29c69a1714d0a21') throw new Error('Unexpected Buffer channel; refusing automation');
   let running = false;
   const cycle = async () => { if (running) return; running = true; try { await collect(); await publish(process.env.DRY_RUN !== 'false'); } catch (error) { console.error('Mevric cycle failed:', error); } finally { running = false; } };
   // Poll frequently, but never dump a backlog or flood followers.
@@ -242,6 +244,14 @@ async function main() {
       const last = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at >= ?")
         .get(new Date(Date.now() - 10 * 60_000).toISOString()) as { n: number };
       if (last.n > 0) { console.log('Rate limit: one post per 10 minutes'); return; }
+      const hour = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at >= ?")
+        .get(new Date(Date.now() - 60 * 60_000).toISOString()) as { n: number };
+      if (hour.n >= 4) { console.log('Rate limit: maximum four posts per rolling hour'); return; }
+      // Count all attempts, including uncertain API outcomes, rather than risk retries.
+      // UTC day and only this app's database: Nox_alkimo is never included.
+      const day = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND substr(attempted_at,1,10) = ?")
+        .get(new Date().toISOString().slice(0,10)) as { n: number };
+      if (day.n >= 24) { console.log('Daily safety cap reached: 24 MevricNews posts UTC'); return; }
       const recent = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status='new' AND published_at >= ?")
         .get(new Date(Date.now() - 2 * 3600_000).toISOString()) as { n: number };
       if (!recent.n) { console.log('No fresh news in the last 2 hours'); return; }
