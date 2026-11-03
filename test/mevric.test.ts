@@ -9,14 +9,16 @@ describe('Mevric feed', () => {
     const stories = parseFeed(xml, now);
     expect(stories).toHaveLength(1);
     expect(stories[0].title).toBe('Election & economy');
-    expect(formatPost(stories[0])).toContain('Source: NPR');
+    expect(formatPost(stories[0])).toMatch(/^NEWS 🚨\n\n/);
+    expect(formatPost(stories[0])).not.toContain('Source: NPR');
     expect(formatPost(stories[0])).not.toContain('https://');
   });
   it('keeps text-only posts when no media and strips article URLs', () => {
     const story = { title: 'News event', url: 'https://www.npr.org/story/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
     const text = formatPost(story);
     expect(text).toContain('News event');
-    expect(text).toContain('Source: NPR');
+    expect(text).toMatch(/^NEWS 🚨\n\n/);
+    expect(text).not.toContain('Source: NPR');
     expect(text).not.toContain(story.url);
   });
   it('rejects overlong posts instead of truncating facts', () => {
@@ -28,7 +30,7 @@ describe('Mevric feed', () => {
     expect(formatPost({ ...story, title: 'A story from the capital' })).toContain('#News');
   });
   it('keeps a fitting headline when there is no room for a hashtag', () => {
-    const story = { title: 'a'.repeat(264), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    const story = { title: 'a'.repeat(268), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
     const result = formatPost(story);
     expect(result).not.toBeNull();
     expect(result).not.toContain('#News');
@@ -69,10 +71,11 @@ it('sends a text-only post when no media is available and attaches an available 
     expect(fetchMock).toHaveBeenCalledTimes(2);
     const textRequest = fetchMock.mock.calls[1][1] as RequestInit;
     const textPayload = JSON.parse(textRequest.body as string);
-    expect(textPayload.variables.text).toContain('A rewritten news update.');
-    expect(textPayload.variables.text).not.toContain('https://');
-    expect(textPayload.variables.text).toContain('Source: NPR');
-    expect(textPayload.variables).not.toHaveProperty('assets');
+    expect(textPayload.variables.input.text).toContain('A rewritten news update.');
+    expect(textPayload.variables.input.text).not.toContain('https://');
+    expect(textPayload.variables.input.text).not.toContain('Source: NPR');
+    expect(textPayload.variables.input.mode).toBe('shareNow');
+    expect(textPayload.variables.input).not.toHaveProperty('assets');
     const db2 = new Database(process.env.MEVRIC_DATABASE_PATH);
     db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'Another story', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
     db2.close();
@@ -160,6 +163,15 @@ it('does not publish when the rewriting service fails', async () => {
 
 
 describe('Mevric article image fallback', () => {
+  it('rejects historical FILE photo thumbnails even when og:image exists', () => {
+    const html = `<meta property="og:image" content="https://npr.brightspotcdn.com/cover.jpg"><img src="/cover.jpg" fetchpriority="high" alt="FILE - Fishermen stand on the beach in Somalia, March 6, 2017.">`;
+    expect(articleImage(html)).toBeUndefined();
+  });
+  it('accepts image thumbnails with an ordinary descriptive caption', () => {
+    const html = `<meta property="og:image" content="https://npr.brightspotcdn.com/cover.jpg"><img fetchpriority="high" alt="Rescue teams at the scene today">`;
+    expect(articleImage(html)?.kind).toBe('image');
+  });
+
   it('extracts a trusted NPR og:image even when HTML attributes are reversed', () => {
     expect(articleImage(`<meta content="https://npr.brightspotcdn.com/img.jpg?size=1400&amp;quality=85" property="og:image">`))
       .toEqual({ kind: 'image', url: 'https://npr.brightspotcdn.com/img.jpg?size=1400&quality=85' });
