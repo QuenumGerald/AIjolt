@@ -13,19 +13,20 @@ describe('Mevric feed', () => {
     expect(formatPost(stories[0])).not.toContain('Source: NPR');
     expect(formatPost(stories[0])).toContain(stories[0].url);
   });
-  it('parses BBC and Al Jazeera RSS while blocking spoofed domains and tracking params', () => {
+  it('parses BBC and ABC News RSS while blocking spoofed domains and tracking params', () => {
     const now = Date.parse('2026-11-03T20:00:00Z');
     const item = (url: string) => `<rss><item><title>World news</title><link>${url.replace(/&/g, '&amp;')}</link><pubDate>Tue, 03 Nov 2026 19:30:00 GMT</pubDate></item></rss>`;
     const bbc = parseFeed(item('https://www.bbc.co.uk/news/articles/test?at_medium=RSS&at_campaign=rss'), now, 'BBC');
     expect(bbc).toHaveLength(1);
     expect(bbc[0].publisher).toBe('BBC');
     expect(bbc[0].url).toBe('https://www.bbc.co.uk/news/articles/test');
-    const aj = parseFeed(item('https://www.aljazeera.com/news/2026/11/3/example'), now, 'Al Jazeera');
-    expect(aj).toHaveLength(1);
-    expect(aj[0].publisher).toBe('Al Jazeera');
-    expect(aj[0].url).toContain('aljazeera.com/news/');
+    const abc = parseFeed(item('https://abcnews.go.com/US/story?id=123456'), now, 'ABC News');
+    expect(abc).toHaveLength(1);
+    expect(abc[0].publisher).toBe('ABC News');
+    expect(abc[0].url).toContain('abcnews.go.com/US/story');
     expect(parseFeed(item('https://www.bbc.co.uk.evil.test/article'),now,'BBC')).toHaveLength(0);
-    expect(parseFeed(item('https://www.aljazeera.com.evil.test/article'),now,'Al Jazeera')).toHaveLength(0);
+    expect(parseFeed(item('https://abcnews.go.com.evil.test/article'),now,'ABC News')).toHaveLength(0);
+    expect(parseFeed(item('https://www.aljazeera.com/news/example'),now,'Al Jazeera')).toHaveLength(0);
     expect(parseFeed(item('http://www.bbc.co.uk/news/example'),now,'BBC')).toHaveLength(0);
   });
   it('makes topic-led hooks varied and reserves BREAKING for explicit urgent headlines', () => {
@@ -164,7 +165,7 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
     await publish(true);
     expect(log).toHaveBeenCalledWith(expect.stringContaining('NEWS 📰'));
     expect(log).not.toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
-    expect(fetchMock).toHaveBeenCalledTimes(15);
+    expect(fetchMock).toHaveBeenCalledTimes(17);
   } finally {
     log.mockRestore();
     fetchMock.mockRestore();

@@ -10,7 +10,8 @@ const feeds = [
   { url: 'https://feeds.bbci.co.uk/news/world/rss.xml', publisher: 'BBC' },
   { url: 'https://feeds.bbci.co.uk/news/business/rss.xml', publisher: 'BBC' },
   { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', publisher: 'BBC' },
-  { url: 'https://www.aljazeera.com/xml/rss/all.xml', publisher: 'Al Jazeera' },
+  { url: 'https://abcnews.go.com/abcnews/topstories', publisher: 'ABC News' },
+  { url: 'https://abcnews.go.com/abcnews/usheadlines', publisher: 'ABC News' },
 ] as const;
 
 // All URLs kept in a strict publisher allowlist (never trust arbitrary RSS links).
@@ -21,7 +22,7 @@ function trustedArticleUrl(raw: string, publisher: string): string | undefined {
     const host = url.hostname.toLowerCase();
     const allowed = publisher === 'NPR' ? (host === 'npr.org' || host.endsWith('.npr.org'))
       : publisher === 'BBC' ? (host === 'bbc.co.uk' || host.endsWith('.bbc.co.uk') || host === 'bbc.com' || host.endsWith('.bbc.com'))
-      : publisher === 'Al Jazeera' ? (host === 'aljazeera.com' || host.endsWith('.aljazeera.com')) : false;
+      : publisher === 'ABC News' ? (host === 'abcnews.go.com') : false;
     if (!allowed) return;
     // Normalize tracker parameters so the same story never becomes a second row.
     for (const key of [...url.searchParams.keys()]) {
@@ -271,7 +272,7 @@ export function mediaPostPayload(text: string, channelId: string, _dueAt: string
 export async function publish(dryRun = true): Promise<void> {
   const db = database();
   try {
-    const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 24 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
+    const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News') AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 24 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
     if (!row) { console.log('No recent unpublished stories'); return; }
     // NPR social images can be unrelated archive photos and may not be reusable.
     // Attach third-party media only after separate rights + relevance approval.
@@ -326,7 +327,7 @@ async function main() {
       const day = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND substr(attempted_at,1,10) = ?")
         .get(new Date().toISOString().slice(0,10)) as { n: number };
       if (day.n >= 200) { console.log('Daily safety cap reached: 200 MevricNews attempts UTC'); return; }
-      const recent = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status='new' AND published_at >= ?")
+      const recent = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News') AND published_at >= ?")
         .get(new Date(Date.now() - 24 * 3600_000).toISOString()) as { n: number };
       if (!recent.n) { console.log('No eligible news in the last 24 hours'); return; }
     } finally { db.close(); }

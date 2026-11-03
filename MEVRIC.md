@@ -60,4 +60,6 @@ Posts vary between a topical lead, `IN FOCUS 🔎`, `THE LATEST 🗞️`, or `ON
 
 ## Multiple verified RSS publishers
 
-Mevric monitors NPR (3 feeds), BBC News (World, Business, Technology), and Al Jazeera (all news). URLs are HTTPS and strictly publisher-domain checked, and tracking query parameters are removed. Identical normalized headlines across sources are ignored; URL deduplication still prevents reposts. Only NPR pages are scraped for social images; other sources are linked, not rehosted. The scheduler always refreshes RSS before checking for eligible unpublished stories, preventing the previous empty-queue stall.
+Mevric monitors NPR (3 feeds), BBC News (World, Business, Technology), and ABC News (Top Stories, U.S. headlines). URLs are HTTPS and strictly publisher-domain checked, and tracking query parameters are removed. Identical normalized headlines across sources are ignored; URL deduplication still prevents reposts. Only NPR pages are scraped for social images; other sources are linked, not rehosted. The scheduler always refreshes RSS before checking for eligible unpublished stories, preventing the previous empty-queue stall.
+
+Al Jazeera was removed at user request. Previously collected unpublished Al Jazeera stories are removed from the database; prior sent records are retained as posting history. The publisher allowlist in the scheduler and publish query provides defense in depth.
