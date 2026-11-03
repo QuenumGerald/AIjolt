@@ -25,6 +25,58 @@ function feedMedia(item: string): Media | undefined {
     } catch { /* invalid media URL */ }
   }
 }
+// NPR RSS often omits media enclosures. Read only the article's social image
+// metadata. The hostname allowlist is also applied before any network request.
+function trustedNprUrl(raw: string, image = false): string | undefined {
+  try {
+    const u = new URL(raw);
+    const host = u.hostname.toLowerCase();
+    if (u.protocol !== 'https:' || u.username || u.password || u.port) return;
+    if (image ? (host === 'npr.org' || host.endsWith('.npr.org') || host === 'npr.brightspotcdn.com')
+      : (host === 'npr.org' || host.endsWith('.npr.org'))) return u.href;
+  } catch { /* malformed URL */ }
+}
+
+export function articleImage(html: string): Media | undefined {
+  for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
+    const attrs: Record<string, string> = {};
+    for (const attr of match[0].matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/g)) attrs[attr[1].toLowerCase()] = attr[3];
+    const property = (attrs.property ?? attrs.name ?? '').toLowerCase();
+    if (!['og:image', 'og:image:url', 'twitter:image', 'twitter:image:src'].includes(property)) continue;
+    const raw = (attrs.content ?? '').replace(/&amp;/g, '&').trim();
+    const url = trustedNprUrl(raw, true);
+    if (url) return { kind: 'image', url };
+  }
+}
+
+async function fetchArticleImage(articleUrl: string): Promise<Media | undefined> {
+  const safe = trustedNprUrl(articleUrl);
+  if (!safe) return;
+  try {
+    // Never follow redirects to another host (SSRF protection).
+    const response = await fetch(safe, { redirect: 'manual', signal: AbortSignal.timeout(12000),
+      headers: { 'user-agent': 'Mevric/1.0 (news reader)', accept: 'text/html' } });
+    if (!response.ok || !response.headers.get('content-type')?.toLowerCase().includes('text/html')) return;
+    if (Number(response.headers.get('content-length') ?? 0) > 1_000_000) return;
+    // Stream with an upper bound: avoid accepting arbitrarily large pages.
+    const reader = response.body?.getReader();
+    if (!reader) return;
+    const chunks: Uint8Array[] = [];
+    let size = 0;
+    try {
+      while (size < 1_000_000) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        size += value.byteLength;
+        if (size > 1_000_000) return;
+        chunks.push(value);
+      }
+    } finally { await reader.cancel().catch(() => {}); }
+    const html = new TextDecoder().decode(Buffer.concat(chunks));
+    return articleImage(html);
+  } catch { return; } // A missing image must not fail news collection.
+}
+
 export function parseFeed(xml: string, now = Date.now()): Story[] {
   return [...xml.matchAll(/<item(?:\s[^>]*)?>([\s\S]*?)<\/item>/gi)].flatMap(([, item]) => {
     const title = tag(item, 'title').replace(/\s+/g, ' ');
@@ -102,10 +154,26 @@ export async function collect(): Promise<void> {
   const db = database();
   const insert = db.prepare(`INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)
     ON CONFLICT(url) DO UPDATE SET media_url=COALESCE(excluded.media_url, stories.media_url), media_kind=CASE WHEN excluded.media_url IS NOT NULL THEN excluded.media_kind ELSE stories.media_kind END WHERE stories.status='new'`);
+  const unique = new Map<string, Story>();
+  for (const result of results) if (result.status === 'fulfilled') for (const story of result.value) {
+    const prior = unique.get(story.url);
+    if (!prior || (!prior.media && story.media)) unique.set(story.url, story);
+  }
+  // Only enrich new/unfinished articles with no media, avoiding unnecessary
+  // repeated page requests and avoiding all edits to queued articles.
+  const needsImage = db.prepare("SELECT media_url, status FROM stories WHERE url=?");
+  const pending = [...unique.values()].filter(story => {
+    const existing = needsImage.get(story.url) as { media_url: string | null; status: string } | undefined;
+    return !story.media && (!existing || (existing.status === 'new' && !existing.media_url));
+  });
+  // Bound concurrency to prevent overwhelming NPR or the small server.
+  for (let i = 0; i < pending.length; i += 3) {
+    await Promise.all(pending.slice(i, i + 3).map(async story => { story.media = await fetchArticleImage(story.url); }));
+  }
   let added = 0;
-  for (const result of results) if (result.status === 'fulfilled') for (const story of result.value) added += insert.run(story.url, story.title, story.publisher, story.publishedAt, story.media?.url ?? null, story.media?.kind ?? null).changes;
+  for (const story of unique.values()) added += insert.run(story.url, story.title, story.publisher, story.publishedAt, story.media?.url ?? null, story.media?.kind ?? null).changes;
   db.close();
-  console.log(`Collected or refreshed ${added} stories`);
+  console.log(`Collected or refreshed ${added} stories (${[...unique.values()].filter(s => s.media?.kind === 'image').length} images)`);
 }
 export function mediaPostPayload(text: string, channelId: string, dueAt: string, media: Media) {
   return {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseFeed, formatPost } from '../src/mevric.js';
+import { parseFeed, formatPost, articleImage } from '../src/mevric.js';
 
 describe('Mevric feed', () => {
   const now = Date.parse('2026-11-02T12:00:00Z');
@@ -143,4 +143,80 @@ it('does not publish when the rewriting service fails', async () => {
     if (oldKey === undefined) delete process.env.DEEPSEEK_API_KEY; else process.env.DEEPSEEK_API_KEY = oldKey;
     rmSync(dir, { recursive: true, force: true });
   }
+});
+
+
+describe('Mevric article image fallback', () => {
+  it('extracts a trusted NPR og:image even when HTML attributes are reversed', () => {
+    expect(articleImage(`<meta content="https://npr.brightspotcdn.com/img.jpg?size=1400&amp;quality=85" property="og:image">`))
+      .toEqual({ kind: 'image', url: 'https://npr.brightspotcdn.com/img.jpg?size=1400&quality=85' });
+    expect(articleImage(`<meta name='twitter:image:src' content='https://media.npr.org/picture.jpg'>`))
+      .toEqual({ kind: 'image', url: 'https://media.npr.org/picture.jpg' });
+  });
+  it('rejects external or non-HTTPS image origins and skips unsafe first matches', () => {
+    const html = `<meta property="og:image" content="https://npr.org.evil.test/cover.jpg">
+      <meta property="og:image" content="http://media.npr.org/insecure.jpg">
+      <meta property="og:image" content="https://npr.brightspotcdn.com/valid.jpg">`;
+    expect(articleImage(html)).toEqual({ kind: 'image', url: 'https://npr.brightspotcdn.com/valid.jpg' });
+    expect(articleImage('<meta property="og:image" content="https://user:pass@www.npr.org/secret">')).toBeUndefined();
+  });
+  it('fetches article metadata only when RSS lacks media and persists it without duplicate articles', async () => {
+    const { mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const { default: Database } = await import('better-sqlite3');
+    const { vi } = await import('vitest');
+    const { collect } = await import('../src/mevric.js');
+    const dir = mkdtempSync(join(tmpdir(), 'mevric-image-'));
+    const previousPath = process.env.MEVRIC_DATABASE_PATH;
+    const article = 'https://www.npr.org/2026/story';
+    const rss = `<rss><item><title>News</title><link>${article}</link><pubDate>${new Date().toUTCString()}</pubDate></item></rss>`;
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => String(url) === article
+      ? new Response('<html><meta property="og:image" content="https://npr.brightspotcdn.com/cover.jpg"></html>', { headers: { 'content-type': 'text/html' } })
+      : new Response(rss, { headers: { 'content-type': 'application/rss+xml' } }));
+    try {
+      process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
+      await collect();
+      await collect();
+      const db = new Database(process.env.MEVRIC_DATABASE_PATH);
+      expect(db.prepare('SELECT count(*) as count FROM stories').get()).toEqual({ count: 1 });
+      expect(db.prepare('SELECT media_url,media_kind FROM stories').get())
+        .toEqual({ media_url: 'https://npr.brightspotcdn.com/cover.jpg', media_kind: 'image' });
+      db.close();
+      const articleRequests = fetchMock.mock.calls.filter(call => String(call[0]) === article);
+      expect(articleRequests).toHaveLength(1); // cached in SQLite on the second run
+      expect((articleRequests[0][1] as RequestInit).redirect).toBe('manual');
+    } finally {
+      fetchMock.mockRestore();
+      if (previousPath === undefined) delete process.env.MEVRIC_DATABASE_PATH; else process.env.MEVRIC_DATABASE_PATH = previousPath;
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+  it('ignores a redirect to an untrusted domain and still collects the article', async () => {
+    const { mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const { default: Database } = await import('better-sqlite3');
+    const { vi } = await import('vitest');
+    const { collect } = await import('../src/mevric.js');
+    const dir = mkdtempSync(join(tmpdir(), 'mevric-redirect-'));
+    const previousPath = process.env.MEVRIC_DATABASE_PATH;
+    const article = 'https://www.npr.org/2026/story';
+    const rss = `<rss><item><title>News</title><link>${article}</link><pubDate>${new Date().toUTCString()}</pubDate></item></rss>`;
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => String(url) === article
+      ? new Response(null, { status: 302, headers: { location: 'https://evil.example/private', 'content-type': 'text/html' } })
+      : new Response(rss, { headers: { 'content-type': 'application/rss+xml' } }));
+    try {
+      process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
+      await collect();
+      const db = new Database(process.env.MEVRIC_DATABASE_PATH);
+      expect(db.prepare('SELECT media_url FROM stories').get()).toEqual({ media_url: null });
+      db.close();
+      expect(fetchMock.mock.calls.some(call => String(call[0]).includes('evil.example'))).toBe(false);
+    } finally {
+      fetchMock.mockRestore();
+      if (previousPath === undefined) delete process.env.MEVRIC_DATABASE_PATH; else process.env.MEVRIC_DATABASE_PATH = previousPath;
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
 });
