@@ -9,24 +9,29 @@ describe('Mevric feed', () => {
     const stories = parseFeed(xml, now);
     expect(stories).toHaveLength(1);
     expect(stories[0].title).toBe('Election & economy');
-    expect(formatPost(stories[0])).toMatch(/^POLITICS 🏛️\n\n/);
+    expect(formatPost(stories[0])).toContain('POLITICS 🏛️');
     expect(formatPost(stories[0])).not.toContain('Source: NPR');
     expect(formatPost(stories[0])).toContain(stories[0].url);
   });
-  it('adapts headers by article topic and falls back without inventing certainty', () => {
+  it('makes topic-led hooks varied and reserves BREAKING for explicit urgent headlines', () => {
     const base = { url:'https://www.npr.org/example', publishedAt:new Date().toISOString(), publisher:'NPR' };
-    expect(postHeading({ ...base, title:'Senate debates election bill' })).toBe('POLITICS 🏛️');
-    expect(postHeading({ ...base, title:'NBA playoffs begin tonight' })).toBe('SPORTS 🏆');
-    expect(postHeading({ ...base, title:'Federal Reserve signals interest rates' })).toBe('ECONOMY 📈');
-    expect(postHeading({ ...base, title:'NASA launches spacecraft' })).toBe('SCIENCE 🔬');
-    expect(postHeading({ ...base, title:'Local community celebrates annual festival' })).toBe('NEWS 📰');
-    expect(formatPost({ ...base, title:'NASA launches spacecraft' })).toMatch(/^SCIENCE 🔬\n\n/);
+    expect(postHeading({ ...base, title:'Breaking: Senate announces election result' })).toBe('BREAKING 🚨');
+    expect(postHeading({ ...base, title:'Developing story: search underway near coast' })).toBe('DEVELOPING 🔴');
+    expect(postHeading({ ...base, title:'Senate debates election bill' })).toContain('POLITICS 🏛️');
+    expect(postHeading({ ...base, title:'NBA playoffs begin tonight' })).toContain('SPORTS 🏆');
+    expect(postHeading({ ...base, title:'Federal Reserve signals interest rates' })).toContain('ECONOMY 📈');
+    expect(postHeading({ ...base, title:'NASA launches spacecraft' })).toContain('SCIENCE 🔬');
+    expect(postHeading({ ...base, title:'Local community celebrates annual festival' })).toContain('NEWS 📰');
+    expect(postHeading({ ...base, title:'Senate debates election bill' })).not.toContain('BREAKING');
+    const headings = new Set(Array.from({length:12},(_,i)=>postHeading({ ...base,title:'New city project opens',url:`https://www.npr.org/article-${i}` })));
+    expect(headings.size).toBeGreaterThan(1);
+    expect(formatPost({ ...base, title:'NASA launches spacecraft' })).toContain('SCIENCE 🔬');
   });
   it('keeps article links even when no media is available', () => {
     const story = { title: 'News event', url: 'https://www.npr.org/story/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
     const text = formatPost(story);
     expect(text).toContain('News event');
-    expect(text).toMatch(/^NEWS 📰\n\n/);
+    expect(text).toContain('NEWS 📰');
     expect(text).not.toContain('Source: NPR');
     expect(text).toContain(story.url);
   });
@@ -50,7 +55,9 @@ describe('Mevric feed', () => {
     expect(formatPost({ ...story, title: 'A story from the capital' })).toContain('#News');
   });
   it('keeps a fitting headline when there is no room for a hashtag', () => {
-    const story = { title: 'a'.repeat(248), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    const base = { title: 'a', url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    const overhead = Array.from(`${postHeading(base)}\n\n\n\n${base.url}`).length;
+    const story = { ...base, title: 'a'.repeat(280 - overhead) };
     const result = formatPost(story);
     expect(result).not.toBeNull();
     expect(result).not.toContain('#News');

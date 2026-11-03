@@ -53,3 +53,7 @@ DeepSeek receives a deterministic per-story length target, with room reserved fo
 ## Adaptive headline labels
 
 The first line is selected from the original NPR headline: `POLITICS`, `WORLD`, `ECONOMY`, `TECH`, `SPORTS`, `WEATHER`, `HEALTH`, `SCIENCE`, or `CULTURE` with a matching emoji. If none clearly matches, it uses `NEWS 📰`. This does not change the article link, the variable post length, daily quota, or publication schedule.
+
+## Attention-grabbing headings (without false urgency)
+
+Posts vary between a topical lead, `IN FOCUS 🔎`, `THE LATEST 🗞️`, or `ON THE RADAR 📡`, chosen consistently per story. `BREAKING 🚨` and `DEVELOPING 🔴` are reserved for explicit evidence in the NPR headline, not arbitrarily applied to regular stories. The headline and URL remain factual; no invented details or urgency.

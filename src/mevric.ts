@@ -111,7 +111,16 @@ export function postHeading(story: Story): string {
     [/\b(nasa|spacecraft|space station|astronaut|moon mission|mars rover)\b/i, 'SCIENCE 🔬'],
     [/\b(war|ceasefire|airstrike|missile|military|invasion|peace talks)\b/i, 'WORLD 🌍'],
   ];
-  return topics.find(([pattern]) => pattern.test(headline))?.[1] ?? 'NEWS 📰';
+  const category = topics.find(([pattern]) => pattern.test(headline))?.[1] ?? 'NEWS 📰';
+  // Urgency must be supported by the headline itself. Never call an ordinary
+  // story BREAKING merely to make a post sound dramatic.
+  if (/(?:\bbreaking news\b|\bbreaking\s*:|\bjust happened\b|\bjust confirmed\b)/i.test(headline)) return 'BREAKING 🚨';
+  if (/\b(developing story|developing:|ongoing rescue|search underway)\b/i.test(headline)) return 'DEVELOPING 🔴';
+  // Editorial variety for other news. These labels don't assert urgency.
+  let hash = 0;
+  for (const char of story.url) hash = (Math.imul(hash, 31) + char.codePointAt(0)!) >>> 0;
+  const labels = [`${category}`, `IN FOCUS 🔎 | ${category}`, `THE LATEST 🗞️ | ${category}`, `ON THE RADAR 📡 | ${category}`];
+  return labels[hash % labels.length];
 }
 
 export function formatPost(story: Story, text = story.title): string | null {
