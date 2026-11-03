@@ -26,7 +26,7 @@ On this managed cloud environment these endpoints returned proxy HTTP 403 on 202
 
 ## Publishing format
 
-Posts start with `NEWS 🚨`, the rewritten headline and a topical hashtag; **the article link is not included in the visible text**. If a feed provides an eligible video, it is preferred to its image; otherwise the collector tries an RSS image and then the article's social image. Buffer receives one media attachment when available. **Text-only publication remains permitted** when no usable media is available. The original article URL is retained internally for deduplication and traceability.
+Posts start with `NEWS 🚨`, the rewritten headline and a topical hashtag; **the article link is included in the visible post text**. If a feed provides an eligible video, it is preferred to its image; otherwise the collector tries an RSS image and then the article's social image. Buffer receives one media attachment when available. **Text-only publication remains permitted** when no usable media is available. The original article URL is retained internally for deduplication and traceability.
 
 Image/video extraction does not grant republication rights. Obtain appropriate rights before publishing third-party media.
 
@@ -41,3 +41,11 @@ When enabled the scheduler polls every 2 minutes, publishes only stories less th
 The production scheduler is pinned to the `MevricNews` channel ID, never `Nox_alkimo`. Local hard stop: **200 attempted posts per UTC day**. There is no additional fixed hourly or between-post limit; the scheduler still polls every two minutes and publishes at most one fresh article per cycle. Attempts with ambiguous Buffer results still count toward limits. The Buffer organization reports two configured channels and a 5,000-scheduled-post capacity; that capacity is not a daily X allowance. Actual X/Buffer posting restrictions can be lower and may change. If Buffer reports a limit error, do not retry automatically; investigate before increasing volume.
 
 The eligible news window is **24 hours** from the article publication timestamp, checked both in the scheduler and before creating each Buffer post. The 200-attempt daily cap, single-post-per-cycle behavior, and duplicate protections remain unchanged.
+
+## Link previews
+
+Mevric now appends the original NPR article URL to every `NEWS 🚨` post. Buffer/X may generate a link preview (including the image when available), but the preview is controlled by X and not guaranteed. Third-party images/videos remain disabled for direct attachment until rights and relevance are verified.
+
+### Variable post lengths
+
+DeepSeek receives a deterministic per-story length target, with room reserved for the article URL, NEWS label, and hashtag. Updates can use one or two sentences when the headline supports them, otherwise they remain short. No invented facts are allowed.
