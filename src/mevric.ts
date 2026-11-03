@@ -14,6 +14,7 @@ const tag = (item: string, name: string) => decode(item.match(new RegExp(`<${nam
 export type Media = { kind: 'image' | 'video'; url: string };
 export type Story = { title: string; url: string; publishedAt: string; publisher: string; media?: Media };
 function feedMedia(item: string): Media | undefined {
+  let image: Media | undefined;
   for (const match of item.matchAll(/<(?:media:content|media:thumbnail|enclosure)\b([^>]*?)\/?\s*>/gi)) {
     const attrs: Record<string, string> = {};
     for (const attr of match[1].matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/g)) attrs[attr[1].toLowerCase()] = decode(attr[3]);
@@ -21,9 +22,13 @@ function feedMedia(item: string): Media | undefined {
     if (!kind || !attrs.url) continue;
     try {
       const url = new URL(attrs.url);
-      if (url.protocol === 'https:' && !url.username && !url.password && (url.hostname === 'npr.org' || url.hostname.endsWith('.npr.org') || url.hostname.endsWith('.npr.brightspotcdn.com'))) return { kind, url: url.href };
+      if (url.protocol === 'https:' && !url.username && !url.password && (url.hostname === 'npr.org' || url.hostname.endsWith('.npr.org') || url.hostname.endsWith('.npr.brightspotcdn.com'))) {
+        if (kind === 'video') return { kind, url: url.href };
+        image ??= { kind, url: url.href };
+      }
     } catch { /* invalid media URL */ }
   }
+  return image;
 }
 // NPR RSS often omits media enclosures. Read only the article's social image
 // metadata. The hostname allowlist is also applied before any network request.
@@ -89,7 +94,9 @@ export function parseFeed(xml: string, now = Date.now()): Story[] {
   });
 }
 export function formatPost(story: Story, text = story.title): string | null {
-  const post = `${text}\n\nSource: ${story.publisher}\n${story.url}`;
+  // The article URL is an internal attribution/reference, never visible in the post.
+  // Media are attached separately by Buffer; text-only posts remain allowed.
+  const post = `${text}\n\nSource: ${story.publisher}`;
   if (Array.from(post).length > 280) return null;
   const topics: Array<[RegExp, string]> = [
     [/\b(election|elections|vot(?:e|es|ing|ers)|congress|senate|president|white house|governor)\b/i, '#Politics'],

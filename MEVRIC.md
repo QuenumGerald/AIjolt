@@ -23,3 +23,9 @@ python3 scripts/check-news-sources.py
 ```
 
 On this managed cloud environment these endpoints returned proxy HTTP 403 on 2026-11-02; host additions have been saved in the environment configuration draft. Review, save and publish that configuration, then rerun the checker. Redirects may require further destination access. Only integrate sources after checking their actual responses, freshness, media and terms.
+
+## Publishing format
+
+Posts contain the rewritten headline, `Source: NPR` and a topical hashtag; **the article link is not included in the visible text**. If a feed provides an eligible video, it is preferred to its image; otherwise the collector tries an RSS image and then the article's social image. Buffer receives one media attachment when available. **Text-only publication remains permitted** when no usable media is available. The original article URL is retained internally for deduplication and traceability.
+
+Image/video extraction does not grant republication rights. Obtain appropriate rights before publishing third-party media.

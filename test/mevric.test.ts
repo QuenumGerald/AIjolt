@@ -9,7 +9,15 @@ describe('Mevric feed', () => {
     const stories = parseFeed(xml, now);
     expect(stories).toHaveLength(1);
     expect(stories[0].title).toBe('Election & economy');
-    expect(formatPost(stories[0])).toContain('Source: NPR\nhttps://www.npr.org/story/1');
+    expect(formatPost(stories[0])).toContain('Source: NPR');
+    expect(formatPost(stories[0])).not.toContain('https://');
+  });
+  it('keeps text-only posts when no media and strips article URLs', () => {
+    const story = { title: 'News event', url: 'https://www.npr.org/story/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    const text = formatPost(story);
+    expect(text).toContain('News event');
+    expect(text).toContain('Source: NPR');
+    expect(text).not.toContain(story.url);
   });
   it('rejects overlong posts instead of truncating facts', () => {
     expect(formatPost({ title: 'a'.repeat(300), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' })).toBeNull();
@@ -20,7 +28,7 @@ describe('Mevric feed', () => {
     expect(formatPost({ ...story, title: 'A story from the capital' })).toContain('#News');
   });
   it('keeps a fitting headline when there is no room for a hashtag', () => {
-    const story = { title: 'a'.repeat(243), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    const story = { title: 'a'.repeat(264), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
     const result = formatPost(story);
     expect(result).not.toBeNull();
     expect(result).not.toContain('#News');
@@ -34,6 +42,8 @@ it('extracts only trusted image or video enclosures', () => {
   expect(parseFeed(wrap('<media:content url="https://media.npr.org/image.jpg" medium="image"/>'), now)[0].media).toEqual({ kind: 'image', url: 'https://media.npr.org/image.jpg' });
   expect(parseFeed(wrap('<enclosure url="https://media.npr.org/clip.mp4" type="video/mp4"/>'), now)[0].media?.kind).toBe('video');
   expect(parseFeed(wrap('<enclosure url="https://evil.example/photo.jpg" type="image/jpeg"/>'), now)[0].media).toBeUndefined();
+  expect(parseFeed(wrap('<media:thumbnail url="https://media.npr.org/cover.jpg"/><enclosure url="https://media.npr.org/clip.mp4" type="video/mp4"/>'), now)[0].media)
+    .toEqual({ kind: 'video', url: 'https://media.npr.org/clip.mp4' });
 });
 
 it('sends a text-only post when no media is available and attaches an available image to Buffer', async () => {
@@ -60,6 +70,8 @@ it('sends a text-only post when no media is available and attaches an available 
     const textRequest = fetchMock.mock.calls[1][1] as RequestInit;
     const textPayload = JSON.parse(textRequest.body as string);
     expect(textPayload.variables.text).toContain('A rewritten news update.');
+    expect(textPayload.variables.text).not.toContain('https://');
+    expect(textPayload.variables.text).toContain('Source: NPR');
     expect(textPayload.variables).not.toHaveProperty('assets');
     const db2 = new Database(process.env.MEVRIC_DATABASE_PATH);
     db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'Another story', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
@@ -68,6 +80,7 @@ it('sends a text-only post when no media is available and attaches an available 
     expect(fetchMock).toHaveBeenCalledTimes(4);
     const request = fetchMock.mock.calls[3][1] as RequestInit;
     expect(JSON.parse(request.body as string).variables.input.assets).toEqual([{ image: { url: 'https://media.npr.org/image.jpg' } }]);
+    expect(JSON.parse(request.body as string).variables.input.text).not.toContain('https://');
     const db3 = new Database(process.env.MEVRIC_DATABASE_PATH);
     expect(db3.prepare("SELECT COUNT(*) AS count FROM stories WHERE status='queued'").get()).toEqual({ count: 2 });
     db3.close();
