@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'; import { analyzeAI } from '../src/ai.js'; import { deduplicate } from '../src/dedupe.js'; import { score } from '../src/scoring.js'; import { inferCountry, normalize } from '../src/normalize.js'; import { linkedinPost, xPost } from '../src/posts.js'; import { parseCsrfToken, parseDetail, parseListingLinks, parseRegionIds, topicFormBody } from '../src/collectors/foorilla.js'; import { bufferCreatePostPayload } from '../src/buffer.js';
+import { isFoorillaProxyTarget } from '../src/http.js';
 import { parseGoogleNewsRss, parseHackerNews } from '../src/collectors/news.js'; import { cleanGeneratedPost, newsPrompt, validateNewsPost } from '../src/news-posts.js';
 const raw = { externalId:'1', title:'Senior LLM Engineer', company:'Acme', location:'Remote, France', description:'Build RAG agents with Python and LangChain. Visa sponsorship available. '.repeat(30), postedAt:'2026-08-01T00:00:00Z', url:'https://example.com/jobs/1', source:'lever' as const, salary:'€100k-120k' };
 describe('AI filtering', () => { it('accepts a core AI role', () => expect(analyzeAI(raw).relevant).toBe(true)); it('rejects incidental AI', () => expect(analyzeAI({title:'Accountant',description:'Use AI-powered office software'}).relevant).toBe(false)); });
@@ -6,6 +7,17 @@ describe('scoring', () => { it('rewards strong recent jobs', () => { const j=nor
 describe('deduplication', () => { it('deduplicates normalized identity and URL variants', () => { const a=normalize(raw), b={...a,externalId:'2',url:a.url+'?ref=x'}; expect(deduplicate([a,b])).toHaveLength(1); }); });
 describe('normalization', () => { it('extracts work mode, country and skills', () => { const job=normalize(raw); expect(job.workMode).toBe('remote'); expect(job.country).toBe('France'); expect(job.skills).toEqual(expect.arrayContaining(['LLM','RAG','Python'])); }); it('does not mistake text suffixes for country codes', () => { expect(inferCountry('Buenos Aires')).toBe('Unknown'); expect(inferCountry('Tân Bình, Thành phố Hồ Chí Minh, Vietnam')).toBe('Unknown'); expect(inferCountry('Gurugram, HR, India')).toBe('Unknown'); }); it('recognizes Europe and North America locations', () => { expect(inferCountry('Tirana, Albania')).toBe('Albania'); expect(inferCountry('Toronto, Canada')).toBe('Canada'); expect(inferCountry('Mexico City, Mexico')).toBe('Mexico'); expect(inferCountry('San Francisco, California, United States')).toBe('United States'); expect(inferCountry('Nuremberg, BY, Germany')).toBe('Germany'); expect(inferCountry('San Francisco, CA')).toBe('United States'); expect(inferCountry('San Francisco, CA | New York City, NY')).toBe('United States'); expect(inferCountry('New York City, NY; Seattle, WA')).toBe('United States'); expect(inferCountry('Remote - United States')).toBe('United States'); expect(inferCountry('San Francisco, CA • New York, NY • United States')).toBe('United States'); expect(inferCountry('San Francisco')).toBe('United States'); expect(inferCountry('London, England')).toBe('United Kingdom'); expect(inferCountry('Seoul, South Korea')).toBe('Unknown'); expect(inferCountry('Remote')).toBe('Unknown'); }); });
 describe('post generation', () => { it('keeps the complete title and direct application URL', () => { const job=normalize(raw); expect(xPost(job)).toContain(raw.title); expect(xPost(job)).toContain(`Apply: ${raw.url}`); expect(linkedinPost(job)).toContain(`Apply directly:\n${raw.url}`); }); });
+describe('Foorilla proxy isolation', () => {
+  it('only routes Foorilla HTTPS origin through Webshare', () => {
+    const base = 'https://foorilla.com';
+    for (const url of ['https://foorilla.com/hiring/jobs/', 'https://foorilla.com/hiring/jobs/123/apply/']) {
+      expect(isFoorillaProxyTarget(url, base)).toBe(true);
+    }
+    for (const url of ['http://foorilla.com/', 'https://foorilla.com.evil.test/', 'https://api.buffer.com/', 'https://api.deepseek.com/', 'https://boards-api.greenhouse.io/']) {
+      expect(isFoorillaProxyTarget(url, base)).toBe(false);
+    }
+  });
+});
 describe('Foorilla discovery', () => {
   it('selects both requested Foorilla regions by their native IDs', () => { expect(parseRegionIds({ results: [{ pk: 3, name: 'Europe' }, { pk: 5, name: 'North America' }, { pk: 2, name: 'Asia/Pacific' }] })).toEqual([3, 5]); });
   it('posts the native AI, Data, and Machine Learning topic', () => { expect(topicFormBody(['101']).toString()).toBe('topic=101'); });

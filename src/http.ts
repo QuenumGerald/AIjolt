@@ -1,9 +1,34 @@
 import pLimit from 'p-limit';
 import pRetry from 'p-retry';
+import { ProxyAgent } from 'undici';
 import { config } from './config.js';
 
 const limit = pLimit(config.concurrency);
 let nextAllowedAt = 0;
+
+// The private proxy is strictly limited to Foorilla's origin: Buffer,
+// DeepSeek, ATS feeds and external application links stay on direct egress.
+export function isFoorillaProxyTarget(url: string, baseUrl: string): boolean {
+  try {
+    const target = new URL(url);
+    const base = new URL(baseUrl);
+    return target.protocol === 'https:' && base.protocol === 'https:' &&
+      target.origin === base.origin && target.hostname === 'foorilla.com';
+  } catch { return false; }
+}
+
+let foorillaProxyAgent: ProxyAgent | undefined;
+async function scopedFetch(url: string, init: RequestInit): Promise<Response> {
+  const proxy = process.env.FOORILLA_PROXY_URL;
+  if (!proxy || !isFoorillaProxyTarget(url, config.discovery.baseUrl)) return fetch(url, init);
+  foorillaProxyAgent ??= new ProxyAgent({ uri: proxy });
+  // Foorilla closes proxied sockets for AIJolt's legacy custom User-Agent.
+  // Let Node send its native User-Agent for this publisher only.
+  const headers = new Headers(init.headers);
+  headers.delete('user-agent');
+  return fetch(url, { ...init, headers, dispatcher: foorillaProxyAgent } as RequestInit);
+}
+
 
 async function request(url: string, accept: string, extraHeaders: Record<string, string> = {}, init: RequestInit = {}): Promise<Response> {
   const now = Date.now();
@@ -11,7 +36,7 @@ async function request(url: string, accept: string, extraHeaders: Record<string,
   nextAllowedAt = slot + 1000 / Math.max(1, config.rps);
   const wait = slot - now;
   if (wait) await new Promise(resolve => setTimeout(resolve, wait));
-  const response = await fetch(url, { ...init, headers: { accept, 'user-agent': 'AIJolt/0.1 (+job-aggregation)', ...extraHeaders }, signal: AbortSignal.timeout(20_000) });
+  const response = await scopedFetch(url, { ...init, headers: { accept, 'user-agent': 'AIJolt/0.1 (+job-aggregation)', ...extraHeaders }, signal: AbortSignal.timeout(20_000) });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${url}`);
   return response;
 }
@@ -80,7 +105,7 @@ export function getFinalUrl(url: string, headers: Record<string, string> = {}): 
     };
     const referer = headers.Referer ?? headers.referer;
     if (referer) {
-      const detailResponse = await fetch(referer, {
+      const detailResponse = await scopedFetch(referer, {
         headers: browserHeaders,
         signal: AbortSignal.timeout(20_000),
       });
@@ -88,7 +113,7 @@ export function getFinalUrl(url: string, headers: Record<string, string> = {}): 
       await detailResponse.body?.cancel();
       if (setCookie) browserHeaders.Cookie = setCookie.split(';', 1)[0];
     }
-    const response = await fetch(url, {
+    const response = await scopedFetch(url, {
       redirect: 'manual',
       headers: browserHeaders,
       signal: AbortSignal.timeout(20_000),
