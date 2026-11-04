@@ -9,6 +9,10 @@ const majorEvent = /\b(?:breaking(?: news)?|developing(?: story)?|major|historic
 const lowValueFormat = /^\s*(?:WATCH|LIVE|LISTEN|PHOTOS|VIDEO|REVIEW|PODCAST|QUIZ)\s*:/i;
 const lowValueSubject = /\b(?:training incident|in pictures|maps and charts|celebrity gossip|viral meme|celebrity outfit|restaurant opening|new restaurant|parking fines?|school fair|neighborhood festival|town festival|leisure centre|council meeting|local parade|minor traffic|petty theft|shoplifting|stolen bicycle|parking dispute|pet dispute)\b/i;
 const minorCrime = /\b(?:petty theft|shoplifting|stolen (?:bike|bicycle|car)|parking dispute|minor (?:accident|collision|crime)|local burglary|neighborhood vandalism)\b/i;
+// Immediate public-safety incidents are not "minor local news". Select only
+// event reports, not retrospectives, trials, documentaries or training drills.
+const seriousIncident = /\b(?:shootings?|shots? fired|gunfire|gunman|armed attack|active (?:shooter|threat)|swat|hostage(?:s)?|hostage situation|bombing|bomb threat|explosion|chemical plant|plane crash|aircraft crash|helicopter crash|train derailment|major collision|mass casualties|multiple (?:people )?(?:dead|killed|injured)|(?:suspect|victim|officer|people|person) (?:is |was )?(?:dead|killed|shot)|deadly (?:incident|attack|fire|blast|crash)|building collapse|bridge collapse|hurricane|tornado|earthquake|tsunami|wildfire|active fire|evacuat(?:ion|ions|ed)|flash flood|terror(?:ist)? attack)\b/i;
+const retrospective = /\b(?:anniversary|years? (?:after|ago)|decades? (?:after|ago)|historical|documentary|trial|sentenced|sentencing|convicted|conviction|judge rules|court hears|pleads guilty|training exercise|drill|simulation|movie|video game|fictional)\b/i;
 
 /** Assess the subject matter, not the publisher: US politics and major US events rank first. */
 export function assessEditorialStory(story: EditorialStory): EditorialAssessment {
@@ -17,6 +21,14 @@ export function assessEditorialStory(story: EditorialStory): EditorialAssessment
   if (lowValueFormat.test(title) || /^(?:\d+\s+takeaways|analysis:|review:)/i.test(title)) return { eligible:false, priority:0, reason:'video_live_or_promotional' };
   if (lowValueSubject.test(title) || minorCrime.test(title)) return { eligible:false, priority:0, reason:'minor_local_or_low_value' };
   const isUs = usContext.test(title);
+  // Serious incidents are newsworthy regardless of whether the location is
+  // a state capital. Breaking severity outranks routine political coverage.
+  if (seriousIncident.test(title) && !retrospective.test(title)) {
+    // A confirmed fatality, hostage situation or active threat outweighs an
+    // incident reporting only minor injuries; neither can bypass the daily cap.
+    const seriousHarm = /\b(?:dead|killed|fatal|deaths?|hostages?|active (?:shooter|threat)|mass shooting)\b/i.test(title);
+    return { eligible:true, priority:(isUs ? 210 : 180) + (seriousHarm ? 20 : 0), reason:isUs ? 'urgent_us_incident' : 'urgent_world_incident' };
+  }
   const isPolitical = political.test(title);
   const isMajor = majorEvent.test(title);
   const isNational = nationalImpact.test(title);
@@ -48,7 +60,13 @@ function electionOutcomeKey(title: string): string | undefined {
   if (/\b(?:texas|michigan|maine|ohio|iowa|georgia|california|kansas|wisconsin|missouri|arkansas|nevada|pennsylvania|south carolina|north carolina)\b/i.test(title)) return;
   return `${winner}:${topic}:${stage}`;
 }
-/** Conservative duplicate check across BBC, NPR and ABC, without collapsing all election news. */
+/** Conservative duplicate check across publishers without collapsing unrelated breaking news. */
+/** Allow a short-gap publish only for fresh, serious incidents with a trusted RSS source. */
+export function isUrgentBreakingStory(story: EditorialStory, now = Date.now()): boolean {
+  const age = now - Date.parse(story.publishedAt);
+  return age >= 0 && age <= 3 * 3600_000 && assessEditorialStory(story).reason.startsWith('urgent_');
+}
+
 export function isSameNewsEvent(a: EditorialStory, b: EditorialStory): boolean {
   if (a.url === b.url) return true;
   const aOutcome = electionOutcomeKey(a.title), bOutcome = electionOutcomeKey(b.title);
@@ -62,6 +80,12 @@ export function isSameNewsEvent(a: EditorialStory, b: EditorialStory): boolean {
   const intersect = [...one].filter(term => two.has(term)).length;
   const jaccard = intersect / (one.size + two.size - intersect);
   if (intersect >= 4 && jaccard >= 0.7) return true;
+  // Two outlets often describe the same major public-safety incident very
+  // differently (e.g. SWAT response vs shooting). Require at least four
+  // common concrete terms, close timestamps and substantive overlap.
+  const closeInTime = Math.abs(Date.parse(a.publishedAt) - Date.parse(b.publishedAt)) < 6 * 3600_000;
+  const bothSerious = seriousIncident.test(a.title) && seriousIncident.test(b.title);
+  if (closeInTime && bothSerious && intersect >= 5 && jaccard >= 0.30) return true;
   const aKey = electionOutcomeKey(a.title), bKey = electionOutcomeKey(b.title);
   return !!aKey && aKey === bKey;
 }

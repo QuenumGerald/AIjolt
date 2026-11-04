@@ -28,6 +28,11 @@ describe('Mevric feed', () => {
     expect(parseFeed(item('https://abcnews.go.com.evil.test/article'),now,'ABC News')).toHaveLength(0);
     expect(parseFeed(item('https://www.aljazeera.com/news/example'),now,'Al Jazeera')).toHaveLength(0);
     expect(parseFeed(item('http://www.bbc.co.uk/news/example'),now,'BBC')).toHaveLength(0);
+    expect(parseFeed(item('https://www.foxnews.com/us/active-shooter-tampa'),now,'Fox News')).toMatchObject([{ publisher: 'Fox News' }]);
+    expect(parseFeed(item('https://www.cbsnews.com/news/major-explosion/'),now,'CBS News')).toMatchObject([{ publisher: 'CBS News' }]);
+    expect(parseFeed(item('https://www.foxnews.com.evil.test/us/active-shooter-tampa'),now,'Fox News')).toHaveLength(0);
+    expect(parseFeed(item('https://www.cbsnews.com.evil.test/news/example'),now,'CBS News')).toHaveLength(0);
+    expect(parseFeed(item('https://www.aljazeera.com/news/shooting'),now,'Al Jazeera')).toHaveLength(0);
   });
   it('makes topic-led hooks varied and reserves BREAKING for explicit urgent headlines', () => {
     const base = { url:'https://www.npr.org/example', publishedAt:new Date().toISOString(), publisher:'NPR' };
@@ -64,6 +69,8 @@ describe('Mevric feed', () => {
     expect(cleanNewsRewrite('A rescue operation is underway, NPR says.',{...story,publisher:'NPR'},180))
       .toBe('A rescue operation is underway.');
     expect(cleanNewsRewrite('The BBC says officials are investigating, BBC adds.',story,180)).toBeNull();
+    expect(cleanNewsRewrite('Two people were injured, Fox News reports.',{...story,publisher:'Fox News'},180)).toBe('Two people were injured.');
+    expect(cleanNewsRewrite('According to CBS News, the suspect was taken into custody.',{...story,publisher:'CBS News'},180)).toBe('The suspect was taken into custody.');
     expect(cleanNewsRewrite('Russian bombing killed 31 people at an aid centre, Kyiv says.',story,180))
       .toBe('Russian bombing killed 31 people at an aid centre, Kyiv says.');
     expect(cleanNewsRewrite('BBC sources say there is a war.',story,180)).toBeNull();
@@ -205,13 +212,48 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
     await publish(true);
     expect(log).toHaveBeenCalledWith(expect.stringContaining('POLITICS 🏛️'));
     expect(log).not.toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
-    expect(fetchMock).toHaveBeenCalledTimes(17);
+    expect(fetchMock).toHaveBeenCalledTimes(21);
   } finally {
     log.mockRestore();
     fetchMock.mockRestore();
     if (previousPath === undefined) delete process.env.MEVRIC_DATABASE_PATH; else process.env.MEVRIC_DATABASE_PATH = previousPath;
     if (previousKey === undefined) delete process.env.DEEPSEEK_API_KEY; else process.env.DEEPSEEK_API_KEY = previousKey;
     rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+it('keeps urgent events publishable when DeepSeek fails, using only the original source headline', async () => {
+  const { mkdtempSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { default: Database } = await import('better-sqlite3');
+  const { vi } = await import('vitest');
+  const { publish } = await import('../src/mevric.js');
+  const dir = mkdtempSync(join(tmpdir(),'mevric-urgent-fallback-'));
+  const oldPath=process.env.MEVRIC_DATABASE_PATH;
+  const oldKey=process.env.DEEPSEEK_API_KEY;
+  const mock=vi.spyOn(globalThis,'fetch').mockImplementation(async () => new Response('provider unavailable',{status:503}));
+  const warning=vi.spyOn(console,'warn').mockImplementation(()=>{});
+  const log=vi.spyOn(console,'log').mockImplementation(()=>{});
+  try {
+    process.env.MEVRIC_DATABASE_PATH=join(dir,'db.sqlite');
+    process.env.DEEPSEEK_API_KEY='test';
+    await publish(true); // initialize test DB
+    const db=new Database(process.env.MEVRIC_DATABASE_PATH);
+    const headline="Suspect, victim dead after SWAT responds to active threat near Tampa, Florida";
+    const url='https://www.foxnews.com/us/tampa-active-threat';
+    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run(url,headline,'Fox News',new Date().toISOString());
+    db.close();
+    await publish(true);
+    expect(mock).toHaveBeenCalledTimes(1);
+    expect(log).toHaveBeenCalledWith(expect.stringContaining(headline));
+    expect(log).toHaveBeenCalledWith(expect.stringContaining(url));
+    expect(warning).toHaveBeenCalledWith(expect.stringContaining('original publisher headline'));
+  } finally {
+    mock.mockRestore();warning.mockRestore();log.mockRestore();
+    if(oldPath===undefined)delete process.env.MEVRIC_DATABASE_PATH;else process.env.MEVRIC_DATABASE_PATH=oldPath;
+    if(oldKey===undefined)delete process.env.DEEPSEEK_API_KEY;else process.env.DEEPSEEK_API_KEY=oldKey;
+    rmSync(dir,{recursive:true,force:true});
   }
 });
 
@@ -346,11 +388,16 @@ describe('Mevric rolling 24-hour cap', () => {
       const insert = db.prepare('INSERT INTO stories(url,status,attempted_at) VALUES(?,?,?)');
       for (let i=0;i<90;i++) insert.run(`https://example.com/${i}`,i%2===0?'queued':'attempted',new Date(now-3*3600_000).toISOString());
       expect(publishingGate(db, now)).toMatchObject({allowed:false,count:90});
+      expect(publishingGate(db, now, true)).toMatchObject({allowed:false,count:90});
       db.prepare('UPDATE stories SET attempted_at=?').run(new Date(now-25*3600_000).toISOString());
       expect(publishingGate(db, now)).toMatchObject({allowed:true,count:0});
       db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-5*60_000).toISOString(),'https://example.com/0');
       expect(publishingGate(db, now)).toMatchObject({allowed:false,count:1});
       expect(publishingGate(db, now).reason).toContain('16 minutes');
+      expect(publishingGate(db, now, true)).toMatchObject({ allowed:true,count:1 });
+      db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-1*60_000).toISOString(),'https://example.com/0');
+      expect(publishingGate(db, now, true)).toMatchObject({ allowed:false,count:1 });
+      expect(publishingGate(db, now, true).reason).toContain('2 minutes');
       db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-17*60_000).toISOString(),'https://example.com/0');
       expect(publishingGate(db, now)).toMatchObject({allowed:true,count:1});
       // Even if the server clock crosses midnight, the rolling window remains.

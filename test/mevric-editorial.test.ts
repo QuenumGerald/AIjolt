@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import Database from 'better-sqlite3';
-import { assessEditorialStory, isSameNewsEvent } from '../src/mevric-editorial.js';
+import { assessEditorialStory, isSameNewsEvent, isUrgentBreakingStory } from '../src/mevric-editorial.js';
 import { selectEditorialStory } from '../src/mevric.js';
 
 const story = (title: string, publisher = 'NPR', url?: string, publishedAt = '2026-11-04T12:00:00Z') => ({
@@ -14,8 +14,8 @@ describe('Mevric US-focused editorial filter', () => {
     const world = assessEditorialStory(story('Ukraine says bodycam video shows deadly Russian double-tap bombing', 'BBC'));
     expect(election).toMatchObject({eligible:true,reason:'us_politics'});
     expect(economy.eligible).toBe(true);
-    expect(world).toMatchObject({eligible:true,reason:'major_world_event'});
-    expect(election.priority).toBeGreaterThan(world.priority);
+    expect(world).toMatchObject({eligible:true,reason:'urgent_world_incident'});
+    expect(world.priority).toBeGreaterThan(election.priority);
   });
 
   it('rejects minor crime, local irrelevance, routine foreign news and repeated media clips', () => {
@@ -30,6 +30,32 @@ describe('Mevric US-focused editorial filter', () => {
       'Review: The Legend of Zelda remake is superb',
       'US Marine dies after training incident in Japan',
     ]) expect(assessEditorialStory(story(title)).eligible, title).toBe(false);
+  });
+
+  it('fast-tracks verified-source serious events, including Tampa office-complex shooting', () => {
+    const now = Date.parse('2026-11-04T19:05:00Z');
+    const tampa = story("Suspect, victim dead after SWAT responds to 'active threat' at office complex near Tampa, Florida", 'Fox News', 'https://www.foxnews.com/us/tampa', '2026-11-04T17:35:45Z');
+    const citi = story('Florida sheriff says 2 dead, including suspect, after shooting at Citibank office complex outside Tampa', 'CBS News', 'https://www.cbsnews.com/news/tampa', '2026-11-04T18:50:00Z');
+    const politics = story('US Congress debates election results', 'NPR', 'https://npr.org/politics', '2026-11-04T18:55:00Z');
+    expect(assessEditorialStory(tampa)).toMatchObject({ eligible:true, reason:'urgent_us_incident', priority:230 });
+    expect(assessEditorialStory(citi)).toMatchObject({ eligible:true, reason:'urgent_us_incident' });
+    expect(isSameNewsEvent(tampa,citi)).toBe(true);
+    expect(assessEditorialStory(tampa).priority).toBeGreaterThan(assessEditorialStory(story('Helicopter crash near Miami leaves at least two injured', 'Fox News')).priority);
+    expect(assessEditorialStory(tampa).priority).toBeGreaterThan(assessEditorialStory(politics).priority);
+    expect(isUrgentBreakingStory(tampa, now)).toBe(true);
+    expect(isUrgentBreakingStory(tampa, now + 2 * 3600_000)).toBe(false);
+    expect(assessEditorialStory(story('Hostages taken during bank robbery in a small US town')).eligible).toBe(true);
+    expect(assessEditorialStory(story('Two dead after plane crash outside remote village')).eligible).toBe(true);
+    expect(assessEditorialStory(story('Major explosion at Mississippi chemical plant')).eligible).toBe(true);
+    expect(isUrgentBreakingStory(politics, now)).toBe(false);
+  });
+
+  it('ignores historical shootings and harmless news without treating them as urgent', () => {
+    for (const title of [
+      'Suspect convicted in 1995 shooting after trial in Florida',
+      'Texas active shooter training exercise and simulation announced',
+      'Film documentary explores an old bank hostage incident',
+    ]) expect(assessEditorialStory(story(title)).reason, title).not.toContain('urgent_');
   });
 
   it('does not confuse breaking news with a minor or irrelevant local item', () => {
