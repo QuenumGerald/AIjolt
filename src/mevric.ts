@@ -289,11 +289,35 @@ export function immediatePostPayload(text: string, channelId: string, media?: Me
 export function mediaPostPayload(text: string, channelId: string, _dueAt: string, media: Media) {
   return immediatePostPayload(text, channelId, media);
 }
+// Buffer's X channel has returned an explicit 100-post / rolling 24h limit.
+// Stay below it: 90 posts in any rolling 24h with at least 16 minutes between
+// attempts. Ambiguous outcomes count as attempts to avoid accidental repeats.
+export const MEVRIC_24H_POST_LIMIT = 90;
+export const MEVRIC_POST_SPACING_MINUTES = 16;
+
+export function publishingGate(db: Database.Database, now = Date.now()): { allowed: boolean; reason: string; count: number } {
+  const since = new Date(now - 24 * 3600_000).toISOString();
+  const count = (db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL AND julianday(attempted_at) > julianday(?)").get(since) as {n:number}).n;
+  if (count >= MEVRIC_24H_POST_LIMIT) return { allowed: false, count, reason: `Rolling 24h Mevric cap: ${count}/${MEVRIC_24H_POST_LIMIT} attempts; collecting without publishing` };
+  const recent = db.prepare("SELECT attempted_at AS at FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL ORDER BY julianday(attempted_at) DESC LIMIT 1").get() as {at:string}|undefined;
+  if (recent && now - Date.parse(recent.at) < MEVRIC_POST_SPACING_MINUTES * 60_000) {
+    return { allowed: false, count, reason: `Mevric pacing: at least ${MEVRIC_POST_SPACING_MINUTES} minutes between X posts` };
+  }
+  return { allowed: true, count, reason: '' };
+}
+
+const isDefiniteBufferXQuotaRejection = (message: string) =>
+  /already scheduled the maximum number of posts Buffer allows for X \(Twitter\) within 24 hours \(100\)/i.test(message);
+
 export async function publish(dryRun = true): Promise<void> {
   const db = database();
   try {
     const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News') AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 24 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
     if (!row) { console.log('No recent unpublished stories'); return; }
+    if (!dryRun) {
+      const gate = publishingGate(db);
+      if (!gate.allowed) { console.log(gate.reason); return; }
+    }
     // NPR social images can be unrelated archive photos and may not be reusable.
     // Attach third-party media only after separate rights + relevance approval.
     const mediaAllowed = process.env.MEVRIC_MEDIA_APPROVED === 'true';
@@ -314,7 +338,17 @@ export async function publish(dryRun = true): Promise<void> {
       if (!response.ok) throw new Error(`Buffer HTTP ${response.status}`);
       const body = await response.json() as { errors?: { message: string }[]; data?: { createPost?: { post?: { id?: string }; message?: string } } };
       const id = body.data?.createPost?.post?.id;
-      if (!id) throw new Error(body.errors?.map(e => e.message).join('; ') || body.data?.createPost?.message || 'Buffer returned no post ID');
+      if (!id) {
+        const message = body.errors?.map(e => e.message).join('; ') || body.data?.createPost?.message || 'Buffer returned no post ID';
+        if (isDefiniteBufferXQuotaRejection(message)) {
+          // Buffer explicitly rejected creation: it cannot have been sent.
+          // Put the article back into the pending queue rather than losing it.
+          db.prepare("UPDATE stories SET status='new', attempted_at=NULL, error='Buffer X 24h quota rejection; awaiting new slot' WHERE url=? AND status='attempted'").run(row.url);
+          console.warn('Buffer X 24h quota reached; article held for a later eligible slot');
+          return;
+        }
+        throw new Error(message);
+      }
       db.prepare("UPDATE stories SET status='queued',provider_id=? WHERE url=?").run(id, row.url);
       console.log(`Queued ${id}`);
     } catch (error) {
@@ -342,11 +376,12 @@ async function main() {
     await collect();
     const db = database();
     try {
-      // Count all attempts, including uncertain Buffer outcomes, without retrying.
-      // UTC day and only this app's database: Nox_alkimo is never included.
-      const day = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND substr(attempted_at,1,10) = ?")
-        .get(new Date().toISOString().slice(0,10)) as { n: number };
-      if (day.n >= 200) { console.log('Daily safety cap reached: 200 MevricNews attempts UTC'); return; }
+      // Rolling protection applies to this MevricNews database/channel only,
+      // independently of AIJOLT and other X accounts.
+      if (process.env.DRY_RUN === 'false') {
+        const gate = publishingGate(db);
+        if (!gate.allowed) { console.log(gate.reason); return; }
+      }
       const recent = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News') AND published_at >= ?")
         .get(new Date(Date.now() - 24 * 3600_000).toISOString()) as { n: number };
       if (!recent.n) { console.log('No eligible news in the last 24 hours'); return; }

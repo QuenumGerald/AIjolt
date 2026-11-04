@@ -160,6 +160,8 @@ it('sends a text-only post when no media is available and attaches an available 
     expect(textPayload.variables.input.needsApproval).toBe(false);
     const db2 = new Database(process.env.MEVRIC_DATABASE_PATH);
     db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'Another story', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
+    // Simulate the 16-minute spacing without slowing down the unit test.
+    db2.prepare("UPDATE stories SET attempted_at=? WHERE status='queued'").run(new Date(Date.now() - 17 * 60_000).toISOString());
     db2.close();
     process.env.MEVRIC_MEDIA_APPROVED = 'true'; // test only: simulate an approved image
     await publish(false);
@@ -326,6 +328,69 @@ describe('Mevric article image fallback', () => {
       fetchMock.mockRestore();
       if (previousPath === undefined) delete process.env.MEVRIC_DATABASE_PATH; else process.env.MEVRIC_DATABASE_PATH = previousPath;
       rmSync(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+
+describe('Mevric rolling 24-hour cap', () => {
+  it('allows up to 90 rolling attempts, blocks 90+ and spaces posts by 16 minutes', async () => {
+    const { default: Database } = await import('better-sqlite3');
+    const { publishingGate, MEVRIC_24H_POST_LIMIT, MEVRIC_POST_SPACING_MINUTES } = await import('../src/mevric.js');
+    expect(MEVRIC_24H_POST_LIMIT).toBe(90);
+    expect(MEVRIC_POST_SPACING_MINUTES).toBe(16);
+    const db = new Database(':memory:');
+    try {
+      db.exec('CREATE TABLE stories (url TEXT, status TEXT, attempted_at TEXT)');
+      const now = Date.parse('2026-11-04T12:00:00Z');
+      const insert = db.prepare('INSERT INTO stories(url,status,attempted_at) VALUES(?,?,?)');
+      for (let i=0;i<90;i++) insert.run(`https://example.com/${i}`,i%2===0?'queued':'attempted',new Date(now-3*3600_000).toISOString());
+      expect(publishingGate(db, now)).toMatchObject({allowed:false,count:90});
+      db.prepare('UPDATE stories SET attempted_at=?').run(new Date(now-25*3600_000).toISOString());
+      expect(publishingGate(db, now)).toMatchObject({allowed:true,count:0});
+      db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-5*60_000).toISOString(),'https://example.com/0');
+      expect(publishingGate(db, now)).toMatchObject({allowed:false,count:1});
+      expect(publishingGate(db, now).reason).toContain('16 minutes');
+      db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-17*60_000).toISOString(),'https://example.com/0');
+      expect(publishingGate(db, now)).toMatchObject({allowed:true,count:1});
+      // Even if the server clock crosses midnight, the rolling window remains.
+      expect(publishingGate(db, now + 24*3600_000)).toMatchObject({allowed:true,count:0});
+    } finally { db.close(); }
+  });
+
+  it('keeps definite Buffer X quota rejections eligible rather than losing articles', async () => {
+    const { mkdtempSync, rmSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const { default: Database } = await import('better-sqlite3');
+    const { vi } = await import('vitest');
+    const { publish } = await import('../src/mevric.js');
+    const dir = mkdtempSync(join(tmpdir(),'mevric-quota-'));
+    const keys = ['MEVRIC_DATABASE_PATH','BUFFER_ACCESS_TOKEN','MEVRIC_BUFFER_CHANNEL_ID','DEEPSEEK_API_KEY'];
+    const original = Object.fromEntries(keys.map(k=>[k,process.env[k]]));
+    const warning = vi.spyOn(console,'warn').mockImplementation(()=>{});
+    const fake = vi.spyOn(globalThis,'fetch').mockImplementation(async url => new Response(JSON.stringify(String(url).includes('deepseek.com')
+      ? { choices:[{message:{content:'A verified news update.'},finish_reason:'stop'}] }
+      : { data:{createPost:{message:'You have already scheduled the maximum number of posts Buffer allows for X (Twitter) within 24 hours (100). Please consider scheduling this post for a later time.'}} }),{status:200}));
+    try {
+      process.env.MEVRIC_DATABASE_PATH=join(dir,'test.db');
+      process.env.DEEPSEEK_API_KEY='test';
+      process.env.BUFFER_ACCESS_TOKEN='test';
+      process.env.MEVRIC_BUFFER_CHANNEL_ID='test-channel';
+      await publish(false); // create empty schema
+      const db = new Database(process.env.MEVRIC_DATABASE_PATH);
+      db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/test','Example headline','NPR',new Date().toISOString());
+      db.close();
+      await publish(false);
+      expect(fake).toHaveBeenCalledTimes(2);
+      expect(warning).toHaveBeenCalledWith(expect.stringContaining('quota reached'));
+      const read = new Database(process.env.MEVRIC_DATABASE_PATH);
+      expect(read.prepare('SELECT status,attempted_at,provider_id FROM stories').get()).toEqual({status:'new',attempted_at:null,provider_id:null});
+      read.close();
+    } finally {
+      fake.mockRestore(); warning.mockRestore();
+      for(const k of keys){if(original[k]===undefined)delete process.env[k];else process.env[k]=original[k];}
+      rmSync(dir,{recursive:true,force:true});
     }
   });
 });

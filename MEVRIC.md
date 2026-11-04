@@ -38,9 +38,9 @@ When enabled the scheduler polls every 2 minutes, publishes only stories less th
 
 ## Buffer & X quota protection
 
-The production scheduler is pinned to the `MevricNews` channel ID, never `Nox_alkimo`. Local hard stop: **200 attempted posts per UTC day**. There is no additional fixed hourly or between-post limit; the scheduler still polls every two minutes and publishes at most one fresh article per cycle. Attempts with ambiguous Buffer results still count toward limits. The Buffer organization reports two configured channels and a 5,000-scheduled-post capacity; that capacity is not a daily X allowance. Actual X/Buffer posting restrictions can be lower and may change. If Buffer reports a limit error, do not retry automatically; investigate before increasing volume.
+The production scheduler is pinned to the `MevricNews` channel ID, never `Nox_alkimo`. Local hard stop: **90 attempted posts in any rolling 24-hour window**, with **at least 16 minutes between posting attempts**. The scheduler still polls and collects every two minutes and publishes at most one fresh article per permitted cycle. Attempts with ambiguous Buffer results still count toward limits. The Buffer organization reports two configured channels and a 5,000-scheduled-post capacity; that capacity is not a daily X allowance. Actual X/Buffer posting restrictions can be lower and may change. If Buffer reports a limit error, do not retry automatically; investigate before increasing volume.
 
-The eligible news window is **24 hours** from the article publication timestamp, checked both in the scheduler and before creating each Buffer post. The 200-attempt daily cap, single-post-per-cycle behavior, and duplicate protections remain unchanged.
+The eligible news window is **24 hours** from the article publication timestamp, checked both in the scheduler and before creating each Buffer post. The 90-attempt rolling 24-hour cap, 16-minute spacing, single-post-per-cycle behavior, and duplicate protections are enforced.
 
 ## Link previews
 
@@ -67,3 +67,7 @@ Al Jazeera was removed at user request. Previously collected unpublished Al Jaze
 ## Editorial quality and DeepSeek V4 Pro (2026-11-03)
 
 Mevric uses `deepseek-v4-pro` by default (or `DEEPSEEK_MODEL` when explicitly set). The model receives only the original headline and character budget, not the news-publisher name. Publisher sign-offs such as "the BBC reports", "ABC News says", and "according to NPR" are removed from otherwise valid drafts; mid-sentence media credits and unexpected outlet mentions are rejected. Attribution of real news claims ("Kyiv says", "police say") remains, as does the original publisher's URL. A V4 Pro generation budget reserves enough tokens for the provider's reasoning; invalid / overlong outputs are never sent to Buffer. This model may cost more than the older `deepseek-chat` alias (which currently maps to `deepseek-flash`).
+
+### Confirmed Buffer X quota handling (Nov 2026)
+
+Buffer explicitly rejected new X posts after 100 scheduled within 24 hours. Mevric therefore targets at most 90 posts in any rolling 24-hour interval, not 200 attempts per UTC calendar day. The 16-minute minimum spacing distributes these posts through the day rather than creating a burst. The collector still runs every two minutes. A *definitive* Buffer GraphQL rejection matching the specific X 100-post limit returns the story to `new`; network timeouts and ambiguous Buffer responses stay `attempted` to prevent duplicate posts. Only articles still less than 24 hours old can be published on a later slot. This does not alter the separate AIJOLT channel or its settings.
