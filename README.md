@@ -132,3 +132,9 @@ npm run news -- publish --dry-run
 ```
 
 Créez `logs/` et protégez `.env` (`chmod 600 .env`). Ne faites pas tourner cron et `npm run start` simultanément.
+
+### Continuité des sources (Greenhouse, Lever, Ashby)
+
+Sur `gateway`, la connexion réseau à `foorilla.com` échoue actuellement avant l'établissement HTTPS, même si le domaine répond depuis d'autres serveurs. Pour éviter de dépendre de cette seule source, la production utilise des job boards publics officiels : Greenhouse (Anthropic, Databricks, Scale AI, Figma, CoreWeave, Reddit, Stripe, Roblox), Lever (Spotify) et Ashby (Perplexity). Leurs API sont accessibles depuis `gateway` ; chaque offre reste filtrée pour les emplois liés à l'IA, les pays autorisés et les doublons.
+
+**Diagnostic :** un proxy privé limité à Foorilla pourrait être envisagé, si l'accès est autorisé par le service. Il ne faut pas publier de proxy ouvert ni router les tokens Buffer/DeepSeek à travers lui. Les processus Node.js utilisant `fetch` nécessitent une configuration explicite du transport proxy.

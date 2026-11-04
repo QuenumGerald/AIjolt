@@ -28,21 +28,30 @@ const countryAliases = new Map<string, string>([
 const usStateNames = new Set(['alabama','alaska','arizona','arkansas','california','colorado','connecticut','delaware','florida','georgia','hawaii','idaho','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','new hampshire','new jersey','new mexico','new york','north carolina','north dakota','ohio','oklahoma','oregon','pennsylvania','rhode island','south carolina','south dakota','tennessee','texas','utah','vermont','virginia','washington','west virginia','wisconsin','wyoming']);
 const usStateCodes = new Set(['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']);
 export function inferCountry(location: string): string {
-  const parts = location.split(',').map(part => part.trim()).filter(Boolean);
-  if (!parts.length) return 'Unknown';
-  const last = parts.at(-1)!;
-  const lastNormalized = last.toLowerCase().replace(/\./g, '');
-  const direct = countryAliases.get(lastNormalized);
-  if (direct) return direct;
-  // Postal codes may trail a country code (for example: Nordborg, DK, 6430).
-  if (/^\d[\d\s-]*$/.test(last) && parts.length > 1) {
-    const previous = parts.at(-2)!.toLowerCase().replace(/\./g, '');
-    const previousCountry = countryAliases.get(previous);
-    if (previousCountry) return previousCountry;
+  // ATS boards often supply multiple locations separated by pipes, bullets or
+  // semicolons, or use US state abbreviations without an explicit country.
+  for (const section of location.split(/\s*[|•;]\s*|\s+\/\s+/).map(part => part.trim()).filter(Boolean)) {
+    const parts = section.split(',').map(part => part.trim()).filter(Boolean);
+    if (!parts.length) continue;
+    const last = parts.at(-1)!;
+    const tail = last.toLowerCase().replace(/\./g, '').trim();
+    if (/\b(?:united states(?: of america)?|usa)\b/i.test(section)) return 'United States';
+    if (/\b(?:united kingdom|england|scotland|wales)\b/i.test(section)) return 'United Kingdom';
+    // US postal abbreviations are unambiguous in a city, STATE combination.
+    // Test before country aliases (CA can otherwise be mistaken for Canada).
+    if (parts.length >= 2 && usStateCodes.has(last.toUpperCase())) return 'United States';
+    if (parts.length >= 2 && usStateNames.has(tail)) return 'United States';
+    // The common unqualified remote-job board labels are standalone cities.
+    if (/^(san francisco|new york city|new york|seattle|boston|austin)$/i.test(section)) return 'United States';
+    const direct = countryAliases.get(tail);
+    if (direct) return direct;
+    // Postal codes can trail an ISO country code: Nordborg, DK, 6430.
+    if (/^\d[\d\s-]*$/.test(last) && parts.length > 1) {
+      const previous = parts.at(-2)!.toLowerCase().replace(/\./g, '');
+      const previousCountry = countryAliases.get(previous);
+      if (previousCountry) return previousCountry;
+    }
   }
-  // Do not treat a regional code before an explicit but unsupported country as a country.
-  if (/[A-Za-z]/.test(last)) return 'Unknown';
-  if (parts.some(part => usStateNames.has(part.toLowerCase()) || usStateCodes.has(part.toUpperCase()))) return 'United States';
   return 'Unknown';
 }
 export function normalize(raw: RawJob): Job {
