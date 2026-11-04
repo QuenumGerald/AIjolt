@@ -146,7 +146,7 @@ it('sends a text-only post when no media is available and attaches an available 
     process.env.DEEPSEEK_API_KEY = 'test';
     await publish(false); // initializes database
     const db = new Database(process.env.MEVRIC_DATABASE_PATH);
-    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'News', 'NPR', new Date().toISOString());
+    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'US Congress debates the federal budget', 'NPR', new Date().toISOString());
     db.close();
     await publish(false);
     expect(fetchMock).toHaveBeenCalledTimes(2);
@@ -159,7 +159,7 @@ it('sends a text-only post when no media is available and attaches an available 
     expect(textPayload.variables.input.assets).toEqual([]);
     expect(textPayload.variables.input.needsApproval).toBe(false);
     const db2 = new Database(process.env.MEVRIC_DATABASE_PATH);
-    db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'Another story', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
+    db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'U.S. Senate votes on a new national security bill', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
     // Simulate the 16-minute spacing without slowing down the unit test.
     db2.prepare("UPDATE stories SET attempted_at=? WHERE status='queued'").run(new Date(Date.now() - 17 * 60_000).toISOString());
     db2.close();
@@ -191,7 +191,7 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
   const dir = mkdtempSync(join(tmpdir(), 'mevric-collect-'));
   const previousPath = process.env.MEVRIC_DATABASE_PATH;
   const previousKey = process.env.DEEPSEEK_API_KEY;
-  const rss = `<rss><channel><item><title>US news</title><link>https://www.npr.org/2026/story</link><pubDate>${new Date().toUTCString()}</pubDate><enclosure url="https://media.npr.org/photo.jpg" type="image/jpeg"/></item></channel></rss>`;
+  const rss = `<rss><channel><item><title>US Congress discusses the federal budget</title><link>https://www.npr.org/2026/story</link><pubDate>${new Date().toUTCString()}</pubDate><enclosure url="https://media.npr.org/photo.jpg" type="image/jpeg"/></item></channel></rss>`;
   const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => String(url).includes('deepseek.com') ? new Response(JSON.stringify({ choices: [{ message: { content: 'A US news update.' } }] }), { status: 200 }) : new Response(rss, { status: 200 }));
   const log = vi.spyOn(console, 'log').mockImplementation(() => {});
   try {
@@ -203,7 +203,7 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
     expect(db.prepare('SELECT COUNT(*) AS count FROM stories').get()).toEqual({ count: 1 });
     db.close();
     await publish(true);
-    expect(log).toHaveBeenCalledWith(expect.stringContaining('NEWS 📰'));
+    expect(log).toHaveBeenCalledWith(expect.stringContaining('POLITICS 🏛️'));
     expect(log).not.toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
     expect(fetchMock).toHaveBeenCalledTimes(17);
   } finally {
@@ -231,7 +231,7 @@ it('does not publish when the rewriting service fails', async () => {
     process.env.DEEPSEEK_API_KEY = 'test';
     await publish(true);
     const db = new Database(process.env.MEVRIC_DATABASE_PATH);
-    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'News', 'NPR', new Date().toISOString());
+    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'US Congress debates the federal budget', 'NPR', new Date().toISOString());
     db.close();
     await expect(publish(false)).rejects.toThrow('DeepSeek HTTP 500');
     expect(request).toHaveBeenCalledTimes(1);
@@ -379,7 +379,7 @@ describe('Mevric rolling 24-hour cap', () => {
       process.env.MEVRIC_BUFFER_CHANNEL_ID='test-channel';
       await publish(false); // create empty schema
       const db = new Database(process.env.MEVRIC_DATABASE_PATH);
-      db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/test','Example headline','NPR',new Date().toISOString());
+      db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/test','US Congress votes on a major spending bill','NPR',new Date().toISOString());
       db.close();
       await publish(false);
       expect(fake).toHaveBeenCalledTimes(2);

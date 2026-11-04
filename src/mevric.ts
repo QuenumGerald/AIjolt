@@ -2,6 +2,7 @@ import 'dotenv/config';
 import Database from 'better-sqlite3';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { assessEditorialStory, isSameNewsEvent } from './mevric-editorial.js';
 
 const feeds = [
   { url: 'https://feeds.npr.org/1001/rss.xml', publisher: 'NPR' },
@@ -309,11 +310,25 @@ export function publishingGate(db: Database.Database, now = Date.now()): { allow
 const isDefiniteBufferXQuotaRejection = (message: string) =>
   /already scheduled the maximum number of posts Buffer allows for X \(Twitter\) within 24 hours \(100\)/i.test(message);
 
+type StoredStory = Story & { mediaUrl: string | null; mediaKind: string | null };
+/** Choose the most relevant fresh story, then suppress already-covered events. */
+export function selectEditorialStory(db: Database.Database, now = Date.now()): StoredStory | undefined {
+  const since = new Date(now - 24 * 3600_000).toISOString();
+  const rows = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News') AND published_at >= ? ORDER BY published_at DESC LIMIT 1000")
+    .all(since) as StoredStory[];
+  const sent = db.prepare("SELECT url,title,publisher,published_at AS publishedAt FROM stories WHERE status IN ('queued','attempted') AND published_at >= ? ORDER BY attempted_at DESC LIMIT 1000")
+    .all(since) as Story[];
+  const ranked = rows.map(story => ({ story, assessment: assessEditorialStory(story) }))
+    .filter(item => item.assessment.eligible && !sent.some(covered => isSameNewsEvent(item.story, covered)))
+    .sort((a,b) => b.assessment.priority - a.assessment.priority || Date.parse(b.story.publishedAt) - Date.parse(a.story.publishedAt));
+  return ranked[0]?.story;
+}
+
 export async function publish(dryRun = true): Promise<void> {
   const db = database();
   try {
-    const row = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News') AND published_at >= ? ORDER BY published_at DESC LIMIT 1").get(new Date(Date.now() - 24 * 3600_000).toISOString()) as (Story & { mediaUrl: string | null; mediaKind: string | null }) | undefined;
-    if (!row) { console.log('No recent unpublished stories'); return; }
+    const row = selectEditorialStory(db);
+    if (!row) { console.log('No fresh stories matching the US/major-event editorial filter'); return; }
     if (!dryRun) {
       const gate = publishingGate(db);
       if (!gate.allowed) { console.log(gate.reason); return; }
@@ -382,9 +397,7 @@ async function main() {
         const gate = publishingGate(db);
         if (!gate.allowed) { console.log(gate.reason); return; }
       }
-      const recent = db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News') AND published_at >= ?")
-        .get(new Date(Date.now() - 24 * 3600_000).toISOString()) as { n: number };
-      if (!recent.n) { console.log('No eligible news in the last 24 hours'); return; }
+      if (!selectEditorialStory(db)) { console.log('No fresh stories matching the US/major-event editorial filter'); return; }
     } finally { db.close(); }
     await publish(process.env.DRY_RUN !== 'false');
     } catch (error) { console.error('Mevric cycle failed:', error); } finally { running = false; }
