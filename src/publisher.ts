@@ -2,6 +2,7 @@ import { config } from './config.js';
 import { db, rowToJob } from './db.js';
 import { generatePost } from './posts.js';
 import { evaluateJobPost, shouldSkipForHistory } from './post-quality.js';
+import { diversifyJobCandidates } from './job-selection.js';
 import { logger } from './logger.js';
 import { nextCustomDueAt } from './schedule.js';
 import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from './buffer.js';
@@ -191,7 +192,11 @@ export async function makeRoomForJobPosts(jobsWanted: number): Promise<number> {
 export async function publish(dryRunFlag = false) {
   const dry = dryRunFlag || config.dryRun;
   if (!dry) await syncBufferPublications(false);
-  const rows = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued','skipped')) ORDER BY score DESC LIMIT ?`).all(Math.max(40, config.jobsPerCycle * 20)) as any[];
+  // Widen candidate pool, and rotate hiring companies instead of endlessly
+  // retrying the same 40 top-scored offers every 20 minutes.
+  const recentCompanies = db.prepare(`SELECT j.company AS company FROM publications p JOIN jobs j ON j.id=p.job_id WHERE p.network='x' AND p.status IN ('published','queued') ORDER BY datetime(coalesce(p.due_at,p.created_at)) DESC LIMIT 25`).all() as Array<{company:string}>;
+  const candidates = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued','skipped')) ORDER BY score DESC LIMIT ?`).all(Math.max(250, config.jobsPerCycle * 20)) as any[];
+  const rows = diversifyJobCandidates(candidates, recentCompanies);
   const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x', 'linkedin'] as Network[]).map(network => [network, dailyJobCount(network)])) as Record<Network, number>;
   if (!dry) {
@@ -232,7 +237,14 @@ export async function publish(dryRunFlag = false) {
       continue;
     }
     const job = verdict.job;
-    const recent = db.prepare(`SELECT j.company AS company, p.text AS text FROM publications p JOIN jobs j ON j.id=p.job_id WHERE p.network=? AND p.status IN ('published','queued') ORDER BY datetime(coalesce(p.due_at, p.created_at)) DESC LIMIT 25`).all(network) as Array<{ company: string; text: string }>;
+    const recent = db.prepare(`SELECT j.company AS company, j.title AS title, j.url AS url, p.text AS text FROM publications p JOIN jobs j ON j.id=p.job_id WHERE p.network=? AND p.status IN ('published','queued') ORDER BY datetime(coalesce(p.due_at, p.created_at)) DESC LIMIT 25`).all(network) as Array<{ company: string; title: string; url: string; text: string }>;
+    // Check deterministic offer identity BEFORE calling DeepSeek to avoid
+    // wasting API requests on known duplicates / back-to-back same companies.
+    const preflightSkip = shouldSkipForHistory(job, '', recent);
+    if (preflightSkip) {
+      logger.info(`Deferring ${network} job ${row.id}: ${preflightSkip}`);
+      continue;
+    }
     const text = await generatePost(job, network);
     const historySkip = shouldSkipForHistory(job, text, recent);
     if (historySkip) {

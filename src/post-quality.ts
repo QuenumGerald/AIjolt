@@ -124,14 +124,28 @@ export function evaluateJobPost(job: Job): { ok: true; job: Job } | { ok: false;
   return { ok: true, job: { ...job, company, skills: postingSkills(job) } };
 }
 
-export function shouldSkipForHistory(
-  job: Job,
-  text: string,
-  recent: Array<{ company: string; text: string }>,
-): string | null {
+type JobPostHistory = { company: string; text: string; title?: string; url?: string };
+
+/** Compare job identity rather than generic AI-written promotional copy. */
+export function shouldSkipForHistory(job: Job, text: string, recent: JobPostHistory[]): string | null {
   if (/not specified/i.test(text)) return 'permanent: generated text contains Not specified';
   const last = recent[0];
   if (last && fold(last.company) === fold(job.company)) return 'temporary: same company as previous post';
-  if (recent.some(item => textsAreNearDuplicates(item.text, text))) return 'temporary: near-duplicate of a recent post';
+  const canonicalUrl = (url: string) => url.trim().replace(/[?#].*$/, '').replace(/\/$/, '').toLowerCase();
+  const jobUrl = canonicalUrl(job.url);
+  const company = fold(job.company);
+  const title = fold(job.title);
+  if (recent.some(item => item.url && canonicalUrl(item.url) === jobUrl)) {
+    return 'temporary: the same job application URL was posted recently';
+  }
+  if (recent.some(item => item.title && fold(item.company) === company && fold(item.title) === title)) {
+    return 'temporary: the same company and job title were posted recently';
+  }
+  // Legacy callers without job identity may still use text similarity.
+  // Live publishing ALWAYS supplies URLs/titles, avoiding false matches between
+  // distinct ML jobs whose generated promotional text is nearly identical.
+  if (recent.some(item => !item.title && !item.url && textsAreNearDuplicates(item.text, text))) {
+    return 'temporary: near-duplicate of a recent post';
+  }
   return null;
 }
