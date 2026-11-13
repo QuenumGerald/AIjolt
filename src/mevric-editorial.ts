@@ -15,14 +15,15 @@ const seriousIncident = /\b(?:shootings?|shots? fired|gunfire|gunman|armed attac
 const retrospective = /\b(?:anniversary|years? (?:after|ago)|decades? (?:after|ago)|historical|documentary|trial|sentenced|sentencing|convicted|conviction|judge rules|court hears|pleads guilty|training exercise|drill|simulation|movie|video game|fictional)\b/i;
 
 /** Assess the subject matter, not the publisher: US politics and major US events rank first. */
-const excluded = /\b(?:analysis|opinion|explainer|takeaways|recap|roundup|what to know|what we know|debate|debates|preview|podcast|the takeout|cbs sunday morning|face the nation|meet the press|interview|newsletter|watch live|livestream|climate policy|health policy|campaign trail|polling|polls show|fact check|guide to|how to|why it matters|anniversary|years? ago|documentary|trial|sentenced|sentencing|convicted|training exercise|simulation|drill)\b/i;
-const eventIncident = /\b(?:shooting|shot dead|shots fired|gunfire|gunman|active shooter|active threat|swat|armed attack|attack kills|attack leaves|deadly attack|deadly strike|terror(?:ist)? attack|airstrike|missile strike|bombing|explosion|hostage|earthquake|tsunami|hurricane|tornado|wildfire|flooding|flash flood|landslide|building collapse|bridge collapse|plane crash|aircraft crash|helicopter crash|train (?:crash|derailment)|bus crash|multi-vehicle crash|deadly crash|cyberattack|major power outage|major network outage|major (?:collision|accident|outage|blackout|power failure|network outage)|widespread outage|massive outage|evacuat(?:ed|ion|ions)|arrested|arrests?|taken into custody|detained|charged with|dies at|has died|dead at|death of|killed in|found dead)\b/i;
-const electionResult = /\b(?:election|vote|race|ballot|referendum|house|senate|presidential)\b.*\b(?:wins?|won|elected|defeats?|projected winner|results? announced|results? confirmed|declared winner|takes? control|gains? majority)\b|\b(?:wins?|won|elected|defeats?|projected winner|declared winner)\b.*\b(?:election|vote|race|ballot|referendum|house|senate|presidential)\b/i;
+const excluded = /\b(?:analysis|opinion|explainer|here.s what|early details|special report|takeaways|recap|roundup|what to know|what we know|after almost|deeply sorry|debate|debates|preview|podcast|the takeout|cbs sunday morning|face the nation|meet the press|interview|newsletter|watch live|livestream|climate policy|health policy|campaign trail|polling|polls show|fact check|guide to|how to|why it matters|anniversary|years? ago|documentary|trial|sentenced|sentencing|convicted|training exercise|simulation|drill)\b/i;
+const eventIncident = /\b(?:shooting|shot dead|shots fired|gunfire|gunman|active shooter|active threat|swat|armed attack|attack kills|attack leaves|deadly attack|deadly strike|terror(?:ist)? attack|airstrike|missile strike|bombing|explosion|hostage|earthquake|tsunami|hurricane|tornado|wildfire|flooding|flash flood|landslide|building collapse|bridge collapse|plane crash|aircraft crash|helicopter crash|train (?:crash|derailment)|bus crash|multi-vehicle crash|deadly crash|(?:tanker|ship|vessel|boat|ferry|cruise ship) (?:hits|hit|slams into|strikes|collides with|crashes into)|(?:ship|boat|vessel|ferry) collision|cyberattack|(?:nationwide|national|global|widespread|massive|major) (?:power |network |internet |cloud )?(?:outage|blackout|ground stop|shutdown|disruption|failure)|ground stop (?:ordered|issued)|(?:faa|airport|airports).*ground stop|global outage|major (?:collision|accident|outage|blackout|power failure|network outage)|evacuat(?:ed|ion|ions)|arrested|arrests?|taken into custody|detained|charged with|dies at|has died|dead at|death of|killed in|found dead)\b/i;
+const electionResult = /\b(?:election|vote|race|ballot|referendum|house|senate|presidential)\b.*\b(?:wins?|won|elected|defeats?|projected winner|results? announced|results? confirmed|declared winner|takes? control|gains? majority)\b|\b(?:wins?|won|elected|defeats?|projected winner|declared winner|projects|projected to win)\b.*\b(?:election|vote|race|ballot|referendum|house|senate|presidential)\b/i;
 const deathPerson = /\b(?:actor|actress|singer|musician|rapper|author|director|president|former president|prime minister|celebrity|star|legend|icon|leader|politician|governor|senator)\b.*\b(?:dies|died|dead|killed)\b|\b(?:dies|died|dead)\b.*\b(?:actor|actress|singer|musician|rapper|author|director|president|prime minister|celebrity|star|legend|icon|leader|politician|governor|senator)\b/i;
 /** Publish only a newly reported, concrete breaking incident or declared result. */
 export function assessEditorialStory(story: EditorialStory): EditorialAssessment {
   const title=story.title.trim();
   if (!title || lowValueFormat.test(title) || excluded.test(title) || retrospective.test(title) || lowValueSubject.test(title) || minorCrime.test(title)) return {eligible:false,priority:0,reason:'routine_or_retrospective'};
+  if (/\b(?:ap|associated press|networks?) projects\b/i.test(title) && /\b(?:lose|loses|lost|win|wins|won|seat|congress|senate|house|race)\b/i.test(title)) return {eligible:true,priority:180,reason:'election_projection'};
   if (electionResult.test(title)) return {eligible:true,priority:180,reason:'election_result'};
   if (deathPerson.test(title)) return {eligible:true,priority:175,reason:'person_death'};
   if (eventIncident.test(title)) return {eligible:true,priority:200,reason:'breaking_event'};
@@ -58,6 +59,15 @@ export function isUrgentBreakingStory(story: EditorialStory, now = Date.now()): 
 
 export function isSameNewsEvent(a: EditorialStory, b: EditorialStory): boolean {
   if (a.url === b.url) return true;
+  // Source wording often differs for the same nationally identified incident.
+  // Require a distinctive shared actor AND event type, not generic words alone.
+  const eventTag = (s: string): string | undefined => {
+    if (/\b(?:faa|federal aviation administration)\b/i.test(s) && /\b(?:ground\s?stop|grounded|flights? halted)\b/i.test(s) && /\b(?:nationwide|national|all u\.?s\.? airports|airports)\b/i.test(s)) return 'faa:national-ground-stop';
+    if (/\b(?:tanker|vessel|ship)\b/i.test(s) && /\b(?:river cruise|cruise ship|river cruiser|cruise boat)\b/i.test(s) && /\bnew orleans\b/i.test(s)) return 'new-orleans:tanker-cruise-collision';
+    return undefined;
+  };
+  const tagA=eventTag(a.title),tagB=eventTag(b.title);
+  if (tagA && tagA===tagB) return true;
   const aOutcome = electionOutcomeKey(a.title), bOutcome = electionOutcomeKey(b.title);
   // A projected result followed by an official confirmation IS a new event.
   if (aOutcome && bOutcome && aOutcome.split(':').slice(0,2).join(':') === bOutcome.split(':').slice(0,2).join(':') && aOutcome !== bOutcome) return false;
