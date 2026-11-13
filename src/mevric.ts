@@ -2,7 +2,7 @@ import 'dotenv/config';
 import Database from 'better-sqlite3';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { assessEditorialStory, isSameNewsEvent, isUrgentBreakingStory } from './mevric-editorial.js';
+import { assessEditorialStory, isSameNewsEvent, isUrgentBreakingStory, materialEventUpdate } from './mevric-editorial.js';
 
 const feeds = [
   { url: 'https://feeds.npr.org/1001/rss.xml', publisher: 'NPR' },
@@ -123,62 +123,16 @@ export function parseFeed(xml: string, now = Date.now(), publisher = 'NPR'): Sto
     const title = tag(item, 'title').replace(/\s+/g, ' ');
     const url = trustedArticleUrl(tag(item, 'link'), publisher);
     const published = Date.parse(tag(item, 'pubDate'));
-    if (!title || !url || !Number.isFinite(published) || published > now || now - published > 24 * 3600_000) return [];
+    if (!title || !url || !Number.isFinite(published) || published > now || now - published > 3 * 3600_000) return [];
     return [{ title, url, publishedAt: new Date(published).toISOString(), publisher, media: publisher === 'NPR' ? feedMedia(item) : undefined }];
   });
 }
 // Choose a factual topic label from the ORIGINAL headline, not the AI rewrite.
 // Prefer specific topics; ambiguous items retain the generic NEWS fallback.
-export function postHeading(story: Story): string {
-  const headline = story.title;
-  const topics: Array<[RegExp, string]> = [
-    [/\b(earthquake|wildfire|hurricane|tornado|flood|severe storm)\b/i, 'WEATHER 🌪️'],
-    [/\b(nfl|nba|mlb|nhl|super bowl|world series|football|basketball|baseball|soccer|olympics)\b/i, 'SPORTS 🏆'],
-    [/\b(cyberattack|ransomware|artificial intelligence|AI model|robotics|software|chipmaker|smartphone|technology)\b/i, 'TECH 💻'],
-    [/\b(election|ballot|congress|senate|white house|president|governor|supreme court|legislation)\b/i, 'POLITICS 🏛️'],
-    [/\b(inflation|interest rates|federal reserve|stock market|tariffs|recession|unemployment|economy)\b/i, 'ECONOMY 📈'],
-    [/\b(movie|film|grammy|oscars|hollywood|album|concert|television)\b/i, 'CULTURE 🎬'],
-    [/\b(clinical trial|vaccine|public health|disease outbreak|medical research|hospital)\b/i, 'HEALTH 🩺'],
-    [/\b(nasa|spacecraft|space station|astronaut|moon mission|mars rover)\b/i, 'SCIENCE 🔬'],
-    [/\b(war|ceasefire|airstrike|missile|military|invasion|peace talks)\b/i, 'WORLD 🌍'],
-  ];
-  const category = topics.find(([pattern]) => pattern.test(headline))?.[1] ?? 'NEWS 📰';
-  // Urgency must be supported by the headline itself. Never call an ordinary
-  // story BREAKING merely to make a post sound dramatic.
-  if (/(?:\bbreaking news\b|\bbreaking\s*:|\bjust happened\b|\bjust confirmed\b)/i.test(headline)) return 'BREAKING 🚨';
-  if (/\b(developing story|developing:|ongoing rescue|search underway)\b/i.test(headline)) return 'DEVELOPING 🔴';
-  if (isUrgentBreakingStory(story) && /\b(?:active (?:threat|shooter)|swat|responding|underway|hostages?|evacuating)\b/i.test(headline)) return 'DEVELOPING 🔴';
-  if (assessEditorialStory(story).reason.startsWith('urgent_')) return 'ALERT 🚨';
-  // Editorial variety for other news. These labels don't assert urgency.
-  let hash = 0;
-  for (const char of story.url) hash = (Math.imul(hash, 31) + char.codePointAt(0)!) >>> 0;
-  const labels = [`${category}`, `IN FOCUS 🔎 | ${category}`, `THE LATEST 🗞️ | ${category}`, `ON THE RADAR 📡 | ${category}`];
-  return labels[hash % labels.length];
-}
-
-export function formatPost(story: Story, text = story.title): string | null {
-  // The article link is visible so readers can access the original story and
-  // its preview image, even when third-party media attachment is disabled.
-  // Buffer/X may render its own link preview; no image rights are implied.
-  const post = `${postHeading(story)}\n\n${text}\n\n${story.url}`;
-  if (Array.from(post).length > 280) return null;
-  const topics: Array<[RegExp, string]> = [
-    [/\b(election|elections|vot(?:e|es|ing|ers)|congress|senate|president|white house|governor)\b/i, '#Politics'],
-    [/\b(economy|inflation|jobs report|interest rates|stocks|business)\b/i, '#Economy'],
-    [/\b(earthquake|earthquakes)\b/i, '#Earthquake'],
-    [/\b(hurricane|tornado|storm|flood|weather)\b/i, '#Weather'],
-    [/\b(nfl|nba|mlb|nhl|football|basketball|baseball|sports)\b/i, '#Sports'],
-    [/\b(film|movie|music|grammy|oscars|television|hollywood)\b/i, '#Entertainment'],
-    [/\b(technology|tech|artificial intelligence|cybersecurity)\b/i, '#Technology'],
-  ];
-  const matching = topics.filter(([pattern]) => pattern.test(story.title)).map(([, tag]) => tag);
-  const candidates = matching.length ? matching.slice(0, 2) : ['#News'];
-  const tags: string[] = [];
-  for (const candidate of candidates) {
-    if (new RegExp(`(^|\\s)${candidate}\\b`, 'i').test(story.title)) continue;
-    if (Array.from(`${post}\n\n${[...tags, candidate].join(' ')}`).length <= 280) tags.push(candidate);
-  }
-  return tags.length ? `${post}\n\n${tags.join(' ')}` : post;
+export function postHeading(_story: Story): string { return 'ALERT 🚨'; }
+export function formatPost(story: Story, _ignored = story.title): string | null {
+  const post = `ALERT 🚨\n${story.title}\n${story.url}\n#News`;
+  return Array.from(post).length <= 280 ? post : null;
 }
 // Give different stories different length targets, within the strict X budget.
 // Never fill space with facts that are absent from the source headline.
@@ -248,7 +202,7 @@ function database() {
 }
 export async function collect(): Promise<void> {
   const results = await Promise.allSettled(feeds.map(async feed => {
-    const response = await fetch(feed.url, { signal: AbortSignal.timeout(20000), headers: { 'user-agent': 'Mevric/1.0 (news reader)' } });
+    const response = await fetch(feed.url, { signal: AbortSignal.timeout(7000), headers: { 'user-agent': 'Mevric/1.0 (news reader)' } });
     if (!response.ok) throw new Error(`${feed.publisher} RSS HTTP ${response.status}`);
     return parseFeed(await response.text(), Date.now(), feed.publisher);
   }));
@@ -274,10 +228,10 @@ export async function collect(): Promise<void> {
   // Only NPR pages are eligible for our article-image fallback. Other sources
   // use text and the article link (potentially a provider-generated link card).
   const needsImage = db.prepare("SELECT media_url, status FROM stories WHERE url=?");
-  const pending = [...unique.values()].filter(story => {
+  const pending = process.env.MEVRIC_MEDIA_APPROVED === 'true' ? [...unique.values()].filter(story => {
     const existing = needsImage.get(story.url) as { media_url: string | null; status: string } | undefined;
     return story.publisher === 'NPR' && !story.media && (!existing || (existing.status === 'new' && !existing.media_url));
-  });
+  }) : [];
   // Bound concurrency to prevent overwhelming NPR or the small server.
   for (let i = 0; i < pending.length; i += 3) {
     await Promise.all(pending.slice(i, i + 3).map(async story => { story.media = await fetchArticleImage(story.url); }));
@@ -300,18 +254,13 @@ export function mediaPostPayload(text: string, channelId: string, _dueAt: string
 // Stay below it: 90 posts in any rolling 24h with at least 16 minutes between
 // attempts. Ambiguous outcomes count as attempts to avoid accidental repeats.
 export const MEVRIC_24H_POST_LIMIT = 90;
-export const MEVRIC_POST_SPACING_MINUTES = 16;
-export const MEVRIC_URGENT_SPACING_MINUTES = 2;
+export const MEVRIC_POST_SPACING_MINUTES = 0;
+export const MEVRIC_URGENT_SPACING_MINUTES = 0;
 
 export function publishingGate(db: Database.Database, now = Date.now(), urgent = false): { allowed: boolean; reason: string; count: number } {
   const since = new Date(now - 24 * 3600_000).toISOString();
   const count = (db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL AND julianday(attempted_at) > julianday(?)").get(since) as {n:number}).n;
   if (count >= MEVRIC_24H_POST_LIMIT) return { allowed: false, count, reason: `Rolling 24h Mevric cap: ${count}/${MEVRIC_24H_POST_LIMIT} attempts; collecting without publishing` };
-  const recent = db.prepare("SELECT attempted_at AS at FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL ORDER BY julianday(attempted_at) DESC LIMIT 1").get() as {at:string}|undefined;
-  const spacing = urgent ? MEVRIC_URGENT_SPACING_MINUTES : MEVRIC_POST_SPACING_MINUTES;
-  if (recent && now - Date.parse(recent.at) < spacing * 60_000) {
-    return { allowed: false, count, reason: `Mevric pacing: at least ${spacing} minutes between X posts${urgent ? ' (urgent incident)' : ''}` };
-  }
   return { allowed: true, count, reason: '' };
 }
 
@@ -321,22 +270,47 @@ const isDefiniteBufferXQuotaRejection = (message: string) =>
 type StoredStory = Story & { mediaUrl: string | null; mediaKind: string | null };
 /** Choose the most relevant fresh story, then suppress already-covered events. */
 export function selectEditorialStory(db: Database.Database, now = Date.now()): StoredStory | undefined {
-  const since = new Date(now - 24 * 3600_000).toISOString();
+  const since = new Date(now - 3 * 3600_000).toISOString();
+  const sentSince = new Date(now - 24 * 3600_000).toISOString();
   const rows = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News','Fox News','CBS News') AND published_at >= ? ORDER BY published_at DESC LIMIT 1000")
     .all(since) as StoredStory[];
-  const sent = db.prepare("SELECT url,title,publisher,published_at AS publishedAt FROM stories WHERE status IN ('queued','attempted') AND published_at >= ? ORDER BY attempted_at DESC LIMIT 1000")
-    .all(since) as Story[];
+  const sent = db.prepare("SELECT url,title,publisher,published_at AS publishedAt FROM stories WHERE status IN ('queued','attempted') AND attempted_at >= ? ORDER BY attempted_at DESC LIMIT 5000")
+    .all(sentSince) as Story[];
   const ranked = rows.map(story => ({ story, assessment: assessEditorialStory(story) }))
-    .filter(item => item.assessment.eligible && !sent.some(covered => isSameNewsEvent(item.story, covered)))
+    .filter(item => item.assessment.eligible && Date.parse(item.story.publishedAt) <= now)
+    .filter(item => {
+      const same = sent.filter(covered => isSameNewsEvent(item.story, covered));
+      if (same.length >= 4) return false;
+      if (same.some(covered => headlineKey(covered.title) === headlineKey(item.story.title))) return false;
+      return materialEventUpdate(item.story, same);
+    })
     .sort((a,b) => b.assessment.priority - a.assessment.priority || Date.parse(b.story.publishedAt) - Date.parse(a.story.publishedAt));
   return ranked[0]?.story;
+}
+
+export async function verifyArticleHeadline(story: Story): Promise<boolean> {
+  const safe=trustedArticleUrl(story.url,story.publisher);
+  if (!safe) return false;
+  try {
+    const response=await fetch(safe,{redirect:'manual',headers:{'user-agent':'Mevric/1.0 (headline verification)','accept':'text/html'},signal:AbortSignal.timeout(10000)});
+    if (!response.ok || !response.headers.get('content-type')?.includes('text/html')) return false;
+    const html=(await response.text()).slice(0,200000);
+    const m=[...html.matchAll(/<meta\b[^>]*>/gi)].find(x=>/property=["']og:title["']|name=["']twitter:title["']/i.test(x[0]));
+    const raw=m?.[0].match(/content=["']([^"']+)["']/i)?.[1];
+    if (!raw) return false;
+    const page=decode(raw).replace(/\s*[|–—-]\s*(?:BBC|ABC News|CBS News|Fox News|NPR).*$/i,'');
+    const key=(t:string)=>new Set(headlineKey(t).split(' ').filter(w=>w.length>2));
+    const a=key(story.title),b=key(page);
+    const overlap=[...a].filter(w=>b.has(w)).length;
+    return a.size>=3 && overlap/Math.max(a.size,b.size)>=0.55;
+  } catch { return false; }
 }
 
 export async function publish(dryRun = true): Promise<void> {
   const db = database();
   try {
     const row = selectEditorialStory(db);
-    if (!row) { console.log('No fresh stories matching the US/major-event editorial filter'); return; }
+    if (!row) { console.log('No fresh breaking alerts meeting editorial policy'); return; }
     if (!dryRun) {
       const gate = publishingGate(db, Date.now(), isUrgentBreakingStory(row));
       if (!gate.allowed) { console.log(gate.reason); return; }
@@ -345,16 +319,12 @@ export async function publish(dryRun = true): Promise<void> {
     // Attach third-party media only after separate rights + relevance approval.
     const mediaAllowed = process.env.MEVRIC_MEDIA_APPROVED === 'true';
     const media: Media | undefined = mediaAllowed && row.mediaUrl && (row.mediaKind === 'image' || row.mediaKind === 'video') ? { kind: row.mediaKind, url: row.mediaUrl } : undefined;
-    let rewritten: string;
-    try { rewritten = await rewriteHeadline(row); }
-    catch (error) {
-      // During an urgent event, a factual original headline is safer than
-      // losing the story because the LLM ran out of reasoning tokens.
-      if (!isUrgentBreakingStory(row) || !formatPost(row, row.title)) throw error;
-      console.warn('Urgent event: using original publisher headline after rewrite failure');
-      rewritten = row.title;
+    const text = formatPost(row, row.title);
+    // Article pages must affirm the same headline; fail closed if unverifiable.
+    if (!dryRun && !(await verifyArticleHeadline(row))) {
+      db.prepare("UPDATE stories SET status='skipped', error='Article headline verification failed' WHERE url=?").run(row.url);
+      console.warn('Skipped article: headline/page mismatch or page unavailable'); return;
     }
-    const text = formatPost(row, rewritten);
     if (!text) { db.prepare("UPDATE stories SET status='skipped', error='Post exceeds 280 characters' WHERE url=?").run(row.url); console.log('Skipped an overlong headline'); return; }
     if (dryRun) { console.log(media ? `${text}\n\n${media.kind}: ${media.url}` : text); return; }
     const token = process.env.BUFFER_ACCESS_TOKEN;
@@ -396,8 +366,8 @@ async function main() {
   // Restrict this scheduler to MevricNews. The second Buffer channel is separate.
   if (process.env.MEVRIC_BUFFER_CHANNEL_ID !== '6aea10f0e29c69a1714d0a21') throw new Error('Unexpected Buffer channel; refusing automation');
   let running = false;
-  // No fixed hourly/per-post delay; Buffer/X limits still apply.
-  // One scheduler cycle selects at most one fresh, unposted story.
+  // Poll feeds every 10 seconds, with no artificial per-post spacing.
+  // Image scraping is skipped when media posting is disabled.
   const safeCycle = async () => {
     if (running) return;
     running = true;
@@ -411,15 +381,27 @@ async function main() {
       // independently of AIJOLT and other X accounts.
       if (process.env.DRY_RUN === 'false') {
         const selected = selectEditorialStory(db);
-        if (!selected) { console.log('No fresh stories matching the US/major-event editorial filter'); return; }
+        if (!selected) { console.log('No fresh breaking alerts meeting editorial policy'); return; }
         const gate = publishingGate(db, Date.now(), isUrgentBreakingStory(selected));
         if (!gate.allowed) { console.log(gate.reason); return; }
-      } else if (!selectEditorialStory(db)) { console.log('No fresh stories matching the US/major-event editorial filter'); return; }
+      } else if (!selectEditorialStory(db)) { console.log('No fresh breaking alerts meeting editorial policy'); return; }
     } finally { db.close(); }
-    await publish(process.env.DRY_RUN !== 'false');
+    // Drain several unrelated urgent alerts within the same cycle rather than
+    // delaying each by a polling period. Cap work to avoid continuous bursts.
+    for (let i = 0; i < 4; i++) {
+      const check = database();
+      let hasStory = false;
+      try {
+        const item = selectEditorialStory(check);
+        hasStory = Boolean(item) && (process.env.DRY_RUN !== 'false' || publishingGate(check).allowed);
+      } finally { check.close(); }
+      if (!hasStory) break;
+      await publish(process.env.DRY_RUN !== 'false');
+      if (process.env.DRY_RUN !== 'false') break;
+    }
     } catch (error) { console.error('Mevric cycle failed:', error); } finally { running = false; }
   };
   await safeCycle();
-  setInterval(() => void safeCycle(), 2 * 60_000);
+  setInterval(() => void safeCycle(), 10_000);
 }
 if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) main().catch(error => { console.error(error); process.exitCode = 1; });

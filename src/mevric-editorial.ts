@@ -15,29 +15,18 @@ const seriousIncident = /\b(?:shootings?|shots? fired|gunfire|gunman|armed attac
 const retrospective = /\b(?:anniversary|years? (?:after|ago)|decades? (?:after|ago)|historical|documentary|trial|sentenced|sentencing|convicted|conviction|judge rules|court hears|pleads guilty|training exercise|drill|simulation|movie|video game|fictional)\b/i;
 
 /** Assess the subject matter, not the publisher: US politics and major US events rank first. */
+const excluded = /\b(?:analysis|opinion|explainer|takeaways|recap|roundup|what to know|what we know|debate|debates|preview|podcast|the takeout|cbs sunday morning|face the nation|meet the press|interview|newsletter|watch live|livestream|climate policy|health policy|campaign trail|polling|polls show|fact check|guide to|how to|why it matters|anniversary|years? ago|documentary|trial|sentenced|sentencing|convicted|training exercise|simulation|drill)\b/i;
+const eventIncident = /\b(?:shooting|shot dead|shots fired|gunfire|gunman|active shooter|active threat|swat|armed attack|attack kills|attack leaves|deadly attack|deadly strike|terror(?:ist)? attack|airstrike|missile strike|bombing|explosion|hostage|earthquake|tsunami|hurricane|tornado|wildfire|flooding|flash flood|landslide|building collapse|bridge collapse|plane crash|aircraft crash|helicopter crash|train (?:crash|derailment)|bus crash|multi-vehicle crash|deadly crash|cyberattack|major power outage|major network outage|major (?:collision|accident|outage|blackout|power failure|network outage)|widespread outage|massive outage|evacuat(?:ed|ion|ions)|arrested|arrests?|taken into custody|detained|charged with|dies at|has died|dead at|death of|killed in|found dead)\b/i;
+const electionResult = /\b(?:election|vote|race|ballot|referendum|house|senate|presidential)\b.*\b(?:wins?|won|elected|defeats?|projected winner|results? announced|results? confirmed|declared winner|takes? control|gains? majority)\b|\b(?:wins?|won|elected|defeats?|projected winner|declared winner)\b.*\b(?:election|vote|race|ballot|referendum|house|senate|presidential)\b/i;
+const deathPerson = /\b(?:actor|actress|singer|musician|rapper|author|director|president|former president|prime minister|celebrity|star|legend|icon|leader|politician|governor|senator)\b.*\b(?:dies|died|dead|killed)\b|\b(?:dies|died|dead)\b.*\b(?:actor|actress|singer|musician|rapper|author|director|president|prime minister|celebrity|star|legend|icon|leader|politician|governor|senator)\b/i;
+/** Publish only a newly reported, concrete breaking incident or declared result. */
 export function assessEditorialStory(story: EditorialStory): EditorialAssessment {
-  const title = story.title.trim();
-  if (!title) return { eligible:false, priority:0, reason:'empty_title' };
-  if (lowValueFormat.test(title) || /^(?:\d+\s+takeaways|analysis:|review:)/i.test(title)) return { eligible:false, priority:0, reason:'video_live_or_promotional' };
-  if (lowValueSubject.test(title) || minorCrime.test(title)) return { eligible:false, priority:0, reason:'minor_local_or_low_value' };
-  const isUs = usContext.test(title);
-  // Serious incidents are newsworthy regardless of whether the location is
-  // a state capital. Breaking severity outranks routine political coverage.
-  if (seriousIncident.test(title) && !retrospective.test(title)) {
-    // A confirmed fatality, hostage situation or active threat outweighs an
-    // incident reporting only minor injuries; neither can bypass the daily cap.
-    const seriousHarm = /\b(?:dead|killed|fatal|deaths?|hostages?|active (?:shooter|threat)|mass shooting)\b/i.test(title);
-    return { eligible:true, priority:(isUs ? 210 : 180) + (seriousHarm ? 20 : 0), reason:isUs ? 'urgent_us_incident' : 'urgent_world_incident' };
-  }
-  const isPolitical = political.test(title);
-  const isMajor = majorEvent.test(title);
-  const isNational = nationalImpact.test(title);
-  if (isUs && isPolitical) return { eligible:true, priority:110, reason:'us_politics' };
-  if (isUs && isMajor) return { eligible:true, priority:100, reason:'major_us_event' };
-  if (isUs && isNational) return { eligible:true, priority:90, reason:'us_national_impact' };
-  if (isUs) return { eligible:true, priority:65, reason:'us_news' };
-  if (isMajor) return { eligible:true, priority:50, reason:'major_world_event' };
-  return { eligible:false, priority:0, reason:'outside_us_or_major_scope' };
+  const title=story.title.trim();
+  if (!title || lowValueFormat.test(title) || excluded.test(title) || retrospective.test(title) || lowValueSubject.test(title) || minorCrime.test(title)) return {eligible:false,priority:0,reason:'routine_or_retrospective'};
+  if (electionResult.test(title)) return {eligible:true,priority:180,reason:'election_result'};
+  if (deathPerson.test(title)) return {eligible:true,priority:175,reason:'person_death'};
+  if (eventIncident.test(title)) return {eligible:true,priority:200,reason:'breaking_event'};
+  return {eligible:false,priority:0,reason:'not_breaking'};
 }
 
 const tokenStopwords = new Set('the a an in on at by and or of for to from with about after before over under into through as is are was were be been says said says report reports reported news latest new how why what who where when more this that these those its their his her have has had get gets got will can could may might not it up down out first second third us usa american watch live latest analysis update updates'.split(' '));
@@ -64,7 +53,7 @@ function electionOutcomeKey(title: string): string | undefined {
 /** Allow a short-gap publish only for fresh, serious incidents with a trusted RSS source. */
 export function isUrgentBreakingStory(story: EditorialStory, now = Date.now()): boolean {
   const age = now - Date.parse(story.publishedAt);
-  return age >= 0 && age <= 3 * 3600_000 && assessEditorialStory(story).reason.startsWith('urgent_');
+  return age >= 0 && age <= 3 * 3600_000 && assessEditorialStory(story).eligible;
 }
 
 export function isSameNewsEvent(a: EditorialStory, b: EditorialStory): boolean {
@@ -88,4 +77,17 @@ export function isSameNewsEvent(a: EditorialStory, b: EditorialStory): boolean {
   if (closeInTime && bothSerious && intersect >= 5 && jaccard >= 0.30) return true;
   const aKey = electionOutcomeKey(a.title), bKey = electionOutcomeKey(b.title);
   return !!aKey && aKey === bKey;
+}
+
+/** Only an independently stated fact may justify a second report on an incident. */
+export function materialEventUpdate(next: EditorialStory, previous: EditorialStory[]): boolean {
+  if (!previous.length) return true;
+  const facts = (title:string) => {
+    const numbers=[...title.matchAll(/\b\d+(?:,\d{3})*\b/g)].map(m=>m[0]);
+    const statements=[...title.matchAll(/\b(?:police|sheriff|officials?|authorities|government|minister|president|prosecutor|coroner)\s+(?:say|says|said|confirm|confirms|confirmed|announce|announces|announced|identify|identifies|identified)\b/gi)].map(m=>m[0].toLowerCase());
+    const developments=[...title.matchAll(/\b(?:suspect (?:arrested|identified|charged|killed|dead)|arrested suspect|death toll|injury toll|casualty toll|confirmed dead|confirmed killed|declared winner|results? confirmed)\b/gi)].map(m=>m[0].toLowerCase());
+    return [...numbers,...statements,...developments];
+  };
+  const oldFacts=new Set(previous.flatMap(p=>facts(p.title)));
+  return facts(next.title).some(f=>!oldFacts.has(f));
 }
