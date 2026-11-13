@@ -132,10 +132,11 @@ describe('duplicate and company burst guards', () => {
     const job = base({ company: 'Reddit', title: 'Staff Machine Learning Engineer, Retrieval & Targeting', url: 'https://job-boards.greenhouse.io/reddit/jobs/8316086' });
     const recent = [
       { company: 'Figma', title: 'AI Engineer, Internal Tools', url: 'https://boards.greenhouse.io/figma/jobs/6233043004', text: 'Figma is hiring an AI Engineer' },
+      { company: 'Roblox', title: 'Senior Data Engineer', url: 'https://careers.roblox.com/jobs/789', text: 'Roblox is hiring a Data Engineer' },
       { company: 'Reddit', title: 'Staff Machine Learning Engineer, Retrieval', url: 'https://job-boards.greenhouse.io/reddit/jobs/8110234', text: 'Reddit is hiring a Staff Machine Learning Engineer in San Francisco. Apply: https://job-boards.greenhouse.io/reddit/jobs/8110234' },
     ];
     const copy = 'Reddit is hiring a Staff Machine Learning Engineer in San Francisco. Apply: https://job-boards.greenhouse.io/reddit/jobs/8316086';
-    expect(textsAreNearDuplicates(recent[1].text, copy)).toBe(true);
+    expect(textsAreNearDuplicates(recent[2].text, copy)).toBe(true);
     expect(shouldSkipForHistory(job, copy, recent)).toBeNull();
     expect(shouldSkipForHistory(job, '', recent)).toBeNull();
   });
@@ -145,7 +146,7 @@ describe('duplicate and company burst guards', () => {
     const previous = { company: 'Figma', title: 'AI Product Engineer', url: 'https://boards.greenhouse.io/figma/jobs/456', text: 'Figma job' };
     expect(shouldSkipForHistory(job, '', [previous, { company: 'Scale AI', title: 'Other role', url: 'https://boards.greenhouse.io/scaleai/jobs/12345', text: 'A previous job' }])).toMatch(/same job application URL/);
     expect(shouldSkipForHistory(job, '', [previous, { company: 'Scale AI', title: 'Staff Applied AI Engineer', url: 'https://some-other-ats.example/jobs/999', text: 'A previous job' }])).toMatch(/same company and job title/);
-    expect(shouldSkipForHistory(job, '', [{ company:'Scale AI', text:'A previous job' }])).toMatch(/same company as previous/);
+    expect(shouldSkipForHistory(job, '', [{ company:'Scale AI', text:'A previous job' }])).toMatch(/same company in last two posts/);
   });
 
   it('blocks generated Not specified lines', () => {

@@ -1,15 +1,14 @@
 import type { Job } from './types.js';
 import { config } from './config.js';
 import { postingSkills } from './post-quality.js';
+import { formatNoxPost } from './job-policy.js';
 
 const salary = (j: Job) => j.salary ?? 'Not disclosed';
 const skillList = (j: Job) => postingSkills(j).slice(0, 3);
-const shorten = (value: string, max: number) => value.length <= max ? value : `${value.slice(0, max - 1).trimEnd()}…`;
-
-export function xPost(j: Job) {
-  const required = `${j.title} — ${j.company}\n📍 ${shorten(j.location, 35)}\nApply: ${j.url}`;
-  const tags = ' #AIJobs #Hiring';
-  return required.length + tags.length <= 280 ? `${required}${tags}` : required;
+export function xPost(j: Job): string {
+  const post = formatNoxPost(j);
+  if (!post) throw new Error('Nox fixed-format post does not fit or lacks city/HTTPS link');
+  return post;
 }
 
 export function linkedinPost(j: Job) {
@@ -19,11 +18,13 @@ export function linkedinPost(j: Job) {
 }
 
 export async function generatePost(j: Job, network: 'x' | 'linkedin') {
-  const fallback = network === 'x' ? xPost(j) : linkedinPost(j);
+  // X/Nox is deterministic: one exact English format, no generated variants.
+  if (network === 'x') return xPost(j);
+  const fallback = linkedinPost(j);
   if (!config.deepseek.apiKey) return fallback;
   const skills = skillList(j);
   const skillsLine = skills.length ? `Skills (only these, from the offer text): ${skills.join(', ')}` : 'Skills: none found in the offer; do not invent any and do not mention skills.';
-  const prompt = `Write one concise ${network === 'x' ? 'X post under 280 characters' : 'LinkedIn post under 700 characters'} in English or French for this job. Include the COMPLETE job title and COMPLETE company name exactly as provided, without truncating or rewriting either one. Keep the direct application URL exactly. Never write "Not specified". Prefer fewer hashtags if needed to preserve the full title and URL. Return only the post.\nTitle: ${j.title}\nCompany: ${j.company}\nLocation: ${j.location}\nWork mode: ${j.workMode}\n${skillsLine}\nSalary: ${salary(j)}\nURL: ${j.url}`;
+  const prompt = `Write one concise LinkedIn post under 700 characters in English or French for this job. Include the COMPLETE job title and COMPLETE company name exactly as provided, without truncating or rewriting either one. Keep the direct application URL exactly. Never write "Not specified". Prefer fewer hashtags if needed to preserve the full title and URL. Return only the post.\nTitle: ${j.title}\nCompany: ${j.company}\nLocation: ${j.location}\nWork mode: ${j.workMode}\n${skillsLine}\nSalary: ${salary(j)}\nURL: ${j.url}`;
   try {
     const response = await fetch('https://api.deepseek.com/chat/completions', { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${config.deepseek.apiKey}` }, body: JSON.stringify({ model: config.deepseek.model, temperature: 0.7, messages: [{ role: 'user', content: prompt }] }), signal: AbortSignal.timeout(20_000) });
     if (!response.ok) return fallback;

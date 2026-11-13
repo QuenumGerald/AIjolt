@@ -2,7 +2,8 @@ import { config } from './config.js';
 import { db, rowToJob } from './db.js';
 import { generatePost } from './posts.js';
 import { evaluateJobPost, shouldSkipForHistory } from './post-quality.js';
-import { diversifyJobCandidates } from './job-selection.js';
+import { diversifyJobCandidates, postedJobHistory } from './job-selection.js';
+import { noxJobRejection } from './job-policy.js';
 import { logger } from './logger.js';
 import { nextCustomDueAt } from './schedule.js';
 import { bufferCreatePostPayload, bufferDeletePostPayload, bufferGetPostPayload, classifyBufferPostResponse } from './buffer.js';
@@ -195,8 +196,26 @@ export async function publish(dryRunFlag = false) {
   // Widen candidate pool, and rotate hiring companies instead of endlessly
   // retrying the same 40 top-scored offers every 20 minutes.
   const recentCompanies = db.prepare(`SELECT j.company AS company FROM publications p JOIN jobs j ON j.id=p.job_id WHERE p.network='x' AND p.status IN ('published','queued') ORDER BY datetime(coalesce(p.due_at,p.created_at)) DESC LIMIT 25`).all() as Array<{company:string}>;
-  const candidates = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued','skipped')) ORDER BY score DESC LIMIT ?`).all(Math.max(250, config.jobsPerCycle * 20)) as any[];
-  const rows = diversifyJobCandidates(candidates, recentCompanies);
+  const candidates = db.prepare(`SELECT * FROM jobs j WHERE status='active' AND NOT EXISTS (SELECT 1 FROM publications p WHERE p.job_id=j.id AND p.status IN ('published','queued','skipped')) ORDER BY score DESC LIMIT ?`).all(Math.max(1500, config.jobsPerCycle * 20)) as any[];
+  const approvedBoards = [...config.boards.greenhouse, ...config.boards.lever, ...config.boards.ashby];
+  const rejected = new Map<string, number>();
+  const eligibleRows = candidates.filter(row => {
+    const reason = noxJobRejection(rowToJob(row), approvedBoards);
+    if (!reason) return true;
+    rejected.set(reason, (rejected.get(reason) ?? 0) + 1);
+    return false;
+  });
+  logger.info(`Nox technical/verified employer policy: ${eligibleRows.length}/${candidates.length} eligible; exclusions ${JSON.stringify(Object.fromEntries(rejected))}`);
+  const rows = diversifyJobCandidates(eligibleRows, recentCompanies);
+  // If all available posts are from companies used in the last two posts,
+  // deliberately stop here instead of retrying hundreds of blocked ads.
+  if (config.buffer.x && rows.length) {
+    const history = postedJobHistory(db, 'x');
+    if (rows.every(row => history.lastTwo.some(last => last.company.trim().toLowerCase() === String(row.company).trim().toLowerCase()))) {
+      logger.info('Nox rotation paused: all eligible companies occur in the previous two posts (max 1 post per 3)');
+      return;
+    }
+  }
   const emitted: Record<Network, number> = { x: 0, linkedin: 0 };
   const dailyCount = Object.fromEntries((['x', 'linkedin'] as Network[]).map(network => [network, dailyJobCount(network)])) as Record<Network, number>;
   if (!dry) {
@@ -204,6 +223,7 @@ export async function publish(dryRunFlag = false) {
     await makeRoomForJobPosts(jobsWanted);
   }
   for (const row of rows) for (const network of ['x', 'linkedin'] as Network[]) {
+    if (!config.buffer[network]) continue; // Nox is X-only; do not generate unused LinkedIn copy.
     const slots = network === 'x'
       ? jobSlotsToday({
         capacity: config.queueCapacity,
@@ -237,16 +257,18 @@ export async function publish(dryRunFlag = false) {
       continue;
     }
     const job = verdict.job;
-    const recent = db.prepare(`SELECT j.company AS company, j.title AS title, j.url AS url, p.text AS text FROM publications p JOIN jobs j ON j.id=p.job_id WHERE p.network=? AND p.status IN ('published','queued') ORDER BY datetime(coalesce(p.due_at, p.created_at)) DESC LIMIT 25`).all(network) as Array<{ company: string; title: string; url: string; text: string }>;
-    // Check deterministic offer identity BEFORE calling DeepSeek to avoid
-    // wasting API requests on known duplicates / back-to-back same companies.
-    const preflightSkip = shouldSkipForHistory(job, '', recent);
+    // Two independent windows: 14-day company/title dedupe and the last two
+    // actual jobs (even if older than 14 days) for the strict 1-of-3 rule.
+    const { recent, lastTwo } = postedJobHistory(db, network);
+    // Enforce one per three posts and 14-day title+company dedupe BEFORE
+    // formatting; X uses a single deterministic English template.
+    const preflightSkip = shouldSkipForHistory(job, '', recent, lastTwo);
     if (preflightSkip) {
       logger.info(`Deferring ${network} job ${row.id}: ${preflightSkip}`);
       continue;
     }
     const text = await generatePost(job, network);
-    const historySkip = shouldSkipForHistory(job, text, recent);
+    const historySkip = shouldSkipForHistory(job, text, recent, lastTwo);
     if (historySkip) {
       if (historySkip.startsWith('permanent:')) {
         db.prepare(`INSERT INTO publications(job_id,network,status,text,error,created_at) VALUES(?,?,'skipped',?,?,?) ON CONFLICT(job_id,network) DO UPDATE SET status='skipped',error=excluded.error,created_at=excluded.created_at`).run(row.id, network, text, historySkip, new Date().toISOString());

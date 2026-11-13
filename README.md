@@ -144,3 +144,17 @@ Sur `gateway`, la connexion réseau à `foorilla.com` échoue actuellement avant
 AIJOLT examine désormais jusqu'à **250 annonces éligibles** par cycle de publication (au lieu des 40 offres les mieux notées) et pondère le classement selon le nombre de publications récentes par entreprise. Une forte pertinence IA reste prioritaire, mais les petites sources ne sont plus durablement cachées par un même grand board.
 
 Les doublons d'offres sont détectés par l'URL canonique de candidature et le couple **entreprise + intitulé exact normalisé**, et non par la similarité de textes promotionnels générés par DeepSeek. Ainsi deux postes ML de la même entreprise, avec des missions et liens de candidature distincts, ne sont pas rejetés pour une formule « is hiring » semblable. Un contrôle empêche toujours de publier deux offres de la même entreprise consécutivement. Le contrôle est appliqué *avant* l'appel au modèle pour éviter de gaspiller des requêtes sur des doublons connus. Les publications déjà envoyées ou mises en file restent protégées par la base SQLite. Aucun changement de quotas ni de canaux Buffer.
+
+### Nox / AIJOLT : règles de publication techniques (13 novembre 2026)
+
+Le compte **Nox** sur X publie **uniquement des annonces d'emplois techniques en anglais**. La collecte ne nécessite plus de mots-clés IA : elle accepte les métiers de l'ingénierie, du développement logiciel, de la data, du machine learning et de la recherche, sans avantager artificiellement la présence de mots-clés IA dans le score. Les postes de vente, recrutement, support client/technique, marketing, GTM et gestion non technique sont exclus d'office, même chez un employeur d'IA.
+
+Les entreprises publiables doivent figurer dans la liste des tableaux d'offres **officiels** configurés (`GREENHOUSE_BOARDS`, `LEVER_SITES`, `ASHBY_BOARDS`) et l'offre doit provenir du connecteur officiel correspondant. Foorilla continue d'être collecté si activé, mais sa seule mention d'une entreprise ne suffit pas à l'autoriser à publier. Les annonces sans ville géographiquement explicite, ou sans URL HTTPS valide, sont exclues plutôt que d'inventer une ville. Les annonces `Remote` sans ville sont donc non publiables dans ce format géolocalisé.
+
+Le texte X est **déterministe, sans appel à DeepSeek**, et respecte strictement le format suivant (280 caractères maximum, entreprise/intitulé/URL non tronqués) :
+
+`[Company] is hiring a [job title] in [city]. Salary: [verified salary or Not disclosed]. Apply: [direct HTTPS link]`
+
+Les montants manifestement incomplets (ex. `$10` sans période) ne sont pas pris pour un salaire ; la valeur devient `Not disclosed`. Aucun hashtag, emoji, seconde phrase ou reformulation aléatoire.
+
+La rotation interdit toute entreprise apparaissant dans les **deux publications X précédentes** : maximum **une publication de la même entreprise par fenêtre de trois posts**. Si aucune autre entreprise n'a d'offre admissible, la publication s'arrête proprement jusqu'à de nouvelles annonces, sans enfreindre la règle. Le doublon **entreprise + intitulé normalisé** est vérifié dans **toutes les publications X (programmées ou envoyées) des 14 derniers jours**, même si l'URL diffère. Les URL de candidature identiques sont également détectées dans cette fenêtre. Le quota et le rythme Buffer existants restent inchangés. Aucune modification de Mevric.
