@@ -9,7 +9,7 @@ describe('Mevric feed', () => {
     const stories = parseFeed(xml, now);
     expect(stories).toHaveLength(1);
     expect(stories[0].title).toBe('Election & economy');
-    expect(formatPost(stories[0])).toContain('POLITICS 🏛️');
+    expect(formatPost(stories[0])).toBe(`Election & economy\nhttps://www.npr.org/story/1\n#News`);
     expect(formatPost(stories[0])).not.toContain('Source: NPR');
     expect(formatPost(stories[0])).toContain(stories[0].url);
   });
@@ -34,25 +34,25 @@ describe('Mevric feed', () => {
     expect(parseFeed(item('https://www.cbsnews.com.evil.test/news/example'),now,'CBS News')).toHaveLength(0);
     expect(parseFeed(item('https://www.aljazeera.com/news/shooting'),now,'Al Jazeera')).toHaveLength(0);
   });
-  it('makes topic-led hooks varied and reserves BREAKING for explicit urgent headlines', () => {
+  it('prints ordinary news as the exact RSS headline + full link + #News, without ALERT', () => {
     const base = { url:'https://www.npr.org/example', publishedAt:new Date().toISOString(), publisher:'NPR' };
-    expect(postHeading({ ...base, title:'Breaking: Senate announces election result' })).toBe('BREAKING 🚨');
-    expect(postHeading({ ...base, title:'Developing story: search underway near coast' })).toBe('DEVELOPING 🔴');
-    expect(postHeading({ ...base, title:'Senate debates election bill' })).toContain('POLITICS 🏛️');
-    expect(postHeading({ ...base, title:'NBA playoffs begin tonight' })).toContain('SPORTS 🏆');
-    expect(postHeading({ ...base, title:'Federal Reserve signals interest rates' })).toContain('ECONOMY 📈');
-    expect(postHeading({ ...base, title:'NASA launches spacecraft' })).toContain('SCIENCE 🔬');
-    expect(postHeading({ ...base, title:'Local community celebrates annual festival' })).toContain('NEWS 📰');
-    expect(postHeading({ ...base, title:'Senate debates election bill' })).not.toContain('BREAKING');
-    const headings = new Set(Array.from({length:12},(_,i)=>postHeading({ ...base,title:'New city project opens',url:`https://www.npr.org/article-${i}` })));
-    expect(headings.size).toBeGreaterThan(1);
-    expect(formatPost({ ...base, title:'NASA launches spacecraft' })).toContain('SCIENCE 🔬');
+    const title='Senate debates election bill – officials confirm details';
+    expect(postHeading({ ...base, title })).toBe('');
+    expect(formatPost({ ...base,title })).toBe(`${title}\n${base.url}\n#News`);
+    expect(formatPost({ ...base,title })).not.toContain('ALERT');
+    expect(formatPost({ ...base,title })).not.toContain('BREAKING');
+  });
+  it('uses the ALERT prefix only with an explicit alert classification', () => {
+    const base={url:'https://www.foxnews.com/us/active-shooter-tampa',publisher:'Fox News',publishedAt:new Date().toISOString(),title:'Active shooter at Tampa, Florida bank building'};
+    expect(postHeading(base)).toBe('ALERT 🚨');
+    expect(formatPost(base,base.title,true)).toBe(`ALERT 🚨\n${base.title}\n${base.url}\n#News`);
+    expect(formatPost(base)).toBe(`${base.title}\n${base.url}\n#News`);
   });
   it('keeps article links even when no media is available', () => {
     const story = { title: 'News event', url: 'https://www.npr.org/story/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
     const text = formatPost(story);
     expect(text).toContain('News event');
-    expect(text).toContain('NEWS 📰');
+    expect(text).toContain('#News');
     expect(text).not.toContain('Source: NPR');
     expect(text).toContain(story.url);
   });
@@ -110,19 +110,13 @@ describe('Mevric feed', () => {
   it('rejects overlong posts instead of truncating facts', () => {
     expect(formatPost({ title: 'a'.repeat(300), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' })).toBeNull();
   });
-  it('adds relevant hashtags and uses a generic tag for other headlines', () => {
+  it('uses exactly #News, without multiple topic hashtags', () => {
     const story = { title: 'Congress debates new economic plan', url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
-    expect(formatPost(story)).toContain('#Politics');
-    expect(formatPost({ ...story, title: 'A story from the capital' })).toContain('#News');
+    expect(formatPost(story)).toBe(`${story.title}\n${story.url}\n#News`);
   });
-  it('keeps a fitting headline when there is no room for a hashtag', () => {
-    const base = { title: 'a', url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
-    const overhead = Array.from(`${postHeading(base)}\n\n\n\n${base.url}`).length;
-    const story = { ...base, title: 'a'.repeat(280 - overhead) };
-    const result = formatPost(story);
-    expect(result).not.toBeNull();
-    expect(result).not.toContain('#News');
-    expect(Array.from(result!).length).toBeLessThanOrEqual(280);
+  it('never truncates or removes the #News hashtag to fit an overlong title', () => {
+    const story = { title: 'a'.repeat(275), url: 'https://npr.org/1', publishedAt: new Date().toISOString(), publisher: 'NPR' };
+    expect(formatPost(story)).toBeNull();
   });
 });
 
@@ -136,55 +130,59 @@ it('extracts only trusted image or video enclosures', () => {
     .toEqual({ kind: 'video', url: 'https://media.npr.org/clip.mp4' });
 });
 
-it('sends a text-only post when no media is available and attaches an available image to Buffer', async () => {
+it('publishes the original headline and link through Buffer, preserving approved media without DeepSeek', async () => {
   const { mkdtempSync, rmSync } = await import('node:fs');
   const { tmpdir } = await import('node:os');
   const { join } = await import('node:path');
   const { default: Database } = await import('better-sqlite3');
   const { vi } = await import('vitest');
   const { publish } = await import('../src/mevric.js');
-  const dir = mkdtempSync(join(tmpdir(), 'mevric-test-'));
-  const previous = { path: process.env.MEVRIC_DATABASE_PATH, token: process.env.BUFFER_ACCESS_TOKEN, channel: process.env.MEVRIC_BUFFER_CHANNEL_ID, ai: process.env.DEEPSEEK_API_KEY, media: process.env.MEVRIC_MEDIA_APPROVED };
-  const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => new Response(JSON.stringify(String(url).includes('deepseek.com') ? { choices: [{ message: { content: 'A rewritten news update.' } }] } : { data: { createPost: { post: { id: 'post-1' } } } }), { status: 200 }));
+  const dir = mkdtempSync(join(tmpdir(),'mevric-publish-format-'));
+  const previous = { path:process.env.MEVRIC_DATABASE_PATH,token:process.env.BUFFER_ACCESS_TOKEN,channel:process.env.MEVRIC_BUFFER_CHANNEL_ID,media:process.env.MEVRIC_MEDIA_APPROVED };
+  const sent: Array<{text:string;assets:unknown[];mode:string;needsApproval:boolean}> = [];
+  const fetchMock=vi.spyOn(globalThis,'fetch').mockImplementation(async (url,options) => {
+    const address=String(url);
+    if(address.includes('api.buffer.com')) {
+      const body=JSON.parse(String(options?.body));sent.push(body.variables.input);
+      return new Response(JSON.stringify({data:{createPost:{post:{id:`post-${sent.length}`}}}}),{status:200});
+    }
+    if(address.includes('api.deepseek.com')) throw Error('DeepSeek must never be called for exact-title posts');
+    const title=address.endsWith('/1')?'US Congress debates the federal budget':'U.S. Senate votes on a new national security bill';
+    return new Response(`<meta property="og:title" content="${title}">`,{status:200,headers:{'content-type':'text/html'}});
+  });
   try {
-    process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
-    process.env.BUFFER_ACCESS_TOKEN = 'test';
-    process.env.MEVRIC_BUFFER_CHANNEL_ID = 'test-channel';
-    process.env.DEEPSEEK_API_KEY = 'test';
-    await publish(false); // initializes database
-    const db = new Database(process.env.MEVRIC_DATABASE_PATH);
-    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'US Congress debates the federal budget', 'NPR', new Date().toISOString());
+    process.env.MEVRIC_DATABASE_PATH=join(dir,'test.db');
+    process.env.BUFFER_ACCESS_TOKEN='test';
+    process.env.MEVRIC_BUFFER_CHANNEL_ID='test-channel';
+    await publish(false);
+    const db=new Database(process.env.MEVRIC_DATABASE_PATH);
+    db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1','US Congress debates the federal budget','NPR',new Date().toISOString());
     db.close();
     await publish(false);
-    expect(fetchMock).toHaveBeenCalledTimes(2);
-    const textRequest = fetchMock.mock.calls[1][1] as RequestInit;
-    const textPayload = JSON.parse(textRequest.body as string);
-    expect(textPayload.variables.input.text).toContain('A rewritten news update.');
-    expect(textPayload.variables.input.text).toContain('https://npr.org/1');
-    expect(textPayload.variables.input.text).not.toContain('Source: NPR');
-    expect(textPayload.variables.input.mode).toBe('shareNow');
-    expect(textPayload.variables.input.assets).toEqual([]);
-    expect(textPayload.variables.input.needsApproval).toBe(false);
-    const db2 = new Database(process.env.MEVRIC_DATABASE_PATH);
-    db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2', 'U.S. Senate votes on a new national security bill', 'NPR', new Date().toISOString(), 'https://media.npr.org/image.jpg', 'image');
-    // Simulate the 16-minute spacing without slowing down the unit test.
-    db2.prepare("UPDATE stories SET attempted_at=? WHERE status='queued'").run(new Date(Date.now() - 17 * 60_000).toISOString());
+    expect(sent).toHaveLength(1);
+    expect(sent[0].text).toBe('US Congress debates the federal budget\nhttps://npr.org/1\n#News');
+    expect(sent[0].mode).toBe('shareNow');
+    expect(sent[0].assets).toEqual([]);
+    expect(sent[0].needsApproval).toBe(false);
+    const db2=new Database(process.env.MEVRIC_DATABASE_PATH);
+    db2.prepare('INSERT INTO stories(url,title,publisher,published_at,media_url,media_kind) VALUES(?,?,?,?,?,?)').run('https://npr.org/2','U.S. Senate votes on a new national security bill','NPR',new Date().toISOString(),'https://media.npr.org/image.jpg','image');
+    db2.prepare("UPDATE stories SET attempted_at=? WHERE status='queued'").run(new Date(Date.now()-31*60_000).toISOString());
     db2.close();
-    process.env.MEVRIC_MEDIA_APPROVED = 'true'; // test only: simulate an approved image
+    process.env.MEVRIC_MEDIA_APPROVED='true';
     await publish(false);
-    expect(fetchMock).toHaveBeenCalledTimes(4);
-    const request = fetchMock.mock.calls[3][1] as RequestInit;
-    expect(JSON.parse(request.body as string).variables.input.assets).toEqual([{ image: { url: 'https://media.npr.org/image.jpg' } }]);
-    expect(JSON.parse(request.body as string).variables.input.text).toContain('https://npr.org/2');
-    const db3 = new Database(process.env.MEVRIC_DATABASE_PATH);
-    expect(db3.prepare("SELECT COUNT(*) AS count FROM stories WHERE status='queued'").get()).toEqual({ count: 2 });
+    expect(sent).toHaveLength(2);
+    expect(sent[1].assets).toEqual([{ image:{url:'https://media.npr.org/image.jpg'} }]);
+    expect(sent[1].text).toBe('U.S. Senate votes on a new national security bill\nhttps://npr.org/2\n#News');
+    const db3=new Database(process.env.MEVRIC_DATABASE_PATH);
+    expect(db3.prepare("SELECT count(*) AS n FROM stories WHERE status='queued' AND post_kind='news'").get()).toEqual({n:2});
     db3.close();
+    expect(fetchMock.mock.calls.every(c=>!String(c[0]).includes('deepseek.com'))).toBe(true);
   } finally {
     fetchMock.mockRestore();
-    for (const [key, value] of Object.entries({ MEVRIC_DATABASE_PATH: previous.path, BUFFER_ACCESS_TOKEN: previous.token, MEVRIC_BUFFER_CHANNEL_ID: previous.channel, DEEPSEEK_API_KEY: previous.ai, MEVRIC_MEDIA_APPROVED: previous.media })) {
-      if (value === undefined) delete process.env[key]; else process.env[key] = value;
+    for(const [key,val] of Object.entries({ MEVRIC_DATABASE_PATH:previous.path,BUFFER_ACCESS_TOKEN:previous.token,MEVRIC_BUFFER_CHANNEL_ID:previous.channel,MEVRIC_MEDIA_APPROVED:previous.media })) {
+      if(val===undefined) delete process.env[key];else process.env[key]=val;
     }
-    rmSync(dir, { recursive: true, force: true });
+    rmSync(dir,{recursive:true,force:true});
   }
 });
 
@@ -210,9 +208,9 @@ it('collects the same RSS item once across feeds and repeat runs, then previews 
     expect(db.prepare('SELECT COUNT(*) AS count FROM stories').get()).toEqual({ count: 1 });
     db.close();
     await publish(true);
-    expect(log).toHaveBeenCalledWith(expect.stringContaining('POLITICS 🏛️'));
+    expect(log).toHaveBeenCalledWith(expect.stringContaining('US Congress discusses the federal budget\nhttps://www.npr.org/2026/story\n#News'));
     expect(log).not.toHaveBeenCalledWith(expect.stringContaining('image: https://media.npr.org/photo.jpg'));
-    expect(fetchMock).toHaveBeenCalledTimes(21);
+    expect(fetchMock).toHaveBeenCalledTimes(20);
   } finally {
     log.mockRestore();
     fetchMock.mockRestore();
@@ -245,10 +243,10 @@ it('keeps urgent events publishable when DeepSeek fails, using only the original
     db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run(url,headline,'Fox News',new Date().toISOString());
     db.close();
     await publish(true);
-    expect(mock).toHaveBeenCalledTimes(1);
+    expect(mock).not.toHaveBeenCalled();
     expect(log).toHaveBeenCalledWith(expect.stringContaining(headline));
     expect(log).toHaveBeenCalledWith(expect.stringContaining(url));
-    expect(warning).toHaveBeenCalledWith(expect.stringContaining('original publisher headline'));
+    expect(warning).not.toHaveBeenCalled();
   } finally {
     mock.mockRestore();warning.mockRestore();log.mockRestore();
     if(oldPath===undefined)delete process.env.MEVRIC_DATABASE_PATH;else process.env.MEVRIC_DATABASE_PATH=oldPath;
@@ -257,7 +255,7 @@ it('keeps urgent events publishable when DeepSeek fails, using only the original
   }
 });
 
-it('does not publish when the rewriting service fails', async () => {
+it('does not publish when the article page cannot verify its headline', async () => {
   const { mkdtempSync, rmSync } = await import('node:fs');
   const { tmpdir } = await import('node:os');
   const { join } = await import('node:path');
@@ -275,11 +273,11 @@ it('does not publish when the rewriting service fails', async () => {
     const db = new Database(process.env.MEVRIC_DATABASE_PATH);
     db.prepare('INSERT INTO stories(url,title,publisher,published_at) VALUES(?,?,?,?)').run('https://npr.org/1', 'US Congress debates the federal budget', 'NPR', new Date().toISOString());
     db.close();
-    await expect(publish(false)).rejects.toThrow('DeepSeek HTTP 500');
+    await publish(false);
     expect(request).toHaveBeenCalledTimes(1);
-    expect(String(request.mock.calls[0][0])).toContain('api.deepseek.com');
+    expect(String(request.mock.calls[0][0])).toContain('npr.org');
     const check = new Database(process.env.MEVRIC_DATABASE_PATH);
-    expect(check.prepare('SELECT status FROM stories').get()).toEqual({ status: 'new' });
+    expect(check.prepare('SELECT status FROM stories').get()).toEqual({ status: 'skipped' });
     check.close();
   } finally {
     request.mockRestore();
@@ -322,6 +320,7 @@ describe('Mevric article image fallback', () => {
     const { collect } = await import('../src/mevric.js');
     const dir = mkdtempSync(join(tmpdir(), 'mevric-image-'));
     const previousPath = process.env.MEVRIC_DATABASE_PATH;
+    const previousMedia = process.env.MEVRIC_MEDIA_APPROVED;
     const article = 'https://www.npr.org/2026/story';
     const rss = `<rss><item><title>News</title><link>${article}</link><pubDate>${new Date().toUTCString()}</pubDate></item></rss>`;
     const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(async url => String(url) === article
@@ -329,6 +328,7 @@ describe('Mevric article image fallback', () => {
       : new Response(rss, { headers: { 'content-type': 'application/rss+xml' } }));
     try {
       process.env.MEVRIC_DATABASE_PATH = join(dir, 'test.db');
+      process.env.MEVRIC_MEDIA_APPROVED = 'true'; // only in this test fixture
       await collect();
       await collect();
       const db = new Database(process.env.MEVRIC_DATABASE_PATH);
@@ -342,6 +342,7 @@ describe('Mevric article image fallback', () => {
     } finally {
       fetchMock.mockRestore();
       if (previousPath === undefined) delete process.env.MEVRIC_DATABASE_PATH; else process.env.MEVRIC_DATABASE_PATH = previousPath;
+      if (previousMedia === undefined) delete process.env.MEVRIC_MEDIA_APPROVED; else process.env.MEVRIC_MEDIA_APPROVED = previousMedia;
       rmSync(dir, { recursive: true, force: true });
     }
   });
@@ -376,30 +377,37 @@ describe('Mevric article image fallback', () => {
 
 
 describe('Mevric rolling 24-hour cap', () => {
-  it('allows up to 90 rolling attempts, blocks 90+ and spaces posts by 16 minutes', async () => {
+  it('caps 50 attempts in any rolling 24h, spaces normal posts by 30 min and urgent posts by 2 min', async () => {
     const { default: Database } = await import('better-sqlite3');
-    const { publishingGate, MEVRIC_24H_POST_LIMIT, MEVRIC_POST_SPACING_MINUTES } = await import('../src/mevric.js');
-    expect(MEVRIC_24H_POST_LIMIT).toBe(90);
-    expect(MEVRIC_POST_SPACING_MINUTES).toBe(16);
+    const { publishingGate, MEVRIC_24H_POST_LIMIT, MEVRIC_POST_SPACING_MINUTES,MEVRIC_URGENT_SPACING_MINUTES,MEVRIC_24H_ALERT_LIMIT,alertCount24h } = await import('../src/mevric.js');
+    expect(MEVRIC_24H_POST_LIMIT).toBe(50);
+    expect(MEVRIC_POST_SPACING_MINUTES).toBe(30);
+    expect(MEVRIC_URGENT_SPACING_MINUTES).toBe(2);
+    expect(MEVRIC_24H_ALERT_LIMIT).toBe(5);
     const db = new Database(':memory:');
     try {
-      db.exec('CREATE TABLE stories (url TEXT, status TEXT, attempted_at TEXT)');
+      db.exec('CREATE TABLE stories (url TEXT, status TEXT, attempted_at TEXT,post_kind TEXT)');
       const now = Date.parse('2026-11-04T12:00:00Z');
       const insert = db.prepare('INSERT INTO stories(url,status,attempted_at) VALUES(?,?,?)');
-      for (let i=0;i<90;i++) insert.run(`https://example.com/${i}`,i%2===0?'queued':'attempted',new Date(now-3*3600_000).toISOString());
-      expect(publishingGate(db, now)).toMatchObject({allowed:false,count:90});
-      expect(publishingGate(db, now, true)).toMatchObject({allowed:false,count:90});
+      for (let i=0;i<50;i++) insert.run(`https://example.com/${i}`,i%2===0?'queued':'attempted',new Date(now-3*3600_000).toISOString());
+      expect(publishingGate(db, now)).toMatchObject({allowed:false,count:50});
+      expect(publishingGate(db, now, true)).toMatchObject({allowed:false,count:50});
       db.prepare('UPDATE stories SET attempted_at=?').run(new Date(now-25*3600_000).toISOString());
       expect(publishingGate(db, now)).toMatchObject({allowed:true,count:0});
-      db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-5*60_000).toISOString(),'https://example.com/0');
+      db.prepare('UPDATE stories SET attempted_at=?,post_kind=? WHERE url=?').run(new Date(now-5*60_000).toISOString(),'news','https://example.com/0');
       expect(publishingGate(db, now)).toMatchObject({allowed:false,count:1});
-      expect(publishingGate(db, now).reason).toContain('16 minutes');
+      expect(publishingGate(db, now).reason).toContain('30 minutes');
       expect(publishingGate(db, now, true)).toMatchObject({ allowed:true,count:1 });
       db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-1*60_000).toISOString(),'https://example.com/0');
       expect(publishingGate(db, now, true)).toMatchObject({ allowed:false,count:1 });
       expect(publishingGate(db, now, true).reason).toContain('2 minutes');
-      db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-17*60_000).toISOString(),'https://example.com/0');
+      db.prepare('UPDATE stories SET attempted_at=? WHERE url=?').run(new Date(now-31*60_000).toISOString(),'https://example.com/0');
       expect(publishingGate(db, now)).toMatchObject({allowed:true,count:1});
+      // Legacy posts were all formatted ALERT, so they safely count as alerts.
+      db.prepare('UPDATE stories SET attempted_at=?,post_kind=NULL WHERE url IN (?,?,?,?,?)').run(new Date(now-2*3600_000).toISOString(),...Array.from({length:5},(_,i)=>`https://example.com/${i}`));
+      expect(alertCount24h(db, now)).toBe(5);
+      expect(publishingGate(db, now, true).allowed).toBe(false);
+      expect(publishingGate(db, now, false).allowed).toBe(true);
       // Even if the server clock crosses midnight, the rolling window remains.
       expect(publishingGate(db, now + 24*3600_000)).toMatchObject({allowed:true,count:0});
     } finally { db.close(); }
@@ -416,9 +424,9 @@ describe('Mevric rolling 24-hour cap', () => {
     const keys = ['MEVRIC_DATABASE_PATH','BUFFER_ACCESS_TOKEN','MEVRIC_BUFFER_CHANNEL_ID','DEEPSEEK_API_KEY'];
     const original = Object.fromEntries(keys.map(k=>[k,process.env[k]]));
     const warning = vi.spyOn(console,'warn').mockImplementation(()=>{});
-    const fake = vi.spyOn(globalThis,'fetch').mockImplementation(async url => new Response(JSON.stringify(String(url).includes('deepseek.com')
-      ? { choices:[{message:{content:'A verified news update.'},finish_reason:'stop'}] }
-      : { data:{createPost:{message:'You have already scheduled the maximum number of posts Buffer allows for X (Twitter) within 24 hours (100). Please consider scheduling this post for a later time.'}} }),{status:200}));
+    const fake = vi.spyOn(globalThis,'fetch').mockImplementation(async url => String(url).includes('api.buffer.com')
+      ? new Response(JSON.stringify({data:{createPost:{message:'You have already scheduled the maximum number of posts Buffer allows for X (Twitter) within 24 hours (100). Please consider scheduling this post for a later time.'}}}),{status:200})
+      : new Response('<meta property="og:title" content="US Congress votes on a major spending bill">',{status:200,headers:{'content-type':'text/html'}}));
     try {
       process.env.MEVRIC_DATABASE_PATH=join(dir,'test.db');
       process.env.DEEPSEEK_API_KEY='test';
@@ -432,7 +440,7 @@ describe('Mevric rolling 24-hour cap', () => {
       expect(fake).toHaveBeenCalledTimes(2);
       expect(warning).toHaveBeenCalledWith(expect.stringContaining('quota reached'));
       const read = new Database(process.env.MEVRIC_DATABASE_PATH);
-      expect(read.prepare('SELECT status,attempted_at,provider_id FROM stories').get()).toEqual({status:'new',attempted_at:null,provider_id:null});
+      expect(read.prepare('SELECT status,attempted_at,provider_id,post_kind FROM stories').get()).toEqual({status:'new',attempted_at:null,provider_id:null,post_kind:null});
       read.close();
     } finally {
       fake.mockRestore(); warning.mockRestore();

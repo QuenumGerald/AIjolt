@@ -2,7 +2,7 @@ import 'dotenv/config';
 import Database from 'better-sqlite3';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { assessEditorialStory, isSameNewsEvent, isUrgentBreakingStory, materialEventUpdate } from './mevric-editorial.js';
+import { assessEditorialStory, isSameNewsEvent, isHotUsAlert, materialEventUpdate } from './mevric-editorial.js';
 
 const feeds = [
   { url: 'https://feeds.npr.org/1001/rss.xml', publisher: 'NPR' },
@@ -127,11 +127,14 @@ export function parseFeed(xml: string, now = Date.now(), publisher = 'NPR'): Sto
     return [{ title, url, publishedAt: new Date(published).toISOString(), publisher, media: publisher === 'NPR' ? feedMedia(item) : undefined }];
   });
 }
-// Choose a factual topic label from the ORIGINAL headline, not the AI rewrite.
-// Prefer specific topics; ambiguous items retain the generic NEWS fallback.
-export function postHeading(_story: Story): string { return 'ALERT 🚨'; }
-export function formatPost(story: Story, _ignored = story.title): string | null {
-  const post = `ALERT 🚨\n${story.title}\n${story.url}\n#News`;
+// The user-requested post format is the exact, unmodified RSS headline,
+// followed by the original trusted article URL and a single #News hashtag.
+// The ALERT prefix is passed explicitly, only after checking the daily cap.
+export function postHeading(story: Story, now = Date.now()): string {
+  return isHotUsAlert(story, now) ? 'ALERT 🚨' : '';
+}
+export function formatPost(story: Story, _ignored = story.title, alert = false): string | null {
+  const post = `${alert ? 'ALERT 🚨\n' : ''}${story.title}\n${story.url}\n#News`;
   return Array.from(post).length <= 280 ? post : null;
 }
 // Give different stories different length targets, within the strict X budget.
@@ -198,6 +201,9 @@ function database() {
   const columns = db.prepare('PRAGMA table_info(stories)').all() as { name: string }[];
   if (!columns.some(column => column.name === 'media_url')) db.exec('ALTER TABLE stories ADD COLUMN media_url TEXT');
   if (!columns.some(column => column.name === 'media_kind')) db.exec('ALTER TABLE stories ADD COLUMN media_kind TEXT');
+  // Legacy posts used ALERT for everything; NULL historical attempts count as
+  // alerts for the first rolling 24h after this migration.
+  if (!columns.some(column => column.name === 'post_kind')) db.exec('ALTER TABLE stories ADD COLUMN post_kind TEXT');
   return db;
 }
 export async function collect(): Promise<void> {
@@ -250,18 +256,49 @@ export function immediatePostPayload(text: string, channelId: string, media?: Me
 export function mediaPostPayload(text: string, channelId: string, _dueAt: string, media: Media) {
   return immediatePostPayload(text, channelId, media);
 }
-// Buffer's X channel has returned an explicit 100-post / rolling 24h limit.
-// Stay below it: 90 posts in any rolling 24h with at least 16 minutes between
-// attempts. Ambiguous outcomes count as attempts to avoid accidental repeats.
-export const MEVRIC_24H_POST_LIMIT = 90;
-export const MEVRIC_POST_SPACING_MINUTES = 0;
-export const MEVRIC_URGENT_SPACING_MINUTES = 0;
+// Target ~45 ordinary posts a day (one every 30 minutes, at most 48)
+// plus up to five time-sensitive US alerts. Hard stop: 50 total in ANY
+// rolling 24h, comfortably below Buffer's confirmed 100-post X limit.
+export const MEVRIC_24H_POST_LIMIT = 50;
+export const MEVRIC_POST_SPACING_MINUTES = 30;
+export const MEVRIC_URGENT_SPACING_MINUTES = 2;
+export const MEVRIC_24H_ALERT_LIMIT = 5;
+
+export function alertCount24h(db: Database.Database, now = Date.now()): number {
+  const since = new Date(now - 24 * 3600_000).toISOString();
+  return (db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL AND julianday(attempted_at)>julianday(?) AND COALESCE(post_kind,'alert')='alert'")
+    .get(since) as { n: number }).n;
+}
+
+export function postKind(db: Database.Database, story: Story, now = Date.now()): 'alert' | 'news' {
+  return isHotUsAlert(story, now) && alertCount24h(db, now) < MEVRIC_24H_ALERT_LIMIT ? 'alert' : 'news';
+}
 
 export function publishingGate(db: Database.Database, now = Date.now(), urgent = false): { allowed: boolean; reason: string; count: number } {
   const since = new Date(now - 24 * 3600_000).toISOString();
-  const count = (db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL AND julianday(attempted_at) > julianday(?)").get(since) as {n:number}).n;
-  if (count >= MEVRIC_24H_POST_LIMIT) return { allowed: false, count, reason: `Rolling 24h Mevric cap: ${count}/${MEVRIC_24H_POST_LIMIT} attempts; collecting without publishing` };
-  return { allowed: true, count, reason: '' };
+  const count = (db.prepare("SELECT COUNT(*) AS n FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL AND julianday(attempted_at)>julianday(?)")
+    .get(since) as {n:number}).n;
+  if (count >= MEVRIC_24H_POST_LIMIT) return { allowed:false, count, reason:`Mevric rolling 24h cap: ${count}/${MEVRIC_24H_POST_LIMIT} attempts` };
+  if (urgent && alertCount24h(db, now) >= MEVRIC_24H_ALERT_LIMIT) {
+    return { allowed:false, count, reason:`Mevric rolling ALERT cap: ${MEVRIC_24H_ALERT_LIMIT} per 24h` };
+  }
+  // Global two-minute safety gap applies to everything. Alerts may preempt
+  // the ordinary cadence, but cannot produce an uncontrolled burst.
+  const last = db.prepare("SELECT attempted_at AS at FROM stories WHERE status IN ('queued','attempted') AND attempted_at IS NOT NULL ORDER BY julianday(attempted_at) DESC LIMIT 1")
+    .get() as { at: string } | undefined;
+  if (last && now - Date.parse(last.at) < MEVRIC_URGENT_SPACING_MINUTES * 60_000) {
+    return { allowed:false, count, reason:`Mevric global pacing: ${MEVRIC_URGENT_SPACING_MINUTES} minutes between X attempts` };
+  }
+  // Ordinary posts retain their own 30-minute cadence even if an urgent
+  // ALERT was published in the meantime. Legacy all-ALERT posts are ignored.
+  if (!urgent) {
+    const lastNews = db.prepare("SELECT attempted_at AS at FROM stories WHERE status IN ('queued','attempted') AND post_kind='news' AND attempted_at IS NOT NULL ORDER BY julianday(attempted_at) DESC LIMIT 1")
+      .get() as { at:string } | undefined;
+    if (lastNews && now - Date.parse(lastNews.at) < MEVRIC_POST_SPACING_MINUTES * 60_000) {
+      return { allowed:false, count, reason:`Mevric ordinary pacing: ${MEVRIC_POST_SPACING_MINUTES} minutes between news posts` };
+    }
+  }
+  return { allowed:true, count, reason:'' };
 }
 
 const isDefiniteBufferXQuotaRejection = (message: string) =>
@@ -270,7 +307,9 @@ const isDefiniteBufferXQuotaRejection = (message: string) =>
 type StoredStory = Story & { mediaUrl: string | null; mediaKind: string | null };
 /** Choose the most relevant fresh story, then suppress already-covered events. */
 export function selectEditorialStory(db: Database.Database, now = Date.now()): StoredStory | undefined {
-  const since = new Date(now - 3 * 3600_000).toISOString();
+  // The regular feed may pick factual stories up to eight hours old when
+  // necessary for 40-50/day. A hot US ALERT still requires <=90 minutes.
+  const since = new Date(now - 8 * 3600_000).toISOString();
   const sentSince = new Date(now - 24 * 3600_000).toISOString();
   const rows = db.prepare("SELECT url,title,publisher,published_at AS publishedAt,media_url AS mediaUrl,media_kind AS mediaKind FROM stories WHERE status='new' AND publisher IN ('NPR','BBC','ABC News','Fox News','CBS News') AND published_at >= ? ORDER BY published_at DESC LIMIT 1000")
     .all(since) as StoredStory[];
@@ -284,7 +323,13 @@ export function selectEditorialStory(db: Database.Database, now = Date.now()): S
       if (same.some(covered => headlineKey(covered.title) === headlineKey(item.story.title))) return false;
       return materialEventUpdate(item.story, same);
     })
-    .sort((a,b) => b.assessment.priority - a.assessment.priority || Date.parse(b.story.publishedAt) - Date.parse(a.story.publishedAt));
+    .sort((a,b) => {
+      // Recent headlines beat stale high-priority items unless the event is
+      // a currently active, verified-source US emergency.
+      const score = (item: typeof a) => isHotUsAlert(item.story,now) ? 500
+        : item.assessment.priority - (now - Date.parse(item.story.publishedAt)) / 3600_000 * 9;
+      return score(b) - score(a) || Date.parse(b.story.publishedAt) - Date.parse(a.story.publishedAt);
+    });
   return ranked[0]?.story;
 }
 
@@ -310,16 +355,19 @@ export async function publish(dryRun = true): Promise<void> {
   const db = database();
   try {
     const row = selectEditorialStory(db);
-    if (!row) { console.log('No fresh breaking alerts meeting editorial policy'); return; }
+    if (!row) { console.log('No fresh eligible news matching editorial policy'); return; }
+    const kind = postKind(db, row);
     if (!dryRun) {
-      const gate = publishingGate(db, Date.now(), isUrgentBreakingStory(row));
+      const gate = publishingGate(db, Date.now(), kind === 'alert');
       if (!gate.allowed) { console.log(gate.reason); return; }
     }
     // NPR social images can be unrelated archive photos and may not be reusable.
     // Attach third-party media only after separate rights + relevance approval.
     const mediaAllowed = process.env.MEVRIC_MEDIA_APPROVED === 'true';
     const media: Media | undefined = mediaAllowed && row.mediaUrl && (row.mediaKind === 'image' || row.mediaKind === 'video') ? { kind: row.mediaKind, url: row.mediaUrl } : undefined;
-    const text = formatPost(row, row.title);
+    // Always use the EXACT original headline, never a DeepSeek rewrite.
+    // A hot US alert becomes ordinary #News if the five-alert cap is full.
+    const text = formatPost(row, row.title, kind === 'alert');
     // Article pages must affirm the same headline; fail closed if unverifiable.
     if (!dryRun && !(await verifyArticleHeadline(row))) {
       db.prepare("UPDATE stories SET status='skipped', error='Article headline verification failed' WHERE url=?").run(row.url);
@@ -330,7 +378,8 @@ export async function publish(dryRun = true): Promise<void> {
     const token = process.env.BUFFER_ACCESS_TOKEN;
     const channel = process.env.MEVRIC_BUFFER_CHANNEL_ID;
     if (!token || !channel) throw new Error('BUFFER_ACCESS_TOKEN and MEVRIC_BUFFER_CHANNEL_ID are required');
-    const claimed = db.prepare("UPDATE stories SET status='attempted', attempted_at=? WHERE url=? AND status='new'").run(new Date().toISOString(), row.url);
+    const claimed = db.prepare("UPDATE stories SET status='attempted', attempted_at=?, post_kind=? WHERE url=? AND status='new'")
+      .run(new Date().toISOString(), kind, row.url);
     if (!claimed.changes) return;
     try {
       // Buffer explicitly supports shareNow; no artificial five-minute delay.
@@ -344,7 +393,7 @@ export async function publish(dryRun = true): Promise<void> {
         if (isDefiniteBufferXQuotaRejection(message)) {
           // Buffer explicitly rejected creation: it cannot have been sent.
           // Put the article back into the pending queue rather than losing it.
-          db.prepare("UPDATE stories SET status='new', attempted_at=NULL, error='Buffer X 24h quota rejection; awaiting new slot' WHERE url=? AND status='attempted'").run(row.url);
+          db.prepare("UPDATE stories SET status='new', attempted_at=NULL, post_kind=NULL, error='Buffer X 24h quota rejection; awaiting new slot' WHERE url=? AND status='attempted'").run(row.url);
           console.warn('Buffer X 24h quota reached; article held for a later eligible slot');
           return;
         }
@@ -366,7 +415,8 @@ async function main() {
   // Restrict this scheduler to MevricNews. The second Buffer channel is separate.
   if (process.env.MEVRIC_BUFFER_CHANNEL_ID !== '6aea10f0e29c69a1714d0a21') throw new Error('Unexpected Buffer channel; refusing automation');
   let running = false;
-  // Poll feeds every 10 seconds, with no artificial per-post spacing.
+  // Poll feeds every 10 seconds for low-latency urgent US events. Regular
+  // publishing remains paced independently (30 minutes), not every cycle.
   // Image scraping is skipped when media posting is disabled.
   const safeCycle = async () => {
     if (running) return;
@@ -381,24 +431,14 @@ async function main() {
       // independently of AIJOLT and other X accounts.
       if (process.env.DRY_RUN === 'false') {
         const selected = selectEditorialStory(db);
-        if (!selected) { console.log('No fresh breaking alerts meeting editorial policy'); return; }
-        const gate = publishingGate(db, Date.now(), isUrgentBreakingStory(selected));
+        if (!selected) { console.log('No fresh eligible news matching editorial policy'); return; }
+        const gate = publishingGate(db, Date.now(), postKind(db, selected) === 'alert');
         if (!gate.allowed) { console.log(gate.reason); return; }
-      } else if (!selectEditorialStory(db)) { console.log('No fresh breaking alerts meeting editorial policy'); return; }
+      } else if (!selectEditorialStory(db)) { console.log('No fresh eligible news matching editorial policy'); return; }
     } finally { db.close(); }
-    // Drain several unrelated urgent alerts within the same cycle rather than
-    // delaying each by a polling period. Cap work to avoid continuous bursts.
-    for (let i = 0; i < 4; i++) {
-      const check = database();
-      let hasStory = false;
-      try {
-        const item = selectEditorialStory(check);
-        hasStory = Boolean(item) && (process.env.DRY_RUN !== 'false' || publishingGate(check).allowed);
-      } finally { check.close(); }
-      if (!hasStory) break;
-      await publish(process.env.DRY_RUN !== 'false');
-      if (process.env.DRY_RUN !== 'false') break;
-    }
+    // Exactly one publishing opportunity per cycle, with the 30-minute
+    // ordinary cadence and emergency preemption enforced by publishingGate.
+    await publish(process.env.DRY_RUN !== 'false');
     } catch (error) { console.error('Mevric cycle failed:', error); } finally { running = false; }
   };
   await safeCycle();

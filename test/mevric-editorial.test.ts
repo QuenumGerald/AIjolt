@@ -14,8 +14,8 @@ describe('Mevric US-focused editorial filter', () => {
     const world = assessEditorialStory(story('Ukraine says bodycam video shows deadly Russian double-tap bombing', 'BBC'));
     expect(election).toMatchObject({eligible:true,reason:'us_politics'});
     expect(economy.eligible).toBe(true);
-    expect(world).toMatchObject({eligible:true,reason:'urgent_world_incident'});
-    expect(world.priority).toBeGreaterThan(election.priority);
+    expect(world).toMatchObject({eligible:true,reason:'significant_event'});
+    expect(election.priority).toBeGreaterThan(world.priority);
   });
 
   it('rejects minor crime, local irrelevance, routine foreign news and repeated media clips', () => {
@@ -37,8 +37,8 @@ describe('Mevric US-focused editorial filter', () => {
     const tampa = story("Suspect, victim dead after SWAT responds to 'active threat' at office complex near Tampa, Florida", 'Fox News', 'https://www.foxnews.com/us/tampa', '2026-11-04T17:35:45Z');
     const citi = story('Florida sheriff says 2 dead, including suspect, after shooting at Citibank office complex outside Tampa', 'CBS News', 'https://www.cbsnews.com/news/tampa', '2026-11-04T18:50:00Z');
     const politics = story('US Congress debates election results', 'NPR', 'https://npr.org/politics', '2026-11-04T18:55:00Z');
-    expect(assessEditorialStory(tampa)).toMatchObject({ eligible:true, reason:'urgent_us_incident', priority:230 });
-    expect(assessEditorialStory(citi)).toMatchObject({ eligible:true, reason:'urgent_us_incident' });
+    expect(assessEditorialStory(tampa)).toMatchObject({ eligible:true, reason:'significant_event', priority:205 });
+    expect(assessEditorialStory(citi)).toMatchObject({ eligible:true, reason:'significant_event' });
     expect(isSameNewsEvent(tampa,citi)).toBe(true);
     expect(assessEditorialStory(tampa).priority).toBeGreaterThan(assessEditorialStory(story('Helicopter crash near Miami leaves at least two injured', 'Fox News')).priority);
     expect(assessEditorialStory(tampa).priority).toBeGreaterThan(assessEditorialStory(politics).priority);
