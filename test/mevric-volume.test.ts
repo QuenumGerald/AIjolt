@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import Database from 'better-sqlite3';
-import { isHotUsAlert } from '../src/mevric-editorial.js';
+import { isHotUsAlert, assessEditorialStory } from '../src/mevric-editorial.js';
 import { alertCount24h, postKind, publishingGate, selectEditorialStory, formatPost, MEVRIC_24H_ALERT_LIMIT, MEVRIC_24H_POST_LIMIT, MEVRIC_POST_SPACING_MINUTES } from '../src/mevric.js';
 
 const at = (date: number) => new Date(date).toISOString();
@@ -17,6 +17,15 @@ const tampa = story('Active shooter reported at office complex near Tampa, Flori
 const politics = story('U.S. Senate debates a new national security bill',at(now-2*60_000),'https://www.foxnews.com/politics/new-bill');
 
 describe('Mevric 40-50 post/day normal pace with priority alerts',()=>{
+  it('rejects low-value local US trivia even when a city or state is named',()=>{
+    for(const title of [
+      "Hotel workers' skills put to the test at 36th Annual Housekeeping Olympics in Las Vegas",
+      'Local neighborhood celebrates an annual event in Texas',
+      'California restaurant holds a community eating contest',
+    ]) expect(assessEditorialStory(story(title,at(now-60_000))).eligible,title).toBe(false);
+    expect(assessEditorialStory(story('U.S. senators advance major new national security bill',at(now-60_000))).eligible).toBe(true);
+  });
+
   it('reserves ALERT for severe fresh US events, never routine politics, foreign events, or old cases',()=>{
     expect(isHotUsAlert(tampa,now)).toBe(true);
     expect(isHotUsAlert(politics,now)).toBe(false);
