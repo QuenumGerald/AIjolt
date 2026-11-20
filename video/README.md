@@ -79,3 +79,7 @@ Depuis le 20 novembre 2026, **aucune URL source n’est ajoutée au texte X**, y
 ### Cadence temporaire du 20 novembre 2026
 
 À la demande de l'utilisateur, `server2` teste **une vidéo par minute** jusqu'au **21 novembre 2026 à 00h00, heure de Paris** (2026-11-20T23:00:00Z). Le rythme temporaire se règle par `POPCULTURE_POST_SPACING_MINUTES=1` et `POPCULTURE_FAST_MODE_UNTIL_UTC=2026-11-20T23:00:00Z`. Le code refuse de conserver une cadence inférieure à 30 minutes passé cette échéance, même si le timer de retour arrière ne s'exécute pas. Le timer systemd `klieg-restore-spacing.timer` remet aussi explicitement `POPCULTURE_POST_SPACING_MINUTES=30` à l'échéance. La limite glissante de 48 publications par 24 heures, l'envoi d'une seule vidéo par cycle et le filtrage des fichiers MP4 restent inchangés.
+
+### Plafond journalier désactivé à la demande de l'utilisateur (20 novembre 2026)
+
+`POPCULTURE_MAX_POSTS_PER_DAY=0` signifie **aucun plafond quotidien au niveau du service Klieg**. La limitation des tentatives par cycle (une vidéo), l'espacement minimum (1 minute pendant l'essai, puis 30 minutes à partir du 21 novembre à minuit heure de Paris), les gardes contre les doublons et les refus techniques/quotas API Buffer/X restent applicables. Les références historiques à 48 posts/jour ci-dessus décrivent les anciennes valeurs, désormais remplacées par `0` sur `server2`. Ce changement ne lève aucune restriction propre à X ou Buffer.

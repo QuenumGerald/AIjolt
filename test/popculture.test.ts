@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { channelGuard, popConfig, publishGate } from '../src/popculture/config.js';
 import { parseSource } from '../src/popculture/parse.js';
 import { formatPost } from '../src/popculture/posts.js';
-import { popPostPayload, publishPop } from '../src/popculture/publish.js';
+import { isDailyCapReached, popPostPayload, publishPop } from '../src/popculture/publish.js';
 import { assessRelevance, titlesMatch } from '../src/popculture/relevance.js';
 import { openPopDb, upsertItem, listQueue } from '../src/popculture/store.js';
 import { assessVideo, classifyVideoReference, pickJwMp4 } from '../src/popculture/video.js';
@@ -34,6 +34,15 @@ describe('channel isolation', () => {
 
   it('defaults to a separate sqlite file', () => {
     expect(popConfig({}).databasePath).toBe('./data/popculture.db');
+  });
+
+  it('disables only the application daily cap when set to zero', () => {
+    expect(popConfig({ POPCULTURE_MAX_POSTS_PER_DAY: '0' }).maxPostsPerDay).toBe(0);
+    expect(isDailyCapReached(48, 0)).toBe(false);
+    expect(isDailyCapReached(10000, 0)).toBe(false);
+    expect(isDailyCapReached(47, 48)).toBe(false);
+    expect(isDailyCapReached(48, 48)).toBe(true);
+    expect(isDailyCapReached(49, 48)).toBe(true);
   });
 
   it('allows a one-minute video pilot but restores 30 minutes after the scheduled deadline', () => {

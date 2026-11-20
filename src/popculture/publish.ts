@@ -43,9 +43,14 @@ export async function bufferCreate(token: string, body: object): Promise<{ id?: 
   return { id };
 }
 
+/** A configured zero disables the application-level 24-hour publication cap. */
+export function isDailyCapReached(recent: number, maxPer24h: number): boolean {
+  return maxPer24h > 0 && recent >= maxPer24h;
+}
+
 export function canPublishNow(db: ReturnType<typeof openPopDb>, now = new Date()): { ok: true } | { ok: false; reason: string } {
   const config = popConfig();
-  if (recentPublishCount(db) >= config.maxPostsPerDay) return { ok: false, reason: 'daily cap reached' };
+  if (isDailyCapReached(recentPublishCount(db), config.maxPostsPerDay)) return { ok: false, reason: 'daily cap reached' };
   const last = lastPublishAt(db);
   if (last && now.getTime() - new Date(last).getTime() < config.postSpacingMinutes * 60_000) {
     return { ok: false, reason: `wait ${config.postSpacingMinutes} minutes between posts` };

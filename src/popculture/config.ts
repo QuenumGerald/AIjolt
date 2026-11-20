@@ -41,6 +41,7 @@ export function popConfig(env: PopEnv = process.env): PopConfig {
     bufferToken: env.POPCULTURE_BUFFER_ACCESS_TOKEN?.trim() || undefined,
     channelId: env.POPCULTURE_BUFFER_X_CHANNEL_ID?.trim() || undefined,
     maxAgeHours: integer(env, 'POPCULTURE_MAX_AGE_HOURS', 36),
+    // Explicit 0 means unlimited; Buffer/X can still apply platform-side restrictions.
     maxPostsPerDay: integer(env, 'POPCULTURE_MAX_POSTS_PER_DAY', 48),
     maxPerCycle: Math.max(1, integer(env, 'POPCULTURE_MAX_PER_CYCLE', 1)),
     // Temporary fast mode must expire even if the scheduled configuration revert fails.
