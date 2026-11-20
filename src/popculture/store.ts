@@ -164,7 +164,7 @@ export function markFailed(db: Database.Database, id: number, error: string, res
 }
 
 export function recentPublishCount(db: Database.Database, hours = 24): number {
-  return (db.prepare(`SELECT COUNT(*) AS n FROM pop_publications WHERE created_at >= datetime('now', ?) AND status IN ('attempted','queued','published')`).get(`-${hours} hours`) as { n: number }).n;
+  return (db.prepare(`SELECT COUNT(*) AS n FROM pop_publications WHERE julianday(created_at) >= julianday('now', ?) AND status IN ('attempted','queued','published')`).get(`-${hours} hours`) as { n: number }).n;
 }
 
 export function lastPublishAt(db: Database.Database): string | null {

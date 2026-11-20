@@ -27,6 +27,18 @@ Le serveur web doit servir **ce même répertoire** en HTTPS, avec GET et Range.
 
 Budget : 6 collectes HTTP simultanées, 24 pages vidéo inspectées au maximum par collecte, 8 tentatives de téléchargement par défaut, au plus une tentative par URL toutes les 6 heures. Téléchargements limités à 120 secondes chacun ; refus des lives, fichiers dépassant 512 Mio ou vidéos hors 0,5–140 secondes. Pas de découpage automatique. Les fichiers hébergés sont supprimés après confirmation par Buffer du statut publié, lors de la collecte ou du cycle de publication suivant. En cas d'erreur de statut ou de suppression, le fichier est conservé et la suppression est retentée.
 
+## Cadence
+
+Objectif : au moins 30 vidéos par 24 heures si suffisamment de vidéos éligibles sont disponibles. Le plafond par défaut est de 48 en 24 heures et l'espacement minimum est de 30 minutes. Une seule vidéo est envoyée par cycle. Programmer la publication toutes les 5 minutes pour que les légères variations de lancement ne fassent pas manquer un créneau de 30 minutes : les commandes `pop collect` et `pop publish` ne lancent pas de service permanent. Les paramètres déjà définis dans le `.env` du serveur restent prioritaires et doivent être mis à jour :
+
+```dotenv
+POPCULTURE_MAX_POSTS_PER_DAY=48
+POPCULTURE_POST_SPACING_MINUTES=30
+POPCULTURE_MAX_PER_CYCLE=1
+```
+
+Le résultat réel dépend des vidéos disponibles, de la durée de la collecte, de la fréquence d'exécution et de Buffer ; l'objectif ne garantit pas 30 publications. Contrôler régulièrement les publications confirmées.
+
 ## Commandes
 
 ```bash

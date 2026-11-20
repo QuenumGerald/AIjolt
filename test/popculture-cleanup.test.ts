@@ -28,3 +28,15 @@ it('keeps a queued video and removes it only after Buffer confirms publication',
   expect((db.prepare('SELECT status FROM pop_publications').get() as {status:string}).status).toBe('published');
   db.close();
 });
+
+it('counts only publications from the last 24 hours even with ISO timestamps', async () => {
+  const { recentPublishCount } = await import('../src/popculture/store.js');
+  const db = openPopDb(':memory:');
+  for (const [index, hours] of [1, 25].entries()) {
+    const url = `https://media.example.com/${index}.mp4`;
+    upsertItem(db, {source:'test',externalId:String(index),url:`https://example.com/${index}`,title:`Film test item ${index}`,summary:'',publisher:'Test',category:'trailer',publishedAt:new Date().toISOString(),score:80,status:'ready',rejection:null,postText:'text',video:assessVideo({url})});
+    db.prepare("INSERT INTO pop_publications(item_id,status,text,created_at) VALUES(?,'queued','text',?)").run(index + 1,new Date(Date.now()-hours*3600000).toISOString());
+  }
+  expect(recentPublishCount(db)).toBe(1);
+  db.close();
+});
