@@ -22,7 +22,7 @@ export async function verifyNativeUrl(raw: string, redirects = 0): Promise<void>
     }
     if (![200, 206].includes(response.status)) throw new Error(`media HTTP ${response.status}`);
     const type = response.headers.get('content-type')?.split(';')[0].trim();
-    if (!['video/mp4', 'video/quicktime', 'video/x-m4v', 'application/octet-stream'].includes(type ?? '')) throw new Error('response is not a native video');
+    if (!['video/mp4', 'video/quicktime', 'video/x-m4v', 'application/octet-stream', 'binary/octet-stream'].includes(type ?? '')) throw new Error('response is not a native video');
     const bytes = Number(response.headers.get('content-range')?.split('/')[1] ?? (response.status === 200 ? response.headers.get('content-length') : NaN));
     if (!Number.isFinite(bytes) || bytes <= 0 || bytes > X_NATIVE_MAX_BYTES) throw new Error('unknown or invalid media size');
     const reader = response.body?.getReader();

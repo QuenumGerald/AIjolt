@@ -1,6 +1,11 @@
 import type { Category } from './types.js';
 
 const CATEGORIES: Array<[Category, RegExp]> = [
+  ['animals', /\b(animals?|pets?|dogs?|cats?|whales?|sharks?|wildlife|pupp(?:y|ies)|kitten|rescues? animal)\b/i],
+  ['weather', /\b(storms?|tornado(?:es)?|hurricanes?|floods?|lightning|wildfires?|weather)\b/i],
+  ['science', /\b(science|scientists?|space|nasa|earthquake|volcano|astronauts?|discovery|mars|solar)\b/i],
+  ['sport', /\b(sports?|football|basketball|soccer|nba|nfl|olympics?|athletes?|touchdown)\b/i],
+  ['viral', /\b(viral|caught on (?:camera|video)|rescues?|incredible|amazing|unbelievable)\b/i],
   ['awards', /\b(grammys?|oscars?|emmys?|golden globes?|bafta|tony awards?|nominat\w*|award ceremony|hall of fame)\b/i],
   ['trailer', /\b(trailers?|teasers?|first look|sneak peek|official clip)\b/i],
   ['music', /\b(albums?|singles?|tours?|concerts?|songs?|soundtracks?|rapper|singer|band|billboard|grammy|setlist|headlin\w*)\b/i],
@@ -11,17 +16,12 @@ const CATEGORIES: Array<[Category, RegExp]> = [
 
 const RUMOR = /\b(rumou?rs?|speculation|unconfirmed|sources say|sources familiar|insider claims?|gossip)\b/i;
 const PROMO = /\b(giveaway|sweepstakes|shop (?:the |now)|coupon|discount code|sponsored post|where to (?:buy|stream)|top\s+\d+\b|best .{0,40} to (?:watch|stream))\b/i;
-const OFF_TOPIC = /\b(touchdown|premier league|\bnfl\b|\bnba\b|election results|senate vote|horoscope)\b/i;
 
 export function assessRelevance(title: string, summary: string, hinted?: Category): { ok: true; category: Category; score: number } | { ok: false; reason: string } {
   const text = `${title} ${summary}`;
   if (RUMOR.test(text)) return { ok: false, reason: 'unconfirmed rumor language' };
   if (PROMO.test(title)) return { ok: false, reason: 'listicle or promotional headline' };
-  if (OFF_TOPIC.test(text) && !/\b(halftime|soundtrack|concert|film|movie|series|album|award)\b/i.test(text)) {
-    return { ok: false, reason: 'outside pop culture' };
-  }
-  const matched = CATEGORIES.find(([, pattern]) => pattern.test(text))?.[0] ?? hinted;
-  if (!matched) return { ok: false, reason: 'no film, series, music, celebrity, awards, or trailer signal' };
+  const matched = CATEGORIES.find(([, pattern]) => pattern.test(text))?.[0] ?? hinted ?? 'news';
   let score = 48;
   if (matched === 'trailer') score += 18;
   if (matched === 'awards') score += 16;

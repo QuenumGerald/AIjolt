@@ -1,4 +1,4 @@
-export type Category = 'film' | 'series' | 'music' | 'celebrity' | 'awards' | 'trailer';
+export type Category = 'film' | 'series' | 'music' | 'celebrity' | 'awards' | 'trailer' | 'news' | 'animals' | 'science' | 'sport' | 'weather' | 'viral';
 
 export type VideoKind = 'none' | 'direct-file' | 'hls-playlist' | 'youtube-page' | 'web-page';
 
@@ -34,7 +34,7 @@ export type DraftItem = {
   video: VideoAssessment;
 };
 
-export type SourceKind = 'rss' | 'json-feed' | 'kinocheck';
+export type SourceKind = 'rss' | 'json-feed' | 'kinocheck' | 'nbc-video' | 'tmz-video' | 'et-video' | 'euronews-video';
 
 export type PopSource = {
   id: string;

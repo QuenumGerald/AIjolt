@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { assessRelevance, freshnessScore } from './relevance.js';
 import { cleanTitle, formatPost } from './posts.js';
 import { assessVideo } from './video.js';
+import { parseVideoPage } from './video-sources.js';
 import type { DraftItem, PopSource } from './types.js';
 
 const decode = (value: string): string => value
@@ -41,7 +42,7 @@ function withinAge(publishedAt: string, now: Date, maxAgeHours: number): boolean
   return time <= now.getTime() + 5 * 60_000 && now.getTime() - time <= maxAgeHours * 3_600_000;
 }
 
-function finish(source: PopSource, input: {
+export function finish(source: PopSource, input: {
   url: string;
   title: string;
   summary: string;
@@ -169,6 +170,7 @@ export function parseKinoCheck(source: PopSource, body: string, now: Date, maxAg
 }
 
 export function parseSource(source: PopSource, body: string, now = new Date(), maxAgeHours = 36, minScore = 45): DraftItem[] {
+  if (['nbc-video', 'tmz-video', 'et-video', 'euronews-video'].includes(source.kind)) return parseVideoPage(source, body, now, maxAgeHours, minScore);
   if (source.kind === 'json-feed') return parseJsonFeed(source, body, now, maxAgeHours, minScore);
   if (source.kind === 'kinocheck') return parseKinoCheck(source, body, now, maxAgeHours, minScore);
   return parseRss(source, body, now, maxAgeHours, minScore);

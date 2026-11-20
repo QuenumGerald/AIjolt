@@ -2,6 +2,10 @@ import type { PopSource } from './types.js';
 
 /** Sources are discovery inputs; only resolved native videos enter the ready queue. */
 export const POP_SOURCES: PopSource[] = [
+  { id: 'nbc-video', publisher: 'NBC News', url: 'https://www.nbcnews.com/video', kind: 'nbc-video', videoRights: 'unconfirmed', defaultCategory: 'news' },
+  { id: 'tmz-watch', publisher: 'TMZ', url: 'https://www.tmz.com/watch/', kind: 'tmz-video', videoRights: 'unconfirmed', defaultCategory: 'news' },
+  { id: 'et-video', publisher: 'Entertainment Tonight', url: 'https://www.etonline.com/recent/video', kind: 'et-video', videoRights: 'unconfirmed', defaultCategory: 'news' },
+  { id: 'euronews-video', publisher: 'Euronews', url: 'https://www.euronews.com/video', kind: 'euronews-video', videoRights: 'unconfirmed', defaultCategory: 'news' },
   { id: 'variety-video', publisher: 'Variety', url: 'https://variety.com/v/video/feed/', kind: 'rss', videoRights: 'unconfirmed' },
   { id: 'deadline-video', publisher: 'Deadline', url: 'https://deadline.com/video/feed/', kind: 'rss', videoRights: 'unconfirmed' },
   { id: 'consequence-video', publisher: 'Consequence', url: 'https://consequence.net/video/feed/', kind: 'rss', videoRights: 'unconfirmed' },

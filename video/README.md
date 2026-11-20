@@ -2,7 +2,7 @@
 
 Branche `feature/nouveau-projet-video-6f88`. Le bot reste isolé de Nox et MEVRIC : configuration, base SQLite, quotas et canal Buffer dédiés.
 
-60 sources de découverte, dont 33 chaînes YouTube et 4 nouveaux flux éditoriaux ciblant la vidéo. Les rubriques vidéo de Variety, Deadline, Consequence et JoBlo complètent Moviefone et KinoCheck. Les flux texte servent seulement à repérer des médias ; un article sans fichier vidéo ne devient jamais publiable.
+64 sources de découverte, dont 33 chaînes YouTube et 4 sites vidéo ajoutés : NBC News, TMZ, Entertainment Tonight et Euronews. Le filtre accepte également actualités, animaux, météo, sport, sciences et scènes insolites. Les rubriques vidéo de Variety, Deadline, Consequence et JoBlo complètent Moviefone et KinoCheck. Les flux texte servent seulement à repérer des médias ; un article sans fichier vidéo ne devient jamais publiable.
 
 ## Chemin de publication
 
@@ -50,3 +50,14 @@ node dist/cli.js pop publish --dry-run
 ```
 
 La publication réelle requiert `POPCULTURE_PUBLISH_ENABLED=true`, `POPCULTURE_DRY_RUN=false`, un token Buffer et un canal X dédié. Ne jamais réutiliser les canaux Nox/MEVRIC. Les posts restent au format titre + URL, sans tiret séparateur ; les mots composés sont conservés.
+
+## Nouveaux collecteurs vidéo
+
+Les collecteurs exploitent les métadonnées des pages publiques pour associer chaque fichier à son propre titre, sa date et sa durée. Les objets publicitaires, directs, contenus non listés et vidéos dont la durée est absente ou dépasse 140 secondes sont exclus selon les métadonnées disponibles. La date et le format des pages peuvent changer ; une source en erreur est consignée, les autres continuent.
+
+- NBC News `/video` : actualités, vidéo MP4 et durée provenant du même objet.
+- TMZ `/watch/` : vidéos actualités et divertissement, avec URL MP4 et durée.
+- Entertainment Tonight `/recent/video` : interviews et divertissement ; lors du test les éléments de la page étaient anciens et ne passaient pas le filtre de 36 h.
+- Euronews `/video` : vidéo principale et ses métadonnées ; le fichier peut être servi en `binary/octet-stream`, vérifié par signature avant envoi à Buffer.
+
+Un fichier direct accessible ne confirme pas le droit de le republier : les droits de ces sources restent non confirmés. Les variations de publication, les doublons, la durée et l'accessibilité depuis server2 influent sur le nombre effectif de posts.

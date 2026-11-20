@@ -30,7 +30,7 @@ async function fetchText(url: string, redirects = 0): Promise<string> {
   }
   if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
   const length = Number(response.headers.get('content-length') ?? 0);
-  if (length > 2_000_000) throw new Error('response larger than 2 MB');
+  if (length > 5_000_000) throw new Error('response larger than 5 MB');
   return response.text();
 }
 
