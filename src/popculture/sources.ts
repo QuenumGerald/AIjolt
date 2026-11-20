@@ -1,0 +1,33 @@
+import type { PopSource } from './types.js';
+
+/** Feeds that returned dated English pop-culture items on 20 Nov 2026. */
+export const POP_SOURCES: PopSource[] = [
+  { id: 'variety', publisher: 'Variety', url: 'https://variety.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'deadline', publisher: 'Deadline', url: 'https://deadline.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'hollywood-reporter', publisher: 'Hollywood Reporter', url: 'https://www.hollywoodreporter.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'billboard', publisher: 'Billboard', url: 'https://www.billboard.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'rolling-stone-music', publisher: 'Rolling Stone', url: 'https://www.rollingstone.com/music/music-news/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'rolling-stone-film', publisher: 'Rolling Stone', url: 'https://www.rollingstone.com/tv-movies/tv-movie-news/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'pitchfork', publisher: 'Pitchfork', url: 'https://pitchfork.com/rss/news/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'bbc-entertainment', publisher: 'BBC', url: 'https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'npr-music', publisher: 'NPR Music', url: 'https://feeds.npr.org/1039/rss.xml', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'guardian-film', publisher: 'The Guardian', url: 'https://www.theguardian.com/film/rss', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'guardian-music', publisher: 'The Guardian', url: 'https://www.theguardian.com/music/rss', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'guardian-tv', publisher: 'The Guardian', url: 'https://www.theguardian.com/tv-and-radio/rss', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'indiewire', publisher: 'IndieWire', url: 'https://www.indiewire.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'nme', publisher: 'NME', url: 'https://www.nme.com/feed', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'the-wrap', publisher: 'The Wrap', url: 'https://www.thewrap.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'consequence', publisher: 'Consequence', url: 'https://consequence.net/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'stereogum', publisher: 'Stereogum', url: 'https://www.stereogum.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'golden-globes', publisher: 'Golden Globes', url: 'https://goldenglobes.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'netflix-press', publisher: 'Netflix', url: 'https://about.netflix.com/en/feed.xml', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'moviefone-news', publisher: 'Moviefone', url: 'https://www.moviefone.com/feeds/news.json', kind: 'json-feed', videoRights: 'unconfirmed' },
+  { id: 'moviefone-trailers', publisher: 'Moviefone', url: 'https://www.moviefone.com/feeds/trailers.json', kind: 'json-feed', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
+  { id: 'moviefone-interviews', publisher: 'Moviefone', url: 'https://www.moviefone.com/feeds/interviews.json', kind: 'json-feed', videoRights: 'unconfirmed' },
+  { id: 'kinocheck', publisher: 'KinoCheck', url: 'https://api.kinocheck.com/trailers/latest?language=en&limit=25', kind: 'kinocheck', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
+  { id: 'youtube-netflix', publisher: 'Netflix', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCWOA1ZGywLbqmigxE4Qlvuw', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
+  { id: 'youtube-marvel', publisher: 'Marvel', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCvC4D8onUfXzvjTOM-dBfEA', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
+  { id: 'youtube-warner', publisher: 'Warner Bros. Pictures', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCjmJDM5pRKbUlVIzDYYWb6g', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
+  { id: 'youtube-universal', publisher: 'Universal Pictures', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCq0OueAsdxH6b8nyAspwViw', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
+  { id: 'youtube-paramount', publisher: 'Paramount Pictures', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCF9imwPMSGz4Vq1NiTWCC7g', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
+];
