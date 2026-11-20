@@ -2,8 +2,6 @@ export type Category = 'film' | 'series' | 'music' | 'celebrity' | 'awards' | 't
 
 export type VideoKind = 'none' | 'direct-file' | 'hls-playlist' | 'youtube-page' | 'web-page';
 
-export type VideoRights = 'confirmed' | 'unconfirmed' | 'excluded';
-
 export type ItemStatus = 'ready' | 'rejected' | 'attempted' | 'queued' | 'published' | 'failed';
 
 export type VideoAssessment = {
@@ -12,7 +10,6 @@ export type VideoAssessment = {
   mime: string | null;
   bytes: number | null;
   durationSeconds: number | null;
-  rights: VideoRights;
   stable: boolean;
   attach: boolean;
   rejection: string;
@@ -41,7 +38,5 @@ export type PopSource = {
   publisher: string;
   url: string;
   kind: SourceKind;
-  /** Rights for rehosting a video file from this source onto X. */
-  videoRights: VideoRights;
   defaultCategory?: Category;
 };

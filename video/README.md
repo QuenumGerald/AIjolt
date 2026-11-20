@@ -11,7 +11,7 @@ Branche `feature/nouveau-projet-video-6f88`. Le bot reste isolé de Nox et MEVRI
 - YouTube : récupération avec `yt-dlp`, MP4 H.264 jusqu'à 720p, inspection locale avec `ffprobe`, hébergement sur votre domaine HTTPS, puis vérification publique du fichier. Aucun lien YouTube ou lien temporaire googlevideo n'est envoyé comme asset à Buffer.
 - Playlist HLS non résolue, page de lecteur ou absence de vidéo : rejet. Aucun repli en publication texte.
 
-Les anciennes lignes `ready` sont contrôlées à nouveau au moment de publier : un ancien drapeau `video_attach=1` ne suffit pas. Les droits restent enregistrés comme non confirmés ; cette modification n'ajoute pas de validation des droits.
+Les anciennes lignes `ready` sont contrôlées à nouveau au moment de publier : un ancien drapeau `video_attach=1` ne suffit pas. Le pipeline ne comporte pas de champ ni de vérification automatisée de licence ; la disponibilité technique d’une vidéo ne signifie pas que sa republication est autorisée.
 
 ## Installation du chemin YouTube
 
@@ -60,4 +60,16 @@ Les collecteurs exploitent les métadonnées des pages publiques pour associer c
 - Entertainment Tonight `/recent/video` : interviews et divertissement ; lors du test les éléments de la page étaient anciens et ne passaient pas le filtre de 36 h.
 - Euronews `/video` : vidéo principale et ses métadonnées ; le fichier peut être servi en `binary/octet-stream`, vérifié par signature avant envoi à Buffer.
 
-Un fichier direct accessible ne confirme pas le droit de le republier : les droits de ces sources restent non confirmés. Les variations de publication, les doublons, la durée et l'accessibilité depuis server2 influent sur le nombre effectif de posts.
+Un fichier direct accessible ne confirme pas l’autorisation de le republier ; Klieg n’effectue pas de vérification juridique ou contractuelle des vidéos. Les variations de publication, les doublons, la durée et l'accessibilité depuis server2 influent sur le nombre effectif de posts.
+
+### Hébergement Klieg en production (server2)
+
+Le dossier `/opt/klieg/data/popculture-media` est exposé **en lecture seule** dans Caddy sous `/srv/klieg-media`, via la route HTTPS `https://ops.al-kimo.com/klieg-media/`. Le bot n’écrit que dans son dossier local ; le proxy ne peut pas modifier les fichiers. Ce chemin est isolé du répertoire des exports des autres services. Les fichiers MP4 validés sont rendus lisibles par le serveur web (mode `0644`). Le mode automatique `POPCULTURE_PUBLISH_ENABLED=false` reste le défaut tant que l’accès YouTube depuis l’IP serveur n’est pas résolu ; les vidéos MP4 de sources officielles restent détectées même si YouTube exige une vérification anti-bot.
+
+### Publication Klieg : cadence haute et hashtags (20 novembre 2026)
+
+En production, le compte X Klieg utilise au maximum **48 publications sur toute période glissante de 24 heures**, avec **30 minutes au minimum entre deux tentatives**. Un service systemd dédié vérifie la file toutes les deux minutes et n'envoie qu'une seule vidéo native valide par cycle. La collecte RSS reste indépendante (toutes les 20 minutes). Ce rythme est un **plafond**, pas une garantie de 48 vidéos si le flux de vidéos admissibles est insuffisant. Le scheduler garde l'identifiant unique du canal Buffer Klieg et ne touche jamais à Nox/AIJOLT ni Mevric.
+
+Chaque post contient **le titre original, le lien vers l'article, un hashtag de sujet et `#Klieg`**, par exemple `#Sports #Klieg`, `#MovieTrailer #Klieg`, `#Science #Klieg`, `#News #Klieg`. Si l'espace est insuffisant, seul `#Klieg` reste ; aucune troncature du titre ou du lien, et aucun post de plus de 280 caractères. Les anciennes entrées `ready` sont reformattées au moment de l'envoi.
+
+Le contrôle des licences a été retiré à la demande de l'utilisateur. La présence d'une URL MP4 techniquement valide ne garantit pas les droits de republication. La conservation des sources et liens d'origine est obligatoire. L'upload reste conditionné à la disponibilité HTTPS, au format vidéo supporté et aux quotas Buffer/X.

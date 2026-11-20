@@ -1,6 +1,7 @@
 import { reconcilePop } from './reconcile.js';
 import { assessVideo } from './video.js';
 import { verifyNativeUrl } from './native.js';
+import { formatPost } from './posts.js';
 import { popConfig, publishGate } from './config.js';
 import { lastPublishAt, listQueue, markAttempt, markFailed, markQueued, openPopDb, recentPublishCount } from './store.js';
 import type { StoredItem } from './store.js';
@@ -66,7 +67,15 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   }
   let sent = 0;
   for (const item of ready) {
-    if (!item.postText) continue;
+    // Reformat at send-time so pre-existing ready rows are guaranteed to use
+    // the same category-specific #Klieg tags as newly collected stories.
+    const text = formatPost(item.title, item.url, item.category);
+    if (!text) {
+      db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'")
+        .run('title and URL leave no space for #Klieg', item.id);
+      logs.push(`skipped #${item.id}: no space for hashtags without truncation`);
+      continue;
+    }
     // Recheck legacy rows even if their old video_attach flag is still set.
     const video = assessVideo(item.video);
     if (!video.attach || !video.url) {
@@ -86,8 +95,8 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
       logs.push(`skipped #${item.id}: video unavailable (${error instanceof Error ? error.message : String(error)})`);
       continue;
     }
-    markAttempt(db, item.id, item.postText, videoUrl);
-    const result = await bufferCreate(gate.token, popPostPayload(item.postText, gate.channelId, videoUrl));
+    markAttempt(db, item.id, text, videoUrl);
+    const result = await bufferCreate(gate.token, popPostPayload(text, gate.channelId, videoUrl));
     if (result.id) {
       markQueued(db, item.id, result.id);
       logs.push(`queued Buffer ${result.id}`);

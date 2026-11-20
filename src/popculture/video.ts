@@ -1,5 +1,5 @@
 import { isIP } from 'node:net';
-import type { VideoAssessment, VideoKind, VideoRights } from './types.js';
+import type { VideoAssessment, VideoKind } from './types.js';
 
 /** Buffer support article, checked 20 Nov 2026: native X playback through Buffer is 0.5–140s and within 512 MB. Not verified by a live post. */
 export const X_NATIVE_MIN_SECONDS = 0.5;
@@ -59,7 +59,6 @@ export function assessVideo(input: {
   mime?: string | null;
   bytes?: number | null;
   durationSeconds?: number | null;
-  rights?: VideoRights;
   stable?: boolean;
 }): VideoAssessment {
   const kind = classifyVideoReference(input.url, input.mime);
@@ -70,7 +69,6 @@ export function assessVideo(input: {
     mime: input.mime ?? null,
     bytes: input.bytes ?? null,
     durationSeconds: input.durationSeconds ?? null,
-    rights: input.rights ?? 'unconfirmed',
     stable: input.stable ?? false,
     attach: false,
     rejection: 'no video in source',

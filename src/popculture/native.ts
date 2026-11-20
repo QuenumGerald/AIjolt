@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { mkdir, stat, rm } from 'node:fs/promises';
+import { mkdir, stat, rm, chmod } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { assessVideo, isPublicHttpsUrl, X_NATIVE_MAX_BYTES, X_NATIVE_MAX_SECONDS } from './video.js';
 import type { PopConfig } from './config.js';
@@ -69,8 +69,11 @@ export async function materializeYouTube(video: VideoAssessment, config: PopConf
     const metadata = JSON.parse(probe.stdout) as { format?: { duration?: string }; streams?: Array<{ codec_type?: string; codec_name?: string }> };
     if (!metadata.streams?.some(s => s.codec_type === 'video' && s.codec_name === 'h264')) throw new Error('H.264 video track required');
     const duration = Number(metadata.format?.duration);
-    const result = assessVideo({ url: new URL(`${key}.mp4`, base).href, mime: 'video/mp4', bytes: info.size, durationSeconds: duration, rights: video.rights });
+    const result = assessVideo({ url: new URL(`${key}.mp4`, base).href, mime: 'video/mp4', bytes: info.size, durationSeconds: duration });
     if (!result.attach) throw new Error(result.rejection);
+    // The media directory is the only public read-only Caddy bind mount.
+    // Grant Caddy file access after the MP4 has passed the codec/size checks.
+    await chmod(file, 0o644);
     await verifyNativeUrl(result.url!);
     return result;
   } catch (error) {

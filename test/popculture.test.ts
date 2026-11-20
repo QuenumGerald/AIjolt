@@ -11,9 +11,9 @@ import { openPopDb, upsertItem, listQueue } from '../src/popculture/store.js';
 import { assessVideo, classifyVideoReference, pickJwMp4 } from '../src/popculture/video.js';
 import type { DraftItem, PopSource } from '../src/popculture/types.js';
 
-const moviefone: PopSource = { id: 'moviefone-trailers', publisher: 'Moviefone', url: 'https://www.moviefone.com/feeds/trailers.json', kind: 'json-feed', videoRights: 'unconfirmed', defaultCategory: 'trailer' };
-const kino: PopSource = { id: 'kinocheck', publisher: 'KinoCheck', url: 'https://api.kinocheck.com/trailers/latest', kind: 'kinocheck', videoRights: 'unconfirmed', defaultCategory: 'trailer' };
-const variety: PopSource = { id: 'variety', publisher: 'Variety', url: 'https://variety.com/feed/', kind: 'rss', videoRights: 'unconfirmed' };
+const moviefone: PopSource = { id: 'moviefone-trailers', publisher: 'Moviefone', url: 'https://www.moviefone.com/feeds/trailers.json', kind: 'json-feed', defaultCategory: 'trailer' };
+const kino: PopSource = { id: 'kinocheck', publisher: 'KinoCheck', url: 'https://api.kinocheck.com/trailers/latest', kind: 'kinocheck', defaultCategory: 'trailer' };
+const variety: PopSource = { id: 'variety', publisher: 'Variety', url: 'https://variety.com/feed/', kind: 'rss' };
 
 describe('channel isolation', () => {
   it('refuses Nox and Mevric channel ids', () => {
@@ -45,7 +45,7 @@ describe('video policy: native files only', () => {
   });
 
   it('requires resolution for youtube and HLS', () => {
-    expect(assessVideo({ url: 'https://www.youtube.com/watch?v=nppid9XVtwY', rights: 'unconfirmed' }).attach).toBe(false);
+    expect(assessVideo({ url: 'https://www.youtube.com/watch?v=nppid9XVtwY', }).attach).toBe(false);
     expect(assessVideo({ url: 'https://cdn.jwplayer.com/manifests/fagviODW.m3u8', mime: 'application/x-mpegURL' }).attach).toBe(false);
     expect(assessVideo({ url: 'https://cdn.jwplayer.com/videos/x.mp4', mime: 'video/mp4', bytes: 1, durationSeconds: 90 }).attach).toBe(true);
   });
@@ -119,14 +119,26 @@ describe('editorial and queue', () => {
     expect(assessRelevance('Taylor Swift announces 2027 stadium tour', 'The singer unveiled new dates.').ok).toBe(true);
   });
 
-  it('formats posts as title plus source URL', () => {
-    const text = formatPost('Taylor Swift announces 2027 stadium tour', 'https://www.billboard.com/music/tour/');
-    expect(text).toBe('Taylor Swift announces 2027 stadium tour\nhttps://www.billboard.com/music/tour/');
+  it('formats posts with a topic hashtag and the Klieg brand hashtag', () => {
+    const text = formatPost('Taylor Swift announces 2027 stadium tour', 'https://www.billboard.com/music/tour/', 'music');
+    expect(text).toBe('Taylor Swift announces 2027 stadium tour\nhttps://www.billboard.com/music/tour/\n#Music #Klieg');
+    expect(formatPost('A major new discovery by NASA', 'https://example.com/science', 'science')).toContain('#Science #Klieg');
+    expect(formatPost('A dramatic rescue caught on camera', 'https://example.com/news', 'weather')).toContain('#Weather #Klieg');
+    expect(formatPost('A new football final', 'https://example.com/sports', 'sport')).toContain('#Sports #Klieg');
+  });
+
+  it('keeps the original headline/URL and a Klieg hashtag without exceeding 280 chars', () => {
+    const url='https://example.com/article';
+    const base='a'.repeat(280 - (`\n${url}\n#Klieg`).length);
+    const long=formatPost(base,url,'music');
+    expect(long).toBe(`${base}\n${url}\n#Klieg`);
+    expect(Array.from(long!).length).toBe(280);
+    expect(formatPost(base+'a',url,'music')).toBeNull();
   });
 
   it('strips dash separators but keeps hyphenated words', () => {
     const text = formatPost('JLo Show Premiere — 186-Carat necklace - Variety', 'https://variety.com/story/');
-    expect(text).toBe('JLo Show Premiere 186-Carat necklace Variety\nhttps://variety.com/story/');
+    expect(text).toBe('JLo Show Premiere 186-Carat necklace Variety\nhttps://variety.com/story/\n#News #Klieg');
     expect(text).not.toMatch(/ — | – | - /);
   });
 

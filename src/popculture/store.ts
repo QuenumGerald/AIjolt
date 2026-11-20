@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS pop_items (
   video_mime TEXT,
   video_bytes INTEGER,
   video_duration REAL,
-  video_rights TEXT,
+  -- Historic databases may retain an unused video_rights column.
   video_attach INTEGER NOT NULL DEFAULT 0,
   video_rejection TEXT,
   UNIQUE(source, external_id)
@@ -90,8 +90,8 @@ export function upsertItem(db: Database.Database, item: DraftItem): void {
   if (event.some(row => titlesMatch(row.title, item.title))) {
     item = { ...item, status: 'rejected', rejection: item.rejection ?? 'same event already stored' };
   }
-  db.prepare(`INSERT INTO pop_items(source,external_id,url,dedupe_key,title,summary,publisher,category,published_at,first_seen_at,last_seen_at,score,status,rejection,post_text,video_kind,video_url,video_mime,video_bytes,video_duration,video_rights,video_attach,video_rejection)
-    VALUES(@source,@externalId,@url,@key,@title,@summary,@publisher,@category,@publishedAt,@now,@now,@score,@status,@rejection,@postText,@videoKind,@videoUrl,@videoMime,@videoBytes,@videoDuration,@videoRights,@videoAttach,@videoRejection)`).run({
+  db.prepare(`INSERT INTO pop_items(source,external_id,url,dedupe_key,title,summary,publisher,category,published_at,first_seen_at,last_seen_at,score,status,rejection,post_text,video_kind,video_url,video_mime,video_bytes,video_duration,video_attach,video_rejection)
+    VALUES(@source,@externalId,@url,@key,@title,@summary,@publisher,@category,@publishedAt,@now,@now,@score,@status,@rejection,@postText,@videoKind,@videoUrl,@videoMime,@videoBytes,@videoDuration,@videoAttach,@videoRejection)`).run({
     ...item,
     key,
     now,
@@ -102,7 +102,6 @@ export function upsertItem(db: Database.Database, item: DraftItem): void {
     videoMime: item.video.mime,
     videoBytes: item.video.bytes,
     videoDuration: item.video.durationSeconds,
-    videoRights: item.video.rights,
     videoAttach: Number(item.video.attach),
     videoRejection: item.video.rejection,
   });
@@ -131,7 +130,6 @@ export function rowToItem(row: Record<string, unknown>): StoredItem {
       mime: row.video_mime == null ? null : String(row.video_mime),
       bytes: row.video_bytes == null ? null : Number(row.video_bytes),
       durationSeconds: row.video_duration == null ? null : Number(row.video_duration),
-      rights: (row.video_rights as StoredItem['video']['rights']) ?? 'unconfirmed',
       stable: String(row.video_kind) === 'direct-file',
       attach: Boolean(row.video_attach),
       rejection: String(row.video_rejection ?? ''),

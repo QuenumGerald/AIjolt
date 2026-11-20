@@ -61,7 +61,6 @@ export function finish(source: PopSource, input: {
     url: input.videoUrl,
     mime: input.videoMime,
     durationSeconds: input.durationSeconds,
-    rights: source.videoRights,
   });
   if (!relevance.ok) {
     return {
@@ -71,12 +70,12 @@ export function finish(source: PopSource, input: {
     };
   }
   const score = relevance.score + freshnessScore(input.publishedAt, now, maxAgeHours);
-  const postText = formatPost(title, url);
+  const postText = formatPost(title, url, relevance.category);
   if (!postText) {
     return {
       source: source.id, externalId: hash(url), url, title, summary, publisher: source.publisher,
       category: relevance.category, publishedAt: input.publishedAt, score,
-      status: 'rejected', rejection: 'title and URL exceed 280 characters', postText: null, video,
+      status: 'rejected', rejection: 'title, URL and #Klieg exceed 280 characters', postText: null, video,
     };
   }
   if (score < minScore) {

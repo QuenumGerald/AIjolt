@@ -1,8 +1,8 @@
 import { assessVideo } from './video.js';
-import type { VideoAssessment, VideoRights } from './types.js';
+import type { VideoAssessment } from './types.js';
 
 /** Only publisher-declared VideoObjects and explicit YouTube embeds, never background videos or ads. */
-export function extractArticleVideo(html: string, rights: VideoRights): VideoAssessment | null {
+export function extractArticleVideo(html: string): VideoAssessment | null {
   const videos: Record<string, unknown>[] = [];
   function walk(value: unknown): void {
     if (Array.isArray(value)) { value.forEach(walk); return; }
@@ -19,10 +19,10 @@ export function extractArticleVideo(html: string, rights: VideoRights): VideoAss
     const url = typeof node.contentUrl === 'string' ? node.contentUrl : typeof node.embedUrl === 'string' ? node.embedUrl : null;
     if (!url) continue;
     const normalized = normalizeYouTubeEmbed(url);
-    return assessVideo({ url: normalized, rights });
+    return assessVideo({ url: normalized });
   }
   const embed = html.match(/<iframe\b[^>]*src=["'](https:\/\/(?:www\.)?youtube(?:-nocookie)?\.com\/embed\/[\w-]{11})/i);
-  return embed ? assessVideo({ url: normalizeYouTubeEmbed(embed[1]), rights }) : null;
+  return embed ? assessVideo({ url: normalizeYouTubeEmbed(embed[1]) }) : null;
 }
 
 function normalizeYouTubeEmbed(raw: string): string {

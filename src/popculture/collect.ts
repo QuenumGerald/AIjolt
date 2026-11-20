@@ -53,7 +53,6 @@ async function resolveJw(item: DraftItem): Promise<DraftItem> {
         mime: mp4.mime,
         bytes: mp4.bytes,
         durationSeconds: item.video.durationSeconds ?? entry?.duration ?? null,
-        rights: item.video.rights,
         stable: false,
       }),
     };
@@ -92,7 +91,7 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   const pageCandidates = drafts.filter(item => /-(video|trailers)$/.test(item.source) && item.video.kind === 'none' && item.postText && item.rejection === item.video.rejection).slice(0, 24);
   await Promise.all(pageCandidates.map(item => pageLimit(async () => {
     try {
-      const video = extractArticleVideo(await fetchText(item.url), item.video.rights);
+      const video = extractArticleVideo(await fetchText(item.url));
       if (video) { item.video = video; item.rejection = video.rejection; }
     } catch (error) { failures.push(`${item.source} article: ${error instanceof Error ? error.message : String(error)}`); }
   })));
