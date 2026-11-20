@@ -75,3 +75,7 @@ Chaque post contient **le titre original, un hashtag de sujet et `#Klieg`**, san
 Le contrôle des licences a été retiré à la demande de l'utilisateur. La présence d'une URL MP4 techniquement valide ne garantit pas les droits de republication. La conservation des sources et liens d'origine est obligatoire. L'upload reste conditionné à la disponibilité HTTPS, au format vidéo supporté et aux quotas Buffer/X.
 
 Depuis le 20 novembre 2026, **aucune URL source n’est ajoutée au texte X**, y compris pour les anciens éléments `ready` (reformatés à chaque envoi). Les URL source sont conservées en base pour la traçabilité, les contrôles techniques et la déduplication.
+
+### Cadence temporaire du 20 novembre 2026
+
+À la demande de l'utilisateur, `server2` teste **une vidéo par minute** jusqu'au **21 novembre 2026 à 00h00, heure de Paris** (2026-11-20T23:00:00Z). Le rythme temporaire se règle par `POPCULTURE_POST_SPACING_MINUTES=1` et `POPCULTURE_FAST_MODE_UNTIL_UTC=2026-11-20T23:00:00Z`. Le code refuse de conserver une cadence inférieure à 30 minutes passé cette échéance, même si le timer de retour arrière ne s'exécute pas. Le timer systemd `klieg-restore-spacing.timer` remet aussi explicitement `POPCULTURE_POST_SPACING_MINUTES=30` à l'échéance. La limite glissante de 48 publications par 24 heures, l'envoi d'une seule vidéo par cycle et le filtrage des fichiers MP4 restent inchangés.

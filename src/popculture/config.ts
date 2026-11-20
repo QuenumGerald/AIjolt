@@ -43,7 +43,17 @@ export function popConfig(env: PopEnv = process.env): PopConfig {
     maxAgeHours: integer(env, 'POPCULTURE_MAX_AGE_HOURS', 36),
     maxPostsPerDay: integer(env, 'POPCULTURE_MAX_POSTS_PER_DAY', 48),
     maxPerCycle: Math.max(1, integer(env, 'POPCULTURE_MAX_PER_CYCLE', 1)),
-    postSpacingMinutes: Math.max(15, integer(env, 'POPCULTURE_POST_SPACING_MINUTES', 30)),
+    // Temporary fast mode must expire even if the scheduled configuration revert fails.
+    postSpacingMinutes: (() => {
+      const requested = Math.max(1, integer(env, 'POPCULTURE_POST_SPACING_MINUTES', 30));
+      const fastUntil = env.POPCULTURE_FAST_MODE_UNTIL_UTC?.trim();
+      if (fastUntil && requested < 30) {
+        const deadline = Date.parse(fastUntil);
+        if (!Number.isFinite(deadline)) throw new Error('POPCULTURE_FAST_MODE_UNTIL_UTC must be an ISO date');
+        if (Date.now() >= deadline) return 30;
+      }
+      return requested;
+    })(),
     minScore: integer(env, 'POPCULTURE_MIN_SCORE', 45),
     mediaDirectory: env.POPCULTURE_MEDIA_DIRECTORY?.trim() || './data/popculture-media',
     mediaBaseUrl: env.POPCULTURE_MEDIA_BASE_URL?.trim() || undefined,

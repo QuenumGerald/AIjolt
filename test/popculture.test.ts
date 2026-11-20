@@ -35,6 +35,13 @@ describe('channel isolation', () => {
   it('defaults to a separate sqlite file', () => {
     expect(popConfig({}).databasePath).toBe('./data/popculture.db');
   });
+
+  it('allows a one-minute video pilot but restores 30 minutes after the scheduled deadline', () => {
+    expect(popConfig({ POPCULTURE_POST_SPACING_MINUTES: '1', POPCULTURE_FAST_MODE_UNTIL_UTC: '2099-01-01T00:00:00Z' }).postSpacingMinutes).toBe(1);
+    expect(popConfig({ POPCULTURE_POST_SPACING_MINUTES: '1', POPCULTURE_FAST_MODE_UNTIL_UTC: '2020-01-01T00:00:00Z' }).postSpacingMinutes).toBe(30);
+    expect(popConfig({ POPCULTURE_POST_SPACING_MINUTES: '30' }).postSpacingMinutes).toBe(30);
+    expect(popConfig({ POPCULTURE_POST_SPACING_MINUTES: '0' }).postSpacingMinutes).toBe(1);
+  });
 });
 
 describe('video policy: native files only', () => {
