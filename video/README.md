@@ -49,7 +49,7 @@ node dist/cli.js pop queue
 node dist/cli.js pop publish --dry-run
 ```
 
-La publication réelle requiert `POPCULTURE_PUBLISH_ENABLED=true`, `POPCULTURE_DRY_RUN=false`, un token Buffer et un canal X dédié. Ne jamais réutiliser les canaux Nox/MEVRIC. Les posts restent au format titre + URL, sans tiret séparateur ; les mots composés sont conservés.
+La publication réelle requiert `POPCULTURE_PUBLISH_ENABLED=true`, `POPCULTURE_DRY_RUN=false`, un token Buffer et un canal X dédié. Ne jamais réutiliser les canaux Nox/MEVRIC. Les posts affichent uniquement le titre et les hashtags, sans lien vers l’article ; la source demeure dans SQLite pour le suivi et l’anti-doublon.
 
 ## Nouveaux collecteurs vidéo
 
@@ -70,6 +70,8 @@ Le dossier `/opt/klieg/data/popculture-media` est exposé **en lecture seule** d
 
 En production, le compte X Klieg utilise au maximum **48 publications sur toute période glissante de 24 heures**, avec **30 minutes au minimum entre deux tentatives**. Un service systemd dédié vérifie la file toutes les deux minutes et n'envoie qu'une seule vidéo native valide par cycle. La collecte RSS reste indépendante (toutes les 20 minutes). Ce rythme est un **plafond**, pas une garantie de 48 vidéos si le flux de vidéos admissibles est insuffisant. Le scheduler garde l'identifiant unique du canal Buffer Klieg et ne touche jamais à Nox/AIJOLT ni Mevric.
 
-Chaque post contient **le titre original, le lien vers l'article, un hashtag de sujet et `#Klieg`**, par exemple `#Sports #Klieg`, `#MovieTrailer #Klieg`, `#Science #Klieg`, `#News #Klieg`. Si l'espace est insuffisant, seul `#Klieg` reste ; aucune troncature du titre ou du lien, et aucun post de plus de 280 caractères. Les anciennes entrées `ready` sont reformattées au moment de l'envoi.
+Chaque post contient **le titre original, un hashtag de sujet et `#Klieg`**, sans lien source affiché, par exemple `#Sports #Klieg`, `#MovieTrailer #Klieg`, `#Science #Klieg`, `#News #Klieg`. Si l'espace est insuffisant, seul `#Klieg` reste ; aucune troncature du titre, et aucun post de plus de 280 caractères. Les anciennes entrées `ready` sont reformattées au moment de l'envoi.
 
 Le contrôle des licences a été retiré à la demande de l'utilisateur. La présence d'une URL MP4 techniquement valide ne garantit pas les droits de republication. La conservation des sources et liens d'origine est obligatoire. L'upload reste conditionné à la disponibilité HTTPS, au format vidéo supporté et aux quotas Buffer/X.
+
+Depuis le 20 novembre 2026, **aucune URL source n’est ajoutée au texte X**, y compris pour les anciens éléments `ready` (reformatés à chaque envoi). Les URL source sont conservées en base pour la traçabilité, les contrôles techniques et la déduplication.

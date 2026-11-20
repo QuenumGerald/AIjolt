@@ -69,10 +69,10 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   for (const item of ready) {
     // Reformat at send-time so pre-existing ready rows are guaranteed to use
     // the same category-specific #Klieg tags as newly collected stories.
-    const text = formatPost(item.title, item.url, item.category);
+    const text = formatPost(item.title, item.category);
     if (!text) {
       db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'")
-        .run('title and URL leave no space for #Klieg', item.id);
+        .run('title leaves no space for #Klieg', item.id);
       logs.push(`skipped #${item.id}: no space for hashtags without truncation`);
       continue;
     }

@@ -119,26 +119,27 @@ describe('editorial and queue', () => {
     expect(assessRelevance('Taylor Swift announces 2027 stadium tour', 'The singer unveiled new dates.').ok).toBe(true);
   });
 
-  it('formats posts with a topic hashtag and the Klieg brand hashtag', () => {
-    const text = formatPost('Taylor Swift announces 2027 stadium tour', 'https://www.billboard.com/music/tour/', 'music');
-    expect(text).toBe('Taylor Swift announces 2027 stadium tour\nhttps://www.billboard.com/music/tour/\n#Music #Klieg');
-    expect(formatPost('A major new discovery by NASA', 'https://example.com/science', 'science')).toContain('#Science #Klieg');
-    expect(formatPost('A dramatic rescue caught on camera', 'https://example.com/news', 'weather')).toContain('#Weather #Klieg');
-    expect(formatPost('A new football final', 'https://example.com/sports', 'sport')).toContain('#Sports #Klieg');
+  it('publishes original headline and relevant hashtags, with no article URL', () => {
+    const text = formatPost('Taylor Swift announces 2027 stadium tour', 'music');
+    expect(text).toBe('Taylor Swift announces 2027 stadium tour\n#Music #Klieg');
+    expect(formatPost('A major new discovery by NASA', 'science')).toContain('#Science #Klieg');
+    expect(formatPost('A dramatic rescue caught on camera', 'weather')).toContain('#Weather #Klieg');
+    expect(formatPost('A new football final', 'sport')).toContain('#Sports #Klieg');
+    expect(text).not.toContain('https://');
   });
 
-  it('keeps the original headline/URL and a Klieg hashtag without exceeding 280 chars', () => {
-    const url='https://example.com/article';
-    const base='a'.repeat(280 - (`\n${url}\n#Klieg`).length);
-    const long=formatPost(base,url,'music');
-    expect(long).toBe(`${base}\n${url}\n#Klieg`);
+  it('keeps full titles and a Klieg hashtag within 280 characters', () => {
+    const base='a'.repeat(280 - '\n#Klieg'.length);
+    const long=formatPost(base,'music');
+    expect(long).toBe(`${base}\n#Klieg`);
     expect(Array.from(long!).length).toBe(280);
-    expect(formatPost(base+'a',url,'music')).toBeNull();
+    expect(formatPost(base+'a','music')).toBeNull();
+    expect(formatPost('   ', 'news')).toBeNull();
   });
 
   it('strips dash separators but keeps hyphenated words', () => {
-    const text = formatPost('JLo Show Premiere — 186-Carat necklace - Variety', 'https://variety.com/story/');
-    expect(text).toBe('JLo Show Premiere 186-Carat necklace Variety\nhttps://variety.com/story/\n#News #Klieg');
+    const text = formatPost('JLo Show Premiere — 186-Carat necklace - Variety', 'news');
+    expect(text).toBe('JLo Show Premiere 186-Carat necklace Variety\n#News #Klieg');
     expect(text).not.toMatch(/ — | – | - /);
   });
 

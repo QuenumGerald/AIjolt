@@ -24,11 +24,13 @@ const TOPIC_TAG: Record<Category, string> = {
   viral: '#ViralVideo',
 };
 
-/** Original headline and article URL remain intact; add two compact relevant tags.
- * Never exceed the platform limit by truncating a headline or its source URL.
+/** X carries the native video with the original headline and topic tags.
+ * Keep the article URL in SQLite for traceability/deduplication, never in post text.
+ * Do not truncate the headline or exceed X's 280-character limit.
  */
-export function formatPost(title: string, url: string, category: Category = 'news'): string | null {
-  const base = `${cleanTitle(title)}\n${url.trim()}`;
+export function formatPost(title: string, category: Category = 'news'): string | null {
+  const base = cleanTitle(title);
+  if (!base) return null;
   const candidates = [`${base}\n${TOPIC_TAG[category]} #Klieg`, `${base}\n#Klieg`];
   return candidates.find(text => Array.from(text).length <= 280) ?? null;
 }
