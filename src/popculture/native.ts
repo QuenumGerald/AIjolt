@@ -82,18 +82,3 @@ export async function materializeYouTube(video: VideoAssessment, config: PopConf
     throw error;
   }
 }
-
-/** Keep a week of hosted media; never touch files outside the generated hash namespace. */
-export async function cleanupMedia(directory: string, now = new Date()): Promise<void> {
-  const { readdir } = await import('node:fs/promises');
-  let names: string[];
-  try { names = await readdir(directory); } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return;
-    throw error;
-  }
-  for (const name of names) {
-    if (!/^[a-f0-9]{24}\.mp4(?:\..+)?$/.test(name)) continue;
-    const path = join(directory, name);
-    if (now.getTime() - (await stat(path)).mtimeMs > 7 * 86_400_000) await rm(path, { force: true });
-  }
-}

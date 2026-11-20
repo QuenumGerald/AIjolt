@@ -25,7 +25,7 @@ POPCULTURE_MAX_VIDEO_DOWNLOADS=8
 
 Le serveur web doit servir **ce même répertoire** en HTTPS, avec GET et Range. Un exemple Caddy est fourni dans `video/Caddyfile.example`. Le bot ne configure pas le DNS ni le serveur web. Sans `POPCULTURE_MEDIA_BASE_URL`, les références YouTube restent rejetées, les MP4 déjà accessibles restent utilisables.
 
-Budget : 6 collectes HTTP simultanées, 24 pages vidéo inspectées au maximum par collecte, 8 tentatives de téléchargement par défaut, au plus une tentative par URL toutes les 6 heures. Téléchargements limités à 120 secondes chacun ; refus des lives, fichiers dépassant 512 Mio ou vidéos hors 0,5–140 secondes. Pas de découpage automatique. Les fichiers générés sont conservés 7 jours, puis supprimés lors d'une collecte.
+Budget : 6 collectes HTTP simultanées, 24 pages vidéo inspectées au maximum par collecte, 8 tentatives de téléchargement par défaut, au plus une tentative par URL toutes les 6 heures. Téléchargements limités à 120 secondes chacun ; refus des lives, fichiers dépassant 512 Mio ou vidéos hors 0,5–140 secondes. Pas de découpage automatique. Les fichiers hébergés sont supprimés après confirmation par Buffer du statut publié, lors de la collecte ou du cycle de publication suivant. En cas d'erreur de statut ou de suppression, le fichier est conservé et la suppression est retentée.
 
 ## Commandes
 

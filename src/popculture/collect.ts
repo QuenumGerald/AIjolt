@@ -1,6 +1,7 @@
 import pLimit from 'p-limit';
+import { reconcilePop } from './reconcile.js';
 import { extractArticleVideo } from './article.js';
-import { cleanupMedia, materializeYouTube } from './native.js';
+import { materializeYouTube } from './native.js';
 import { popConfig } from './config.js';
 import { parseSource } from './parse.js';
 import { POP_SOURCES } from './sources.js';
@@ -65,7 +66,7 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   const config = popConfig();
   const db = openPopDb(config.databasePath);
   const failures: string[] = [];
-  try { await cleanupMedia(config.mediaDirectory, now); } catch { failures.push("media cleanup failed"); }
+  failures.push(...await reconcilePop(db, config));
   const drafts: DraftItem[] = [];
   const limit = pLimit(6);
   const results = await Promise.allSettled(POP_SOURCES.map((source: PopSource) => limit(async () => {

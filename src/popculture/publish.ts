@@ -1,3 +1,4 @@
+import { reconcilePop } from './reconcile.js';
 import { assessVideo } from './video.js';
 import { verifyNativeUrl } from './native.js';
 import { popConfig, publishGate } from './config.js';
@@ -55,6 +56,7 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   const config = popConfig();
   const db = openPopDb(config.databasePath);
   const logs: string[] = [];
+  if (!forceDryRun && !config.dryRun) logs.push(...await reconcilePop(db, config));
   const gate = forceDryRun || config.dryRun || !config.publishEnabled ? { ok: false as const, reason: forceDryRun ? 'forced dry-run' : config.dryRun ? 'POPCULTURE_DRY_RUN is true' : 'POPCULTURE_PUBLISH_ENABLED is not true' } : publishGate();
   const ready = listQueue(db, 'ready', 50);
   if (!ready.length) {
