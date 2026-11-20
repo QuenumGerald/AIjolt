@@ -1,3 +1,5 @@
+import { spawnSync } from 'node:child_process';
+import { POP_SOURCES } from './sources.js';
 import { collectPop } from './collect.js';
 import { popConfig, publishGate } from './config.js';
 import { publishPop, showQueue } from './publish.js';
@@ -19,6 +21,13 @@ export async function popPublish(dryRun: boolean): Promise<void> {
 export function popDoctor(): void {
   const config = popConfig();
   console.log(`database ${config.databasePath}`);
+  console.log(`sources ${POP_SOURCES.length}; native video only`);
+  console.log(`media directory ${config.mediaDirectory}`);
+  console.log(config.mediaBaseUrl ? `media HTTPS ${config.mediaBaseUrl}` : 'YouTube download disabled: POPCULTURE_MEDIA_BASE_URL is not set');
+  for (const command of ['yt-dlp', 'ffmpeg', 'ffprobe']) {
+    const result = spawnSync(command, [command === 'yt-dlp' ? '--version' : '-version'], { timeout: 5000, stdio: 'ignore' });
+    console.log(`${command} ${result.error ? 'missing' : 'installed'}`);
+  }
   console.log(`dry-run ${config.dryRun}`);
   console.log(`publish-enabled ${config.publishEnabled}`);
   const gate = publishGate();

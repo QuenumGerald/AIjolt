@@ -1,13 +1,17 @@
+import pLimit from 'p-limit';
+import { extractArticleVideo } from './article.js';
+import { cleanupMedia, materializeYouTube } from './native.js';
 import { popConfig } from './config.js';
 import { parseSource } from './parse.js';
 import { POP_SOURCES } from './sources.js';
-import { logRun, openPopDb, upsertItem } from './store.js';
+import { logRun, openPopDb, rowToItem, upsertItem } from './store.js';
 import { assessVideo, isPublicHttpsUrl, jwMediaId, pickJwMp4 } from './video.js';
 import type { DraftItem, PopSource } from './types.js';
 
 const UA = 'PopCultureBot/0.1 (research collector; +https://github.com/QuenumGerald/AIjolt)';
 
-async function fetchText(url: string): Promise<string> {
+async function fetchText(url: string, redirects = 0): Promise<string> {
+  if (redirects > 5) throw new Error("too many redirects");
   const parsed = new URL(url);
   if (!isPublicHttpsUrl(url)) throw new Error(`blocked URL ${url}`);
   const response = await fetch(url, {
@@ -21,7 +25,7 @@ async function fetchText(url: string): Promise<string> {
     const next = new URL(location, url);
     const sameHost = parsed.hostname.replace(/^www\./, '') === next.hostname.replace(/^www\./, '');
     if (!sameHost) throw new Error(`refusing cross-host redirect to ${next.hostname}`);
-    return fetchText(next.href);
+    return fetchText(next.href, redirects + 1);
   }
   if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
   const length = Number(response.headers.get('content-length') ?? 0);
@@ -61,15 +65,17 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   const config = popConfig();
   const db = openPopDb(config.databasePath);
   const failures: string[] = [];
+  try { await cleanupMedia(config.mediaDirectory, now); } catch { failures.push("media cleanup failed"); }
   const drafts: DraftItem[] = [];
-  const results = await Promise.allSettled(POP_SOURCES.map(async (source: PopSource) => {
+  const limit = pLimit(6);
+  const results = await Promise.allSettled(POP_SOURCES.map((source: PopSource) => limit(async () => {
     const body = await fetchText(source.url);
     try {
       return parseSource(source, body, now, config.maxAgeHours, config.minScore);
     } catch (error) {
       throw new Error(`parse failed: ${error instanceof Error ? error.message : String(error)}`);
     }
-  }));
+  })));
   for (const [index, result] of results.entries()) {
     if (result.status === 'rejected') {
       failures.push(`${POP_SOURCES[index].id}: ${result.reason instanceof Error ? result.reason.message : String(result.reason)}`);
@@ -80,8 +86,36 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   let collected = 0;
   let ready = 0;
   let withVideo = 0;
+  // Dedicated video feeds often put the actual player only on the article page.
+  const pageLimit = pLimit(4);
+  const pageCandidates = drafts.filter(item => /-(video|trailers)$/.test(item.source) && item.video.kind === 'none' && item.postText && item.rejection === item.video.rejection).slice(0, 24);
+  await Promise.all(pageCandidates.map(item => pageLimit(async () => {
+    try {
+      const video = extractArticleVideo(await fetchText(item.url), item.video.rights);
+      if (video) { item.video = video; item.rejection = video.rejection; }
+    } catch (error) { failures.push(`${item.source} article: ${error instanceof Error ? error.message : String(error)}`); }
+  })));
+  let downloadAttempts = 0;
+  // Resolve the highest-scoring candidates first within a bounded download budget.
+  drafts.sort((a, b) => b.score - a.score);
   for (const draft of drafts) {
-    const item = draft.video.kind === 'hls-playlist' ? await resolveJw(draft) : draft;
+    const eligible = draft.postText && draft.score >= config.minScore && (draft.status === 'ready' || draft.rejection === draft.video.rejection);
+    let item = draft.video.kind === 'hls-playlist' ? await resolveJw(draft) : draft;
+    const stored = db.prepare('SELECT * FROM pop_items WHERE url=?').get(item.url) as Record<string, unknown> | undefined;
+    if (stored && ['ready', 'rejected'].includes(String(stored.status))) {
+      const existing = rowToItem(stored);
+      if (existing.video.attach && existing.video.kind === 'direct-file') item = { ...item, video: existing.video };
+    }
+    if (eligible && item.video.kind === 'youtube-page' && config.mediaBaseUrl && downloadAttempts < config.maxVideoDownloads) {
+      const previous = db.prepare('SELECT attempted_at FROM pop_video_attempts WHERE url=?').get(item.url) as { attempted_at: string } | undefined;
+      if ((!stored || ['ready', 'rejected'].includes(String(stored.status))) && (!previous || now.getTime() - new Date(previous.attempted_at).getTime() >= 6 * 3_600_000)) {
+        downloadAttempts += 1;
+        db.prepare('INSERT INTO pop_video_attempts(url,attempted_at) VALUES(?,?) ON CONFLICT(url) DO UPDATE SET attempted_at=excluded.attempted_at').run(item.url, now.toISOString());
+        try { item = { ...item, video: await materializeYouTube(item.video, config) }; }
+        catch (error) { failures.push(`${item.source} video: ${error instanceof Error ? error.message.split('\n')[0] : String(error)}`); }
+      }
+    }
+    if (eligible) item = { ...item, status: item.video.attach ? 'ready' : 'rejected', rejection: item.video.attach ? null : item.video.rejection };
     upsertItem(db, item);
     collected += 1;
     if (item.status === 'ready') ready += 1;

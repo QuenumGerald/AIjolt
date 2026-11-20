@@ -1,3 +1,5 @@
+import { assessVideo } from './video.js';
+import { verifyNativeUrl } from './native.js';
 import { popConfig, publishGate } from './config.js';
 import { lastPublishAt, listQueue, markAttempt, markFailed, markQueued, openPopDb, recentPublishCount } from './store.js';
 import type { StoredItem } from './store.js';
@@ -5,6 +7,7 @@ import type { StoredItem } from './store.js';
 export const createPopPostMutation = `mutation CreatePost($text: String!, $channelId: ChannelId!, $assets: [AssetInput!]!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: shareNow, needsApproval: false, assets: $assets }) { ... on PostActionSuccess { post { id status } } ... on MutationError { message } } }`;
 
 export function popPostPayload(text: string, channelId: string, videoUrl: string | null) {
+  if (!assessVideo({ url: videoUrl }).attach) throw new Error('native video file required');
   return {
     query: createPopPostMutation,
     variables: {
@@ -62,14 +65,25 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   let sent = 0;
   for (const item of ready) {
     if (!item.postText) continue;
+    // Recheck legacy rows even if their old video_attach flag is still set.
+    const video = assessVideo(item.video);
+    if (!video.attach || !video.url) {
+      db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'").run(video.rejection, item.id);
+      logs.push(`skipped #${item.id}: ${video.rejection}`);
+      continue;
+    }
     if (!forceDryRun && config.publishEnabled && !config.dryRun) {
       const pace = canPublishNow(db);
       if (!pace.ok) { logs.push(pace.reason); break; }
     }
     if (sent >= config.maxPerCycle) break;
-    const videoUrl = item.video.attach ? item.video.url : null;
+    const videoUrl = video.url;
     logs.push(formatQueueLine(item));
     if (!gate.ok) continue;
+    try { await verifyNativeUrl(videoUrl); } catch (error) {
+      logs.push(`skipped #${item.id}: video unavailable (${error instanceof Error ? error.message : String(error)})`);
+      continue;
+    }
     markAttempt(db, item.id, item.postText, videoUrl);
     const result = await bufferCreate(gate.token, popPostPayload(item.postText, gate.channelId, videoUrl));
     if (result.id) {

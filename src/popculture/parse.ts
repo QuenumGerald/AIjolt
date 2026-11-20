@@ -88,7 +88,7 @@ function finish(source: PopSource, input: {
   return {
     source: source.id, externalId: hash(url), url, title, summary, publisher: source.publisher,
     category: relevance.category, publishedAt: input.publishedAt, score,
-    status: 'ready', rejection: null, postText, video,
+    status: video.attach ? 'ready' : 'rejected', rejection: video.attach ? null : video.rejection, postText, video,
   };
 }
 
@@ -131,7 +131,7 @@ export function parseRss(source: PopSource, xml: string, now: Date, maxAgeHours:
 export function parseJsonFeed(source: PopSource, body: string, now: Date, maxAgeHours: number, minScore: number): DraftItem[] {
   const payload = JSON.parse(body) as { items?: Array<Record<string, unknown>> };
   return (payload.items ?? []).flatMap(item => {
-    const attachment = Array.isArray(item.attachments) ? item.attachments[0] as Record<string, unknown> | undefined : undefined;
+    const attachment = Array.isArray(item.attachments) ? (item.attachments as Array<Record<string, unknown>>).find(a => typeof a.url === 'string' && /video\/|mpegurl|\.(mp4|m3u8)/i.test(`${a.mime_type ?? ''} ${a.url}`)) : undefined;
     const publishedAt = parsePublishedAt(typeof item.date_published === 'string' ? item.date_published : null);
     if (!publishedAt || typeof item.url !== 'string' || typeof item.title !== 'string') return [];
     const draft = finish(source, {

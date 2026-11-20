@@ -49,6 +49,10 @@ CREATE TABLE IF NOT EXISTS pop_publications (
   UNIQUE(item_id),
   FOREIGN KEY(item_id) REFERENCES pop_items(id)
 );
+CREATE TABLE IF NOT EXISTS pop_video_attempts (
+  url TEXT PRIMARY KEY,
+  attempted_at TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS pop_runs (
   id INTEGER PRIMARY KEY,
   kind TEXT NOT NULL,
@@ -74,10 +78,12 @@ export function openPopDb(path = popConfig().databasePath): Database.Database {
 export function upsertItem(db: Database.Database, item: DraftItem): void {
   const now = new Date().toISOString();
   const key = popDedupeKey(item.title);
-  const duplicate = db.prepare(`SELECT id FROM pop_items WHERE (url=? OR (source=? AND external_id=?))`).get(item.url, item.source, item.externalId) as { id: number } | undefined;
+  const duplicate = db.prepare(`SELECT id, rejection FROM pop_items WHERE (url=? OR (source=? AND external_id=?))`).get(item.url, item.source, item.externalId) as { id: number; rejection: string | null } | undefined;
   if (duplicate) {
-    db.prepare(`UPDATE pop_items SET last_seen_at=?, score=max(score, ?), title=?, post_text=?, video_url=COALESCE(?, video_url), video_kind=COALESCE(?, video_kind), video_mime=COALESCE(?, video_mime), video_bytes=COALESCE(?, video_bytes), video_duration=COALESCE(?, video_duration), video_attach=max(video_attach, ?), video_rejection=? WHERE id=? AND status IN ('ready','rejected')`)
-      .run(now, item.score, item.title, item.postText, item.video.url, item.video.kind, item.video.mime, item.video.bytes, item.video.durationSeconds, Number(item.video.attach), item.video.rejection, duplicate.id);
+    const status = duplicate.rejection === 'same event already stored' ? 'rejected' : item.status;
+    const rejection = duplicate.rejection === 'same event already stored' ? duplicate.rejection : item.rejection;
+    db.prepare(`UPDATE pop_items SET last_seen_at=?, score=?, title=?, post_text=?, status=?, rejection=?, video_url=?, video_kind=?, video_mime=?, video_bytes=?, video_duration=?, video_attach=?, video_rejection=? WHERE id=? AND status IN ('ready','rejected')`)
+      .run(now, item.score, item.title, item.postText, status, rejection, item.video.url, item.video.kind, item.video.mime, item.video.bytes, item.video.durationSeconds, Number(item.video.attach), item.video.rejection, duplicate.id);
     return;
   }
   const event = db.prepare(`SELECT id, title, status FROM pop_items WHERE status IN ('ready','attempted','queued','published') ORDER BY published_at DESC LIMIT 200`).all() as Array<{ id: number; title: string; status: string }>;

@@ -1,7 +1,11 @@
 import type { PopSource } from './types.js';
 
-/** Feeds that returned dated English pop-culture items on 20 Nov 2026. */
+/** Sources are discovery inputs; only resolved native videos enter the ready queue. */
 export const POP_SOURCES: PopSource[] = [
+  { id: 'variety-video', publisher: 'Variety', url: 'https://variety.com/v/video/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'deadline-video', publisher: 'Deadline', url: 'https://deadline.com/video/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'consequence-video', publisher: 'Consequence', url: 'https://consequence.net/video/feed/', kind: 'rss', videoRights: 'unconfirmed' },
+  { id: 'joblo-trailers', publisher: 'JoBlo', url: 'https://www.joblo.com/category/movie-trailers/feed/', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
   { id: 'variety', publisher: 'Variety', url: 'https://variety.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
   { id: 'deadline', publisher: 'Deadline', url: 'https://deadline.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
   { id: 'hollywood-reporter', publisher: 'Hollywood Reporter', url: 'https://www.hollywoodreporter.com/feed/', kind: 'rss', videoRights: 'unconfirmed' },
@@ -25,9 +29,146 @@ export const POP_SOURCES: PopSource[] = [
   { id: 'moviefone-trailers', publisher: 'Moviefone', url: 'https://www.moviefone.com/feeds/trailers.json', kind: 'json-feed', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
   { id: 'moviefone-interviews', publisher: 'Moviefone', url: 'https://www.moviefone.com/feeds/interviews.json', kind: 'json-feed', videoRights: 'unconfirmed' },
   { id: 'kinocheck', publisher: 'KinoCheck', url: 'https://api.kinocheck.com/trailers/latest?language=en&limit=25', kind: 'kinocheck', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
-  { id: 'youtube-netflix', publisher: 'Netflix', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCWOA1ZGywLbqmigxE4Qlvuw', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
-  { id: 'youtube-marvel', publisher: 'Marvel', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCvC4D8onUfXzvjTOM-dBfEA', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
-  { id: 'youtube-warner', publisher: 'Warner Bros. Pictures', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCjmJDM5pRKbUlVIzDYYWb6g', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
-  { id: 'youtube-universal', publisher: 'Universal Pictures', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCq0OueAsdxH6b8nyAspwViw', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
-  { id: 'youtube-paramount', publisher: 'Paramount Pictures', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCF9imwPMSGz4Vq1NiTWCC7g', kind: 'rss', videoRights: 'unconfirmed', defaultCategory: 'trailer' },
 ];
+
+/** Official channel IDs resolved and nonempty Atom feeds fetched on 20 Nov 2026. */
+const VIDEO_CHANNELS = [
+  ["WarnerBrosPictures", "UCjmJDM5pRKbUlVIzDYYWb6g"],
+  [
+    "Netflix",
+    "UCWOA1ZGywLbqmigxE4Qlvuw"
+  ],
+  [
+    "Marvel",
+    "UCvC4D8onUfXzvjTOM-dBfEA"
+  ],
+  [
+    "UniversalPictures",
+    "UCq0OueAsdxH6b8nyAspwViw"
+  ],
+  [
+    "ParamountPictures",
+    "UCF9imwPMSGz4Vq1NiTWCC7g"
+  ],
+  [
+    "SonyPictures",
+    "UCz97F7dMxBNOfGYu3rx8aCw"
+  ],
+  [
+    "A24",
+    "UCuPivVjnfNo4mb3Oog_frZg"
+  ],
+  [
+    "LionsgateMovies",
+    "UCJ6nMHaJPZvsJ-HmUmj1SeA"
+  ],
+  [
+    "SearchlightPictures",
+    "UCor9rW6PgxSQ9vUPWQdnaYQ"
+  ],
+  [
+    "FocusFeatures",
+    "UCU4SM3j_9TNWaSu8KdGV50g"
+  ],
+  [
+    "AmazonMGMStudios",
+    "UCf5CjDJvsFvtVIhkfmKAwAA"
+  ],
+  [
+    "AppleTV",
+    "UC1Myj674wRVXB9I4c6Hm5zA"
+  ],
+  [
+    "HBO",
+    "UCVTQuK2CaWaTgSsoNkn5AiQ"
+  ],
+  [
+    "Max",
+    "UCQIRM93QxhQ4pGm0cxuCXDw"
+  ],
+  [
+    "Hulu",
+    "UCE5mQnNl8Q4H2qcv4ikaXeA"
+  ],
+  [
+    "disneyplus",
+    "UCIrgJInjLS2BhlHOMDW7v0g"
+  ],
+  [
+    "Peacock",
+    "UCPgMAS8woHJ_o_OZdTR7kcQ"
+  ],
+  [
+    "NetflixAnime",
+    "UCBSs9x2KzSLhyyA9IKyt4YA"
+  ],
+  [
+    "Crunchyroll",
+    "UC6pGDc4bFGD1_36IKv3FnYg"
+  ],
+  [
+    "RottenTomatoesTRAILERS",
+    "UCi8e0iOVk1fEOogdfu4YgfA"
+  ],
+  [
+    "IGNMovieTrailers",
+    "UCWJ5MfdQZ6jXbF5gYuSAf5Q"
+  ],
+  [
+    "FilmSelectTrailer",
+    "UCOlBfHN6TkmBVzZ_lkzcKwQ"
+  ],
+  [
+    "KinoCheck",
+    "UCOL10n-as9dXO2qtjjFUQbQ"
+  ],
+  [
+    "Billboard",
+    "UCsVcseUYbYjldc-XgcsiEbg"
+  ],
+  [
+    "RollingStone",
+    "UC-JblcinswY50lrUdSaRNEg"
+  ],
+  [
+    "NPRMusic",
+    "UC4eYXhJI4-7wSWc8UNRwD4A"
+  ],
+  [
+    "COLORSxSTUDIOS",
+    "UC2Qw1dzXDBAZPwS7zm37g8g"
+  ],
+  [
+    "BBCRadio1VEVO",
+    "UCKoafhJ9dkAWaEvlXCiBBwA"
+  ],
+  [
+    "MTV",
+    "UCxAICW_LdkfFYwTqTHHE0vg"
+  ],
+  [
+    "Oscars",
+    "UCb-vZWBeWA5Q2818JmmJiqQ"
+  ],
+  [
+    "BAFTA",
+    "UCtggghgcffr7-OSjiRXRM3Q"
+  ],
+  [
+    "EntertainmentTonight",
+    "UCdtXPiqI2cLorKaPrfpKc4g"
+  ],
+  [
+    "Variety",
+    "UCgRQHK8Ttr1j9xCEpCAlgbQ"
+  ]
+] as const;
+
+POP_SOURCES.push(...VIDEO_CHANNELS.map(([publisher, id]): PopSource => ({
+  id: `youtube-${publisher.toLowerCase()}`, publisher,
+  url: `https://www.youtube.com/feeds/videos.xml?channel_id=${id}`,
+  kind: 'rss', videoRights: 'unconfirmed',
+  defaultCategory: ['Billboard', 'RollingStone', 'NPRMusic', 'COLORSxSTUDIOS', 'BBCRadio1VEVO', 'MTV'].includes(publisher) ? 'music'
+    : ['Oscars', 'BAFTA'].includes(publisher) ? 'awards'
+    : ['EntertainmentTonight', 'Variety'].includes(publisher) ? 'celebrity' : 'trailer',
+})));

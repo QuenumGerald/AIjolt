@@ -28,6 +28,9 @@ export type PopConfig = {
   maxPerCycle: number;
   postSpacingMinutes: number;
   minScore: number;
+  mediaDirectory: string;
+  mediaBaseUrl: string | undefined;
+  maxVideoDownloads: number;
 };
 
 export function popConfig(env: PopEnv = process.env): PopConfig {
@@ -42,6 +45,9 @@ export function popConfig(env: PopEnv = process.env): PopConfig {
     maxPerCycle: Math.max(1, integer(env, 'POPCULTURE_MAX_PER_CYCLE', 1)),
     postSpacingMinutes: Math.max(15, integer(env, 'POPCULTURE_POST_SPACING_MINUTES', 60)),
     minScore: integer(env, 'POPCULTURE_MIN_SCORE', 45),
+    mediaDirectory: env.POPCULTURE_MEDIA_DIRECTORY?.trim() || './data/popculture-media',
+    mediaBaseUrl: env.POPCULTURE_MEDIA_BASE_URL?.trim() || undefined,
+    maxVideoDownloads: integer(env, 'POPCULTURE_MAX_VIDEO_DOWNLOADS', 8),
   };
 }
 
