@@ -76,8 +76,8 @@ export function upsertItem(db: Database.Database, item: DraftItem): void {
   const key = popDedupeKey(item.title);
   const duplicate = db.prepare(`SELECT id FROM pop_items WHERE (url=? OR (source=? AND external_id=?))`).get(item.url, item.source, item.externalId) as { id: number } | undefined;
   if (duplicate) {
-    db.prepare(`UPDATE pop_items SET last_seen_at=?, score=max(score, ?), video_url=COALESCE(?, video_url), video_kind=COALESCE(?, video_kind), video_mime=COALESCE(?, video_mime), video_bytes=COALESCE(?, video_bytes), video_duration=COALESCE(?, video_duration), video_attach=max(video_attach, ?), video_rejection=? WHERE id=? AND status IN ('ready','rejected')`)
-      .run(now, item.score, item.video.url, item.video.kind, item.video.mime, item.video.bytes, item.video.durationSeconds, Number(item.video.attach), item.video.rejection, duplicate.id);
+    db.prepare(`UPDATE pop_items SET last_seen_at=?, score=max(score, ?), title=?, post_text=?, video_url=COALESCE(?, video_url), video_kind=COALESCE(?, video_kind), video_mime=COALESCE(?, video_mime), video_bytes=COALESCE(?, video_bytes), video_duration=COALESCE(?, video_duration), video_attach=max(video_attach, ?), video_rejection=? WHERE id=? AND status IN ('ready','rejected')`)
+      .run(now, item.score, item.title, item.postText, item.video.url, item.video.kind, item.video.mime, item.video.bytes, item.video.durationSeconds, Number(item.video.attach), item.video.rejection, duplicate.id);
     return;
   }
   const event = db.prepare(`SELECT id, title, status FROM pop_items WHERE status IN ('ready','attempted','queued','published') ORDER BY published_at DESC LIMIT 200`).all() as Array<{ id: number; title: string; status: string }>;

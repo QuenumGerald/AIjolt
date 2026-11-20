@@ -123,6 +123,12 @@ describe('editorial and queue', () => {
     expect(text).toBe('Taylor Swift announces 2027 stadium tour\nhttps://www.billboard.com/music/tour/');
   });
 
+  it('strips dash separators but keeps hyphenated words', () => {
+    const text = formatPost('JLo Show Premiere — 186-Carat necklace - Variety', 'https://variety.com/story/');
+    expect(text).toBe('JLo Show Premiere 186-Carat necklace Variety\nhttps://variety.com/story/');
+    expect(text).not.toMatch(/ — | – | - /);
+  });
+
   it('detects near-duplicate events', () => {
     expect(titlesMatch('HBO Lands Issa Rae Drama Open', 'HBO lands Issa Rae drama Open')).toBe(true);
   });

@@ -1,6 +1,6 @@
 # Compte X pop culture (anglais)
 
-Bot isolé de Nox et de MEVRIC. Configuration, SQLite (`data/popculture.db`), quotas et canal Buffer sont séparés. Les identifiants Nox / MEVRIC ne sont jamais des valeurs par défaut.
+Bot isolé de Nox et de MEVRIC. Il reste sur `feature/nouveau-projet-video-6f88`, pas sur `main`. Configuration, SQLite (`data/popculture.db`), quotas et canal Buffer sont séparés. Les identifiants Nox / MEVRIC ne sont jamais des valeurs par défaut. Les posts n’utilisent pas de tiret séparateur (`—`, `–`, ` - `) ; les mots composés comme `186-Carat` sont conservés.
 
 Politique vidéo temporaire : **toutes les vidéos HTTPS publiques détectées sont attachées**, y compris YouTube et HLS. Les droits de republication restent **non confirmés**.
 

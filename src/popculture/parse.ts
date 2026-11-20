@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { assessRelevance, freshnessScore } from './relevance.js';
-import { formatPost } from './posts.js';
+import { cleanTitle, formatPost } from './posts.js';
 import { assessVideo } from './video.js';
 import type { DraftItem, PopSource } from './types.js';
 
@@ -51,7 +51,7 @@ function finish(source: PopSource, input: {
   durationSeconds?: number | null;
 }, now: Date, maxAgeHours: number, minScore: number): DraftItem | null {
   const url = canonicalUrl(input.url);
-  const title = input.title.replace(/\s+/g, ' ').trim();
+  const title = cleanTitle(input.title);
   if (!url || !title || (title.match(/[A-Za-z]/g) ?? []).length < 8) return null;
   if (!withinAge(input.publishedAt, now, maxAgeHours)) return null;
   const summary = input.summary.slice(0, 600);
