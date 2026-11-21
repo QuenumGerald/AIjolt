@@ -12,7 +12,7 @@ export function hostedMediaPath(url: string, config: PopConfig): string | null {
     const file = new URL(url);
     if (file.origin !== base.origin || file.search || file.hash || !file.pathname.startsWith(base.pathname)) return null;
     const name = file.pathname.slice(base.pathname.length);
-    if (!/^[a-f0-9]{24}\.mp4$/.test(name)) return null;
+    if (!/^(?:[a-f0-9]{24}|klieg-edit-[a-f0-9]{24})\.mp4$/.test(name)) return null;
     return join(config.mediaDirectory, name);
   } catch { return null; }
 }

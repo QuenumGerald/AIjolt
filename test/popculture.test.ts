@@ -35,6 +35,9 @@ describe('channel isolation', () => {
   it('defaults to a separate sqlite file', () => {
     expect(popConfig({}).databasePath).toBe('./data/popculture.db');
     expect(popConfig({ POPCULTURE_MAX_DIRECT_CLIPS_PER_CYCLE: '2' }).maxDirectClipsPerCycle).toBe(2);
+    expect(popConfig({}).montageEnabled).toBe(false);
+    expect(popConfig({ POPCULTURE_MONTAGE_ENABLED: 'true', POPCULTURE_MONTAGE_SECONDS: '45' }).montageSeconds).toBe(45);
+    expect(popConfig({ POPCULTURE_MONTAGE_SECONDS: '200' }).montageSeconds).toBe(60);
   });
 
   it('disables only the application daily cap when set to zero', () => {

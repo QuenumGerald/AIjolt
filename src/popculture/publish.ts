@@ -1,6 +1,7 @@
 import { reconcilePop } from './reconcile.js';
 import { assessVideo } from './video.js';
 import { verifyNativeUrl } from './native.js';
+import { renderKliegMontage } from './montage.js';
 import { formatPost } from './posts.js';
 import { popConfig, publishGate } from './config.js';
 import { lastPublishAt, listQueue, markAttempt, markFailed, markQueued, openPopDb, recentPublishCount } from './store.js';
@@ -93,9 +94,21 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
       if (!pace.ok) { logs.push(pace.reason); break; }
     }
     if (sent >= config.maxPerCycle) break;
-    const videoUrl = video.url;
+    // Never render or upload a video during doctor/dry-run mode.
     logs.push(formatQueueLine(item));
     if (!gate.ok) continue;
+    let videoUrl = video.url;
+    if (config.montageEnabled) {
+      try {
+        const montage = await renderKliegMontage(video, item.title, config);
+        if (!montage.attach || !montage.url) throw new Error('edited file is not publishable');
+        videoUrl = montage.url;
+        logs.push(`montage ready for #${item.id}: ${montage.durationSeconds}s`);
+      } catch (error) {
+        logs.push(`skipped #${item.id}: montage failed (${error instanceof Error ? error.message.split('\n')[0] : String(error)})`);
+        continue; // No unedited fallback when the user selected automatic editing.
+      }
+    }
     try { await verifyNativeUrl(videoUrl); } catch (error) {
       logs.push(`skipped #${item.id}: video unavailable (${error instanceof Error ? error.message : String(error)})`);
       continue;

@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, expect, it, vi } from 'vitest';
 import { popConfig } from '../src/popculture/config.js';
-import { reconcilePop } from '../src/popculture/reconcile.js';
+import { hostedMediaPath, reconcilePop } from '../src/popculture/reconcile.js';
 import { openPopDb, upsertItem } from '../src/popculture/store.js';
 import { assessVideo } from '../src/popculture/video.js';
 
@@ -39,4 +39,12 @@ it('counts only publications from the last 24 hours even with ISO timestamps', a
   }
   expect(recentPublishCount(db)).toBe(1);
   db.close();
+});
+
+it('accepts cleanup of edited Klieg clips only under its managed HTTPS directory', () => {
+  const config=popConfig({POPCULTURE_MEDIA_DIRECTORY:dir,POPCULTURE_MEDIA_BASE_URL:'https://media.example.com/klieg/'});
+  expect(hostedMediaPath('https://media.example.com/klieg/klieg-edit-0123456789abcdef01234567.mp4',config)).toBe(join(dir,'klieg-edit-0123456789abcdef01234567.mp4'));
+  expect(hostedMediaPath('https://media.example.com/klieg/../../secret.mp4',config)).toBeNull();
+  expect(hostedMediaPath('https://evil.example.com/klieg/klieg-edit-0123456789abcdef01234567.mp4',config)).toBeNull();
+  expect(hostedMediaPath('https://media.example.com/klieg/klieg-edit-0123456789abcdef01234567.mp4?x=1',config)).toBeNull();
 });
