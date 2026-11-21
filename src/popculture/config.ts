@@ -33,6 +33,7 @@ export type PopConfig = {
   maxVideoDownloads: number;
   maxDirectClipsPerCycle: number;
   montageEnabled: boolean;
+  montageHighlightsEnabled: boolean;
   montageSeconds: number;
 };
 
@@ -64,6 +65,7 @@ export function popConfig(env: PopEnv = process.env): PopConfig {
     maxVideoDownloads: integer(env, 'POPCULTURE_MAX_VIDEO_DOWNLOADS', 8),
     maxDirectClipsPerCycle: integer(env, 'POPCULTURE_MAX_DIRECT_CLIPS_PER_CYCLE', 3),
     montageEnabled: flag(env, 'POPCULTURE_MONTAGE_ENABLED', false),
+    montageHighlightsEnabled: flag(env, 'POPCULTURE_MONTAGE_HIGHLIGHTS_ENABLED', false),
     montageSeconds: Math.min(60, Math.max(10, integer(env, 'POPCULTURE_MONTAGE_SECONDS', 55))),
   };
 }

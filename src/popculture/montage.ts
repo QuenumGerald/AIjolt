@@ -9,10 +9,11 @@ import type { VideoAssessment } from './types.js';
 import { cleanTitle } from './posts.js';
 import { verifyNativeUrl } from './native.js';
 import { assessVideo, isPublicHttpsUrl, X_NATIVE_MAX_BYTES } from './video.js';
+import { chooseHighlightRanges, detectSceneCuts, HIGHLIGHT_VERSION } from './highlights.js';
 
 const exec = promisify(execFile);
 const FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
-const VERSION = 'klieg-montage-v1';
+const VERSION = 'klieg-montage-v2';
 export const MONTAGE_MAX_SECONDS = 60;
 
 /** Lower-third copy only. The original full headline remains in the X post. */
@@ -57,7 +58,8 @@ export async function renderKliegMontage(
     ? Math.min(video.durationSeconds, config.montageSeconds)
     : config.montageSeconds;
   if (duration < 0.5) throw new Error('video too short to edit');
-  const key = createHash('sha256').update(JSON.stringify([VERSION, video.url, headline, duration])).digest('hex').slice(0, 24);
+  const useHighlights = config.montageHighlightsEnabled && video.durationSeconds != null && video.durationSeconds > duration + 8;
+  const key = createHash('sha256').update(JSON.stringify([VERSION, HIGHLIGHT_VERSION, useHighlights, video.url, headline, duration])).digest('hex').slice(0, 24);
   const filename = `klieg-edit-${key}.mp4`;
   const directory = resolve(config.mediaDirectory);
   const file = join(directory, filename);
@@ -75,6 +77,13 @@ export async function renderKliegMontage(
       temporary = await mkdtemp(join(tmpdir(), 'klieg-montage-'));
       const textfile = join(temporary, 'headline.txt');
       await writeFile(textfile, montageHeadline(headline), {mode:0o600});
+      let ranges = [{start:0,duration}];
+      if (useHighlights) {
+        // A failed scene scan should not disable the existing safe chronological edit.
+        let cuts: number[] = [];
+        try { cuts = await detectSceneCuts(video.url!, video.durationSeconds!); } catch { /* keep timeline sampling */ }
+        ranges = chooseHighlightRanges(video.durationSeconds!,duration,cuts);
+      }
       const fadeStart = Math.max(0, duration - 0.75).toFixed(2);
       const filters = [
         'fps=24',
@@ -87,11 +96,43 @@ export async function renderKliegMontage(
         `fade=t=out:st=${fadeStart}:d=0.75`,
         'format=yuv420p',
       ].join(',');
+      const audioProbe = await exec('ffprobe',[
+        '-v','error','-show_entries','stream=codec_type','-of','csv=p=0',video.url!,
+      ],{timeout:20_000,maxBuffer:100_000});
+      const hasAudio = audioProbe.stdout.split(/\s+/).includes('audio');
+      let renderInput = video.url!;
+      if (useHighlights && ranges.length > 1) {
+        // Sequential segment extraction prevents FFmpeg's concat filter from buffering
+        // multiple full-resolution source streams inside the 600 MB service limit.
+        const segments: string[] = [];
+        for (let i=0;i<ranges.length;i++) {
+          const segment=join(temporary!,`segment-${i}.mp4`);
+          const range=ranges[i];
+          await exec('ffmpeg',[
+            '-nostdin','-hide_banner','-loglevel','error','-y',
+            '-rw_timeout','25000000','-ss',String(range.start),'-i',video.url!,
+            '-t',String(range.duration),'-map','0:v:0',...(hasAudio?['-map','0:a:0']:[]),
+            '-vf','fps=24,scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,format=yuv420p',
+            '-threads','1','-c:v','libx264','-preset','veryfast','-crf','27',
+            ...(hasAudio?['-c:a','aac','-b:a','128k','-ar','48000']:['-an']),
+            '-movflags','+faststart',segment,
+          ],{timeout:120_000,maxBuffer:500_000});
+          segments.push(segment);
+        }
+        const concatFile=join(temporary!,'segments.txt');
+        await writeFile(concatFile,segments.map(segment=>`file '${segment}'`).join('\n')+'\n',{mode:0o600});
+        const joined=join(temporary!,'joined.mp4');
+        await exec('ffmpeg',[
+          '-nostdin','-hide_banner','-loglevel','error','-y',
+          '-f','concat','-safe','0','-i',concatFile,'-c','copy','-movflags','+faststart',joined,
+        ],{timeout:40_000,maxBuffer:500_000});
+        renderInput=joined;
+      }
       await exec('ffmpeg', [
         '-nostdin', '-hide_banner', '-loglevel', 'error', '-y',
-        '-rw_timeout', '25000000', '-i', video.url,
+        '-rw_timeout', '25000000', '-i', renderInput,
         '-t', String(duration), '-map', '0:v:0', '-map', '0:a?',
-        '-vf', filters, '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '26',
+        '-vf', filters, '-threads','1', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '26',
         '-maxrate', '3000k', '-bufsize', '6000k', '-pix_fmt', 'yuv420p',
         '-c:a', 'aac', '-b:a', '128k', '-ar', '48000',
         '-movflags', '+faststart', '-map_metadata', '-1',
