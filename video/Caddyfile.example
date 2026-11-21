@@ -1,0 +1,11 @@
+# Replace the domain and path. Must match POPCULTURE_MEDIA_BASE_URL and POPCULTURE_MEDIA_DIRECTORY.
+# Caddy provides HTTPS; no application tokens should be placed in this directory.
+media.example.com {
+    root * /srv/aijolt/data/popculture-media
+    @video path_regexp video ^/[a-f0-9]{24}\.mp4$
+    handle @video {
+        header Cache-Control "public, max-age=86400"
+        file_server
+    }
+    respond 404
+}
