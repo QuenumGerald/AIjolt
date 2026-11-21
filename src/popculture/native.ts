@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { mkdir, stat, rm, chmod } from 'node:fs/promises';
+import { mkdir, stat, rm, chmod, rename } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { assessVideo, isPublicHttpsUrl, X_NATIVE_MAX_BYTES, X_NATIVE_MAX_SECONDS } from './video.js';
 import type { PopConfig } from './config.js';
@@ -82,6 +82,73 @@ export async function materializeYouTube(video: VideoAssessment, config: PopConf
       const { readdir } = await import('node:fs/promises');
       for (const name of await readdir(directory)) if (name.startsWith(`${key}.`)) await rm(join(directory, name), { force: true });
     }
+    throw error;
+  }
+}
+
+
+/** Buffer/X accepts at most 140 seconds: expose a clearly labelled first 138s excerpt.
+ * Do not silently skip a source merely because the original is slightly longer.
+ * Only bounded, genuinely MP4 sources qualify. Never manipulate the original URL.
+ */
+export const MAX_EXCERPT_SOURCE_SECONDS = 360;
+export const NATIVE_EXCERPT_SECONDS = 138;
+
+export function needsDirectExcerpt(video: VideoAssessment): boolean {
+  return video.kind === 'direct-file'
+    && !!video.url
+    && isPublicHttpsUrl(video.url)
+    && video.rejection === 'video outside native duration limits'
+    && video.durationSeconds != null
+    && Number.isFinite(video.durationSeconds)
+    && video.durationSeconds > X_NATIVE_MAX_SECONDS
+    && video.durationSeconds <= MAX_EXCERPT_SOURCE_SECONDS
+    && (video.bytes == null || (video.bytes > 0 && video.bytes <= X_NATIVE_MAX_BYTES));
+}
+
+export async function materializeDirectExcerpt(video: VideoAssessment, config: PopConfig): Promise<VideoAssessment> {
+  if (!needsDirectExcerpt(video) || !video.url || !config.mediaBaseUrl) return video;
+  const base = config.mediaBaseUrl.endsWith('/') ? config.mediaBaseUrl : `${config.mediaBaseUrl}/`;
+  if (!isPublicHttpsUrl(base) || new URL(base).search || new URL(base).hash) throw new Error('invalid public media base URL');
+  const directory = resolve(config.mediaDirectory);
+  await mkdir(directory, { recursive: true });
+  const key = createHash('sha256').update('excerpt-v1:' + video.url).digest('hex').slice(0, 24);
+  const output = join(directory, `clip-${key}.mp4`);
+  const partial = join(directory, `clip-${key}.part.mp4`);
+  let created = false;
+  try {
+    try { await stat(output); }
+    catch {
+      created = true;
+      // Source URLs must be verified prior to passing them to ffmpeg.
+      await verifyNativeUrl(video.url);
+      await exec('ffmpeg', [
+        '-nostdin', '-hide_banner', '-loglevel', 'error', '-y',
+        '-rw_timeout', '25000000', '-i', video.url,
+        '-t', String(NATIVE_EXCERPT_SECONDS), '-map', '0:v:0', '-map', '0:a?',
+        '-c', 'copy', '-movflags', '+faststart', '-f', 'mp4', partial,
+      ], { timeout: 120_000, maxBuffer: 500_000 });
+      await rename(partial, output);
+    }
+    const [stats, probe] = await Promise.all([
+      stat(output),
+      exec('ffprobe', ['-v', 'error', '-show_entries', 'format=duration:stream=codec_name,codec_type', '-of', 'json', output], {timeout: 15_000}),
+    ]);
+    const meta = JSON.parse(probe.stdout) as { format?: {duration?: string}; streams?: Array<{codec_type?: string;codec_name?: string}> };
+    if (!meta.streams?.some(track => track.codec_type === 'video' && track.codec_name === 'h264')) throw new Error('H.264 video required');
+    if (meta.streams.some(track => track.codec_type === 'audio' && track.codec_name !== 'aac')) throw new Error('AAC audio required');
+    const duration = Number(meta.format?.duration);
+    const result = assessVideo({
+      url: new URL(`clip-${key}.mp4`, base).href,
+      mime: 'video/mp4', bytes: stats.size, durationSeconds: duration,
+    });
+    if (!result.attach) throw new Error(result.rejection);
+    await chmod(output, 0o644);
+    await verifyNativeUrl(result.url!);
+    return result;
+  } catch (error) {
+    await rm(partial, {force:true}).catch(() => {});
+    if (created) await rm(output, {force:true}).catch(() => {});
     throw error;
   }
 }

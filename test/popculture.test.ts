@@ -34,6 +34,7 @@ describe('channel isolation', () => {
 
   it('defaults to a separate sqlite file', () => {
     expect(popConfig({}).databasePath).toBe('./data/popculture.db');
+    expect(popConfig({ POPCULTURE_MAX_DIRECT_CLIPS_PER_CYCLE: '2' }).maxDirectClipsPerCycle).toBe(2);
   });
 
   it('disables only the application daily cap when set to zero', () => {
@@ -64,6 +65,7 @@ describe('video policy: native files only', () => {
     expect(assessVideo({ url: 'https://www.youtube.com/watch?v=nppid9XVtwY', }).attach).toBe(false);
     expect(assessVideo({ url: 'https://cdn.jwplayer.com/manifests/fagviODW.m3u8', mime: 'application/x-mpegURL' }).attach).toBe(false);
     expect(assessVideo({ url: 'https://cdn.jwplayer.com/videos/x.mp4', mime: 'video/mp4', bytes: 1, durationSeconds: 90 }).attach).toBe(true);
+    expect(assessVideo({ url: 'https://cdn.jwplayer.com/videos/x.mp4', mime: 'video/mp4', durationSeconds: 207 }).attach).toBe(false);
   });
 
   it('still refuses loopback URLs', () => {

@@ -1,9 +1,17 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { extractArticleVideo } from '../src/popculture/article.js';
-import { verifyNativeUrl } from '../src/popculture/native.js';
+import { needsDirectExcerpt, NATIVE_EXCERPT_SECONDS, verifyNativeUrl } from '../src/popculture/native.js';
 
 const mp4 = Buffer.from([0, 0, 0, 24, ...Buffer.from('ftypisom'), 0, 0, 0, 0]);
 describe('native media validation', () => {
+  it('only converts overlong genuine direct-file clips in the bounded range', () => {
+    const base = { url:'https://cdn.example.com/video.mp4', mime:'video/mp4', bytes:1000000 };
+    expect(needsDirectExcerpt({ ...base, kind:'direct-file', attach:false, durationSeconds:144,stable:true, rejection:'video outside native duration limits' })).toBe(true);
+    expect(needsDirectExcerpt({ ...base, kind:'direct-file', attach:false, durationSeconds:380,stable:true, rejection:'video outside native duration limits' })).toBe(false);
+    expect(needsDirectExcerpt({ ...base, kind:'youtube-page', attach:false, durationSeconds:150,stable:false,rejection:'video outside native duration limits' })).toBe(false);
+    expect(needsDirectExcerpt({ ...base, kind:'direct-file', attach:true, durationSeconds:60,stable:true,rejection:'' })).toBe(false);
+    expect(NATIVE_EXCERPT_SECONDS).toBeLessThan(140);
+  });
   afterEach(() => vi.unstubAllGlobals());
   it('accepts an actual MP4 response', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(mp4, {status:206, headers:{'content-type':'video/mp4','content-range':'bytes 0-15/1000'}})));

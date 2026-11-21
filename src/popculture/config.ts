@@ -31,6 +31,7 @@ export type PopConfig = {
   mediaDirectory: string;
   mediaBaseUrl: string | undefined;
   maxVideoDownloads: number;
+  maxDirectClipsPerCycle: number;
 };
 
 export function popConfig(env: PopEnv = process.env): PopConfig {
@@ -59,6 +60,7 @@ export function popConfig(env: PopEnv = process.env): PopConfig {
     mediaDirectory: env.POPCULTURE_MEDIA_DIRECTORY?.trim() || './data/popculture-media',
     mediaBaseUrl: env.POPCULTURE_MEDIA_BASE_URL?.trim() || undefined,
     maxVideoDownloads: integer(env, 'POPCULTURE_MAX_VIDEO_DOWNLOADS', 8),
+    maxDirectClipsPerCycle: integer(env, 'POPCULTURE_MAX_DIRECT_CLIPS_PER_CYCLE', 3),
   };
 }
 

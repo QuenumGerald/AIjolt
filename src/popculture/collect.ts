@@ -1,7 +1,7 @@
 import pLimit from 'p-limit';
 import { reconcilePop } from './reconcile.js';
 import { extractArticleVideo } from './article.js';
-import { materializeYouTube } from './native.js';
+import { materializeYouTube, materializeDirectExcerpt, needsDirectExcerpt } from './native.js';
 import { popConfig } from './config.js';
 import { parseSource } from './parse.js';
 import { POP_SOURCES } from './sources.js';
@@ -96,6 +96,7 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
     } catch (error) { failures.push(`${item.source} article: ${error instanceof Error ? error.message : String(error)}`); }
   })));
   let downloadAttempts = 0;
+  let directClipAttempts = 0;
   // Resolve the highest-scoring candidates first within a bounded download budget.
   drafts.sort((a, b) => b.score - a.score);
   for (const draft of drafts) {
@@ -106,6 +107,15 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
       const existing = rowToItem(stored);
       if (existing.video.attach && existing.video.kind === 'direct-file') item = { ...item, video: existing.video };
     }
+    // Legacy rows could be marked attach=true although duration exceeds the X limit.
+    // Reassess the actual metadata before continuing or trusting the cached value.
+    if (item.video.attach) {
+      const checked = assessVideo({
+        url: item.video.url, mime: item.video.mime,
+        bytes: item.video.bytes, durationSeconds: item.video.durationSeconds,
+      });
+      if (!checked.attach) item = { ...item, video: checked };
+    }
     if (eligible && item.video.kind === 'youtube-page' && config.mediaBaseUrl && downloadAttempts < config.maxVideoDownloads) {
       const previous = db.prepare('SELECT attempted_at FROM pop_video_attempts WHERE url=?').get(item.url) as { attempted_at: string } | undefined;
       if ((!stored || ['ready', 'rejected'].includes(String(stored.status))) && (!previous || now.getTime() - new Date(previous.attempted_at).getTime() >= 6 * 3_600_000)) {
@@ -115,12 +125,32 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
         catch (error) { failures.push(`${item.source} video: ${error instanceof Error ? error.message.split('\n')[0] : String(error)}`); }
       }
     }
+    // Repurpose overlong native MP4s as short H.264/AAC excerpts, not raw >140s assets.
+    // Stay inside an explicit per-collection budget; dedupe across cycles by URL and attempts.
+    if (eligible && config.mediaBaseUrl && directClipAttempts < config.maxDirectClipsPerCycle
+        && needsDirectExcerpt(item.video)
+        && (!stored || ['ready', 'rejected'].includes(String(stored.status)))) {
+      const previous = db.prepare('SELECT attempted_at FROM pop_video_attempts WHERE url=?').get(item.url) as { attempted_at: string } | undefined;
+      if (!previous || now.getTime() - new Date(previous.attempted_at).getTime() >= 2 * 3_600_000) {
+        directClipAttempts++;
+        db.prepare('INSERT INTO pop_video_attempts(url,attempted_at) VALUES(?,?) ON CONFLICT(url) DO UPDATE SET attempted_at=excluded.attempted_at').run(item.url, now.toISOString());
+        try { item = { ...item, video: await materializeDirectExcerpt(item.video, config) }; }
+        catch (error) { failures.push(`${item.source} excerpt: ${error instanceof Error ? error.message.split('\n')[0] : String(error)}`); }
+      }
+    }
     if (eligible) item = { ...item, status: item.video.attach ? 'ready' : 'rejected', rejection: item.video.attach ? null : item.video.rejection };
+    // Never persist a ready video that cannot actually be attached.
+    if (item.status === 'ready' && !item.video.attach) {
+      item = { ...item, status: 'rejected', rejection: item.video.rejection || 'native video missing or invalid' };
+    }
     upsertItem(db, item);
     collected += 1;
     if (item.status === 'ready') ready += 1;
     if (item.video.attach) withVideo += 1;
   }
+  // Report actual queue size, not feed-level eligible rows that are already published.
+  ready = (db.prepare("SELECT COUNT(*) AS n FROM pop_items WHERE status='ready'").get() as {n:number}).n;
+  withVideo = (db.prepare("SELECT COUNT(*) AS n FROM pop_items WHERE status='ready' AND video_attach=1").get() as {n:number}).n;
   logRun(db, 'collect', failures.length && !collected ? 'failed' : 'ok', JSON.stringify({ collected, ready, withVideo, failures }));
   db.close();
   return { collected, ready, withVideo, failures };
