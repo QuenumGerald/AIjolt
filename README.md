@@ -88,16 +88,16 @@ Le score sur 100 favorise la fraîcheur (30), la pertinence IA (21), la qualité
 
 * laissez `DRY_RUN=true` jusqu'à validation humaine ;
 * secrets uniquement dans `.env` (ignoré par Git) ;
-* `BUFFER_QUEUE_CAPACITY=0` : file scheduled illimitée (Buffer Essentials). **Enlever `BUFFER_QUEUE_CAPACITY=10` sur le serveur** (plafond Free) ;
-* `MAX_POSTS_PER_DAY_X=42` (1 job / 30 min) et `MAX_AI_NEWS_POSTS_PER_DAY_X=8` (1 news / 3 h) : total borné par `MAX_X_POSTS_PER_DAY=50` (X non vérifié). Jobs majoritaires, news **sans** attendre que la file d’offres soit vide ;
-* Buffer API Essentials : **100 req / 15 min** et **250 / 24 h**. 1 `createPost` job / 30 min + 1 news / 3 h. Sync statut **3 posts max**, au plus toutes les **3 h**. Écart **1,5 s** entre appels. `MAX_JOBS_PER_PUBLISH_CYCLE` est borné à 2 (défaut 1) pour éviter un burst de `dueAt` ;
+* `BUFFER_QUEUE_CAPACITY=0` : file scheduled **illimitée** (Buffer Essentials). Ce n’est **pas** un plafond de plan Buffer qui borne le volume quotidien. **Enlever `BUFFER_QUEUE_CAPACITY=10` sur le serveur** (ancien Free) ;
+* `MAX_POSTS_PER_DAY_X=88` (2 jobs / 30 min) et `MAX_AI_NEWS_POSTS_PER_DAY_X=10` (1 news / 2 h) : total borné par `MAX_X_POSTS_PER_DAY=100`. C’est la **limite réseau X verified** que Buffer applique (daily network posting limit, 100/24 h). Avant la coche bleue c’était 50/24 h. Jobs majoritaires, news **sans** attendre que la file d’offres soit vide ;
+* Buffer **API** Essentials (autre chose que le volume X) : **100 req GraphQL / 15 min** et **250 / 24 h**. 2 `createPost` jobs / 30 min + 1 news / 2 h. Sync statut **3 posts max**, au plus toutes les **3 h**. Écart **1,5 s** entre appels. `MAX_JOBS_PER_PUBLISH_CYCLE` reste borné à 2 pour éviter un burst de `dueAt` ;
 * SQLite WAL, contraintes uniques par URL, identifiant ATS et publication/réseau ;
 * une offre est expirée après 30 jours sans nouvelle observation ou 120 jours après publication ;
 * `HTTPS_PROXY`/`CAPSOLVER_API_KEY` restent optionnels et inutilisés : ne contournez les protections d'un site qu'avec autorisation.
 
 ### Publication automatique Buffer
 
-Lorsque `DRY_RUN=false`, AIJolt crée des posts Buffer en `schedulingType: automatic` et **`mode: customScheduled`** avec un `dueAt` toutes les 30 min. **Ne plus utiliser `addToQueue`** : ça consomme les créneaux du *posting schedule* UI (souvent 3–4 heures/jour → 3–4 posts envoyés, même si 50 sont en file).
+Lorsque `DRY_RUN=false`, AIJolt crée des posts Buffer en `schedulingType: automatic` et **`mode: customScheduled`** avec un `dueAt` toutes les 20 min. **Ne plus utiliser `addToQueue`** : ça consomme les créneaux du *posting schedule* UI (souvent 3–4 heures/jour → 3–4 posts envoyés, même si 100 sont en file).
 
 Un 429 Buffer arrête le cycle et respecte `Retry-After` (pas de retry en boucle). Ne pas forcer un gros `sync-buffer` ni `MAX_JOBS_PER_PUBLISH_CYCLE>2` sur le serveur.
 
@@ -107,7 +107,7 @@ npm run publish -- --dry-run
 npm run publish
 ```
 
-Chaque cycle `publish` (30 min) enfile **1 annonce job** (~42/jour). `publishNews` (toutes les 3 h) enfile **1 news** jusqu’à 8/jour, même s’il reste des offres. Jobs + news ≤ `MAX_X_POSTS_PER_DAY=50`. File Essentials illimitée. X non vérifié = 50/24 h ; vérifié = 100. Ne pas viser 20/h.
+Chaque cycle `publish` (30 min) enfile **jusqu’à 2 annonces jobs** (~88/jour). `publishNews` (toutes les 2 h) enfile **1 news** jusqu’à 10/jour, même s’il reste des offres. Jobs + news ≤ `MAX_X_POSTS_PER_DAY=100` (limite X verified / Buffer daily network limit). File Essentials illimitée. Ne pas viser 20 posts/h.
 
 ### Ligne éditoriale AIJolt
 
