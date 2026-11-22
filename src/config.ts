@@ -14,6 +14,63 @@ const boards = (name: string, source: Source): BoardConfig[] => list(name).map(e
   if (!id) throw new Error(`${name} contains an empty board identifier`);
   return { source, id, company };
 });
+// Verified public Greenhouse ATS boards (checked for HTTP 200 and active technical roles
+// on 2026-11-22). Additive to GREENHOUSE_BOARDS; duplicates are removed by board ID.
+// Only employer-hosted application listings are used; Nox's existing technical-role,
+// country, URL-deduplication and company-rotation checks still apply.
+export const verifiedGreenhouseEmployers = [
+  'airbnb|Airbnb', 'affirm|Affirm', 'appian|Appian', 'brex|Brex',
+  'calendly|Calendly', 'chime|Chime', 'cockroachlabs|Cockroach Labs',
+  'commercetools|commercetools', 'coursera|Coursera', 'customerio|Customer.io',
+  'discord|Discord', 'dropbox|Dropbox', 'fastly|Fastly', 'fireblocks|Fireblocks',
+  'flexport|Flexport', 'gocardless|GoCardless', 'greenhouse|Greenhouse',
+  'honeycomb|Honeycomb', 'instacart|Instacart', 'intercom|Intercom',
+  'klaviyo|Klaviyo', 'lyft|Lyft', 'mercury|Mercury', 'mixpanel|Mixpanel',
+  'monzo|Monzo', 'mozilla|Mozilla', 'neo4j|Neo4j', 'neuralink|Neuralink',
+  'okta|Okta', 'onetrust|OneTrust', 'opentable|OpenTable',
+  'pagerduty|PagerDuty', 'robinhood|Robinhood', 'samsara|Samsara',
+  'spacex|SpaceX', 'squarespace|Squarespace', 'starburst|Starburst',
+  'stitchfix|Stitch Fix', 'toast|Toast', 'twitch|Twitch',
+  'twilio|Twilio', 'vercel|Vercel', 'zscaler|Zscaler',
+  'adyen|Adyen', 'algolia|Algolia', 'alphasense|AlphaSense',
+  'anaplan|Anaplan', 'axon|Axon', 'backblaze|Backblaze',
+  'bitgo|BitGo', 'bitpanda|Bitpanda', 'block|Block',
+  'buildkite|Buildkite', 'carvana|Carvana', 'celonis|Celonis',
+  'checkr|Checkr', 'contentful|Contentful', 'deliveroo|Deliveroo',
+  'devrev|DevRev', 'ebanx|EBANX', 'epicgames|Epic Games',
+  'fivetran|Fivetran', 'geotab|Geotab', 'gusto|Gusto',
+  'hellofresh|HelloFresh', 'justworks|Justworks',
+  'launchdarkly|LaunchDarkly', 'mattermost|Mattermost',
+  'myfitnesspal|MyFitnessPal', 'newrelic|New Relic',
+  'nextdoor|Nextdoor', 'nintendo|Nintendo', 'nuro|Nuro',
+  'otterai|Otter.ai', 'payoneer|Payoneer', 'planetlabs|Planet Labs',
+  'proton|Proton', 'purestorage|Pure Storage', 'relativity|Relativity',
+  'riotgames|Riot Games', 'ripple|Ripple', 'roku|Roku',
+  'rubrik|Rubrik', 'salesloft|Salesloft', 'sendbird|Sendbird',
+  'simplisafe|SimpliSafe', 'smartsheet|Smartsheet',
+  'stackadapt|StackAdapt', 'sumup|SumUp', 'synack|Synack',
+  'thetradedesk|The Trade Desk', 'trivago|trivago',
+  'tripadvisor|Tripadvisor', 'truebill|Rocket Money',
+  'udacity|Udacity', 'upstart|Upstart', 'via|Via',
+  'xometry|Xometry', 'yugabyte|Yugabyte',
+  'ziprecruiter|ZipRecruiter', 'zuora|Zuora',
+] as const;
+
+function greenhouseBoards(): BoardConfig[] {
+  const configured = boards('GREENHOUSE_BOARDS', 'greenhouse');
+  const additions = verifiedGreenhouseEmployers.map(entry => {
+    const [id, company] = entry.split('|');
+    return { source: 'greenhouse' as const, id, company };
+  });
+  const seen = new Set<string>();
+  return [...configured, ...additions].filter(board => {
+    const key = board.id.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 export const config = {
   dryRun: (process.env.DRY_RUN ?? 'true').toLowerCase() !== 'false',
   databasePath: process.env.DATABASE_PATH ?? './data/aijolt.db',
@@ -31,7 +88,7 @@ export const config = {
   postSpacingMinutes: integer('BUFFER_POST_SPACING_MINUTES', 30),
   postLeadMinutes: integer('BUFFER_POST_LEAD_MINUTES', 5),
   boards: {
-    greenhouse: boards('GREENHOUSE_BOARDS', 'greenhouse'),
+    greenhouse: greenhouseBoards(),
     lever: boards('LEVER_SITES', 'lever'),
     ashby: boards('ASHBY_BOARDS', 'ashby'),
   },
