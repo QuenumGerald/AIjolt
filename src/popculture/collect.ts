@@ -97,8 +97,15 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   })));
   let downloadAttempts = 0;
   let directClipAttempts = 0;
-  // Resolve the highest-scoring candidates first within a bounded download budget.
-  drafts.sort((a, b) => b.score - a.score);
+  // Prefer actual video sources over text-only articles. Without this ordering,
+  // a one-per-cycle download budget can be spent on arbitrary lower-value feeds.
+  // Preserve editorial quality as the secondary sort key.
+  drafts.sort((a, b) => {
+    const videoPriority = (item: DraftItem): number => item.video.kind === 'direct-file' ? 3
+      : item.video.kind === 'youtube-page' ? 2
+      : item.video.kind === 'hls-playlist' ? 1 : 0;
+    return videoPriority(b) - videoPriority(a) || b.score - a.score;
+  });
   for (const draft of drafts) {
     const eligible = draft.postText && draft.score >= config.minScore && (draft.status === 'ready' || draft.rejection === draft.video.rejection);
     let item = draft.video.kind === 'hls-playlist' ? await resolveJw(draft) : draft;
