@@ -1,7 +1,7 @@
 import pLimit from 'p-limit';
 import { reconcilePop } from './reconcile.js';
 import { extractArticleVideo } from './article.js';
-import { materializeYouTube, materializeDirectExcerpt, needsDirectExcerpt } from './native.js';
+import { materializeDirectExcerpt, needsDirectExcerpt } from './native.js';
 import { popConfig } from './config.js';
 import { parseSource } from './parse.js';
 import { POP_SOURCES } from './sources.js';
@@ -88,21 +88,18 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   let withVideo = 0;
   // Dedicated video feeds often put the actual player only on the article page.
   const pageLimit = pLimit(4);
-  const pageCandidates = drafts.filter(item => /-(video|trailers)$/.test(item.source) && item.video.kind === 'none' && item.postText && item.rejection === item.video.rejection).slice(0, 24);
+  const pageCandidates = drafts.filter(item => /-(video|trailers|interviews)$/.test(item.source) && item.video.kind === 'none' && item.postText && item.rejection === item.video.rejection).slice(0, 40);
   await Promise.all(pageCandidates.map(item => pageLimit(async () => {
     try {
       const video = extractArticleVideo(await fetchText(item.url));
       if (video) { item.video = video; item.rejection = video.rejection; }
     } catch (error) { failures.push(`${item.source} article: ${error instanceof Error ? error.message : String(error)}`); }
   })));
-  let downloadAttempts = 0;
   let directClipAttempts = 0;
-  // Prefer actual video sources over text-only articles. Without this ordering,
-  // a one-per-cycle download budget can be spent on arbitrary lower-value feeds.
+  // Prefer actual native video sources over text-only articles and embedded players.
   // Preserve editorial quality as the secondary sort key.
   drafts.sort((a, b) => {
     const videoPriority = (item: DraftItem): number => item.video.kind === 'direct-file' ? 3
-      : item.video.kind === 'youtube-page' ? 2
       : item.video.kind === 'hls-playlist' ? 1 : 0;
     return videoPriority(b) - videoPriority(a) || b.score - a.score;
   });
@@ -122,15 +119,6 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
         bytes: item.video.bytes, durationSeconds: item.video.durationSeconds,
       });
       if (!checked.attach) item = { ...item, video: checked };
-    }
-    if (eligible && item.video.kind === 'youtube-page' && config.mediaBaseUrl && downloadAttempts < config.maxVideoDownloads) {
-      const previous = db.prepare('SELECT attempted_at FROM pop_video_attempts WHERE url=?').get(item.url) as { attempted_at: string } | undefined;
-      if ((!stored || ['ready', 'rejected'].includes(String(stored.status))) && (!previous || now.getTime() - new Date(previous.attempted_at).getTime() >= 6 * 3_600_000)) {
-        downloadAttempts += 1;
-        db.prepare('INSERT INTO pop_video_attempts(url,attempted_at) VALUES(?,?) ON CONFLICT(url) DO UPDATE SET attempted_at=excluded.attempted_at').run(item.url, now.toISOString());
-        try { item = { ...item, video: await materializeYouTube(item.video, config) }; }
-        catch (error) { failures.push(`${item.source} video: ${error instanceof Error ? error.message.split('\n')[0] : String(error)}`); }
-      }
     }
     // Repurpose overlong native MP4s as short H.264/AAC excerpts, not raw >140s assets.
     // Stay inside an explicit per-collection budget; dedupe across cycles by URL and attempts.

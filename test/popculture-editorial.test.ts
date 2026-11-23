@@ -6,7 +6,7 @@ describe('Klieg entertainment-only editorial gate', () => {
   it('removes generic news video discovery feeds', () => {
     expect(POP_SOURCES.map(source => source.id)).not.toContain('nbc-video');
     expect(POP_SOURCES.map(source => source.id)).not.toContain('euronews-video');
-    expect(POP_SOURCES.map(source => source.id)).toContain('tmz-watch');
+    expect(POP_SOURCES.map(source => source.id)).not.toContain('tmz-watch');
     expect(POP_SOURCES.map(source => source.id)).toContain('moviefone-trailers');
   });
   it.each([

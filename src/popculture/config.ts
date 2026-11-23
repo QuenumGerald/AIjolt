@@ -62,7 +62,7 @@ export function popConfig(env: PopEnv = process.env): PopConfig {
     minScore: integer(env, 'POPCULTURE_MIN_SCORE', 45),
     mediaDirectory: env.POPCULTURE_MEDIA_DIRECTORY?.trim() || './data/popculture-media',
     mediaBaseUrl: env.POPCULTURE_MEDIA_BASE_URL?.trim() || undefined,
-    maxVideoDownloads: integer(env, 'POPCULTURE_MAX_VIDEO_DOWNLOADS', 4),
+    maxVideoDownloads: integer(env, 'POPCULTURE_MAX_VIDEO_DOWNLOADS', 0),
     maxDirectClipsPerCycle: integer(env, 'POPCULTURE_MAX_DIRECT_CLIPS_PER_CYCLE', 5),
     montageEnabled: flag(env, 'POPCULTURE_MONTAGE_ENABLED', false),
     montageHighlightsEnabled: flag(env, 'POPCULTURE_MONTAGE_HIGHLIGHTS_ENABLED', false),

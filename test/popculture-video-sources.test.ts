@@ -6,7 +6,7 @@ import { assessRelevance } from '../src/popculture/relevance.js';
 import { verifyNativeUrl } from '../src/popculture/native.js';
 
 const now = new Date('2026-11-20T19:00:00Z');
-const source = (id: string): PopSource => POP_SOURCES.find(s => s.id === id) ?? ({ id, publisher: id, url: 'https://example.com/video', kind: id as PopSource['kind'], defaultCategory: 'news' });
+const source = (id: string): PopSource => POP_SOURCES.find(s => s.id === id) ?? ({ id, publisher: id, url: 'https://example.com/video', kind: (id === 'tmz-watch' ? 'tmz-video' : id) as PopSource['kind'], defaultCategory: 'news' });
 const next = (v: unknown) => `<script id="__NEXT_DATA__" type="application/json">${JSON.stringify(v)}</script>`;
 
 describe('multitopic video collectors', () => {
@@ -21,8 +21,8 @@ describe('multitopic video collectors', () => {
     expect(rows).toHaveLength(2); expect(rows.find(x=>x.url.endsWith('dog-rescued'))?.status).toBe('rejected'); expect(rows.find(x=>x.url.endsWith('/long'))?.status).toBe('rejected');
   });
   it('extracts TMZ JSON objects without executing page scripts', () => {
-    const item={status:'published',is_unlisted:false,slug:'dog-saves-child',title:'Dog saves child from flood',description:'The animal rushed to help',published_at:'2026-11-20T18:00:00Z',duration:38,kaltura_mp4_url:'https://ovp.tmz.com/video/dog.mp4'};
-    const html=`<a href="https://www.tmz.com/watch/dog-saves-child/">story</a><script>window.TMZ.actions.loadWidget({}, {}, ${JSON.stringify({results:[item]})}); globalThis.compromised=true;</script>`;
+    const item={status:'published',is_unlisted:false,slug:'actor-film-premiere',title:'Actor celebrates film premiere',description:'Celebrity red carpet interview',published_at:'2026-11-20T18:00:00Z',duration:38,kaltura_mp4_url:'https://ovp.tmz.com/video/dog.mp4'};
+    const html=`<a href="https://www.tmz.com/watch/actor-film-premiere/">story</a><script>window.TMZ.actions.loadWidget({}, {}, ${JSON.stringify({results:[item]})}); globalThis.compromised=true;</script>`;
     const rows=parseSource(source('tmz-watch'),html,now); expect(rows).toHaveLength(1);expect(rows[0].video.url).toBe(item.kaltura_mp4_url);expect((globalThis as Record<string,unknown>).compromised).toBeUndefined();
   });
   it('extracts ET and discards stale entries', () => {
