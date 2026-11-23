@@ -1,23 +1,24 @@
 import { describe, expect, it, vi, afterEach } from 'vitest';
 import { parseSource } from '../src/popculture/parse.js';
 import { POP_SOURCES } from '../src/popculture/sources.js';
+import type { PopSource } from '../src/popculture/types.js';
 import { assessRelevance } from '../src/popculture/relevance.js';
 import { verifyNativeUrl } from '../src/popculture/native.js';
 
 const now = new Date('2026-11-20T19:00:00Z');
-const source = (id: string) => POP_SOURCES.find(s => s.id === id)!;
+const source = (id: string): PopSource => POP_SOURCES.find(s => s.id === id) ?? ({ id, publisher: id, url: 'https://example.com/video', kind: id as PopSource['kind'], defaultCategory: 'news' });
 const next = (v: unknown) => `<script id="__NEXT_DATA__" type="application/json">${JSON.stringify(v)}</script>`;
 
 describe('multitopic video collectors', () => {
   afterEach(() => vi.unstubAllGlobals());
-  it('accepts animals, sport, weather and general news while retaining promo rejection', () => {
-    for (const title of ['Dog rescued from flooded home', 'Incredible tornado crosses highway', 'NBA player wins championship', 'Rocket mission reaches orbit', 'Plane makes emergency landing']) expect(assessRelevance(title, '').ok).toBe(true);
+  it('rejects general news, animals and weather while retaining promo rejection', () => {
+    for (const title of ['Dog rescued from flooded home', 'Incredible tornado crosses highway', 'NBA player wins championship', 'Rocket mission reaches orbit', 'Plane makes emergency landing']) expect(assessRelevance(title, '').ok).toBe(false);
     expect(assessRelevance('Sponsored post shop now for giveaway', '').ok).toBe(false);
   });
   it('extracts NBC embedded metadata while rejecting live, ads and videos over 140 seconds', () => {
     const base = {id:'video-1',liveVideoStatus:'NONE',nativeAd:false,datePublished:'Fri Nov 20 2026 18:00:00 GMT+0000 (UTC)',headline:{primary:'Dog rescued from raging flood'},description:{primary:'A rescue captured on camera'},url:{primary:'https://www.nbcnews.com/video/dog-rescued'},videoAssets:[{assetType:'akamaiMp4',publicUrl:'https://cdn.example.com/dog.mp4',assetDuration:45}]};
     const rows=parseSource(source('nbc-video'),next({items:[base,{...base,url:{primary:'https://www.nbcnews.com/video/live'},liveVideoStatus:'LIVE'},{...base,url:{primary:'https://www.nbcnews.com/video/ad'},nativeAd:true},{...base,url:{primary:'https://www.nbcnews.com/video/long'},videoAssets:[{...base.videoAssets[0],assetDuration:141}]}]}),now);
-    expect(rows).toHaveLength(2); expect(rows.find(x=>x.url.endsWith('dog-rescued'))?.status).toBe('ready'); expect(rows.find(x=>x.url.endsWith('/long'))?.status).toBe('rejected');
+    expect(rows).toHaveLength(2); expect(rows.find(x=>x.url.endsWith('dog-rescued'))?.status).toBe('rejected'); expect(rows.find(x=>x.url.endsWith('/long'))?.status).toBe('rejected');
   });
   it('extracts TMZ JSON objects without executing page scripts', () => {
     const item={status:'published',is_unlisted:false,slug:'dog-saves-child',title:'Dog saves child from flood',description:'The animal rushed to help',published_at:'2026-11-20T18:00:00Z',duration:38,kaltura_mp4_url:'https://ovp.tmz.com/video/dog.mp4'};

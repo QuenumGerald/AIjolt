@@ -3,6 +3,7 @@ import { assessVideo } from './video.js';
 import { verifyNativeUrl } from './native.js';
 import { renderKliegMontage } from './montage.js';
 import { formatPost } from './posts.js';
+import { assessRelevance } from './relevance.js';
 import { popConfig, publishGate } from './config.js';
 import { lastPublishAt, listQueue, markAttempt, markFailed, markQueued, openPopDb, recentPublishCount } from './store.js';
 import type { StoredItem } from './store.js';
@@ -73,9 +74,20 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   }
   let sent = 0;
   for (const item of ready) {
+    // Revalidate legacy queued content against the current editorial policy.
+    // An old score/category must never bypass the entertainment-only gate.
+    const relevance = assessRelevance(item.title, item.summary);
+    if (!relevance.ok) {
+      if (!forceDryRun && !config.dryRun) {
+        db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'")
+          .run(`editorial: ${relevance.reason}`, item.id);
+      }
+      logs.push(`skipped #${item.id}: ${relevance.reason}`);
+      continue;
+    }
     // Reformat at send-time so pre-existing ready rows are guaranteed to use
     // the same category-specific #Klieg tags as newly collected stories.
-    const text = formatPost(item.title, item.category);
+    const text = formatPost(item.title, relevance.category);
     if (!text) {
       db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'")
         .run('title leaves no space for #Klieg', item.id);
