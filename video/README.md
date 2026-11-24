@@ -123,3 +123,7 @@ The Euronews Culture RSS feed is included in the normal collector. Recent articl
 ### Playwright browser inspection (24 November 2026)
 
 `node scripts/klieg-browser-video.mjs` uses the installed Google Chrome with `playwright-core` to inspect five publisher video/culture landing pages, capture diagnostic screenshots, and record video element/network metadata in `data/experiments/playwright-video/report.json`. This is a research crawler, not a post queue. The browser probe does not bypass access controls; a 403 is reported as a 403. Run `--record` only for approved hosts explicitly configured in `KLIEG_RECORD_ALLOWED_HOSTS`, after checking rights to reproduce the footage. Playwright records a short browser video and FFmpeg converts it to MP4; this does not grant redistribution rights or guarantee an actual playable clip. The systemd timer refreshes diagnostics every six hours.
+
+### Extended Playwright audit (24 November 2026)
+
+The audit now visits up to 24 independent entertainment/gaming/music/film sources per cycle and records a short diagnostic browser session by default, with screenshots, page/video metadata and bounded MP4 previews. Use `--no-record` to disable screen recording. Captures are retained for at most two days, and source failures are reported rather than bypassed. This **does not publish** captured third-party video; posting requires verified reuse permission and editorial suitability. These are landing-page diagnostics, not a guaranteed stream of playable or licensed clips.
