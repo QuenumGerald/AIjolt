@@ -134,6 +134,20 @@ describe('parsing verified feed shapes', () => {
 });
 
 describe('editorial and queue', () => {
+  it('ranks concrete shareable pop-culture moments above generic hype', () => {
+    const live = assessRelevance('Singer surprises concert crowd with live duet', '');
+    const generic = assessRelevance('Singer announces new concert', '');
+    const clickbait = assessRelevance('Shocking concert moment: you won’t believe what happened', '');
+    expect(live.ok).toBe(true);
+    expect(generic.ok).toBe(true);
+    expect(clickbait.ok).toBe(true);
+    if (live.ok && generic.ok && clickbait.ok) {
+      expect(live.score).toBeGreaterThan(generic.score);
+      expect(generic.score).toBeGreaterThan(clickbait.score);
+    }
+    expect(assessRelevance('Shocking parliament announcement', '').ok).toBe(false);
+  });
+
   it('drops rumor and promo headlines', () => {
     expect(assessRelevance('Rumor: Marvel recasts Iron Man', '').ok).toBe(false);
     expect(assessRelevance('Where to stream the top 10 movies this weekend', '').ok).toBe(false);

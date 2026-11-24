@@ -20,6 +20,12 @@ const ENTERTAINMENT_CONTEXT = /\b(movie|film|cinema|series|actor|actress|singer|
 const RUMOR = /\b(rumou?rs?|speculation|unconfirmed|sources say|sources familiar|insider claims?|gossip)\b/i;
 const PROMO = /\b(giveaway|sweepstakes|shop (?:the |now)|coupon|discount code|sponsored post|where to (?:buy|stream)|top\s+\d+\b|best .{0,40} to (?:watch|stream))\b/i;
 
+// Nox-inspired selection: reward specific, timely entertainment moments rather
+// than vague hype. These are ranking signals, not forecasts of impressions.
+// Never allow generic sensational words to turn unrelated news into pop culture.
+const SHAREABLE_MOMENT = /\b(?:surprises?|surprised|unexpected|reunites?|reunited|duets?|performs?|performed|live performance|standing ovation|crowd sings?|first look|new trailer|official trailer|behind the scenes|cosplay|record[- ]breaking|world premiere|gameplay reveal|debut performance)\b/i;
+const VAGUE_HYPE = /\b(?:you won.t believe|must see|shocking|insane|mind[- ]blowing|goes viral|internet explodes|fans are freaking out)\b/i;
+
 export function assessRelevance(title: string, summary: string, hinted?: Category): { ok: true; category: Category; score: number } | { ok: false; reason: string } {
   const text = `${title} ${summary}`;
   if (HARD_NEWS.test(title) && !ENTERTAINMENT_CONTEXT.test(title)) return { ok: false, reason: 'general news outside Klieg entertainment theme' };
@@ -35,6 +41,8 @@ export function assessRelevance(title: string, summary: string, hinted?: Categor
   if (matched === 'music') score += 12;
   if (matched === 'film' || matched === 'series') score += 8;
   if (/\b(announces?|announced|unveils?|premieres?|releases?|released|debuts?|wins?|nominated|cast|joins?)\b/i.test(text)) score += 8;
+  if (SHAREABLE_MOMENT.test(title)) score += 12;
+  if (VAGUE_HYPE.test(title)) score -= 12;
   return { ok: true, category: matched, score };
 }
 
