@@ -8,6 +8,15 @@ const story = (title: string, publisher = 'NPR', url?: string, publishedAt = '20
 });
 
 describe('Mevric US-focused editorial filter', () => {
+  it('prefers confirmed developments over speculative routine headlines without changing eligibility', () => {
+    const confirmed = assessEditorialStory(story('U.S. Congress passes new federal energy bill'));
+    const discussion = assessEditorialStory(story('U.S. Congress debates new federal energy bill'));
+    expect(confirmed.eligible).toBe(true);
+    expect(discussion.eligible).toBe(true);
+    expect(confirmed.priority).toBeGreaterThan(discussion.priority);
+    expect(assessEditorialStory(story('New restaurant opens in Texas')).eligible).toBe(false);
+  });
+
   it('prioritizes American political and nationally significant news regardless of outlet', () => {
     const election = assessEditorialStory(story('Democrats gain control of the U.S. Senate', 'BBC'));
     const economy = assessEditorialStory(story('Dow plunges as new U.S. tariffs spark Wall Street selloff', 'ABC News'));

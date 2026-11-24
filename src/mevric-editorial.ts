@@ -40,6 +40,15 @@ export function isHotUsAlert(story: EditorialStory, now = Date.now()): boolean {
   return !lowValueFormat.test(title) && !lowValueSubject.test(title) && !minorCrime.test(title) && !excluded.test(title);
 }
 
+/** Nox-inspired: prioritize concrete, attributable developments over vague discussion.
+ * Never infer an outcome or add facts that are absent from the source headline.
+ * Does not override exclusions, source verification or breaking-news handling. */
+const concreteDevelopment = /\b(?:passes?|passed|signs?|signed|approves?|approved|rejects?|rejected|blocks?|blocked|orders?|ordered|rules?|ruled|overturns?|overturned|confirms?|confirmed|announces?|announced|releases?|released|resigns?|resigned|reaches? agreement|agrees? to|launches?|launched|shuts? down|shut down|recalls?|recalled|files? lawsuit|sues?|sued)\b/i;
+const vagueDevelopment = /\b(?:could|might|may|possibly|potentially|considering|weighing|debate|discuss(?:es|ed|ing)?|plans?|proposes?|proposed|expected to|likely to)\b/i;
+function concreteNewsBonus(title: string): number {
+  return concreteDevelopment.test(title) && !vagueDevelopment.test(title) ? 12 : 0;
+}
+
 /** Rank original trusted headlines, with US emergency stories preempting routine updates. */
 export function assessEditorialStory(story: EditorialStory): EditorialAssessment {
   const title=story.title.trim();
@@ -52,14 +61,14 @@ export function assessEditorialStory(story: EditorialStory): EditorialAssessment
     return {eligible:true,priority:usNews.test(title) ? (harm ? 205 : 185) : (harm ? 130 : 115),reason:'significant_event'};
   }
   if (deathPerson.test(title)) return {eligible:true,priority:120,reason:'person_death'};
-  if (usNews.test(title) && usPolitics.test(title)) return {eligible:true,priority:125,reason:'us_politics'};
-  if (usNews.test(title) && generalNews.test(title)) return {eligible:true,priority:110,reason:'us_national_news'};
+  if (usNews.test(title) && usPolitics.test(title)) return {eligible:true,priority:125+concreteNewsBonus(title),reason:'us_politics'};
+  if (usNews.test(title) && generalNews.test(title)) return {eligible:true,priority:110+concreteNewsBonus(title),reason:'us_national_news'};
   // Merely naming a US city/state is NOT newsworthiness: a hotel contest,
   // lifestyle promotion or a neighborhood celebration must not fill slots.
   if (usNews.test(title)) return {eligible:false,priority:0,reason:'us_local_without_national_significance'};
   if (/\blocal elections?\b/i.test(title)) return {eligible:false,priority:0,reason:'foreign_local_news'};
-  if (majorEvent.test(title) && generalNews.test(title)) return {eligible:true,priority:75,reason:'major_world_news'};
-  if (generalNews.test(title)) return {eligible:true,priority:50,reason:'world_news'};
+  if (majorEvent.test(title) && generalNews.test(title)) return {eligible:true,priority:75+concreteNewsBonus(title),reason:'major_world_news'};
+  if (generalNews.test(title)) return {eligible:true,priority:50+concreteNewsBonus(title),reason:'world_news'};
   return {eligible:false,priority:0,reason:'low_priority_or_off_topic'};
 }
 
