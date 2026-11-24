@@ -115,3 +115,7 @@ Exécuter `python3 scripts/commons-engagement-shortlist.py` depuis `/opt/klieg` 
 `scripts/commons-freshness.py` vérifie les nouveaux fichiers vidéo de sept catégories liées au divertissement, sur une fenêtre glissante de 30 jours. Le filtre de découverte est volontairement conservateur (1–65 Mo, licence déclarée CC0/domaine public, HTTPS) ; il ne garantit pas qu'une vidéo soit pertinente ni réutilisable sans vérification. Résultat : `data/experiments/commons-freshness.json`. Un timer dédié exécute cet audit une fois par jour, **sans télécharger, mettre en file ni publier** les candidats. Il sert à mesurer la réalité du renouvellement plutôt qu'à prétendre que le stock historique est une source quotidienne.
 
 Le nettoyage des fichiers MP4 publiés ne journalise plus une suppression lorsque le fichier est déjà absent (correction des faux messages répétés lors de chaque collecte).
+
+### Euronews Culture RSS discovery
+
+The Euronews Culture RSS feed is included in the normal collector. Recent articles are inspected for native video metadata, including MP4 duration. Discovered publisher clips remain **rejected (not publishable)** until reuse rights are confirmed. A Playwright screen capture or recording is a technical fallback for content we are authorized to reproduce, **not** a way to obtain redistribution rights. The source is supplementary; no single feed can guarantee a daily supply of publishable pop-culture videos.

@@ -5,6 +5,7 @@ import type { PopSource } from './types.js';
  * TMZ currently denies this server (HTTP 403); do not bypass its access controls. */
 export const POP_SOURCES: PopSource[] = [
   { id: 'et-video', publisher: 'Entertainment Tonight', url: 'https://www.etonline.com/recent/video', kind: 'et-video', defaultCategory: 'news' },
+  { id: 'euronews-culture-video', publisher: 'Euronews Culture', url: 'https://www.euronews.com/rss?level=vertical&name=culture', kind: 'rss', defaultCategory: 'film' },
   { id: 'variety-video', publisher: 'Variety', url: 'https://variety.com/v/video/feed/', kind: 'rss' },
   { id: 'deadline-video', publisher: 'Deadline', url: 'https://deadline.com/video/feed/', kind: 'rss' },
   { id: 'consequence-video', publisher: 'Consequence', url: 'https://consequence.net/video/feed/', kind: 'rss' },

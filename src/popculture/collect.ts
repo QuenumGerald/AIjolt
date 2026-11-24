@@ -4,6 +4,7 @@ import { extractArticleVideo } from './article.js';
 import { materializeDirectExcerpt, needsDirectExcerpt } from './native.js';
 import { popConfig } from './config.js';
 import { parseSource } from './parse.js';
+import { parseVideoPage } from './video-sources.js';
 import { POP_SOURCES } from './sources.js';
 import { logRun, openPopDb, rowToItem, upsertItem } from './store.js';
 import { assessVideo, isPublicHttpsUrl, jwMediaId, pickJwMp4 } from './video.js';
@@ -91,8 +92,24 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   const pageCandidates = drafts.filter(item => /-(video|trailers|interviews)$/.test(item.source) && item.video.kind === 'none' && item.postText && item.rejection === item.video.rejection).slice(0, 40);
   await Promise.all(pageCandidates.map(item => pageLimit(async () => {
     try {
-      const video = extractArticleVideo(await fetchText(item.url));
-      if (video) { item.video = video; item.rejection = video.rejection; }
+      const html = await fetchText(item.url);
+      if (item.source === 'euronews-culture-video') {
+        const videos = parseVideoPage({
+          id: item.source, publisher: item.publisher, url: item.url,
+          kind: 'euronews-video', defaultCategory: item.category,
+        }, html, now, config.maxAgeHours, config.minScore);
+        const matched = videos.find(candidate => candidate.url === item.url && candidate.video.kind === 'direct-file');
+        if (matched) {
+          item.video = matched.video;
+          // Discovery is enabled, republication is not: direct MP4 accessibility
+          // does not grant rights to upload a publisher's footage to X.
+          item.rejection = 'publisher video: redistribution rights not verified';
+          item.status = 'rejected';
+        }
+      } else {
+        const video = extractArticleVideo(html);
+        if (video) { item.video = video; item.rejection = video.rejection; }
+      }
     } catch (error) { failures.push(`${item.source} article: ${error instanceof Error ? error.message : String(error)}`); }
   })));
   let directClipAttempts = 0;
@@ -133,7 +150,10 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
         catch (error) { failures.push(`${item.source} excerpt: ${error instanceof Error ? error.message.split('\n')[0] : String(error)}`); }
       }
     }
-    if (eligible) item = { ...item, status: item.video.attach ? 'ready' : 'rejected', rejection: item.video.attach ? null : item.video.rejection };
+    // A discoverable third-party video is not automatically redistributable.
+    if (item.source === 'euronews-culture-video') {
+      item = { ...item, status: 'rejected', rejection: 'publisher video: redistribution rights not verified' };
+    } else if (eligible) item = { ...item, status: item.video.attach ? 'ready' : 'rejected', rejection: item.video.attach ? null : item.video.rejection };
     // Never persist a ready video that cannot actually be attached.
     if (item.status === 'ready' && !item.video.attach) {
       item = { ...item, status: 'rejected', rejection: item.video.rejection || 'native video missing or invalid' };
