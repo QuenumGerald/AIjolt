@@ -109,3 +109,9 @@ Les chaînes YouTube et KinoCheck (liens YouTube uniquement) sont retirés des s
 ### Wikimedia Commons — expérimentation de volume et d'intérêt (novembre 2026)
 
 Exécuter `python3 scripts/commons-engagement-shortlist.py` depuis `/opt/klieg` pour rechercher des vidéos Wikimedia Commons (concerts, festivals, performances, etc.) et classer les candidates selon des **heuristiques** de fraîcheur, de sujet et de taille. Le rapport est écrit dans `data/experiments/commons-engagement-shortlist.json`. Les scores ne sont **pas** des prévisions de vues : les tendances, l'accroche, le montage et les performances réelles restent à valider. Les vidéos ne sont pas ajoutées à la file de publication automatiquement. Les métadonnées de licence sont conservées pour examen ultérieur. Le prototype de conversion WebM → MP4 et son rapport sont dans `data/experiments/commons-conversion/` ; ne pas confondre tests techniques et droits de republication.
+
+### Audit quotidien du renouvellement Wikimedia Commons (24 novembre 2026)
+
+`scripts/commons-freshness.py` vérifie les nouveaux fichiers vidéo de sept catégories liées au divertissement, sur une fenêtre glissante de 30 jours. Le filtre de découverte est volontairement conservateur (1–65 Mo, licence déclarée CC0/domaine public, HTTPS) ; il ne garantit pas qu'une vidéo soit pertinente ni réutilisable sans vérification. Résultat : `data/experiments/commons-freshness.json`. Un timer dédié exécute cet audit une fois par jour, **sans télécharger, mettre en file ni publier** les candidats. Il sert à mesurer la réalité du renouvellement plutôt qu'à prétendre que le stock historique est une source quotidienne.
+
+Le nettoyage des fichiers MP4 publiés ne journalise plus une suppression lorsque le fichier est déjà absent (correction des faux messages répétés lors de chaque collecte).

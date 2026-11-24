@@ -1,4 +1,4 @@
-import { rm } from 'node:fs/promises';
+import { rm, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import type Database from 'better-sqlite3';
 import { bufferGetPostPayload, classifyBufferPostResponse } from '../buffer.js';
@@ -39,7 +39,10 @@ export async function reconcilePop(db: Database.Database, config: PopConfig): Pr
     const inUse = db.prepare("SELECT 1 FROM pop_publications WHERE video_url=? AND status IN ('queued','attempted') LIMIT 1").get(row.video_url);
     const waiting = db.prepare("SELECT 1 FROM pop_items WHERE video_url=? AND status IN ('ready','attempted','queued') LIMIT 1").get(row.video_url);
     if (inUse || waiting) continue;
-    try { await rm(path, {force:true}); logs.push(`deleted published video for #${row.item_id}`); }
+    // rm(force:true) succeeds even when the file is already gone: do not
+    // generate a fake deletion/failure on every collection cycle.
+    try { await stat(path); } catch { continue; }
+    try { await rm(path, {force:true}); }
     catch { logs.push(`could not delete published video for #${row.item_id}; will retry`); }
   }
   return logs;
