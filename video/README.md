@@ -119,3 +119,7 @@ Le nettoyage des fichiers MP4 publiés ne journalise plus une suppression lorsqu
 ### Euronews Culture RSS discovery
 
 The Euronews Culture RSS feed is included in the normal collector. Recent articles are inspected for native video metadata, including MP4 duration. Discovered publisher clips remain **rejected (not publishable)** until reuse rights are confirmed. A Playwright screen capture or recording is a technical fallback for content we are authorized to reproduce, **not** a way to obtain redistribution rights. The source is supplementary; no single feed can guarantee a daily supply of publishable pop-culture videos.
+
+### Playwright browser inspection (24 November 2026)
+
+`node scripts/klieg-browser-video.mjs` uses the installed Google Chrome with `playwright-core` to inspect five publisher video/culture landing pages, capture diagnostic screenshots, and record video element/network metadata in `data/experiments/playwright-video/report.json`. This is a research crawler, not a post queue. The browser probe does not bypass access controls; a 403 is reported as a 403. Run `--record` only for approved hosts explicitly configured in `KLIEG_RECORD_ALLOWED_HOSTS`, after checking rights to reproduce the footage. Playwright records a short browser video and FFmpeg converts it to MP4; this does not grant redistribution rights or guarantee an actual playable clip. The systemd timer refreshes diagnostics every six hours.
