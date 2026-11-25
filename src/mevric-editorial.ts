@@ -68,7 +68,7 @@ export function assessEditorialStory(story: EditorialStory): EditorialAssessment
   if (usNews.test(title)) return {eligible:false,priority:0,reason:'us_local_without_national_significance'};
   if (/\blocal elections?\b/i.test(title)) return {eligible:false,priority:0,reason:'foreign_local_news'};
   if (majorEvent.test(title) && generalNews.test(title)) return {eligible:true,priority:75+concreteNewsBonus(title),reason:'major_world_news'};
-  if (generalNews.test(title)) return {eligible:true,priority:50+concreteNewsBonus(title),reason:'world_news'};
+  if (generalNews.test(title) && concreteNewsBonus(title) > 0) return {eligible:true,priority:50+concreteNewsBonus(title),reason:'world_news'};
   return {eligible:false,priority:0,reason:'low_priority_or_off_topic'};
 }
 
