@@ -1,10 +1,11 @@
 import pLimit from 'p-limit';
 import { reconcilePop } from './reconcile.js';
 import { extractArticleVideo } from './article.js';
-import { materializeDirectExcerpt, needsDirectExcerpt } from './native.js';
+import { materializeDirectExcerpt, needsDirectExcerpt, verifyNativeUrl } from './native.js';
 import { popConfig } from './config.js';
 import { parseSource } from './parse.js';
 import { parseVideoPage } from './video-sources.js';
+import { collectPeerTube } from './peertube.js';
 import { POP_SOURCES } from './sources.js';
 import { logRun, openPopDb, rowToItem, upsertItem } from './store.js';
 import { assessVideo, isPublicHttpsUrl, jwMediaId, pickJwMp4 } from './video.js';
@@ -158,6 +159,9 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
     if (item.status === 'ready') ready += 1;
     if (item.video.attach) withVideo += 1;
   }
+  const peer = await collectPeerTube(fetchText, verifyNativeUrl, now, config.maxAgeHours, config.minScore);
+  failures.push(...peer.failures);
+  for (const item of peer.items) { upsertItem(db, item); collected++; }
   // Report actual queue size, not feed-level eligible rows that are already published.
   ready = (db.prepare("SELECT COUNT(*) AS n FROM pop_items WHERE status='ready'").get() as {n:number}).n;
   withVideo = (db.prepare("SELECT COUNT(*) AS n FROM pop_items WHERE status='ready' AND video_attach=1").get() as {n:number}).n;

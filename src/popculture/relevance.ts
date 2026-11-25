@@ -5,11 +5,11 @@ import type { Category } from './types.js';
 const CATEGORIES: Array<[Category, RegExp]> = [
   ['trailer', /\b(trailers?|teasers?|sneak peek|official clip|first look at (?:the )?(?:film|movie|series|show))\b/i],
   ['awards', /\b(grammys?|oscars?|emmys?|golden globes?|bafta|tony awards?|award ceremony)\b/i],
-  ['music', /\b(albums?|singles?|concerts?|songs?|soundtracks?|rappers?|singers?|bands?|billboard|grammy|music video|music festival|world tour|stadium tour|tour dates)\b/i],
+  ['music', /(?:^Music:|\b(albums?|singles?|concerts?|songs?|soundtracks?|rappers?|singers?|bands?|billboard|grammy|music video|music festival|world tour|stadium tour|tour dates)\b)/i],
   ['series', /\b(tv series|streaming series|new series|season (?:[0-9]+|finale)|episodes?|showrunner|hbo|netflix|disney\+|hulu|prime video|anime)\b/i],
   ['film', /\b(films?|movies?|box office|cast|starring|sequel|franchise|cinema|a24|marvel|pixar)\b/i],
   ['celebrity', /\b(red carpet|actors?|actresses?|celebrit(?:y|ies)|hollywood|premiere|pop star|influencers?|content creators?|streamers?|tiktokers?)\b/i],
-  ['viral', /\b(viral (?:video|moment|clip|dance|challenge|meme)|internet meme|tiktok trend|tiktok (?:dance )?challenge|funny (?:video|clip)|prank|cosplay|gaming|video games?|esports?|speedrun|streamer)\b/i],
+  ['viral', /(?:\b(viral (?:video|moment|clip|dance|challenge|meme)|internet meme|tiktok trend|tiktok (?:dance )?challenge|funny (?:video|clip)|prank|cosplay|gaming|video games?|esports?|speedrun|streamer)\b|imprim[ée] en 3d|avalanche de sable|ombres projetées|onde pendulaire|patinage des canards|vol synchronisé|animaux drôles|chiens drôles|chiensdrôles|ratons laveurs|chauves-souris blanches|création artistique|sapin de noël|machines industrielles nettoient|skateboard|funny animation)/i],
 ];
 
 // Reject broad hard-news subjects even when their headlines contain "viral",
@@ -28,7 +28,7 @@ const VAGUE_HYPE = /\b(?:you won.t believe|must see|shocking|insane|mind[- ]blow
 
 export function assessRelevance(title: string, summary: string, hinted?: Category): { ok: true; category: Category; score: number } | { ok: false; reason: string } {
   const text = `${title} ${summary}`;
-  if (HARD_NEWS.test(title)) return { ok: false, reason: 'general news outside Klieg entertainment theme' };
+  if (HARD_NEWS.test(title) || /\b(?:accidentellement|pétards|chalumeau|fusillade|guerre|attentat|police|président|élections?|gouvernement|arme à feu|concours de tir|course de taureaux|jeu du fouet)\b/i.test(title)) return { ok: false, reason: 'general news outside Klieg entertainment theme' };
   if (RUMOR.test(text)) return { ok: false, reason: 'unconfirmed rumor language' };
   if (PROMO.test(title)) return { ok: false, reason: 'listicle or promotional headline' };
   const matched = CATEGORIES.find(([, pattern]) => pattern.test(title))?.[0]
