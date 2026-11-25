@@ -28,7 +28,7 @@ const VAGUE_HYPE = /\b(?:you won.t believe|must see|shocking|insane|mind[- ]blow
 
 export function assessRelevance(title: string, summary: string, hinted?: Category): { ok: true; category: Category; score: number } | { ok: false; reason: string } {
   const text = `${title} ${summary}`;
-  if (HARD_NEWS.test(title) && !ENTERTAINMENT_CONTEXT.test(title)) return { ok: false, reason: 'general news outside Klieg entertainment theme' };
+  if (HARD_NEWS.test(title)) return { ok: false, reason: 'general news outside Klieg entertainment theme' };
   if (RUMOR.test(text)) return { ok: false, reason: 'unconfirmed rumor language' };
   if (PROMO.test(title)) return { ok: false, reason: 'listicle or promotional headline' };
   const matched = CATEGORIES.find(([, pattern]) => pattern.test(title))?.[0]
@@ -36,12 +36,12 @@ export function assessRelevance(title: string, summary: string, hinted?: Categor
   if (!matched) return { ok: false, reason: 'no explicit pop culture or entertainment signal' };
   if (HARD_NEWS.test(text) && !ENTERTAINMENT_CONTEXT.test(title)) return { ok: false, reason: 'general news outside Klieg entertainment theme' };
   let score = 48;
-  if (matched === 'trailer') score += 18;
+  if (matched === 'trailer') score -= 24;
   if (matched === 'awards') score += 16;
   if (matched === 'music') score += 12;
   if (matched === 'film' || matched === 'series') score += 8;
   if (/\b(announces?|announced|unveils?|premieres?|releases?|released|debuts?|wins?|nominated|cast|joins?)\b/i.test(text)) score += 8;
-  if (SHAREABLE_MOMENT.test(title)) score += 12;
+  if (matched !== 'trailer' && SHAREABLE_MOMENT.test(title)) score += 12;
   if (VAGUE_HYPE.test(title)) score -= 12;
   return { ok: true, category: matched, score };
 }

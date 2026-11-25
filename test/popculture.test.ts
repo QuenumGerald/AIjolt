@@ -154,13 +154,23 @@ describe('editorial and queue', () => {
     expect(assessRelevance('Taylor Swift announces 2027 stadium tour', 'The singer unveiled new dates.').ok).toBe(true);
   });
 
-  it('publishes original headline and relevant hashtags, with no article URL', () => {
+  it('publishes factual headline with a relevant video hook and hashtags, with no article URL', () => {
     const text = formatPost('Taylor Swift announces 2027 stadium tour', 'music');
-    expect(text).toBe('Taylor Swift announces 2027 stadium tour\n#Music #Klieg');
+    expect(text).toBe('Taylor Swift announces 2027 stadium tour\n\nWould you go?\n#Music #Klieg');
     expect(formatPost('A major new discovery by NASA', 'science')).toContain('#Science #Klieg');
     expect(formatPost('A dramatic rescue caught on camera', 'weather')).toContain('#Weather #Klieg');
     expect(formatPost('A new football final', 'sport')).toContain('#Sports #Klieg');
     expect(text).not.toContain('https://');
+  });
+
+  it('uses specific performance hooks and avoids hooks on sensitive or unrelated stories', () => {
+    expect(formatPost('Singer performs live at festival', 'music')).toContain('How would you rate this performance?');
+    expect(formatPost('Singer performs tribute at concert', 'music')).not.toContain('?');
+    expect(formatPost('Actor announces a new project', 'celebrity')).not.toContain('?');
+    expect(formatPost('New film trailer', 'trailer')).toContain('Would you watch it?');
+    const long = 'Singer performs ' + 'a'.repeat(240);
+    expect(formatPost(long, 'music')).toContain(long);
+    expect(Array.from(formatPost(long, 'music')!).length).toBeLessThanOrEqual(280);
   });
 
   it('keeps full titles and a Klieg hashtag within 280 characters', () => {
