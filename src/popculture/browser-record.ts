@@ -18,9 +18,9 @@ export async function recordPlayer(page: Page, url: string, config: PopConfig) {
     if (videos.length !== 1) return null;
     const v = videos[0] as HTMLVideoElement & {captureStream?:()=>MediaStream};
     if (!v.captureStream || !MediaRecorder.isTypeSupported('video/webm')) return null;
-    v.muted=true; await v.play();
+    v.muted=false; v.volume=1; await v.play();
     const stream=v.captureStream();
-    if (!stream.getVideoTracks().length) return null;
+    if (!stream.getVideoTracks().length || !stream.getAudioTracks().length) return null;
     const recorder=new MediaRecorder(stream,{mimeType:'video/webm',videoBitsPerSecond:1500000});
     const chunks: Blob[]=[]; const start=v.currentTime;
     const result=await new Promise<string|null>(resolve=>{
@@ -42,6 +42,10 @@ export async function recordPlayer(page: Page, url: string, config: PopConfig) {
     await exec('ffmpeg',['-nostdin','-v','error','-y','-i',input,'-vf','scale=-2:720','-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac','-movflags','+faststart',output],{timeout:45000});
     const probe=JSON.parse((await exec('ffprobe',['-v','error','-show_entries','format=duration:stream=codec_type,codec_name','-of','json',output],{timeout:10000})).stdout);
     if(!probe.streams?.some((s:{codec_type:string;codec_name:string})=>s.codec_type==='video'&&s.codec_name==='h264') || Number(probe.format?.duration)<4) throw Error('invalid recording');
+    if(!probe.streams?.some((s:{codec_type:string;codec_name:string})=>s.codec_type==='audio'&&s.codec_name==='aac')) throw Error('missing audio');
+    const volume=await exec('ffmpeg',['-nostdin','-hide_banner','-i',output,'-af','volumedetect','-vn','-f','null','-'],{timeout:15000});
+    const peak=Number(volume.stderr.match(/max_volume:\s*(-?[\d.]+) dB/)?.[1]);
+    if(!Number.isFinite(peak)||peak < -55) throw Error('silent recording');
     const result=assessVideo({url:new URL(`${key}.mp4`,config.mediaBaseUrl.replace(/\/?$/,'/')).href,mime:'video/mp4',bytes:(await stat(output)).size,durationSeconds:Number(probe.format.duration)});
     if(!result.attach)throw Error(result.rejection);
     await chmod(output,0o644);await verifyNativeUrl(result.url!);return result;

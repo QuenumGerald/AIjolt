@@ -118,7 +118,7 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   let recordings = 0;
   if (browserCandidates.length) {
     try {
-      const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome', headless:true, args:['--no-sandbox','--disable-dev-shm-usage']});
+      const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome', headless:true, args:['--no-sandbox','--disable-dev-shm-usage','--disable-quic','--autoplay-policy=no-user-gesture-required']});
       try {
         const context = await browser.newContext({serviceWorkers:'block'});
         await context.route('**/*', route => isPublicHttpsUrl(route.request().url()) ? route.continue() : route.abort());

@@ -44,11 +44,14 @@ function videoHook(title: string, category: Category): string | undefined {
 /** Native video caption: factual headline, selective hook, relevant hashtags.
  * Keep article URL in SQLite, never truncate the headline or exceed 280 characters.
  */
-export function formatPost(title: string, category: Category = 'news'): string | null {
+export function formatPost(title: string, category: Category = 'news', summary = ''): string | null {
   const base = cleanTitle(title);
   if (!base) return null;
   const hook = videoHook(base, category);
+  const context = cleanTitle(summary.replace(/<[^>]*>/g,' ').replace(/https?:\/\/\S+/g,''));
+  const extra = context && !context.toLowerCase().includes(base.toLowerCase()) && !base.toLowerCase().includes(context.toLowerCase()) ? context : '';
   const candidates = [
+    ...(extra ? [`${base}\n\n${extra}\n${hook ? hook + '\n' : ''}${TOPIC_TAG[category]} #Klieg`, `${base}\n\n${extra}\n${TOPIC_TAG[category]} #Klieg`] : []),
     ...(hook ? [`${base}\n\n${hook}\n${TOPIC_TAG[category]} #Klieg`] : []),
     `${base}\n${TOPIC_TAG[category]} #Klieg`, `${base}\n#Klieg`,
   ];

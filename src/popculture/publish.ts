@@ -87,7 +87,7 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
     }
     // Reformat at send-time so pre-existing ready rows are guaranteed to use
     // the same category-specific #Klieg tags as newly collected stories.
-    const text = formatPost(item.title, relevance.category);
+    const text = formatPost(item.title, relevance.category, item.summary);
     if (!text) {
       db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'")
         .run('title leaves no space for #Klieg', item.id);

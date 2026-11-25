@@ -70,7 +70,7 @@ export function finish(source: PopSource, input: {
     };
   }
   const score = relevance.score + freshnessScore(input.publishedAt, now, maxAgeHours);
-  const postText = formatPost(title, relevance.category);
+  const postText = formatPost(title, relevance.category, summary);
   if (!postText) {
     return {
       source: source.id, externalId: hash(url), url, title, summary, publisher: source.publisher,

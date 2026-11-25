@@ -66,7 +66,7 @@ export async function collectPeerTube(fetchText: FetchText, verify: VerifyVideo,
         if (!file) continue;
         await verify(file);
         const url = 'https://' + host + '/videos/watch/' + row.uuid;
-        const item = finish(source, {url, title, summary: '', publishedAt: row.publishedAt, videoUrl: file,
+        const item = finish(source, {url, title, summary: typeof detail.description === 'string' ? detail.description : '', publishedAt: row.publishedAt, videoUrl: file,
           videoMime: 'video/mp4', durationSeconds: duration}, now, maxAgeHours, minScore);
         if (item?.status !== 'ready') continue;
         items.push(item); accepted++;
