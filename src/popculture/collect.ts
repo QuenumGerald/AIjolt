@@ -1,3 +1,4 @@
+import { recordPlayer, recordingAllowed } from './browser-record.js';
 import { chromium } from 'playwright-core';
 import pLimit from 'p-limit';
 import { reconcilePop } from './reconcile.js';
@@ -113,7 +114,8 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
     } catch (error) { failures.push(`${item.source} article: ${error instanceof Error ? error.message : String(error)}`); }
   })));
   // Browser fallback: inspect publisher-declared video metadata on rendered article pages.
-  const browserCandidates = pageCandidates.filter(item => !item.video.attach && item.video.kind !== 'youtube-page').slice(0, 12);
+  const browserCandidates = pageCandidates.filter(item => !item.video.attach && item.video.kind !== 'youtube-page').sort((a,b)=>Number(recordingAllowed(b.url))-Number(recordingAllowed(a.url))).slice(0, 12);
+  let recordings = 0;
   if (browserCandidates.length) {
     try {
       const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome', headless:true, args:['--no-sandbox','--disable-dev-shm-usage']});
@@ -130,6 +132,11 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
             if (video?.attach && video.url) {
               await verifyNativeUrl(video.url);
               item.video = video; item.rejection = video.rejection;
+            }
+            if (!item.video.attach && recordings < 3 && recordingAllowed(item.url)) {
+              recordings++;
+              const recorded = await recordPlayer(page,item.url,config);
+              if(recorded) { item.video=recorded; item.rejection=recorded.rejection; }
             }
           } catch (error) { failures.push(`${item.source} browser: ${String(error).slice(0,160)}`); }
           finally { await page.close(); }
