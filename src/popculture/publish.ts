@@ -1,3 +1,4 @@
+import { editorialDecision } from './editorial-ai.js';
 import { reconcilePop } from './reconcile.js';
 import { assessVideo } from './video.js';
 import { verifyNativeUrl } from './native.js';
@@ -66,11 +67,20 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   const logs: string[] = [];
   if (!forceDryRun && !config.dryRun) logs.push(...await reconcilePop(db, config));
   const gate = forceDryRun || config.dryRun || !config.publishEnabled ? { ok: false as const, reason: forceDryRun ? 'forced dry-run' : config.dryRun ? 'POPCULTURE_DRY_RUN is true' : 'POPCULTURE_PUBLISH_ENABLED is not true' } : publishGate();
-  const ready = listQueue(db, 'ready', 50);
+  let ready = listQueue(db, 'ready', 50);
   if (!ready.length) {
     logs.push('no ready posts');
     db.close();
     return logs;
+  }
+  const decisions = new Map<number, Awaited<ReturnType<typeof editorialDecision>>>();
+  if (gate.ok && process.env.POPCULTURE_EDITORIAL_AI === 'true') {
+    if (!canPublishNow(db).ok) { db.close(); return ['publication pacing active']; }
+    for (const item of ready.slice(0,8)) {
+      try { const d=await editorialDecision(db,{title:item.title,summary:item.summary,category:item.category,publisher:item.publisher}); decisions.set(item.id,d); }
+      catch(e) { logs.push('editorial unavailable: '+String(e)); break; }
+    }
+    ready=ready.filter(i=>(decisions.get(i.id)?.score??0)>=70).sort((a,b)=>decisions.get(b.id)!.score-decisions.get(a.id)!.score);
   }
   let sent = 0;
   for (const item of ready) {
@@ -87,7 +97,7 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
     }
     // Reformat at send-time so pre-existing ready rows are guaranteed to use
     // the same category-specific #Klieg tags as newly collected stories.
-    const text = formatPost(item.title, relevance.category, item.summary);
+    const text = decisions.get(item.id)?.caption ?? formatPost(item.title, relevance.category, item.summary);
     if (!text) {
       db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'")
         .run('title leaves no space for #Klieg', item.id);
