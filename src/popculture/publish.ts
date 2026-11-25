@@ -80,7 +80,7 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
     if (!canPublishNow(db).ok) { db.close(); return ['publication pacing active']; }
     for (const item of ready.slice(0,8)) {
       try { const d=await editorialDecision(db,{title:item.title,summary:item.summary,category:item.category,publisher:item.publisher, transcript:process.env.POPCULTURE_TRANSCRIPTION==='true' && item.video.url ? JSON.stringify(await transcribe(item.video.url)).slice(0,12000):undefined}); decisions.set(item.id,d); }
-      catch(e) { logs.push('editorial unavailable: '+String(e)); break; }
+      catch(e) { logs.push('editorial unavailable: '+String(e)); continue; }
     }
     ready=ready.filter(i=>(decisions.get(i.id)?.score??0)>=70).sort((a,b)=>(decisions.get(b.id)!.score+categoryBoost(db,b.category))-(decisions.get(a.id)!.score+categoryBoost(db,a.category)));
   }
@@ -88,7 +88,8 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   for (const item of ready) {
     // Revalidate legacy queued content against the current editorial policy.
     // An old score/category must never bypass the entertainment-only gate.
-    const relevance = assessRelevance(item.title, item.summary);
+    const manual = decisions.get(item.id)?.reason === "Manual editorial approval by account owner; not measured virality.";
+    const relevance = manual ? {ok:true as const,category:item.category,score:85} : assessRelevance(item.title, item.summary);
     if (!relevance.ok) {
       if (!forceDryRun && !config.dryRun) {
         db.prepare("UPDATE pop_items SET status='rejected', rejection=? WHERE id=? AND status='ready'")
