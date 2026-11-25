@@ -30,3 +30,10 @@ describe('Klieg highlight cut selection',()=>{
     expect(popConfig({POPCULTURE_MONTAGE_HIGHLIGHTS_ENABLED:'true'}).montageHighlightsEnabled).toBe(true);
   });
 });
+
+import { bestContinuousRange, parseMotion } from '../src/popculture/highlights.js';
+it('selects the active continuous window rather than arbitrary timeline cuts',()=>{
+ const signals=Array.from({length:60},(_,time)=>({time,motion:time>=30&&time<45?20:1}));
+ expect(bestContinuousRange(60,15,signals)).toEqual({start:30,duration:15});
+ expect(parseMotion('frame:0 pts:0 pts_time:0\nlavfi.signalstats.YDIF=4.2')).toEqual([{time:0,motion:4.2}]);
+});

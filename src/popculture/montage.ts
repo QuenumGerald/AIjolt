@@ -9,11 +9,11 @@ import type { VideoAssessment } from './types.js';
 import { cleanTitle } from './posts.js';
 import { verifyNativeUrl } from './native.js';
 import { assessVideo, isPublicHttpsUrl, X_NATIVE_MAX_BYTES } from './video.js';
-import { chooseHighlightRanges, detectSceneCuts, HIGHLIGHT_VERSION } from './highlights.js';
+import { bestContinuousRange, detectMotion, HIGHLIGHT_VERSION } from './highlights.js';
 
 const exec = promisify(execFile);
 const FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
-const VERSION = 'klieg-montage-v2';
+const VERSION = 'klieg-montage-v3';
 export const MONTAGE_MAX_SECONDS = 60;
 
 /** Lower-third copy only. The original full headline remains in the X post. */
@@ -79,10 +79,9 @@ export async function renderKliegMontage(
       await writeFile(textfile, montageHeadline(headline), {mode:0o600});
       let ranges = [{start:0,duration}];
       if (useHighlights) {
-        // A failed scene scan should not disable the existing safe chronological edit.
-        let cuts: number[] = [];
-        try { cuts = await detectSceneCuts(video.url!, video.durationSeconds!); } catch { /* keep timeline sampling */ }
-        ranges = chooseHighlightRanges(video.durationSeconds!,duration,cuts);
+        const signals = await detectMotion(video.url!, video.durationSeconds!);
+        if (!signals.length) throw new Error('no usable motion analysis');
+        ranges = [bestContinuousRange(video.durationSeconds!,duration,signals)];
       }
       const fadeStart = Math.max(0, duration - 0.75).toFixed(2);
       const filters = [
@@ -130,7 +129,7 @@ export async function renderKliegMontage(
       }
       await exec('ffmpeg', [
         '-nostdin', '-hide_banner', '-loglevel', 'error', '-y',
-        '-rw_timeout', '25000000', '-i', renderInput,
+        '-rw_timeout', '25000000', '-ss', String(ranges.length===1 ? ranges[0].start : 0), '-i', renderInput,
         '-t', String(duration), '-map', '0:v:0', '-map', '0:a?',
         '-vf', filters, '-threads','1', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '26',
         '-maxrate', '3000k', '-bufsize', '6000k', '-pix_fmt', 'yuv420p',
