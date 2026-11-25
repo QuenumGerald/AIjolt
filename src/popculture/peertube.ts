@@ -3,7 +3,7 @@ import { assessRelevance } from './relevance.js';
 import { isPublicHttpsUrl, X_NATIVE_MAX_BYTES } from './video.js';
 import type { DraftItem, PopSource } from './types.js';
 
-export const PEERTUBE_HOSTS = ['koreus.tv', 'peertube.wtf'] as const;
+export const PEERTUBE_HOSTS = ['koreus.tv', 'peertube.wtf', 'tilvids.com', 'framatube.org', 'video.blender.org', 'peertube.tv', 'videos.trom.tf', 'tube.tchncs.de'] as const;
 type Row = Record<string, any>;
 type FetchText = (url: string) => Promise<string>;
 type VerifyVideo = (url: string) => Promise<void>;
@@ -35,7 +35,7 @@ function safeTitle(row: Row): string | null {
 
 /** Video-first discovery: fixed hosts only; no access-control bypass. */
 export async function collectPeerTube(fetchText: FetchText, verify: VerifyVideo, now: Date,
-  maxAgeHours: number, minScore: number): Promise<{items: DraftItem[]; failures: string[]}> {
+  maxAgeHours: number, minScore: number, known: (url: string) => boolean = () => false): Promise<{items: DraftItem[]; failures: string[]}> {
   const items: DraftItem[] = [], failures: string[] = [];
   for (const host of PEERTUBE_HOSTS) {
     const source: PopSource = {id: 'peertube-' + host, publisher: host, url: 'https://' + host, kind: 'json-feed'};
@@ -47,7 +47,7 @@ export async function collectPeerTube(fetchText: FetchText, verify: VerifyVideo,
     const creators = new Map<string, number>();
     let attempts = 0, accepted = 0;
     for (const row of rows) {
-      if (attempts >= 18 || accepted >= 10) break;
+      if (attempts >= 30 || accepted >= 15) break;
       const duration = Number(row.duration), age = now.getTime() - Date.parse(row.publishedAt);
       if (row.nsfw !== false || row.isLocal !== true || row.privacy?.id !== 1 || !Number.isFinite(age)
         || age < -300000 || age > maxAgeHours * 3600000 || duration < .5 || duration > 140
@@ -56,6 +56,7 @@ export async function collectPeerTube(fetchText: FetchText, verify: VerifyVideo,
       if (!title) continue;
       const creator = String(row.account?.id ?? row.channel?.id ?? row.uuid);
       if ((creators.get(creator) ?? 0) >= (host === 'koreus.tv' ? 8 : 2)) continue;
+      if (known('https://' + host + '/videos/watch/' + row.uuid)) continue;
       attempts++;
       try {
         const detail = JSON.parse(await fetchText('https://' + host + '/api/v1/videos/' + row.uuid));

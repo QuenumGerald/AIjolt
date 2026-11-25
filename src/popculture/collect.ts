@@ -1,3 +1,4 @@
+import { chromium } from 'playwright-core';
 import pLimit from 'p-limit';
 import { reconcilePop } from './reconcile.js';
 import { extractArticleVideo } from './article.js';
@@ -90,7 +91,7 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
   let withVideo = 0;
   // Dedicated video feeds often put the actual player only on the article page.
   const pageLimit = pLimit(4);
-  const pageCandidates = drafts.filter(item => /-(video|trailers|interviews)$/.test(item.source) && item.video.kind === 'none' && item.postText && item.rejection === item.video.rejection).slice(0, 40);
+  const pageCandidates = drafts.filter(item => item.video.kind === 'none' && item.postText && item.rejection === item.video.rejection).filter(item => !db.prepare("SELECT 1 FROM pop_items WHERE url=? AND status IN ('published','ready')").get(item.url)).slice(0, 80);
   await Promise.all(pageCandidates.map(item => pageLimit(async () => {
     try {
       const html = await fetchText(item.url);
@@ -111,6 +112,31 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
       }
     } catch (error) { failures.push(`${item.source} article: ${error instanceof Error ? error.message : String(error)}`); }
   })));
+  // Browser fallback: inspect publisher-declared video metadata on rendered article pages.
+  const browserCandidates = pageCandidates.filter(item => !item.video.attach && item.video.kind !== 'youtube-page').slice(0, 12);
+  if (browserCandidates.length) {
+    try {
+      const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome', headless:true, args:['--no-sandbox','--disable-dev-shm-usage']});
+      try {
+        const context = await browser.newContext({serviceWorkers:'block'});
+        await context.route('**/*', route => isPublicHttpsUrl(route.request().url()) ? route.continue() : route.abort());
+        for (const item of browserCandidates) {
+          const page = await context.newPage();
+          try {
+            const response = await page.goto(item.url, {waitUntil:'domcontentloaded',timeout:10000});
+            if (!response?.ok()) continue;
+            await page.waitForTimeout(1000);
+            const video = extractArticleVideo(await page.content());
+            if (video?.attach && video.url) {
+              await verifyNativeUrl(video.url);
+              item.video = video; item.rejection = video.rejection;
+            }
+          } catch (error) { failures.push(`${item.source} browser: ${String(error).slice(0,160)}`); }
+          finally { await page.close(); }
+        }
+      } finally { await browser.close(); }
+    } catch (error) { failures.push(`browser: ${String(error).slice(0,160)}`); }
+  }
   let directClipAttempts = 0;
   // Prefer actual native video sources over text-only articles and embedded players.
   // Preserve editorial quality as the secondary sort key.
@@ -159,7 +185,7 @@ export async function collectPop(now = new Date()): Promise<{ collected: number;
     if (item.status === 'ready') ready += 1;
     if (item.video.attach) withVideo += 1;
   }
-  const peer = await collectPeerTube(fetchText, verifyNativeUrl, now, config.maxAgeHours, config.minScore);
+  const peer = await collectPeerTube(fetchText, verifyNativeUrl, now, config.maxAgeHours, config.minScore, url => Boolean(db.prepare("SELECT 1 FROM pop_items WHERE url=? AND status IN ('published','ready')").get(url)));
   failures.push(...peer.failures);
   for (const item of peer.items) { upsertItem(db, item); collected++; }
   // Report actual queue size, not feed-level eligible rows that are already published.
