@@ -1,3 +1,5 @@
+import { categoryBoost } from './learning.js';
+import { transcribe } from './transcription.js';
 import { editorialDecision } from './editorial-ai.js';
 import { reconcilePop } from './reconcile.js';
 import { assessVideo } from './video.js';
@@ -77,10 +79,10 @@ export async function publishPop(forceDryRun = false): Promise<string[]> {
   if (gate.ok && process.env.POPCULTURE_EDITORIAL_AI === 'true') {
     if (!canPublishNow(db).ok) { db.close(); return ['publication pacing active']; }
     for (const item of ready.slice(0,8)) {
-      try { const d=await editorialDecision(db,{title:item.title,summary:item.summary,category:item.category,publisher:item.publisher}); decisions.set(item.id,d); }
+      try { const d=await editorialDecision(db,{title:item.title,summary:item.summary,category:item.category,publisher:item.publisher, transcript:process.env.POPCULTURE_TRANSCRIPTION==='true' && item.video.url ? JSON.stringify(await transcribe(item.video.url)).slice(0,12000):undefined}); decisions.set(item.id,d); }
       catch(e) { logs.push('editorial unavailable: '+String(e)); break; }
     }
-    ready=ready.filter(i=>(decisions.get(i.id)?.score??0)>=70).sort((a,b)=>decisions.get(b.id)!.score-decisions.get(a.id)!.score);
+    ready=ready.filter(i=>(decisions.get(i.id)?.score??0)>=70).sort((a,b)=>(decisions.get(b.id)!.score+categoryBoost(db,b.category))-(decisions.get(a.id)!.score+categoryBoost(db,a.category)));
   }
   let sent = 0;
   for (const item of ready) {

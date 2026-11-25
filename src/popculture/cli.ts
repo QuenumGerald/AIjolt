@@ -1,3 +1,5 @@
+import { collectMetrics,initLearning } from './learning.js';
+import { openPopDb } from './store.js';
 import { spawnSync } from 'node:child_process';
 import { POP_SOURCES } from './sources.js';
 import { collectPop } from './collect.js';
@@ -33,3 +35,6 @@ export function popDoctor(): void {
   const gate = publishGate();
   console.log(gate.ok ? `channel ${gate.channelId}` : `publish blocked: ${gate.reason}`);
 }
+
+export async function popMetrics(){const db=openPopDb();try{if(!process.env.POPCULTURE_X_BEARER_TOKEN)throw Error('X metrics credential not configured');console.log('metrics saved: '+await collectMetrics(db,process.env.POPCULTURE_X_BEARER_TOKEN));}finally{db.close();}}
+export function popLinkX(item:string,id:string){if(!/^\d+$/.test(id)||!/^\d+$/.test(item))throw Error('numeric IDs required');const db=openPopDb();try{initLearning(db);db.prepare('INSERT OR REPLACE INTO pop_x_ids VALUES (?,?)').run(Number(item),id);}finally{db.close();}}
