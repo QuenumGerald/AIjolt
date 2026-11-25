@@ -13,7 +13,7 @@ import { bestContinuousRange, detectMotion, HIGHLIGHT_VERSION } from './highligh
 
 const exec = promisify(execFile);
 const FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
-const VERSION = 'klieg-montage-v3';
+const VERSION = 'klieg-montage-v4';
 export const MONTAGE_MAX_SECONDS = 60;
 
 /** Lower-third copy only. The original full headline remains in the X post. */
@@ -84,13 +84,19 @@ export async function renderKliegMontage(
         ranges = [bestContinuousRange(video.durationSeconds!,duration,signals)];
       }
       const fadeStart = Math.max(0, duration - 0.75).toFixed(2);
+      const geometry = await exec('ffprobe',['-v','error','-select_streams','v:0','-show_entries','stream=width,height:stream_side_data=rotation','-of','json',video.url!],{timeout:20000});
+      const source = JSON.parse(geometry.stdout).streams?.[0];
+      if (!source?.width || !source?.height) throw new Error('source dimensions unavailable');
+      const rotated = Math.abs(Number(source.side_data_list?.[0]?.rotation ?? 0)) % 180 === 90;
+      const portrait = rotated ? source.width > source.height : source.height > source.width;
+      const width = portrait ? 720 : 1280, height = portrait ? 1280 : 720;
+      const fit = `scale=${width}:${height}:force_original_aspect_ratio=decrease:force_divisible_by=2,pad=${width}:${height}:(ow-iw)/2:(oh-ih)/2:color=black`;
       const filters = [
         'fps=24',
-        'scale=1280:720:force_original_aspect_ratio=decrease:flags=bicubic',
-        'pad=1280:720:(ow-iw)/2:(oh-ih)/2:color=black',
+        fit,
         'setsar=1',
-        "drawbox=x=0:y=550:w=1280:h=170:color=black@0.74:t=fill:enable='lt(t,5.5)'",
-        `drawtext=fontfile=${FONT}:textfile=${textfile}:fontsize=29:line_spacing=8:fontcolor=white:x=36:y=568:expansion=none:enable='lt(t,5.5)'`,
+        "drawbox=x=0:y=ih-170:w=iw:h=170:color=black@0.74:t=fill:enable='lt(t,5.5)'",
+        `drawtext=fontfile=${FONT}:textfile=${textfile}:fontsize=${portrait ? 24 : 29}:line_spacing=8:fontcolor=white:x=24:y=h-152:expansion=none:enable='lt(t,5.5)'`,
         `drawtext=fontfile=${FONT}:text=KLIEG:fontsize=31:fontcolor=white:box=1:boxcolor=black@0.72:boxborderw=11:x=w-tw-28:y=30:expansion=none`,
         `fade=t=out:st=${fadeStart}:d=0.75`,
         'format=yuv420p',
@@ -111,7 +117,7 @@ export async function renderKliegMontage(
             '-nostdin','-hide_banner','-loglevel','error','-y',
             '-rw_timeout','25000000','-ss',String(range.start),'-i',video.url!,
             '-t',String(range.duration),'-map','0:v:0',...(hasAudio?['-map','0:a:0']:[]),
-            '-vf','fps=24,scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,format=yuv420p',
+            '-vf',`fps=24,${fit},setsar=1,format=yuv420p`,
             '-threads','1','-c:v','libx264','-preset','veryfast','-crf','27',
             ...(hasAudio?['-c:a','aac','-b:a','128k','-ar','48000']:['-an']),
             '-movflags','+faststart',segment,
@@ -149,7 +155,7 @@ export async function renderKliegMontage(
       format?: {duration?: string};
       streams?: Array<{codec_type?:string;codec_name?:string;width?:number;height?:number}>;
     };
-    if (!metadata.streams?.some(track => track.codec_type === 'video' && track.codec_name === 'h264' && track.width === 1280 && track.height === 720)) {
+    if (!metadata.streams?.some(track => track.codec_type === 'video' && track.codec_name === 'h264' && ((track.width === 1280 && track.height === 720) || (track.width === 720 && track.height === 1280)))) {
       throw new Error('edited output must be 720p H.264');
     }
     if (metadata.streams.some(track => track.codec_type === 'audio' && track.codec_name !== 'aac')) throw new Error('edited audio must be AAC');
