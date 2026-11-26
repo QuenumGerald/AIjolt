@@ -45,7 +45,7 @@ function gamerpower(rows) {
     const end = time(x.end_date);
     const start = time(x.published_date);
     const url = validURL(x.gamerpower_url,'www.gamerpower.com');
-    if (x.status !== 'Active' || x.type !== 'Game' || !Number.isFinite(end) || !Number.isFinite(start) || start > now || now-start>7*DAY || !url) return [];
+    if (x.status !== 'Active' || x.type !== 'Game' || !Number.isFinite(end) || !Number.isFinite(start) || start > now || now-start>14*DAY || !url) return [];
     // Avoid publishing inconsistent titles/descriptions; avoid mobile-only items.
     const raw = clean(x.title);
     if (!/\b(?:PC|Steam|Epic Games Store|GOG)\b/i.test(clean(x.platforms)) || /mobile|android|ios/i.test(raw)) return [];
@@ -60,9 +60,9 @@ function cheapshark(rows) {
   if (!Array.isArray(rows)) throw Error('CheapShark unexpected response');
   return rows.flatMap(x=>{
     const sale=money(x.salePrice), regular=money(x.normalPrice), changed=Number(x.lastChange)*1000;
-    if (x.isOnSale!=='1'||!Number.isFinite(sale)||!Number.isFinite(regular)||sale<=0||regular<=sale||!Number.isFinite(changed)||changed>now+5*60000||now-changed>7*DAY||!x.dealID) return [];
+    if (x.isOnSale!=='1'||!Number.isFinite(sale)||!Number.isFinite(regular)||sale<=0||regular<=sale||!Number.isFinite(changed)||changed>now+5*60000||now-changed>14*DAY||!x.dealID) return [];
     const savings=pct((1-sale/regular)*100);
-    if (savings<50 || Number(x.steamRatingCount)<30 || Number(x.steamRatingPercent)<70) return [];
+    if (savings<40 || Number(x.steamRatingCount)<20 || Number(x.steamRatingPercent)<70) return [];
     const id=String(x.dealID);
     let decoded;try{decoded=decodeURIComponent(id);}catch{return [];}
     const url='https://www.cheapshark.com/redirect?dealID='+encodeURIComponent(decoded);
@@ -74,14 +74,14 @@ function magpie(feed) {
   if (feed.publisher?.country!=='US'||feed.publisher?.currency!=='USD'||!Array.isArray(feed.stores)||!Number.isFinite(time(feed.generated_at))||now-time(feed.generated_at)>3*HOUR) throw Error('Promo Magpie unexpected or stale US feed');
   return feed.stores.filter(s=>s.category==='Tech' && Array.isArray(s.offers)).flatMap(s=>s.offers.flatMap(x=>{
     const title=clean(x.title), terms=clean(x.terms), discount=clean(x.discount), end=time(x.expires_at), checked=time(x.last_checked_at), start=time(x.starts_at);
-    if(x.status!=='active'||x.type!=='deal'||!Number.isFinite(checked)||checked>now+5*60000||now-checked>24*HOUR||!Number.isFinite(end)||end<=now+HOUR||(Number.isFinite(start)&&start>now)||!tech.test(title)||exclude.test(title+' '+terms+' '+discount)||x.only_for?.length||x.conditions?.length) return [];
+    if(x.status!=='active'||x.type!=='deal'||!Number.isFinite(checked)||checked>now+5*60000||now-checked>24*HOUR||(Number.isFinite(end)?end<=now+HOUR:now-checked>6*HOUR)||(Number.isFinite(start)&&start>now)||!tech.test(title)||exclude.test(title+' '+terms+' '+discount)||x.only_for?.length||x.conditions?.length) return [];
     if (!['merchant_feed','store_website','manual_check'].includes(x.verification?.method)) return [];
     // Prefer simple explicit percentage discounts. Never infer a product price.
     const match=discount.match(/^(\d{1,2})%\s*off$/i);
     if(!match||Number(match[1])<20||terms && norm(terms)!==norm(title)) return [];
     const url=validURL(x.url,'promomagpie.com');
     if(!url||!x.id||!s.name) return [];
-    const c=candidate({source:'Promo Magpie',id:x.id,type:'tech',title,offer:discount+' | '+clean(s.name),url,region:'US | via Promo Magpie',score:70+Number(match[1])/3,group:'tech:'+norm(s.name)+' '+norm(title),expiry:end});
+    const c=candidate({source:'Promo Magpie',id:x.id,type:'tech',title,offer:discount+' | '+clean(s.name),url,region:'US | via Promo Magpie',score:70+Number(match[1])/3,group:'tech:'+norm(s.name)+' '+norm(title),expiry:Number.isFinite(end)?end:null});
     return c?[c]:[];
   }));
 }
@@ -93,7 +93,8 @@ async function get(url) {
 async function collect() {
   const sources=[
     ['GamerPower','https://www.gamerpower.com/api/giveaways?type=game',gamerpower],
-    ['CheapShark','https://www.cheapshark.com/api/1.0/deals?upperPrice=30&pageSize=60&onSale=1',cheapshark],
+    ...Array.from({length:3},(_,i)=>['CheapShark page '+i,'https://www.cheapshark.com/api/1.0/deals?upperPrice=40&pageSize=60&onSale=1&sortBy=DealRating&pageNumber='+i,cheapshark]),
+    ['CheapShark recent','https://www.cheapshark.com/api/1.0/deals?upperPrice=40&pageSize=60&onSale=1&sortBy=Recent',cheapshark],
     ['Promo Magpie','https://promomagpie.com/feeds/offers.json',magpie]
   ];
   const settled=await Promise.allSettled(sources.map(async ([name,url,parse])=>{const a=parse(await get(url));console.log(name+': '+a.length+' eligible');return a;}));
@@ -114,7 +115,7 @@ async function save(s) {
 }
 function pick(all,history) {
   const recent=history.filter(h=>now-h.at<DAY);
-  if(recent.length>=20||recent.some(h=>now-h.at<60*60000-1000)) return null;
+  if(recent.some(h=>now-h.at<5*60000-1000)||recent.some(h=>h.status==='rate-limited'&&now-h.at<HOUR)) return null;
   const eligible=all.filter(c=>!history.some(h=>h.id===c.id||h.group===c.group&&now-h.at<7*DAY));
   if(!eligible.length)return null;
   const last=history.at(-1)?.type;
@@ -126,7 +127,7 @@ async function publish(c) {
   if(!token||actual!==channel||actual===process.env.BUFFER_X_CHANNEL_ID?.trim()||actual===process.env.BUFFER_LINKEDIN_CHANNEL_ID?.trim())throw Error('Klieg channel guard failed');
   if(process.env.POPCULTURE_DRY_RUN!=='false'||process.env.POPCULTURE_PUBLISH_ENABLED!=='true')throw Error('Publishing gate closed');
   const r=await fetch('https://api.buffer.com',{method:'POST',headers:{accept:'application/json','content-type':'application/json',authorization:'Bearer '+token},body:JSON.stringify({query:'mutation CreatePost($text: String!, $channelId: ChannelId!, $assets: [AssetInput!]!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: shareNow, needsApproval: false, assets: $assets }) { ... on PostActionSuccess { post { id status } } ... on MutationError { message } } }',variables:{text:c.text,channelId:actual,assets:[]}}),signal:AbortSignal.timeout(20000)});
-  if(!r.ok)throw Error('Buffer HTTP '+r.status);
+  if(!r.ok){const e=Error('Buffer HTTP '+r.status);e.rateLimited=r.status===429;throw e;}
   const j=await r.json();const p=j.data?.createPost?.post;
   if(!p?.id||j.errors?.length)throw Error('Buffer did not confirm post creation');
   return {id:p.id,status:p.status};
@@ -158,6 +159,6 @@ async function main(){
   state.history=state.history.filter(h=>now-h.at<90*DAY);
   state.history.push(entry);await save(state);
   try{const p=await publish(c);entry.status='buffer-accepted';entry.bufferId=p.id;entry.bufferStatus=p.status;await save(state);console.log('Buffer accepted '+p.id+' '+p.status+' '+c.title);}
-  catch(e){entry.status='needs-review';await save(state);throw e;}
+  catch(e){entry.status=e.rateLimited?'rate-limited':'needs-review';await save(state);throw e;}
 }
 main().catch(e=>{console.error(e.message);process.exitCode=1;});
