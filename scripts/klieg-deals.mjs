@@ -221,6 +221,8 @@ async function realImage(c){
   if(u.protocol!=='https:'||u.username||u.password||!allowed.includes(u.hostname))return null;
   if(c.source==='Steam'&&!u.pathname.includes('/steam/apps/'+new URL(c.text.match(/https:\/\/store\.steampowered\.com\/app\/\d+\//)?.[0]||'https://store.steampowered.com/').pathname.split('/')[2]+'/'))return null;
   // Download only from the known merchant CDN, without redirects; use a bounded image size.
+  if(['Logitech','Logitech G'].includes(c.source))u.pathname=u.pathname.replace(/w_\d+,h_\d+/, 'w_1200,h_900').replace('f_auto','f_png');
+  if(c.source==='ASUS')u.pathname=u.pathname.replace(/\/w\d+$/, '/w1000');
   const r=await fetch(u,{redirect:'error',headers:{'user-agent':UA,accept:'image/jpeg,image/png,image/webp'},signal:AbortSignal.timeout(12000)});
   if(!r.ok||!/^image\/(?:jpeg|png|webp)(?:;|$)/i.test(r.headers.get('content-type')||''))return null;
   const max=8*1024*1024;if(Number(r.headers.get('content-length'))>max)return null;
@@ -232,8 +234,8 @@ async function realImage(c){
   try{
     const input=resolve(tmp,'input');await writeFile(input,Buffer.concat(chunks));
     const {stdout}=await exec('/usr/bin/ffprobe',['-v','error','-select_streams','v:0','-show_entries','stream=width,height','-of','json',input],{timeout:8000});
-    const v=JSON.parse(stdout).streams?.[0];if(!v||v.width<220||v.height<80||v.width*v.height>24000000)return null;
-    await exec('/usr/bin/ffmpeg',['-hide_banner','-loglevel','error','-y','-i',input,'-vf','scale=1600:1600:force_original_aspect_ratio=decrease','-frames:v','1','-threads','1','-q:v','3',output],{timeout:12000});
+    const v=JSON.parse(stdout).streams?.[0];if(!v||v.width<300||v.height<160||v.width*v.height>24000000)return null;
+    await exec('/usr/bin/ffmpeg',['-hide_banner','-loglevel','error','-y','-i',input,'-vf','scale=w='min(1600,iw)':h='min(1600,ih)':force_original_aspect_ratio=decrease:flags=lanczos','-frames:v','1','-threads','1','-q:v','2','-pix_fmt','yuvj444p',output],{timeout:12000});
     await chmod(output,0o644);
     const url=new URL(name,base.endsWith('/')?base:base+'/').href;
     const check=await fetch(url,{method:'HEAD',signal:AbortSignal.timeout(8000)});
