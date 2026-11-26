@@ -206,14 +206,25 @@ async function save(s) {
   await writeFile(statePath+'.tmp',JSON.stringify(s,null,2),{mode:0o600});
   await rename(statePath+'.tmp',statePath);
 }
-function pick(all,history) {
+// Prioritize unseen deals. Recycle only current offers, oldest first, at most once per 48h.
+function pick(all,history,allowRecycle=true) {
   const recent=history.filter(h=>now-h.at<DAY);
   if(recent.some(h=>now-h.at<5*60000-1000)||recent.some(h=>h.status==='rate-limited'&&now-h.at<HOUR)) return null;
-  const eligible=all.filter(c=>!history.some(h=>h.id===c.id||h.group===c.group&&now-h.at<7*DAY));
-  if(!eligible.length)return null;
   const last=history.at(-1)?.type;
-  return eligible.find(c=>c.type!==(last||'gaming'))||eligible[0];
+  const eligible=all.filter(c=>!c.expiry||c.expiry>now+30*60000);
+  const fresh=eligible.filter(c=>!history.some(h=>h.id===c.id||h.group===c.group&&now-h.at<2*DAY));
+  if(fresh.length)return fresh.find(c=>c.type!==(last||'gaming'))||fresh[0];
+  if(!allowRecycle)return null;
+  const recycled=eligible.flatMap(c=>{
+    const matches=history.filter(h=>h.id===c.id||h.group===c.group);
+    const latest=matches.sort((a,b)=>b.at-a.at)[0];
+    if(!latest||now-latest.at<2*DAY||latest.status!=='buffer-accepted'||!['sent','published'].includes(latest.bufferStatus))return [];
+    return [{c,at:latest.at}];
+  }).sort((a,b)=>a.at-b.at||b.c.score-a.c.score);
+  const next=recycled.find(x=>x.c.type!==(last||'gaming'))||recycled[0];
+  return next?{...next.c,recycled:true}:null;
 }
+
 // Use only the exact merchant-provided product/game image. Never synthesize a replacement.
 async function realImage(c){
   let u;try{u=new URL(c.image);}catch{return null;}
@@ -260,6 +271,13 @@ function selfTest(){
  const a=steamFeatured({specials:{items:[{type:0,discounted:true,currency:'USD',id:1,name:'Test game',final_price:499,original_price:999,discount_percent:50,large_capsule_image:'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1/header.jpg'}]}});
  assert.equal(a.length,1);assert.match(a[0].text,/50% OFF/);assert.match(a[0].text,/https:\/\/store\.steampowered\.com\/app\/1\//);assert.equal(pick(a,[]).id,a[0].id);assert.equal(pick(a,[{id:a[0].id,at:now-DAY}]),null);
  assert.equal(steamFeatured({specials:{items:[{type:0,discounted:true,currency:'USD',id:1,final_price:0,original_price:999,discount_percent:100}]}}).length,0);
+ const old={id:a[0].id,group:a[0].group,at:now-3*DAY,status:'buffer-accepted',bufferStatus:'sent'};
+ assert.equal(pick(a,[old]).recycled,true);
+ assert.equal(pick(a,[{...old,at:now-DAY}]),null);
+ assert.equal(pick(a,[{...old,status:'needs-review'}]),null);
+ assert.equal(pick(a,[old],false),null);
+ assert.equal(pick([{...a[0],expiry:now-1}],[old]),null);
+ const fresh={...a[0],id:'fresh',group:'fresh'};assert.equal(pick([...a,fresh],[old]).id,'fresh');
  console.log('Self-test OK');
 }
 async function main(){
@@ -272,10 +290,11 @@ async function main(){
     return;
   }
   const state=await readState();let c;const remaining=[...all];
-  for(let i=0;i<5;i++){const next=pick(remaining,state.history);if(!next)break;try{next.verifiedImage=await realImage(next);if(next.verifiedImage){c=next;break;}}catch(e){console.error('Image unavailable: '+next.title+' '+e.message);}remaining.splice(remaining.indexOf(next),1);}
+  for(let i=0;i<5;i++){const next=pick(remaining,state.history,i===0||!all.some(x=>!state.history.some(h=>h.id===x.id||h.group===x.group&&now-h.at<2*DAY)));if(!next)break;try{next.verifiedImage=await realImage(next);if(next.verifiedImage){c=next;break;}}catch(e){console.error('Image unavailable: '+next.title+' '+e.message);}remaining.splice(remaining.findIndex(x=>x.id===next.id),1);}
   if(!c){console.log('No new eligible offer or cadence limit');return;}
   // Reserve before the API call. Ambiguous failures require inspection rather than duplicate retries.
-  const entry={id:c.id,group:c.group,type:c.type,at:now,status:'reserved',title:c.title};
+  if(c.recycled)console.log('Recycling still-active deal: '+c.title);
+  const entry={id:c.id,group:c.group,type:c.type,at:now,status:'reserved',title:c.title,recycled:!!c.recycled};
   state.history=state.history.filter(h=>now-h.at<90*DAY);
   state.history.push(entry);await save(state);
   try{const p=await publish(c);entry.status='buffer-accepted';entry.bufferId=p.id;entry.bufferStatus=p.status;await save(state);console.log('Buffer accepted '+p.id+' '+p.status+' '+c.title);}
