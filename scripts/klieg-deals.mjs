@@ -150,6 +150,31 @@ function logitech(html,base){
  return c?[c]:[];
  });
 }
+async function asusDeals(){
+ const html=await get('https://www.asus.com/us/store/',true);
+ const raw=html.match(/<script[^>]*id="__NUXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)?.[1];
+ if(!raw)throw Error('ASUS catalog missing');
+ const a=JSON.parse(raw), at=i=>Number.isInteger(i)&&i>=0&&i<a.length?a[i]:null, items=new Map();
+ for(const x of a){
+ if(!x||typeof x!=='object'||Array.isArray(x)||!x.PartNo||!x.StockStatus)continue;
+ const sku=at(x.PartNo),model=at(x.SalesModelName),title=clean(String(at(x.Name)||'').replace(/<[^>]*>/g,'')),stock=at(x.StockStatus);
+ if(typeof sku!=='string'||!/^90[A-Z0-9]+-[A-Z0-9]+$/.test(sku)||stock!=='buy'||!model||!title)continue;
+ const images=at(x.ImageList);let image;
+ for(const i of Array.isArray(images)?images:[]){const group=at(i);for(const j of at(group?.ImageURL)||[]){const obj=at(j);if(typeof obj==='string'&&obj.startsWith('https://'))image ||=obj;else if(obj&&typeof obj==='object')for(const [k,v] of Object.entries(obj)){const u=at(v);if(typeof u==='string'&&/^https:\/\/[^/]*asus\.com\//i.test(u))image ||=u;}}}
+ if(image)items.set(sku,{title,model,image});
+ }
+ const ids=[...items.keys()];if(!ids.length)throw Error('ASUS no exact SKU images');
+ const results=await Promise.all(ids.reduce((chunks,id,i)=>{if(i%20===0)chunks.push([]);chunks.at(-1).push(id);return chunks;},[]).map(async chunk=>{
+ const q=new URLSearchParams({SystemCode:'asus',WebsiteCode:'us',ecStatus:'true',ProductId:'',ROGProductId:'',ROGProduct:chunk.join(','),PartNoPage:'1',group_id:'0',siteID:'www',sitelang:''});
+ return get('https://odinapi.asus.com/recent-data/apiv2/GetPrice?'+q);
+ }));
+ return results.flatMap(j=>(j.Result?.ProductList||[]).flatMap(p=>{
+ const x=items.get(p.ProductID),sale=usd(p.Price),regular=usd(p.Regular_Price),saved=usd(p.Discount),url=validURL(p.BuyLink,'eshop.asus.com');
+ if(!x||p.HidePrice!==false||p.BuyCode!=='buy'||p.Estore!=='ASUS Store Price'||p.StartingAtWording||!url||new URL(url).searchParams.get('config')!==p.ProductID||!Number.isFinite(sale)||!Number.isFinite(regular)||sale<=0||regular<=sale||Math.abs(regular-sale-saved)>0.02)return [];
+ const savings=Math.floor((1-sale/regular)*100);if(savings<15)return [];
+ const c=candidate({source:'ASUS',id:p.ProductID+':'+sale,type:'tech',title:x.title+' — '+x.model,offer:'Sale',url,region:'US',score:85+savings/2,group:'asus:'+p.ProductID,sale,regular,savings,merchant:'ASUS',image:x.image});return c?[c]:[];
+ }));
+}
 async function get(url,html=false){
   const r=await fetch(url,{headers:{'user-agent':UA,accept:html?'text/html':'application/json'},signal:AbortSignal.timeout(18000)});
   if(!r.ok)throw Error('HTTP '+r.status);
@@ -164,9 +189,10 @@ async function collect(){
     ...['memory','keyboards','gaming-headsets','data-storage','psu'].map(s=>['Corsair '+s,'https://www.corsair.com/us/en/c/'+s,corsair,true])
   ];
   sources.push(['Logitech','https://www.logitech.com/en-us/shop/deals',h=>logitech(h,'https://www.logitech.com'),true],['Logitech G','https://www.logitechg.com/en-us/shop/gaming-deals',h=>logitech(h,'https://www.logitechg.com'),true]);
+  sources.push(['ASUS','',null]);
   sources.push(['GOG','https://catalog.gog.com/v1/catalog?limit=48&order=desc%3Abestselling&discounted=true&countryCode=US&currencyCode=USD&locale=en-US',gog]);
   for(const [name,base] of officialShops)sources.push([name,base,null]);
-  const settled=await Promise.allSettled(sources.map(async ([name,url,parse,html])=>{const a=parse?parse(await get(url,html)):await shopify(name,url);console.log(name+': '+a.length+' eligible');return a;}));
+  const settled=await Promise.allSettled(sources.map(async ([name,url,parse,html])=>{const a=name==='ASUS'?await asusDeals():parse?parse(await get(url,html)):await shopify(name,url);console.log(name+': '+a.length+' eligible');return a;}));
   const all=[];settled.forEach((v,i)=>{if(v.status==='fulfilled')all.push(...v.value);else console.error(sources[i][0]+': '+v.reason.message);});
   if(settled.every(x=>x.status==='rejected'))throw Error('All sources failed');
   const unique=new Map();for(const c of all.sort((a,b)=>b.score-a.score))if(c.image&&!unique.has(c.group))unique.set(c.group,c);
@@ -191,7 +217,7 @@ function pick(all,history) {
 // Use only the exact merchant-provided product/game image. Never synthesize a replacement.
 async function realImage(c){
   let u;try{u=new URL(c.image);}catch{return null;}
-  const allowed=c.source==='Steam'?['shared.akamai.steamstatic.com','shared.fastly.steamstatic.com','cdn.akamai.steamstatic.com','cdn.cloudflare.steamstatic.com']:c.source==='Epic Games'?['cdn1.epicgames.com','cdn2.unrealengine.com','cdn1.unrealengine.com']:c.source==='Corsair'?['assets.corsair.com']:['Logitech','Logitech G'].includes(c.source)?['resource.logitech.com','resource.logitechg.com']:c.source==='GOG'?['images.gog-statics.com']:officialShops.some(([name])=>name===c.source)?['cdn.shopify.com']:[];
+  const allowed=c.source==='Steam'?['shared.akamai.steamstatic.com','shared.fastly.steamstatic.com','cdn.akamai.steamstatic.com','cdn.cloudflare.steamstatic.com']:c.source==='Epic Games'?['cdn1.epicgames.com','cdn2.unrealengine.com','cdn1.unrealengine.com']:c.source==='Corsair'?['assets.corsair.com']:['Logitech','Logitech G'].includes(c.source)?['resource.logitech.com','resource.logitechg.com']:c.source==='ASUS'?['dlcdnwebimgs.asus.com','dlcdnimgs.asus.com','www.asus.com','rog.asus.com']:c.source==='GOG'?['images.gog-statics.com']:officialShops.some(([name])=>name===c.source)?['cdn.shopify.com']:[];
   if(u.protocol!=='https:'||u.username||u.password||!allowed.includes(u.hostname))return null;
   if(c.source==='Steam'&&!u.pathname.includes('/steam/apps/'+new URL(c.text.match(/https:\/\/store\.steampowered\.com\/app\/\d+\//)?.[0]||'https://store.steampowered.com/').pathname.split('/')[2]+'/'))return null;
   // Download only from the known merchant CDN, without redirects; use a bounded image size.
