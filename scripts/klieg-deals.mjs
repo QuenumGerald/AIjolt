@@ -2,10 +2,13 @@
 // Sources: https://www.gamerpower.com/api-read (credit with link),
 // https://apidocs.cheapshark.com/ (mandatory redirect links),
 // https://promomagpie.com/feeds (cite and link each offer; do not quote codes).
-import { readFile, writeFile, rename, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, rename, mkdir, mkdtemp, rm, chmod } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+const exec = promisify(execFile);
 
 const UA = 'KliegDeals/1.0 (contact: https://github.com/QuenumGerald/AIjolt)';
 const HOUR = 3600000;
@@ -24,20 +27,26 @@ const tech = /\b(?:ram|ddr[345]|ssd|nvme|hdd|hard drive|memory kit|graphics card
 const exclude = /\b(?:first (?:order|purchase)|new customers?|student|military|membership|trade[- ]?in|rebate|financ(?:e|ing)|subscription|with purchase|buy .{0,80}(?:get|receive)|orders? over|free shipping|gift card|crypto|casino|gambling|refurbished|open box|preorder|pre-order|sweepstakes|giveaway|bundle|eligible|selected (?:items|products|models)|select (?:items|products|models)|up to|european markets|blacklisted|exclusions apply)\b/i;
 const shorten = (v,n) => Array.from(clean(v)).length <= n ? clean(v) : '';
 const dateText = v => new Date(v).toISOString().slice(0,10);
-function candidate({source, id, type, title, offer, url, region, score, group, expiry, detail = ''}) {
+function candidate({source, id, type, title, offer, url, region, score, group, expiry, detail = '', sale, regular, savings, platform = '', merchant = '', rating, image = ''}) {
   title = shorten(title, 115);
   offer = shorten(offer, 85);
   detail = shorten(detail, 72);
   if (!title || !offer || !url || !Number.isFinite(score) || (expiry && expiry <= now + 30*60000)) return null;
-  const text = [
-    type === 'tech' ? 'TECH DEAL' : (offer.startsWith('FREE') ? 'FREE GAME' : 'GAMING DEAL'),
-    title, offer, detail, region, expiry ? 'Ends: ' + dateText(expiry) + ' (source date)' : '',
-    'Check current terms & availability.', url,
-  ].filter(Boolean).join('\n');
-  // X counts URLs as 23 characters; conservatively count non-ASCII characters twice.
-  const length = Array.from(text.replace(/https:\/\/[^\s]+/g,'x'.repeat(23))).reduce((s,c)=>s+(c.codePointAt(0)>127?2:1),0);
-  if (length > 280) return null;
-  return {source, id:hash(source+':'+id), type, title, offer, text, score, group:hash(group), expiry:expiry||null};
+  const free = offer.startsWith('FREE');
+  const percent = savings ?? Number(offer.match(/^(\d+)%/)?.[1]);
+  const key = hash(source+':'+id);
+  const variants = free ? ['🎁 FREE GAME ALERT','🚨 FREE TO CLAIM','🎮 GRAB THIS GAME FOR FREE'] : type==='tech' ? ['⚡ TECH DEAL','🔥 HARDWARE PRICE DROP','💻 TECH SAVINGS'] : ['🎮 GAMING DEAL','🔥 GAME PRICE DROP','⚡ PC GAME DEAL'];
+  const heading = variants[parseInt(key.slice(0,2),16)%variants.length] + (!free && Number.isFinite(percent) ? ' · '+percent+'% OFF' : '');
+  const price = free ? 'FREE'+(regular>0?' (listed $'+regular.toFixed(2)+')':'') : Number.isFinite(sale) ? '$'+regular.toFixed(2)+' → $'+sale.toFixed(2) : offer;
+  const info = [platform ? '🎮 '+platform : '', merchant ? '🛒 '+merchant : '', Number.isFinite(rating)&&rating>=70?'⭐ '+rating+'% positive on Steam':'', expiry?'⏳ Ends '+new Date(expiry).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'}):''].filter(Boolean);
+  const market = type==='tech'?'🇺🇸 US offer':'🌍 Region may vary'+(free?'':' · USD');
+  const linkLabel = free?'Claim via '+source:'Shop via '+source;
+  const make = () => [heading,'',title,'','💸 '+price, ...info, market,'',linkLabel+': '+url].join('\n');
+  const length = t=>Array.from(t.replace(/https:\/\/[^\s]+/g,'x'.repeat(23))).reduce((s,c)=>s+(c.codePointAt(0)>127?2:1),0);
+  let text=make();
+  while(length(text)>280 && info.length){info.pop();text=make();}
+  if(length(text)>280)return null;
+  return {source,id:key,type,title,offer,text,score,group:hash(group),expiry:expiry||null,price,percent:Number.isFinite(percent)?percent:null,free,platform,merchant,image};
 }
 function gamerpower(rows) {
   if (!Array.isArray(rows)) throw Error('GamerPower unexpected response');
@@ -52,7 +61,7 @@ function gamerpower(rows) {
     const title = raw.replace(/\s*\([^)]*\)\s*Giveaway$/i,'').replace(/\s+Giveaway$/i,'').trim();
     if (!title || !norm(x.description).includes(norm(title))) return [];
     const price = money(String(x.worth).replace(/^\$/,''));
-    const c = candidate({source:'GamerPower',id:x.id,type:'gaming',title,offer:'FREE to claim'+(price>0?' (listed value $'+price.toFixed(2)+')':''),url,region:'Region may vary | via GamerPower',score:100+(end-now<DAY?10:0),group:'game:'+norm(title),expiry:end});
+    const c = candidate({source:'GamerPower',id:x.id,type:'gaming',title,offer:'FREE to claim'+(price>0?' (listed value $'+price.toFixed(2)+')':''),url,region:'Region may vary | via GamerPower',score:100+(end-now<DAY?10:0),group:'game:'+norm(title),expiry:end,regular:price,platform:/Epic Games/i.test(x.platforms)?'Epic Games Store':/Steam/i.test(x.platforms)?'Steam':/GOG/i.test(x.platforms)?'GOG':'PC',image:x.image});
     return c?[c]:[];
   });
 }
@@ -66,7 +75,7 @@ function cheapshark(rows) {
     const id=String(x.dealID);
     let decoded;try{decoded=decodeURIComponent(id);}catch{return [];}
     const url='https://www.cheapshark.com/redirect?dealID='+encodeURIComponent(decoded);
-    const c=candidate({source:'CheapShark',id:id+':'+sale,type:'gaming',title:x.title,offer:'$'+sale.toFixed(2)+' (listed $'+regular.toFixed(2)+', -'+savings+'%)',url,region:'USD listing | regional prices may vary',score:55+savings/4+Number(x.steamRatingPercent)/20,group:'game:'+norm(x.title)});
+    const c=candidate({source:'CheapShark',id:id+':'+sale,type:'gaming',title:x.title,offer:'$'+sale.toFixed(2)+' (listed $'+regular.toFixed(2)+', -'+savings+'%)',url,region:'USD listing | regional prices may vary',score:55+savings/4+Number(x.steamRatingPercent)/20,group:'game:'+norm(x.title),sale,regular,savings,rating:Number(x.steamRatingPercent),image:x.thumb});
     return c?[c]:[];
   });
 }
@@ -81,7 +90,7 @@ function magpie(feed) {
     if(!match||Number(match[1])<20||terms && norm(terms)!==norm(title)) return [];
     const url=validURL(x.url,'promomagpie.com');
     if(!url||!x.id||!s.name) return [];
-    const c=candidate({source:'Promo Magpie',id:x.id,type:'tech',title,offer:discount+' | '+clean(s.name),url,region:'US | via Promo Magpie',score:70+Number(match[1])/3,group:'tech:'+norm(s.name)+' '+norm(title),expiry:Number.isFinite(end)?end:null});
+    const c=candidate({source:'Promo Magpie',id:x.id,type:'tech',title,offer:discount+' | '+clean(s.name),url,region:'US | via Promo Magpie',score:70+Number(match[1])/3,group:'tech:'+norm(s.name)+' '+norm(title),expiry:Number.isFinite(end)?end:null,merchant:clean(s.name),savings:Number(match[1])});
     return c?[c]:[];
   }));
 }
@@ -121,12 +130,46 @@ function pick(all,history) {
   const last=history.at(-1)?.type;
   return eligible.find(c=>c.type!==(last||'gaming'))||eligible[0];
 }
+// Original editorial graphic; no unlicensed product artwork or guessed specifications.
+function wrapTitle(title,max=32) {
+  const lines=[];let line='';
+  for(const word of title.split(/\s+/)){
+    if(word.length>max){if(line){lines.push(line);line='';}for(let i=0;i<word.length;i+=max)lines.push(word.slice(i,i+max));continue;}
+    if(line && (line+' '+word).length>max){lines.push(line);line=word;}else line+=(line?' ':'')+word;
+  }
+  if(line)lines.push(line);
+  return lines.slice(0,4).join('\n');
+}
+async function renderCard(c){
+  const dir=process.env.POPCULTURE_MEDIA_DIRECTORY;
+  const base=process.env.POPCULTURE_MEDIA_BASE_URL;
+  if(!dir||!base)throw Error('Media hosting not configured');
+  const name='deal-'+c.id.slice(0,24)+'.jpg';
+  const output=resolve(dir,name);
+  const tmp=await mkdtemp('/tmp/klieg-deal-');
+  try {
+    const values={brand:'KLIEG  /  DEALS',category:c.type==='tech'?'TECH  /  HARDWARE':'GAMING  /  PC',title:wrapTitle(c.title),price:c.free?'FREE':c.percent!==null?c.percent+'% OFF':c.price,sub:c.free?c.price.replace(/^FREE\s*/,''):c.percent!==null?c.price.replace(/^\d+% off\s*\|\s*/i,''):c.offer,footer:'VIA '+c.source.toUpperCase()+'   /   '+(c.type==='tech'?'US OFFER':'REGION MAY VARY')};
+    for(const [k,v] of Object.entries(values))await writeFile(resolve(tmp,k+'.txt'),v);
+    const font='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
+    const regular='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf';
+    const draw=(k,x,y,size,color,face=font)=>'drawtext=fontfile='+face+':textfile='+resolve(tmp,k+'.txt')+':expansion=none:fontsize='+size+':fontcolor='+color+':x='+x+':y='+y+':line_spacing=12';
+    const filters=['drawbox=x=0:y=0:w=1200:h=12:color=0x22D3EE:t=fill','drawbox=x=56:y=114:w=1088:h=2:color=0x334155:t=fill','drawbox=x=56:y=485:w=1088:h=2:color=0x334155:t=fill',draw('brand',58,42,38,'white'),draw('category',58,140,26,'0x22D3EE'),draw('title',58,190,43,'white'),draw('price',58,500,78,'0x22D3EE'),draw('sub',60,603,27,'white',regular),draw('footer',60,700,22,'0x94A3B8',regular)];
+    await exec('/usr/bin/ffmpeg',['-hide_banner','-loglevel','error','-y','-f','lavfi','-i','color=c=0x101827:s=1200x760:d=1','-vf',filters.join(','),'-frames:v','1','-threads','1','-q:v','3',output],{timeout:12000});
+    await chmod(output,0o644);
+    const url=new URL(name,base.endsWith('/')?base:base+'/').href;
+    const r=await fetch(url,{method:'HEAD',signal:AbortSignal.timeout(8000)});
+    if(!r.ok||!r.headers.get('content-type')?.startsWith('image/'))throw Error('Card not publicly reachable');
+    return url;
+  } finally {await rm(tmp,{recursive:true,force:true});}
+}
 async function publish(c) {
   const token=process.env.POPCULTURE_BUFFER_ACCESS_TOKEN?.trim();
   const actual=process.env.POPCULTURE_BUFFER_X_CHANNEL_ID?.trim();
   if(!token||actual!==channel||actual===process.env.BUFFER_X_CHANNEL_ID?.trim()||actual===process.env.BUFFER_LINKEDIN_CHANNEL_ID?.trim())throw Error('Klieg channel guard failed');
   if(process.env.POPCULTURE_DRY_RUN!=='false'||process.env.POPCULTURE_PUBLISH_ENABLED!=='true')throw Error('Publishing gate closed');
-  const r=await fetch('https://api.buffer.com',{method:'POST',headers:{accept:'application/json','content-type':'application/json',authorization:'Bearer '+token},body:JSON.stringify({query:'mutation CreatePost($text: String!, $channelId: ChannelId!, $assets: [AssetInput!]!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: shareNow, needsApproval: false, assets: $assets }) { ... on PostActionSuccess { post { id status } } ... on MutationError { message } } }',variables:{text:c.text,channelId:actual,assets:[]}}),signal:AbortSignal.timeout(20000)});
+  const imageUrl=await renderCard(c);
+  console.log('Card ready '+imageUrl);
+  const r=await fetch('https://api.buffer.com',{method:'POST',headers:{accept:'application/json','content-type':'application/json',authorization:'Bearer '+token},body:JSON.stringify({query:'mutation CreatePost($text: String!, $channelId: ChannelId!, $assets: [AssetInput!]!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: shareNow, needsApproval: false, assets: $assets }) { ... on PostActionSuccess { post { id status } } ... on MutationError { message } } }',variables:{text:c.text,channelId:actual,assets:[{image:{url:imageUrl}}]}}),signal:AbortSignal.timeout(20000)});
   if(!r.ok){const e=Error('Buffer HTTP '+r.status);e.rateLimited=r.status===429;throw e;}
   const j=await r.json();const p=j.data?.createPost?.post;
   if(!p?.id||j.errors?.length)throw Error('Buffer did not confirm post creation');
@@ -137,7 +180,7 @@ function selfTest(){
   const row={title:'32GB DDR5 RAM',discount:'40% off',status:'active',type:'deal',last_checked_at:stamp,expires_at:end,verification:{method:'merchant_feed'},id:1,url:'https://promomagpie.com/promo-codes/test#deal-1'};
   const fixture={publisher:{country:'US',currency:'USD'},generated_at:stamp,stores:[{name:'Test',category:'Tech',offers:[row,{...row,id:2,title:'Buy RAM and get 40% off'},{...row,id:3,expires_at:stamp},{...row,id:4,discount:'Up to 70% off'}]}]};
   assert.equal(magpie(fixture).length,1);
-  const c=magpie(fixture)[0];assert.equal(c.type,'tech');assert.equal(pick([c],[]).id,c.id);
+  const c=magpie(fixture)[0];assert.equal(c.type,'tech');assert.match(c.text,/40% OFF/);assert.match(c.text,/32GB DDR5 RAM/);assert.equal(c.percent,40);assert.equal(pick([c],[]).id,c.id);
   assert.equal(pick([c],[{id:c.id,group:c.group,type:'tech',at:now-DAY}]),null);
   assert.equal(pick([c],[{id:'other',type:'gaming',at:now-60000}]),null);
   assert.equal(cheapshark([{isOnSale:'1',salePrice:'0.00'}]).length,0);
@@ -148,6 +191,7 @@ async function main(){
   if(process.argv.includes('--self-test'))return selfTest();
   const all=await collect();
   console.log('Eligible unique: '+all.length+' (tech '+all.filter(x=>x.type==='tech').length+', gaming '+all.filter(x=>x.type==='gaming').length+')');
+  if(process.argv.includes('--preview-card')){const c=all.find(x=>x.type==='tech')||all[0];if(!c)throw Error('No eligible preview');console.log('Preview: '+await renderCard(c));}
   if(!process.argv.includes('--publish')){
     for(const type of ['tech','gaming'])for(const x of all.filter(c=>c.type===type).slice(0,3))console.log('\n'+x.text);
     return;
