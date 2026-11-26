@@ -135,6 +135,21 @@ function gog(j){
  const c=candidate({source:'GOG',id:p.id+':'+sale,type:'gaming',title:p.title,offer:'Sale',url,region:'US',score:70+savings/4,group:'game:'+norm(p.title),sale,regular,savings,platform:'GOG',image:p.coverHorizontal});return c?[c]:[];
  });
 }
+function logitech(html,base){
+ const cards=[...html.matchAll(/<article aria-roledescription="Product" aria-label="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)];
+ if(!cards.length)throw Error('Logitech product cards missing');
+ return cards.flatMap(([,name,h])=>{
+ const path=h.match(/href="(\/en-us\/shop\/p\/[^"]+)"/)?.[1],image=h.match(/<img[^>]+src="([^"]+)"/)?.[1];
+ const cleanHtml=h.replace(/<!--[\s\S]*?-->/g,'');
+ const prices=cleanHtml.match(/<span>\s*(\$[\d,.]+)\s*<\/span>[\s\S]{0,180}?<span class="line-through[^"]*">\s*(\$[\d,.]+)\s*<\/span>/);
+ if(!path||!image||!prices||!/aria-label="Add to cart"/.test(h))return [];
+ const sale=usd(prices[1]),regular=usd(prices[2]),savings=Math.floor((1-sale/regular)*100+1e-8);
+ if(!Number.isFinite(sale)||!Number.isFinite(regular)||sale<=0||regular<=sale||savings<15)return [];
+ const source=base.includes('logitechg')?'Logitech G':'Logitech';
+ const c=candidate({source,id:path+':'+sale,type:'tech',title:entities(name),offer:'Sale',url:base+entities(path),region:'US',score:75+savings/2,group:'logitech:'+path,sale,regular,savings,merchant:source,image:entities(image)});
+ return c?[c]:[];
+ });
+}
 async function get(url,html=false){
   const r=await fetch(url,{headers:{'user-agent':UA,accept:html?'text/html':'application/json'},signal:AbortSignal.timeout(18000)});
   if(!r.ok)throw Error('HTTP '+r.status);
@@ -148,6 +163,7 @@ async function collect(){
     ['Epic Games','https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=US&allowCountries=US',epic],
     ...['memory','keyboards','gaming-headsets','data-storage','psu'].map(s=>['Corsair '+s,'https://www.corsair.com/us/en/c/'+s,corsair,true])
   ];
+  sources.push(['Logitech','https://www.logitech.com/en-us/shop/deals',h=>logitech(h,'https://www.logitech.com'),true],['Logitech G','https://www.logitechg.com/en-us/shop/gaming-deals',h=>logitech(h,'https://www.logitechg.com'),true]);
   sources.push(['GOG','https://catalog.gog.com/v1/catalog?limit=48&order=desc%3Abestselling&discounted=true&countryCode=US&currencyCode=USD&locale=en-US',gog]);
   for(const [name,base] of officialShops)sources.push([name,base,null]);
   const settled=await Promise.allSettled(sources.map(async ([name,url,parse,html])=>{const a=parse?parse(await get(url,html)):await shopify(name,url);console.log(name+': '+a.length+' eligible');return a;}));
@@ -175,7 +191,7 @@ function pick(all,history) {
 // Use only the exact merchant-provided product/game image. Never synthesize a replacement.
 async function realImage(c){
   let u;try{u=new URL(c.image);}catch{return null;}
-  const allowed=c.source==='Steam'?['shared.akamai.steamstatic.com','shared.fastly.steamstatic.com','cdn.akamai.steamstatic.com','cdn.cloudflare.steamstatic.com']:c.source==='Epic Games'?['cdn1.epicgames.com','cdn2.unrealengine.com','cdn1.unrealengine.com']:c.source==='Corsair'?['assets.corsair.com']:c.source==='GOG'?['images.gog-statics.com']:officialShops.some(([name])=>name===c.source)?['cdn.shopify.com']:[];
+  const allowed=c.source==='Steam'?['shared.akamai.steamstatic.com','shared.fastly.steamstatic.com','cdn.akamai.steamstatic.com','cdn.cloudflare.steamstatic.com']:c.source==='Epic Games'?['cdn1.epicgames.com','cdn2.unrealengine.com','cdn1.unrealengine.com']:c.source==='Corsair'?['assets.corsair.com']:['Logitech','Logitech G'].includes(c.source)?['resource.logitech.com','resource.logitechg.com']:c.source==='GOG'?['images.gog-statics.com']:officialShops.some(([name])=>name===c.source)?['cdn.shopify.com']:[];
   if(u.protocol!=='https:'||u.username||u.password||!allowed.includes(u.hostname))return null;
   if(c.source==='Steam'&&!u.pathname.includes('/steam/apps/'+new URL(c.text.match(/https:\/\/store\.steampowered\.com\/app\/\d+\//)?.[0]||'https://store.steampowered.com/').pathname.split('/')[2]+'/'))return null;
   // Download only from the known merchant CDN, without redirects; use a bounded image size.
