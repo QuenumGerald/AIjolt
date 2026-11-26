@@ -107,6 +107,34 @@ function corsair(html){
     return c?[c]:[];
   });
 }
+const officialShops=[['HyperX','https://hyperx.com'],['Keychron','https://www.keychron.com'],['Glorious','https://www.gloriousgaming.com'],['Sabrent','https://sabrent.com']];
+async function shopify(source,base){
+  const [cart,j]=await Promise.all([get(base+'/cart.js'),get(base+'/collections/all/products.json?limit=250&page=1')]);
+  if(cart.currency!=='USD'||!Array.isArray(j.products))throw Error('USD catalog unavailable');
+  return j.products.flatMap(p=>{
+    if(!/^[a-z0-9-]+$/.test(p.handle)||!p.title||!p.vendor||!p.variants?.length||!/keyboard|mouse|mice|headset|headphone|microphone|ssd|nvme|hard drive|memory|ram\b|dock|charger|power bank|hub\b|controller|keycap|switch\b|webcam|storage|adapter|enclosure|monitor/i.test(p.title)||/shipping|gift card|replacement|refurbished|open box|accessory -|hx3d|topper|warranty|service fee/i.test(p.title))return [];
+    const options=p.variants.flatMap(v=>{
+      const sale=money(v.price),regular=money(v.compare_at_price);
+      if(!v.available||!v.requires_shipping||!Number.isSafeInteger(v.id)||!Number.isFinite(sale)||!Number.isFinite(regular)||sale<10||regular<=sale)return [];
+      const savings=Math.floor((1-sale/regular)*100+1e-8);if(savings<20)return [];
+      const image=v.featured_image?.src||p.images?.find(i=>i.variant_ids?.includes(v.id))?.src||(p.variants.length===1?p.images?.[0]?.src:null);
+      if(!image)return [];
+      const title=p.title+(v.title==='Default Title'?'':' — '+v.title);
+      const c=candidate({source,id:p.id+':'+v.id+':'+sale,type:'tech',title,offer:'Sale',url:base+'/products/'+p.handle+'?variant='+v.id,region:'US',score:72+savings/2,group:'shop:'+source+':'+p.id,sale,regular,savings,merchant:source,image});
+      return c?[c]:[];
+    });return options.sort((a,b)=>b.score-a.score).slice(0,1);
+  });
+}
+function gog(j){
+ if(!Array.isArray(j.products))throw Error('GOG catalog invalid');
+ return j.products.flatMap(p=>{
+ const sale=money(p.price?.finalMoney?.amount),regular=money(p.price?.baseMoney?.amount);
+ if(p.productType!=='game'||p.productState!=='default'||p.price?.finalMoney?.currency!=='USD'||p.price?.baseMoney?.currency!=='USD'||!Number.isFinite(sale)||!Number.isFinite(regular)||sale<=0||regular<=sale||p.reviewsCount<20||!p.coverHorizontal)return [];
+ const savings=Math.round((1-sale/regular)*100);if(savings<40||p.price.discount!=='-'+savings+'%')return [];
+ const url=validURL(p.storeLink,'www.gog.com');if(!url||!new URL(url).pathname.startsWith('/en/game/'))return [];
+ const c=candidate({source:'GOG',id:p.id+':'+sale,type:'gaming',title:p.title,offer:'Sale',url,region:'US',score:70+savings/4,group:'game:'+norm(p.title),sale,regular,savings,platform:'GOG',image:p.coverHorizontal});return c?[c]:[];
+ });
+}
 async function get(url,html=false){
   const r=await fetch(url,{headers:{'user-agent':UA,accept:html?'text/html':'application/json'},signal:AbortSignal.timeout(18000)});
   if(!r.ok)throw Error('HTTP '+r.status);
@@ -118,9 +146,11 @@ async function collect(){
     ['Steam featured','https://store.steampowered.com/api/featuredcategories?cc=us&l=english',steamFeatured],
     ...[0,50,100].map(n=>['Steam search '+n,steam+n,steamSearch]),
     ['Epic Games','https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=US&allowCountries=US',epic],
-    ...['memory','keyboards','gaming-mice','gaming-headsets','data-storage','power-supply-units'].map(s=>['Corsair '+s,'https://www.corsair.com/us/en/c/'+s,corsair,true])
+    ...['memory','keyboards','gaming-headsets','data-storage','psu'].map(s=>['Corsair '+s,'https://www.corsair.com/us/en/c/'+s,corsair,true])
   ];
-  const settled=await Promise.allSettled(sources.map(async ([name,url,parse,html])=>{const a=parse(await get(url,html));console.log(name+': '+a.length+' eligible');return a;}));
+  sources.push(['GOG','https://catalog.gog.com/v1/catalog?limit=48&order=desc%3Abestselling&discounted=true&countryCode=US&currencyCode=USD&locale=en-US',gog]);
+  for(const [name,base] of officialShops)sources.push([name,base,null]);
+  const settled=await Promise.allSettled(sources.map(async ([name,url,parse,html])=>{const a=parse?parse(await get(url,html)):await shopify(name,url);console.log(name+': '+a.length+' eligible');return a;}));
   const all=[];settled.forEach((v,i)=>{if(v.status==='fulfilled')all.push(...v.value);else console.error(sources[i][0]+': '+v.reason.message);});
   if(settled.every(x=>x.status==='rejected'))throw Error('All sources failed');
   const unique=new Map();for(const c of all.sort((a,b)=>b.score-a.score))if(c.image&&!unique.has(c.group))unique.set(c.group,c);
@@ -145,7 +175,7 @@ function pick(all,history) {
 // Use only the exact merchant-provided product/game image. Never synthesize a replacement.
 async function realImage(c){
   let u;try{u=new URL(c.image);}catch{return null;}
-  const allowed=c.source==='Steam'?['shared.akamai.steamstatic.com','shared.fastly.steamstatic.com','cdn.akamai.steamstatic.com','cdn.cloudflare.steamstatic.com']:c.source==='Epic Games'?['cdn1.epicgames.com','cdn2.unrealengine.com','cdn1.unrealengine.com']:c.source==='Corsair'?['assets.corsair.com']:[];
+  const allowed=c.source==='Steam'?['shared.akamai.steamstatic.com','shared.fastly.steamstatic.com','cdn.akamai.steamstatic.com','cdn.cloudflare.steamstatic.com']:c.source==='Epic Games'?['cdn1.epicgames.com','cdn2.unrealengine.com','cdn1.unrealengine.com']:c.source==='Corsair'?['assets.corsair.com']:c.source==='GOG'?['images.gog-statics.com']:officialShops.some(([name])=>name===c.source)?['cdn.shopify.com']:[];
   if(u.protocol!=='https:'||u.username||u.password||!allowed.includes(u.hostname))return null;
   if(c.source==='Steam'&&!u.pathname.includes('/steam/apps/'+new URL(c.text.match(/https:\/\/store\.steampowered\.com\/app\/\d+\//)?.[0]||'https://store.steampowered.com/').pathname.split('/')[2]+'/'))return null;
   // Download only from the known merchant CDN, without redirects; use a bounded image size.
