@@ -253,6 +253,18 @@ async function realImage(c){
     return check.ok&&check.headers.get('content-type')?.startsWith('image/')?url:null;
   }finally{await rm(tmp,{recursive:true,force:true});}
 }
+async function checkBufferLimit(){
+ const token=process.env.POPCULTURE_BUFFER_ACCESS_TOKEN?.trim(), id=process.env.POPCULTURE_BUFFER_X_CHANNEL_ID?.trim();
+ if(!token||id!==channel)throw Error('Klieg channel guard failed');
+ const r=await fetch('https://api.buffer.com',{method:'POST',headers:{authorization:'Bearer '+token,'content-type':'application/json'},body:JSON.stringify({query:'query($id:ChannelId!){channel(input:{id:$id}){isDisconnected isLocked isQueuePaused} dailyPostingLimits(input:{channelIds:[$id]}){channelId isAtLimit limit scheduled sent}}',variables:{id}}),signal:AbortSignal.timeout(15000)});
+ if(!r.ok)throw Error('Buffer quota HTTP '+r.status);
+ const j=await r.json(), status=j.data?.channel, q=j.data?.dailyPostingLimits?.find(x=>x.channelId===id);
+ if(j.errors?.length||!status||!q)throw Error('Buffer quota unavailable');
+ console.log('Buffer quota: '+q.sent+' sent, '+q.scheduled+' scheduled, limit '+q.limit);
+ if(status.isDisconnected||status.isLocked||status.isQueuePaused){console.log('Buffer channel unavailable');return false;}
+ if(q.isAtLimit||(Number.isFinite(q.limit)&&q.sent+q.scheduled>=q.limit)){console.log('Buffer quota reached; preserving offers for next available slot');return false;}
+ return true;
+}
 async function publish(c) {
   const token=process.env.POPCULTURE_BUFFER_ACCESS_TOKEN?.trim();
   const actual=process.env.POPCULTURE_BUFFER_X_CHANNEL_ID?.trim();
@@ -264,7 +276,7 @@ async function publish(c) {
   const r=await fetch('https://api.buffer.com',{method:'POST',headers:{accept:'application/json','content-type':'application/json',authorization:'Bearer '+token},body:JSON.stringify({query:'mutation CreatePost($text: String!, $channelId: ChannelId!, $assets: [AssetInput!]!) { createPost(input: { text: $text, channelId: $channelId, schedulingType: automatic, mode: shareNow, needsApproval: false, assets: $assets }) { ... on PostActionSuccess { post { id status } } ... on MutationError { message } } }',variables:{text:c.text,channelId:actual,assets:[{image:{url:imageUrl}}]}}),signal:AbortSignal.timeout(20000)});
   if(!r.ok){const e=Error('Buffer HTTP '+r.status);e.rateLimited=r.status===429;throw e;}
   const j=await r.json();const p=j.data?.createPost?.post;
-  if(!p?.id||j.errors?.length)throw Error('Buffer did not confirm post creation');
+  if(!p?.id||j.errors?.length){const msg=String(j.data?.createPost?.message||j.errors?.[0]?.message||'unknown').replace(/[\r\n]/g,' ').slice(0,250);const e=Error('Buffer rejected: '+msg);e.rateLimited=/limit|quota|too many requests/i.test(msg);throw e;}
   return {id:p.id,status:p.status};
 }
 function selfTest(){
@@ -282,6 +294,7 @@ function selfTest(){
 }
 async function main(){
   if(process.argv.includes('--self-test'))return selfTest();
+  if(process.argv.includes('--publish')&&!await checkBufferLimit())return;
   const all=await collect();
   console.log('Eligible unique: '+all.length+' (tech '+all.filter(x=>x.type==='tech').length+', gaming '+all.filter(x=>x.type==='gaming').length+')');
   if(process.argv.includes('--preview-card')){const c=all.find(x=>x.type==='tech')||all[0];if(!c)throw Error('No eligible preview');console.log('Preview: '+await realImage(c));}
