@@ -233,6 +233,7 @@ async function realImage(c){
   if(c.source==='Steam'&&!u.pathname.includes('/steam/apps/'+new URL(c.text.match(/https:\/\/store\.steampowered\.com\/app\/\d+\//)?.[0]||'https://store.steampowered.com/').pathname.split('/')[2]+'/'))return null;
   // Download only from the known merchant CDN, without redirects; use a bounded image size.
   if(['Logitech','Logitech G'].includes(c.source))u.pathname=u.pathname.replace(/w_\d+,h_\d+/, 'w_1200,h_900').replace('f_auto','f_png');
+  if(c.source==='Steam'&&/\/capsule_231x87\.jpg$/.test(u.pathname)){u.pathname=u.pathname.replace(/capsule_231x87\.jpg$/, 'header.jpg');u.search='';}
   if(c.source==='ASUS')u.pathname=u.pathname.replace(/\/w\d+$/, '/w1000');
   const r=await fetch(u,{redirect:'error',headers:{'user-agent':UA,accept:'image/jpeg,image/png,image/webp'},signal:AbortSignal.timeout(12000)});
   if(!r.ok||!/^image\/(?:jpeg|png|webp)(?:;|$)/i.test(r.headers.get('content-type')||''))return null;
