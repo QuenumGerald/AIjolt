@@ -303,7 +303,7 @@ async function main(){
     return;
   }
   const state=await readState();let c;const remaining=[...all];
-  for(let i=0;i<5;i++){const next=pick(remaining,state.history,i===0||!all.some(x=>!state.history.some(h=>h.id===x.id||h.group===x.group&&now-h.at<2*DAY)));if(!next)break;try{next.verifiedImage=await realImage(next);if(next.verifiedImage){c=next;break;}}catch(e){console.error('Image unavailable: '+next.title+' '+e.message);}remaining.splice(remaining.findIndex(x=>x.id===next.id),1);}
+  for(let i=0;i<30;i++){const next=pick(remaining,state.history,i===0||!all.some(x=>!state.history.some(h=>h.id===x.id||h.group===x.group&&now-h.at<2*DAY)));if(!next){console.log("Selection exhausted or cadence active");break;}try{next.verifiedImage=await realImage(next);if(next.verifiedImage){c=next;break;}console.log("Image rejected: "+next.source+" "+next.title);}catch(e){console.error('Image unavailable: '+next.title+' '+e.message);}remaining.splice(remaining.findIndex(x=>x.id===next.id),1);}
   if(!c){console.log('No new eligible offer or cadence limit');return;}
   // Reserve before the API call. Ambiguous failures require inspection rather than duplicate retries.
   if(c.recycled)console.log('Recycling still-active deal: '+c.title);
@@ -311,6 +311,6 @@ async function main(){
   state.history=state.history.filter(h=>now-h.at<90*DAY);
   state.history.push(entry);await save(state);
   try{const p=await publish(c);entry.status='buffer-accepted';entry.bufferId=p.id;entry.bufferStatus=p.status;await save(state);console.log('Buffer accepted '+p.id+' '+p.status+' '+c.title);}
-  catch(e){entry.status=e.rateLimited?'rate-limited':'needs-review';await save(state);throw e;}
+  catch(e){entry.status=e.rateLimited?'rate-limited':'needs-review';entry.error=String(e.message).slice(0,250);await save(state);throw e;}
 }
 main().catch(e=>{console.error(e.message);process.exitCode=1;});
